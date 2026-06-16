@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lavish Leaf Organic Farms</title>
+  <meta name="description" content="Lavish Leaf Organic Farms — providing local communities, schools, and restaurants with all-natural sustainably grown plants and produce.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:ital,wght@0,300;0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-wrapper">
+    <nav class="nav-left">
+      <a href="farms.html" class="active">Farms</a>
+      <a href="compost.html">Compost</a>
+      <a href="store.html">Store</a>
+      <a href="social.html">Social</a>
+      <a href="careers.html">Careers</a>
+      <a href="adult-sports.html">Adult Sports</a>
+      <a href="gaming.html">Gaming</a>
+    </nav>
+    <a href="index.html" class="site-logo">Lavish Leaf</a>
+    <div class="nav-right">
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="https://www.facebook.com/lavishleaf" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/lavish_leaf_inc" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="mailto:support@lavishleaf.org" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="farms.html">Farms</a>
+    <a href="compost.html">Compost</a>
+    <a href="store.html">Store</a>
+    <a href="social.html">Social</a>
+    <a href="careers.html">Careers</a>
+    <a href="adult-sports.html">Adult Sports</a>
+    <a href="gaming.html">Gaming</a>
+    <a href="https://www.facebook.com/lavishleaf" target="_blank" rel="noopener">Facebook</a>
+    <a href="https://www.instagram.com/lavish_leaf_inc" target="_blank" rel="noopener">Instagram</a>
+    <a href="mailto:support@lavishleaf.org">Email Us</a>
+  </nav>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <h1 class="page-hero-title">
+    <span class="ph-white">Lavish Leaf</span>
+    <span class="ph-green"><em>Organic</em> Farms</span>
+  </h1>
+</section>
+
+<!-- INTRO -->
+<section class="content-section">
+  <p>Organic, eco-friendly, and sustainable farming. Currently selling plants and produce! Come visit us at our farm or ask for delivery! Address and contact information below!</p>
+  <p>Check out our social page and follow us on <a href="https://www.instagram.com/lavish_leaf_inc" target="_blank" rel="noopener">Instagram</a> and <a href="https://www.facebook.com/lavishleaf" target="_blank" rel="noopener">Facebook</a>!</p>
+</section>
+
+<hr class="divider">
+
+<!-- OUR VISION -->
+<section class="content-section">
+  <h2>Our Vision</h2>
+  <p>Provide local communities, restaurants, schools, and businesses with all natural sustainably grown produce. Cultivate an educational environment to live, learn, and grow organically.</p>
+  <a href="store.html" class="btn">Online Store</a>
+</section>
+
+<hr class="divider">
+
+<!-- WHAT WE GROW -->
+<section class="content-section">
+  <h2>What We Grow</h2>
+  <p>Our farm produces a variety of organic vegetables, fruits, and plants grown using sustainable, chemical-free methods. From Brussels sprouts and zucchini to corn, squash, sunflowers, and green beans — we grow what communities need.</p>
+  <p>We also cultivate seedlings and transplants for home gardeners and community gardens. All produce is grown right here in Eastern Oklahoma, tended with care and love for the land.</p>
+</section>
+
+<hr class="divider">
+
+<!-- VISIT / CONTACT -->
+<section class="contact-section">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h2>Visit Us</h2>
+      <p>
+        <strong>Address</strong>
+        41 Last Resort Rd<br>Stigler, OK 74462
+      </p>
+      <p>
+        <strong>Phone</strong>
+        <a href="tel:9187050395">(918) 705-0395</a>
+      </p>
+      <p>
+        <strong>Email</strong>
+        <a href="mailto:support@lavishleaf.org">support@lavishleaf.org</a>
+      </p>
+      <div class="contact-icons">
+        <a href="https://www.facebook.com/lavishleaf" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/lavish_leaf_inc" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="mailto:support@lavishleaf.org" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <div>
+      <form onsubmit="handleContact(event)">
+        <div class="form-group">
+          <label class="form-label">Name</label>
+          <div class="form-row">
+            <div>
+              <label class="form-label" for="f-first">First Name <span class="req">(required)</span></label>
+              <input type="text" id="f-first" required>
+            </div>
+            <div>
+              <label class="form-label" for="f-last">Last Name <span class="req">(required)</span></label>
+              <input type="text" id="f-last" required>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="f-email">Email <span class="req">(required)</span></label>
+          <input type="email" id="f-email" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="f-phone">Phone</label>
+          <input type="tel" id="f-phone">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="f-msg">Message <span class="req">(required)</span></label>
+          <textarea id="f-msg" required></textarea>
+        </div>
+        <button type="submit" class="btn">Send</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section">
+  <h2>Lavish Leaf Newsletter</h2>
+  <p>Sign up to receive news and updates regarding Lavish Leaf's products, services, and educational content.</p>
+  <form onsubmit="handleNewsletter(event)">
+    <div class="form-group">
+      <label class="form-label">Name</label>
+      <div class="form-row">
+        <div>
+          <label class="form-label" for="nl-first">First Name</label>
+          <input type="text" id="nl-first">
+        </div>
+        <div>
+          <label class="form-label" for="nl-last">Last Name</label>
+          <input type="text" id="nl-last">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="nl-email">Email <span class="req">(required)</span></label>
+      <input type="email" id="nl-email" required>
+    </div>
+    <div class="checkbox-row">
+      <input type="checkbox" id="nl-news">
+      <label for="nl-news">Sign up for news and updates</label>
+    </div>
+    <div class="form-group" style="margin-top:14px;">
+      <label class="form-label" for="nl-phone">Phone</label>
+      <p style="color:#aaa;font-size:0.83rem;margin-bottom:8px;">Sign up for SMS marketing and updates for Lavish Leaf</p>
+      <input type="tel" id="nl-phone">
+    </div>
+    <div style="margin-top:20px;">
+      <button type="submit" class="btn">Subscribe</button>
+    </div>
+  </form>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="farms.html">Farms</a>
+    <a href="compost.html">Compost</a>
+    <a href="store.html">Store</a>
+    <a href="social.html">Social</a>
+    <a href="careers.html">Careers</a>
+    <a href="adult-sports.html">Adult Sports</a>
+    <a href="gaming.html">Gaming</a>
+  </div>
+  <div class="footer-social">
+    <a href="https://www.facebook.com/lavishleaf" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/lavish_leaf_inc" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@lavishleaf" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    <a href="mailto:support@lavishleaf.org" aria-label="Email"><i class="fas fa-envelope"></i></a>
+  </div>
+  <div class="footer-copy">
+    &copy; <span id="year"></span> Lavish Leaf LLC &nbsp;|&nbsp; 41 Last Resort Rd, Stigler, OK 74462 &nbsp;|&nbsp; (918) 705-0395
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() { document.getElementById('mobileNav').classList.toggle('open'); }
+  function handleContact(e) { e.preventDefault(); alert('Message sent! We will get back to you soon.'); e.target.reset(); }
+  function handleNewsletter(e) { e.preventDefault(); alert('Thank you for signing up!'); e.target.reset(); }
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

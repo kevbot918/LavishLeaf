@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lavish Leaf Compost</title>
+  <meta name="description" content="Lavish Leaf Compost — pick-up and drop off composting services for households and businesses in Eastern Oklahoma.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:ital,wght@0,300;0,400;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-wrapper">
+    <nav class="nav-left">
+      <a href="farms.html">Farms</a>
+      <a href="compost.html" class="active">Compost</a>
+      <a href="store.html">Store</a>
+      <a href="social.html">Social</a>
+      <a href="careers.html">Careers</a>
+      <a href="adult-sports.html">Adult Sports</a>
+      <a href="gaming.html">Gaming</a>
+    </nav>
+    <a href="index.html" class="site-logo">Lavish Leaf</a>
+    <div class="nav-right">
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="https://www.facebook.com/lavishleaf" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/lavish_leaf_inc" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="mailto:support@lavishleaf.org" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="farms.html">Farms</a>
+    <a href="compost.html">Compost</a>
+    <a href="store.html">Store</a>
+    <a href="social.html">Social</a>
+    <a href="careers.html">Careers</a>
+    <a href="adult-sports.html">Adult Sports</a>
+    <a href="gaming.html">Gaming</a>
+    <a href="https://www.facebook.com/lavishleaf" target="_blank" rel="noopener">Facebook</a>
+    <a href="https://www.instagram.com/lavish_leaf_inc" target="_blank" rel="noopener">Instagram</a>
+    <a href="mailto:support@lavishleaf.org">Email Us</a>
+  </nav>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <h1 class="page-hero-title">
+    <span class="ph-white">Lavish Leaf</span>
+    <span class="ph-green"><em>Compost</em></span>
+  </h1>
+</section>
+
+<!-- INTRO -->
+<section class="content-section">
+  <p>Pick-up and drop off for composting services. Collaborate with local communities, schools, and businesses to promote and provide composting services. Enrich the soil naturally.</p>
+  <p>Looking to go zero waste? Help us provide enriched living soil for our farm and customers.</p>
+  <p>Is your business looking for ways to increase social impact or tired of throwing away organic matter?</p>
+  <p>Sign up below or visit our store page!</p>
+</section>
+
+<hr class="divider">
+
+<!-- OUR VISION -->
+<section class="content-section">
+  <h2>Our Vision</h2>
+  <p>Assist communities and businesses to reduce landfill waste and provide enriched living soil.</p>
+  <div style="margin:30px auto; max-width:300px; height:260px; background:#555; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:5rem;">🌱</div>
+</section>
+
+<hr class="divider">
+
+<!-- SERVICE DETAILS -->
+<section class="content-section">
+  <h2>Compost Pick-Up Service</h2>
+  <p style="font-size:1.05rem; color:#aaa; margin-bottom:6px;">Compost Pick-up</p>
+  <p style="font-size:1.1rem; color:var(--green); margin-bottom:30px;">$20.00 every month</p>
+
+  <p>Reduce your trash and start saving the environment with us! Did you know that when food scraps and other compostable items go to landfills the methane gas released instead of CO2 is 80x worse for the environment!</p>
+
+  <p><strong style="color:var(--white);">COMPOST PICK-UP SERVICE:</strong> We will give you and switch out a 5 gallon bucket every 1–2 weeks depending on how quickly you fill it up. We recommend using your own indoor compost bin and regularly dumping it into our 5 gallon bucket.</p>
+
+  <p>Items that you can compost instead of allowing it to go into a landfill: food scraps, coffee grounds, lawn clippings, leaves, mulch, ink-free paper, and many other compostable items.</p>
+
+  <p><em>* Pick-up days are your choice! Choose whichever day of the week you prefer!</em></p>
+
+  <p><em>* Currently available for addresses within 25 miles of 41 Last Resort Rd, Stigler, OK 74462</em></p>
+
+  <a href="mailto:support@lavishleaf.org?subject=Compost Pick-Up Sign Up" class="btn btn-wide" style="max-width:500px; display:block; margin:30px auto 0;">Sign Up: Compost Pick-Up</a>
+</section>
+
+<hr class="divider">
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section">
+  <h2>Lavish Leaf Newsletter</h2>
+  <p>Sign up to receive news and updates regarding Lavish Leaf's products, services, and educational content.</p>
+  <form onsubmit="handleNewsletter(event)">
+    <div class="form-group">
+      <label class="form-label">Name</label>
+      <div class="form-row">
+        <div>
+          <label class="form-label" for="nl-first">First Name</label>
+          <input type="text" id="nl-first">
+        </div>
+        <div>
+          <label class="form-label" for="nl-last">Last Name</label>
+          <input type="text" id="nl-last">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="nl-email">Email <span class="req">(required)</span></label>
+      <input type="email" id="nl-email" required>
+    </div>
+    <div class="checkbox-row">
+      <input type="checkbox" id="nl-news">
+      <label for="nl-news">Sign up for news and updates</label>
+    </div>
+    <div class="form-group" style="margin-top:14px;">
+      <label class="form-label" for="nl-phone">Phone</label>
+      <p style="color:#aaa;font-size:0.83rem;margin-bottom:8px;">Sign up for SMS marketing and updates for Lavish Leaf</p>
+      <input type="tel" id="nl-phone">
+    </div>
+    <div style="margin-top:20px;">
+      <button type="submit" class="btn">Subscribe</button>
+    </div>
+  </form>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="farms.html">Farms</a>
+    <a href="compost.html">Compost</a>
+    <a href="store.html">Store</a>
+    <a href="social.html">Social</a>
+    <a href="careers.html">Careers</a>
+    <a href="adult-sports.html">Adult Sports</a>
+    <a href="gaming.html">Gaming</a>
+  </div>
+  <div class="footer-social">
+    <a href="https://www.facebook.com/lavishleaf" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/lavish_leaf_inc" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@lavishleaf" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+    <a href="mailto:support@lavishleaf.org"><i class="fas fa-envelope"></i></a>
+  </div>
+  <div class="footer-copy">
+    &copy; <span id="year"></span> Lavish Leaf LLC &nbsp;|&nbsp; 41 Last Resort Rd, Stigler, OK 74462 &nbsp;|&nbsp; (918) 705-0395
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() { document.getElementById('mobileNav').classList.toggle('open'); }
+  function handleNewsletter(e) { e.preventDefault(); alert('Thank you for signing up!'); e.target.reset(); }
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
