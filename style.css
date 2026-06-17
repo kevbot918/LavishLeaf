@@ -904,6 +904,33 @@ td.td-hl { background: #eecc00 !important; color: #000 !important; font-weight: 
   line-height: 1.85;
 }
 
+/* ===== DONATE BUTTONS ===== */
+.donate-btns {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.donate-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 40px;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  cursor: pointer;
+}
+
+.donate-btn:hover { opacity: 0.82; text-decoration: none; }
+.donate-btn i { font-size: 1.15rem; }
+.donate-paypal  { background: #003087; color: #fff; }
+.donate-cashapp { background: #00d64f; color: #000; }
+
 /* ===== DIVIDER ===== */
 hr.divider {
   border: none;
