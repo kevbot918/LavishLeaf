@@ -931,6 +931,72 @@ td.td-hl { background: #eecc00 !important; color: #000 !important; font-weight: 
 .donate-paypal  { background: #003087; color: #fff; }
 .donate-cashapp { background: #00d64f; color: #000; }
 
+/* ===== BOTTOM FORMS (contact + newsletter) ===== */
+.bottom-forms-section {
+  background: #2a2a2a;
+  padding: 70px 20px 80px;
+  border-top: 3px solid var(--green);
+}
+
+.bottom-forms-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.bottom-forms-label {
+  text-align: center;
+  color: var(--green);
+  font-family: 'Exo 2', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin-bottom: 44px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.bottom-forms-label::before,
+.bottom-forms-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #4a4a4a;
+}
+
+.bottom-forms-grid {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 0 60px;
+  align-items: start;
+}
+
+.bottom-forms-vdivider {
+  background: #4a4a4a;
+  align-self: stretch;
+}
+
+.bottom-form-col h2 {
+  color: var(--green);
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  margin-bottom: 6px;
+}
+
+.bottom-form-col > p {
+  color: #999;
+  font-size: 0.88rem;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+@media (max-width: 920px) {
+  .bottom-forms-grid { grid-template-columns: 1fr; gap: 40px 0; }
+  .bottom-forms-vdivider { height: 1px; width: 100%; }
+}
+
 /* ===== DIVIDER ===== */
 hr.divider {
   border: none;

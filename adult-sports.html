@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -110,58 +110,83 @@
 
 <hr class="divider">
 
-<!-- CONTACT -->
-<section class="contact-section">
-  <div class="contact-grid">
-    <div class="contact-info">
-      <h2>Contact Us</h2>
-      <p>
-        <strong>Phone</strong>
-        <a href="tel:9187050395">(918) 705-0395</a>
-      </p>
-      <p>
-        <strong>Email</strong>
-        <a href="mailto:support@lavishleaf.org">support@lavishleaf.org</a>
-      </p>
-      <div class="contact-icons">
-        <a href="https://www.facebook.com/LavishLeafInc" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/lavish_leaf_inc" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="mailto:support@lavishleaf.org" aria-label="Email"><i class="fas fa-envelope"></i></a>
-      </div>
-    </div>
-    <div>
-      <form onsubmit="handleContact(event)">
-        <div class="form-group">
-          <label class="form-label">Name</label>
-          <div class="form-row">
-            <div>
-              <label class="form-label" for="s-first">First Name <span class="req">(required)</span></label>
-              <input type="text" id="s-first" required>
-            </div>
-            <div>
-              <label class="form-label" for="s-last">Last Name <span class="req">(required)</span></label>
-              <input type="text" id="s-last" required>
+<!-- CONTACT & NEWSLETTER -->
+<section class="bottom-forms-section">
+  <div class="bottom-forms-inner">
+    <p class="bottom-forms-label">Contact &amp; Newsletter</p>
+    <div class="bottom-forms-grid">
+
+      <div class="bottom-form-col">
+        <h2>Contact Us</h2>
+        <p>Have a question or want to get in touch? We'd love to hear from you.</p>
+        <form onsubmit="handleContact(event)">
+          <div class="form-group">
+            <div class="form-row">
+              <div>
+                <label class="form-label" for="bf-first">First Name <span class="req">(required)</span></label>
+                <input type="text" id="bf-first" required>
+              </div>
+              <div>
+                <label class="form-label" for="bf-last">Last Name <span class="req">(required)</span></label>
+                <input type="text" id="bf-last" required>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="s-email">Email <span class="req">(required)</span></label>
-          <input type="email" id="s-email" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="s-phone">Phone</label>
-          <input type="tel" id="s-phone">
-        </div>
-        <div class="form-group">
-          <label class="form-label" for="s-msg">Message <span class="req">(required)</span></label>
-          <textarea id="s-msg" required placeholder="Questions about registration, league rules, schedule..."></textarea>
-        </div>
-        <button type="submit" class="btn">Send</button>
-      </form>
+          <div class="form-group">
+            <label class="form-label" for="bf-email">Email <span class="req">(required)</span></label>
+            <input type="email" id="bf-email" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="bf-phone">Phone</label>
+            <input type="tel" id="bf-phone">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="bf-msg">Message <span class="req">(required)</span></label>
+            <textarea id="bf-msg" required></textarea>
+          </div>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+
+      <div class="bottom-forms-vdivider"></div>
+
+      <div class="bottom-form-col">
+        <h2>Newsletter</h2>
+        <p>Stay up to date with Lavish Leaf news — farms, sports, gaming, and more.</p>
+        <form onsubmit="handleNewsletter(event)">
+          <div class="form-group">
+            <div class="form-row">
+              <div>
+                <label class="form-label" for="bn-first">First Name</label>
+                <input type="text" id="bn-first">
+              </div>
+              <div>
+                <label class="form-label" for="bn-last">Last Name</label>
+                <input type="text" id="bn-last">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="bn-email">Email <span class="req">(required)</span></label>
+            <input type="email" id="bn-email" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="bn-phone">Phone</label>
+            <input type="tel" id="bn-phone">
+          </div>
+          <div class="checkbox-row">
+            <input type="checkbox" id="bn-news" checked>
+            <label for="bn-news">Sign up for news and updates</label>
+          </div>
+          <div style="margin-top:20px;">
+            <button type="submit" class="btn">Subscribe</button>
+          </div>
+        </form>
+      </div>
+
     </div>
   </div>
 </section>
-
 <footer>
   <div class="footer-links">
     <a href="farms.html">Farms</a>
@@ -184,6 +209,7 @@
 </footer>
 
 <script>
+  function handleNewsletter(e) { e.preventDefault(); alert('Thanks for subscribing!'); e.target.reset(); }
   function toggleMenu() { document.getElementById('mobileNav').classList.toggle('open'); }
   function handleContact(e) { e.preventDefault(); alert('Message sent! We will get back to you soon.'); e.target.reset(); }
   document.getElementById('year').textContent = new Date().getFullYear();
