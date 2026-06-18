@@ -930,6 +930,7 @@ td.td-hl { background: #eecc00 !important; color: #000 !important; font-weight: 
 .donate-btn i { font-size: 1.15rem; }
 .donate-paypal  { background: #003087; color: #fff; }
 .donate-cashapp { background: #00d64f; color: #000; }
+.form-success { color: var(--green); font-family: 'Exo 2', sans-serif; font-size: 1rem; padding: 20px 0; line-height: 1.6; }
 
 /* ===== BOTTOM FORMS (contact + newsletter) ===== */
 .bottom-forms-section {

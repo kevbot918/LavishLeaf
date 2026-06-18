@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -193,30 +193,30 @@
       <div class="bottom-form-col">
         <h2>Contact Us</h2>
         <p>Have a question or want to get in touch? We'd love to hear from you.</p>
-        <form onsubmit="handleContact(event)">
+        <form name="contact" data-netlify="true" onsubmit="handleContact(event)"><input type="hidden" name="form-name" value="contact">
           <div class="form-group">
             <div class="form-row">
               <div>
                 <label class="form-label" for="bf-first">First Name <span class="req">(required)</span></label>
-                <input type="text" id="bf-first" required>
+                <input type="text" id="bf-first" name="first-name" required>
               </div>
               <div>
                 <label class="form-label" for="bf-last">Last Name <span class="req">(required)</span></label>
-                <input type="text" id="bf-last" required>
+                <input type="text" id="bf-last" name="last-name" required>
               </div>
             </div>
           </div>
           <div class="form-group">
             <label class="form-label" for="bf-email">Email <span class="req">(required)</span></label>
-            <input type="email" id="bf-email" required>
+            <input type="email" id="bf-email" name="email" required>
           </div>
           <div class="form-group">
             <label class="form-label" for="bf-phone">Phone</label>
-            <input type="tel" id="bf-phone">
+            <input type="tel" id="bf-phone" name="phone">
           </div>
           <div class="form-group">
             <label class="form-label" for="bf-msg">Message <span class="req">(required)</span></label>
-            <textarea id="bf-msg" required></textarea>
+            <textarea id="bf-msg" name="message" required></textarea>
           </div>
           <button type="submit" class="btn">Send Message</button>
         </form>
@@ -227,29 +227,29 @@
       <div class="bottom-form-col">
         <h2>Newsletter</h2>
         <p>Stay up to date with Lavish Leaf news — farms, sports, gaming, and more.</p>
-        <form onsubmit="handleNewsletter(event)">
+        <form name="newsletter" data-netlify="true" onsubmit="handleNewsletter(event)"><input type="hidden" name="form-name" value="newsletter">
           <div class="form-group">
             <div class="form-row">
               <div>
                 <label class="form-label" for="bn-first">First Name</label>
-                <input type="text" id="bn-first">
+                <input type="text" id="bn-first" name="first-name">
               </div>
               <div>
                 <label class="form-label" for="bn-last">Last Name</label>
-                <input type="text" id="bn-last">
+                <input type="text" id="bn-last" name="last-name">
               </div>
             </div>
           </div>
           <div class="form-group">
             <label class="form-label" for="bn-email">Email <span class="req">(required)</span></label>
-            <input type="email" id="bn-email" required>
+            <input type="email" id="bn-email" name="email" required>
           </div>
           <div class="form-group">
             <label class="form-label" for="bn-phone">Phone</label>
-            <input type="tel" id="bn-phone">
+            <input type="tel" id="bn-phone" name="phone">
           </div>
           <div class="checkbox-row">
-            <input type="checkbox" id="bn-news" checked>
+            <input type="checkbox" id="bn-news" name="subscribe" value="yes" checked>
             <label for="bn-news">Sign up for news and updates</label>
           </div>
           <div style="margin-top:20px;">
@@ -284,8 +284,32 @@
 
 <script>
   function toggleMenu() { document.getElementById('mobileNav').classList.toggle('open'); }
-  function handleContact(e) { e.preventDefault(); alert('Message sent! We will get back to you soon.'); e.target.reset(); }
-  function handleNewsletter(e) { e.preventDefault(); alert('Thanks for subscribing to LavishLeaf Gaming updates!'); e.target.reset(); }
+  function handleContact(e) {
+  e.preventDefault();
+  var f = e.target;
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(new FormData(f)).toString()
+  }).then(function() {
+    f.innerHTML = "<p class=\"form-success\">Message sent! We will get back to you soon.</p>";
+  }).catch(function() {
+    alert("There was a problem. Please email support@lavishleaf.org");
+  });
+}
+  function handleNewsletter(e) {
+  e.preventDefault();
+  var f = e.target;
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(new FormData(f)).toString()
+  }).then(function() {
+    f.innerHTML = "<p class=\"form-success\">Thank you for subscribing!</p>";
+  }).catch(function() {
+    alert("There was a problem. Please email support@lavishleaf.org");
+  });
+}
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
