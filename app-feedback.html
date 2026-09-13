@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Report a Problem — Symphonymph</title>
+  <title>Report a Problem: Symphonymph</title>
   <meta name="description" content="Tell us what went wrong in Symphonymph, or what you would like it to do.">
   <!-- Not a page anyone should arrive at from a search: it is the destination
        of a button inside the app, and of the same form posted by the app
@@ -38,6 +38,7 @@
       </button>
       <a href="https://www.facebook.com/LavishLeafInc" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
       <a href="https://www.instagram.com/lavish_leaf_inc" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@lavishleaf" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
       <a href="mailto:support@lavishleaf.org" aria-label="Email"><i class="fas fa-envelope"></i></a>
     </div>
   </div>
@@ -63,12 +64,12 @@
 <section class="content-section">
   <h2>Before you write</h2>
   <p>If a single recording will not play, it is usually the archive that holds it
-  rather than the app &mdash; Symphonymph never keeps a copy, so when a library moves
+  rather than the app. Symphonymph never keeps a copy, so when a library moves
   a file the link goes with it. Telling us which recording is exactly what we need to
   hear: those get fixed by pointing the app somewhere better.</p>
   <p>If you are sending this from the app itself, the version, your Android version
   and your phone model are attached automatically. From this page, please say what
-  they are &mdash; you will find them in the app under Settings, at the very bottom.</p>
+  they are. You will find them in the app under Settings, at the very bottom.</p>
 
   <form name="app-report" data-netlify="true" netlify-honeypot="website" onsubmit="handleReport(event)">
     <input type="hidden" name="form-name" value="app-report">
@@ -131,7 +132,7 @@
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(new FormData(f)).toString()
     }).then(function () {
-      f.innerHTML = "<p class=\"form-success\">Thank you &mdash; that reached us. If you left an email we will reply.</p>";
+      f.innerHTML = "<p class=\"form-success\">Thank you, that reached us. If you left an email we will reply.</p>";
     }).catch(function () {
       alert("There was a problem sending that. Please email support@lavishleaf.org instead.");
     });

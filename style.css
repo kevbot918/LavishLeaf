@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Lavish Leaf — lavishleaf.org
+   Lavish Leaf, lavishleaf.org
    Grey ground restored 2026-09-13.
 
    WHAT HAPPENED, so nobody undoes this twice. On 2026-09-13 this stylesheet
@@ -11,7 +11,7 @@
 
    What WAS asked for, and therefore survives the revert:
      * the real logo as an <img> in every header (the site had no <img> at all)
-     * the oval badges rebuilt to match the owner's own artwork — a green ring,
+     * the oval badges rebuilt to match the owner's own artwork, a green ring,
        the wordmark in a marker face, the division name underneath, NO emoji
      * the logo's real green, #4AB73C sampled from the artwork, in place of the
        old #22cc00
@@ -22,7 +22,7 @@
      * 44px touch targets, a real focus ring, reduced motion, tables that
        scroll inside their own box
      * wider text columns (owner, 2026-09-13: "a lot of the text areas leave
-       tons of space right and left") — see --measure below
+       tons of space right and left"), see --measure below
 
    THE PALETTE, with the contrast ratio that justifies each use. Every ratio
    here was computed, not estimated.
@@ -30,7 +30,7 @@
      --leaf        #4AB73C  the logo green, exactly as sampled from the mark.
                             Oval rings, button FILLS, borders, large display
                             text. 4.21:1 on --bg, so it is fine for large text
-                            and NOT for body copy — use --leaf-bright there.
+                            and NOT for body copy, use --leaf-bright there.
      --leaf-bright #6FD65F  green TEXT. 5.93:1 on --bg, 8.37:1 on --bg-3.
      --leaf-deep   #2C7722  the hover state under a green fill, and the oval
                             badge's wordmark (5.57:1 on white).
@@ -71,7 +71,7 @@
   /* Form fields stay light, as they always were on this site. #b8b8b8 is
      the owner's own value; it is 5.48:1 against the page ground, so the
      field is findable on its own, past the 3:1 WCAG 1.4.11 asks of a
-     control boundary. The border has to be DARK — a grey border on a grey
+     control boundary. The border has to be DARK, a grey border on a grey
      field is 1.70:1 and does nothing. */
   --field: #b8b8b8;
   --field-ink: #14261A;
@@ -95,7 +95,7 @@
      Two numbers settle this, both measured in a browser with the real font
      loaded rather than estimated. (1) 1ch in Nunito Sans is the "0" advance
      = 10.2px at 17px = exactly 0.600em, while the average character in this
-     site's prose is 0.44em — so a `ch` cap overstates the real line by 36%,
+     site's prose is 0.44em, so a `ch` cap overstates the real line by 36%,
      and the pre-rebuild 65ch was really 88 characters, not 65. (2) The
      scrolling is NOT mostly the column: at a 1280px viewport the vertical
      section padding is 1054px of the farms page's 3079px (34%) and 1602px
@@ -105,7 +105,7 @@
 
      The column itself goes back to roughly what this site has always had.
      Before any of this the rule was .content-section max-width 900px with no
-     per-paragraph cap, which is an 860px line — about 115 characters. A
+     per-paragraph cap, which is an 860px line, about 115 characters. A
      typographer would call that long, and the owner has been reading it for
      months and asked for WIDER, not narrower, so 85ch (867px, ~116
      characters) is the honest answer: what they had, kept. Last night I gave
@@ -116,7 +116,7 @@
   --shadow-sm: inset 0 1px 0 rgba(255, 255, 255, 0.07);
   --shadow-md: 0 6px 22px rgba(0, 0, 0, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.08);
   /* The one place a real drop works, because there a LIGHT object sits on
-     a dark ground — the inverse of every card on the page. */
+     a dark ground, the inverse of every card on the page. */
   --shadow-oval: 0 6px 20px rgba(0, 0, 0, 0.38);
 }
 
@@ -196,7 +196,7 @@ header {
 .nav-left a:hover { color: var(--leaf-bright); text-decoration: none; border-bottom-color: var(--leaf); }
 .nav-left a.active { color: var(--leaf-bright); border-bottom-color: var(--leaf); }
 
-/* The logo is an image. The site had no <img> on any page before 2026-09-13 —
+/* The logo is an image. The site had no <img> on any page before 2026-09-13,
    the real mark literally never appeared on lavishleaf.org. */
 .site-logo {
   grid-column: 2;
@@ -217,7 +217,7 @@ header {
 }
 
 /* 44px targets. Measured on the live site before this: 10x26, 14x26 and
-   16x26 pixels — the Facebook link was ten pixels wide. */
+   16x26 pixels, the Facebook link was ten pixels wide. */
 .nav-right a {
   color: var(--white);
   font-size: 1.05rem;
@@ -320,16 +320,14 @@ header {
   font-size: clamp(1.9rem, 1.2rem + 3.4vw, 2.6rem);
   font-weight: 800;
   color: var(--white);
-  max-width: 24ch;
+  max-width: 980px;
   margin: 0 auto 18px;
   line-height: 1.18;
 }
 
 .home-hero p {
   color: var(--gray);
-  /* Centred, so shorter than --measure on purpose: 54ch is 565px ≈ 75
-     characters, where this was running 91. */
-  max-width: 54ch;
+  max-width: 800px;
   margin: 0 auto 32px;
   font-size: 1.09rem;
 }
@@ -337,7 +335,7 @@ header {
 /* ===== OVAL BADGE ============================================== */
 /* Matches the owner's own artwork: a green oval ring, the wordmark in the
    marker face, the division name on a second line in the SAME face one size
-   down. The emoji that used to sit inside every badge are gone — they render
+   down. The emoji that used to sit inside every badge are gone, they render
    as a different picture on every operating system and were never the brand.
    See "Adult Sports Logo.png", which is exactly this lockup. A WHITE oval on
    the grey ground, so its text is judged against white: --leaf-deep is 5.57:1
@@ -361,7 +359,7 @@ header {
 
 .badge-brand {
   font-family: 'Sriracha', 'Nunito Sans', cursive;
-  font-weight: 400; /* single-weight face — never ask it for bold */
+  font-weight: 400; /* single-weight face, never ask it for bold */
   color: var(--leaf-deep);
   font-size: 1.18rem;
   line-height: 1.1;
@@ -378,7 +376,7 @@ header {
   line-height: 1.15;
 }
 
-/* The real logo used in place of a CSS oval — the home page's "And more
+/* The real logo used in place of a CSS oval, the home page's "And more
    coming" cell, and anywhere else the actual mark belongs. Same footprint as
    an oval so it sits on the same baseline as the badges beside it. */
 .oval-logo {
@@ -393,14 +391,17 @@ header {
 .cards-section { padding: 0 20px var(--gap-xl); }
 
 .cards-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: var(--gap-lg);
   max-width: var(--page);
   margin: 0 auto;
 }
 
-.card { text-align: center; }
+/* 3 × 340 + 2 × 44 = 1108 inside an 1180px page, so three sit on a row and
+   the remainder centres underneath instead of hanging off the left edge. */
+.card { text-align: center; flex: 0 1 340px; }
 
 .card h3 {
   color: var(--leaf-bright);
@@ -435,20 +436,21 @@ header {
 .section-lede {
   text-align: center;
   color: var(--gray);
-  max-width: 58ch;
+  max-width: 820px;
   margin: 0 auto var(--gap-lg);
   font-size: 1.0625rem;
 }
 
 .future-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: var(--gap-lg);
   max-width: var(--page);
   margin: 0 auto;
 }
 
-.future-card { text-align: center; }
+.future-card { text-align: center; flex: 0 1 340px; }
 
 .future-card h3 {
   color: var(--white);
@@ -464,7 +466,8 @@ header {
   margin-bottom: 6px;
 }
 
-.future-card .future-label {
+.future-card .future-label,
+.card .future-label {
   display: inline-block;
   color: var(--leaf-bright);
   font-size: 0.8rem;
@@ -533,7 +536,7 @@ header {
 }
 
 /* Every hero is darker than the page, so its own text colours are named once
-   here rather than inline on each paragraph — which is what the site used to
+   here rather than inline on each paragraph, which is what the site used to
    do, sixty-seven times, in colours written for a ground that has now changed
    twice. */
 .page-hero p, .sports-hero p, .gaming-hero p,
@@ -642,7 +645,7 @@ select {
 }
 
 /* The old ring was #22cc00 drawn ON a #b8b8b8 field: 1.09:1, invisible. The
-   cause is the geometry, not the colour — no colour clears 3:1 against
+   cause is the geometry, not the colour, no colour clears 3:1 against
    #b8b8b8 (#6FD65F is 1.08:1, #4AB73C 1.30:1, even amber #FFD24A only
    1.38:1). Offsetting it by 3px puts both of the ring's edges against the
    page ground, where --leaf-bright is 5.93:1. */
@@ -943,11 +946,11 @@ td.td-hl { background: #eecc00 !important; color: #000 !important; font-weight: 
 
    (1) The rebuild stripped three inline text colours from each card and
        left `style="background:#333"` in place, so the list inherited the
-       body colour and drew near-black on dark grey — measured 1.26:1,
+       body colour and drew near-black on dark grey, measured 1.26:1,
        against the 4.5:1 the standard asks. Not low contrast: unreadable.
    (2) The grid was inline `repeat(3,1fr)`, and an inline style beats every
        media query, so on a 375px phone each card was 98px wide with a 42px
-       line box — about six characters. "Educational" did not fit on a line.
+       line box, about six characters. "Educational" did not fit on a line.
 
    Colours that live in a stylesheet cannot be stripped by a palette pass,
    and a grid that lives in a stylesheet can be collapsed on a phone. */
@@ -995,7 +998,7 @@ td.td-hl { background: #eecc00 !important; color: #000 !important; font-weight: 
 }
 
 /* Now / next / later, said with the border and the heading rather than with
-   three shades of grey text — the old Phase 3 heading was #888 on #333,
+   three shades of grey text, the old Phase 3 heading was #888 on #333,
    3.56:1, which already failed before any of this. */
 .roadmap-card.phase-1 { border-left-color: var(--leaf); }
 .roadmap-card.phase-1 .roadmap-phase { color: var(--leaf-bright); }
@@ -1116,7 +1119,7 @@ footer {
 
 .footer-social a:hover { color: var(--leaf-bright); background: rgba(74, 183, 60, 0.16); }
 
-/* 9.65:1 on --bg-3. It used to be #555 on #252525, which is 2.06:1 — and it
+/* 9.65:1 on --bg-3. It used to be #555 on #252525, which is 2.06:1, and it
    is the line carrying the phone number and the email. */
 .footer-copy { color: var(--gray); font-size: 0.92rem; }
 
@@ -1125,12 +1128,12 @@ footer {
   .nav-left { display: none; }
   .hamburger { display: flex; }
   .nav-wrapper { grid-template-columns: 1fr auto 1fr; padding: 6px 12px; }
-  /* The same three links sit in the mobile menu, so nothing is lost — and
+  /* The same three links sit in the mobile menu, so nothing is lost, and
      five 44px targets plus a logo do not fit on a phone. */
   .nav-right a { display: none; }
   .site-logo { padding: 0 8px; }
   .site-logo img { width: 124px; }
-  .cards-grid, .future-grid { grid-template-columns: 1fr 1fr; }
+  .card, .future-card { flex-basis: 300px; }
   .careers-grid { grid-template-columns: 1fr 1fr; }
   .store-products { grid-template-columns: 1fr 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
@@ -1146,7 +1149,8 @@ footer {
   .cards-section, .future-section, .bottom-forms-section, .social-intro,
   .careers-grid, .store-products, .social-feed-grid,
   .roadmap, .roadmap-list { padding-left: 14px; padding-right: 14px; }
-  .cards-grid, .future-grid { grid-template-columns: 1fr; max-width: 400px; }
+  .cards-grid, .future-grid { max-width: 400px; }
+  .card, .future-card { flex-basis: 100%; }
   .careers-grid { grid-template-columns: 1fr; }
   .store-products { grid-template-columns: 1fr; max-width: 360px; }
   .form-row { grid-template-columns: 1fr; }
