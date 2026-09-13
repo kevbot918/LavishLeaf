@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Report a Problem — Symphonymph</title>
+  <meta name="description" content="Tell us what went wrong in Symphonymph, or what you would like it to do.">
+  <!-- Not a page anyone should arrive at from a search: it is the destination
+       of a button inside the app, and of the same form posted by the app
+       itself. Netlify registers the `app-report` form from this markup, which
+       is why the form must exist in deployed HTML even though most
+       submissions will never come from this page. -->
+  <meta name="robots" content="noindex, follow">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sriracha&family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+
+<header>
+  <div class="nav-wrapper">
+    <nav class="nav-left">
+      <a href="farms.html">Farms</a>
+      <a href="rec-sports.html">Rec Sports</a>
+      <a href="gaming.html">Gaming</a>
+      <a href="symphonymph.html" class="active">Symphonymph</a>
+      <a href="store.html">Store</a>
+      <a href="careers.html">Careers</a>
+      <a href="social.html">Social</a>
+    </nav>
+    <a href="index.html" class="site-logo" aria-label="Lavish Leaf home"><img src="logo-oval.png" alt="Lavish Leaf" width="138" height="94"></a>
+    <div class="nav-right">
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="https://www.facebook.com/LavishLeafInc" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/lavish_leaf_inc" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="mailto:support@lavishleaf.org" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="farms.html">Farms</a>
+    <a href="rec-sports.html">Rec Sports</a>
+    <a href="gaming.html">Gaming</a>
+    <a href="symphonymph.html">Symphonymph</a>
+    <a href="store.html">Store</a>
+    <a href="careers.html">Careers</a>
+    <a href="social.html">Social</a>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <h1 class="page-hero-title">
+    <span class="ph-white">Tell Us</span>
+    <span class="ph-green"><em>What Happened</em></span>
+  </h1>
+  <p>A bug, a station that will not play, an idea you would like built. It reaches one person, and that person reads all of it.</p>
+</section>
+
+<section class="content-section">
+  <h2>Before you write</h2>
+  <p>If a single recording will not play, it is usually the archive that holds it
+  rather than the app &mdash; Symphonymph never keeps a copy, so when a library moves
+  a file the link goes with it. Telling us which recording is exactly what we need to
+  hear: those get fixed by pointing the app somewhere better.</p>
+  <p>If you are sending this from the app itself, the version, your Android version
+  and your phone model are attached automatically. From this page, please say what
+  they are &mdash; you will find them in the app under Settings, at the very bottom.</p>
+
+  <form name="app-report" data-netlify="true" netlify-honeypot="website" onsubmit="handleReport(event)">
+    <input type="hidden" name="form-name" value="app-report">
+    <!-- Honeypot: a real person never fills this in, and a bot always does.
+         Hidden from everyone, including screen readers. -->
+    <p hidden aria-hidden="true"><label>Leave this empty <input name="website"></label></p>
+
+    <div class="form-group">
+      <label class="form-label" for="r-kind">What kind of message is this? <span class="req">(required)</span></label>
+      <select id="r-kind" name="kind" required>
+        <option value="">Choose one&hellip;</option>
+        <option value="bug">Something is broken</option>
+        <option value="playback">A recording or station will not play</option>
+        <option value="idea">An idea or a request</option>
+        <option value="content">Something that should not be in the app</option>
+        <option value="other">Something else</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="r-message">What happened? <span class="req">(required)</span></label>
+      <textarea id="r-message" name="message" required placeholder="What you did, what you expected, and what happened instead."></textarea>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="r-email">Your email (optional)</label>
+      <input type="email" id="r-email" name="email">
+      <p style="font-size:0.85rem; margin-top:6px;">Only so we can reply or ask a follow-up question. It is never added to a mailing list.</p>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label" for="r-version">App version, Android version, phone</label>
+      <input type="text" id="r-version" name="device" placeholder="e.g. 1.0.0, Android 14, Pixel 8">
+    </div>
+
+    <div style="margin-top:20px;">
+      <button type="submit" class="btn">Send</button>
+    </div>
+  </form>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="symphonymph.html">Symphonymph</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="index.html">Lavish Leaf</a>
+  </div>
+  <div class="footer-copy">
+    &copy; <span id="year"></span> Lavish Leaf Inc &nbsp;|&nbsp; <a href="mailto:support@lavishleaf.org">support@lavishleaf.org</a>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() { var n = document.getElementById('mobileNav'); if (n) n.classList.toggle('open'); }
+  function handleReport(e) {
+    e.preventDefault();
+    var f = e.target;
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(new FormData(f)).toString()
+    }).then(function () {
+      f.innerHTML = "<p class=\"form-success\">Thank you &mdash; that reached us. If you left an email we will reply.</p>";
+    }).catch(function () {
+      alert("There was a problem sending that. Please email support@lavishleaf.org instead.");
+    });
+  }
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
