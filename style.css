@@ -85,17 +85,32 @@
   --input-bg: var(--field);
   --card-bg: var(--card);
 
-  --gap-xl: 88px;
+  --gap-xl: 64px;
   --gap-lg: 44px;
   --gap-md: 22px;
 
-  /* Was 65ch. The owner's note on 2026-09-13 is about desktop and tablet,
-     where a 65-character column inside a 1200px window leaves most of the
-     window empty and makes every page taller than it needs to be. 90ch is
-     about 760px at 17px — longer than a typographer would choose and shorter
-     than a full-width line, which is the trade being made deliberately. On a
-     phone this cap never binds, so nothing there gets worse. */
-  --measure: 90ch;
+  /* The owner, 2026-09-13: "a lot of the text areas leave tons of space right
+     and left so it ends up making the users scroll more than they have to."
+
+     Two numbers settle this, both measured in a browser with the real font
+     loaded rather than estimated. (1) 1ch in Nunito Sans is the "0" advance
+     = 10.2px at 17px = exactly 0.600em, while the average character in this
+     site's prose is 0.44em — so a `ch` cap overstates the real line by 36%,
+     and the pre-rebuild 65ch was really 88 characters, not 65. (2) The
+     scrolling is NOT mostly the column: at a 1280px viewport the vertical
+     section padding is 1054px of the farms page's 3079px (34%) and 1602px
+     of the Symphonymph page's 8434px (19%).
+
+     So the height comes off --gap-xl below, where it costs nothing.
+
+     The column itself goes back to roughly what this site has always had.
+     Before any of this the rule was .content-section max-width 900px with no
+     per-paragraph cap, which is an 860px line — about 115 characters. A
+     typographer would call that long, and the owner has been reading it for
+     months and asked for WIDER, not narrower, so 85ch (867px, ~116
+     characters) is the honest answer: what they had, kept. Last night I gave
+     them 663px and that is the thing they complained about. */
+  --measure: 85ch;
   --page: 1180px;
 
   --shadow-sm: inset 0 1px 0 rgba(255, 255, 255, 0.07);
@@ -312,7 +327,9 @@ header {
 
 .home-hero p {
   color: var(--gray);
-  max-width: 68ch;
+  /* Centred, so shorter than --measure on purpose: 54ch is 565px ≈ 75
+     characters, where this was running 91. */
+  max-width: 54ch;
   margin: 0 auto 32px;
   font-size: 1.09rem;
 }
@@ -418,7 +435,7 @@ header {
 .section-lede {
   text-align: center;
   color: var(--gray);
-  max-width: 74ch;
+  max-width: 58ch;
   margin: 0 auto var(--gap-lg);
   font-size: 1.0625rem;
 }
@@ -527,7 +544,7 @@ header {
 .page-hero strong, .sports-hero strong, .gaming-hero strong { color: var(--white); }
 .page-hero a:not(.btn), .sports-hero a:not(.btn), .gaming-hero a:not(.btn) { color: var(--leaf-bright); }
 
-.page-hero > p { max-width: 70ch; margin: 16px auto 0; }
+.page-hero > p { max-width: 58ch; margin: 16px auto 0; }
 
 /* ===== GENERIC CONTENT ========================================= */
 /* Wider than it was. Prose is left-aligned and capped at --measure; centred
@@ -552,6 +569,9 @@ header {
   line-height: 1.7;
   max-width: var(--measure);
 }
+
+.content-section ul,
+.content-section ol { max-width: var(--measure); }
 
 .content-section strong { color: var(--white); }
 .content-section .btn { margin-top: 18px; }
@@ -677,7 +697,7 @@ textarea { min-height: 115px; resize: vertical; }
 .careers-header { text-align: center; padding: var(--gap-lg) 20px 0; }
 
 .careers-header h2 { color: var(--leaf-bright); font-weight: 800; font-size: 1.95rem; margin-bottom: 10px; }
-.careers-header p { color: var(--gray); max-width: 74ch; margin: 0 auto; }
+.careers-header p { color: var(--gray); max-width: 58ch; margin: 0 auto; }
 
 .careers-grid {
   display: grid;
@@ -831,7 +851,16 @@ textarea { min-height: 115px; resize: vertical; }
 .league-info p { color: var(--gray); font-size: 1.0625rem; line-height: 1.7; margin-bottom: 14px; max-width: var(--measure); }
 .league-info strong { color: var(--white); }
 
-.reg-cards { display: flex; flex-direction: column; gap: 16px; max-width: 760px; margin: var(--gap-md) auto; }
+/* Two up on desktop. As a single 760px column this left 520px of a 1280px
+   window empty down one side, which is the kind of gap that reads as a
+   mistake rather than as breathing room. */
+.reg-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 1040px;
+  margin: var(--gap-md) auto;
+}
 
 .reg-card {
   background: var(--card);
@@ -849,8 +878,10 @@ textarea { min-height: 115px; resize: vertical; }
 /* The section scrolls sideways, because the HTML has no inner wrapper to give
    that job to and a standings table is wider than a phone. The page body must
    never be the thing that scrolls. */
+/* Wider than everything else, deliberately: the content is a spreadsheet
+   embed and a standings table, and both use every pixel they are given. */
 .standings-section {
-  max-width: 1180px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: var(--gap-md) 20px var(--gap-xl);
   overflow-x: auto;
@@ -1121,7 +1152,12 @@ footer {
   .form-row { grid-template-columns: 1fr; }
   .social-feed-grid { grid-template-columns: 1fr; max-width: 360px; }
   .page-hero-title { flex-direction: column; gap: 4px; align-items: center; }
-  .reg-cards { padding: 0; }
+  .reg-cards { padding: 0; grid-template-columns: 1fr; }
+  /* A phone loses its width to nested box edges, not to the section: a
+     .service-card was 375 - 14 - 24 - 24 - 14 = 299px of line. */
+  .service-card, .career-col, .reg-card, .roadmap-card, .note-panel,
+  .social-post, .product-card { padding-left: 14px; padding-right: 14px; }
+  .note-panel { padding-top: 14px; padding-bottom: 14px; }
   .app-mark { width: 116px; }
   .oval-logo { width: 200px; }
   :root { --gap-xl: 52px; --gap-lg: 30px; --gap-md: 18px; }
