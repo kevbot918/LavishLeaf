@@ -466,8 +466,7 @@ header {
   margin-bottom: 6px;
 }
 
-.future-card .future-label,
-.card .future-label {
+.future-card .future-label {
   display: inline-block;
   color: var(--leaf-bright);
   font-size: 0.8rem;
@@ -549,6 +548,18 @@ header {
 
 .page-hero > p { max-width: 58ch; margin: 16px auto 0; }
 
+/* The division's vision, sitting under the title inside the hero. The owner,
+   2026-09-13: "I like how you have the vision at the top of the Gaming page
+   and the Symphonymph page with the vision below the headers, lets move the
+   vision for the farms and rec sports to the same location as those." */
+p.hero-lede {
+  max-width: 800px;
+  margin: 22px auto 0;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+.hero-lede + .btn { margin-top: 26px; }
+
 /* ===== GENERIC CONTENT ========================================= */
 /* Wider than it was. Prose is left-aligned and capped at --measure; centred
    body copy over more than two lines gives the eye no return point. */
@@ -578,6 +589,8 @@ header {
 
 .content-section strong { color: var(--white); }
 .content-section .btn { margin-top: 18px; }
+
+p.p-center { text-align: center; margin-left: auto; margin-right: auto; }
 
 .content-section.centered { text-align: center; }
 .content-section.centered p { margin-left: auto; margin-right: auto; }
