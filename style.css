@@ -1187,5 +1187,6 @@ footer {
    spaced far apart so they read as two separate downloads. */
 .quiet-links { display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: 16px 56px; font-size: 0.7rem; margin: 0; padding: 14px 20px 18px; color: var(--gray); opacity: 0.7; }
 .quiet-note { flex-basis: 100%; text-align: center; font-size: 0.65rem; letter-spacing: 0.04em; }
+.quiet-note:last-child { max-width: 46ch; margin: 0 auto; letter-spacing: 0; line-height: 1.5; }
 .quiet-links a { color: var(--gray); text-decoration: none; }
 .quiet-links a:hover, .quiet-links a:focus-visible { color: var(--leaf-bright); text-decoration: underline; }
