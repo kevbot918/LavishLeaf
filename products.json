@@ -1,0 +1,50 @@
+{
+  "_help": [
+    "The ONE place a product, its price and its checkout link live.",
+    "Edit this file, then run:  node tools/render-store.mjs",
+    "That rewrites the Store page cards and every button marked data-product on every page.",
+    "price and oldPrice are in CENTS (2500 = $25.00). interval is 'month' or 'year' for a subscription, or null for a one-off.",
+    "payLink is the checkout URL. Paste any provider's link (Stripe, PayPal, Square) by hand, OR let tools/sync-stripe.mjs create Stripe links for you.",
+    "An empty payLink falls back to an email to support@lavishleaf.org with emailSubject, which is what every button did before.",
+    "active:false hides a product from the Store page and turns its buttons elsewhere back into the email fallback.",
+    "Fields starting stripe are written by the sync script. Leave them alone."
+  ],
+  "products": [
+    {
+      "id": "compost-monthly",
+      "name": "Compost Pick-up",
+      "icon": "🌱",
+      "price": 2000,
+      "oldPrice": null,
+      "interval": "month",
+      "button": "Sign Up",
+      "emailSubject": "Compost Pick-Up Sign Up",
+      "payLink": "",
+      "active": true
+    },
+    {
+      "id": "soccer-player-fall",
+      "name": "Player Registration: 7v7 Adult Soccer League (Fall Season)",
+      "icon": "⚽",
+      "price": 2500,
+      "oldPrice": 3000,
+      "interval": null,
+      "button": "Player Registration",
+      "emailSubject": "Player Registration - 7v7 Adult Soccer Fall Season",
+      "payLink": "",
+      "active": true
+    },
+    {
+      "id": "soccer-team-fall",
+      "name": "Team Registration: 7v7 Adult Soccer",
+      "icon": "⚽",
+      "price": 25000,
+      "oldPrice": 30000,
+      "interval": null,
+      "button": "Team Registration",
+      "emailSubject": "Team Registration - 7v7 Adult Soccer",
+      "payLink": "",
+      "active": true
+    }
+  ]
+}

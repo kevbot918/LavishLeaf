@@ -1,0 +1,6 @@
+# This repository IS the public website: Netlify publishes its root. Anything
+# committed here can be downloaded by anyone. Secrets live in .env, which is
+# never committed.
+.env
+.env.*
+node_modules/
