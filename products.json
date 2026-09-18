@@ -3,11 +3,10 @@
     "The ONE place a product, its price and its checkout link live.",
     "Edit this file, then run:  node tools/render-store.mjs",
     "That rewrites the Store page cards and every button marked data-product on every page.",
-    "price and oldPrice are in CENTS (2500 = $25.00). interval is 'month' or 'year' for a subscription, or null for a one-off.",
-    "payLink is the checkout URL. Paste any provider's link (Stripe, PayPal, Square) by hand, OR let tools/sync-stripe.mjs create Stripe links for you.",
+    "price and oldPrice are in CENTS (2500 = $25.00). interval is \"month\" or \"year\" for a subscription, or null for a one-off.",
+    "payLink is the checkout URL: paste the Squarespace or PayPal pay link for that product.",
     "An empty payLink falls back to an email to support@lavishleaf.org with emailSubject, which is what every button did before.",
-    "active:false hides a product from the Store page and turns its buttons elsewhere back into the email fallback.",
-    "Fields starting stripe are written by the sync script. Leave them alone."
+    "active:false hides a product from the Store page and turns its buttons elsewhere back into the email fallback."
   ],
   "products": [
     {
