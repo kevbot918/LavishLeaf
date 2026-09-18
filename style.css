@@ -1183,6 +1183,9 @@ footer {
 /* Two test-build links on the Symphonymph page, for friends before the Play
    listing (owner, 2026-09-18: "very subtle... just two links"). Small and
    grey, no description. */
-.quiet-links { text-align: center; font-size: 0.75rem; margin: 0; padding: 18px 20px 22px; color: var(--gray); }
+/* The two test-build APKs, for friends. Deliberately faint and small, and
+   spaced far apart so they read as two separate downloads. */
+.quiet-links { display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: 6px 56px; font-size: 0.7rem; margin: 0; padding: 14px 20px 18px; color: var(--gray); opacity: 0.7; }
+.quiet-note { flex-basis: 100%; text-align: center; font-size: 0.65rem; letter-spacing: 0.04em; }
 .quiet-links a { color: var(--gray); text-decoration: none; }
 .quiet-links a:hover, .quiet-links a:focus-visible { color: var(--leaf-bright); text-decoration: underline; }
