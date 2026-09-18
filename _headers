@@ -1,0 +1,6 @@
+# Test builds for friends, linked quietly from /symphonymph. Kept out of
+# search results, and served as Android packages so a phone offers to install.
+/downloads/*
+  X-Robots-Tag: noindex, nofollow
+  Content-Type: application/vnd.android.package-archive
+  Content-Disposition: attachment
