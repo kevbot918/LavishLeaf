@@ -1,0 +1,22 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "org.lavishleaf.symphonymph",
+      "sha256_cert_fingerprints": [
+        "B6:06:CD:DA:7B:D4:EB:72:CE:B0:0A:4D:9E:AF:85:31:AE:B7:7B:87:EF:51:E4:4B:E4:73:4F:3B:74:CD:DA:D4"
+      ]
+    }
+  },
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "org.lavishleaf.symphonymph.personal",
+      "sha256_cert_fingerprints": [
+        "B6:06:CD:DA:7B:D4:EB:72:CE:B0:0A:4D:9E:AF:85:31:AE:B7:7B:87:EF:51:E4:4B:E4:73:4F:3B:74:CD:DA:D4"
+      ]
+    }
+  }
+]

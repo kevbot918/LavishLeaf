@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Shared Playlist: Symphonymph</title>
+  <meta name="description" content="A playlist somebody shared from Symphonymph, the free audio app.">
+  <!-- Not a page anyone should arrive at from a search: it is the destination
+       of a button inside the app, and of the same form posted by the app
+       itself. Netlify registers the `app-report` form from this markup, which
+       is why the form must exist in deployed HTML even though most
+       submissions will never come from this page. -->
+  <meta name="robots" content="noindex, follow">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sriracha&family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+
+<header>
+  <div class="nav-wrapper">
+    <nav class="nav-left">
+      <a href="farms.html">Farms</a>
+      <a href="rec-sports.html">Rec Sports</a>
+      <a href="gaming.html">Gaming</a>
+      <a href="symphonymph.html" class="active">Symphonymph</a>
+      <a href="store.html">Store</a>
+      <a href="careers.html">Careers</a>
+      <a href="social.html">Social</a>
+    </nav>
+    <div class="nav-social-left" aria-label="Lavish Leaf elsewhere">
+      <a href="https://www.facebook.com/LavishLeafInc" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/lavish_leaf_inc" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+    <a href="index.html" class="site-logo" aria-label="Lavish Leaf home"><img src="logo-oval.png" alt="Lavish Leaf" width="138" height="94"></a>
+    <div class="nav-right">
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="https://www.facebook.com/LavishLeafInc" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/lavish_leaf_inc" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a class="m-keep" href="https://www.youtube.com/@lavishleaf" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      <a class="m-keep" href="mailto:support@lavishleaf.org" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="farms.html">Farms</a>
+    <a href="rec-sports.html">Rec Sports</a>
+    <a href="gaming.html">Gaming</a>
+    <a href="symphonymph.html">Symphonymph</a>
+    <a href="store.html">Store</a>
+    <a href="careers.html">Careers</a>
+    <a href="social.html">Social</a>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <h1 class="page-hero-title">
+    <span class="ph-white">A Shared</span>
+    <span class="ph-green"><em>Playlist</em></span>
+  </h1>
+  <p id="pl-lede">Somebody shared a playlist from Symphonymph with you.</p>
+</section>
+
+<section class="content-section">
+  <h2 id="pl-name">Opening the playlist&hellip;</h2>
+  <p id="pl-count"></p>
+  <div id="pl-actions" style="display:flex; flex-wrap:wrap; gap:12px; margin:18px 0;" hidden>
+    <a id="pl-open" class="btn" href="#">Open in Symphonymph</a>
+    <button id="pl-copy" class="btn" type="button">Copy this link</button>
+    <a class="btn" href="symphonymph.html">Get Symphonymph</a>
+  </div>
+  <p id="pl-help" hidden>No Symphonymph yet? It is free, has no ads and needs no account.
+  Install it from the Symphonymph page, then tap <strong>Open in Symphonymph</strong> here,
+  or copy this link and paste it into the app&rsquo;s Search.</p>
+  <ol id="pl-items" style="line-height:1.6;"></ol>
+  <p style="font-size:0.85rem;">Only the list travels. Every recording still plays from
+  the archive, station or artist that publishes it; nothing is copied or hosted here, and
+  this page never sends the list anywhere (it lives after the # in the link, which
+  browsers keep to themselves).</p>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="symphonymph.html">Symphonymph</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="index.html">Lavish Leaf</a>
+  </div>
+  <div class="footer-copy">
+    &copy; <span id="year"></span> Lavish Leaf Inc &nbsp;|&nbsp; <a href="mailto:support@lavishleaf.org">support@lavishleaf.org</a> &nbsp;|&nbsp; <a href="privacy.html">Privacy</a>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() { var n = document.getElementById("mobileNav"); if (n) n.classList.toggle("open"); }
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // The playlist is after the #: "1.<zlib, base64url>" (see the app's
+  // lib/core/playlist_share.dart). Decoded here, in the browser, and never sent.
+  var names = { librivox: "LibriVox", podcastIndex: "Podcast Index", audius: "Audius",
+    ccMixter: "ccMixter", youtubePersonal: "YouTube", youtubeMusic: "YouTube Music",
+    soundcloud: "SoundCloud", radioBrowser: "Radio Browser", somaFm: "SomaFM",
+    liveMusicArchive: "Live Music Archive", wikimediaCommons: "Wikimedia Commons",
+    openverse: "Openverse", jamendo: "Jamendo", funkwhale: "open.audio" };
+  function web(u) { try { var x = new URL(u); return (x.protocol === "https:" || x.protocol === "http:") ? x.href : null; } catch (e) { return null; } }
+  function fail(msg) { document.getElementById("pl-name").textContent = msg; }
+  function b64(s) { s = s.replace(/-/g, "+").replace(/_/g, "/"); while (s.length % 4) s += "="; var bin = atob(s); var a = new Uint8Array(bin.length); for (var i = 0; i < bin.length; i++) a[i] = bin.charCodeAt(i); return a; }
+
+  (function () {
+    var m = location.hash.match(/^#(\d+)\.([A-Za-z0-9_\-]+)$/);
+    if (!m) { fail("This link has no playlist in it."); return; }
+    if (m[1] !== "1") { fail("This playlist was made by a newer Symphonymph."); return; }
+    document.getElementById("pl-open").href = "symphonymph://playlist?d=1." + m[2];
+    document.getElementById("pl-actions").hidden = false;
+    document.getElementById("pl-help").hidden = false;
+    document.getElementById("pl-copy").onclick = function () {
+      navigator.clipboard.writeText(location.href).then(function () {
+        document.getElementById("pl-copy").textContent = "Copied";
+      });
+    };
+    if (typeof DecompressionStream === "undefined") {
+      fail("This browser cannot show the list, but the app can open it.");
+      return;
+    }
+    var stream = new Blob([b64(m[2])]).stream().pipeThrough(new DecompressionStream("deflate"));
+    new Response(stream).text().then(function (text) {
+      var p = JSON.parse(text);
+      if (!p || p.sym !== "playlist" || !Array.isArray(p.items)) throw new Error("not a playlist");
+      document.getElementById("pl-name").textContent = String(p.name || "Shared playlist");
+      document.getElementById("pl-count").textContent = p.items.length + (p.items.length === 1 ? " item" : " items");
+      var ol = document.getElementById("pl-items");
+      p.items.slice(0, 1000).forEach(function (it) {
+        var li = document.createElement("li");
+        var page = web(it.p);
+        var t = String(it.t || "Untitled");
+        if (page) {
+          var a = document.createElement("a"); a.href = page; a.rel = "noopener nofollow"; a.target = "_blank";
+          a.textContent = t; li.appendChild(a);
+        } else { li.appendChild(document.createTextNode(t)); }
+        var rest = [];
+        if (it.a) rest.push(String(it.a));
+        rest.push(names[it.s] || String(it.s || ""));
+        li.appendChild(document.createTextNode(" · " + rest.join(" · ")));
+        ol.appendChild(li);
+      });
+    }).catch(function () { fail("This link is damaged or incomplete."); });
+  })();
+</script>
+</body>
+</html>

@@ -470,7 +470,7 @@
   </div>
 </section>
 
-<p class="quiet-links"><span class="quiet-note">Android only &middot; version 1.0.6</span><a href="downloads/symphonymph-1.0.6.apk" rel="nofollow" download>Symphonymph 1.0.6</a><a href="downloads/symphonymph-alpha-1.0.6.apk" rel="nofollow" download>Symphonymph Alpha 1.0.6</a><span class="quiet-note">Updating? Save a backup first (Settings &gt; Backup), uninstall the older version, then install this one and restore your backup. Your version is in Settings &gt; About.</span></p>
+<p class="quiet-links"><span class="quiet-note" id="build-line">Android only &middot; version 1.0.6</span><a href="downloads/symphonymph-1.0.6.apk" rel="nofollow" download>Symphonymph 1.0.6</a><a href="downloads/symphonymph-alpha-1.0.6.apk" rel="nofollow" download>Symphonymph Alpha 1.0.6</a><span class="quiet-note">Updating? Save a backup first (Settings &gt; Backup), uninstall the older version, then install this one and restore your backup. Your version is in Settings &gt; About.</span></p>
 
 <footer>
   <div class="footer-links">
@@ -495,6 +495,14 @@
 
 <script src="donate.js"></script>
 <script>
+  // The build time beside the download links, in the visitor's own clock, so it
+  // reads the same as Settings > About on their phone. The markup carries the
+  // US Central time as a fallback for anyone without scripts.
+  document.querySelectorAll("time[data-local]").forEach(function (t) {
+    var d = new Date(t.getAttribute("datetime"));
+    if (isNaN(d)) return;
+    t.textContent = d.toLocaleString("en-US", { month: "short", day: "numeric", year: "numeric", hour: "numeric", minute: "2-digit", timeZoneName: "short" }).replace(/, (d+:)/, " at $1");
+  });
   function toggleMenu() { document.getElementById('mobileNav').classList.toggle('open'); }
   function postForm(f, successHtml) {
     fetch("/", {

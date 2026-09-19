@@ -10,3 +10,18 @@
 /withdrawn.json
   Cache-Control: public, max-age=3600
   Content-Type: application/json; charset=utf-8
+
+# Android reads this to let Symphonymph open lavishleaf.org/p links (shared
+# playlists) itself instead of the browser. Must be JSON, and never redirected.
+/.well-known/assetlinks.json
+  Content-Type: application/json
+  Cache-Control: public, max-age=3600
+
+# A shared playlist lives after the # in its link; this page reads it in the
+# browser. No referrer leaves it, and it is not for search engines.
+/p
+  Referrer-Policy: no-referrer
+  X-Robots-Tag: noindex
+/p.html
+  Referrer-Policy: no-referrer
+  X-Robots-Tag: noindex
