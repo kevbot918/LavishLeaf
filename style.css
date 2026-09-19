@@ -232,6 +232,23 @@ header {
 
 .nav-right a:hover { color: var(--leaf-bright); background: rgba(74, 183, 60, 0.16); }
 
+/* On a phone the page links live in the menu, so the left of the logo is free:
+   Facebook and Instagram sit there, YouTube and Email stay on the right beside
+   the menu button, and none of the four clutter the menu (owner, 2026-09-18). */
+.nav-social-left { display: none; grid-column: 1; align-items: center; gap: 2px; }
+.nav-social-left a {
+  color: var(--white);
+  font-size: 1.05rem;
+  text-decoration: none;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.nav-social-left a:hover { color: var(--leaf-bright); background: rgba(74, 183, 60, 0.16); }
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -494,16 +511,14 @@ header {
   line-height: 1.1;
 }
 
+/* Page titles are not underlined: the Rec Sports title never was, and the
+   owner asked for every title to match it (2026-09-18). */
 .ph-white {
   color: var(--white);
-  border-bottom: 2px solid var(--white);
-  padding-bottom: 8px;
 }
 
 .ph-green {
   color: var(--white);
-  border-bottom: 2px solid var(--leaf);
-  padding-bottom: 8px;
 }
 
 .ph-green em { color: var(--leaf-bright); font-style: italic; }
@@ -1144,6 +1159,9 @@ footer {
   /* The same three links sit in the mobile menu, so nothing is lost, and
      five 44px targets plus a logo do not fit on a phone. */
   .nav-right a { display: none; }
+  .nav-social-left { display: flex; }
+  .nav-right a.m-keep { display: inline-flex; }
+  .nav-social-left a, .nav-right a.m-keep { width: 40px; height: 40px; }
   .site-logo { padding: 0 8px; }
   .site-logo img { width: 124px; }
   .card, .future-card { flex-basis: 300px; }
@@ -1190,3 +1208,8 @@ footer {
 .quiet-note:last-child { max-width: 46ch; margin: 0 auto; letter-spacing: 0; line-height: 1.5; }
 .quiet-links a { color: var(--gray); text-decoration: none; }
 .quiet-links a:hover, .quiet-links a:focus-visible { color: var(--leaf-bright); text-decoration: underline; }
+
+/* Very narrow phones: two 40px icons either side of the logo no longer fit. */
+@media (max-width: 359px) {
+  .nav-social-left, .nav-right a.m-keep { display: none; }
+}
