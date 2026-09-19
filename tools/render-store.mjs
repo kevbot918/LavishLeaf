@@ -16,6 +16,16 @@
 //      one card per active product.
 //   2. Any <a ... data-product="ID" ...> on any page: its href, so the
 //      rec-sports and farms buttons check out through the same link.
+//   3. netlify/lib/catalog.mjs: the prices the checkout functions trust.
+//
+// Two checkout modes, chosen by "checkout" at the top of products.json:
+//   "links" (the default): each button goes to its payLink, or an email.
+//   "cart": one-off products get "Add to cart" and check out together
+//           through PayPal (netlify/functions/checkout.mjs); a product with
+//           an interval gets a Subscribe button (subscribe.mjs). Buttons on
+//           other pages go to the Store with the product added. Turn it on
+//           only once PayPal's keys are in Netlify and a sandbox order has
+//           gone through; until then "links" keeps today's buttons.
 //
 // The site stays plain static HTML with no build step: this runs on the
 // owner's machine before a push, and what it writes is ordinary markup that
@@ -29,7 +39,9 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const CHECK = process.argv.includes('--check');
 const EMAIL = 'support@lavishleaf.org';
 
-const { products } = JSON.parse(readFileSync(join(ROOT, 'products.json'), 'utf8'));
+const { products, checkout = 'links' } = JSON.parse(readFileSync(join(ROOT, 'products.json'), 'utf8'));
+if (!['links', 'cart'].includes(checkout)) throw new Error('checkout must be "links" or "cart"');
+const CART = checkout === 'cart';
 
 // ------------------------------------------------------------------ validate
 // A typo here reaches paying customers, so refuse rather than guess.
@@ -45,6 +57,11 @@ for (const p of products) {
   }
   if (![null, undefined, 'month', 'year'].includes(p.interval)) throw new Error(`${where}: interval must be "month", "year" or null`);
   if (p.payLink && !/^https:\/\//.test(p.payLink)) throw new Error(`${where}: payLink must start with https://`);
+  for (const f of ['paypalPlanId', 'paypalSandboxPlanId']) {
+    if (p[f] != null && p[f] !== '' && !/^P-[A-Z0-9]+$/.test(p[f])) {
+      throw new Error(`${where}: ${f} looks wrong (PayPal plan ids start with P-)`);
+    }
+  }
   for (const f of ['name', 'button', 'emailSubject']) {
     if (typeof p[f] !== 'string' || !p[f].trim()) throw new Error(`${where}: ${f} is required`);
   }
@@ -72,14 +89,25 @@ function priceLine(p) {
 }
 
 function card(p) {
+  const button = CART
+    ? p.interval
+      ? `    <button type="button" class="btn btn-sm" data-subscribe="${p.id}">${esc(p.button)}</button>`
+      : `    <button type="button" class="btn btn-sm" data-cart-add="${p.id}">Add to cart</button>`
+    : `    <a href="${esc(hrefFor(p))}"${linkAttrs(p)} class="btn btn-sm" data-product="${p.id}">${esc(p.button)}</a>`;
   return [
     '  <div class="product-card">',
     `    <div class="product-img">${esc(p.icon || '')}</div>`,
     `    <h3>${esc(p.name)}</h3>`,
     `    <div class="product-price">${priceLine(p)}</div>`,
-    `    <a href="${esc(hrefFor(p))}"${linkAttrs(p)} class="btn btn-sm" data-product="${p.id}">${esc(p.button)}</a>`,
+    button,
     '  </div>',
   ].join('\n');
+}
+
+/** In cart mode a button on another page goes to the Store, product added. */
+function cartHref(p) {
+  if (!p || p.active === false) return hrefFor(null);
+  return p.interval ? `store.html?subscribe=${p.id}` : `store.html?add=${p.id}`;
 }
 
 const byId = new Map(products.map((p) => [p.id, p]));
@@ -99,12 +127,21 @@ for (const file of readdirSync(ROOT).filter((f) => f.endsWith('.html'))) {
     s = s.slice(0, b + B.length) + '\n' + cards + '\n' + s.slice(e);
   }
 
+  // The cart script, on the Store page only and only in cart mode, so the
+  // links mode costs visitors nothing.
+  if (b >= 0 && e > b) {
+    const TAG = '<script src="cart.js" defer></script>\n';
+    if (CART && !s.includes(TAG)) s = s.replace('</body>', TAG + '</body>');
+    if (!CART) s = s.split(TAG).join('');
+  }
+
   // 2. Every tagged button, wherever it is. Only the href and the tab
   //    attributes are rewritten; the rest of the tag is the page's own.
   s = s.replace(/<a\b[^>]*\bdata-product="([a-z0-9-]+)"[^>]*>/g, (tag, id) => {
     const p = byId.get(id);
     if (!p) unknown.push(`${file}: data-product="${id}"`);
     let t = tag.replace(/\s+target="[^"]*"/g, '').replace(/\s+rel="[^"]*"/g, '');
+    if (CART) return t.replace(/\bhref="[^"]*"/, `href="${esc(cartHref(p))}"`);
     t = t.replace(/\bhref="[^"]*"/, `href="${esc(hrefFor(p))}"`);
     return t.replace(/^<a\b/, '<a' + linkAttrs(p));
   });
@@ -120,6 +157,38 @@ if (unknown.length) {
   process.exit(2);
 }
 
+// 3. The catalog the checkout functions price from. Only what they need.
+{
+  const catalog = {};
+  for (const p of products) {
+    catalog[p.id] = {
+      id: p.id,
+      name: p.name,
+      price: p.price,
+      interval: p.interval || null,
+      active: p.active !== false,
+      paypalPlanId: p.paypalPlanId || null,
+      paypalSandboxPlanId: p.paypalSandboxPlanId || null,
+    };
+  }
+  const path = join(ROOT, 'netlify', 'lib', 'catalog.mjs');
+  const text =
+    '// GENERATED by tools/render-store.mjs from products.json. Do not edit.\n' +
+    '// The checkout functions price every order from this, never from the browser.\n' +
+    'export const catalog = ' + JSON.stringify(catalog, null, 2) + ';\n';
+  let before = '';
+  try {
+    before = readFileSync(path, 'utf8');
+  } catch {
+    // Not generated yet.
+  }
+  if (before !== text) {
+    changed.push('netlify/lib/catalog.mjs');
+    if (!CHECK) writeFileSync(path, text);
+  }
+}
+
+console.log(`Checkout mode: ${checkout}.`);
 const linked = products.filter((p) => p.active !== false && p.payLink).length;
 const active = products.filter((p) => p.active !== false).length;
 console.log(`${active} active products, ${linked} with a checkout link, ${active - linked} falling back to email.`);

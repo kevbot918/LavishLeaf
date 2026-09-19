@@ -6,8 +6,11 @@
     "price and oldPrice are in CENTS (2500 = $25.00). interval is \"month\" or \"year\" for a subscription, or null for a one-off.",
     "payLink is the checkout URL: paste the Squarespace or PayPal pay link for that product.",
     "An empty payLink falls back to an email to support@lavishleaf.org with emailSubject, which is what every button did before.",
-    "active:false hides a product from the Store page and turns its buttons elsewhere back into the email fallback."
+    "active:false hides a product from the Store page and turns its buttons elsewhere back into the email fallback.",
+    "checkout (top level) is \"links\" (today: payLink or email) or \"cart\" (Add to cart and PayPal checkout through the Netlify functions). Leave it on \"links\" until PayPal's keys are in Netlify and a sandbox order has gone through.",
+    "paypalPlanId / paypalSandboxPlanId: the PayPal subscription plan for a product with an interval, in each PayPal environment. tools/paypal-plans.mjs creates them; do not type them by hand."
   ],
+  "checkout": "links",
   "products": [
     {
       "id": "compost-monthly",

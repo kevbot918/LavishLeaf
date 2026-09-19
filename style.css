@@ -1215,3 +1215,86 @@ footer {
 @media (max-width: 359px) {
   .nav-social-left, .nav-right a.m-keep { display: none; }
 }
+
+/* ===== CART (checkout "cart" mode only; see cart.js) ============ */
+/* A pill in the corner while something is in the cart. */
+.cart-fab {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 900;
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--leaf);
+  color: var(--ink);
+  font: 700 0.95rem 'Nunito Sans', system-ui, sans-serif;
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+}
+.cart-fab:hover { background: var(--leaf-bright); }
+.cart-fab[hidden] { display: none; }
+
+.cart-panel {
+  /* The global margin reset would pin a dialog to the top left. */
+  margin: auto;
+  width: min(460px, calc(100vw - 32px));
+  max-height: calc(100vh - 48px);
+  padding: 20px;
+  border: 1px solid var(--rule);
+  border-radius: 12px;
+  background: var(--card);
+  color: var(--white);
+}
+.cart-panel::backdrop { background: rgba(0, 0, 0, 0.55); }
+.cart-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.cart-head h2 { font-size: 1.3rem; }
+.cart-close {
+  width: 44px; height: 44px; border: 0; border-radius: 50%;
+  background: transparent; color: var(--white); font-size: 1.6rem; cursor: pointer;
+}
+.cart-close:hover { background: rgba(74, 183, 60, 0.16); }
+.cart-lines { list-style: none; margin: 14px 0 0; display: grid; gap: 10px; }
+.cart-line {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--rule-soft);
+}
+.cart-name { font-size: 0.95rem; }
+.cart-qty { display: inline-flex; align-items: center; gap: 4px; }
+.cart-qty button {
+  width: 36px; height: 36px; border: 1px solid var(--rule); border-radius: 8px;
+  background: var(--bg-3); color: var(--white); font-size: 1.1rem; cursor: pointer;
+}
+.cart-n { min-width: 2ch; text-align: center; font-variant-numeric: tabular-nums; }
+.cart-price { font-variant-numeric: tabular-nums; color: var(--leaf-bright); font-weight: 700; }
+.cart-total { margin: 12px 0; font-weight: 700; text-align: right; }
+.cart-note-label { display: block; font-size: 0.88rem; color: var(--gray); margin-bottom: 6px; }
+.cart-panel textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--field-rule);
+  border-radius: 6px;
+  background: var(--field);
+  color: var(--field-ink);
+  font: inherit;
+  margin-bottom: 14px;
+}
+.cart-pay { width: 100%; }
+.cart-fine { font-size: 0.85rem; color: var(--gray); margin-top: 8px; text-align: center; }
+.cart-status { min-height: 1.4em; margin-top: 6px; color: var(--leaf-bright); text-align: center; }
+.cart-banner {
+  max-width: var(--page);
+  margin: 18px auto;
+  padding: 12px 16px;
+  border: 1px solid var(--leaf);
+  border-radius: 10px;
+  background: var(--bg-3);
+  color: var(--white);
+  text-align: center;
+}
+.cart-banner[hidden] { display: none; }
