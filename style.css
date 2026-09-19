@@ -1156,12 +1156,14 @@ footer {
   .nav-left { display: none; }
   .hamburger { display: flex; }
   .nav-wrapper { grid-template-columns: 1fr auto 1fr; padding: 6px 12px; }
-  /* The same three links sit in the mobile menu, so nothing is lost, and
-     five 44px targets plus a logo do not fit on a phone. */
+  /* On a phone the four social icons sit two either side of the logo (the
+     menu holds page links only), and all four are in every footer too. */
   .nav-right a { display: none; }
   .nav-social-left { display: flex; }
   .nav-right a.m-keep { display: inline-flex; }
   .nav-social-left a, .nav-right a.m-keep { width: 40px; height: 40px; }
+  /* The menu button keeps the far-right edge, where a phone thumb expects it. */
+  .nav-right .hamburger { order: 1; }
   .site-logo { padding: 0 8px; }
   .site-logo img { width: 124px; }
   .card, .future-card { flex-basis: 300px; }
