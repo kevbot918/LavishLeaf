@@ -5,9 +5,11 @@
 /privacy           /privacy.html         200
 /symphonymph       /symphonymph.html     200
 /app-feedback      /app-feedback.html    200
-/downloads/symphonymph.apk        /downloads/symphonymph-1.0.4.apk        302
-/downloads/symphonymph-alpha.apk  /downloads/symphonymph-alpha-1.0.4.apk  302
-/downloads/symphonymph-1.0.2.apk  /downloads/symphonymph-1.0.4.apk  302
-/downloads/symphonymph-alpha-1.0.2.apk  /downloads/symphonymph-alpha-1.0.4.apk  302
-/downloads/symphonymph-1.0.3.apk  /downloads/symphonymph-1.0.4.apk  302
-/downloads/symphonymph-alpha-1.0.3.apk  /downloads/symphonymph-alpha-1.0.4.apk  302
+/downloads/symphonymph.apk        /downloads/symphonymph-1.0.5.apk        302
+/downloads/symphonymph-alpha.apk  /downloads/symphonymph-alpha-1.0.5.apk  302
+/downloads/symphonymph-1.0.2.apk  /downloads/symphonymph-1.0.5.apk  302
+/downloads/symphonymph-alpha-1.0.2.apk  /downloads/symphonymph-alpha-1.0.5.apk  302
+/downloads/symphonymph-1.0.3.apk  /downloads/symphonymph-1.0.5.apk  302
+/downloads/symphonymph-alpha-1.0.3.apk  /downloads/symphonymph-alpha-1.0.5.apk  302
+/downloads/symphonymph-1.0.4.apk  /downloads/symphonymph-1.0.5.apk  302
+/downloads/symphonymph-alpha-1.0.4.apk  /downloads/symphonymph-alpha-1.0.5.apk  302
