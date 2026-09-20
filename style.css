@@ -1203,6 +1203,26 @@ footer {
 /* Two test-build links on the Symphonymph page, for friends before the Play
    listing (owner, 2026-09-18: "very subtle... just two links"). Small and
    grey, no description. */
+/* The test-build downloads, for friends. Faint and small on purpose.
+
+   A centred STACK, not a row. It was one flex row holding both links and
+   the "Updating?" note, and `.quiet-note:last-child`'s `max-width: 46ch`
+   beat the `flex-basis: 100%` meant to give the note its own line, so the
+   note sat beside the links, pushed them hard left, and nothing lined up
+   (owner, 2026-09-22: "It looks horrible, everything should be centered").
+   Each part is its own block now and every one of them is centred, so there
+   is nothing left to fight. */
+.app-downloads { padding: 14px 20px 18px; color: var(--gray); opacity: 0.7; text-align: center; }
+.app-downloads p { margin: 0; }
+.dl-build { font-size: 0.65rem; letter-spacing: 0.04em; }
+.dl-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 40px; margin-top: 10px !important; font-size: 0.7rem; }
+.dl-links a { color: var(--gray); text-decoration: none; }
+.dl-links a:hover, .dl-links a:focus-visible { color: var(--leaf-bright); text-decoration: underline; }
+.dl-note { max-width: 46ch; margin: 10px auto 0 !important; font-size: 0.65rem; line-height: 1.5; }
+/* The iPhone line, with real air above it so it reads as its own thing
+   rather than a fourth line of the Android note. */
+.dl-ios { margin-top: 26px !important; font-size: 0.65rem; letter-spacing: 0.04em; }
+
 /* The two test-build APKs, for friends. Deliberately faint and small, and
    spaced far apart so they read as two separate downloads. */
 .quiet-links { display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline; gap: 16px 56px; font-size: 0.7rem; margin: 0; padding: 14px 20px 18px; color: var(--gray); opacity: 0.7; }
