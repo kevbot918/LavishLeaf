@@ -31,7 +31,7 @@
 // owner's machine before a push, and what it writes is ordinary markup that
 // works with JavaScript off.
 
-import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -65,6 +65,22 @@ for (const p of products) {
   for (const f of ['name', 'button', 'emailSubject']) {
     if (typeof p[f] !== 'string' || !p[f].trim()) throw new Error(`${where}: ${f} is required`);
   }
+  // A photo and a sentence are optional, because the emoji cards worked and
+  // still do. But a typo in a path is a broken image on a page asking for
+  // money, so the file has to be on disk before this will render.
+  if (p.image != null && p.image !== '') {
+    if (typeof p.image !== 'string' || /^[a-z]+:/i.test(p.image) || p.image.startsWith('/')) {
+      throw new Error(`${where}: image must be a path inside this site, e.g. "images/compost.jpg"`);
+    }
+    if (!existsSync(join(ROOT, p.image))) {
+      throw new Error(`${where}: image "${p.image}" is not in the site folder. Put the file there first.`);
+    }
+  }
+  if (p.imageAlt != null && typeof p.imageAlt !== 'string') throw new Error(`${where}: imageAlt must be text`);
+  if (p.blurb != null && p.blurb !== '') {
+    if (typeof p.blurb !== 'string') throw new Error(`${where}: blurb must be text`);
+    if (p.blurb.length > 200) throw new Error(`${where}: blurb is ${p.blurb.length} characters; keep it under 200`);
+  }
 }
 
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -94,10 +110,17 @@ function card(p) {
       ? `    <button type="button" class="btn btn-sm" data-subscribe="${p.id}">${esc(p.button)}</button>`
       : `    <button type="button" class="btn btn-sm" data-cart-add="${p.id}">Add to cart</button>`
     : `    <a href="${esc(hrefFor(p))}"${linkAttrs(p)} class="btn btn-sm" data-product="${p.id}">${esc(p.button)}</a>`;
+  // A photo when there is one, the emoji when there is not. Both sit in the
+  // same box so a half-photographed store still lines up.
+  const media = p.image
+    ? `    <div class="product-img has-photo"><img src="${esc(p.image)}" alt="${esc(p.imageAlt || p.name)}" loading="lazy"></div>`
+    : `    <div class="product-img">${esc(p.icon || '')}</div>`;
+  const blurb = p.blurb ? [`    <p class="product-blurb">${esc(p.blurb)}</p>`] : [];
   return [
     '  <div class="product-card">',
-    `    <div class="product-img">${esc(p.icon || '')}</div>`,
+    media,
     `    <h3>${esc(p.name)}</h3>`,
+    ...blurb,
     `    <div class="product-price">${priceLine(p)}</div>`,
     button,
     '  </div>',

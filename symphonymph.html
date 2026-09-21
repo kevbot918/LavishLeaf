@@ -530,7 +530,7 @@
   document.querySelectorAll("time[data-local]").forEach(function (t) {
     var d = new Date(t.getAttribute("datetime"));
     if (isNaN(d)) return;
-    t.textContent = d.toLocaleString("en-US", { month: "short", day: "numeric", year: "numeric", hour: "numeric", minute: "2-digit", timeZoneName: "short" }).replace(/, (d+:)/, " at $1");
+    t.textContent = d.toLocaleString("en-US", { month: "short", day: "numeric", year: "numeric", hour: "numeric", minute: "2-digit", timeZoneName: "short" }).replace(/, (\d+:)/, " at $1");
   });
   function toggleMenu() { document.getElementById('mobileNav').classList.toggle('open'); }
   function postForm(f, successHtml) {

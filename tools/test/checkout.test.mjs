@@ -24,6 +24,32 @@ const catalog = {
 const refused = (fn, status, words) =>
   assert.throws(fn, (e) => e instanceof CheckoutError && e.status === status && e.message.includes(words));
 
+// catalog.mjs is GENERATED and committed, the only price check lives in the
+// renderer on the owner's machine, and no CI runs it. So the failure worth
+// guarding is not a hostile buyer, it is a broken catalog reaching PayPal and
+// charging nothing, which looks like a successful sale to everybody.
+test('a product with no usable price is refused rather than charged at zero', () => {
+  const broken = {
+    free: { id: 'free', name: 'Priced wrong', price: 0, interval: null, active: true, paypalPlanId: null },
+    missing: { id: 'missing', name: 'No price at all', interval: null, active: true, paypalPlanId: null },
+    negative: { id: 'negative', name: 'Below zero', price: -500, interval: null, active: true, paypalPlanId: null },
+    fractional: { id: 'fractional', name: 'Not whole cents', price: 12.5, interval: null, active: true, paypalPlanId: null },
+  };
+  for (const id of Object.keys(broken)) {
+    refused(() => validateCart([{ id, qty: 1 }], broken), 500, 'priced correctly');
+  }
+});
+
+test('orderBody will not build a zero-value order even if it is handed one', () => {
+  // Bypasses validateCart deliberately: this is the second line of defence.
+  const lines = [{ product: { id: 'x', name: 'X', price: 0 }, qty: 3 }];
+  refused(
+    () => orderBody(lines, { returnUrl: 'https://x/a', cancelUrl: 'https://x/b' }),
+    500,
+    'came to nothing',
+  );
+});
+
 test('the price is the catalog\'s, whatever the browser sends', () => {
   const lines = validateCart([{ id: 'shirt', qty: 2, price: 1 }, { id: 'cap', qty: 1 }], catalog);
   const body = orderBody(lines, { returnUrl: 'https://x/store?paypal=return', cancelUrl: 'https://x/store?paypal=cancel' });
