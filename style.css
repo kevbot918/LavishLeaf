@@ -404,6 +404,20 @@ header {
   margin: 0 auto 18px;
 }
 
+/* A division's real logo in a card, in place of the drawn oval badge.
+   Sized by HEIGHT rather than width on purpose: the badge above is a fixed
+   142px tall, the real logos are a wider, flatter oval (about 1.78:1 against
+   the badge's 1.49:1), and a row mixing the two has to keep its card titles
+   on one line. 253px wide lands the logo at the badge's exact height, so a
+   card with a real logo and one still drawn in CSS sit level. */
+.card-logo {
+  display: block;
+  width: 253px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 18px;
+}
+
 /* ===== CARD GRID =============================================== */
 .cards-section { padding: 0 20px var(--gap-xl); }
 
