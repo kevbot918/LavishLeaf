@@ -1337,6 +1337,13 @@ footer {
 }
 .cart-pay { width: 100%; }
 .cart-fine { font-size: 0.85rem; color: var(--gray); margin-top: 8px; text-align: center; }
+/* The waiver a registration requires, between the total and the pay button:
+   the last thing read before paying, which is where it belongs. */
+.cart-waiver { margin: 12px 0 4px; }
+.cart-waiver-row { display: flex; align-items: flex-start; gap: 8px; font-size: 0.9rem; line-height: 1.45; }
+.cart-waiver-row + .cart-waiver-row { margin-top: 8px; }
+.cart-waiver-row input { margin-top: 3px; flex: 0 0 auto; }
+.cart-waiver-row a { text-decoration: underline; }
 .cart-status { min-height: 1.4em; margin-top: 6px; color: var(--leaf-bright); text-align: center; }
 .cart-banner {
   max-width: var(--page);

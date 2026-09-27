@@ -79,7 +79,7 @@ export function validateCart(cart, catalog) {
 }
 
 /** The body of PayPal's "create order" call for a validated cart. */
-export function orderBody(lines, { returnUrl, cancelUrl, note = '' }) {
+export function orderBody(lines, { returnUrl, cancelUrl, note = '', waivers = [] }) {
   const items = lines.map(({ product, qty }) => ({
     name: product.name.slice(0, 127),
     sku: product.id,
@@ -105,6 +105,12 @@ export function orderBody(lines, { returnUrl, cancelUrl, note = '' }) {
   };
   const clean = cleanNote(note);
   if (clean) unit.description = clean;
+  // What was agreed to, on the order itself. PayPal shows custom_id on the
+  // transaction and returns it at capture, so an order is its own record of
+  // the waiver the buyer accepted.
+  if (waivers.length) {
+    unit.custom_id = ('waiver:' + waivers.join(',')).slice(0, 127);
+  }
   return {
     intent: 'CAPTURE',
     purchase_units: [unit],

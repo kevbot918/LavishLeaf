@@ -61,6 +61,26 @@
 
   // ------------------------------------------------------------------ view
   var fab, panel, list, totalEl, noteEl, payBtn, statusEl, banner;
+  var waiverWrap;
+
+  // A product may require an agreement before it can be paid for. Today
+  // that is the two soccer registrations, which take a waiver in the email
+  // flow the site uses now: when checkout moves to the cart, the waiver has
+  // to move with it or it quietly disappears from a contact sport that
+  // charges $250 a team. A product opts in with, in products.json:
+  //
+  //   "waiver": { "version": "2026-09", "url": "waiver.html",
+  //               "label": "I have read and accept the liability waiver" }
+  //
+  // No waiver field means nothing changes for that product.
+  function waiversInCart() {
+    var seen = {};
+    cart.forEach(function (l) {
+      var p = products[l.id];
+      if (p && p.waiver && p.waiver.version) seen[p.waiver.version] = p.waiver;
+    });
+    return Object.keys(seen).map(function (v) { return seen[v]; });
+  }
 
   function el(tag, attrs, text) {
     var e = document.createElement(tag);
@@ -91,6 +111,9 @@
     noteEl = el('textarea', { id: 'cart-note', rows: '2', maxlength: '127' });
     panel.appendChild(label);
     panel.appendChild(noteEl);
+
+    waiverWrap = el('div', { class: 'cart-waiver', hidden: '' });
+    panel.appendChild(waiverWrap);
 
     payBtn = el('button', { type: 'button', class: 'btn btn-wide cart-pay' }, 'Check out with PayPal');
     payBtn.addEventListener('click', checkout);
@@ -135,7 +158,33 @@
       list.appendChild(li);
     });
     totalEl.textContent = cart.length ? 'Total ' + money(cents) : 'Your cart is empty.';
-    payBtn.disabled = cart.length === 0;
+
+    // The waiver, when something in the cart needs one. Drawn fresh each
+    // render so removing the last registration removes the tick with it.
+    var waivers = waiversInCart();
+    waiverWrap.textContent = '';
+    waiverWrap.hidden = waivers.length === 0;
+    waivers.forEach(function (w) {
+      var row = el('label', { class: 'cart-waiver-row' });
+      var box = el('input', { type: 'checkbox' });
+      box.addEventListener('change', render);
+      row.appendChild(box);
+      row.appendChild(document.createTextNode(
+        ' ' + (w.label || 'I have read and accept the waiver') + ' '
+      ));
+      if (w.url) {
+        var link = el('a', { href: w.url, target: '_blank', rel: 'noopener' }, 'Read it');
+        row.appendChild(link);
+      }
+      waiverWrap.appendChild(row);
+    });
+    // One tick per version, and with two versions in one cart all of them
+    // must be ticked.
+    var accepted = waivers.length === 0 ||
+      Array.prototype.every.call(waiverWrap.querySelectorAll('input[type=checkbox]'),
+        function (b) { return b.checked; });
+
+    payBtn.disabled = cart.length === 0 || !accepted;
   }
 
   function open() {
@@ -164,9 +213,23 @@
   }
 
   function checkout() {
+    var waivers = waiversInCart();
+    var accepted = waivers.length === 0 ||
+      Array.prototype.every.call(waiverWrap.querySelectorAll('input[type=checkbox]'),
+        function (b) { return b.checked; });
+    if (!accepted) {
+      statusEl.textContent = 'Please accept the waiver before paying.';
+      return;
+    }
     payBtn.disabled = true;
     statusEl.textContent = 'Opening PayPal…';
-    post('checkout', { items: cart, note: noteEl.value })
+    // The versions accepted travel with the order, so what was agreed to
+    // is on the order itself and not only in this browser.
+    post('checkout', {
+      items: cart,
+      note: noteEl.value,
+      waivers: waivers.map(function (w) { return w.version; }),
+    })
       .then(function (r) { window.location.href = r.approveUrl; })
       .catch(function (e) {
         statusEl.textContent = e.message;
