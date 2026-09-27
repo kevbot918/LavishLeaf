@@ -119,6 +119,16 @@
     payBtn.addEventListener('click', checkout);
     panel.appendChild(payBtn);
     panel.appendChild(el('p', { class: 'cart-fine' }, 'No PayPal account needed: you can pay with a debit or credit card on the next page.'));
+    // The two policies, where somebody is deciding whether to pay. They
+    // live in the footer of every page as well, but a footer is not where
+    // this question gets asked.
+    var legal = el('p', { class: 'cart-fine' });
+    legal.appendChild(document.createTextNode('By paying you accept our '));
+    legal.appendChild(el('a', { href: 'terms-of-sale.html', target: '_blank', rel: 'noopener' }, 'Terms of Sale'));
+    legal.appendChild(document.createTextNode(' and '));
+    legal.appendChild(el('a', { href: 'refunds.html', target: '_blank', rel: 'noopener' }, 'Refund Policy'));
+    legal.appendChild(document.createTextNode('.'));
+    panel.appendChild(legal);
     statusEl = el('p', { class: 'cart-status', role: 'status', 'aria-live': 'polite' });
     panel.appendChild(statusEl);
     document.body.appendChild(panel);
