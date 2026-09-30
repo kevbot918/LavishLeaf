@@ -10,7 +10,8 @@
     "checkout (top level) is \"links\" (today: payLink or email) or \"cart\" (Add to cart and PayPal checkout through the Netlify functions). Leave it on \"links\" until PayPal's keys are in Netlify and a sandbox order has gone through.",
     "paypalPlanId / paypalSandboxPlanId: the PayPal subscription plan for a product with an interval, in each PayPal environment. tools/paypal-plans.mjs creates them; do not type them by hand.",
     "icon is the emoji shown when a product has no photo. image is an optional photo, given as a path inside this site such as \"images/compost.jpg\"; put the file there first or the render refuses rather than publishing a broken image. imageAlt describes the photo for screen readers and defaults to the product name.",
-    "blurb is an optional sentence shown under the name, up to 200 characters. Leave it out and the card looks exactly as it did before."
+    "blurb is an optional sentence shown under the name, up to 200 characters. Leave it out and the card looks exactly as it did before.",
+    "waiver is optional: { \"version\", \"url\", \"label\" }. The cart refuses to open PayPal for that product until the box is ticked, in the browser and on the server, and the version travels to PayPal as the order's custom_id. Change the text at url, change the version."
   ],
   "checkout": "links",
   "products": [
@@ -18,6 +19,9 @@
       "id": "compost-monthly",
       "name": "Compost Pick-up",
       "icon": "🌱",
+      "image": "images/compost-pickup.jpg",
+      "imageAlt": "Green compost collection buckets lined with compostable bags, ready for pickup",
+      "blurb": "A 5 gallon bucket at your door, swapped for a clean one every one to two weeks on the day you choose. Your scraps become living soil on our farm.",
       "price": 2000,
       "oldPrice": null,
       "interval": "month",
@@ -30,25 +34,41 @@
       "id": "soccer-player-fall",
       "name": "Player Registration: 7v7 Adult Soccer League (Fall Season)",
       "icon": "⚽",
+      "image": "images/soccer-player.jpg",
+      "imageAlt": "Two players chasing a soccer ball across a grass field at sunset",
+      "blurb": "One player's spot in the fall 7v7 league: Sunday games in Eufaula and McAlester through Christmas, with insurance, fields, equipment and prizes covered by the fee.",
       "price": 2500,
       "oldPrice": 3000,
       "interval": null,
       "button": "Player Registration",
       "emailSubject": "Player Registration - 7v7 Adult Soccer Fall Season",
       "payLink": "",
-      "active": true
+      "active": true,
+      "waiver": {
+        "version": "2026-09",
+        "url": "waiver.html",
+        "label": "I have read and accept the liability waiver"
+      }
     },
     {
       "id": "soccer-team-fall",
       "name": "Team Registration: 7v7 Adult Soccer",
       "icon": "⚽",
+      "image": "images/soccer-team.jpg",
+      "imageAlt": "Adults in practice pinnies playing a friendly soccer match on a grass field",
+      "blurb": "Register a whole 7v7 squad for the fall season: Sunday games in Eufaula and McAlester through Christmas, and your team on the live standings from week one.",
       "price": 25000,
       "oldPrice": 30000,
       "interval": null,
       "button": "Team Registration",
       "emailSubject": "Team Registration - 7v7 Adult Soccer",
       "payLink": "",
-      "active": true
+      "active": true,
+      "waiver": {
+        "version": "2026-09",
+        "url": "waiver.html",
+        "label": "I have read and accept the liability waiver"
+      }
     }
   ]
 }
