@@ -31,10 +31,10 @@ test('over 10 lb is never posted', () => {
   assert.equal(quote([line(P(2000, 400))], { method: 'pickup-eufaula' }).cents, 0);
 });
 
-test('local delivery: only the listed ZIPs, free at $50', () => {
-  assert.throws(() => quote([line(P(2000, 10))], { method: 'local', zip: '73101' }), /Local delivery/);
-  assert.equal(quote([line(P(2000, 10))], { method: 'local', zip: '74432' }).cents, SHIPPING.localCents);
-  assert.equal(quote([line(P(5000, 10))], { method: 'local', zip: '74501-1234' }).cents, 0);
+test('there is no local delivery (owner, 2026-10-01): only shipping and Eufaula pickup', () => {
+  assert.throws(() => quote([line(P(2000, 10))], { method: 'local', zip: '74432' }), /choose/);
+  assert.throws(() => quote([line(P(2000, 10))], { method: 'pickup-mcalester' }), /choose/);
+  assert.equal(SHIPPING.pickup['pickup-eufaula'], 'Eufaula');
 });
 
 test('no method chosen is a question, not a guess', () => {
@@ -45,8 +45,6 @@ test('the address is checked against the method before money moves', () => {
   assert.equal(addressOk('ship', { country_code: 'US', admin_area_1: 'OK' }).ok, true);
   assert.equal(addressOk('ship', { country_code: 'US', admin_area_1: 'HI' }).ok, false);
   assert.equal(addressOk('ship', { country_code: 'CA', admin_area_1: 'ON' }).ok, false);
-  assert.equal(addressOk('local', { country_code: 'US', postal_code: '74432' }, '74432').ok, true);
-  assert.equal(addressOk('local', { country_code: 'US', postal_code: '74501' }, '74432').ok, false);
   assert.equal(addressOk('pickup-eufaula', undefined).ok, true);
 });
 

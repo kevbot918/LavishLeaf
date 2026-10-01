@@ -45,7 +45,8 @@
   var delivery = (function () {
     try {
       var d = JSON.parse(localStorage.getItem(SHIP_KEY) || '{}');
-      var m = d.method === 'pickup-mcalester' ? 'pickup-eufaula' : d.method;
+      // Retired choices (McAlester pickup, local delivery) fall back.
+      var m = d.method === 'pickup-mcalester' ? 'pickup-eufaula' : d.method === 'local' ? 'ship' : d.method;
       return { method: typeof m === 'string' ? m : 'ship', zip: typeof d.zip === 'string' ? d.zip : '' };
     } catch (e) {
       return { method: 'ship', zip: '' };
@@ -79,7 +80,7 @@
 
   // ------------------------------------------------------------------ view
   var fab, panel, list, totalEl, noteEl, payBtn, statusEl, banner;
-  var shipWrap, shipLine, shipNudge, zipRow, zipInput;
+  var shipWrap, shipLine, shipNudge;
   var waiverWrap;
 
   // A product may require an agreement before it can be paid for. Today
@@ -127,8 +128,7 @@
     // How it reaches you: shown only when something in the cart is posted.
     shipWrap = el('fieldset', { class: 'cart-ship', hidden: '' });
     shipWrap.appendChild(el('legend', null, 'Delivery'));
-    [['ship', 'Ship to me (48 states)'], ['pickup-eufaula', 'Pick up in Eufaula, free'],
-      ['local', 'Local delivery, Eufaula and McAlester']]
+    [['ship', 'Ship to me (48 states)'], ['pickup-eufaula', 'Pick up in Eufaula, free']]
       .forEach(function (m) {
         var row = el('label', { class: 'cart-ship-row' });
         var r = el('input', { type: 'radio', name: 'cart-ship', value: m[0] });
@@ -138,12 +138,6 @@
         row.appendChild(document.createTextNode(' ' + m[1]));
         shipWrap.appendChild(row);
       });
-    zipRow = el('label', { class: 'cart-zip', hidden: '' }, 'Delivery ZIP ');
-    zipInput = el('input', { type: 'text', inputmode: 'numeric', maxlength: '10', autocomplete: 'postal-code' });
-    zipInput.value = delivery.zip;
-    zipInput.addEventListener('input', function () { delivery.zip = zipInput.value.trim(); saveDelivery(); render(); });
-    zipRow.appendChild(zipInput);
-    shipWrap.appendChild(zipRow);
     panel.appendChild(shipWrap);
     shipNudge = el('p', { class: 'cart-nudge', hidden: '' });
     panel.appendChild(shipNudge);
@@ -219,7 +213,6 @@
     var posts = lines.some(function (x) { return x.product.ship === true; });
     var shipCents = 0, shipOk = true;
     shipWrap.hidden = !posts;
-    zipRow.hidden = !posts || delivery.method !== 'local';
     shipLine.hidden = !posts;
     shipNudge.hidden = true;
     if (posts) {
@@ -227,7 +220,7 @@
         shipLine.textContent = 'Shipping is calculated at checkout.';
       } else {
         try {
-          var q = ship.quote(lines, { method: delivery.method, zip: delivery.zip });
+          var q = ship.quote(lines, { method: delivery.method });
           shipCents = q.cents;
           shipLine.textContent = q.label + ': ' + (q.cents ? money(q.cents) : 'free');
           if (delivery.method === 'ship' && ship.untilReduced(cents) > 0) {
@@ -327,7 +320,6 @@
       note: noteEl.value,
       waivers: waivers.map(function (w) { return w.version; }),
       shipMethod: delivery.method,
-      zip: delivery.zip,
     })
       .then(function (r) { window.location.href = r.approveUrl; })
       .catch(function (e) {

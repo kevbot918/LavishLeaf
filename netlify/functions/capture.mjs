@@ -6,7 +6,7 @@
 //
 // Before any money moves, the order is read back and the address PayPal
 // collected is checked against the delivery method chosen (shipping.mjs):
-// a posted order stays in the 48 states, local delivery stays local. After
+// a posted order stays in the 48 states. After
 // it is paid, a signed-in customer's order goes into their account history.
 import { accountsStore, addOrder } from '../lib/accounts.mjs';
 import { CheckoutError, call, config, handle, parseCustomId } from '../lib/paypal.mjs';
@@ -22,7 +22,7 @@ export default async (request) =>
     const unit = order.purchase_units?.[0] || {};
     const meta = parseCustomId(unit.custom_id);
     if (order.status !== 'COMPLETED' && meta.m) {
-      const ok = addressOk(meta.m, unit.shipping?.address, meta.z);
+      const ok = addressOk(meta.m, unit.shipping?.address);
       if (!ok.ok) throw new CheckoutError(400, ok.message);
     }
 

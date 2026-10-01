@@ -20,41 +20,108 @@ wants many more posts, each its own card, full width.
 It is free: Meta charges nothing for reading your own posts, and Netlify's
 free tier covers the function calls and the small cache.
 
-## What the owner sets up (once, about 30 minutes)
+## What the owner sets up, screen by screen
 
-Everything is done at developers.facebook.com while logged in as the person
-who manages the Lavish Leaf Facebook Page and Instagram account.
+Nobody else can do these steps: every one needs your own Facebook and
+Instagram log-ins (and Meta texts a code to your phone). Never send those
+passwords to anyone, Claude included. Instagram alone is enough to get past
+Behold's six posts; Facebook (Part D) is optional and can wait.
 
-**Before you start:** the Instagram account must be a **Business** or
-**Creator** account (Instagram app: Settings, Account type and tools). That is
-free and changes nothing your followers see.
+### Part A. Is the Instagram account a Business or Creator account? (2 minutes, on your phone)
 
-1. **Create an app.** developers.facebook.com, My Apps, Create App. Use case:
-   "Other", then type "Business". Name it "Lavish Leaf Website". The app can
-   stay in Development mode: it only ever reads our own accounts, which the
-   app's own admin (you) can always read.
-2. **Instagram.** In the app, add the product **Instagram** and choose
-   "API setup with Instagram login". Under "Generate access tokens", add the
-   lavish_leaf_inc account and press **Generate token**. Copy the token.
-   (It is already the 60-day long-lived kind.)
-3. **Facebook.** Open the **Graph API Explorer** (Tools menu). Pick your app,
-   then "Get Page Access Token", tick the Lavish Leaf page, and grant
-   `pages_read_engagement` and `pages_show_list`. Then open the **Access Token
-   Debugger**, paste that token and press **Extend Access Token**. Use the
-   extended *user* token in the Explorer once more to call
-   `me/accounts`: the `access_token` shown beside Lavish Leaf is a Page token
-   that does not expire, and `id` is the page id.
-4. **Into Netlify** (Site configuration, Environment variables), three values:
-   * `IG_ACCESS_TOKEN`: the token from step 2
-   * `FB_PAGE_ID`: the page id from step 3 (digits only)
-   * `FB_PAGE_TOKEN`: the Page token from step 3
-   Mark each one **secret**. Never paste them into this repository or a chat
-   that is saved.
-5. **Deploy** (any push, or Deploys, Trigger deploy) and open the Social page.
-   Within a minute the cards replace the widgets.
+1. Open the Instagram app and go to the **lavish_leaf_inc** profile (tap your
+   picture, bottom right).
+2. Tap the **three lines** (top right). This opens **Settings and activity**.
+3. Scroll to the heading **For professionals** and tap **Account type and
+   tools**.
+4. Read the screen:
+   * If you see **Switch to professional account**: it is a PERSONAL account.
+     Tap it, pick a category (for example "Agriculture" or "Community
+     Organization"... any is fine), choose **Business**, and finish. Your
+     posts and followers stay exactly as they are.
+   * If you see **Switch account type** (offering Personal or Creator, or
+     Personal or Business): it is ALREADY professional. Nothing to do.
+   A quick second check: a professional profile shows a **Professional
+   dashboard** bar under the bio.
+5. The account must be **public** (Settings and activity, Account privacy:
+   Private account OFF).
 
-If a token is ever revoked (password change, removed app), the page quietly
-falls back to the widgets; generate a new one and replace the variable.
+### Part B. Become a Meta developer (5 minutes, once, on a computer)
+
+"Create App" does not appear until you have registered, which is why the site
+looked like nothing but documentation.
+
+1. In the same browser, log in to **facebook.com** as yourself (the person who
+   manages the Lavish Leaf page).
+2. Go to **https://developers.facebook.com/async/registration** (this is the
+   registration page directly; the same thing is the **Get Started** button
+   at the top right of developers.facebook.com).
+3. Follow the screens: accept the Platform Terms, **verify your phone number**
+   (Meta texts a code) and your email, and when asked what you do, choose
+   **Developer** (or anything; it does not matter).
+4. When it finishes, the top right of developers.facebook.com shows **My
+   Apps**. That is how you know it worked.
+
+### Part C. Create the app and get the Instagram token (10 minutes)
+
+1. Click **My Apps** (top right), then the green **Create App** button.
+2. **App details:** App name `Lavish Leaf Website`; App contact email: yours.
+   Click **Next**.
+3. **Use cases:** in the list on the left click **Content management**, then
+   tick **Manage messaging & content on Instagram**. If you will do Part D,
+   ALSO tick **Manage everything on your Page**. Click **Next**.
+4. **Business:** choose **I don't want to connect a business portfolio yet**.
+   Click **Next**.
+5. **Requirements**, then **Overview**: click **Next**, then **Go to
+   dashboard** (Meta may ask for your Facebook password once).
+6. In the dashboard's left menu click **Use cases**. Beside **Manage messaging
+   & content on Instagram** click **Customize**.
+7. Click **API setup with Instagram login** (NOT "with Facebook login").
+8. Find section **2. Generate access tokens** and click **Add account**. An
+   Instagram window opens: log in as **lavish_leaf_inc** and click **Allow**.
+9. Back on that screen, beside lavish_leaf_inc, click **Generate token**. Tick
+   "I understand" in the pop-up. A long token appears **once**: click the
+   **copy** icon. (If you lose it, just press Generate token again.)
+10. Paste it straight into Netlify (Part E) as `IG_ACCESS_TOKEN`.
+
+Leave the app in **Development** mode: it only reads our own account, so no
+App Review is needed. The website renews this token by itself every week
+(it would otherwise expire after 60 days).
+
+### Part D (optional). The Facebook Page token (10 minutes)
+
+1. Open **https://developers.facebook.com/tools/explorer/** (Graph API
+   Explorer).
+2. On the right: **Meta App** = `Lavish Leaf Website`. **User or Page** =
+   **User Token**.
+3. Under **Permissions**, use **Add a Permission** to add
+   `pages_show_list` and `pages_read_engagement`. Click **Generate Access
+   Token** and approve; when asked which Pages, tick **Lavish Leaf**.
+4. Copy the token from the **Access Token** box at the top.
+5. Open **https://developers.facebook.com/tools/debug/accesstoken/**, paste
+   it, click **Debug**, then at the bottom click **Extend Access Token** and
+   copy the NEW token it shows.
+6. Back in the Explorer, paste that new token into the **Access Token** box.
+   In the query box type `me/accounts?fields=name,id,access_token` and click
+   **Submit**.
+7. In the answer, find `"name": "Lavish Leaf"`. Beside it:
+   * `"id"` (only digits) is **FB_PAGE_ID**
+   * `"access_token"` (long) is **FB_PAGE_TOKEN**
+8. Optional check: paste FB_PAGE_TOKEN into the Access Token Debugger; it
+   should say **Expires: Never**.
+
+### Part E. Put the keys into Netlify (3 minutes)
+
+1. **https://app.netlify.com**, open the lavishleaf.org site.
+2. **Site configuration** (left menu), then **Environment variables**.
+3. **Add a variable**, **Add a single variable**:
+   * Key `IG_ACCESS_TOKEN`, value: the Instagram token. Tick **Contains
+     secret values**. Click **Create variable**.
+   * If you did Part D: the same for `FB_PAGE_ID` and `FB_PAGE_TOKEN`.
+4. **Deploys** (left menu), **Trigger deploy**, **Deploy site**.
+5. Open lavishleaf.org/social.html after a minute: the posts appear as cards.
+   If they do not, tell Claude which step you reached; the function's log
+   (Netlify, Logs, Functions, social-feed) says what Meta answered.
 
 ## Sources
 
@@ -63,3 +130,7 @@ falls back to the widgets; generate a new one and replace the variable.
 * [Fetch account media with the Instagram API](https://muhammadkasim.medium.com/fetch-account-media-using-instagram-api-5ab29c219ab3)
 * [Meta: Pages API, getting started](https://developers.facebook.com/docs/pages-api/getting-started/)
 * [Meta: Page feed endpoint](https://developers.facebook.com/docs/graph-api/reference/page/feed/)
+* [Instagram token step by step, 2026](https://theplusaddons.com/blog/get-instagram-access-token/)
+* [Register as a Meta developer](https://developers.facebook.com/docs/development/register/)
+* [Instagram: Account type and tools](https://help.instagram.com/502981923235522)
+* [Switching to a Business or Creator account, 2026](https://sociality.io/blog/instagram-creator-account/)

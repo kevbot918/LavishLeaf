@@ -10,9 +10,9 @@ capture functions import it to charge it and to check the address before any
 money moves. Tests: `npm test`. Every product now says `"ship": true` with a
 packed `"shipOz"`, or `"ship": false`; the renderer refuses a product without
 one. The three products today are all `false` (compost, two registrations),
-so no order is charged shipping until a posted product is added. Local
-delivery ZIPs are `SHIPPING.localZips` in `shipping.mjs` (74432, 74501,
-74502 to start). Not yet done: the $1 built into light items' prices (that is
+so no order is charged shipping until a posted product is added. There is
+no local delivery (owner, 2026-10-01: "We don't do any delivery really, at
+least not yet"), and pickup is Eufaula only. Not yet done: the $1 built into light items' prices (that is
 pricing, when products are chosen).
 
 ## What the numbers say

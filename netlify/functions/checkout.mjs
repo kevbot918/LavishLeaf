@@ -1,5 +1,5 @@
 // POST /.netlify/functions/checkout
-//   { items: [{id, qty}], note?, waivers?, shipMethod?, zip? }
+//   { items: [{id, qty}], note?, waivers?, shipMethod? }
 //   -> { approveUrl }   the PayPal page to send the buyer to
 // Prices AND shipping come from the catalog and shipping.mjs, never from the
 // request. See netlify/lib/paypal.mjs. A signed-in customer (Authorization:
@@ -27,12 +27,11 @@ export default async (request) =>
     }
     let shipping;
     try {
-      shipping = quote(lines, { method: body.shipMethod, zip: body.zip });
+      shipping = quote(lines, { method: body.shipMethod });
     } catch (e) {
       if (e instanceof ShippingError) throw new CheckoutError(400, e.message);
       throw e;
     }
-    if (shipping.method === 'local') shipping.zip = String(body.zip).trim().slice(0, 5);
     const user = await userFromRequest(request);
     const order = await call(cfg, '/v2/checkout/orders', orderBody(lines, {
       ...returnUrls(request),

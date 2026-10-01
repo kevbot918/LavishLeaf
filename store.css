@@ -571,27 +571,39 @@ body.ss-resizing .ss-side { transition: none; }
 #ss-shelves .ss-drag-over { box-shadow: inset 0 2px 0 var(--accent-fill); }
 
 /* The shipping line in the store bar, between the view's name and search,
-   on every view (owner, 2026-10-01). On a phone it drops to its own line. */
-.ss-ship-note { flex: 0 1 auto; min-width: 0; margin: 0 8px 0 0; font-size: .82rem; line-height: 1.35; color: var(--muted); text-align: right; }
+   on every view (owner, 2026-10-01): small, ONE line, and the same on every
+   shelf. The view's name gets a fixed slot (a long shelf name ends in "...")
+   so the line never moves or changes size between shelves. Sized by the
+   store's own width (a container query), which follows the sidebar drag:
+     wide:    the full sentence, in the bar
+     middle:  the short sentence, in the bar
+     narrow:  the short sentence, on its own line under the bar            */
+.ss-main { container-type: inline-size; container-name: store; }
+.ss-top .ss-title { flex: 0 0 210px; width: 210px; margin-right: 0; font-size: 1.15rem; }
+.ss-ship-note {
+  flex: 1 1 auto; min-width: 0; margin: 0 4px 0 0;
+  font-size: .74rem; line-height: 1.3; color: var(--muted); text-align: right;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
 .ss-ship-note strong { color: var(--accent); }
-.ss-top .ss-title { margin-right: 12px; flex: 0 0 auto; max-width: 40%; }
-.ss-top .ss-ship-note { margin-left: auto; }
-.ss-top .ss-search { min-width: 200px; }
-/* Too narrow for all three on one line: the note takes its own line under
-   the bar, so the view's name and the search keep their room. */
-@media (max-width: 1300px) {
+.ss-ship-short { display: none; }
+.ss-top .ss-search { width: 280px; min-width: 180px; }
+@container store (max-width: 1199px) {
+  .ss-ship-long { display: none; }
+  .ss-ship-short { display: inline; }
+  .ss-top .ss-search { width: 240px; }
+}
+@container store (max-width: 1079px) {
   .ss-top { flex-wrap: wrap; height: auto; min-height: var(--top-h); padding-top: 8px; padding-bottom: 6px; row-gap: 4px; }
-  .ss-top .ss-title { margin-right: auto; }
-  .ss-top .ss-ship-note { order: 10; flex: 1 1 100%; max-width: none; margin: 0; text-align: center; font-size: .78rem; }
-  .ss-top .ss-search { width: 230px; }
+  .ss-top .ss-title { flex: 1 1 auto; width: auto; }
+  .ss-top .ss-ship-note { order: 10; flex: 1 1 100%; margin: 0; text-align: center; }
 }
 @media (max-width: 640px) { .ss-top .ss-search { min-width: 0; width: auto; } .ss-top .ss-top-right { flex: 1 1 0; min-width: 0; } }
+@container store (max-width: 440px) { .ss-ship-note { font-size: .68rem; letter-spacing: -.01em; } }
 
 .cart-ship { margin: 14px 0 0; padding: 10px 12px; border: 1px solid var(--border-soft); border-radius: 10px; }
 .cart-ship legend { padding: 0 6px; font-size: .78rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
 .cart-ship-row { display: flex; align-items: center; gap: 8px; padding: 4px 0; font-size: .92rem; cursor: pointer; }
 .cart-ship-row input { accent-color: var(--accent-fill); }
-.cart-zip { display: flex; align-items: center; gap: 8px; margin-top: 6px; font-size: .9rem; color: var(--muted); }
-.cart-zip input { width: 7em; padding: 6px 8px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface-2); color: var(--text); font: inherit; }
 .cart-nudge { margin: 10px 0 0; padding: 8px 10px; border-radius: 8px; background: var(--accent-soft); color: var(--text); font-size: .88rem; }
 .cart-shipline { margin: 10px 0 0; text-align: right; color: var(--muted); }
