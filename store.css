@@ -155,12 +155,11 @@ body.ss-resizing { cursor: col-resize; user-select: none; -webkit-user-select: n
 body.ss-resizing .ss-side { transition: none; }
 
 .ss-side-head {
-  display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
-  padding: 26px 20px 14px 24px;
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+  padding: 24px 24px 16px; text-align: center;
 }
-.ss-brand-name { font-family: var(--mark); font-size: 1.7rem; line-height: 1.1; color: var(--text); }
-.ss-brand-line { margin-top: 8px; font-size: .86rem; line-height: 1.45; color: var(--muted); max-width: 17ch; }
-.ss-logo { flex: 0 0 auto; width: 104px; transition: transform var(--ease); }
+.ss-brand-line { font-size: .88rem; line-height: 1.5; color: var(--muted); max-width: 30ch; }
+.ss-logo { flex: 0 0 auto; width: 150px; transition: transform var(--ease); }
 .ss-logo:hover { transform: scale(1.03); }
 .ss-logo img { width: 100%; height: auto; }
 

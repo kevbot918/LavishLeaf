@@ -511,7 +511,8 @@ header {
 /* ===== PAGE HERO (subpages) ==================================== */
 .page-hero {
   background: var(--bg-deep);
-  padding: 58px 20px 50px;
+  /* Shorter than it was (owner, 2026-10-01: "too tall"). */
+  padding: 30px 20px 28px;
   text-align: center;
   color: var(--white);
 }
@@ -522,7 +523,7 @@ header {
   align-items: flex-end;
   justify-content: center;
   gap: 0 16px;
-  font-size: clamp(1.9rem, 1.2rem + 3.4vw, 3rem);
+  font-size: clamp(1.7rem, 1.1rem + 2.6vw, 2.5rem);
   font-weight: 300;
   line-height: 1.1;
 }
@@ -544,13 +545,13 @@ header {
      used to carry made the Rec Sports, Gaming and Symphonymph headers read
      greener than the rest (owner, 2026-10-01). */
   background: var(--bg-deep);
-  padding: 72px 20px 56px;
+  padding: 30px 20px 28px;
   text-align: center;
   color: var(--white);
 }
 
 .sports-hero-title {
-  font-size: clamp(1.9rem, 1.2rem + 3.6vw, 3.2rem);
+  font-size: clamp(1.7rem, 1.1rem + 2.6vw, 2.5rem);
   font-weight: 300;
   color: var(--white);
 }
@@ -562,7 +563,7 @@ header {
      used to carry made the Rec Sports, Gaming and Symphonymph headers read
      greener than the rest (owner, 2026-10-01). */
   background: var(--bg-deep);
-  padding: 72px 20px 56px;
+  padding: 30px 20px 28px;
   text-align: center;
   color: var(--white);
 }
@@ -579,7 +580,7 @@ header {
 .page-hero strong, .sports-hero strong, .gaming-hero strong { color: var(--white); }
 .page-hero a:not(.btn), .sports-hero a:not(.btn), .gaming-hero a:not(.btn) { color: var(--leaf-bright); }
 
-.page-hero > p { max-width: 58ch; margin: 16px auto 0; }
+.page-hero > p { max-width: 58ch; margin: 10px auto 0; }
 
 /* The division's vision, sitting under the title inside the hero. The owner,
    2026-09-13: "I like how you have the vision at the top of the Gaming page
@@ -587,12 +588,12 @@ header {
    vision for the farms and rec sports to the same location as those." */
 p.hero-lede {
   max-width: 800px;
-  margin: 22px auto 0;
+  margin: 12px auto 0;
   font-size: 0.95rem;
-  line-height: 1.8;
+  line-height: 1.65;
 }
-.hero-lede + .btn { margin-top: 26px; }
-.page-hero > .btn, .sports-hero > .btn, .gaming-hero > .btn { margin-top: 26px; }
+.hero-lede + .btn { margin-top: 16px; }
+.page-hero > .btn, .sports-hero > .btn, .gaming-hero > .btn { margin-top: 16px; padding: 10px 28px; }
 .home-hero-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
 
 /* ===== GENERIC CONTENT ========================================= */
@@ -1159,7 +1160,7 @@ hr.divider { border: none; border-top: 1px solid var(--rule-soft); }
 .note-panel strong { color: var(--leaf-bright); }
 
 /* The app's own mark on the Symphonymph hero. */
-.app-mark { display: block; width: 150px; height: auto; margin: 0 auto 20px; }
+.app-mark { display: block; width: 96px; height: auto; margin: 0 auto 12px; }
 
 /* ===== FOOTER ================================================== */
 footer {
@@ -1234,7 +1235,7 @@ footer {
   .service-card, .career-col, .reg-card, .roadmap-card, .note-panel,
   .social-post, .product-card { padding-left: 14px; padding-right: 14px; }
   .note-panel { padding-top: 14px; padding-bottom: 14px; }
-  .app-mark { width: 116px; }
+  .app-mark { width: 80px; }
   .oval-logo { width: 200px; }
   :root { --gap-xl: 52px; --gap-lg: 30px; --gap-md: 18px; }
 }
