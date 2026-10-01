@@ -417,6 +417,8 @@ header {
   height: auto;
   margin: 0 auto 18px;
 }
+/* The Symphonymph mark is square: the same 142px height as an oval. */
+.card-logo.card-logo-square { width: 142px; height: 142px; }
 
 /* ===== CARD GRID =============================================== */
 .cards-section { padding: 0 20px var(--gap-xl); }
@@ -987,6 +989,8 @@ td.td-hl { background: #eecc00 !important; color: #000 !important; font-weight: 
 .services-section h2 { color: var(--leaf-bright); font-weight: 800; font-size: 1.66rem; text-align: center; margin-bottom: var(--gap-lg); }
 
 .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+/* An odd card out spans the row rather than leaving half of it empty. */
+.services-grid > .service-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
 
 .service-card {
   background: var(--card);
@@ -1365,3 +1369,20 @@ footer {
   text-align: center;
 }
 .cart-banner[hidden] { display: none; }
+
+/* ===== SOCIAL FEEDS (social.html) ============================== */
+/* Facebook and YouTube below the Instagram feed (owner, 2026-10-01). */
+.feed-section { max-width: 1200px; padding-top: 10px; padding-bottom: 20px; }
+.feed-title { font-weight: 400; font-size: 1.6rem; margin-bottom: 8px; }
+.feed-title i { margin-right: 10px; }
+.feed-sub { font-size: 0.88rem; margin-bottom: 24px; }
+.feed-frame { margin: 0 auto; }
+.feed-frame-fb { width: 100%; max-width: 500px; }
+.feed-frame-fb iframe { display: block; width: 100%; max-width: 500px; height: 640px; margin: 0 auto; border-radius: 10px; background: #fff; }
+.feed-frame-yt { max-width: 900px; aspect-ratio: 16 / 9; }
+.feed-frame-yt iframe { width: 100%; height: 100%; border: 0; border-radius: 10px; }
+.feed-soon {
+  max-width: 640px; margin: 0 auto; padding: 26px 24px; text-align: center;
+  background: var(--card); border: 1px solid var(--rule-soft); border-radius: 10px;
+}
+.feed-soon p { color: var(--gray); margin: 0 auto 18px; }

@@ -206,3 +206,24 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
    and terms of sale pages exist.
 5. Product pages for the chosen lines, with the registration check done for
    every pest product before it is listed.
+
+## Open since 2026-10-01
+
+6. **Home page logos.** The Rec Sports, Gaming and Lawn & Garden cards on
+   `index.html` still use the drawn CSS `.oval-badge`; each needs its real
+   logo image like Farms, Store, Restaurant and the rest. Symphonymph's card
+   now carries `symphonymph-mark.png` as a stand-in (owner: "for now").
+7. **Shipping** is not charged anywhere yet. The recommendation, with 2026
+   USPS numbers, is `docs/SHIPPING.md` (flat bands $6.95 / $9.95 / $14.95,
+   $4.95 on orders of $100+, free local pickup, nothing over 10 lb posted).
+   Must be built (cart AND server) before a physical product sells.
+8. **Customer accounts** (reverses "no accounts ever" for the store, at his
+   instruction): `docs/ACCOUNTS.md` recommends Netlify Identity for sign-in
+   and Netlify Blobs for lists, cart, sidebar order and order history, with
+   guest checkout kept. Not built.
+9. **YouTube on the Social page** shows a Subscribe card because the channel
+   (`UCIX4zWMxDkpMFnEnS96gGow`) has no videos. After the first upload, delete
+   the `.feed-soon` card in `social.html` and move the iframe out of
+   `<template id="yt-embed">`.
+10. **Marketing videos and social posts**: the owner wants help making them
+    soon (farm, league, studio). Not started.

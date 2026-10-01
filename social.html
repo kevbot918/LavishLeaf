@@ -86,6 +86,7 @@
 
 <!-- INTRO -->
 <section class="content-section">
+  <h2>Join the Conversation</h2>
   <p>We use social media to help spread awareness for our mission and vision as well as inform customers about our products and services.</p>
   <p>Every like, share and comment puts our work in front of someone who has not seen it yet.</p>
   <p>Please support Lavish Leaf by interacting with and sharing our social posts!</p>
@@ -123,11 +124,38 @@
   </script>
 </section>
 
+<!-- FACEBOOK: Meta's own Page plugin, free, no account needed to view -->
+<section class="content-section feed-section">
+  <h2 class="feed-title"><i class="fab fa-facebook-f"></i>Latest from Facebook</h2>
+  <p class="feed-sub">Lavish Leaf on Facebook</p>
+  <div class="feed-frame feed-frame-fb">
+    <iframe title="Lavish Leaf on Facebook" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLavishLeafInc&amp;tabs=timeline&amp;width=500&amp;height=640&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=false" width="500" height="640" style="border:none;overflow:hidden" scrolling="no" loading="lazy" allow="encrypted-media; picture-in-picture; web-share"></iframe>
+  </div>
+</section>
+
+<!-- YOUTUBE: the channel's uploads playlist (UC... becomes UU...). The
+     channel has no videos yet and YouTube shows an error box for an empty
+     playlist, so the card below stands in. After the first upload, delete
+     the card and move the iframe out of the <template>. -->
+<section class="content-section feed-section">
+  <h2 class="feed-title"><i class="fab fa-youtube"></i>Latest from YouTube</h2>
+  <p class="feed-sub">Lavish Leaf on YouTube</p>
+  <div class="feed-soon">
+    <p>Our first videos are on the way: farm days, league highlights, and the gaming studio from the ground up. Subscribe and you will see them first.</p>
+    <a href="https://www.youtube.com/channel/UCIX4zWMxDkpMFnEnS96gGow?sub_confirmation=1" target="_blank" rel="noopener" class="btn btn-sm"><i class="fab fa-youtube" style="margin-right:8px;"></i>Subscribe on YouTube</a>
+  </div>
+  <template id="yt-embed">
+    <div class="feed-frame feed-frame-yt">
+      <iframe title="Lavish Leaf on YouTube" src="https://www.youtube-nocookie.com/embed/videoseries?list=UUIX4zWMxDkpMFnEnS96gGow" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </template>
+</section>
+
 <div class="content-section" style="padding-top:10px;">
   <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-top:20px;">
     <a href="https://www.facebook.com/LavishLeafInc" target="_blank" rel="noopener" class="btn btn-sm"><i class="fab fa-facebook-f" style="margin-right:8px;"></i>Follow on Facebook</a>
     <a href="https://www.instagram.com/lavish_leaf_inc" target="_blank" rel="noopener" class="btn btn-sm"><i class="fab fa-instagram" style="margin-right:8px;"></i>Follow on Instagram</a>
-    <a href="https://www.youtube.com/@lavishleaf" target="_blank" rel="noopener" class="btn btn-sm"><i class="fab fa-youtube" style="margin-right:8px;"></i>Subscribe on YouTube</a>
+    <a href="https://www.youtube.com/channel/UCIX4zWMxDkpMFnEnS96gGow?sub_confirmation=1" target="_blank" rel="noopener" class="btn btn-sm"><i class="fab fa-youtube" style="margin-right:8px;"></i>Subscribe on YouTube</a>
   </div>
 </div>
 
