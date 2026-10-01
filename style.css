@@ -451,7 +451,9 @@ header {
 /* ===== FUTURE SECTION ========================================== */
 .future-section {
   padding: var(--gap-xl) 20px;
-  background: var(--bg-2);
+  /* The page grey, the same as the header bar and every other page's
+     sections (owner, 2026-10-01). It was the darker --bg-2 band. */
+  background: var(--bg);
   border-top: 1px solid var(--rule-soft);
   border-bottom: 1px solid var(--rule-soft);
 }
