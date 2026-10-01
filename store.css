@@ -570,8 +570,22 @@ body.ss-resizing .ss-side { transition: none; }
 #ss-shelves .ss-dragging { opacity: .45; }
 #ss-shelves .ss-drag-over { box-shadow: inset 0 2px 0 var(--accent-fill); }
 
-.ss-ship-note { margin: 10px 10px 0; font-size: .8rem; line-height: 1.45; color: var(--muted); }
-.ss-ship-note strong { color: var(--text); }
+/* The shipping line in the store bar, between the view's name and search,
+   on every view (owner, 2026-10-01). On a phone it drops to its own line. */
+.ss-ship-note { flex: 0 1 auto; min-width: 0; margin: 0 8px 0 0; font-size: .82rem; line-height: 1.35; color: var(--muted); text-align: right; }
+.ss-ship-note strong { color: var(--accent); }
+.ss-top .ss-title { margin-right: 12px; flex: 0 0 auto; max-width: 40%; }
+.ss-top .ss-ship-note { margin-left: auto; }
+.ss-top .ss-search { min-width: 200px; }
+/* Too narrow for all three on one line: the note takes its own line under
+   the bar, so the view's name and the search keep their room. */
+@media (max-width: 1300px) {
+  .ss-top { flex-wrap: wrap; height: auto; min-height: var(--top-h); padding-top: 8px; padding-bottom: 6px; row-gap: 4px; }
+  .ss-top .ss-title { margin-right: auto; }
+  .ss-top .ss-ship-note { order: 10; flex: 1 1 100%; max-width: none; margin: 0; text-align: center; font-size: .78rem; }
+  .ss-top .ss-search { width: 230px; }
+}
+@media (max-width: 640px) { .ss-top .ss-search { min-width: 0; width: auto; } .ss-top .ss-top-right { flex: 1 1 0; min-width: 0; } }
 
 .cart-ship { margin: 14px 0 0; padding: 10px 12px; border: 1px solid var(--border-soft); border-radius: 10px; }
 .cart-ship legend { padding: 0 6px; font-size: .78rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }

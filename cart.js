@@ -45,7 +45,8 @@
   var delivery = (function () {
     try {
       var d = JSON.parse(localStorage.getItem(SHIP_KEY) || '{}');
-      return { method: typeof d.method === 'string' ? d.method : 'ship', zip: typeof d.zip === 'string' ? d.zip : '' };
+      var m = d.method === 'pickup-mcalester' ? 'pickup-eufaula' : d.method;
+      return { method: typeof m === 'string' ? m : 'ship', zip: typeof d.zip === 'string' ? d.zip : '' };
     } catch (e) {
       return { method: 'ship', zip: '' };
     }
@@ -127,7 +128,7 @@
     shipWrap = el('fieldset', { class: 'cart-ship', hidden: '' });
     shipWrap.appendChild(el('legend', null, 'Delivery'));
     [['ship', 'Ship to me (48 states)'], ['pickup-eufaula', 'Pick up in Eufaula, free'],
-      ['pickup-mcalester', 'Pick up in McAlester, free'], ['local', 'Local delivery, Eufaula and McAlester']]
+      ['local', 'Local delivery, Eufaula and McAlester']]
       .forEach(function (m) {
         var row = el('label', { class: 'cart-ship-row' });
         var r = el('input', { type: 'radio', name: 'cart-ship', value: m[0] });

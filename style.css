@@ -1379,14 +1379,6 @@ footer {
 .feed-frame { margin: 0 auto; }
 .feed-frame-fb { width: 100%; max-width: 500px; }
 .feed-frame-fb iframe { display: block; width: 100%; max-width: 500px; height: 900px; margin: 0 auto; border-radius: 10px; background: #fff; }
-/* Instagram beside Facebook on a wide screen: smaller posts, more of them. */
-.feeds-grid { max-width: 1200px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 500px); gap: 36px; align-items: start; padding-bottom: 20px; }
-.feed-col-ig { max-width: 640px; }
-@media (max-width: 960px) {
-  .feeds-grid { grid-template-columns: minmax(0, 1fr); }
-  .feed-col-ig, .feed-col-fb { max-width: 560px; margin: 0 auto; width: 100%; }
-  .feed-frame-fb iframe { height: 720px; }
-}
 .feed-frame-yt { max-width: 900px; aspect-ratio: 16 / 9; }
 .feed-frame-yt iframe { width: 100%; height: 100%; border: 0; border-radius: 10px; }
 .feed-soon {
@@ -1394,3 +1386,23 @@ footer {
   background: var(--card); border: 1px solid var(--rule-soft); border-radius: 10px;
 }
 .feed-soon p { color: var(--gray); margin: 0 auto 18px; }
+
+/* Post cards (social-feed.js): one small card per Instagram or Facebook post,
+   full width, so many more posts show than the widgets allowed. */
+.post-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; margin-top: 4px; }
+.post-card {
+  display: flex; flex-direction: column; overflow: hidden;
+  background: var(--card); border: 1px solid var(--rule-soft); border-radius: 10px;
+  color: var(--white); text-decoration: none; transition: transform .18s, border-color .18s;
+}
+.post-card:hover { transform: translateY(-2px); border-color: var(--leaf); text-decoration: none; }
+.post-media { position: relative; aspect-ratio: 1 / 1; background: var(--bg-2); }
+.post-media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.post-badge { position: absolute; top: 8px; right: 8px; padding: 2px 8px; border-radius: 999px; background: rgba(0,0,0,.6); color: #fff; font-size: .72rem; font-weight: 700; }
+.post-body { padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 6px; flex: 1 1 auto; }
+.feed-section .post-text { margin: 0; color: var(--gray); font-size: .84rem; line-height: 1.45; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.feed-section .post-card.post-text-only .post-text { -webkit-line-clamp: 9; color: var(--white); font-size: .9rem; }
+.feed-section .post-date { margin-top: auto; color: var(--leaf-bright); font-size: .76rem; font-weight: 700; }
+.feed-more { margin-top: 16px; text-align: center; }
+.feed-frame-fb { margin: 0 auto; }
+@media (max-width: 480px) { .post-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; } }

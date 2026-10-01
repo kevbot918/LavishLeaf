@@ -7,7 +7,7 @@
 //   * flat by the order's packed weight: under 1 lb $6.95, 1 to 3 lb $9.95,
 //     3 to 10 lb $14.95; over 10 lb is pickup or local delivery only;
 //   * any posted order of $100 or more: $4.95 flat;
-//   * free pickup in Eufaula or McAlester;
+//   * free pickup in Eufaula (the owner, 2026-10-01: no shop in McAlester);
 //   * local delivery: free at $50, $5.00 under it, only to LOCAL_ZIPS;
 //   * the contiguous United States only.
 // A product ships only if products.json gives it "ship": true and a packed
@@ -26,7 +26,7 @@ export const SHIPPING = {
   localZips: ['74432', '74501', '74502'],
   localFreeOverCents: 5000,
   localCents: 500,
-  pickup: { 'pickup-eufaula': 'Eufaula', 'pickup-mcalester': 'McAlester' },
+  pickup: { 'pickup-eufaula': 'Eufaula' },
   // Posted orders go to the 48 contiguous states and DC only.
   notPosted: ['AK', 'HI', 'PR', 'GU', 'VI', 'AS', 'MP', 'AA', 'AE', 'AP'],
 };
@@ -37,7 +37,7 @@ const money = (cents) => '$' + (cents / 100).toFixed(2);
 const zip5 = (z) => String(z == null ? '' : z).trim().slice(0, 5);
 
 /** The methods a buyer can pick, in the order the cart lists them. */
-export const METHODS = ['ship', 'pickup-eufaula', 'pickup-mcalester', 'local'];
+export const METHODS = ['ship', 'pickup-eufaula', 'local'];
 
 /**
  * The shipping charge for an order.

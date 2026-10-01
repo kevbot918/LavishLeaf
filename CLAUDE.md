@@ -233,3 +233,13 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
    `<template id="yt-embed">`.
 10. **Marketing videos and social posts**: the owner wants help making them
     soon (farm, league, studio). Not started.
+11. **Social page feeds (2026-10-01): BUILT, waiting on Meta keys.** Our own
+    Instagram (24) and Facebook (24) posts as cards, full width, each network
+    its own section (owner: not side by side). `social-feed.mjs` + daily
+    `social-refresh.mjs` (keeps the 60-day Instagram token alive), cached in
+    Blobs store `social`. Needs `IG_ACCESS_TOKEN`, `FB_PAGE_ID`,
+    `FB_PAGE_TOKEN` in Netlify: steps in `docs/SOCIAL-FEEDS.md`. Until then
+    the Behold widget (free tier: 6 posts) and the Page plugin stand in.
+12. **Pickup is Eufaula only** (owner: no shop in McAlester). Local delivery
+    still lists McAlester ZIPs 74501/74502 in `shipping.mjs`; asked whether
+    to keep them. The shipping line sits in the store bar on every view.

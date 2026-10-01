@@ -72,7 +72,7 @@ not train customers to expect "free". If the numbers hold after a few months,
 try **free shipping at $125** and measure.
 
 **3. Free local options, always offered.** At checkout:
-* **Local pickup**, free: Eufaula or McAlester, on a day you choose (the
+* **Local pickup**, free: Eufaula only (owner, 2026-10-01: no shop in McAlester), on a day you choose (the
   soccer Sundays are an easy handover).
 * **Local delivery**, free over $50 within the compost pick-up area, $5 under
   it: the compost route is already driving past those doors.
