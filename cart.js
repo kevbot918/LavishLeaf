@@ -195,6 +195,9 @@
         function (b) { return b.checked; });
 
     payBtn.disabled = cart.length === 0 || !accepted;
+    // The store shell (store.js) draws its own cart button in the top bar
+    // and hides the floating one; this is how it learns the count.
+    document.dispatchEvent(new CustomEvent('ll-cart', { detail: { count: count } }));
   }
 
   function open() {
@@ -303,6 +306,7 @@
     (data.products || []).forEach(function (p) { products[p.id] = p; });
     cart = cart.filter(function (l) { return products[l.id] && !products[l.id].interval; });
     build();
+    window.LLCart = { open: open, add: add, subscribe: subscribe };
     render();
     document.querySelectorAll('[data-cart-add]').forEach(function (b) {
       b.addEventListener('click', function () { add(b.getAttribute('data-cart-add')); });

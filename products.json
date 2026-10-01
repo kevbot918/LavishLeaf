@@ -11,13 +11,23 @@
     "paypalPlanId / paypalSandboxPlanId: the PayPal subscription plan for a product with an interval, in each PayPal environment. tools/paypal-plans.mjs creates them; do not type them by hand.",
     "icon is the emoji shown when a product has no photo. image is an optional photo, given as a path inside this site such as \"images/compost.jpg\"; put the file there first or the render refuses rather than publishing a broken image. imageAlt describes the photo for screen readers and defaults to the product name.",
     "blurb is an optional sentence shown under the name, up to 200 characters. Leave it out and the card looks exactly as it did before.",
-    "waiver is optional: { \"version\", \"url\", \"label\" }. The cart refuses to open PayPal for that product until the box is ticked, in the browser and on the server, and the version travels to PayPal as the order's custom_id. Change the text at url, change the version."
+    "waiver is optional: { \"version\", \"url\", \"label\" }. The cart refuses to open PayPal for that product until the box is ticked, in the browser and on the server, and the version travels to PayPal as the order's custom_id. Change the text at url, change the version.",
+    "category names the Home shelf a product sits on (shelves appear in the order categories first appear here). tags are extra words the store search matches, beside the name, blurb and category."
   ],
   "checkout": "links",
   "products": [
     {
       "id": "compost-monthly",
       "name": "Compost Pick-up",
+      "category": "Farm & Garden",
+      "tags": [
+        "compost",
+        "soil",
+        "bucket",
+        "pickup",
+        "subscription",
+        "farm"
+      ],
       "icon": "🌱",
       "image": "images/compost-pickup.jpg",
       "imageAlt": "Green compost collection buckets lined with compostable bags, ready for pickup",
@@ -33,6 +43,15 @@
     {
       "id": "soccer-player-fall",
       "name": "Player Registration: 7v7 Adult Soccer League (Fall Season)",
+      "category": "Rec Sports",
+      "tags": [
+        "soccer",
+        "7v7",
+        "league",
+        "player",
+        "fall",
+        "registration"
+      ],
       "icon": "⚽",
       "image": "images/soccer-player.jpg",
       "imageAlt": "Two players chasing a soccer ball across a grass field at sunset",
@@ -53,6 +72,15 @@
     {
       "id": "soccer-team-fall",
       "name": "Team Registration: 7v7 Adult Soccer",
+      "category": "Rec Sports",
+      "tags": [
+        "soccer",
+        "7v7",
+        "league",
+        "team",
+        "fall",
+        "registration"
+      ],
       "icon": "⚽",
       "image": "images/soccer-team.jpg",
       "imageAlt": "Adults in practice pinnies playing a friendly soccer match on a grass field",

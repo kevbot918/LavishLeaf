@@ -1,5 +1,14 @@
 # Finishing the store: every step, in order
 
+**Progress, 2026-09-30.** Steps 1 and 2 are done and verified (the functions
+answer 400 on an empty cart, not 503, and a sandbox order `6HA4649961313624B`
+was created, approved by the owner and captured COMPLETED for $25.00).
+Step 3 has drafts: three public-domain photographs (`docs/PHOTO-SOURCES.md`)
+and one sentence each, for the owner to replace or keep. Step 4 is built:
+`waiver.html` (version 2026-09) and the `waiver` block on both soccer
+products. The store page itself was rebuilt the same day as the app-style
+shell described in CLAUDE.md. Still open: the step 5 gaps, step 6, step 7.
+
 Written 2026-09-27, for Kevin, at his request: *"Give me the precise steps that
 I need to do to complete the store, including the paypal links and setup."*
 

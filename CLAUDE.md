@@ -77,6 +77,41 @@ is no staging; check the live site with `curl -sI` after a deploy.
   to the App Store.** So the store is a release gate for the app session, and
   the product pages are this session's work.
 
+## The store shell (2026-09-30): the one page that is not grey
+
+The owner, 2026-09-30: *"I want our online store to look fairly identical to
+our Symphonymph app user interface"*, and *"more elegant than the app"*. So
+`store.html` is the app's shell and NOT the site's: it loads `store.css`
+(not `style.css`), its ground is the app's (`#14171C` dark, `#F7F8FA`
+light, true black), and rule 1 above stays true for every other page.
+
+* **Home is shelves**, one per `category` in `products.json`, rendered by
+  `tools/render-store.mjs` between the PRODUCTS markers so the page works
+  with JavaScript off. A shelf shows `shelfLength` products (10 by default,
+  the app's `kShelfLength`; 10 to 30 in Settings) and "See all" opens the
+  whole shelf. `data-category` is required on every product now; `tags`
+  feed the search.
+* **The sidebar is always there on a wide screen** (300px) and a drawer
+  under 1000px: the oval logo top-right drawn as inline SVG so it follows
+  the accent, Support (the donate pop-up, `donate.js`, with the
+  not-tax-deductible line beside it), Report a problem (the Netlify
+  `contact` form in a dialog), Home, Search, Your lists, Shop (the
+  shelves), More from Lavish Leaf (the rest of the site), Customize.
+* **The top bar**: menu (phone), title, search, settings, the three social
+  icons, and the cart, which appears only on a deploy with
+  `"checkout": "cart"` (the renderer stamps `<body data-checkout>`;
+  `cart.js` exposes `window.LLCart` and a `ll-cart` event for the badge).
+* **Settings** (`store.js`, localStorage `ll-store`, no accounts ever):
+  Light / Dark / Black / Match my device; the app's nine accents with the
+  app's own light and dark seeds (`lib/ui/theme.dart`), which recolour the
+  chrome AND the logo; which Home shelves show and in what order; what the
+  sidebar shows and in what order; products per shelf; named wish lists
+  (the heart on every card; one list toggles, several ask which); reset.
+* **Search** has a chip per shelf, three sorts, a one-time-only filter,
+  and matches every typed word against name, tags, shelf and sentence.
+* The old `#donate` anchor still works: other pages' Donate buttons land
+  on the sidebar's Support link (the drawer opens on a phone).
+
 ## The store research, and how it must be done
 
 `docs/STORE-PRODUCTS.md` is the one store document: five tiers plus a

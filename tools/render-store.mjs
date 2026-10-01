@@ -13,7 +13,8 @@
 //
 // What it touches, and nothing else:
 //   1. store.html, between <!-- PRODUCTS:BEGIN --> and <!-- PRODUCTS:END -->:
-//      one card per active product.
+//      one Home shelf per category, one card per active product, and the
+//      checkout mode stamped on <body data-checkout> for store.js.
 //   2. Any <a ... data-product="ID" ...> on any page: its href, so the
 //      rec-sports and farms buttons check out through the same link.
 //   3. netlify/lib/catalog.mjs: the prices the checkout functions trust.
@@ -77,6 +78,13 @@ for (const p of products) {
     }
   }
   if (p.imageAlt != null && typeof p.imageAlt !== 'string') throw new Error(`${where}: imageAlt must be text`);
+  // A product lives on exactly one Home shelf, named by its category. The
+  // store page is a set of shelves now (2026-09-30, after the Symphonymph
+  // app's Home), so a product with no category has nowhere to be drawn.
+  if (typeof p.category !== 'string' || !p.category.trim()) throw new Error(`${where}: category is required, e.g. "Rec Sports"`);
+  if (p.tags != null && !(Array.isArray(p.tags) && p.tags.every((t) => typeof t === 'string'))) {
+    throw new Error(`${where}: tags must be a list of words`);
+  }
   if (p.blurb != null && p.blurb !== '') {
     if (typeof p.blurb !== 'string') throw new Error(`${where}: blurb must be text`);
     if (p.blurb.length > 200) throw new Error(`${where}: blurb is ${p.blurb.length} characters; keep it under 200`);
@@ -104,27 +112,57 @@ function priceLine(p) {
   return `${money(p.price)}${per}${old}`;
 }
 
+/** A shelf's URL-safe name: "Farm & Garden" -> "farm-garden". */
+const slug = (name) => name.toLowerCase().replace(/&/g, ' ').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
 function card(p) {
   const button = CART
     ? p.interval
-      ? `    <button type="button" class="btn btn-sm" data-subscribe="${p.id}">${esc(p.button)}</button>`
-      : `    <button type="button" class="btn btn-sm" data-cart-add="${p.id}">Add to cart</button>`
-    : `    <a href="${esc(hrefFor(p))}"${linkAttrs(p)} class="btn btn-sm" data-product="${p.id}">${esc(p.button)}</a>`;
+      ? `      <button type="button" class="btn btn-sm" data-subscribe="${p.id}">${esc(p.button)}</button>`
+      : `      <button type="button" class="btn btn-sm" data-cart-add="${p.id}">Add to cart</button>`
+    : `      <a href="${esc(hrefFor(p))}"${linkAttrs(p)} class="btn btn-sm" data-product="${p.id}">${esc(p.button)}</a>`;
   // A photo when there is one, the emoji when there is not. Both sit in the
-  // same box so a half-photographed store still lines up.
+  // same box so a half-photographed store still lines up. The heart saves
+  // the product to a wish list in this browser (store.js); without
+  // JavaScript it is simply a button that does nothing, which is honest.
   const media = p.image
-    ? `    <div class="product-img has-photo"><img src="${esc(p.image)}" alt="${esc(p.imageAlt || p.name)}" loading="lazy"></div>`
-    : `    <div class="product-img">${esc(p.icon || '')}</div>`;
-  const blurb = p.blurb ? [`    <p class="product-blurb">${esc(p.blurb)}</p>`] : [];
+    ? `      <img src="${esc(p.image)}" alt="${esc(p.imageAlt || p.name)}" loading="lazy">`
+    : `      <span class="sp-icon" aria-hidden="true">${esc(p.icon || '')}</span>`;
+  const blurb = p.blurb ? [`    <p class="sp-blurb">${esc(p.blurb)}</p>`] : [];
   return [
-    '  <div class="product-card">',
+    `  <article class="sp-card" data-id="${p.id}" data-category="${esc(p.category)}">`,
+    '    <div class="sp-media">',
     media,
-    `    <h3>${esc(p.name)}</h3>`,
+    `      <button type="button" class="sp-wish" data-wish="${p.id}" aria-pressed="false" aria-label="Save ${esc(p.name)} to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>`,
+    '    </div>',
+    `    <h3 class="sp-name">${esc(p.name)}</h3>`,
     ...blurb,
-    `    <div class="product-price">${priceLine(p)}</div>`,
+    '    <div class="sp-foot">',
+    `      <span class="sp-price">${priceLine(p)}</span>`,
     button,
-    '  </div>',
+    '    </div>',
+    '  </article>',
   ].join('\n');
+}
+
+/** One Home shelf per category, in the order categories first appear. */
+function shelves(active) {
+  const groups = new Map();
+  for (const p of active) {
+    if (!groups.has(p.category)) groups.set(p.category, []);
+    groups.get(p.category).push(p);
+  }
+  return [...groups].map(([name, ps]) => [
+    `<section class="shelf" id="shelf-${slug(name)}" data-shelf="${slug(name)}" data-title="${esc(name)}">`,
+    '  <div class="shelf-head">',
+    `    <h2>${esc(name)}</h2>`,
+    `    <a class="shelf-all" href="#shelf/${slug(name)}">See all</a>`,
+    '  </div>',
+    '  <div class="shelf-row">',
+    ps.map(card).join('\n\n'),
+    '  </div>',
+    '</section>',
+  ].join('\n')).join('\n\n');
 }
 
 /** In cart mode a button on another page goes to the Store, product added. */
@@ -146,8 +184,9 @@ for (const file of readdirSync(ROOT).filter((f) => f.endsWith('.html'))) {
   const B = '<!-- PRODUCTS:BEGIN -->', E = '<!-- PRODUCTS:END -->';
   const b = s.indexOf(B), e = s.indexOf(E);
   if (b >= 0 && e > b) {
-    const cards = products.filter((p) => p.active !== false).map(card).join('\n\n');
-    s = s.slice(0, b + B.length) + '\n' + cards + '\n' + s.slice(e);
+    s = s.slice(0, b + B.length) + '\n' + shelves(products.filter((p) => p.active !== false)) + '\n' + s.slice(e);
+    // store.js reads this to know whether a cart exists on this deploy.
+    s = s.replace(/<body([^>]*?)\sdata-checkout="[a-z]+"/, `<body$1 data-checkout="${checkout}"`);
   }
 
   // The cart script, on the Store page only and only in cart mode, so the

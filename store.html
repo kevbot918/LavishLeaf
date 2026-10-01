@@ -1,27 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark" data-accent="leaf">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lavish Leaf Store</title>
-  <meta name="description" content="Lavish Leaf Store: sign up for compost pick-up, register for adult soccer leagues, and donate to support our mission.">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta name="description" content="The Lavish Leaf store: compost pick-up, rec league registrations, and the farm and garden lines as they arrive. Shelves, search, wish lists, and your own look.">
+  <meta name="theme-color" content="#14171C">
+  <meta name="color-scheme" content="dark light">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sriracha&family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="store.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <!-- The look is chosen in this browser (store.js) and applied before the
+       first paint so a dark page never flashes light. -->
+  <script>
+    (function () {
+      try {
+        var s = JSON.parse(localStorage.getItem('ll-store') || '{}');
+        var h = document.documentElement;
+        if (s.theme) h.setAttribute('data-theme', s.theme === 'system'
+          ? (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark') : s.theme);
+        if (s.accent) h.setAttribute('data-accent', s.accent);
+      } catch (e) {}
+    })();
+  </script>
 
   <!-- Open Graph / social sharing -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Lavish Leaf">
   <meta property="og:url" content="https://lavishleaf.org/store.html">
   <meta property="og:title" content="Lavish Leaf Store">
-  <meta property="og:description" content="Support Lavish Leaf: donate, sign up for compost pick-up, and register for adult soccer leagues.">
+  <meta property="og:description" content="Compost pick-up, rec league registrations, and the farm and garden lines as they arrive.">
   <meta property="og:image" content="https://lavishleaf.org/og-image.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Lavish Leaf Store">
-  <meta name="twitter:description" content="Support Lavish Leaf: donate, sign up for compost pick-up, and register for adult soccer leagues.">
+  <meta name="twitter:description" content="Compost pick-up, rec league registrations, and the farm and garden lines as they arrive.">
   <meta name="twitter:image" content="https://lavishleaf.org/og-image.png">
 
   <!-- Google Analytics -->
@@ -33,234 +47,332 @@
     gtag('config', 'G-8SKVQ74TF6');
   </script>
 </head>
-<body>
+<body class="store-shell" data-checkout="links">
 
-<header>
-  <div class="nav-wrapper">
-    <nav class="nav-left">
-      <a href="farms.html">Farms</a>
-      <a href="rec-sports.html">Rec Sports</a>
-      <a href="gaming.html">Gaming</a>
-      <a href="symphonymph.html">Symphonymph</a>
-      <a href="store.html" class="active">Store</a>
-      <a href="careers.html">Careers</a>
-      <a href="social.html">Social</a>
-    </nav>
-    <div class="nav-social-left" aria-label="Lavish Leaf elsewhere">
-      <a href="https://www.facebook.com/LavishLeafInc" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://www.instagram.com/lavish_leaf_inc" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+<a class="skip" href="#main">Skip to the products</a>
+
+<!-- ===================== SIDEBAR ===================== -->
+<div class="ss-scrim" id="scrim" hidden></div>
+<aside class="ss-side" id="side" aria-label="Store menu">
+  <div class="ss-side-head">
+    <div class="ss-brand">
+      <p class="ss-brand-name">Lavish Leaf</p>
+      <p class="ss-brand-line">Grown, played and made in Eastern Oklahoma.</p>
     </div>
-    <a href="index.html" class="site-logo" aria-label="Lavish Leaf home"><img src="logo-oval.png" alt="Lavish Leaf" width="138" height="94"></a>
-    <div class="nav-right">
-      <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-      <a href="https://www.facebook.com/LavishLeafInc" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://www.instagram.com/lavish_leaf_inc" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a class="m-keep" href="https://www.youtube.com/@lavishleaf" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-      <a class="m-keep" href="mailto:support@lavishleaf.org" aria-label="Email"><i class="fas fa-envelope"></i></a>
-    </div>
-  </div>
-  <nav class="mobile-nav" id="mobileNav">
-    <a href="farms.html">Farms</a>
-    <a href="rec-sports.html">Rec Sports</a>
-    <a href="gaming.html">Gaming</a>
-    <a href="symphonymph.html">Symphonymph</a>
-    <a href="store.html">Store</a>
-    <a href="careers.html">Careers</a>
-    <a href="social.html">Social</a>
-  </nav>
-</header>
-
-<!-- PAGE HERO -->
-<section class="page-hero">
-  <h1 class="page-hero-title">
-    <span class="ph-white">Lavish Leaf</span>
-    <span class="ph-green"><em>Store</em></span>
-  </h1>
-</section>
-
-<!-- DONATE -->
-<section class="content-section" id="donate">
-  <h2>Support Lavish Leaf</h2>
-  <p>Your donations will go directly into whatever division you choose to support at checkout: Symphonymph, Gaming, Farms, Rec Sports. Every dollar helps us serve our community!</p>
-  <p class="p-center" style="font-size:0.88rem; margin-bottom:8px;">No PayPal account needed, you can give with a debit or credit card.</p>
-  <p class="p-center" style="font-size:0.82rem; margin-bottom:28px;">Donations support the work directly and are not tax-deductible.</p>
-  <div class="donate-btns">
-    <a href="https://www.paypal.com/donate/?hosted_button_id=FK2ME6A2QUFWG" target="_blank" rel="noopener" class="donate-btn donate-paypal">
-      <i class="fab fa-paypal"></i> Donate via PayPal
+    <a class="ss-logo" href="index.html" aria-label="Lavish Leaf home">
+      <!-- The oval mark, drawn so its green follows the accent chosen in Settings. -->
+      <svg viewBox="0 0 220 150" role="img" aria-hidden="true">
+        <ellipse cx="110" cy="75" rx="104" ry="68" fill="none" stroke="currentColor" stroke-width="7"/>
+        <g transform="translate(150,38) rotate(38) scale(0.42) translate(-50,-50)">
+          <path d="M50 11 C60 11 74 24 76 46 C78 64 68 80 58 87 C55 89 53 90 52 92 C51 94 50 97 50 97 C50 97 49 94 48 92 C47 90 45 89 42 87 C32 80 22 64 24 46 C26 24 40 11 50 11 Z" fill="currentColor"/>
+        </g>
+        <text x="110" y="92" text-anchor="middle" font-family="Sriracha, cursive" font-size="40" fill="currentColor">Lavish Leaf</text>
+      </svg>
     </a>
   </div>
-</section>
 
-<hr class="divider">
+  <div class="ss-side-actions">
+    <a class="ss-action donate-paypal" id="donate" href="https://www.paypal.com/donate/?hosted_button_id=FK2ME6A2QUFWG" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg>
+      Support Lavish Leaf
+    </a>
+    <p class="ss-action-note">Donations support the work directly and are not tax-deductible.</p>
+    <button type="button" class="ss-action" id="report-open">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v12H7l-3 3V4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      Report a problem, or ask for something
+    </button>
+  </div>
+
+  <nav class="ss-nav" id="ss-nav" aria-label="Store">
+    <a class="ss-item" href="#home" data-nav="home" data-view="home">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5V20h-6v-6H9v6H3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      Home
+    </a>
+    <a class="ss-item" href="#search" data-nav="search" data-view="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m16 16 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      Search
+    </a>
+
+    <p class="ss-heading" data-nav-group="lists">Your lists</p>
+    <div class="ss-group" id="ss-lists" data-nav-group="lists"></div>
+    <button type="button" class="ss-item ss-item-sub" id="ss-new-list" data-nav-group="lists">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      New list
+    </button>
+    <a class="ss-item" href="#cart" data-nav="cart" id="ss-cart" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 11h11.2L21 7H6.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="9" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></svg>
+      Cart <span class="ss-badge" data-cart-count hidden>0</span>
+    </a>
+
+    <p class="ss-heading" data-nav-group="shop">Shop</p>
+    <div class="ss-group" id="ss-shelves" data-nav-group="shop"></div>
+
+    <p class="ss-heading" data-nav-group="more">More from Lavish Leaf</p>
+    <div class="ss-group" data-nav-group="more">
+      <a class="ss-item ss-item-ext" href="farms.html" data-nav="farms">Farms</a>
+      <a class="ss-item ss-item-ext" href="rec-sports.html" data-nav="rec-sports">Rec Sports</a>
+      <a class="ss-item ss-item-ext" href="gaming.html" data-nav="gaming">Gaming</a>
+      <a class="ss-item ss-item-ext" href="symphonymph.html" data-nav="symphonymph">Symphonymph</a>
+      <a class="ss-item ss-item-ext" href="careers.html" data-nav="careers">Careers</a>
+      <a class="ss-item ss-item-ext" href="social.html" data-nav="social">Social</a>
+    </div>
+
+    <a class="ss-item ss-item-quiet" href="#settings/sidebar" data-view="settings">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      Customize this menu
+    </a>
+  </nav>
+
+  <div class="ss-side-foot">
+    <a href="privacy.html">Privacy</a>
+    <a href="refunds.html">Refunds</a>
+    <a href="terms-of-sale.html">Terms of Sale</a>
+    <a href="waiver.html">Waiver</a>
+    <span>&copy; <span id="year"></span> Lavish Leaf Inc</span>
+  </div>
+</aside>
+
+<!-- ===================== MAIN ===================== -->
+<div class="ss-main">
+  <header class="ss-top">
+    <button type="button" class="ss-icon ss-menu" id="menu-open" aria-label="Open the menu" aria-controls="side" aria-expanded="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <h1 class="ss-title" id="ss-title">Store</h1>
+    <div class="ss-top-right">
+      <a class="ss-icon" href="#search" aria-label="Search the store" data-view="search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m16 16 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </a>
+      <a class="ss-icon" href="#settings" aria-label="Settings" data-view="settings">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+      </a>
+      <span class="ss-top-sep" aria-hidden="true"></span>
+      <a class="ss-icon ss-social" href="https://www.facebook.com/LavishLeafInc" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.4 1.5-1.4h1.4V5.1c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8V11H8v3h2.5v7z"/></svg>
+      </a>
+      <a class="ss-icon ss-social" href="https://www.instagram.com/lavish_leaf_inc" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3.8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.2"/></svg>
+      </a>
+      <a class="ss-icon ss-social" href="https://www.youtube.com/@lavishleaf" target="_blank" rel="noopener" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 8.2c-.2-1.4-.8-2.1-2.2-2.3C17.9 5.6 12 5.6 12 5.6s-5.9 0-7.8.3C2.8 6.1 2.2 6.8 2 8.2 1.8 9.6 1.8 12 1.8 12s0 2.4.2 3.8c.2 1.4.8 2.1 2.2 2.3 1.9.3 7.8.3 7.8.3s5.9 0 7.8-.3c1.4-.2 2-.9 2.2-2.3.2-1.4.2-3.8.2-3.8s0-2.4-.2-3.8zM10 15V9l5.2 3z"/></svg>
+      </a>
+      <button type="button" class="ss-icon ss-cart-btn" id="cart-open" aria-label="Your cart" hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 11h11.2L21 7H6.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="9" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></svg>
+        <span class="ss-badge" data-cart-count hidden>0</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" class="ss-content">
+
+    <!-- ---------- HOME ---------- -->
+    <section class="view" id="view-home" data-view-name="home">
+      <section class="shelf shelf-lists" id="shelf-lists" data-shelf="lists" data-title="Your lists">
+        <div class="shelf-head">
+          <h2>Your lists</h2>
+          <a class="shelf-all" href="#settings/lists">Manage</a>
+        </div>
+        <div class="shelf-row" id="home-lists"></div>
+      </section>
 
 <!-- PRODUCTS: generated from products.json by tools/render-store.mjs. Edit that file, not this block. -->
-<div class="store-products">
+<div id="shelves">
 <!-- PRODUCTS:BEGIN -->
-  <div class="product-card">
-    <div class="product-img has-photo"><img src="images/compost-pickup.jpg" alt="Green compost collection buckets lined with compostable bags, ready for pickup" loading="lazy"></div>
-    <h3>Compost Pick-up</h3>
-    <p class="product-blurb">A 5 gallon bucket at your door, swapped for a clean one every one to two weeks on the day you choose. Your scraps become living soil on our farm.</p>
-    <div class="product-price">$20.00 every month</div>
-    <a href="mailto:support@lavishleaf.org?subject=Compost Pick-Up Sign Up" class="btn btn-sm" data-product="compost-monthly">Sign Up</a>
+<section class="shelf" id="shelf-farm-garden" data-shelf="farm-garden" data-title="Farm &amp; Garden">
+  <div class="shelf-head">
+    <h2>Farm &amp; Garden</h2>
+    <a class="shelf-all" href="#shelf/farm-garden">See all</a>
   </div>
+  <div class="shelf-row">
+  <article class="sp-card" data-id="compost-monthly" data-category="Farm &amp; Garden">
+    <div class="sp-media">
+      <img src="images/compost-pickup.jpg" alt="Green compost collection buckets lined with compostable bags, ready for pickup" loading="lazy">
+      <button type="button" class="sp-wish" data-wish="compost-monthly" aria-pressed="false" aria-label="Save Compost Pick-up to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
+    </div>
+    <h3 class="sp-name">Compost Pick-up</h3>
+    <p class="sp-blurb">A 5 gallon bucket at your door, swapped for a clean one every one to two weeks on the day you choose. Your scraps become living soil on our farm.</p>
+    <div class="sp-foot">
+      <span class="sp-price">$20.00 every month</span>
+      <a href="mailto:support@lavishleaf.org?subject=Compost Pick-Up Sign Up" class="btn btn-sm" data-product="compost-monthly">Sign Up</a>
+    </div>
+  </article>
+  </div>
+</section>
 
-  <div class="product-card">
-    <div class="product-img has-photo"><img src="images/soccer-player.jpg" alt="Two players chasing a soccer ball across a grass field at sunset" loading="lazy"></div>
-    <h3>Player Registration: 7v7 Adult Soccer League (Fall Season)</h3>
-    <p class="product-blurb">One player's spot in the fall 7v7 league: Sunday games in Eufaula and McAlester through Christmas, with insurance, fields, equipment and prizes covered by the fee.</p>
-    <div class="product-price">$25.00 <span class="old-price">$30.00</span></div>
-    <a href="mailto:support@lavishleaf.org?subject=Player Registration - 7v7 Adult Soccer Fall Season" class="btn btn-sm" data-product="soccer-player-fall">Player Registration</a>
+<section class="shelf" id="shelf-rec-sports" data-shelf="rec-sports" data-title="Rec Sports">
+  <div class="shelf-head">
+    <h2>Rec Sports</h2>
+    <a class="shelf-all" href="#shelf/rec-sports">See all</a>
   </div>
+  <div class="shelf-row">
+  <article class="sp-card" data-id="soccer-player-fall" data-category="Rec Sports">
+    <div class="sp-media">
+      <img src="images/soccer-player.jpg" alt="Two players chasing a soccer ball across a grass field at sunset" loading="lazy">
+      <button type="button" class="sp-wish" data-wish="soccer-player-fall" aria-pressed="false" aria-label="Save Player Registration: 7v7 Adult Soccer League (Fall Season) to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
+    </div>
+    <h3 class="sp-name">Player Registration: 7v7 Adult Soccer League (Fall Season)</h3>
+    <p class="sp-blurb">One player's spot in the fall 7v7 league: Sunday games in Eufaula and McAlester through Christmas, with insurance, fields, equipment and prizes covered by the fee.</p>
+    <div class="sp-foot">
+      <span class="sp-price">$25.00 <span class="old-price">$30.00</span></span>
+      <a href="mailto:support@lavishleaf.org?subject=Player Registration - 7v7 Adult Soccer Fall Season" class="btn btn-sm" data-product="soccer-player-fall">Player Registration</a>
+    </div>
+  </article>
 
-  <div class="product-card">
-    <div class="product-img has-photo"><img src="images/soccer-team.jpg" alt="Adults in practice pinnies playing a friendly soccer match on a grass field" loading="lazy"></div>
-    <h3>Team Registration: 7v7 Adult Soccer</h3>
-    <p class="product-blurb">Register a whole 7v7 squad for the fall season: Sunday games in Eufaula and McAlester through Christmas, and your team on the live standings from week one.</p>
-    <div class="product-price">$250.00 <span class="old-price">$300.00</span></div>
-    <a href="mailto:support@lavishleaf.org?subject=Team Registration - 7v7 Adult Soccer" class="btn btn-sm" data-product="soccer-team-fall">Team Registration</a>
+  <article class="sp-card" data-id="soccer-team-fall" data-category="Rec Sports">
+    <div class="sp-media">
+      <img src="images/soccer-team.jpg" alt="Adults in practice pinnies playing a friendly soccer match on a grass field" loading="lazy">
+      <button type="button" class="sp-wish" data-wish="soccer-team-fall" aria-pressed="false" aria-label="Save Team Registration: 7v7 Adult Soccer to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
+    </div>
+    <h3 class="sp-name">Team Registration: 7v7 Adult Soccer</h3>
+    <p class="sp-blurb">Register a whole 7v7 squad for the fall season: Sunday games in Eufaula and McAlester through Christmas, and your team on the live standings from week one.</p>
+    <div class="sp-foot">
+      <span class="sp-price">$250.00 <span class="old-price">$300.00</span></span>
+      <a href="mailto:support@lavishleaf.org?subject=Team Registration - 7v7 Adult Soccer" class="btn btn-sm" data-product="soccer-team-fall">Team Registration</a>
+    </div>
+  </article>
   </div>
+</section>
 <!-- PRODUCTS:END -->
 </div>
 
-<div class="coming-soon-banner">
-  <i class="fas fa-leaf" style="margin-right:8px;"></i>
-  Eco-Friendly Household Products Coming Soon.
-  <i class="fas fa-gamepad" style="margin-left:16px; margin-right:8px;"></i>
-  Lavish Leaf Gaming Assets &amp; Games Coming Soon.
+      <p class="ss-home-foot">
+        Shelves grow as lines arrive. Save anything to a list with the heart, or
+        <a href="#settings/home">choose which shelves show here</a>.
+      </p>
+    </section>
+
+    <!-- ---------- SEARCH ---------- -->
+    <section class="view" id="view-search" data-view-name="search" hidden>
+      <form class="ss-search" role="search" id="search-form">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m16 16 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input type="search" id="search-input" placeholder="Search the store" autocomplete="off" aria-label="Search the store">
+        <button type="button" id="search-clear" aria-label="Clear the search" hidden>&times;</button>
+      </form>
+      <div class="ss-chips" id="search-chips" role="group" aria-label="Filter by shelf"></div>
+      <div class="ss-sortrow">
+        <span class="ss-sortlabel">Sort</span>
+        <div class="ss-seg" role="group" aria-label="Sort order">
+          <button type="button" data-sort="relevance" aria-pressed="true">Relevance</button>
+          <button type="button" data-sort="price-asc" aria-pressed="false">Price, low to high</button>
+          <button type="button" data-sort="price-desc" aria-pressed="false">Price, high to low</button>
+        </div>
+        <label class="ss-check"><input type="checkbox" id="filter-onetime"> One-time only</label>
+      </div>
+      <p class="ss-count" id="search-count" role="status" aria-live="polite"></p>
+      <ul class="ss-results" id="search-results"></ul>
+    </section>
+
+    <!-- ---------- A LIST, OR A WHOLE SHELF ---------- -->
+    <section class="view" id="view-list" data-view-name="list" hidden>
+      <div class="ss-list-head">
+        <p class="ss-list-kicker" id="list-kicker"></p>
+        <div class="ss-list-actions" id="list-actions"></div>
+      </div>
+      <p class="ss-empty" id="list-empty" hidden></p>
+      <div class="ss-grid" id="list-grid"></div>
+    </section>
+
+    <!-- ---------- SETTINGS ---------- -->
+    <section class="view" id="view-settings" data-view-name="settings" hidden>
+
+      <section class="ss-set" id="set-appearance">
+        <h2 class="ss-set-h">Appearance</h2>
+        <p class="ss-set-p">This is the store's own setting. It does not follow your device unless you ask it to.</p>
+        <div class="ss-radios" role="radiogroup" aria-label="Appearance">
+          <label class="ss-radio"><input type="radio" name="theme" value="light"><span>Light</span></label>
+          <label class="ss-radio"><input type="radio" name="theme" value="dark"><span>Dark</span></label>
+          <label class="ss-radio"><input type="radio" name="theme" value="black"><span>Black<small>True black. Saves battery on OLED screens.</small></span></label>
+          <label class="ss-radio"><input type="radio" name="theme" value="system"><span>Match my device</span></label>
+        </div>
+      </section>
+
+      <section class="ss-set" id="set-accent">
+        <h2 class="ss-set-h">Accent color</h2>
+        <p class="ss-set-p">The buttons, the links and the logo follow it. Each one is checked for readable contrast on both the light and the dark backgrounds.</p>
+        <div class="ss-swatches" id="accent-swatches" role="radiogroup" aria-label="Accent color"></div>
+      </section>
+
+      <section class="ss-set" id="set-home">
+        <h2 class="ss-set-h">Home shelves</h2>
+        <p class="ss-set-p">Choose which shelves show on Home and in what order. Taking a shelf off Home only takes it off Home: its products stay in Search and in the menu.</p>
+        <ul class="ss-order" id="order-home"></ul>
+        <label class="ss-range">
+          <span>Products per shelf: <output id="shelf-len-out">10</output></span>
+          <input type="range" id="shelf-len" min="10" max="30" step="5" value="10">
+        </label>
+      </section>
+
+      <section class="ss-set" id="set-sidebar">
+        <h2 class="ss-set-h">Sidebar</h2>
+        <p class="ss-set-p">Choose what the menu shows and in what order. Hidden is not gone: a hidden shelf is still on Home and in Search; only the menu is shorter.</p>
+        <ul class="ss-order" id="order-side"></ul>
+      </section>
+
+      <section class="ss-set" id="set-lists">
+        <h2 class="ss-set-h">Wish lists</h2>
+        <p class="ss-set-p">Lists live in this browser only. Nothing here asks you to sign in, ever.</p>
+        <ul class="ss-order ss-order-lists" id="order-lists"></ul>
+        <button type="button" class="btn btn-sm" id="set-new-list">New list</button>
+      </section>
+
+      <section class="ss-set" id="set-reset">
+        <h2 class="ss-set-h">Start over</h2>
+        <p class="ss-set-p">Puts every setting back the way it came. Your wish lists are kept.</p>
+        <button type="button" class="btn btn-sm btn-ghost" id="set-reset-btn">Reset the look and the layout</button>
+      </section>
+    </section>
+  </main>
 </div>
 
-<hr class="divider">
-
-<!-- CONTACT & NEWSLETTER -->
-<section class="bottom-forms-section">
-  <div class="bottom-forms-inner">
-    <p class="bottom-forms-label">Contact &amp; Newsletter</p>
-    <div class="bottom-forms-grid">
-
-      <div class="bottom-form-col">
-        <h2>Contact Us</h2>
-        <p>Have a question or want to get in touch? We'd love to hear from you.</p>
-        <form name="contact" data-netlify="true" onsubmit="handleContact(event)"><input type="hidden" name="form-name" value="contact">
-          <div class="form-group">
-            <div class="form-row">
-              <div>
-                <label class="form-label" for="bf-first">First Name <span class="req">(required)</span></label>
-                <input type="text" id="bf-first" name="first-name" required>
-              </div>
-              <div>
-                <label class="form-label" for="bf-last">Last Name <span class="req">(required)</span></label>
-                <input type="text" id="bf-last" name="last-name" required>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="bf-email">Email <span class="req">(required)</span></label>
-            <input type="email" id="bf-email" name="email" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="bf-phone">Phone</label>
-            <input type="tel" id="bf-phone" name="phone">
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="bf-msg">Message <span class="req">(required)</span></label>
-            <textarea id="bf-msg" name="message" required></textarea>
-          </div>
-          <button type="submit" class="btn">Send Message</button>
-        </form>
-      </div>
-
-      <div class="bottom-forms-vdivider"></div>
-
-      <div class="bottom-form-col">
-        <h2>Newsletter</h2>
-        <p>Stay up to date with Lavish Leaf news: farms, rec sports, gaming, online store, Symphonymph, and more!</p>
-        <form name="newsletter" data-netlify="true" onsubmit="handleNewsletter(event)"><input type="hidden" name="form-name" value="newsletter">
-          <div class="form-group">
-            <div class="form-row">
-              <div>
-                <label class="form-label" for="bn-first">First Name</label>
-                <input type="text" id="bn-first" name="first-name">
-              </div>
-              <div>
-                <label class="form-label" for="bn-last">Last Name</label>
-                <input type="text" id="bn-last" name="last-name">
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="bn-email">Email <span class="req">(required)</span></label>
-            <input type="email" id="bn-email" name="email" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="bn-phone">Phone</label>
-            <input type="tel" id="bn-phone" name="phone">
-          </div>
-          <div class="checkbox-row">
-            <input type="checkbox" id="bn-news" name="subscribe" value="yes" checked>
-            <label for="bn-news">Sign up for news and updates</label>
-          </div>
-          <div style="margin-top:20px;">
-            <button type="submit" class="btn">Subscribe</button>
-          </div>
-        </form>
-      </div>
-
+<!-- ===================== REPORT A PROBLEM ===================== -->
+<dialog class="ss-dialog" id="report" aria-labelledby="report-title">
+  <form name="contact" data-netlify="true" id="report-form" method="post" action="/">
+    <input type="hidden" name="form-name" value="contact">
+    <div class="ss-dialog-head">
+      <h2 id="report-title">Report a problem, or ask for something</h2>
+      <button type="button" class="ss-dialog-close" id="report-close" aria-label="Close">&times;</button>
     </div>
+    <p class="ss-set-p">A wrong price, a page that will not load, a product you wish we carried. It goes to a person at support@lavishleaf.org.</p>
+    <div class="ss-field-row">
+      <label>First name <input type="text" name="first-name" required></label>
+      <label>Last name <input type="text" name="last-name" required></label>
+    </div>
+    <label>Email <input type="email" name="email" required></label>
+    <label>Phone (optional) <input type="tel" name="phone"></label>
+    <label>What happened? <textarea name="message" rows="5" required></textarea></label>
+    <div class="ss-dialog-foot">
+      <button type="submit" class="btn btn-sm">Send</button>
+      <span class="ss-dialog-status" id="report-status" role="status" aria-live="polite"></span>
+    </div>
+  </form>
+</dialog>
+
+<!-- ===================== NAME A LIST ===================== -->
+<dialog class="ss-dialog ss-dialog-sm" id="listname" aria-labelledby="listname-title">
+  <form id="listname-form" method="dialog">
+    <div class="ss-dialog-head">
+      <h2 id="listname-title">New list</h2>
+      <button type="button" class="ss-dialog-close" id="listname-close" aria-label="Close">&times;</button>
+    </div>
+    <label>Name <input type="text" id="listname-input" maxlength="40" required autocomplete="off"></label>
+    <div class="ss-dialog-foot">
+      <button type="submit" class="btn btn-sm">Save</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- ===================== PICK A LIST (from a heart) ===================== -->
+<dialog class="ss-dialog ss-dialog-sm" id="pick" aria-labelledby="pick-title">
+  <div class="ss-dialog-head">
+    <h2 id="pick-title">Save to</h2>
+    <button type="button" class="ss-dialog-close" id="pick-close" aria-label="Close">&times;</button>
   </div>
-</section>
-<footer>
-  <div class="footer-links">
-    <a href="farms.html">Farms</a>
-    <a href="rec-sports.html">Rec Sports</a>
-    <a href="gaming.html">Gaming</a>
-    <a href="symphonymph.html">Symphonymph</a>
-    <a href="store.html">Store</a>
-    <a href="careers.html">Careers</a>
-    <a href="social.html">Social</a>
-  </div>
-  <div class="footer-social">
-    <a href="https://www.facebook.com/LavishLeafInc" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://www.instagram.com/lavish_leaf_inc" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.youtube.com/@lavishleaf" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
-    <a href="mailto:support@lavishleaf.org"><i class="fas fa-envelope"></i></a>
-  </div>
-  <div class="footer-copy">
-    &copy; <span id="year"></span> Lavish Leaf Inc &nbsp;|&nbsp; <a href="mailto:support@lavishleaf.org">support@lavishleaf.org</a> &nbsp;|&nbsp; <a href="privacy.html">Privacy</a> &nbsp;|&nbsp; <a href="refunds.html">Refunds</a> &nbsp;|&nbsp; <a href="terms-of-sale.html">Terms of Sale</a>
-  </div>
-</footer>
+  <ul class="ss-pick" id="pick-list"></ul>
+</dialog>
+
+<div class="ss-toast" id="toast" role="status" aria-live="polite" hidden></div>
 
 <script src="donate.js"></script>
-<script>
-  function handleNewsletter(e) {
-  e.preventDefault();
-  var f = e.target;
-  fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(new FormData(f)).toString()
-  }).then(function() {
-    f.innerHTML = "<p class=\"form-success\">Thank you for subscribing!</p>";
-  }).catch(function() {
-    alert("There was a problem. Please email support@lavishleaf.org");
-  });
-}
-  function toggleMenu() { document.getElementById('mobileNav').classList.toggle('open'); }
-  function handleContact(e) {
-  e.preventDefault();
-  var f = e.target;
-  fetch("/", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams(new FormData(f)).toString()
-  }).then(function() {
-    f.innerHTML = "<p class=\"form-success\">Message sent! We will get back to you soon.</p>";
-  }).catch(function() {
-    alert("There was a problem. Please email support@lavishleaf.org");
-  });
-}
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+<script src="store.js" defer></script>
 </body>
 </html>
