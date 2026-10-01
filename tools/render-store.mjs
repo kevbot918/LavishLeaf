@@ -52,7 +52,10 @@ for (const p of products) {
   if (!/^[a-z0-9-]+$/.test(p.id ?? '')) throw new Error(`${where}: id must be lower-case letters, digits and dashes`);
   if (seen.has(p.id)) throw new Error(`${where}: id used twice`);
   seen.add(p.id);
-  if (!Number.isInteger(p.price) || p.price <= 0) throw new Error(`${where}: price must be whole CENTS, e.g. 2500 for $25.00`);
+  // A demo product (tools/demo-store.mjs) may show $0.00: its price is
+  // simply not known yet. Nothing with "demo" can be bought.
+  if (!Number.isInteger(p.price) || p.price < 0 || (p.price === 0 && !p.demo)) throw new Error(`${where}: price must be whole CENTS, e.g. 2500 for $25.00`);
+  if (p.demo && !/^https:\/\//.test(p.supplierUrl || '')) throw new Error(`${where}: a demo product needs supplierUrl, an https:// link to the supplier's page`);
   if (p.oldPrice != null && (!Number.isInteger(p.oldPrice) || p.oldPrice <= p.price)) {
     throw new Error(`${where}: oldPrice must be whole cents and higher than price, or null`);
   }
@@ -116,7 +119,9 @@ function priceLine(p) {
 const slug = (name) => name.toLowerCase().replace(/&/g, ' ').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 
 function card(p) {
-  const button = CART
+  const button = p.demo
+    ? `      <a href="${esc(p.supplierUrl)}" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">${esc(p.button || 'Supplier page')}</a>`
+    : CART
     ? p.interval
       ? `      <button type="button" class="btn btn-sm" data-subscribe="${p.id}">${esc(p.button)}</button>`
       : `      <button type="button" class="btn btn-sm" data-cart-add="${p.id}">Add to cart</button>`
@@ -130,7 +135,7 @@ function card(p) {
     : `      <span class="sp-icon" aria-hidden="true">${esc(p.icon || '')}</span>`;
   const blurb = p.blurb ? [`    <p class="sp-blurb">${esc(p.blurb)}</p>`] : [];
   return [
-    `  <article class="sp-card" data-id="${p.id}" data-category="${esc(p.category)}">`,
+    `  <article class="sp-card${p.demo ? ' sp-demo' : ''}" data-id="${p.id}" data-category="${esc(p.category)}">`,
     '    <div class="sp-media">',
     media,
     `      <button type="button" class="sp-wish" data-wish="${p.id}" aria-pressed="false" aria-label="Save ${esc(p.name)} to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>`,
@@ -147,12 +152,15 @@ function card(p) {
 
 /** One Home shelf per category, in the order categories first appear. */
 function shelves(active) {
+  const note = active.some((p) => p.demo)
+    ? '<p class="ss-demo-note"><strong>Demo catalogue.</strong> These are products we are considering, shown at the supplier\'s listed price ($0.00 where no price is published). They are not for sale yet; "Supplier page" opens the maker\'s own listing.</p>\n\n'
+    : '';
   const groups = new Map();
   for (const p of active) {
     if (!groups.has(p.category)) groups.set(p.category, []);
     groups.get(p.category).push(p);
   }
-  return [...groups].map(([name, ps]) => [
+  return note + [...groups].map(([name, ps]) => [
     `<section class="shelf" id="shelf-${slug(name)}" data-shelf="${slug(name)}" data-title="${esc(name)}">`,
     '  <div class="shelf-head">',
     `    <h2>${esc(name)}</h2>`,
@@ -223,6 +231,7 @@ if (unknown.length) {
 {
   const catalog = {};
   for (const p of products) {
+    if (p.demo) continue; // never sold: the checkout functions do not know them
     catalog[p.id] = {
       id: p.id,
       name: p.name,
@@ -252,8 +261,10 @@ if (unknown.length) {
 
 console.log(`Checkout mode: ${checkout}.`);
 const linked = products.filter((p) => p.active !== false && p.payLink).length;
-const active = products.filter((p) => p.active !== false).length;
+const active = products.filter((p) => p.active !== false && !p.demo).length;
+const demos = products.filter((p) => p.active !== false && p.demo).length;
 console.log(`${active} active products, ${linked} with a checkout link, ${active - linked} falling back to email.`);
+if (demos) console.log(`${demos} demo products on the shelves (not for sale; tools/demo-store.mjs --remove takes them off).`);
 if (CHECK) {
   if (changed.length) {
     console.log('OUT OF DATE: ' + changed.join(', ') + '. Run node tools/render-store.mjs');

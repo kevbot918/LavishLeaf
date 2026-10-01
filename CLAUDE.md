@@ -126,6 +126,17 @@ through `--site-h`, which `store.js` measures.
   560px, kept in localStorage `ll-store`). Cards are compact (180px, 4:3
   photo, full-width button). The page ends with the site's Contact &
   Newsletter band and footer like every other page.
+* **The demo catalogue (2026-10-01, the owner: "fill shelves using those
+  products as our demo store so I can then analyze and decide").**
+  `node tools/demo-store.mjs` reads every linked product in Tiers 1 to 4 and
+  the Miscellany of `docs/STORE-PRODUCTS.md` into `products.json` as
+  `"demo": true` (434 today, 104 at $0.00 where no price is published), one
+  shelf per kind of product. A demo card says its tier, rank, supplier, price
+  kind and minimum, and its button is "Supplier page"; demo products never
+  reach `netlify/lib/catalog.mjs`, so they cannot be bought. A notice above
+  the shelves says so. `node tools/demo-store.mjs --remove` and a render
+  take them all off. The sidebar is the page grey and carries the header's
+  `logo-oval.png`.
 * **Search** has a chip per shelf, three sorts, a one-time-only filter,
   and matches every typed word against name, tags, shelf and sentence.
 * The old `#donate` anchor still works: other pages' Donate buttons land

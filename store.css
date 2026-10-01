@@ -9,7 +9,7 @@
    from the rest of the website", "remove the settings on the online store
    page. We will just set what that store page looks like." So there is ONE
    look now, on the site's own palette (CLAUDE.md rule 1): the page grey
-   #3d3d3d, the sidebar on the band grey #2e2e2e, cards on #474747, green
+   #3d3d3d (the sidebar too, owner 2026-10-01), cards on #474747, green
    fills #4AB73C with #14261A ink that lighten on hover, green text #6FD65F.
    The visitor can still drag the sidebar wider or narrower (store.js keeps
    the width in localStorage), and wish lists stay.
@@ -132,7 +132,7 @@ body.store-shell { background: var(--surface); }
   height: calc(100vh - var(--site-h, 96px));
   width: var(--side-w);
   display: flex; flex-direction: column;
-  background: var(--surface-2);
+  background: var(--surface);
   overflow-y: auto; overscroll-behavior: contain;
   transition: transform var(--ease);
 }
@@ -141,7 +141,7 @@ body.store-shell { background: var(--surface); }
   position: sticky; top: var(--site-h, 96px); z-index: 6;
   height: calc(100vh - var(--site-h, 96px));
   cursor: col-resize; touch-action: none;
-  background: var(--surface-2);
+  background: var(--surface);
   border-right: 1px solid var(--border-soft);
   display: flex; align-items: center; justify-content: center;
 }
@@ -160,9 +160,9 @@ body.ss-resizing .ss-side { transition: none; }
 }
 .ss-brand-name { font-family: var(--mark); font-size: 1.7rem; line-height: 1.1; color: var(--text); }
 .ss-brand-line { margin-top: 8px; font-size: .86rem; line-height: 1.45; color: var(--muted); max-width: 17ch; }
-.ss-logo { flex: 0 0 auto; width: 92px; color: var(--accent); transition: transform var(--ease); }
+.ss-logo { flex: 0 0 auto; width: 104px; transition: transform var(--ease); }
 .ss-logo:hover { transform: scale(1.03); }
-.ss-logo svg { width: 100%; height: auto; }
+.ss-logo img { width: 100%; height: auto; }
 
 .ss-side-actions { padding: 2px 16px 14px; border-bottom: 1px solid var(--border-soft); }
 .ss-action {
@@ -520,3 +520,15 @@ body.ss-resizing .ss-side { transition: none; }
 /* A jump to a shelf (the heart in the top bar goes to "Your lists") lands
    below the sticky site header and store bar, not under them. */
 .shelf { scroll-margin-top: calc(var(--site-h, 96px) + var(--top-h) + 8px); }
+
+/* The demo catalogue notice (tools/demo-store.mjs), above the shelves. */
+.ss-demo-note {
+  margin: 14px 32px 0; padding: 12px 16px; max-width: 80ch;
+  border: 1px solid var(--accent-fill); border-radius: 10px;
+  background: var(--accent-soft); color: var(--text); font-size: .9rem; line-height: 1.5;
+}
+.ss-demo-note strong { color: var(--accent); }
+@media (max-width: 1000px) { .ss-demo-note { margin: 12px 16px 0; } }
+/* A demo card's sentence is its tier, rank, supplier, price kind, minimum
+   and rating: show all of it. */
+.sp-demo .sp-blurb { -webkit-line-clamp: 4; }
