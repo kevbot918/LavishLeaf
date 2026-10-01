@@ -538,9 +538,10 @@ header {
 .ph-green em { color: var(--leaf-bright); font-style: italic; }
 
 .sports-hero {
-  background:
-    linear-gradient(rgba(8, 18, 10, 0.70), rgba(8, 18, 10, 0.80)),
-    radial-gradient(ellipse at 50% 60%, #1d4f24 0%, #12301a 60%, #0a1a0e 100%);
+  /* The same near-black as every .page-hero. The green-tinted gradients this
+     used to carry made the Rec Sports, Gaming and Symphonymph headers read
+     greener than the rest (owner, 2026-10-01). */
+  background: var(--bg-deep);
   padding: 72px 20px 56px;
   text-align: center;
   color: var(--white);
@@ -555,9 +556,10 @@ header {
 .sports-hero-title em { color: var(--leaf-bright); font-style: italic; }
 
 .gaming-hero {
-  background:
-    linear-gradient(rgba(6, 14, 9, 0.78), rgba(6, 14, 9, 0.86)),
-    linear-gradient(135deg, #10331c 0%, #0b2416 40%, #08180f 100%);
+  /* The same near-black as every .page-hero. The green-tinted gradients this
+     used to carry made the Rec Sports, Gaming and Symphonymph headers read
+     greener than the rest (owner, 2026-10-01). */
+  background: var(--bg-deep);
   padding: 72px 20px 56px;
   text-align: center;
   color: var(--white);
@@ -588,6 +590,8 @@ p.hero-lede {
   line-height: 1.8;
 }
 .hero-lede + .btn { margin-top: 26px; }
+.page-hero > .btn, .sports-hero > .btn, .gaming-hero > .btn { margin-top: 26px; }
+.home-hero-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
 
 /* ===== GENERIC CONTENT ========================================= */
 /* Wider than it was. Prose is left-aligned and capped at --measure; centred
@@ -994,7 +998,9 @@ td.td-hl { background: #eecc00 !important; color: #000 !important; font-weight: 
 .service-card h3 i { color: var(--leaf-bright); }
 .service-card p { color: var(--gray); font-size: 0.98rem; line-height: 1.65; }
 
-.gaming-mission { background: var(--bg-2); padding: var(--gap-xl) 20px; border-top: 1px solid var(--rule-soft); border-bottom: 1px solid var(--rule-soft); }
+/* The page grey, like every other section under a header: the darker --bg-2
+   band made the second box on Gaming read darker (owner, 2026-10-01). */
+.gaming-mission { background: var(--bg); padding: var(--gap-xl) 20px; border-top: 1px solid var(--rule-soft); border-bottom: 1px solid var(--rule-soft); }
 .gaming-mission h2 { color: var(--leaf-bright); font-weight: 800; font-size: 1.56rem; margin-bottom: 16px; text-align: center; }
 .gaming-mission p { color: var(--gray); max-width: var(--measure); margin: 0 auto 14px; font-size: 1.0625rem; line-height: 1.7; }
 .gaming-mission strong { color: var(--white); }

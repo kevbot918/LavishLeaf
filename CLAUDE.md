@@ -116,12 +116,16 @@ through `--site-h`, which `store.js` measures.
   which appears only on a deploy with
   `"checkout": "cart"` (the renderer stamps `<body data-checkout>`;
   `cart.js` exposes `window.LLCart` and a `ll-cart` event for the badge).
-* **Settings** (`store.js`, localStorage `ll-store`, no accounts ever):
-  Light / Dark / Black / Match my device; the app's nine accents with the
-  app's own light and dark seeds (`lib/ui/theme.dart`), which recolour the
-  chrome AND the logo; which Home shelves show and in what order; what the
-  sidebar shows and in what order; products per shelf; named wish lists
-  (the heart on every card; one list toggles, several ask which); reset.
+* **2026-10-01, the owner:** the store is on the site's GREY (store.css maps
+  its tokens to `#3d3d3d` / `#2e2e2e` / `#474747` and the leaf greens), and
+  **Settings are gone**: no theme, no accent, no shelf or sidebar editors.
+  Home shows every shelf, 30 products each (`SHELF_LENGTH` in store.js).
+  The top bar holds a search field typed into directly, a wish-lists heart
+  and the cart (always shown; with `"checkout": "links"` it says checkout is
+  coming). The sidebar is 340px and the visitor can drag its edge (260 to
+  560px, kept in localStorage `ll-store`). Cards are compact (180px, 4:3
+  photo, full-width button). The page ends with the site's Contact &
+  Newsletter band and footer like every other page.
 * **Search** has a chip per shelf, three sorts, a one-time-only filter,
   and matches every typed word against name, tags, shelf and sentence.
 * The old `#donate` anchor still works: other pages' Donate buttons land

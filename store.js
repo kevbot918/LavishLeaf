@@ -1,11 +1,13 @@
 // The Lavish Leaf store shell: the behaviour behind store.html.
 //
-// Modelled on the Symphonymph app's Home, sidebar and Settings (2026-09-30,
-// at the owner's request). Everything a visitor chooses here lives in THIS
-// browser under one localStorage key, "ll-store": the look (light, dark, true
-// black, or the device's), the accent, which Home shelves show and in what
-// order, what the sidebar shows, how long a shelf is, and the named wish
-// lists. Nothing is sent anywhere and nobody signs in.
+// Modelled on the Symphonymph app's Home and sidebar (2026-09-30, at the
+// owner's request). 2026-10-01, the owner: "remove the settings on the
+// online store page. We will just set what that store page looks like." So
+// the look is fixed (the site's grey, store.css), Home shows every shelf in
+// products.json order, and a shelf holds SHELF_LENGTH products. What THIS
+// browser keeps, under one localStorage key "ll-store": the named wish
+// lists, the search sort, and how wide the visitor dragged the sidebar.
+// Nothing is sent anywhere and nobody signs in.
 //
 // The products themselves are rendered into the page by tools/render-store.mjs
 // from products.json, so Home works with JavaScript off. This file reads
@@ -15,16 +17,9 @@
   'use strict';
 
   var KEY = 'll-store';
-  var ACCENTS = [
-    ['leaf', 'Leaf', '#5FD86C'], ['amber', 'Amber', '#E0A153'], ['ember', 'Ember', '#F08A6E'],
-    ['forest', 'Forest', '#74C79A'], ['ocean', 'Ocean', '#6FB8E8'], ['plum', 'Plum', '#D198D6'],
-    ['slate', 'Slate', '#A9B4C4'], ['rose', 'Rose', '#EF92AC'], ['moss', 'Moss', '#C2CE7E'],
-  ];
-  var THEME_COLOR = { dark: '#14171C', light: '#F7F8FA', black: '#000000' };
-  var DEFAULTS = {
-    theme: 'dark', accent: 'leaf', shelfLength: 10, sort: 'relevance',
-    homeOrder: [], homeHidden: [], sideOrder: [], sideHidden: [], lists: [],
-  };
+  var SHELF_LENGTH = 30; // products on a Home shelf; "See all" shows the rest
+  var SIDE_W = 340, SIDE_MIN = 260, SIDE_MAX = 560; // the sidebar's width, px
+  var DEFAULTS = { sort: 'relevance', sideW: SIDE_W, lists: [] };
 
   // ------------------------------------------------------------ state
   function load() {
@@ -35,11 +30,10 @@
     if (!Array.isArray(out.lists)) out.lists = [];
     out.lists = out.lists.filter(function (l) { return l && l.id && typeof l.name === 'string'; })
       .map(function (l) { return { id: String(l.id), name: l.name, items: Array.isArray(l.items) ? l.items.filter(isStr) : [] }; });
-    if (!THEME_COLOR[out.theme] && out.theme !== 'system') out.theme = 'dark';
-    if (!ACCENTS.some(function (a) { return a[0] === out.accent; })) out.accent = 'leaf';
-    out.shelfLength = Math.min(30, Math.max(10, parseInt(out.shelfLength, 10) || 10));
+    out.sideW = clampSide(parseInt(out.sideW, 10) || SIDE_W);
     return out;
   }
+  function clampSide(w) { return Math.min(SIDE_MAX, Math.max(SIDE_MIN, Math.round(w))); }
   function save() {
     try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { /* private mode: lives until the tab closes */ }
   }
@@ -117,62 +111,7 @@
       .catch(function () { /* search still works on names, sentences and shelves */ });
   }
 
-  // ------------------------------------------------------------ theme
-  function effectiveTheme() {
-    if (state.theme !== 'system') return state.theme;
-    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-  }
-  function applyTheme() {
-    var h = document.documentElement;
-    var t = effectiveTheme();
-    h.setAttribute('data-theme', t);
-    h.setAttribute('data-accent', state.accent);
-    $$('input[name="theme"]').forEach(function (r) { r.checked = r.value === state.theme; });
-    $$('.ss-swatch').forEach(function (b) { b.setAttribute('aria-checked', String(b.getAttribute('data-accent') === state.accent)); });
-  }
-  if (window.matchMedia) {
-    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function () {
-      if (state.theme === 'system') applyTheme();
-    });
-  }
-
-  function buildSettings() {
-    $$('input[name="theme"]').forEach(function (r) {
-      r.addEventListener('change', function () { state.theme = r.value; save(); applyTheme(); });
-    });
-    var sw = $('#accent-swatches');
-    ACCENTS.forEach(function (a) {
-      var b = el('button', { type: 'button', class: 'ss-swatch', role: 'radio', 'data-accent': a[0], 'aria-checked': 'false' });
-      var dot = el('i'); dot.style.setProperty('--sw', a[2]);
-      b.appendChild(dot);
-      b.appendChild(el('span', null, a[1]));
-      b.addEventListener('click', function () { state.accent = a[0]; save(); applyTheme(); });
-      sw.appendChild(b);
-    });
-    var len = $('#shelf-len'), out = $('#shelf-len-out');
-    len.value = state.shelfLength; out.textContent = state.shelfLength;
-    len.addEventListener('input', function () {
-      state.shelfLength = parseInt(len.value, 10); out.textContent = len.value; save(); layoutHome();
-    });
-    $('#set-new-list').addEventListener('click', function () { askListName(null); });
-    $('#set-reset-btn').addEventListener('click', function () {
-      ['theme', 'accent', 'shelfLength', 'sort', 'homeOrder', 'homeHidden', 'sideOrder', 'sideHidden'].forEach(function (k) {
-        state[k] = clone(DEFAULTS[k]);
-      });
-      save(); applyTheme(); len.value = 10; out.textContent = '10';
-      layoutHome(); buildSidebar(); buildOrderLists(); toast('Back to the way it came.');
-    });
-  }
-
-  // ------------------------------------------------------------ ordering
-  // An order is a list of names; names survive a shelf being added or
-  // renamed. Anything not named goes at the end, in the page's order.
-  function ordered(all, order) {
-    var seen = {}, out = [];
-    order.forEach(function (n) { if (all.indexOf(n) >= 0 && !seen[n]) { out.push(n); seen[n] = 1; } });
-    all.forEach(function (n) { if (!seen[n]) { out.push(n); seen[n] = 1; } });
-    return out;
-  }
+  // ------------------------------------------------------------ home
   function shelfSlugs() { return shelfDefs.map(function (d) { return d.slug; }); }
   function shelfTitle(slug) {
     var d = shelfDefs.filter(function (x) { return x.slug === slug; })[0];
@@ -180,100 +119,12 @@
   }
 
   function layoutHome() {
-    // The lists shelf is rendered outside the generated block (the renderer
-    // owns that block); at runtime it joins the others so it can be ordered
-    // with them.
-    var wrap = $('#shelves');
-    var order = ordered(['lists'].concat(shelfSlugs()), state.homeOrder);
-    order.forEach(function (slug) {
-      var sh = $('#shelf-' + slug);
-      if (!sh) return;
-      wrap.appendChild(sh);
-      sh.hidden = state.homeHidden.indexOf(slug) >= 0;
-      if (slug !== 'lists') $$('.sp-card', sh).forEach(function (c, i) { c.hidden = i >= state.shelfLength; });
+    shelfSlugs().forEach(function (slug) {
+      $$('.sp-card', $('#shelf-' + slug)).forEach(function (c, i) { c.hidden = i >= SHELF_LENGTH; });
     });
     renderHomeLists();
   }
 
-  // The two order editors in Settings share one widget.
-  function orderRow(name, sub, on, canUp, canDown, onToggle, onMove) {
-    var li = el('li');
-    var sw = el('label', { class: 'ss-switch' });
-    var box = el('input', { type: 'checkbox' }); box.checked = on;
-    box.setAttribute('aria-label', (on ? 'Hide ' : 'Show ') + name);
-    box.addEventListener('change', function () { onToggle(box.checked); });
-    sw.appendChild(box); sw.appendChild(el('i'));
-    li.appendChild(sw);
-    var nm = el('span', { class: 'ss-order-name' }, name);
-    if (sub) nm.appendChild(el('small', null, sub));
-    li.appendChild(nm);
-    var tools = el('div', { class: 'ss-order-tools' });
-    var up = el('button', { type: 'button', 'aria-label': 'Move ' + name + ' up' }); up.appendChild(svg('M12 19V5M5 12l7-7 7 7', true)); up.disabled = !canUp;
-    var dn = el('button', { type: 'button', 'aria-label': 'Move ' + name + ' down' }); dn.appendChild(svg('M12 5v14M5 12l7 7 7-7', true)); dn.disabled = !canDown;
-    up.addEventListener('click', function () { onMove(-1); });
-    dn.addEventListener('click', function () { onMove(1); });
-    tools.appendChild(up); tools.appendChild(dn);
-    li.appendChild(tools);
-    return li;
-  }
-  function move(order, name, dir) {
-    var i = order.indexOf(name), j = i + dir;
-    if (i < 0 || j < 0 || j >= order.length) return order;
-    order.splice(i, 1); order.splice(j, 0, name);
-    return order;
-  }
-
-  function buildOrderLists() {
-    // Home shelves
-    var home = $('#order-home'); home.textContent = '';
-    var hAll = ['lists'].concat(shelfSlugs());
-    var hOrder = ordered(hAll, state.homeOrder);
-    hOrder.forEach(function (slug, i) {
-      var name = slug === 'lists' ? 'Your lists' : shelfTitle(slug);
-      var sub = slug === 'lists' ? 'Your wish lists, at the top of Home' : products && countOn(slug) + ' product' + (countOn(slug) === 1 ? '' : 's');
-      home.appendChild(orderRow(name, sub, state.homeHidden.indexOf(slug) < 0, i > 0, i < hOrder.length - 1,
-        function (on) {
-          state.homeHidden = state.homeHidden.filter(function (x) { return x !== slug; });
-          if (!on) state.homeHidden.push(slug);
-          save(); layoutHome(); buildOrderLists();
-        },
-        function (dir) { state.homeOrder = move(hOrder.slice(), slug, dir); save(); layoutHome(); buildOrderLists(); }));
-    });
-    // Sidebar
-    var side = $('#order-side'); side.textContent = '';
-    var sAll = ['lists'].concat(shelfSlugs());
-    var sOrder = ordered(sAll, state.sideOrder);
-    sOrder.forEach(function (key, i) {
-      var name = key === 'lists' ? 'Your lists' : shelfTitle(key);
-      var sub = key === 'lists' ? 'Wish lists and the cart' : 'A shelf, under Shop';
-      side.appendChild(orderRow(name, sub, state.sideHidden.indexOf(key) < 0, i > 0, i < sOrder.length - 1,
-        function (on) {
-          state.sideHidden = state.sideHidden.filter(function (x) { return x !== key; });
-          if (!on) state.sideHidden.push(key);
-          save(); buildSidebar(); buildOrderLists();
-        },
-        function (dir) { state.sideOrder = move(sOrder.slice(), key, dir); save(); buildSidebar(); buildOrderLists(); }));
-    });
-    // Wish lists
-    var ol = $('#order-lists'); ol.textContent = '';
-    if (!state.lists.length) ol.appendChild(el('li', null, 'No lists yet. Tap the heart on any product to start one.'));
-    state.lists.forEach(function (l) {
-      var li = el('li');
-      var nm = el('span', { class: 'ss-order-name' }, l.name);
-      nm.appendChild(el('small', null, l.items.length + ' saved'));
-      li.appendChild(nm);
-      var tools = el('div', { class: 'ss-order-tools' });
-      var open = el('button', { type: 'button', 'aria-label': 'Open ' + l.name }); open.appendChild(svg('M5 12h14M13 6l6 6-6 6', true));
-      open.addEventListener('click', function () { location.hash = '#list/' + l.id; });
-      var ren = el('button', { type: 'button', 'aria-label': 'Rename ' + l.name }); ren.appendChild(svg('M4 20h4l10-10-4-4L4 16v4zM13 7l4 4', true));
-      ren.addEventListener('click', function () { askListName(l); });
-      var del = el('button', { type: 'button', 'aria-label': 'Delete ' + l.name }); del.appendChild(svg('M5 7h14M9 7V4h6v3M7 7l1 13h8l1-13', true));
-      del.addEventListener('click', function () { deleteList(l); });
-      tools.appendChild(open); tools.appendChild(ren); tools.appendChild(del);
-      li.appendChild(tools);
-      ol.appendChild(li);
-    });
-  }
   function countOn(slug) {
     var d = shelfDefs.filter(function (x) { return x.slug === slug; })[0];
     return d ? d.ids.length : 0;
@@ -281,34 +132,50 @@
 
   // ------------------------------------------------------------ sidebar
   function buildSidebar() {
-    var nav = $('#ss-nav');
-    var sOrder = ordered(['lists'].concat(shelfSlugs()), state.sideOrder);
-    // Shelves under Shop
     var shop = $('#ss-shelves'); shop.textContent = '';
-    sOrder.forEach(function (key) {
-      if (key === 'lists') return;
-      if (state.sideHidden.indexOf(key) >= 0) return;
-      var a = el('a', { class: 'ss-item', href: '#shelf/' + key, 'data-nav': 'shelf/' + key });
-      a.appendChild(document.createTextNode(shelfTitle(key)));
-      a.appendChild(el('span', { class: 'ss-n' }, String(countOn(key))));
+    shelfDefs.forEach(function (d) {
+      var a = el('a', { class: 'ss-item', href: '#shelf/' + d.slug, 'data-nav': 'shelf/' + d.slug });
+      a.appendChild(document.createTextNode(d.title));
+      a.appendChild(el('span', { class: 'ss-n' }, String(d.ids.length)));
       shop.appendChild(a);
     });
-    var anyShelf = sOrder.some(function (k) { return k !== 'lists' && state.sideHidden.indexOf(k) < 0; });
-    $$('[data-nav-group="shop"]', nav).forEach(function (n) { n.hidden = !anyShelf; });
-    var listsOn = state.sideHidden.indexOf('lists') < 0;
-    $$('[data-nav-group="lists"]', nav).forEach(function (n) { n.hidden = !listsOn; });
-    // Group order: move the three groups' nodes into the chosen order, after Search.
-    var anchor = $('[data-nav="search"]', nav);
-    var groups = { lists: $$('[data-nav-group="lists"]', nav).concat([$('#ss-cart')]), shop: $$('[data-nav-group="shop"]', nav) };
-    var placed = [];
-    sOrder.forEach(function (key) {
-      var g = key === 'lists' ? 'lists' : 'shop';
-      if (placed.indexOf(g) >= 0) return;
-      placed.push(g);
-      groups[g].forEach(function (n) { anchor.parentNode.insertBefore(n, $('.ss-item-quiet', nav)); });
-    });
+    $$('[data-nav-group="shop"]').forEach(function (n) { n.hidden = !shelfDefs.length; });
     renderSideLists();
     markCurrent();
+  }
+
+  // The sidebar's width: drag the handle on its right edge (or focus it and
+  // use the arrow keys; a double click puts it back). Wide screens only; on
+  // a phone the sidebar is a drawer.
+  function applySideWidth() {
+    $('#shell').style.setProperty('--side-w', state.sideW + 'px');
+    $('#side-resize').setAttribute('aria-valuenow', String(state.sideW));
+  }
+  function buildResize() {
+    var handle = $('#side-resize'), shell = $('#shell'), dragging = false;
+    applySideWidth();
+    handle.addEventListener('pointerdown', function (e) {
+      if (e.button !== 0) return;
+      dragging = true; handle.setPointerCapture(e.pointerId);
+      document.body.classList.add('ss-resizing'); e.preventDefault();
+    });
+    handle.addEventListener('pointermove', function (e) {
+      if (!dragging) return;
+      state.sideW = clampSide(e.clientX - shell.getBoundingClientRect().left);
+      applySideWidth();
+    });
+    function end() {
+      if (!dragging) return;
+      dragging = false; document.body.classList.remove('ss-resizing'); save();
+    }
+    handle.addEventListener('pointerup', end);
+    handle.addEventListener('pointercancel', end);
+    handle.addEventListener('dblclick', function () { state.sideW = SIDE_W; applySideWidth(); save(); });
+    handle.addEventListener('keydown', function (e) {
+      var d = e.key === 'ArrowLeft' ? -20 : e.key === 'ArrowRight' ? 20 : 0;
+      if (e.key === 'Home') { state.sideW = SIDE_MIN; } else if (e.key === 'End') { state.sideW = SIDE_MAX; } else if (d) { state.sideW = clampSide(state.sideW + d); } else return;
+      e.preventDefault(); applySideWidth(); save();
+    });
   }
   function renderSideLists() {
     var box = $('#ss-lists'); box.textContent = '';
@@ -331,7 +198,7 @@
     });
   }
   function afterListsChange() {
-    save(); refreshHearts(); renderSideLists(); renderHomeLists(); buildOrderLists();
+    save(); refreshHearts(); renderSideLists(); renderHomeLists();
     if (current.view === 'list') showList(current.arg);
   }
   function askListName(existing) {
@@ -408,6 +275,8 @@
   function show(view) {
     $$('.view').forEach(function (v) { v.hidden = v.getAttribute('data-view-name') !== view; });
     current.view = view;
+    // The search field lives in the top bar; leaving Search empties it.
+    if (view !== 'search') { $('#search-input').value = ''; $('#search-clear').hidden = true; }
     // Arriving on the page leaves the hero in view; after that, a change of
     // view puts the top of the shell just under the site header.
     var top = $('#shell').getBoundingClientRect().top + window.scrollY - siteHeaderHeight();
@@ -422,9 +291,6 @@
     var key = current.view === 'home' ? 'home' : current.view === 'search' ? 'search' : current.view === 'list' ? current.arg : current.view === 'shelf' ? 'shelf/' + current.arg : '';
     $$('[data-nav]').forEach(function (a) {
       if (a.getAttribute('data-nav') === key) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
-    });
-    $$('.ss-top [data-view]').forEach(function (a) {
-      if (a.getAttribute('data-view') === current.view) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
     });
   }
   function route() {
@@ -442,11 +308,6 @@
       if (q.get('q') != null && input.value !== q.get('q')) input.value = q.get('q');
       runSearch();
       setTimeout(function () { input.focus(); }, 50);
-    } else if (path.indexOf('settings') === 0) {
-      show('settings'); setTitle('Settings');
-      var sec = path.split('/')[1];
-      var target = sec === 'home' ? '#set-home' : sec === 'sidebar' ? '#set-sidebar' : sec === 'lists' ? '#set-lists' : null;
-      if (target) setTimeout(function () { $(target).scrollIntoView({ block: 'start', behavior: 'smooth' }); }, 60);
     } else if (path.indexOf('list/') === 0) {
       current.arg = path.slice(5);
       if (!listById(current.arg)) { location.hash = '#home'; return; }
@@ -525,12 +386,19 @@
     var input = $('#search-input'), clear = $('#search-clear'), timer;
     input.addEventListener('input', function () {
       clearTimeout(timer);
+      var hash = '#search' + (input.value ? '?q=' + encodeURIComponent(input.value) : '');
+      // Typing on any other view opens Search; on Search it just refines.
+      if (current.view !== 'search') { location.hash = hash; return; }
       timer = setTimeout(function () {
-        history.replaceState(null, '', location.pathname + '#search' + (input.value ? '?q=' + encodeURIComponent(input.value) : ''));
+        history.replaceState(null, '', location.pathname + hash);
         runSearch();
       }, 120);
     });
-    $('#search-form').addEventListener('submit', function (e) { e.preventDefault(); runSearch(); });
+    $('#search-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (current.view !== 'search') location.hash = '#search' + (input.value ? '?q=' + encodeURIComponent(input.value) : '');
+      else runSearch();
+    });
     clear.addEventListener('click', function () { input.value = ''; input.focus(); history.replaceState(null, '', location.pathname + '#search'); runSearch(); });
     $$('[data-sort]').forEach(function (b) {
       b.setAttribute('aria-pressed', String(b.getAttribute('data-sort') === state.sort));
@@ -624,7 +492,6 @@
     $('#menu-open').addEventListener('click', function () { document.body.classList.contains('menu-open') ? closeMenu() : openMenu(); });
     $('#scrim').addEventListener('click', closeMenu);
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
-    $('#year').textContent = String(new Date().getFullYear());
 
     // Report a problem: the Netlify "contact" form, posted without leaving.
     var rep = $('#report'), form = $('#report-form'), status = $('#report-status');
@@ -664,11 +531,16 @@
       if (sub) { window.LLCart.subscribe(sub.getAttribute('data-subscribe'), sub); }
     });
 
-    // The cart, only on a deploy that has one.
-    if (document.body.getAttribute('data-checkout') === 'cart') {
-      $('#cart-open').hidden = false;
+    // The cart button is always in the top bar. Until the deploy has a cart
+    // ("checkout": "cart" in products.json), each product's own button is
+    // how to buy, and the cart button says so.
+    var hasCart = document.body.getAttribute('data-checkout') === 'cart';
+    $('#cart-open').addEventListener('click', function () {
+      if (hasCart && window.LLCart) window.LLCart.open();
+      else toast('Online checkout is coming soon. For now, each product\'s button emails us to order.');
+    });
+    if (hasCart) {
       $('#ss-cart').hidden = false;
-      $('#cart-open').addEventListener('click', function () { if (window.LLCart) window.LLCart.open(); });
       document.addEventListener('ll-cart', function (e) {
         var n = e.detail.count;
         $$('[data-cart-count]').forEach(function (b) { b.textContent = String(n); b.hidden = n === 0; });
@@ -684,13 +556,11 @@
   // ------------------------------------------------------------ go
   readCatalogue();
   fetchTags();
-  applyTheme();
-  buildSettings();
+  buildResize();
   buildChrome();
   buildSearch();
   layoutHome();
   buildSidebar();
-  buildOrderLists();
   refreshHearts();
   route();
 })();
