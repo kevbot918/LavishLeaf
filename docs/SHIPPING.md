@@ -4,8 +4,16 @@ Written 2026-10-01 for the owner's ask: *"I don't want to lose money on
 shipping, but I don't want it to deter customers from buying. Maybe even
 include a cheaper/reduced/flat shipping rate for orders over $100."*
 
-Nothing here is built yet. Today the cart charges no shipping at all, so this
-must be in place before the first physical product is sold.
+**Built 2026-10-01**, as below. The rules live in ONE file, `shipping.mjs` at
+the site root: the cart imports it to show the charge, and the checkout and
+capture functions import it to charge it and to check the address before any
+money moves. Tests: `npm test`. Every product now says `"ship": true` with a
+packed `"shipOz"`, or `"ship": false`; the renderer refuses a product without
+one. The three products today are all `false` (compost, two registrations),
+so no order is charged shipping until a posted product is added. Local
+delivery ZIPs are `SHIPPING.localZips` in `shipping.mjs` (74432, 74501,
+74502 to start). Not yet done: the $1 built into light items' prices (that is
+pricing, when products are chosen).
 
 ## What the numbers say
 

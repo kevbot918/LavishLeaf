@@ -5,7 +5,45 @@ sidebar order and other settings) should survive clearing the browser and
 follow a customer to another device, which means customer accounts. This
 reverses the 2026-09-30 store line "no accounts ever", at his instruction.
 
-Nothing here is built yet.
+**Built 2026-10-01.** What is in the code:
+
+* `netlify/functions/account.mjs`: get, put, export and delete, for the
+  signed-in customer only (Lambda-style, so Netlify hands it the verified
+  user and the Identity admin token that deleting a sign-in needs).
+* `netlify/lib/accounts.mjs`: the record in Netlify Blobs (store
+  `accounts`), cleaned on every write; the browser can never write an order.
+* `netlify/lib/identity.mjs`: checkout asks Identity who a token belongs to.
+* `netlify/functions/checkout.mjs` and `capture.mjs`: a signed-in buyer's id
+  rides on the PayPal order (custom_id `u=`) and the paid order is filed in
+  their history at capture.
+* `store.html` / `store.js`: the person icon in the store bar, the Netlify
+  Identity widget for sign-in and sign-up, the Your account dialog (lists,
+  orders, sign out, download my data, delete my account), the merge on sign
+  in, and saving every change to the account. Shelf order (drag a shelf in
+  the sidebar, or Reorder) saves to the browser for guests and to the account
+  when signed in; Home follows it.
+* `privacy.html#accounts` and `terms-of-sale.html#accounts`.
+* Tests: `npm test` (tools/test/shipping-accounts.test.mjs).
+
+**Until Identity is switched on in Netlify, the person icon says "Accounts
+are being switched on" and everything works for guests as before.**
+
+## Switching it on (the owner, in the Netlify dashboard, about 10 minutes)
+
+1. Site configuration, **Identity**, Enable Identity.
+2. Registration preferences: **Open** (anyone can sign up).
+3. External providers: add **Google** (the default Netlify-managed keys are
+   fine to start).
+4. Emails: the confirmation, recovery and invitation emails. Change the
+   sender to `no-reply@lavishleaf.org` once the domain's SPF and DKIM records
+   allow Netlify to send for it; until then Netlify's own sender works.
+5. Nothing to set up for Blobs: the store is created on first write.
+6. Test with two browsers: sign up in one, heart a product, sign in in the
+   other, see it there; then Download my data, then Delete my account.
+
+Sign-in is email and password (with a confirmation email) or Google. The
+original plan said "magic link"; Netlify's widget does not offer one, and
+Google sign-in covers the no-password wish for most people.
 
 ## What an account is for, and what it is not
 

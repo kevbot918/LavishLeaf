@@ -6,8 +6,15 @@
 // the look is fixed (the site's grey, store.css), Home shows every shelf in
 // products.json order, and a shelf holds SHELF_LENGTH products. What THIS
 // browser keeps, under one localStorage key "ll-store": the named wish
-// lists, the search sort, and how wide the visitor dragged the sidebar.
-// Nothing is sent anywhere and nobody signs in.
+// lists, the shelf order (drag the sidebar's shelves, or Reorder; Home
+// follows), the search sort, and how wide the visitor dragged the sidebar.
+//
+// Customer accounts (2026-10-01, docs/ACCOUNTS.md): a visitor who signs in
+// (Netlify Identity) has the lists, the cart and the shelf order saved to
+// their account through netlify/functions/account.mjs, so they survive a
+// cleared browser and follow them to another device. Signing in merges this
+// browser's lists and cart into the account; nothing is lost. Guests keep
+// everything in this browser, exactly as before.
 //
 // The products themselves are rendered into the page by tools/render-store.mjs
 // from products.json, so Home works with JavaScript off. This file reads
@@ -19,7 +26,7 @@
   var KEY = 'll-store';
   var SHELF_LENGTH = 30; // products on a Home shelf; "See all" shows the rest
   var SIDE_W = 340, SIDE_MIN = 260, SIDE_MAX = 560; // the sidebar's width, px
-  var DEFAULTS = { sort: 'relevance', sideW: SIDE_W, lists: [] };
+  var DEFAULTS = { sort: 'relevance', sideW: SIDE_W, lists: [], shelfOrder: [] };
 
   // ------------------------------------------------------------ state
   function load() {
@@ -31,11 +38,14 @@
     out.lists = out.lists.filter(function (l) { return l && l.id && typeof l.name === 'string'; })
       .map(function (l) { return { id: String(l.id), name: l.name, items: Array.isArray(l.items) ? l.items.filter(isStr) : [] }; });
     out.sideW = clampSide(parseInt(out.sideW, 10) || SIDE_W);
+    if (!Array.isArray(out.shelfOrder)) out.shelfOrder = [];
+    out.shelfOrder = out.shelfOrder.filter(isStr);
     return out;
   }
   function clampSide(w) { return Math.min(SIDE_MAX, Math.max(SIDE_MIN, Math.round(w))); }
   function save() {
     try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) { /* private mode: lives until the tab closes */ }
+    schedulePush();
   }
   function clone(v) { return JSON.parse(JSON.stringify(v)); }
   function isStr(v) { return typeof v === 'string'; }
@@ -118,9 +128,24 @@
     return d ? d.title : slug;
   }
 
+  // The visitor's shelf order: the names they arranged first, then any
+  // shelf added since, in the page's order.
+  function ordered(all, order) {
+    var seen = {}, out = [];
+    order.forEach(function (n) { if (all.indexOf(n) >= 0 && !seen[n]) { out.push(n); seen[n] = 1; } });
+    all.forEach(function (n) { if (!seen[n]) { out.push(n); seen[n] = 1; } });
+    return out;
+  }
+  function shelfOrderNow() { return ordered(shelfSlugs(), state.shelfOrder); }
+  function setShelfOrder(order) { state.shelfOrder = order; save(); layoutHome(); buildSidebar(); }
+
   function layoutHome() {
-    shelfSlugs().forEach(function (slug) {
-      $$('.sp-card', $('#shelf-' + slug)).forEach(function (c, i) { c.hidden = i >= SHELF_LENGTH; });
+    var wrap = $('#shelves');
+    shelfOrderNow().forEach(function (slug) {
+      var sh = $('#shelf-' + slug);
+      if (!sh) return;
+      wrap.appendChild(sh);
+      $$('.sp-card', sh).forEach(function (c, i) { c.hidden = i >= SHELF_LENGTH; });
     });
     renderHomeLists();
   }
@@ -131,17 +156,84 @@
   }
 
   // ------------------------------------------------------------ sidebar
+  // Shelves under Shop, in the visitor's order. Drag one onto another to
+  // move it (a mouse), or press Reorder for up and down buttons (a phone, a
+  // keyboard). Home follows the same order.
+  var reordering = false, dragSlug = null;
   function buildSidebar() {
     var shop = $('#ss-shelves'); shop.textContent = '';
-    shelfDefs.forEach(function (d) {
-      var a = el('a', { class: 'ss-item', href: '#shelf/' + d.slug, 'data-nav': 'shelf/' + d.slug });
-      a.appendChild(document.createTextNode(d.title));
-      a.appendChild(el('span', { class: 'ss-n' }, String(d.ids.length)));
+    var order = shelfOrderNow();
+    order.forEach(function (slug, i) {
+      var title = shelfTitle(slug);
+      if (reordering) {
+        var row = el('div', { class: 'ss-item ss-reorder-row' });
+        row.appendChild(el('span', { class: 'ss-reorder-name' }, title));
+        var up = el('button', { type: 'button', 'aria-label': 'Move ' + title + ' up' }); up.appendChild(svg('M12 19V5M5 12l7-7 7 7', true));
+        var dn = el('button', { type: 'button', 'aria-label': 'Move ' + title + ' down' }); dn.appendChild(svg('M12 5v14M5 12l7 7 7-7', true));
+        up.disabled = i === 0; dn.disabled = i === order.length - 1;
+        up.addEventListener('click', function () { moveShelf(slug, -1, up); });
+        dn.addEventListener('click', function () { moveShelf(slug, 1, dn); });
+        row.appendChild(up); row.appendChild(dn);
+        shop.appendChild(row);
+        return;
+      }
+      var a = el('a', { class: 'ss-item', href: '#shelf/' + slug, 'data-nav': 'shelf/' + slug, draggable: 'true', 'data-slug': slug });
+      a.appendChild(document.createTextNode(title));
+      a.appendChild(el('span', { class: 'ss-n' }, String(countOn(slug))));
       shop.appendChild(a);
     });
     $$('[data-nav-group="shop"]').forEach(function (n) { n.hidden = !shelfDefs.length; });
+    var t = $('#reorder-toggle');
+    if (t) { t.textContent = reordering ? 'Done' : 'Reorder'; t.setAttribute('aria-pressed', String(reordering)); }
+    var r = $('#reorder-reset');
+    if (r) r.hidden = !reordering || !state.shelfOrder.length;
     renderSideLists();
     markCurrent();
+  }
+  function moveShelf(slug, dir, btn) {
+    var order = shelfOrderNow(), i = order.indexOf(slug), j = i + dir;
+    if (i < 0 || j < 0 || j >= order.length) return;
+    order.splice(i, 1); order.splice(j, 0, slug);
+    setShelfOrder(order);
+    // Keep the keyboard on the shelf that moved.
+    var again = $$('#ss-shelves .ss-reorder-row button[aria-label="' + btn.getAttribute('aria-label') + '"]')[0];
+    if (again && !again.disabled) again.focus();
+  }
+  function buildReorder() {
+    var shop = $('#ss-shelves');
+    $('#reorder-toggle').addEventListener('click', function () { reordering = !reordering; buildSidebar(); });
+    $('#reorder-reset').addEventListener('click', function () { setShelfOrder([]); toast('Shelves back in the store\'s order.'); });
+    shop.addEventListener('dragstart', function (e) {
+      var a = e.target.closest('[data-slug]'); if (!a) return;
+      dragSlug = a.getAttribute('data-slug');
+      e.dataTransfer.effectAllowed = 'move';
+      try { e.dataTransfer.setData('text/plain', dragSlug); } catch (x) { /* old browsers */ }
+      a.classList.add('ss-dragging');
+    });
+    shop.addEventListener('dragover', function (e) {
+      var a = e.target.closest('[data-slug]'); if (!a || !dragSlug) return;
+      e.preventDefault();
+      $$('.ss-drag-over', shop).forEach(function (x) { if (x !== a) x.classList.remove('ss-drag-over'); });
+      a.classList.add('ss-drag-over');
+    });
+    shop.addEventListener('dragleave', function (e) {
+      var a = e.target.closest('[data-slug]'); if (a) a.classList.remove('ss-drag-over');
+    });
+    shop.addEventListener('drop', function (e) {
+      var a = e.target.closest('[data-slug]'); if (!a || !dragSlug) return;
+      e.preventDefault();
+      var target = a.getAttribute('data-slug');
+      if (target !== dragSlug) {
+        var order = shelfOrderNow().filter(function (x) { return x !== dragSlug; });
+        order.splice(order.indexOf(target), 0, dragSlug);
+        setShelfOrder(order);
+      }
+      dragSlug = null;
+    });
+    shop.addEventListener('dragend', function () {
+      dragSlug = null;
+      $$('.ss-dragging, .ss-drag-over', shop).forEach(function (x) { x.classList.remove('ss-dragging', 'ss-drag-over'); });
+    });
   }
 
   // The sidebar's width: drag the handle on its right edge (or focus it and
@@ -541,6 +633,7 @@
     });
     if (hasCart) {
       $('#ss-cart').hidden = false;
+      document.addEventListener('ll-cart', function () { schedulePush(); });
       document.addEventListener('ll-cart', function (e) {
         var n = e.detail.count;
         $$('[data-cart-count]').forEach(function (b) { b.textContent = String(n); b.hidden = n === 0; });
@@ -553,6 +646,157 @@
     if (window.ResizeObserver && $('body > header')) new ResizeObserver(measureSite).observe($('body > header'));
   }
 
+  // ------------------------------------------------------------ account
+  // Netlify Identity signs the customer in (its widget draws the sign-in and
+  // sign-up forms); account.mjs keeps their record. See docs/ACCOUNTS.md.
+  var account = { user: null, synced: false, record: null };
+  var pushTimer = null;
+  function identity() { return window.netlifyIdentity || null; }
+  function token() {
+    var id = identity(), u = id && id.currentUser();
+    return u ? u.jwt() : Promise.resolve(null);
+  }
+  window.LLAccount = { token: token };
+  function accountApi(action, extra) {
+    return token().then(function (t) {
+      if (!t) throw new Error('Please sign in again.');
+      return fetch('/.netlify/functions/account', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + t },
+        body: JSON.stringify(Object.assign({ action: action }, extra || {})),
+      });
+    }).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (j) {
+        if (!r.ok) throw new Error(j.error || 'Your account could not be reached just now.');
+        return j;
+      });
+    });
+  }
+  function localCart() {
+    try { var c = JSON.parse(localStorage.getItem('ll-cart') || '[]'); return Array.isArray(c) ? c : []; } catch (e) { return []; }
+  }
+  function snapshot() { return { lists: state.lists, cart: localCart(), shelfOrder: state.shelfOrder }; }
+  function schedulePush() {
+    if (!account || !account.user || !account.synced) return;
+    clearTimeout(pushTimer);
+    pushTimer = setTimeout(function () {
+      accountApi('put', snapshot()).then(function (rec) { account.record = rec; }).catch(function () { /* the next change tries again */ });
+    }, 800);
+  }
+  // Signing in merges, never replaces: a list on both sides keeps every
+  // product from either; the cart keeps the larger quantity of each thing.
+  function mergeIn(rec) {
+    (rec.lists || []).forEach(function (sl) {
+      var mine = listById(sl.id) || state.lists.filter(function (l) { return l.name.toLowerCase() === sl.name.toLowerCase(); })[0];
+      if (mine) sl.items.forEach(function (i) { if (mine.items.indexOf(i) < 0) mine.items.push(i); });
+      else state.lists.push({ id: sl.id, name: sl.name, items: sl.items.slice() });
+    });
+    if (!state.shelfOrder.length && rec.shelfOrder && rec.shelfOrder.length) state.shelfOrder = rec.shelfOrder.slice();
+    var c = localCart();
+    (rec.cart || []).forEach(function (sl) {
+      var m = c.filter(function (x) { return x.id === sl.id; })[0];
+      if (m) m.qty = Math.min(20, Math.max(m.qty, sl.qty)); else c.push({ id: sl.id, qty: sl.qty });
+    });
+    try { localStorage.setItem('ll-cart', JSON.stringify(c)); } catch (e) { /* fine */ }
+    if (window.LLCart && window.LLCart.reload) window.LLCart.reload();
+  }
+  function signedIn(user) {
+    if (account.user && account.user.id === user.id) return;
+    account.user = user; account.synced = false;
+    renderAccountButton();
+    accountApi('get').then(function (rec) {
+      account.record = rec;
+      mergeIn(rec);
+      account.synced = true;
+      afterListsChange(); // saves, which sends the merged copy to the account
+      layoutHome(); buildSidebar();
+    }).catch(function (e) { toast(e.message); });
+  }
+  function renderAccountButton() {
+    var b = $('#account-open');
+    var u = account.user;
+    b.classList.toggle('is-signed-in', !!u);
+    b.setAttribute('aria-label', u ? 'Your account' : 'Sign in or create an account');
+    b.setAttribute('title', u ? 'Your account: ' + (u.email || '') : 'Sign in or create an account');
+    $('#account-initial').textContent = u && u.email ? u.email.charAt(0).toUpperCase() : '';
+  }
+  function money(v) { return '$' + Number(v || 0).toFixed(2); }
+  function fillAccount() {
+    var u = account.user, rec = account.record || { orders: [] };
+    $('#acct-email').textContent = u ? u.email : '';
+    var n = state.lists.reduce(function (sum, l) { return sum + l.items.length; }, 0);
+    $('#acct-lists').textContent = state.lists.length
+      ? state.lists.length + ' list' + (state.lists.length === 1 ? '' : 's') + ', ' + n + ' saved product' + (n === 1 ? '' : 's') + ', on every device you sign in on.'
+      : 'No lists yet. Tap the heart on any product to start one.';
+    var ul = $('#acct-orders'); ul.textContent = '';
+    if (!rec.orders || !rec.orders.length) {
+      ul.appendChild(el('li', { class: 'acct-empty' }, 'No orders yet. Orders you pay for while signed in appear here.'));
+    } else {
+      rec.orders.forEach(function (o) {
+        var li = el('li');
+        var d = new Date(o.date);
+        li.appendChild(el('strong', null, (isNaN(d) ? '' : d.toLocaleDateString()) + '  ' + money(o.total)));
+        li.appendChild(el('span', null, (o.items || []).map(function (i) { return i.qty + ' x ' + i.name; }).join(', ')));
+        ul.appendChild(li);
+      });
+    }
+  }
+  function openAccount() {
+    fillAccount();
+    openDialog($('#account'));
+    accountApi('get').then(function (rec) { account.record = rec; fillAccount(); }).catch(function () { /* shows what we have */ });
+  }
+  function buildAccount() {
+    var btn = $('#account-open');
+    renderAccountButton();
+    btn.addEventListener('click', function () {
+      var id = identity();
+      if (account.user) { openAccount(); return; }
+      // Identity has to be switched on in Netlify first; until then say so
+      // plainly rather than open a form that cannot work.
+      fetch('/.netlify/identity/settings').then(function (r) {
+        if (!r.ok || !id) throw new Error();
+        closeMenu();
+        id.open('login');
+      }).catch(function () {
+        toast('Accounts are being switched on. Your lists are saved in this browser meanwhile.');
+      });
+    });
+    $('#account-close').addEventListener('click', function () { $('#account').close(); });
+    $('#acct-signout').addEventListener('click', function () {
+      $('#account').close();
+      var id = identity(); if (id) id.logout();
+    });
+    $('#acct-export').addEventListener('click', function () {
+      accountApi('export').then(function (data) {
+        var blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+        var a = el('a', { href: URL.createObjectURL(blob), download: 'lavish-leaf-account.json' });
+        document.body.appendChild(a); a.click(); a.remove();
+      }).catch(function (e) { toast(e.message); });
+    });
+    $('#acct-delete').addEventListener('click', function () {
+      if (!window.confirm('Delete your account? Your saved lists, cart and order history are removed from our records, and you are signed out. Lists in this browser stay until you clear them.')) return;
+      accountApi('delete').then(function () {
+        $('#account').close();
+        account.synced = false;
+        var id = identity();
+        try { if (id) id.logout(); } catch (e) { /* the sign-in is already gone */ }
+        account.user = null; account.record = null; renderAccountButton();
+        toast('Your account is deleted.');
+      }).catch(function (e) { toast(e.message); });
+    });
+    var id = identity();
+    if (!id) return;
+    id.on('init', function (user) { if (user) signedIn(user); });
+    id.on('login', function (user) { id.close(); signedIn(user); toast('Signed in. Your lists and cart are saved to your account.'); });
+    id.on('logout', function () {
+      clearTimeout(pushTimer);
+      account.user = null; account.synced = false; account.record = null;
+      renderAccountButton();
+    });
+    if (id.currentUser()) signedIn(id.currentUser());
+  }
+
   // ------------------------------------------------------------ go
   readCatalogue();
   fetchTags();
@@ -561,6 +805,8 @@
   buildSearch();
   layoutHome();
   buildSidebar();
+  buildReorder();
+  buildAccount();
   refreshHearts();
   route();
 })();

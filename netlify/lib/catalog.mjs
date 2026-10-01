@@ -8,7 +8,10 @@ export const catalog = {
     "interval": "month",
     "active": true,
     "paypalPlanId": null,
-    "paypalSandboxPlanId": null
+    "paypalSandboxPlanId": null,
+    "ship": false,
+    "shipOz": null,
+    "waiver": null
   },
   "soccer-player-fall": {
     "id": "soccer-player-fall",
@@ -17,7 +20,12 @@ export const catalog = {
     "interval": null,
     "active": true,
     "paypalPlanId": null,
-    "paypalSandboxPlanId": null
+    "paypalSandboxPlanId": null,
+    "ship": false,
+    "shipOz": null,
+    "waiver": {
+      "version": "2026-09"
+    }
   },
   "soccer-team-fall": {
     "id": "soccer-team-fall",
@@ -26,6 +34,11 @@ export const catalog = {
     "interval": null,
     "active": true,
     "paypalPlanId": null,
-    "paypalSandboxPlanId": null
+    "paypalSandboxPlanId": null,
+    "ship": false,
+    "shipOz": null,
+    "waiver": {
+      "version": "2026-09"
+    }
   }
 };

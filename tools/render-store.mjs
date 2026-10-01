@@ -88,6 +88,14 @@ for (const p of products) {
   if (p.tags != null && !(Array.isArray(p.tags) && p.tags.every((t) => typeof t === 'string'))) {
     throw new Error(`${where}: tags must be a list of words`);
   }
+  // Shipping (shipping.mjs, docs/SHIPPING.md): every product that can be
+  // bought says whether it is posted, and a posted one has a packed weight.
+  // A guessed weight is how a flat rate quietly loses money, so there is no
+  // default.
+  if (!p.demo && p.active !== false) {
+    if (typeof p.ship !== 'boolean') throw new Error(`${where}: say "ship": true (it is posted) or false (a service, a registration, pickup only)`);
+    if (p.ship && !(Number.isInteger(p.shipOz) && p.shipOz > 0)) throw new Error(`${where}: a posted product needs "shipOz", its packed weight in whole ounces`);
+  }
   if (p.blurb != null && p.blurb !== '') {
     if (typeof p.blurb !== 'string') throw new Error(`${where}: blurb must be text`);
     if (p.blurb.length > 200) throw new Error(`${where}: blurb is ${p.blurb.length} characters; keep it under 200`);
@@ -240,6 +248,11 @@ if (unknown.length) {
       active: p.active !== false,
       paypalPlanId: p.paypalPlanId || null,
       paypalSandboxPlanId: p.paypalSandboxPlanId || null,
+      ship: p.ship === true,
+      shipOz: p.ship === true ? p.shipOz : null,
+      // The server refuses an order without its waiver (checkout.mjs), so
+      // the waiver has to be in the catalog the server reads.
+      waiver: p.waiver ? { version: p.waiver.version } : null,
     };
   }
   const path = join(ROOT, 'netlify', 'lib', 'catalog.mjs');

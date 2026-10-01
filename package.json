@@ -1,0 +1,13 @@
+{
+  "name": "lavishleaf-site",
+  "private": true,
+  "description": "lavishleaf.org. Plain HTML, no build step. This file only lists what the Netlify functions need (customer accounts in Netlify Blobs).",
+  "scripts": {
+    "test": "node --test tools/test/*.test.mjs",
+    "render": "node tools/render-store.mjs",
+    "check": "node tools/render-store.mjs --check"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^10.7.13"
+  }
+}

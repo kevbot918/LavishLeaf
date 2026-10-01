@@ -107,31 +107,33 @@
 
 <hr class="divider" style="margin:20px 0;">
 
-<!-- INSTAGRAM LIVE FEED -->
-<section class="content-section" style="max-width:1200px; padding-bottom:20px;">
-  <h2 style="font-weight:400; font-size:1.6rem; margin-bottom:8px;">
-    <i class="fab fa-instagram" style="margin-right:10px;"></i>Latest from Instagram
-  </h2>
-  <p style="font-size:0.88rem; margin-bottom:30px;">@lavish_leaf_inc, updated daily</p>
+<!-- THE FEEDS: Instagram (Behold) and Facebook (Meta's Page plugin), side by
+     side on a wide screen so each post is smaller and more of them show.
+     How MANY Instagram posts Behold shows is set in the Behold dashboard
+     (Feed settings: number of posts), not here. -->
+<section class="content-section feeds-grid">
+  <div class="feed-col feed-col-ig">
+    <h2 class="feed-title"><i class="fab fa-instagram"></i>Latest from Instagram</h2>
+    <p class="feed-sub">@lavish_leaf_inc, updated daily</p>
 
-  <!-- BEHOLD INSTAGRAM EMBED -->
-  <div data-behold-id="BwwGefXMCskjz7DyYgcT"></div>
-  <script>
-    (function() {
-      const d=document,s=d.createElement("script");s.type="module";
-      s.src="https://w.behold.so/widget.js";d.head.append(s);
-    })();
-  </script>
-</section>
-
-<!-- FACEBOOK: Meta's own Page plugin, free, no account needed to view -->
-<section class="content-section feed-section">
-  <h2 class="feed-title"><i class="fab fa-facebook-f"></i>Latest from Facebook</h2>
-  <p class="feed-sub">Lavish Leaf on Facebook</p>
-  <div class="feed-frame feed-frame-fb">
-    <iframe title="Lavish Leaf on Facebook" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLavishLeafInc&amp;tabs=timeline&amp;width=500&amp;height=640&amp;small_header=false&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=false" width="500" height="640" style="border:none;overflow:hidden" scrolling="no" loading="lazy" allow="encrypted-media; picture-in-picture; web-share"></iframe>
+    <!-- BEHOLD INSTAGRAM EMBED -->
+    <div data-behold-id="BwwGefXMCskjz7DyYgcT"></div>
+    <script>
+      (function() {
+        const d=document,s=d.createElement("script");s.type="module";
+        s.src="https://w.behold.so/widget.js";d.head.append(s);
+      })();
+    </script>
+  </div>
+  <div class="feed-col feed-col-fb">
+    <h2 class="feed-title"><i class="fab fa-facebook-f"></i>Latest from Facebook</h2>
+    <p class="feed-sub">Every post: photos, updates, links and events</p>
+    <div class="feed-frame feed-frame-fb">
+      <iframe title="Lavish Leaf on Facebook" src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLavishLeafInc&amp;tabs=timeline%2Cevents&amp;width=500&amp;height=900&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=false&amp;show_facepile=false" width="500" height="900" style="border:none;overflow:hidden" scrolling="no" loading="lazy" allow="encrypted-media; picture-in-picture; web-share"></iframe>
+    </div>
   </div>
 </section>
+
 
 <!-- YOUTUBE: the channel's uploads playlist (UC... becomes UU...). The
      channel has no videos yet and YouTube shows an error box for an empty

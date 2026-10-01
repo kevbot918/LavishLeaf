@@ -109,6 +109,7 @@
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v12H7l-3 3V4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
       Report a problem, or ask for something
     </button>
+    <p class="ss-ship-note"><strong>Shipping</strong> from $6.95, and just $4.95 on orders over $100. Free pickup in Eufaula and McAlester. <a href="terms-of-sale.html#shipping">Details</a></p>
   </div>
 
   <nav class="ss-nav" id="ss-nav" aria-label="Store">
@@ -132,7 +133,13 @@
       Cart <span class="ss-badge" data-cart-count hidden>0</span>
     </a>
 
-    <p class="ss-heading" data-nav-group="shop">Shop</p>
+    <div class="ss-heading ss-heading-row" data-nav-group="shop">
+      <span>Shop</span>
+      <span class="ss-heading-tools">
+        <button type="button" class="ss-heading-btn" id="reorder-reset" hidden>Reset</button>
+        <button type="button" class="ss-heading-btn" id="reorder-toggle" aria-pressed="false" title="Change the order of the shelves here and on Home">Reorder</button>
+      </span>
+    </div>
     <div class="ss-group" id="ss-shelves" data-nav-group="shop"></div>
   </nav>
 
@@ -159,6 +166,10 @@
       <button type="button" class="ss-icon ss-cart-btn" id="cart-open" aria-label="Your cart" title="Your cart">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 11h11.2L21 7H6.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="9" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></svg>
         <span class="ss-badge" data-cart-count hidden>0</span>
+      </button>
+      <button type="button" class="ss-icon ss-account-btn" id="account-open" aria-label="Sign in or create an account" title="Sign in or create an account">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8.5" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 20.5c1.4-3.6 4.4-5.5 8-5.5s6.6 1.9 8 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <span class="ss-initial" id="account-initial" aria-hidden="true"></span>
       </button>
     </div>
   </div>
@@ -6171,6 +6182,25 @@
   <ul class="ss-pick" id="pick-list"></ul>
 </dialog>
 
+<!-- ===================== YOUR ACCOUNT (docs/ACCOUNTS.md) ===================== -->
+<dialog class="ss-dialog" id="account" aria-labelledby="account-title">
+  <div class="ss-dialog-head">
+    <h2 id="account-title">Your account</h2>
+    <button type="button" class="ss-dialog-close" id="account-close" aria-label="Close">&times;</button>
+  </div>
+  <p class="ss-dialog-p" id="acct-email"></p>
+  <h3 class="acct-h">Wish lists</h3>
+  <p class="ss-dialog-p" id="acct-lists"></p>
+  <h3 class="acct-h">Orders</h3>
+  <ul class="acct-orders" id="acct-orders"></ul>
+  <div class="ss-dialog-foot acct-actions">
+    <button type="button" class="btn btn-sm" id="acct-signout">Sign out</button>
+    <button type="button" class="btn btn-sm btn-ghost" id="acct-export">Download my data</button>
+    <button type="button" class="acct-delete" id="acct-delete">Delete my account</button>
+  </div>
+  <p class="acct-fine">What an account keeps, and for how long, is in our <a href="privacy.html#accounts">Privacy Policy</a>.</p>
+</dialog>
+
 <div class="ss-toast" id="toast" role="status" aria-live="polite" hidden></div>
 
 <script>
@@ -6204,6 +6234,8 @@
   document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 <script src="donate.js"></script>
+<!-- Netlify Identity: the sign-in and sign-up forms for customer accounts. -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
 <script src="store.js" defer></script>
 </body>
 </html>

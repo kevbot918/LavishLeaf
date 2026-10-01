@@ -78,14 +78,42 @@ export function validateCart(cart, catalog) {
   return [...merged].map(([id, qty]) => ({ product: catalog[id], qty }));
 }
 
+/**
+ * What the order carries in PayPal's custom_id, which PayPal returns at
+ * capture: the waiver versions accepted (w), the shipping method (m) and
+ * local ZIP (z) to check the address against, and the signed-in customer (u)
+ * whose order history it belongs in. Written by the server only.
+ */
+export function customId({ waivers = [], shipping = null, userId = '' } = {}) {
+  const parts = [];
+  if (waivers.length) parts.push('w=' + waivers.join(','));
+  if (shipping && shipping.method && shipping.method !== 'none') parts.push('m=' + shipping.method);
+  if (shipping && shipping.zip) parts.push('z=' + String(shipping.zip).slice(0, 5));
+  if (userId) parts.push('u=' + userId);
+  const s = parts.join(';');
+  if (s.length > 127) throw new CheckoutError(500, 'That order could not be labelled. Nothing was charged.');
+  return s;
+}
+
+/** The fields of customId() back, from an order. */
+export function parseCustomId(s) {
+  const out = {};
+  for (const part of String(s || '').split(';')) {
+    const i = part.indexOf('=');
+    if (i > 0) out[part.slice(0, i)] = part.slice(i + 1);
+  }
+  return out;
+}
+
 /** The body of PayPal's "create order" call for a validated cart. */
-export function orderBody(lines, { returnUrl, cancelUrl, note = '', waivers = [] }) {
+export function orderBody(lines, { returnUrl, cancelUrl, note = '', waivers = [], shipping = null, userId = '' }) {
   const items = lines.map(({ product, qty }) => ({
     name: product.name.slice(0, 127),
     sku: product.id,
     quantity: String(qty),
     unit_amount: { currency_code: 'USD', value: money(product.price) },
-    category: 'DIGITAL_GOODS',
+    // A posted product is physical; registrations and services are not.
+    category: product.ship ? 'PHYSICAL_GOODS' : 'DIGITAL_GOODS',
   }));
   const cents = lines.reduce((sum, { product, qty }) => sum + product.price * qty, 0);
   // Belt and braces behind validateCart: never ask PayPal to create a
@@ -95,11 +123,16 @@ export function orderBody(lines, { returnUrl, cancelUrl, note = '', waivers = []
   if (!Number.isInteger(cents) || cents <= 0) {
     throw new CheckoutError(500, 'That order came to nothing. Please let us know and we will fix it.');
   }
+  const shipCents = shipping && Number.isInteger(shipping.cents) ? shipping.cents : 0;
+  const breakdown = { item_total: { currency_code: 'USD', value: money(cents) } };
+  if (shipping && shipping.method && shipping.method !== 'none') {
+    breakdown.shipping = { currency_code: 'USD', value: money(shipCents) };
+  }
   const unit = {
     amount: {
       currency_code: 'USD',
-      value: money(cents),
-      breakdown: { item_total: { currency_code: 'USD', value: money(cents) } },
+      value: money(cents + shipCents),
+      breakdown,
     },
     items,
   };
@@ -108,9 +141,8 @@ export function orderBody(lines, { returnUrl, cancelUrl, note = '', waivers = []
   // What was agreed to, on the order itself. PayPal shows custom_id on the
   // transaction and returns it at capture, so an order is its own record of
   // the waiver the buyer accepted.
-  if (waivers.length) {
-    unit.custom_id = ('waiver:' + waivers.join(',')).slice(0, 127);
-  }
+  const custom = customId({ waivers, shipping, userId });
+  if (custom) unit.custom_id = custom;
   return {
     intent: 'CAPTURE',
     purchase_units: [unit],
@@ -118,8 +150,9 @@ export function orderBody(lines, { returnUrl, cancelUrl, note = '', waivers = []
       paypal: {
         experience_context: {
           brand_name: 'Lavish Leaf',
-          // Registrations and pick-ups: nothing is shipped.
-          shipping_preference: 'NO_SHIPPING',
+          // PayPal asks for the address only when something is delivered:
+          // registrations, services and pickups need none.
+          shipping_preference: shipping && shipping.needsAddress ? 'GET_FROM_FILE' : 'NO_SHIPPING',
           user_action: 'PAY_NOW',
           return_url: returnUrl,
           cancel_url: cancelUrl,
@@ -169,17 +202,17 @@ export async function token(cfg, fetchImpl = fetch) {
 }
 
 /** One authenticated PayPal call; the reply as JSON, or a 502. */
-export async function call(cfg, path, body, { fetchImpl = fetch, requestId } = {}) {
+export async function call(cfg, path, body, { fetchImpl = fetch, requestId, method = 'POST' } = {}) {
   const auth = await token(cfg, fetchImpl);
   const res = await fetchImpl(`${cfg.base}${path}`, {
-    method: 'POST',
+    method,
     headers: {
       Authorization: `Bearer ${auth}`,
       'Content-Type': 'application/json',
       Prefer: 'return=representation',
       ...(requestId ? { 'PayPal-Request-Id': requestId } : {}),
     },
-    body: body == null ? undefined : JSON.stringify(body),
+    body: body == null || method === 'GET' ? undefined : JSON.stringify(body),
   });
   const json = await res.json().catch(() => ({}));
   if (!res.ok) {

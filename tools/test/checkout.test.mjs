@@ -123,7 +123,7 @@ test('the checkout function end to end, against a fake PayPal', async () => {
     const { default: checkout } = await import('../../netlify/functions/checkout.mjs');
     const res = await checkout(new Request('https://lavishleaf.org/.netlify/functions/checkout', {
       method: 'POST',
-      body: JSON.stringify({ items: [{ id: 'soccer-player-fall', qty: 2 }], note: 'Sam' }),
+      body: JSON.stringify({ items: [{ id: 'soccer-player-fall', qty: 2 }], note: 'Sam', waivers: ['2026-09'] }),
     }));
     assert.equal(res.status, 200);
     assert.equal((await res.json()).approveUrl, 'https://www.sandbox.paypal.com/checkoutnow?token=ORDER1');
@@ -136,6 +136,14 @@ test('the checkout function end to end, against a fake PayPal', async () => {
       sent.payment_source.paypal.experience_context.return_url,
       'https://lavishleaf.org/store?paypal=return',
     );
+
+    // The waiver is enforced on the server, not only by the tick in the cart.
+    const noWaiver = await checkout(new Request('https://lavishleaf.org/x', {
+      method: 'POST',
+      body: JSON.stringify({ items: [{ id: 'soccer-player-fall', qty: 1 }] }),
+    }));
+    assert.equal(noWaiver.status, 400);
+    assert.match((await noWaiver.json()).error, /waiver/);
 
     const bad = await checkout(new Request('https://lavishleaf.org/x', {
       method: 'POST',

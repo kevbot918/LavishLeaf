@@ -1378,7 +1378,15 @@ footer {
 .feed-sub { font-size: 0.88rem; margin-bottom: 24px; }
 .feed-frame { margin: 0 auto; }
 .feed-frame-fb { width: 100%; max-width: 500px; }
-.feed-frame-fb iframe { display: block; width: 100%; max-width: 500px; height: 640px; margin: 0 auto; border-radius: 10px; background: #fff; }
+.feed-frame-fb iframe { display: block; width: 100%; max-width: 500px; height: 900px; margin: 0 auto; border-radius: 10px; background: #fff; }
+/* Instagram beside Facebook on a wide screen: smaller posts, more of them. */
+.feeds-grid { max-width: 1200px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 500px); gap: 36px; align-items: start; padding-bottom: 20px; }
+.feed-col-ig { max-width: 640px; }
+@media (max-width: 960px) {
+  .feeds-grid { grid-template-columns: minmax(0, 1fr); }
+  .feed-col-ig, .feed-col-fb { max-width: 560px; margin: 0 auto; width: 100%; }
+  .feed-frame-fb iframe { height: 720px; }
+}
 .feed-frame-yt { max-width: 900px; aspect-ratio: 16 / 9; }
 .feed-frame-yt iframe { width: 100%; height: 100%; border: 0; border-radius: 10px; }
 .feed-soon {

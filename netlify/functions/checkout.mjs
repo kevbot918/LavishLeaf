@@ -1,8 +1,13 @@
-// POST /.netlify/functions/checkout  { items: [{id, qty}], note?, waivers? }
+// POST /.netlify/functions/checkout
+//   { items: [{id, qty}], note?, waivers?, shipMethod?, zip? }
 //   -> { approveUrl }   the PayPal page to send the buyer to
-// Prices come from the catalog, never from the request. See netlify/lib/paypal.mjs.
+// Prices AND shipping come from the catalog and shipping.mjs, never from the
+// request. See netlify/lib/paypal.mjs. A signed-in customer (Authorization:
+// Bearer, Netlify Identity) has the order filed in their account at capture.
 import { catalog } from '../lib/catalog.mjs';
+import { userFromRequest } from '../lib/identity.mjs';
 import { approveLink, call, CheckoutError, config, handle, orderBody, returnUrls, validateCart } from '../lib/paypal.mjs';
+import { quote, ShippingError } from '../../shipping.mjs';
 
 export default async (request) =>
   handle(request, async (body) => {
@@ -20,10 +25,21 @@ export default async (request) =>
     if (missing.length) {
       throw new CheckoutError(400, 'Please accept the waiver before paying.');
     }
+    let shipping;
+    try {
+      shipping = quote(lines, { method: body.shipMethod, zip: body.zip });
+    } catch (e) {
+      if (e instanceof ShippingError) throw new CheckoutError(400, e.message);
+      throw e;
+    }
+    if (shipping.method === 'local') shipping.zip = String(body.zip).trim().slice(0, 5);
+    const user = await userFromRequest(request);
     const order = await call(cfg, '/v2/checkout/orders', orderBody(lines, {
       ...returnUrls(request),
       note: body.note,
       waivers: required,
+      shipping,
+      userId: user ? user.id : '',
     }));
     return { approveUrl: approveLink(order) };
   });

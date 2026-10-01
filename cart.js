@@ -38,6 +38,23 @@
 
   var cart = load();
 
+  // Shipping: the same rules the server charges by (shipping.mjs). Until the
+  // module loads the cart says "calculated at checkout" rather than guess.
+  var SHIP_KEY = 'll-ship';
+  var ship = null;
+  var delivery = (function () {
+    try {
+      var d = JSON.parse(localStorage.getItem(SHIP_KEY) || '{}');
+      return { method: typeof d.method === 'string' ? d.method : 'ship', zip: typeof d.zip === 'string' ? d.zip : '' };
+    } catch (e) {
+      return { method: 'ship', zip: '' };
+    }
+  })();
+  function saveDelivery() {
+    try { localStorage.setItem(SHIP_KEY, JSON.stringify(delivery)); } catch (e) { /* fine */ }
+  }
+  import('/shipping.mjs').then(function (m) { ship = m; render(); }).catch(function () { /* the server still prices it */ });
+
   function money(cents) {
     return '$' + (cents / 100).toFixed(2);
   }
@@ -61,6 +78,7 @@
 
   // ------------------------------------------------------------------ view
   var fab, panel, list, totalEl, noteEl, payBtn, statusEl, banner;
+  var shipWrap, shipLine, shipNudge, zipRow, zipInput;
   var waiverWrap;
 
   // A product may require an agreement before it can be paid for. Today
@@ -104,6 +122,33 @@
 
     list = el('ul', { class: 'cart-lines' });
     panel.appendChild(list);
+
+    // How it reaches you: shown only when something in the cart is posted.
+    shipWrap = el('fieldset', { class: 'cart-ship', hidden: '' });
+    shipWrap.appendChild(el('legend', null, 'Delivery'));
+    [['ship', 'Ship to me (48 states)'], ['pickup-eufaula', 'Pick up in Eufaula, free'],
+      ['pickup-mcalester', 'Pick up in McAlester, free'], ['local', 'Local delivery, Eufaula and McAlester']]
+      .forEach(function (m) {
+        var row = el('label', { class: 'cart-ship-row' });
+        var r = el('input', { type: 'radio', name: 'cart-ship', value: m[0] });
+        r.checked = delivery.method === m[0];
+        r.addEventListener('change', function () { delivery.method = m[0]; saveDelivery(); render(); });
+        row.appendChild(r);
+        row.appendChild(document.createTextNode(' ' + m[1]));
+        shipWrap.appendChild(row);
+      });
+    zipRow = el('label', { class: 'cart-zip', hidden: '' }, 'Delivery ZIP ');
+    zipInput = el('input', { type: 'text', inputmode: 'numeric', maxlength: '10', autocomplete: 'postal-code' });
+    zipInput.value = delivery.zip;
+    zipInput.addEventListener('input', function () { delivery.zip = zipInput.value.trim(); saveDelivery(); render(); });
+    zipRow.appendChild(zipInput);
+    shipWrap.appendChild(zipRow);
+    panel.appendChild(shipWrap);
+    shipNudge = el('p', { class: 'cart-nudge', hidden: '' });
+    panel.appendChild(shipNudge);
+    shipLine = el('p', { class: 'cart-shipline', hidden: '' });
+    panel.appendChild(shipLine);
+
     totalEl = el('p', { class: 'cart-total' });
     panel.appendChild(totalEl);
 
@@ -167,7 +212,35 @@
       li.appendChild(el('span', { class: 'cart-price' }, money(p.price * l.qty)));
       list.appendChild(li);
     });
-    totalEl.textContent = cart.length ? 'Total ' + money(cents) : 'Your cart is empty.';
+    // Shipping, by the same rules the server will charge.
+    var lines = cart.map(function (l) { return { product: products[l.id], qty: l.qty }; })
+      .filter(function (x) { return x.product; });
+    var posts = lines.some(function (x) { return x.product.ship === true; });
+    var shipCents = 0, shipOk = true;
+    shipWrap.hidden = !posts;
+    zipRow.hidden = !posts || delivery.method !== 'local';
+    shipLine.hidden = !posts;
+    shipNudge.hidden = true;
+    if (posts) {
+      if (!ship) {
+        shipLine.textContent = 'Shipping is calculated at checkout.';
+      } else {
+        try {
+          var q = ship.quote(lines, { method: delivery.method, zip: delivery.zip });
+          shipCents = q.cents;
+          shipLine.textContent = q.label + ': ' + (q.cents ? money(q.cents) : 'free');
+          if (delivery.method === 'ship' && ship.untilReduced(cents) > 0) {
+            shipNudge.textContent = money(ship.untilReduced(cents)) + ' more and shipping is ' +
+              money(ship.SHIPPING.reducedCents) + ' on the whole order.';
+            shipNudge.hidden = false;
+          }
+        } catch (e) {
+          shipOk = false;
+          shipLine.textContent = e.message;
+        }
+      }
+    }
+    totalEl.textContent = cart.length ? 'Total ' + money(cents + shipCents) : 'Your cart is empty.';
 
     // The waiver, when something in the cart needs one. Drawn fresh each
     // render so removing the last registration removes the tick with it.
@@ -194,7 +267,7 @@
       Array.prototype.every.call(waiverWrap.querySelectorAll('input[type=checkbox]'),
         function (b) { return b.checked; });
 
-    payBtn.disabled = cart.length === 0 || !accepted;
+    payBtn.disabled = cart.length === 0 || !accepted || !shipOk;
     // The store shell (store.js) draws its own cart button in the top bar
     // and hides the floating one; this is how it learns the count.
     document.dispatchEvent(new CustomEvent('ll-cart', { detail: { count: count } }));
@@ -212,11 +285,21 @@
   }
 
   // -------------------------------------------------------------- checkout
+  // A signed-in customer's token travels with the order, so it is filed in
+  // their account (store.js provides window.LLAccount).
+  function authHeader() {
+    var a = window.LLAccount;
+    return (a && a.token ? a.token() : Promise.resolve(null)).catch(function () { return null; });
+  }
   function post(fn, body) {
-    return fetch('/.netlify/functions/' + fn, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
+    return authHeader().then(function (token) {
+      var headers = { 'Content-Type': 'application/json' };
+      if (token) headers.Authorization = 'Bearer ' + token;
+      return fetch('/.netlify/functions/' + fn, {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify(body),
+      });
     }).then(function (res) {
       return res.json().catch(function () { return {}; }).then(function (json) {
         if (!res.ok) throw new Error(json.error || 'Checkout is unavailable right now. Please try again.');
@@ -242,6 +325,8 @@
       items: cart,
       note: noteEl.value,
       waivers: waivers.map(function (w) { return w.version; }),
+      shipMethod: delivery.method,
+      zip: delivery.zip,
     })
       .then(function (r) { window.location.href = r.approveUrl; })
       .catch(function (e) {
@@ -306,7 +391,8 @@
     (data.products || []).forEach(function (p) { products[p.id] = p; });
     cart = cart.filter(function (l) { return products[l.id] && !products[l.id].interval; });
     build();
-    window.LLCart = { open: open, add: add, subscribe: subscribe };
+    // reload(): the account (store.js) merged a saved cart into this browser.
+    window.LLCart = { open: open, add: add, subscribe: subscribe, reload: function () { cart = load(); render(); } };
     render();
     document.querySelectorAll('[data-cart-add]').forEach(function (b) {
       b.addEventListener('click', function () { add(b.getAttribute('data-cart-add')); });

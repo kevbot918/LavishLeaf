@@ -25,3 +25,10 @@
 /p.html
   Referrer-Policy: no-referrer
   X-Robots-Tag: noindex
+
+# The shipping rules, imported by the cart in the browser as an ES module
+# (and by the checkout functions on the server). A module must be served as
+# JavaScript or the browser refuses it.
+/shipping.mjs
+  Content-Type: text/javascript; charset=utf-8
+  Cache-Control: public, max-age=300

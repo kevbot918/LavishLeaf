@@ -137,6 +137,8 @@ through `--site-h`, which `store.js` measures.
   the shelves says so. `node tools/demo-store.mjs --remove` and a render
   take them all off. The sidebar is the page grey and carries the header's
   `logo-oval.png`.
+* **Run the tests** before a push that touches the store or the functions:
+  `npm test` (node --test, no install needed for the tests themselves).
 * **Search** has a chip per shelf, three sorts, a one-time-only filter,
   and matches every typed word against name, tags, shelf and sentence.
 * The old `#donate` anchor still works: other pages' Donate buttons land
@@ -213,14 +215,18 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
    `index.html` still use the drawn CSS `.oval-badge`; each needs its real
    logo image like Farms, Store, Restaurant and the rest. Symphonymph's card
    now carries `symphonymph-mark.png` as a stand-in (owner: "for now").
-7. **Shipping** is not charged anywhere yet. The recommendation, with 2026
-   USPS numbers, is `docs/SHIPPING.md` (flat bands $6.95 / $9.95 / $14.95,
-   $4.95 on orders of $100+, free local pickup, nothing over 10 lb posted).
-   Must be built (cart AND server) before a physical product sells.
-8. **Customer accounts** (reverses "no accounts ever" for the store, at his
-   instruction): `docs/ACCOUNTS.md` recommends Netlify Identity for sign-in
-   and Netlify Blobs for lists, cart, sidebar order and order history, with
-   guest checkout kept. Not built.
+7. **Shipping is BUILT** (2026-10-01): `shipping.mjs` at the root is the one
+   set of rules (cart shows, checkout charges, capture checks the address),
+   per `docs/SHIPPING.md`. Every non-demo product must say `"ship"` and, when
+   true, `"shipOz"`; the renderer refuses otherwise. The catalog now carries
+   `waiver`, so the server really does refuse a registration without it (it
+   did not before: catalog.mjs had no waiver field).
+8. **Customer accounts are BUILT** (2026-10-01) and waiting on the owner to
+   enable Netlify Identity (steps in `docs/ACCOUNTS.md`): Identity for
+   sign-in, Netlify Blobs (`package.json` brings `@netlify/blobs`) for lists,
+   cart, shelf order and order history, guest checkout kept. This reverses
+   "no accounts ever" for the store, at his instruction; the app still has
+   none. Shelf order (sidebar drag or Reorder) is back, and Home follows it.
 9. **YouTube on the Social page** shows a Subscribe card because the channel
    (`UCIX4zWMxDkpMFnEnS96gGow`) has no videos. After the first upload, delete
    the `.feed-soon` card in `social.html` and move the iframe out of
