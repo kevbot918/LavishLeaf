@@ -135,7 +135,7 @@
 
     // Above the products, where the buyer is looking when they come back.
     banner = el('div', { class: 'cart-banner', role: 'status', 'aria-live': 'polite', hidden: '' });
-    var products_ = document.querySelector('.store-products');
+    var products_ = document.querySelector('.store-products, #shelves');
     var header = document.querySelector('header');
     if (products_) products_.parentNode.insertBefore(banner, products_);
     else if (header) header.parentNode.insertBefore(banner, header.nextSibling);

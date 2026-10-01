@@ -3,13 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lavish Leaf Store</title>
+  <title>Lavish Leaf Online Store</title>
   <meta name="description" content="The Lavish Leaf store: compost pick-up, rec league registrations, and the farm and garden lines as they arrive. Shelves, search, wish lists, and your own look.">
-  <meta name="theme-color" content="#14171C">
+  <meta name="theme-color" content="#3d3d3d">
   <meta name="color-scheme" content="dark light">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sriracha&family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="store.css">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <!-- The look is chosen in this browser (store.js) and applied before the
@@ -51,7 +53,56 @@
 
 <a class="skip" href="#main">Skip to the products</a>
 
-<!-- ===================== SIDEBAR ===================== -->
+<header>
+  <div class="nav-wrapper">
+    <nav class="nav-left">
+      <a href="farms.html">Farms</a>
+      <a href="rec-sports.html">Rec Sports</a>
+      <a href="gaming.html">Gaming</a>
+      <a href="symphonymph.html">Symphonymph</a>
+      <a href="store.html" class="active">Store</a>
+      <a href="careers.html">Careers</a>
+      <a href="social.html">Social</a>
+    </nav>
+    <div class="nav-social-left" aria-label="Lavish Leaf elsewhere">
+      <a href="https://www.facebook.com/LavishLeafInc" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/lavish_leaf_inc" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+    <a href="index.html" class="site-logo" aria-label="Lavish Leaf home"><img src="logo-oval.png" alt="Lavish Leaf" width="138" height="94"></a>
+    <div class="nav-right">
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="https://www.facebook.com/LavishLeafInc" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/lavish_leaf_inc" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a class="m-keep" href="https://www.youtube.com/@lavishleaf" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      <a class="m-keep" href="mailto:support@lavishleaf.org" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="farms.html">Farms</a>
+    <a href="rec-sports.html">Rec Sports</a>
+    <a href="gaming.html">Gaming</a>
+    <a href="symphonymph.html">Symphonymph</a>
+    <a href="store.html">Store</a>
+    <a href="careers.html">Careers</a>
+    <a href="social.html">Social</a>
+  </nav>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <h1 class="page-hero-title">
+    <span class="ph-white">Lavish Leaf</span>
+    <span class="ph-green"><em>Online</em> Store</span>
+  </h1>
+  <p class="hero-lede">
+    Organic and sustainable living. Providing goods and services for healthy, happy, and meaningful lifestyles.
+  </p>
+</section>
+
+<!-- ===================== THE STORE SHELL: sidebar and Home, under the site header ===================== -->
+<div class="ss-shell" id="shell">
 <div class="ss-scrim" id="scrim" hidden></div>
 <aside class="ss-side" id="side" aria-label="Store menu">
   <div class="ss-side-head">
@@ -107,15 +158,6 @@
     <p class="ss-heading" data-nav-group="shop">Shop</p>
     <div class="ss-group" id="ss-shelves" data-nav-group="shop"></div>
 
-    <p class="ss-heading" data-nav-group="more">More from Lavish Leaf</p>
-    <div class="ss-group" data-nav-group="more">
-      <a class="ss-item ss-item-ext" href="farms.html" data-nav="farms">Farms</a>
-      <a class="ss-item ss-item-ext" href="rec-sports.html" data-nav="rec-sports">Rec Sports</a>
-      <a class="ss-item ss-item-ext" href="gaming.html" data-nav="gaming">Gaming</a>
-      <a class="ss-item ss-item-ext" href="symphonymph.html" data-nav="symphonymph">Symphonymph</a>
-      <a class="ss-item ss-item-ext" href="careers.html" data-nav="careers">Careers</a>
-      <a class="ss-item ss-item-ext" href="social.html" data-nav="social">Social</a>
-    </div>
 
     <a class="ss-item ss-item-quiet" href="#settings/sidebar" data-view="settings">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -134,11 +176,12 @@
 
 <!-- ===================== MAIN ===================== -->
 <div class="ss-main">
-  <header class="ss-top">
-    <button type="button" class="ss-icon ss-menu" id="menu-open" aria-label="Open the menu" aria-controls="side" aria-expanded="false">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  <div class="ss-top">
+    <button type="button" class="ss-menu" id="menu-open" aria-label="Open the store menu" aria-controls="side" aria-expanded="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9.5 4.5v15" stroke="currentColor" stroke-width="2"/></svg>
+      Browse
     </button>
-    <h1 class="ss-title" id="ss-title">Store</h1>
+    <h2 class="ss-title" id="ss-title">Home</h2>
     <div class="ss-top-right">
       <a class="ss-icon" href="#search" aria-label="Search the store" data-view="search">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m16 16 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -146,22 +189,12 @@
       <a class="ss-icon" href="#settings" aria-label="Settings" data-view="settings">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
       </a>
-      <span class="ss-top-sep" aria-hidden="true"></span>
-      <a class="ss-icon ss-social" href="https://www.facebook.com/LavishLeafInc" target="_blank" rel="noopener" aria-label="Facebook">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.3-1.4 1.5-1.4h1.4V5.1c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8V11H8v3h2.5v7z"/></svg>
-      </a>
-      <a class="ss-icon ss-social" href="https://www.instagram.com/lavish_leaf_inc" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3.8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.2"/></svg>
-      </a>
-      <a class="ss-icon ss-social" href="https://www.youtube.com/@lavishleaf" target="_blank" rel="noopener" aria-label="YouTube">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 8.2c-.2-1.4-.8-2.1-2.2-2.3C17.9 5.6 12 5.6 12 5.6s-5.9 0-7.8.3C2.8 6.1 2.2 6.8 2 8.2 1.8 9.6 1.8 12 1.8 12s0 2.4.2 3.8c.2 1.4.8 2.1 2.2 2.3 1.9.3 7.8.3 7.8.3s5.9 0 7.8-.3c1.4-.2 2-.9 2.2-2.3.2-1.4.2-3.8.2-3.8s0-2.4-.2-3.8zM10 15V9l5.2 3z"/></svg>
-      </a>
       <button type="button" class="ss-icon ss-cart-btn" id="cart-open" aria-label="Your cart" hidden>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.4 11h11.2L21 7H6.3" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="9" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></svg>
         <span class="ss-badge" data-cart-count hidden>0</span>
       </button>
     </div>
-  </header>
+  </div>
 
   <main id="main" class="ss-content">
 
@@ -323,6 +356,7 @@
     </section>
   </main>
 </div>
+</div><!-- /.ss-shell -->
 
 <!-- ===================== REPORT A PROBLEM ===================== -->
 <dialog class="ss-dialog" id="report" aria-labelledby="report-title">
@@ -372,6 +406,7 @@
 
 <div class="ss-toast" id="toast" role="status" aria-live="polite" hidden></div>
 
+<script>function toggleMenu() { document.getElementById('mobileNav').classList.toggle('open'); }</script>
 <script src="donate.js"></script>
 <script src="store.js" defer></script>
 </body>

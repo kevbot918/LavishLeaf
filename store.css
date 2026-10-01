@@ -9,14 +9,17 @@
    what order, what the menu shows, and named wish lists. Everything chosen
    lives in this browser (store.js, localStorage key "ll-store"). No accounts.
 
-   This page does NOT load style.css. The rest of the site keeps its grey
-   ground (CLAUDE.md rule 1); this page's ground is the app's, by the
-   owner's instruction for this page alone. Surfaces are the app's own:
+   This page loads style.css FIRST, for the site's own header and page hero
+   (owner, 2026-09-30: "use the same top header ... then have the store side
+   bar and home page be below that header"). The shell below them is the
+   app's, by his instruction for this page alone; the rest of the site keeps
+   its grey ground (CLAUDE.md rule 1). Surfaces are the app's own:
    dark #14171C, light #F7F8FA, black #000. The nine accents are the app's
    nine, each with the app's light seed and dark seed (lib/ui/theme.dart).
 
-   Tokens the cart panel (cart.js, styled further down) was written against
-   are mapped onto this page's tokens, so the panel follows the theme too.
+   Two stylesheets on one page share variable names, so every store rule is
+   scoped to .ss-shell or a dialog, and the names style.css uses (--leaf,
+   --white, --card ...) are remapped inside those scopes only.
    ========================================================================== */
 
 :root {
@@ -39,7 +42,7 @@
   --muted: #9AA3AD;
   --faint: #6B7480;
   --shadow: 0 1px 2px rgba(0,0,0,.35), 0 8px 24px rgba(0,0,0,.25);
-  --shadow-md: 0 10px 30px rgba(0,0,0,.45);
+  --ss-shadow-md: 0 10px 30px rgba(0,0,0,.45);
   --scrim: rgba(0,0,0,.55);
   --on-accent: #0F1A12;
 }
@@ -54,7 +57,7 @@
   --muted: #5D6670;
   --faint: #8A939D;
   --shadow: 0 1px 2px rgba(16,24,40,.06), 0 8px 24px rgba(16,24,40,.08);
-  --shadow-md: 0 10px 30px rgba(16,24,40,.16);
+  --ss-shadow-md: 0 10px 30px rgba(16,24,40,.16);
   --scrim: rgba(20,24,30,.45);
   --on-accent: #FFFFFF;
 }
@@ -88,8 +91,11 @@
 :root[data-theme="light"][data-accent="rose"]   { --accent: #A83D5C; --accent-soft: rgba(168,61,92,.12); }
 :root[data-theme="light"][data-accent="moss"]   { --accent: #5F6B2A; --accent-soft: rgba(95,107,42,.12); }
 
-/* The names cart.js's panel was styled with, mapped onto this page. */
-:root {
+/* The names style.css and cart.js were written against, mapped onto this
+   page's tokens INSIDE the shell and its dialogs only. The site header and
+   the page hero above the shell load the same style.css and must keep the
+   site's own values, so none of this may sit on :root. */
+.ss-shell, .ss-dialog, .cart-panel, .cart-banner, .ss-toast {
   --leaf: var(--accent);
   --leaf-bright: var(--accent);
   --ink: var(--on-accent);
@@ -102,29 +108,32 @@
   --field: var(--surface-2);
   --field-rule: var(--border);
   --field-ink: var(--text);
-  --page: 1100px;
+  --rule-soft: var(--border-soft);
 }
 
 /* ----------------------------------------------------------- base */
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-body.store-shell {
-  margin: 0;
-  background: var(--surface);
-  color: var(--text);
+/* The body, the header and the hero are the site's (style.css). Everything
+   from here down is scoped to the shell or to one of its dialogs. */
+body.store-shell { background: var(--surface); }
+.ss-shell, .ss-dialog, .cart-panel, .ss-toast {
   font-family: var(--font);
   font-size: 16px;
   line-height: 1.5;
-  min-height: 100vh;
+  color: var(--text);
 }
-h1, h2, h3, p, ul { margin: 0; }
-ul { padding: 0; list-style: none; }
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
-button { font: inherit; color: inherit; }
-img { display: block; max-width: 100%; }
-svg { display: block; }
-:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+/* :where() keeps these at element specificity, so a component's own class
+   (.ss-item, .ss-icon ...) still decides its colour, exactly as it did when
+   these were bare element rules. */
+:where(.ss-shell, .ss-dialog, .cart-panel) ul { padding: 0; list-style: none; }
+:where(.ss-shell, .ss-dialog, .cart-panel) a { color: var(--accent); text-decoration: none; }
+:where(.ss-shell, .ss-dialog, .cart-panel) a:hover { text-decoration: underline; }
+:where(.ss-shell, .ss-dialog) button { font: inherit; color: inherit; }
+:where(.ss-shell) img { display: block; max-width: 100%; }
+:where(.ss-shell, .ss-dialog) svg { display: block; }
+.ss-shell :focus-visible, .ss-dialog :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+:where(.ss-shell, .ss-dialog) :is(h2, h3) { letter-spacing: 0; text-wrap: initial; }
 [hidden] { display: none !important; }
 .skip {
   position: absolute; left: 16px; top: -60px; z-index: 2000;
@@ -137,7 +146,7 @@ svg { display: block; }
 }
 
 /* ----------------------------------------------------------- buttons */
-.btn {
+.ss-shell .btn, .ss-dialog .btn, .cart-panel .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   min-height: 40px; padding: 9px 18px;
   border: 0; border-radius: 999px;
@@ -146,17 +155,23 @@ svg { display: block; }
   cursor: pointer; text-decoration: none;
   transition: filter var(--ease), transform var(--ease), background var(--ease);
 }
-.btn:hover { filter: brightness(1.08); text-decoration: none; }
-.btn:active { transform: translateY(1px); }
-.btn:disabled { opacity: .5; cursor: default; filter: none; }
-.btn-sm { min-height: 36px; padding: 7px 16px; font-size: .88rem; }
-.btn-wide { width: 100%; }
-.btn-ghost { background: transparent; color: var(--accent); box-shadow: inset 0 0 0 1.5px var(--accent); }
-.btn-ghost:hover { background: var(--accent-soft); filter: none; }
+.ss-shell .btn:hover, .ss-dialog .btn:hover, .cart-panel .btn:hover { filter: brightness(1.08); text-decoration: none; background: var(--accent); color: var(--on-accent); transform: none; }
+.ss-shell .btn:active, .ss-dialog .btn:active { transform: translateY(1px); }
+.ss-shell .btn:disabled, .cart-panel .btn:disabled { opacity: .5; cursor: default; filter: none; }
+.ss-shell .btn-sm, .ss-dialog .btn-sm { min-height: 36px; padding: 7px 16px; font-size: .88rem; }
+.ss-shell .btn-wide, .cart-panel .btn-wide { width: 100%; display: flex; }
+.ss-shell .btn-ghost { background: transparent; color: var(--accent); box-shadow: inset 0 0 0 1.5px var(--accent); }
+.ss-shell .btn-ghost:hover { background: var(--accent-soft); color: var(--accent); filter: none; }
 
 /* ----------------------------------------------------------- sidebar */
+.ss-shell {
+  display: grid; grid-template-columns: var(--side-w) minmax(0, 1fr); align-items: start;
+  background: var(--surface);
+  border-top: 1px solid var(--border-soft);
+}
 .ss-side {
-  position: fixed; top: 0; left: 0; bottom: 0; z-index: 1200;
+  position: sticky; top: var(--site-h, 96px); z-index: 5;
+  height: calc(100vh - var(--site-h, 96px));
   width: var(--side-w);
   display: flex; flex-direction: column;
   background: var(--surface-2);
@@ -222,16 +237,16 @@ svg { display: block; }
 .ss-scrim { position: fixed; inset: 0; z-index: 1100; background: var(--scrim); }
 
 /* ----------------------------------------------------------- main + top bar */
-.ss-main { margin-left: var(--side-w); min-height: 100vh; display: flex; flex-direction: column; }
+.ss-main { min-width: 0; min-height: calc(100vh - var(--site-h, 96px)); display: flex; flex-direction: column; }
 .ss-top {
-  position: sticky; top: 0; z-index: 900;
+  position: sticky; top: var(--site-h, 96px); z-index: 20;
   display: flex; align-items: center; gap: 8px;
   height: var(--top-h); padding: 0 20px 0 24px;
   background: color-mix(in srgb, var(--surface) 86%, transparent);
   -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border-soft);
 }
-.ss-title { font-size: 1.45rem; font-weight: 700; letter-spacing: -.01em; margin-right: auto; }
+.ss-title { font-size: 1.35rem; font-weight: 700; margin-right: auto; }
 .ss-top-right { display: flex; align-items: center; gap: 2px; }
 .ss-top-sep { width: 1px; height: 24px; margin: 0 8px; background: var(--border); }
 .ss-icon {
@@ -247,7 +262,14 @@ svg { display: block; }
 .ss-social { color: var(--muted); }
 .ss-social:hover { color: var(--text); }
 .ss-icon .ss-badge { position: absolute; top: 4px; right: 2px; }
-.ss-menu { display: none; margin-left: -8px; }
+.ss-menu {
+  display: none; align-items: center; gap: 8px;
+  min-height: 40px; padding: 6px 14px 6px 10px; margin-right: 6px;
+  border: 1px solid var(--border); border-radius: 999px; background: transparent;
+  color: var(--text); font-weight: 700; font-size: .9rem; cursor: pointer;
+}
+.ss-menu:hover { background: var(--surface-4); }
+.ss-menu svg { width: 20px; height: 20px; }
 
 .ss-content { padding: 8px 0 60px; flex: 1 1 auto; }
 .view { animation: rise .22s ease both; }
@@ -280,7 +302,7 @@ svg { display: block; }
   box-shadow: var(--shadow);
   transition: transform var(--ease), border-color var(--ease), box-shadow var(--ease);
 }
-.sp-card:hover { transform: translateY(-2px); border-color: var(--border); box-shadow: var(--shadow-md); }
+.sp-card:hover { transform: translateY(-2px); border-color: var(--border); box-shadow: var(--ss-shadow-md); }
 .sp-media {
   position: relative; aspect-ratio: 1 / 1; overflow: hidden;
   border-radius: 9px; background: var(--surface-4);
@@ -467,7 +489,7 @@ svg { display: block; }
 .ss-dialog {
   margin: auto; width: min(520px, calc(100vw - 32px)); max-height: calc(100vh - 48px);
   padding: 22px 22px 20px; border: 1px solid var(--border); border-radius: 14px;
-  background: var(--surface-3); color: var(--text); box-shadow: var(--shadow-md);
+  background: var(--surface-3); color: var(--text); box-shadow: var(--ss-shadow-md);
 }
 .ss-dialog-sm { width: min(400px, calc(100vw - 32px)); }
 .ss-dialog::backdrop { background: var(--scrim); }
@@ -499,7 +521,7 @@ svg { display: block; }
 .ss-toast {
   position: fixed; left: 50%; bottom: 28px; z-index: 1500; transform: translateX(-50%);
   padding: 11px 18px; border-radius: 999px; background: var(--text); color: var(--surface);
-  font-weight: 700; font-size: .92rem; box-shadow: var(--shadow-md); max-width: calc(100vw - 32px);
+  font-weight: 700; font-size: .92rem; box-shadow: var(--ss-shadow-md); max-width: calc(100vw - 32px);
 }
 
 /* ----------------------------------------------------------- the cart (cart.js) */
@@ -507,7 +529,7 @@ svg { display: block; }
 .cart-panel {
   margin: auto; width: min(460px, calc(100vw - 32px)); max-height: calc(100vh - 48px);
   padding: 20px; border: 1px solid var(--border); border-radius: 14px;
-  background: var(--surface-3); color: var(--text); box-shadow: var(--shadow-md);
+  background: var(--surface-3); color: var(--text); box-shadow: var(--ss-shadow-md);
 }
 .cart-panel::backdrop { background: var(--scrim); }
 .cart-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
@@ -539,13 +561,15 @@ svg { display: block; }
 
 /* ----------------------------------------------------------- phones and tablets */
 @media (max-width: 1000px) {
-  .ss-side { transform: translateX(-100%); box-shadow: none; width: min(var(--side-w), 86vw); }
-  body.menu-open .ss-side { transform: none; box-shadow: var(--shadow-md); }
-  .ss-main { margin-left: 0; }
+  .ss-shell { grid-template-columns: minmax(0, 1fr); }
+  .ss-side {
+    position: fixed; top: 0; left: 0; bottom: 0; height: auto; z-index: 1200;
+    transform: translateX(-100%); box-shadow: none; width: min(var(--side-w), 86vw);
+  }
+  body.menu-open .ss-side { transform: none; box-shadow: var(--ss-shadow-md); }
   .ss-menu { display: inline-flex; }
   .ss-top { padding: 0 10px 0 12px; }
-  .ss-title { font-size: 1.3rem; }
-  .ss-top-sep, .ss-social { display: none; }
+  .ss-title { font-size: 1.2rem; }
   .shelf-head { padding: 0 16px 10px 20px; }
   .shelf-row { padding: 4px 20px 18px; scroll-padding-left: 20px; gap: 12px; }
   .sp-card { flex-basis: 200px; }

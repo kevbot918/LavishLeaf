@@ -127,8 +127,6 @@
     var t = effectiveTheme();
     h.setAttribute('data-theme', t);
     h.setAttribute('data-accent', state.accent);
-    var meta = $('meta[name="theme-color"]');
-    if (meta) meta.setAttribute('content', THEME_COLOR[t]);
     $$('input[name="theme"]').forEach(function (r) { r.checked = r.value === state.theme; });
     $$('.ss-swatch').forEach(function (b) { b.setAttribute('aria-checked', String(b.getAttribute('data-accent') === state.accent)); });
   }
@@ -243,11 +241,11 @@
     });
     // Sidebar
     var side = $('#order-side'); side.textContent = '';
-    var sAll = ['lists'].concat(shelfSlugs()).concat(['more']);
+    var sAll = ['lists'].concat(shelfSlugs());
     var sOrder = ordered(sAll, state.sideOrder);
     sOrder.forEach(function (key, i) {
-      var name = key === 'lists' ? 'Your lists' : key === 'more' ? 'More from Lavish Leaf' : shelfTitle(key);
-      var sub = key === 'lists' ? 'Wish lists and the cart' : key === 'more' ? 'Links to the rest of lavishleaf.org' : 'A shelf, under Shop';
+      var name = key === 'lists' ? 'Your lists' : shelfTitle(key);
+      var sub = key === 'lists' ? 'Wish lists and the cart' : 'A shelf, under Shop';
       side.appendChild(orderRow(name, sub, state.sideHidden.indexOf(key) < 0, i > 0, i < sOrder.length - 1,
         function (on) {
           state.sideHidden = state.sideHidden.filter(function (x) { return x !== key; });
@@ -284,29 +282,27 @@
   // ------------------------------------------------------------ sidebar
   function buildSidebar() {
     var nav = $('#ss-nav');
-    var sOrder = ordered(['lists'].concat(shelfSlugs()).concat(['more']), state.sideOrder);
+    var sOrder = ordered(['lists'].concat(shelfSlugs()), state.sideOrder);
     // Shelves under Shop
     var shop = $('#ss-shelves'); shop.textContent = '';
     sOrder.forEach(function (key) {
-      if (key === 'lists' || key === 'more') return;
+      if (key === 'lists') return;
       if (state.sideHidden.indexOf(key) >= 0) return;
       var a = el('a', { class: 'ss-item', href: '#shelf/' + key, 'data-nav': 'shelf/' + key });
       a.appendChild(document.createTextNode(shelfTitle(key)));
       a.appendChild(el('span', { class: 'ss-n' }, String(countOn(key))));
       shop.appendChild(a);
     });
-    var anyShelf = sOrder.some(function (k) { return k !== 'lists' && k !== 'more' && state.sideHidden.indexOf(k) < 0; });
+    var anyShelf = sOrder.some(function (k) { return k !== 'lists' && state.sideHidden.indexOf(k) < 0; });
     $$('[data-nav-group="shop"]', nav).forEach(function (n) { n.hidden = !anyShelf; });
     var listsOn = state.sideHidden.indexOf('lists') < 0;
     $$('[data-nav-group="lists"]', nav).forEach(function (n) { n.hidden = !listsOn; });
-    var moreOn = state.sideHidden.indexOf('more') < 0;
-    $$('[data-nav-group="more"]', nav).forEach(function (n) { n.hidden = !moreOn; });
     // Group order: move the three groups' nodes into the chosen order, after Search.
     var anchor = $('[data-nav="search"]', nav);
-    var groups = { lists: $$('[data-nav-group="lists"]', nav).concat([$('#ss-cart')]), shop: $$('[data-nav-group="shop"]', nav), more: $$('[data-nav-group="more"]', nav) };
+    var groups = { lists: $$('[data-nav-group="lists"]', nav).concat([$('#ss-cart')]), shop: $$('[data-nav-group="shop"]', nav) };
     var placed = [];
     sOrder.forEach(function (key) {
-      var g = key === 'lists' ? 'lists' : key === 'more' ? 'more' : 'shop';
+      var g = key === 'lists' ? 'lists' : 'shop';
       if (placed.indexOf(g) >= 0) return;
       placed.push(g);
       groups[g].forEach(function (n) { anchor.parentNode.insertBefore(n, $('.ss-item-quiet', nav)); });
@@ -407,13 +403,21 @@
 
   // ------------------------------------------------------------ views
   var current = { view: 'home', arg: null };
-  var TITLES = { home: 'Store', search: 'Search', settings: 'Settings' };
+  var firstShow = true;
+  function siteHeaderHeight() { var h = $('body > header'); return h ? h.offsetHeight : 0; }
   function show(view) {
     $$('.view').forEach(function (v) { v.hidden = v.getAttribute('data-view-name') !== view; });
     current.view = view;
-    window.scrollTo({ top: 0, behavior: 'auto' });
+    // Arriving on the page leaves the hero in view; after that, a change of
+    // view puts the top of the shell just under the site header.
+    var top = $('#shell').getBoundingClientRect().top + window.scrollY - siteHeaderHeight();
+    if (!firstShow && window.scrollY > top) window.scrollTo({ top: top, behavior: 'auto' });
+    firstShow = false;
   }
-  function setTitle(t) { $('#ss-title').textContent = t; document.title = (t === 'Store' ? '' : t + ': ') + 'Lavish Leaf Store'; }
+  function setTitle(t) { $('#ss-title').textContent = t; document.title = (t === 'Home' ? '' : t + ': ') + 'Lavish Leaf Online Store'; }
+  // The sidebar and the store bar stick under the site header, whose height
+  // changes with the viewport (and with its own phone menu).
+  function measureSite() { document.documentElement.style.setProperty('--site-h', siteHeaderHeight() + 'px'); }
   function markCurrent() {
     var key = current.view === 'home' ? 'home' : current.view === 'search' ? 'search' : current.view === 'list' ? current.arg : current.view === 'shelf' ? 'shelf/' + current.arg : '';
     $$('[data-nav]').forEach(function (a) {
@@ -452,7 +456,7 @@
       if (shelfSlugs().indexOf(current.arg) < 0) { location.hash = '#home'; return; }
       show('list'); current.view = 'shelf'; showShelf(current.arg);
     } else {
-      show('home'); setTitle('Store');
+      show('home'); setTitle('Home');
       if (path === 'donate') {
         // Other pages' "Donate" buttons land here. The control is in the
         // sidebar, so on a phone the drawer opens to show it.
@@ -672,6 +676,9 @@
     }
 
     window.addEventListener('hashchange', route);
+    measureSite();
+    window.addEventListener('resize', measureSite);
+    if (window.ResizeObserver && $('body > header')) new ResizeObserver(measureSite).observe($('body > header'));
   }
 
   // ------------------------------------------------------------ go

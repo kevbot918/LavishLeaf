@@ -77,13 +77,27 @@ is no staging; check the live site with `curl -sI` after a deploy.
   to the App Store.** So the store is a release gate for the app session, and
   the product pages are this session's work.
 
-## The store shell (2026-09-30): the one page that is not grey
+## The store shell (2026-09-30): the site's header, then the app's shell
 
 The owner, 2026-09-30: *"I want our online store to look fairly identical to
-our Symphonymph app user interface"*, and *"more elegant than the app"*. So
-`store.html` is the app's shell and NOT the site's: it loads `store.css`
-(not `style.css`), its ground is the app's (`#14171C` dark, `#F7F8FA`
-light, true black), and rule 1 above stays true for every other page.
+our Symphonymph app user interface"*, and *"more elegant than the app"*.
+Then, the same day: *"use the same top header on our store page that we have
+for our entire website ... add back the store header ... with the vision
+written below it. Then have the store side bar and home page be below that
+header."* So `store.html` is, top to bottom: the site's own `<header>`
+and `.page-hero` ("Lavish Leaf Online Store" and a `hero-lede`), styled
+by `style.css` and grey like every other page; then `.ss-shell`, the
+app-style store, styled by `store.css` on the app's ground (`#14171C`
+dark, `#F7F8FA` light, true black). Rule 1 is intact everywhere outside
+the shell.
+
+**Two stylesheets share one page, and they share variable names.** Every
+rule in `store.css` is scoped to `.ss-shell` or a dialog, the names
+`style.css` uses (`--leaf`, `--white`, `--card` ...) are remapped
+inside those scopes ONLY (never on `:root`, which would recolour the site
+header), and the scoped element rules use `:where()` so a component's own
+class still wins. The sidebar and the store bar stick under the site header
+through `--site-h`, which `store.js` measures.
 
 * **Home is shelves**, one per `category` in `products.json`, rendered by
   `tools/render-store.mjs` between the PRODUCTS markers so the page works
@@ -96,9 +110,10 @@ light, true black), and rule 1 above stays true for every other page.
   the accent, Support (the donate pop-up, `donate.js`, with the
   not-tax-deductible line beside it), Report a problem (the Netlify
   `contact` form in a dialog), Home, Search, Your lists, Shop (the
-  shelves), More from Lavish Leaf (the rest of the site), Customize.
-* **The top bar**: menu (phone), title, search, settings, the three social
-  icons, and the cart, which appears only on a deploy with
+  shelves), Customize. Links to the rest of the site are the site header's.
+* **The store bar** (under the hero): a "Browse" button that opens the
+  drawer on a phone, the view's name, search, settings, and the cart,
+  which appears only on a deploy with
   `"checkout": "cart"` (the renderer stamps `<body data-checkout>`;
   `cart.js` exposes `window.LLCart` and a `ll-cart` event for the badge).
 * **Settings** (`store.js`, localStorage `ll-store`, no accounts ever):
