@@ -604,15 +604,36 @@ body.ss-resizing .ss-side { transition: none; }
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .ss-ship-note strong { color: var(--accent); }
-.ss-ship-short { display: none; }
+.ss-ship-short, .ss-ship-tiny { display: none; }
 .ss-top .ss-search { width: 280px; min-width: 180px; }
 @container store (max-width: 1199px) {
   .ss-ship-long { display: none; }
   .ss-ship-short { display: inline; }
   .ss-top .ss-search { width: 240px; }
 }
+/* Narrower (owner, 2026-10-02: it slid under the search bar when the sidebar
+   was dragged wide): the line stays BETWEEN the name and the search, and the
+   name and the search give up room instead (under 600px the name hides, as
+   on a phone). Only a phone-width store puts it on its own line. */
 @container store (max-width: 1079px) {
+  .ss-top .ss-title { flex: 0 1 150px; width: auto; min-width: 70px; }
+  .ss-top .ss-search { width: 210px; min-width: 150px; }
+}
+@container store (max-width: 860px) {
+  .ss-ship-short { display: none; }
+  .ss-ship-tiny { display: inline; }
+  .ss-top .ss-title { flex: 0 1 110px; }
+  .ss-top .ss-search { width: 180px; min-width: 120px; }
+}
+@container store (max-width: 600px) {
+  .ss-top .ss-title { position: absolute; width: 1px; min-width: 0; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .ss-top .ss-ship-note { text-align: left; }
+  .ss-top .ss-search { width: 150px; min-width: 110px; }
+}
+@container store (max-width: 460px) {
   .ss-top { flex-wrap: wrap; height: auto; min-height: var(--top-h); padding-top: 8px; padding-bottom: 6px; row-gap: 4px; }
+  .ss-ship-tiny { display: none; }
+  .ss-ship-short { display: inline; }
   .ss-top .ss-title { flex: 1 1 auto; width: auto; }
   .ss-top .ss-ship-note { order: 10; flex: 1 1 100%; margin: 0; text-align: center; }
 }

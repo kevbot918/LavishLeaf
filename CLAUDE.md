@@ -254,9 +254,11 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
 13. **Careers is now Company** (`company.html`, owner: "change it to Company
     for now"; `_redirects` 301s `/careers.html` and `/careers`). It holds About
     Us, the organisation chart (shareholders, board, founder, five divisions)
-    and Future Roles. **No unpaid internships**: a for-profit company must pay
-    interns who do productive work (DOL Fact Sheet #71), so every role says
-    "Paid, when it opens" and asks for an email of interest. **No investment
+    and Future Roles. The board are also the officers, all equal (owner, 2026-10-02:
+    no Founder and President box); a founder card with a placeholder photo
+    waits for his name, picture and story. **No unpaid internships**: a for-profit company must pay
+    interns who do productive work (DOL Fact Sheet #71), so the roles intro says each
+    will be paid when its division earns, and asks for an email of interest. **No investment
     offer on the site**: "We are not offering shares or any other investment
     through this website" stays (a public ask for investors is general
     solicitation under SEC Rule 506). The founder's name, photo and story are
