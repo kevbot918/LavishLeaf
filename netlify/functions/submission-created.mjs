@@ -22,12 +22,16 @@ export const handler = async (event) => {
   } catch {
     return ok;
   }
-  const form = payload.form_name || (payload.data && payload.data['form-name']) || '';
-  const d = payload.data || {};
-  const email = String(d.email || payload.email || '').trim();
+  // With a NETLIFY_API_TOKEN, what is used is Netlify's own copy of the
+  // submission, so a request sent straight to this function cannot add
+  // strangers or email them.
+  const real = await realSubmission(payload);
+  if (!real) return ok;
+  const form = real.form_name || '';
+  const d = real.data || {};
+  const email = String(d.email || '').trim();
   const first = String(d['first-name'] || d.first || '').trim();
   if (!validEmail(email)) return ok;
-  if (!(await realSubmission(payload))) return ok;
 
   try {
     // Lambda-style: Blobs (the list, and the mail counter) needs the event.
@@ -38,13 +42,19 @@ export const handler = async (event) => {
       if (String(d.subscribe || '').toLowerCase() !== 'yes') return ok;
       const store = await newsletterStore(event);
       const { record, isNew } = await subscribe(store, {
-        email, first, last: d['last-name'] || '', source: pageOf(payload),
+        email, first, last: d['last-name'] || '', source: pageOf(real),
       });
       if (isNew && !record.welcomed && mailReady() && mailConfig().postal) {
         await sendWelcome(record);
         await markWelcomed(store, email);
       }
     } else if (form === 'contact' && mailReady()) {
+      // One automatic reply per address per day, however many messages.
+      const { getStore } = await import('@netlify/blobs');
+      const seen = getStore('mail');
+      const key = 'reply-' + new Date().toISOString().slice(0, 10) + '-' + Buffer.from(email.toLowerCase()).toString('base64url').slice(0, 80);
+      if (await seen.get(key)) return ok;
+      await seen.set(key, '1');
       const tpl = await loadTemplate('contact-reply');
       const html = fill(tpl, { first_name: first || 'there' });
       await sendEmail({ to: email, toName: first, subject: 'We have your message', html, text: textOf(html), kind: 'contact-reply' });
@@ -65,20 +75,23 @@ function pageOf(payload) {
 }
 
 /**
- * Netlify calls this function for each verified submission. When the site
- * has a NETLIFY_API_TOKEN, also ask Netlify that the submission really exists,
- * so a request made straight to this function's address cannot fill the list
- * or send welcome emails to strangers.
+ * The submission to act on. Netlify calls this function for each verified
+ * submission. With NETLIFY_API_TOKEN set, the submission is read back from
+ * Netlify by its id and that copy is used (form name and fields), and
+ * anything Netlify does not know is refused. Without the token, the payload
+ * Netlify sent is used as it is (docs/EMAIL.md recommends the token).
  */
 async function realSubmission(payload) {
   const token = process.env.NETLIFY_API_TOKEN;
-  if (!token) return true;
+  if (!token) return { form_name: payload.form_name || (payload.data && payload.data['form-name']) || '', data: payload.data || {} };
   const id = String(payload.id || '');
-  if (!/^[A-Za-z0-9_-]{8,64}$/.test(id)) return false;
+  if (!/^[A-Za-z0-9_-]{8,64}$/.test(id)) return null;
   try {
     const res = await fetch(`https://api.netlify.com/api/v1/submissions/${id}`, { headers: { Authorization: `Bearer ${token}` } });
-    return res.ok;
+    if (!res.ok) return null;
+    const sub = await res.json();
+    return { form_name: sub.form_name || (sub.data && sub.data['form-name']) || '', data: sub.data || {} };
   } catch {
-    return true; // Netlify's API down: the form itself already passed Netlify's spam filter
+    return null; // not confirmed, not acted on; the submission itself is still in Netlify
   }
 }

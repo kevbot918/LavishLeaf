@@ -17,10 +17,20 @@
 //                        (CAN-SPAM); marketing mail refuses to send without it
 //   OWNER_EMAIL          where order alerts go
 
-export class MailError extends Error {}
+export class MailError extends Error {
+  /** temporary: true when trying again later may work (rate limit, outage). */
+  constructor(message, { temporary = false } = {}) { super(message); this.temporary = temporary; }
+}
 
 /** Mail that is a reply to something the person did, not marketing. */
 export const TRANSACTIONAL = new Set(['order', 'owner', 'contact-reply', 'test']);
+
+/**
+ * Kinds that a stranger can cause (a sign-up, the contact form) or that go to
+ * many people share the day's budget minus the reserve, so nothing but order
+ * emails can ever use the last 40.
+ */
+const CAPPED = new Set(['welcome', 'newsletter', 'cart', 'contact-reply']);
 
 /** Kept back each day for order emails, so a newsletter never blocks a receipt. */
 const RESERVE = 40;
@@ -91,7 +101,7 @@ export async function sendEmail({ to, toName = '', subject, html, text = '', kin
   if (marketing && !unsubscribeUrl) throw new MailError('marketing email needs an unsubscribe link');
   if (marketing && !cfg.postal) throw new MailError('marketing email needs MAIL_POSTAL_ADDRESS (CAN-SPAM)');
   const sent = await sentToday();
-  if (sent >= cfg.daily || (marketing && sent >= cfg.daily - RESERVE)) throw new MailError('daily email limit reached');
+  if (sent >= cfg.daily || (CAPPED.has(kind) && sent >= cfg.daily - RESERVE)) throw new MailError('daily email limit reached', { temporary: true });
 
   const headers = {};
   if (unsubscribeUrl) {
@@ -123,7 +133,7 @@ async function send(cfg, m) {
     body: JSON.stringify(body),
   });
   const json = await res.json().catch(() => ({}));
-  if (!res.ok) throw new MailError(`Brevo said ${res.status}: ${String(json.message || '').slice(0, 200)}`);
+  if (!res.ok) throw new MailError(`Brevo said ${res.status}: ${String(json.message || '').slice(0, 200)}`, { temporary: res.status === 429 || res.status >= 500 });
   return { id: json.messageId || null };
 }
 

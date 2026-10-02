@@ -65,7 +65,9 @@ for them.
 3. Push. Preview at lavishleaf.org/emails/newsletter-YYYY-MM.html.
 4. Dashboard -> Newsletter -> the file name -> **Send me a test**. Read it on
    your phone.
-5. **Send to everyone.** The dashboard shows how many have gone.
+5. **Send to everyone.** It is queued and starts going out within the hour
+   (only the hourly sender sends, saving progress after every email, so
+   nobody gets an issue twice). The dashboard shows how many have gone.
 
 Blanks the templates may use: `{{first_name}}` ("friend" when unknown),
 `{{unsubscribe_url}}`, `{{postal_address}}`, `{{view_online_url}}`. Keep the
@@ -97,6 +99,12 @@ unsubscribe link and the postal address in the footer.
 
 5. Trigger a deploy, then on the dashboard: **Send me the welcome email**, and
    **Import past sign-ups** (needs `NETLIFY_API_TOKEN`, docs/DASHBOARD.md).
+
+**Set `NETLIFY_API_TOKEN` too** (docs/DASHBOARD.md step 4): with it, every
+sign-up is checked against Netlify's own copy of the form before anybody is
+added or emailed, so nobody can add strangers by calling the function
+directly. Contact-form replies go at most once per address per day and never
+use the 40 emails kept for orders.
 
 Until `BREVO_API_KEY` is set, sign-ups are still saved to the list; nobody is
 emailed. Until `MAIL_POSTAL_ADDRESS` is set, no marketing email (welcome,

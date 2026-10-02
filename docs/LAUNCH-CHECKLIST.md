@@ -94,8 +94,15 @@ Trigger deploy. Never into chat, email or this repository.
 * Email: templates fill and escape, the welcome and newsletters carry one-click
   unsubscribe headers and the postal address, the daily limit keeps 40 for
   order emails, a newsletter cannot be marked finished while people are still
-  waiting, scripts are stripped from sent mail, a sign-up posted straight to the
-  function is checked against Netlify when the Netlify token exists.
+  waiting, scripts are stripped from sent mail.
+* An independent code review then found, and this session fixed: newsletter
+  progress is now saved after every email with a lock (no double sends), a
+  temporary Brevo failure is retried instead of skipped, sign-ups are read
+  from Netlify's own copy of the form (with `NETLIFY_API_TOKEN`), contact
+  replies are limited to one per address per day and cannot use the order
+  reserve, the cart reminder's browser link is filled, and the dashboard
+  cannot be broken by an odd product name sent to Google Analytics. It
+  found no cross-site scripting and no way past the owner check.
 * Netlify Identity is supported in 2026 (Netlify reversed its deprecation
   plan; Git Gateway is what went), so the dashboard and store accounts can
   rely on it.

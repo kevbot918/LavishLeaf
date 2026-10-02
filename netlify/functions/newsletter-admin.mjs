@@ -10,7 +10,7 @@
 // An issue is a file in emails/ named like newsletter-2026-10.html, deployed
 // first. Nothing reaches subscribers until the owner presses Send.
 import { adminFromRequest, json } from '../lib/admin.mjs';
-import { ISSUE, personalise, runBatch, startJob, subjectOf } from '../lib/broadcast.mjs';
+import { ISSUE, personalise, startJob, subjectOf } from '../lib/broadcast.mjs';
 import { loadTemplate, mailConfig, mailReady, sendEmail, sentToday, textOf } from '../lib/mail.mjs';
 import { allSubscribers, listStats, markWelcomed, newsletterStore, subscribe } from '../lib/newsletter.mjs';
 import { sendWelcome } from '../lib/welcome.mjs';
@@ -53,9 +53,10 @@ export default async (request) => {
       return json(200, { ok: true, message: `The welcome email went to ${admin.email}.` });
     }
     if (body.action === 'send') {
+      // Only the hourly newsletter-drip sends, so a slow request can never
+      // cut a batch short and a double click cannot send twice.
       const job = await startJob(store, issue);
-      const now = await runBatch(store); // the first batch now; the rest hourly
-      return json(200, { ok: true, message: `Sending "${job.subject}". ${now.sent.length} sent so far; the rest go out each hour within the daily limit.` });
+      return json(200, { ok: true, message: `"${job.subject}" is queued. It starts going out within the hour, in batches within the daily limit; this page shows the count.` });
     }
     if (body.action === 'cancel') {
       const job = await store.get('job', { type: 'json' }).catch(() => null);

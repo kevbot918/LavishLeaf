@@ -48,7 +48,8 @@
     return names[clean] || names[clean + '.html'] || clean;
   }
   function productName(id) {
-    var card = document.querySelector('[data-id="' + id + '"] .sp-name');
+    var card = null;
+    try { card = document.querySelector('[data-id="' + (window.CSS && CSS.escape ? CSS.escape(String(id)) : '') + '"] .sp-name'); } catch (e) { card = null; }
     return card ? card.textContent : String(id).replace(/^demo-/, '').replace(/-/g, ' ');
   }
 

@@ -41,28 +41,43 @@ export async function startJob(store, issue) {
   return job;
 }
 
-/** One batch. Returns the job as it stands. */
-export async function runBatch(store) {
+/**
+ * One batch. Progress is saved after EVERY email, so a run cut short never
+ * sends anybody the issue twice; a lock keeps two runs from overlapping.
+ * A temporary failure (rate limit, Brevo down, the day's limit) stops the
+ * batch and that person is tried again next run; a permanent one is skipped.
+ */
+export async function runBatch(store, now = Date.now()) {
   const job = await store.get('job', { type: 'json' }).catch(() => null);
   if (!job || job.done) return job;
-  const budget = Math.min(BATCH, await marketingBudget());
-  if (budget <= 0) return job;
-  const tpl = await loadTemplate(job.issue);
-  const done = new Set(job.sent);
-  const todo = (await allSubscribers(store)).filter((s) => s.status === 'active' && !done.has(keyFor(s.email)));
-  let stopped = false;
-  for (const sub of todo.slice(0, budget)) {
-    const { html, unsub } = personalise(tpl, sub, job.issue);
-    try {
-      await sendEmail({ to: sub.email, toName: sub.first, subject: job.subject, html, text: textOf(html), kind: 'newsletter', unsubscribeUrl: unsub });
-    } catch (e) {
-      if (/daily email limit/.test(e.message)) { stopped = true; break; }
-      console.error('[broadcast]', e.message);
-      job.failed++;
+  const lock = await store.get('job-lock', { type: 'json' }).catch(() => null);
+  if (lock && now - lock.at < 10 * 60 * 1000) return job; // another run is sending
+  await store.setJSON('job-lock', { at: now });
+  try {
+    const budget = Math.min(BATCH, await marketingBudget());
+    if (budget <= 0) return job;
+    const tpl = await loadTemplate(job.issue);
+    const done = new Set(job.sent);
+    const todo = (await allSubscribers(store)).filter((s) => s.status === 'active' && !done.has(keyFor(s.email)));
+    let stopped = false;
+    for (const sub of todo.slice(0, budget)) {
+      const { html, unsub } = personalise(tpl, sub, job.issue);
+      try {
+        await sendEmail({ to: sub.email, toName: sub.first, subject: job.subject, html, text: textOf(html), kind: 'newsletter', unsubscribeUrl: unsub });
+      } catch (e) {
+        if (e.temporary) { stopped = true; break; }
+        console.error('[broadcast]', e.message);
+        job.failed++;
+      }
+      job.sent.push(keyFor(sub.email));
+      await store.setJSON('job', job);
     }
-    job.sent.push(keyFor(sub.email)); // a failed address is not retried forever
+    if (!stopped && todo.length <= budget) {
+      job.done = new Date().toISOString();
+      await store.setJSON('job', job);
+    }
+    return job;
+  } finally {
+    await store.delete('job-lock').catch(() => {});
   }
-  if (!stopped && todo.length <= budget) job.done = new Date().toISOString();
-  await store.setJSON('job', job);
-  return job;
 }

@@ -46,11 +46,13 @@ export default async () => {
         return `<tr><td style="padding:6px 0;color:#F2F4F2;font-size:15px;">${esc(p.name)}${l.qty > 1 ? ' &times; ' + l.qty : ''}</td><td align="right" style="padding:6px 0;color:#C8CFC8;font-size:15px;">$${((p.price * l.qty) / 100).toFixed(2)}</td></tr>`;
       }).join('');
       const unsub = unsubscribeUrl(rec.email, 'cart');
-      const html = fill(tpl, { items_html: rows, unsubscribe_url: unsub, postal_address: mailConfig().postal });
+      const html = fill(tpl, { items_html: rows, unsubscribe_url: unsub, postal_address: mailConfig().postal, view_online_url: (process.env.URL || 'https://lavishleaf.org') + '/store.html#cart' });
       try {
         await sendEmail({ to: rec.email, subject: 'You left something in your cart', html, text: textOf(html), kind: 'cart', unsubscribeUrl: unsub });
         const now = new Date().toISOString();
-        await accounts.setJSON(b.key, { ...rec, remindedFor: rec.cartChanged, lastReminded: now });
+        // Read again just before writing, so a cart saved meanwhile is kept.
+        const fresh = await read(accounts, b.key);
+        await accounts.setJSON(b.key, { ...fresh, remindedFor: rec.cartChanged, lastReminded: now });
         sent++;
       } catch (e) {
         console.error('[cart-reminders]', e.message);

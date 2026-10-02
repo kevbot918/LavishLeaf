@@ -182,3 +182,38 @@ test('the dashboard order numbers', () => {
   assert.deepEqual([s.count, s.revenue, s.allTime, s.accounts, s.openCarts], [1, 25, 2, 2, 1]);
   assert.deepEqual(s.bestSellers, [{ name: 'Player', value: 1 }]);
 });
+
+test('a newsletter run never overlaps another, and a temporary failure is retried next run', async () => {
+  const st = memStore();
+  for (let i = 0; i < 3; i++) await nl.subscribe(st, { email: `q${i}@example.com` });
+  await startJob(st, 'newsletter-2026-10');
+  // another run holds the lock: nothing is sent
+  await st.setJSON('job-lock', { at: Date.now() });
+  assert.equal((await runBatch(st)).sent.length, 0);
+  await st.delete('job-lock');
+  // Brevo answers 429 on the second email: one sent, the rest wait
+  let calls = 0;
+  setMailForTests({ store: mailStore, fetchImpl: async (url, opts) => {
+    if (String(url).includes('/emails/')) return { ok: true, status: 200, text: async () => TPL['newsletter-2026-10'] };
+    calls++;
+    if (calls === 2) return { ok: false, status: 429, json: async () => ({ message: 'slow down' }) };
+    sent.push({ body: JSON.parse(opts.body) });
+    return { ok: true, status: 201, json: async () => ({}) };
+  } });
+  let j = await runBatch(st);
+  assert.equal(j.sent.length, 1);
+  assert.equal(j.done, null);
+  assert.equal(await st.get('job-lock'), null); // released
+  j = await runBatch(st);
+  assert.equal(j.sent.length, 3);
+  assert.ok(j.done);
+  assert.equal(new Set(sent.map((s) => s.body.to[0].email)).size, 3);
+});
+
+test('contact replies cannot use the order-email reserve', async () => {
+  process.env.MAIL_DAILY_LIMIT = '41'; // 1 non-order email a day
+  await sendEmail({ to: 'a@b.co', subject: 'S', html: 'x', kind: 'contact-reply' });
+  await assert.rejects(sendEmail({ to: 'c@d.co', subject: 'S', html: 'x', kind: 'contact-reply' }), /daily/);
+  await sendEmail({ to: 'a@b.co', subject: 'S', html: 'x', kind: 'order' });
+  delete process.env.MAIL_DAILY_LIMIT;
+});
