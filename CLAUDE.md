@@ -1,7 +1,7 @@
 # lavishleaf.org: the standing rules for this repository
 
 **This repository IS the public website.** Netlify publishes its root on every
-push to `master` at https://github.com/kevbot918/LavishLeaf. Anything committed
+push to `main` at https://github.com/kevbot918/LavishLeaf. Anything committed
 here can be downloaded by anyone; secrets live only in `.env` (ignored) and in
 Netlify's environment variables. Never commit a key, a password or a PIN.
 
@@ -15,8 +15,8 @@ store and its research.
 Plain HTML, CSS and JS. No framework, no build step for pages. Ten pages:
 `index`, `farms`, `rec-sports`, `gaming`, `symphonymph`, `store`, `company`,
 `social`, `privacy`, `app-feedback`, plus `p.html` (the personal-lane page),
-`refunds.html` and `terms-of-sale.html`. `compost.html`, `adult-sports.html`
-and `oscilla.html` are 301s in `_redirects`, not files. `_headers` carries the
+`refunds.html` and `terms-of-sale.html`. `compost.html`, `adult-sports.html`,
+`careers.html` and `oscilla.html` are 301s in `_redirects`, not files. `_headers` carries the
 security and download headers; do not weaken it to make a download "work".
 
 Deploy: `git add . && git commit && git push`. Netlify deploys the push. There
