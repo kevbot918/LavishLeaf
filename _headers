@@ -32,3 +32,16 @@
 /shipping.mjs
   Content-Type: text/javascript; charset=utf-8
   Cache-Control: public, max-age=300
+
+# The owner's dashboard, its sample data and the email templates (shown to
+# subscribers through "View in your browser") are not for search engines.
+/dashboard.html
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store
+/dashboard
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store
+/emails/*
+  X-Robots-Tag: noindex
+/tools/*
+  X-Robots-Tag: noindex

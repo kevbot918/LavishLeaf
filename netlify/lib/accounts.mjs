@@ -7,6 +7,9 @@
 //     cart:       [{ id, qty }]                         the saved cart
 //     shelfOrder: [shelfSlug]                           sidebar and Home order
 //     orders:     [{ id, date, total, items, delivery }] written by capture only
+//     email:      the sign-in address, for the one cart reminder
+//     cartChanged: ISO time the cart last changed; remindedFor / lastReminded
+//                 are written by cart-reminders.mjs only
 //     updated:    ISO time }
 //
 // The browser may replace lists, cart and shelfOrder (account.mjs), always

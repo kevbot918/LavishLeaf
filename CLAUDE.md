@@ -272,3 +272,32 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
 16. **Supplier accounts**: `docs/SUPPLIER-ACCOUNTS.md`, the checklist from
     STORE-PRODUCTS §2 and §11. The Bangalla Excel and CSV files the owner
     named are not in the repository yet.
+
+## Built 2026-10-02 (evening): analytics, dashboard, email
+
+17. **Analytics everywhere.** GA4 `G-8SKVQ74TF6` on all 14 pages (p.html sends
+    no #fragment) and `analytics.js` on every page: Microsoft Clarity
+    (`yrei9vub09`, not on p.html) and the click events listed at its top. The
+    privacy page names both. A new page gets the GA block and
+    `<script src="analytics.js" defer>` in its head.
+18. **The owner's dashboard**, `dashboard.html` (+ `dashboard.js`,
+    `dashboard.css`, `netlify/functions/dashboard-data.mjs`,
+    `netlify/lib/dashboard.mjs`, `google.mjs`, `admin.mjs`): owner only
+    (Identity role `admin` or `ADMIN_EMAILS`), noindex, no GA on it. GA4 and
+    Search Console through a read-only service account, Meta through the
+    existing Page token, Clarity's export API, Netlify Forms, our own lists.
+    Setup: `docs/DASHBOARD.md`. Local preview with sample numbers:
+    `dashboard.html?preview` on localhost.
+19. **Email** (`docs/EMAIL.md`): our own subscriber list in Blobs `newsletter`,
+    Brevo delivers (`netlify/lib/mail.mjs`, one `send()` to swap for Amazon
+    SES later). Single opt-in (owner's choice; CAN-SPAM needs no
+    confirmation), signed one-click unsubscribe, a postal address
+    (`MAIL_POSTAL_ADDRESS`, a PO box, never on the website) or no marketing
+    mail goes. Automatic: welcome, contact auto-reply (`submission-created`),
+    order confirmation + owner alert (`orders.mjs`, from capture), one cart
+    reminder per cart (`cart-reminders`, daily, signed-in customers, only
+    once PayPal is live), newsletter batches within the daily budget
+    (`newsletter-drip`, hourly). Templates in `emails/`, one family, site
+    colours, no em dashes. The monthly issue is `emails/newsletter-YYYY-MM.html`
+    copied from the last one; the owner sends it from the dashboard after a test.
+20. **Every account to open**: `docs/ACCOUNTS-TO-OPEN.md`.

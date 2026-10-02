@@ -18,7 +18,8 @@ export async function userFromRequest(request, fetchImpl = fetch) {
     if (!res.ok) return null;
     const u = await res.json();
     if (!u || typeof u.id !== 'string' || !/^[0-9a-f-]{8,64}$/i.test(u.id)) return null;
-    return { id: u.id, email: typeof u.email === 'string' ? u.email : '' };
+    const roles = u.app_metadata && Array.isArray(u.app_metadata.roles) ? u.app_metadata.roles.filter((r) => typeof r === 'string') : [];
+    return { id: u.id, email: typeof u.email === 'string' ? u.email : '', roles };
   } catch {
     return null;
   }

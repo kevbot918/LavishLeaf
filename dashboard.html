@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard: Lavish Leaf</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sriracha&family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
+  <script src="dashboard.js" defer></script>
+</head>
+<body class="db-page">
+
+<header>
+  <div class="nav-wrapper">
+    <nav class="nav-left">
+      <a href="farms.html">Farms</a>
+      <a href="rec-sports.html">Rec Sports</a>
+      <a href="gaming.html">Gaming</a>
+      <a href="symphonymph.html">Symphonymph</a>
+      <a href="store.html">Store</a>
+      <a href="company.html">Company</a>
+      <a href="social.html">Social</a>
+    </nav>
+    <div class="nav-social-left" aria-label="Lavish Leaf elsewhere">
+      <a href="https://www.facebook.com/LavishLeafInc" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/lavish_leaf_inc" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    </div>
+    <a href="index.html" class="site-logo" aria-label="Lavish Leaf home"><img src="logo-oval.png" alt="Lavish Leaf" width="138" height="94"></a>
+    <div class="nav-right">
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+      <a href="https://www.facebook.com/LavishLeafInc" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/lavish_leaf_inc" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a class="m-keep" href="https://www.youtube.com/@lavishleaf" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      <a class="m-keep" href="mailto:support@lavishleaf.org" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="farms.html">Farms</a>
+    <a href="rec-sports.html">Rec Sports</a>
+    <a href="gaming.html">Gaming</a>
+    <a href="symphonymph.html">Symphonymph</a>
+    <a href="store.html">Store</a>
+    <a href="company.html">Company</a>
+    <a href="social.html">Social</a>
+  </nav>
+</header>
+
+<!-- The owner's dashboard (2026-10-02, docs/DASHBOARD.md). Everything below
+     is drawn by dashboard.js after the owner signs in; nothing is in this
+     file, and the numbers come only from dashboard-data.mjs, which refuses
+     anybody who is not the owner. -->
+<main class="db" id="db">
+  <section class="db-gate" id="db-gate">
+    <h1>Lavish Leaf <span>Dashboard</span></h1>
+    <p id="db-gate-text">This page is for the owner. Sign in to see how the website, the store and the social pages are doing.</p>
+    <button type="button" class="btn" id="db-signin">Sign in</button>
+  </section>
+
+  <div id="db-app" hidden>
+    <div class="db-top">
+      <div>
+        <h1 class="db-hello" id="db-hello">Hello</h1>
+        <p class="db-sub" id="db-updated">Loading the numbers&hellip;</p>
+      </div>
+      <div class="db-controls">
+        <div class="db-range" role="group" aria-label="Time period">
+          <button type="button" data-days="7">7 days</button>
+          <button type="button" data-days="28" aria-pressed="true">28 days</button>
+          <button type="button" data-days="90">90 days</button>
+        </div>
+        <button type="button" class="db-btn-ghost" id="db-refresh"><i class="fas fa-rotate"></i> Refresh</button>
+        <button type="button" class="db-btn-ghost" id="db-signout">Sign out</button>
+      </div>
+    </div>
+
+    <section class="db-insights" id="db-insights" aria-label="What stands out"></section>
+    <section class="db-tiles" id="db-tiles" aria-label="At a glance"></section>
+    <div id="db-sections"></div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-links">
+    <a href="farms.html">Farms</a>
+    <a href="rec-sports.html">Rec Sports</a>
+    <a href="gaming.html">Gaming</a>
+    <a href="symphonymph.html">Symphonymph</a>
+    <a href="store.html">Store</a>
+    <a href="company.html">Company</a>
+    <a href="social.html">Social</a>
+  </div>
+  <div class="footer-social">
+    <a href="https://www.facebook.com/LavishLeafInc" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/lavish_leaf_inc" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.youtube.com/@lavishleaf" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+    <a href="mailto:support@lavishleaf.org"><i class="fas fa-envelope"></i></a>
+  </div>
+  <div class="footer-copy">
+    &copy; <span id="year"></span> Lavish Leaf Inc &nbsp;|&nbsp; <a href="mailto:support@lavishleaf.org">support@lavishleaf.org</a> &nbsp;|&nbsp; <a href="privacy.html">Privacy</a> &nbsp;|&nbsp; <a href="refunds.html">Refunds</a> &nbsp;|&nbsp; <a href="terms-of-sale.html">Terms of Sale</a>
+  </div>
+</footer>
+
+<div class="db-tip" id="db-tip" role="tooltip" hidden></div>
+<script>document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear());
+function toggleMenu() { document.getElementById('mobileNav').classList.toggle('open'); }</script>
+</body>
+</html>

@@ -7,10 +7,12 @@
 // Before any money moves, the order is read back and the address PayPal
 // collected is checked against the delivery method chosen (shipping.mjs):
 // a posted order stays in the 48 states. After
-// it is paid, a signed-in customer's order goes into their account history.
+// it is paid, a signed-in customer's order goes into their account history,
+// and the confirmation and owner emails go out (netlify/lib/orders.mjs).
 import { accountsStore, addOrder } from '../lib/accounts.mjs';
 import { CheckoutError, call, config, handle, parseCustomId } from '../lib/paypal.mjs';
 import { addressOk } from '../../shipping.mjs';
+import { afterPayment, summarise } from '../lib/orders.mjs';
 
 export default async (request) =>
   handle(request, async (body) => {
@@ -47,6 +49,11 @@ export default async (request) =>
         console.error('[capture] could not file the order in the account', e);
       }
     }
+
+    // Filed for the dashboard, the customer's confirmation and the owner's
+    // alert (netlify/lib/orders.mjs). Each happens once; none can fail the
+    // payment, which has already gone through.
+    if (done.status === 'COMPLETED') await afterPayment(summarise(done, meta));
 
     return {
       status: done.status,

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="dark light">
+<title>You left something in your cart</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; padding:0; background:#252525; }
+  a { color:#6FD65F; }
+  @media (max-width: 620px) {
+    .wrap { width:100% !important; }
+    .pad { padding-left:20px !important; padding-right:20px !important; }
+    .col { display:block !important; width:100% !important; }
+    .col-gap { height:12px !important; }
+  }
+</style>
+</head>
+<!-- Sent at most once per cart, 1 to 7 days after it was left (netlify/functions/cart-reminders.mjs). -->
+<body style="margin:0;padding:0;background:#252525;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;">We saved your cart for you.&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#252525;">
+  <tr><td align="center" style="padding:24px 12px;">
+    <table role="presentation" class="wrap" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;">
+      <tr><td align="right" style="padding:0 4px 8px;font-family:'Nunito Sans', 'Segoe UI', Arial, Helvetica, sans-serif;font-size:12px;color:#B4BAB4;"><a href="{{view_online_url}}" style="color:#B4BAB4;text-decoration:underline;">View in your browser</a></td></tr>
+      <tr><td align="center" style="background:#0f1210;border-radius:14px 14px 0 0;padding:26px 20px 22px;border-bottom:3px solid #4AB73C;">
+        <a href="https://lavishleaf.org"><img src="https://lavishleaf.org/logo-oval.png" width="150" height="90" alt="Lavish Leaf" style="display:block;border:0;width:150px;height:auto;"></a>
+      </td></tr>
+      <tr><td class="pad" style="background:#3d3d3d;padding:30px 36px 8px;font-family:'Nunito Sans', 'Segoe UI', Arial, Helvetica, sans-serif;font-size:16px;line-height:1.65;color:#F2F4F2;">
+        <p style="margin:0 0 14px;color:#F2F4F2;">Hi there,</p>
+        <p style="margin:0 0 14px;color:#F2F4F2;">You left a few things in your cart at the Lavish Leaf store. We've saved them for you:</p>
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 18px;border-top:1px solid #565656;border-bottom:1px solid #565656;">
+          {{items_html}}
+        </table>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:6px 0 18px;"><tr><td style="background:#4AB73C;border-radius:999px;"><a href="https://lavishleaf.org/store.html#cart" style="display:inline-block;padding:12px 26px;font-size:15px;font-weight:800;color:#14261A;text-decoration:none;">Back to my cart</a></td></tr></table>
+        <p style="margin:0 0 18px;color:#C8CFC8;">No pressure at all. If something stopped you, a question about shipping or sizes or anything else, just reply and ask. This is the only reminder we'll send about this cart.</p>
+        <p style="margin:0 0 22px;color:#F2F4F2;"><strong>Lavish Leaf</strong></p>
+      </td></tr>
+      <tr><td class="pad" align="center" style="background:#3d3d3d;padding:6px 36px 28px;border-radius:0 0 14px 14px;font-family:'Nunito Sans', 'Segoe UI', Arial, Helvetica, sans-serif;">
+        <a href="https://www.facebook.com/LavishLeafInc" style="color:#6FD65F;font-size:14px;font-weight:700;text-decoration:none;">Facebook</a>
+        <span style="color:#6b6b6b;">&nbsp;&middot;&nbsp;</span>
+        <a href="https://www.instagram.com/lavish_leaf_inc" style="color:#6FD65F;font-size:14px;font-weight:700;text-decoration:none;">Instagram</a>
+        <span style="color:#6b6b6b;">&nbsp;&middot;&nbsp;</span>
+        <a href="https://www.youtube.com/@lavishleaf" style="color:#6FD65F;font-size:14px;font-weight:700;text-decoration:none;">YouTube</a>
+        <span style="color:#6b6b6b;">&nbsp;&middot;&nbsp;</span>
+        <a href="https://lavishleaf.org" style="color:#6FD65F;font-size:14px;font-weight:700;text-decoration:none;">lavishleaf.org</a>
+      </td></tr>
+      <tr><td align="center" style="padding:18px 24px 6px;font-family:'Nunito Sans', 'Segoe UI', Arial, Helvetica, sans-serif;font-size:12px;line-height:1.6;color:#B4BAB4;">
+          <p style="margin:0 0 6px;">You are getting this because you signed up at lavishleaf.org. <a href="{{unsubscribe_url}}" style="color:#6FD65F;">Unsubscribe</a> any time, in one click.</p>
+          <p style="margin:0;">Lavish Leaf Inc &middot; {{postal_address}}</p>
+      </td></tr>
+    </table>
+  </td></tr>
+</table>
+<!-- In a browser (the "View in your browser" link), fill the blanks. Email apps ignore this. -->
+<script>document.body.innerHTML=document.body.innerHTML.replace(/\{\{\s*first_name\s*\}\}/g,'friend').replace(/\{\{\s*postal_address\s*\}\}/g,'Eastern Oklahoma').replace(/\{\{[^}]*\}\}/g,'#');</script>
+</body>
+</html>

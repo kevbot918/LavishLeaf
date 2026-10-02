@@ -3,7 +3,10 @@
 Written 2026-10-02 for the owner's three asks: automatic newsletters that
 this session mostly writes; automatic ordering, shipping, receipts and labels;
 and one place to see how people find and use the site and the social posts.
-Nothing here is built yet. Each part ends with what building it involves.
+**Update 2026-10-02: built.** The analytics, the owner's dashboard and the
+email system are in place: docs/DASHBOARD.md, docs/EMAIL.md, and every
+account to open in docs/ACCOUNTS-TO-OPEN.md. The recommendation below is kept
+as the record of why.
 
 ---
 

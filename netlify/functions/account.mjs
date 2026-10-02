@@ -34,7 +34,14 @@ export const handler = async (event, context) => {
     }
     if (body.action === 'put') {
       const rec = await read(store, id);
-      return json(200, await write(store, id, { ...rec, ...clean(body) }));
+      // The address is kept with the cart so a forgotten cart can get one
+      // reminder (cart-reminders.mjs); the customer can turn that off.
+      const next = clean(body);
+      const cartChanged = JSON.stringify(next.cart) !== JSON.stringify(rec.cart) ? new Date().toISOString() : rec.cartChanged || null;
+      return json(200, await write(store, id, {
+        ...rec, ...next, cartChanged,
+        email: typeof user.email === 'string' ? user.email.toLowerCase() : rec.email || '',
+      }));
     }
     if (body.action === 'export') {
       return json(200, { email: user.email || '', account: await read(store, id), exported: new Date().toISOString() });

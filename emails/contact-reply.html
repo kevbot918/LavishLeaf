@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="dark light">
+<title>We have your message</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; padding:0; background:#252525; }
+  a { color:#6FD65F; }
+  @media (max-width: 620px) {
+    .wrap { width:100% !important; }
+    .pad { padding-left:20px !important; padding-right:20px !important; }
+    .col { display:block !important; width:100% !important; }
+    .col-gap { height:12px !important; }
+  }
+</style>
+</head>
+<!-- The automatic reply to the Contact form (netlify/functions/submission-created.mjs). -->
+<body style="margin:0;padding:0;background:#252525;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;">Thanks for getting in touch.&#8199;&#65279;&#847;&#8199;&#65279;&#847;&#8199;&#65279;&#847;</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#252525;">
+  <tr><td align="center" style="padding:24px 12px;">
+    <table role="presentation" class="wrap" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;max-width:600px;">
+      <tr><td align="right" style="padding:0 4px 8px;font-family:'Nunito Sans', 'Segoe UI', Arial, Helvetica, sans-serif;font-size:12px;color:#B4BAB4;"></td></tr>
+      <tr><td align="center" style="background:#0f1210;border-radius:14px 14px 0 0;padding:26px 20px 22px;border-bottom:3px solid #4AB73C;">
+        <a href="https://lavishleaf.org"><img src="https://lavishleaf.org/logo-oval.png" width="150" height="90" alt="Lavish Leaf" style="display:block;border:0;width:150px;height:auto;"></a>
+      </td></tr>
+      <tr><td class="pad" style="background:#3d3d3d;padding:30px 36px 8px;font-family:'Nunito Sans', 'Segoe UI', Arial, Helvetica, sans-serif;font-size:16px;line-height:1.65;color:#F2F4F2;">
+        <p style="margin:0 0 14px;color:#F2F4F2;">Hi {{first_name}},</p>
+        <p style="margin:0 0 14px;color:#F2F4F2;">Thanks for getting in touch. Your message reached us, and a real person will reply within two business days, usually sooner.</p>
+        <p style="margin:0 0 18px;color:#F2F4F2;">If it's urgent, reply to this email with anything you'd like to add, and it lands in the same inbox.</p>
+        <p style="margin:0 0 2px;color:#F2F4F2;">Talk soon,</p>
+        <p style="margin:0 0 22px;color:#F2F4F2;"><strong>Lavish Leaf</strong></p>
+      </td></tr>
+      <tr><td class="pad" align="center" style="background:#3d3d3d;padding:6px 36px 28px;border-radius:0 0 14px 14px;font-family:'Nunito Sans', 'Segoe UI', Arial, Helvetica, sans-serif;">
+        <a href="https://www.facebook.com/LavishLeafInc" style="color:#6FD65F;font-size:14px;font-weight:700;text-decoration:none;">Facebook</a>
+        <span style="color:#6b6b6b;">&nbsp;&middot;&nbsp;</span>
+        <a href="https://www.instagram.com/lavish_leaf_inc" style="color:#6FD65F;font-size:14px;font-weight:700;text-decoration:none;">Instagram</a>
+        <span style="color:#6b6b6b;">&nbsp;&middot;&nbsp;</span>
+        <a href="https://www.youtube.com/@lavishleaf" style="color:#6FD65F;font-size:14px;font-weight:700;text-decoration:none;">YouTube</a>
+        <span style="color:#6b6b6b;">&nbsp;&middot;&nbsp;</span>
+        <a href="https://lavishleaf.org" style="color:#6FD65F;font-size:14px;font-weight:700;text-decoration:none;">lavishleaf.org</a>
+      </td></tr>
+      <tr><td align="center" style="padding:18px 24px 6px;font-family:'Nunito Sans', 'Segoe UI', Arial, Helvetica, sans-serif;font-size:12px;line-height:1.6;color:#B4BAB4;">
+          <p style="margin:0;">Lavish Leaf Inc &middot; <a href="mailto:support@lavishleaf.org" style="color:#6FD65F;">support@lavishleaf.org</a></p>
+      </td></tr>
+    </table>
+  </td></tr>
+</table>
+<!-- In a browser (the "View in your browser" link), fill the blanks. Email apps ignore this. -->
+<script>document.body.innerHTML=document.body.innerHTML.replace(/\{\{\s*first_name\s*\}\}/g,'friend').replace(/\{\{\s*postal_address\s*\}\}/g,'Eastern Oklahoma').replace(/\{\{[^}]*\}\}/g,'#');</script>
+</body>
+</html>
