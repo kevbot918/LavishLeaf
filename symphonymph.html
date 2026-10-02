@@ -584,6 +584,19 @@
     if (isNaN(d)) return;
     t.textContent = d.toLocaleString("en-US", { month: "short", day: "numeric", year: "numeric", hour: "numeric", minute: "2-digit", timeZoneName: "short" }).replace(/, (\d+:)/, " at $1");
   });
+  // One count per tap on a download link: the file's name and nothing else,
+  // no cookie and no identifier (netlify/functions/app-usage.mjs keeps a
+  // daily total per file). It is a beacon, so the download never waits on it
+  // and never fails because of it. Matched by pattern, because the file
+  // names change with every release.
+  document.querySelectorAll('a[href*="downloads/"][href$=".apk"]').forEach(function (a) {
+    a.addEventListener("click", function () {
+      try {
+        var file = a.getAttribute("href").split("/").pop();
+        navigator.sendBeacon("/.netlify/functions/app-usage", JSON.stringify({ app: "symphonymph", download: file }));
+      } catch (e) { /* counting is never worth a broken download */ }
+    });
+  });
   function toggleMenu() { document.getElementById('mobileNav').classList.toggle('open'); }
   function postForm(f, successHtml) {
     fetch("/", {

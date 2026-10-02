@@ -301,6 +301,17 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     colours, no em dashes. The monthly issue is `emails/newsletter-YYYY-MM.html`
     copied from the last one; the owner sends it from the dashboard after a test.
 20. **Every account to open**: `docs/ACCOUNTS-TO-OPEN.md`.
+21. **App usage counts and download taps: BUILT, NOT PUSHED** (2026-10-02).
+    The Symphonymph session relayed the owner's ask (anonymous usage
+    analytics, no personal data) and his hold on deploys until the app
+    release and the site updates go out together. So this sits in a local
+    commit: `netlify/lib/usage.mjs`, `netlify/functions/app-usage.mjs`,
+    22 tests, the download-tap beacon on `symphonymph.html`, and
+    `privacy.html` rewritten to say what the app now sends. **Do not push it
+    ahead of the app version that sends the count (2.8)**: the policy
+    describes that version. The owner's one step is `APP_STATS_KEY` in
+    Netlify; everything is in `docs/APP-USAGE.md`. A stale day is dropped
+    with a 204, not refused, because the app retries every non-2xx for ever.
 22. **Tier 0, and the owner's private costs** (2026-10-05 and 06). Owner: the
     first stage must be products that cost nothing to start, from
     dropshippers. `docs/STORE-PRODUCTS.md` now has a **Tier 0** (section 3:

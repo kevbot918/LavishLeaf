@@ -78,16 +78,20 @@
 </section>
 
 <section class="content-section">
-  <p><strong>Last updated 18 September 2026.</strong> This policy covers the
-  Symphonymph Android app and the website at lavishleaf.org, both published by
+  <p><strong>Last updated 2 October 2026.</strong> This policy covers the
+  Symphonymph app and the website at lavishleaf.org, both published by
   Lavish Leaf Inc.</p>
 
   <h2>The short version</h2>
-  <p>Symphonymph has no accounts, no analytics, no advertising and no tracking of
-  any kind. What you listen to, what you save and what you search for stay on your
+  <p>Symphonymph has no accounts, no advertising, and no advertising or analytics
+  libraries. What you listen to, what you save and what you search for stay on your
   phone. We cannot see any of it, because it is never sent to us.</p>
+  <p>The one thing the app tells us is a count. Once a day, unless you turn it off,
+  it sends which version it is, whether it is the Android or the iPhone app, and how
+  many minutes were listened on each day. Nothing in it says who you are or what you
+  played, and it is described in full below.</p>
   <p>That is not a promise about our intentions; it is a description of how the
-  app is built. There is no server of ours for the app to send anything to.</p>
+  app is built.</p>
 
   <h2>What stays on your phone</h2>
   <p>All of it. Specifically: your library, playlists, collections and Liked list;
@@ -120,6 +124,22 @@
   for example), and hides them. That request carries nothing but what any web
   request carries: your IP address and the app's User-Agent line. It is not used to
   count or identify anyone. If it fails, nothing else happens.</p>
+
+  <h3 style="margin:22px 0 8px; font-size:1.1rem;">An anonymous daily count</h3>
+  <p>Once a day, unless you turn it off in Settings, the app sends one anonymous
+  count to lavishleaf.org: which version and build of the app it is, whether it is
+  the Android or the iPhone app, and how many minutes were listened on each day
+  since the last count. It carries no name, no account, no device identifier, and
+  nothing about what you play or how you have set up the app.</p>
+  <p>We keep only the daily totals: how many phones used the app that day, and how
+  many minutes were listened in all. Like any request to any website, it arrives
+  with your IP address: our counter looks at it only to stop one address flooding
+  it, and never stores it. (Netlify, which hosts this site, keeps the ordinary
+  server logs described under &ldquo;The website&rdquo; below.) We do not keep the
+  message itself either, so nothing we hold can be traced back to one phone, and we
+  could not tell you which counts were yours if you asked. <strong>Settings &gt; Share anonymous
+  usage counts</strong> turns it off, and turning it off also forgets any days not
+  yet sent.</p>
 
   <h3 style="margin:22px 0 8px; font-size:1.1rem;">Shared playlists</h3>
   <p>If you share a playlist, the app writes the list (titles, artists and the
@@ -167,7 +187,8 @@
   <p>It contains no analytics library, no crash-reporting library, no advertising
   library and no advertising identifier. It does not build a profile, does not use
   cookies, does not fingerprint your device, and does not sell or share data with
-  anybody, because it does not have any to sell. There is no sign-in, so there
+  anybody. The only thing it ever sends us is the anonymous daily count described
+  above, which you can turn off. There is no sign-in, so there
   is no account for anything to be attached to.</p>
 
   <h2>Children</h2>
@@ -177,7 +198,7 @@
   filter is built in, and it is off by default, which means an adult has to decide.
   The Kids &amp; family section always applies it, whatever that setting says, and
   every recording has a &ldquo;Report this&rdquo; action.
-  We do not knowingly collect anything from anyone, of any age.</p>
+  We do not knowingly collect personal information from anyone, of any age.</p>
 
   <h2>Permissions the app asks for, and when</h2>
   <ul style="margin: 0 0 16px 20px; line-height:1.8;">
@@ -202,7 +223,10 @@
   including recordings of visits with anything typed into a form hidden). Both set
   cookies. If you would rather they did not, any browser setting or extension that
   blocks them will work, and nothing on the site depends on them. Neither runs on the
-  shared-playlist page. Forms on this site (contact, newsletter, artist submissions, app feedback) are
+  shared-playlist page. The download links on the
+  Symphonymph page also count each tap, by file name only, so that we know how many
+  times the app was downloaded from here; that count uses no cookie and no identifier.
+  Forms on this site (contact, newsletter, artist submissions, app feedback) are
   delivered by Netlify Forms and reach a Lavish Leaf inbox. We use what you send only
   to answer you, and we do not sell or pass on your details. If you join the
   newsletter, we keep your name and email address on our own list (stored with
@@ -233,16 +257,17 @@
   for a guest order. Accounts are for people aged 13 and over.</p>
 
   <h2>Keeping and deleting</h2>
-  <p>App data: uninstalling the app removes everything, because there is nowhere else
-  it exists. Form submissions and email: kept while they are useful and deleted on
+  <p>App data: uninstalling the app removes everything on your phone. The anonymous
+  daily totals are kept, and because nothing in them points to a phone or a person,
+  there is nothing of yours in them to delete. Form submissions and email: kept while they are useful and deleted on
   request. Write to <a href="mailto:support@lavishleaf.org">support@lavishleaf.org</a>
   and we will delete what we hold about you.</p>
 
   <h2>Your rights</h2>
   <p>Where the GDPR, the UK GDPR or the CCPA apply to you, they give you rights to
   see, correct, delete and port the personal data an organization holds about you, and
-  to object to its processing. For the app the honest answer is that we hold nothing to
-  show you. For anything you have sent us through a form or by email, write to the
+  to object to its processing. For the app the honest answer is that we hold nothing about you to show: the daily
+  counts carry no identifier, so no part of them can be matched to a person. For anything you have sent us through a form or by email, write to the
   address above and we will act on it.</p>
 
   <h2>Changes</h2>
