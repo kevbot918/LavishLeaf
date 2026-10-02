@@ -35,16 +35,27 @@
       var i = el('img');
       i.src = img; i.loading = 'lazy'; i.decoding = 'async';
       i.alt = post.text ? post.text.slice(0, 120) : (network === 'ig' ? 'Instagram post' : 'Facebook post');
-      i.addEventListener('error', function () { media.remove(); a.classList.add('post-text-only'); });
+      i.addEventListener('error', function () {
+        // A picture Meta will not serve: show the words in the square instead.
+        media.textContent = '';
+        media.className = 'post-media post-media-text';
+        media.appendChild(el('p', 'post-quote', post.text || ''));
+        var cap = a.querySelector('.post-text'); if (cap) cap.textContent = '';
+      });
       media.appendChild(i);
       if (post.video) media.appendChild(el('span', 'post-badge', 'Video'));
       else if (post.album) media.appendChild(el('span', 'post-badge', 'Album'));
       a.appendChild(media);
     } else {
+      // No picture: the words fill the square, so every card is one size.
       a.classList.add('post-text-only');
+      var box = el('div', 'post-media post-media-text');
+      box.appendChild(el('p', 'post-quote', post.text || ''));
+      a.appendChild(box);
     }
     var body = el('div', 'post-body');
-    if (post.text) body.appendChild(el('p', 'post-text', post.text));
+    // The caption slot is always there (two lines high), so cards line up.
+    body.appendChild(el('p', 'post-text', img ? (post.text || '') : ''));
     body.appendChild(el('span', 'post-date', when(post.date)));
     a.appendChild(body);
     return a;

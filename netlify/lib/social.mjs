@@ -26,11 +26,12 @@
 // Missing values just mean that network is not configured; the page falls
 // back to the Behold widget and the Page plugin. Setup: docs/SOCIAL-FEEDS.md.
 
-// How many posts the Social page shows per network (owner, 2026-10-02:
-// "can we include more than 24?"). Meta hands posts over in pages; getPaged
-// follows them until it has this many.
-export const MAX_POSTS = 60;
-const PAGE_SIZE = 50;
+// How many posts the Social page shows per network: 21, three full rows of
+// seven (owner, 2026-10-02; 60 was too many). A few extra are read so posts
+// dropped as empty still leave 21.
+export const MAX_POSTS = 21;
+const FETCH_POSTS = 30;
+const PAGE_SIZE = 30;
 export const STALE_MS = 30 * 60 * 1000; // re-read Meta at most every 30 minutes
 const REFRESH_AFTER_MS = 7 * 24 * 60 * 60 * 1000; // refresh the IG token weekly
 
@@ -39,7 +40,7 @@ const text = (s, n) => (typeof s === 'string' ? s.replace(/\s+/g, ' ').trim().sl
 
 /** Instagram media, as cards. A video shows its thumbnail. */
 export function normalizeInstagram(json) {
-  return (Array.isArray(json && json.data) ? json.data : []).slice(0, MAX_POSTS).map((m) => ({
+  return (Array.isArray(json && json.data) ? json.data : []).map((m) => ({
     id: String(m.id),
     image: https(m.media_type === 'VIDEO' ? m.thumbnail_url : m.media_url) || https(m.thumbnail_url),
     video: m.media_type === 'VIDEO',
@@ -47,12 +48,12 @@ export function normalizeInstagram(json) {
     text: text(m.caption, 400),
     url: https(m.permalink),
     date: typeof m.timestamp === 'string' ? m.timestamp : null,
-  })).filter((m) => m.url && /^https:\/\/(www\.)?instagram\.com\//.test(m.url));
+  })).filter((m) => m.url && /^https:\/\/(www\.)?instagram\.com\//.test(m.url)).slice(0, MAX_POSTS);
 }
 
 /** Facebook Page posts, as cards. A text-only post has no image. */
 export function normalizeFacebook(json) {
-  return (Array.isArray(json && json.data) ? json.data : []).slice(0, MAX_POSTS).map((p) => {
+  return (Array.isArray(json && json.data) ? json.data : []).map((p) => {
     const att = p.attachments && Array.isArray(p.attachments.data) ? p.attachments.data[0] : null;
     return {
       id: String(p.id),
@@ -62,20 +63,20 @@ export function normalizeFacebook(json) {
       url: https(p.permalink_url),
       date: typeof p.created_time === 'string' ? p.created_time : null,
     };
-  }).filter((p) => p.url && /^https:\/\/(www\.|m\.)?facebook\.com\//.test(p.url) && (p.text || p.image));
+  }).filter((p) => p.url && /^https:\/\/(www\.|m\.)?facebook\.com\//.test(p.url) && (p.text || p.image)).slice(0, MAX_POSTS);
 }
 
 /** Every page of a Meta list until MAX_POSTS items, as one { data } object. */
 async function getPaged(url, fetchImpl) {
   const data = [];
   let next = url;
-  for (let i = 0; next && data.length < MAX_POSTS && i < 5; i++) {
+  for (let i = 0; next && data.length < FETCH_POSTS && i < 5; i++) {
     const json = await getJson(next, fetchImpl);
     if (Array.isArray(json.data)) data.push(...json.data);
     const n = json.paging && json.paging.next;
     next = typeof n === 'string' && /^https:\/\/graph\.(instagram|facebook)\.com\//.test(n) ? n : null;
   }
-  return { data: data.slice(0, MAX_POSTS) };
+  return { data: data.slice(0, FETCH_POSTS) };
 }
 
 async function getJson(url, fetchImpl) {
