@@ -240,7 +240,11 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     Blobs store `social`. Needs only `FB_PAGE_ID` + `FB_PAGE_TOKEN` in
     Netlify: with Instagram linked to the Page, that one non-expiring Page
     token reads both (2026-10-02; Meta's Instagram tester form refused the
-    account). `IG_ACCESS_TOKEN` is optional. Steps: `docs/SOCIAL-FEEDS.md`. Until then
+    account). `IG_ACCESS_TOKEN` is optional. Steps: `docs/SOCIAL-FEEDS.md`.
+    **2026-10-02: Meta's setup failed (no `instagram_basic` offered), so
+    Instagram cards now come from Behold's JSON feed** (`data-behold-feed`
+    on `#ig-grid`), widget as the fallback. Free = 6 posts, Starter
+    $10/month = 50. No Meta keys needed. Until then
     the Behold widget (free tier: 6 posts) and the Page plugin stand in.
 12. **Shipping only, for now** (owner, 2026-10-02): no pickup and no local
     delivery until there is stock in storage (otherwise goods are shipped to
