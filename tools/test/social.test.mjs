@@ -81,3 +81,19 @@ test('the Instagram token is refreshed weekly and the new one is used', async ()
   await refreshInstagramToken(store, env, fetchImpl, t0 + 8 * 86_400_000);
   assert.match(seen[1], /access_token=NEW/);
 });
+
+test('with only the Page token, Instagram is read through the linked Page', async () => {
+  const store = fakeStore();
+  const urls = [];
+  const fetchImpl = async (url) => {
+    urls.push(url.split('?')[0]);
+    if (url.includes('fields=instagram_business_account')) return new Response(JSON.stringify({ instagram_business_account: { id: '17841400000000000' } }));
+    if (url.includes('/17841400000000000/media')) return new Response(JSON.stringify({ data: [{ id: '9', media_type: 'IMAGE', media_url: 'https://c/a.jpg', permalink: 'https://www.instagram.com/p/Z/' }] }));
+    return new Response(JSON.stringify({ data: [{ id: 'p1', message: 'Hi', permalink_url: 'https://www.facebook.com/p/1' }] }));
+  };
+  const feed = await getFeed(store, { FB_PAGE_ID: '1234567890', FB_PAGE_TOKEN: 'PT' }, fetchImpl);
+  assert.deepEqual(feed.configured, { ig: true, fb: true });
+  assert.equal(feed.ig.length, 1);
+  assert.equal(feed.fb.length, 1);
+  assert.ok(urls.includes('https://graph.facebook.com/17841400000000000/media'));
+});

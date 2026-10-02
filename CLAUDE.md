@@ -237,8 +237,10 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     Instagram (24) and Facebook (24) posts as cards, full width, each network
     its own section (owner: not side by side). `social-feed.mjs` + daily
     `social-refresh.mjs` (keeps the 60-day Instagram token alive), cached in
-    Blobs store `social`. Needs `IG_ACCESS_TOKEN`, `FB_PAGE_ID`,
-    `FB_PAGE_TOKEN` in Netlify: steps in `docs/SOCIAL-FEEDS.md`. Until then
+    Blobs store `social`. Needs only `FB_PAGE_ID` + `FB_PAGE_TOKEN` in
+    Netlify: with Instagram linked to the Page, that one non-expiring Page
+    token reads both (2026-10-02; Meta's Instagram tester form refused the
+    account). `IG_ACCESS_TOKEN` is optional. Steps: `docs/SOCIAL-FEEDS.md`. Until then
     the Behold widget (free tier: 6 posts) and the Page plugin stand in.
 12. **Shipping only, for now** (owner, 2026-10-02): no pickup and no local
     delivery until there is stock in storage (otherwise goods are shipped to

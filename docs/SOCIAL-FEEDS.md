@@ -24,8 +24,8 @@ free tier covers the function calls and the small cache.
 
 Nobody else can do these steps: every one needs your own Facebook and
 Instagram log-ins (and Meta texts a code to your phone). Never send those
-passwords to anyone, Claude included. Instagram alone is enough to get past
-Behold's six posts; Facebook (Part D) is optional and can wait.
+passwords to anyone, Claude included. One Facebook Page key (Part D) now
+covers BOTH Instagram and Facebook.
 
 ### Part A. Is the Instagram account a Business or Creator account? (2 minutes, on your phone)
 
@@ -62,83 +62,75 @@ looked like nothing but documentation.
 4. When it finishes, the top right of developers.facebook.com shows **My
    Apps**. That is how you know it worked.
 
-### Part C. Create the app and get the Instagram token (10 minutes)
+### Part C. Create the app (5 minutes)
 
-1. Click **My Apps** (top right), then the green **Create App** button.
-2. **App details:** App name `Lavish Leaf Website`; App contact email: yours.
-   Click **Next**.
-3. **Use cases:** in the list on the left click **Content management**, then
-   tick **Manage messaging & content on Instagram**. If you will do Part D,
-   ALSO tick **Manage everything on your Page**. Click **Next**.
-4. **Business:** choose **I don't want to connect a business portfolio yet**.
-   Click **Next**.
-5. **Requirements**, then **Overview**: click **Next**, then **Go to
-   dashboard** (Meta may ask for your Facebook password once).
-6. In the dashboard's left menu click **Use cases**. Beside **Manage messaging
-   & content on Instagram** click **Customize**.
-7. Click **API setup with Instagram login** (NOT "with Facebook login").
-8. Find section **2. Generate access tokens** and click **Add account**. An
-   Instagram window opens: log in as **lavish_leaf_inc** and click **Allow**.
-9. Back on that screen, beside lavish_leaf_inc, click **Generate token**. Tick
-   "I understand" in the pop-up. A long token appears **once**: click the
-   **copy** icon. (If you lose it, just press Generate token again.)
-10. Paste it straight into Netlify (Part E) as `IG_ACCESS_TOKEN`.
+1. developers.facebook.com, **My Apps** (top right), green **Create App**.
+2. App name `Lavish Leaf Website`, your email, **Next**.
+3. Use cases: click **Content management** on the left, tick **Manage
+   everything on your Page**, and also tick **Manage messaging & content on
+   Instagram**. **Next**.
+4. **I don't want to connect a business portfolio yet**, **Next**, **Next**,
+   **Go to dashboard**.
+(If you already made the app on 2026-10-01, use that one. In its left menu,
+**Use cases**, check both use cases are listed; if one is missing, **Add use
+cases** and tick it.)
 
-Leave the app in **Development** mode: it only reads our own account, so no
-App Review is needed. The website renews this token by itself every week
-(it would otherwise expire after 60 days).
+### Part D. Link Instagram to the Facebook Page, and get ONE key for both (10 minutes)
 
-### If "Add account" cannot find lavish_leaf_inc
+This is the route to use (2026-10-02). Meta's "Add account" and "Instagram
+Tester" forms refused lavish_leaf_inc with "Form can't be saved"; this route
+never uses them, and its key does not expire.
 
-Meta's search only finds an Instagram account that is **professional
-(Business or Creator) AND public**. A personal or private account simply does
-not appear. In this order:
+**D1. Link the Instagram account to the Lavish Leaf Facebook Page** (skip if
+already linked):
+1. On facebook.com, open the **Lavish Leaf** Page and switch into it (the
+   **Switch now** / **Switch profile** button if Facebook asks).
+2. **Settings** (left menu, or under your Page picture: Settings & privacy,
+   Settings), then **Linked accounts** in the left list.
+3. **Instagram**, then **Connect account**, log in as **lavish_leaf_inc**,
+   and confirm.
 
-1. Do Part A on the phone and read the screen: if it offers **Switch to
-   professional account**, the account is still personal. Switch it to
-   Business, then make sure **Private account** is off.
-2. Wait a few minutes, then try **Add account** again.
-3. Still nothing? Invite it as a tester instead, which takes the exact
-   username: in the app dashboard's left menu **App roles**, **Roles**, then
-   **Add People** (or **Add Instagram Testers**), choose **Instagram Tester**,
-   type `lavish_leaf_inc`, send. Then on a computer go to **instagram.com**,
-   logged in as lavish_leaf_inc: **Settings**, **Website permissions** (or
-   **Apps and websites**), **Tester invites**, and **Accept**. Back in the
-   dashboard, **Add account** now opens an Instagram log-in window: log in as
-   lavish_leaf_inc and **Allow**.
-4. If the Instagram window logs in as a different account, log out of
-   instagram.com in that browser first, or use a private window.
-
-### Part D (optional). The Facebook Page token (10 minutes)
-
-1. Open **https://developers.facebook.com/tools/explorer/** (Graph API
-   Explorer).
-2. On the right: **Meta App** = `Lavish Leaf Website`. **User or Page** =
+**D2. Get the Page key:**
+1. Open **https://developers.facebook.com/tools/explorer/**.
+2. Right side: **Meta App** = `Lavish Leaf Website`; **User or Page** =
    **User Token**.
-3. Under **Permissions**, use **Add a Permission** to add
-   `pages_show_list` and `pages_read_engagement`. Click **Generate Access
-   Token** and approve; when asked which Pages, tick **Lavish Leaf**.
-4. Copy the token from the **Access Token** box at the top.
-5. Open **https://developers.facebook.com/tools/debug/accesstoken/**, paste
-   it, click **Debug**, then at the bottom click **Extend Access Token** and
-   copy the NEW token it shows.
-6. Back in the Explorer, paste that new token into the **Access Token** box.
-   In the query box type `me/accounts?fields=name,id,access_token` and click
-   **Submit**.
-7. In the answer, find `"name": "Lavish Leaf"`. Beside it:
-   * `"id"` (only digits) is **FB_PAGE_ID**
-   * `"access_token"` (long) is **FB_PAGE_TOKEN**
-8. Optional check: paste FB_PAGE_TOKEN into the Access Token Debugger; it
-   should say **Expires: Never**.
+3. **Permissions**: with **Add a Permission**, add all four:
+   `pages_show_list`, `pages_read_engagement`, `instagram_basic`,
+   `business_management`.
+4. Click **Generate Access Token**. In Facebook's window choose **Opt in to
+   all current and future Pages** (or tick **Lavish Leaf**), and also tick
+   **lavish_leaf_inc** when it lists Instagram accounts. Save.
+5. Copy the token in the **Access Token** box at the top.
+6. Open **https://developers.facebook.com/tools/debug/accesstoken/**, paste
+   it, **Debug**, then **Extend Access Token** at the bottom; copy the NEW
+   token.
+7. Back in the Explorer, paste the new token in the **Access Token** box,
+   type `me/accounts?fields=name,id,access_token` in the query box,
+   **Submit**. Beside `"name": "Lavish Leaf"`:
+   * `"id"` (digits) is **FB_PAGE_ID**
+   * `"access_token"` is **FB_PAGE_TOKEN** (it does not expire)
+8. Check Instagram is reachable: paste FB_PAGE_TOKEN into the **Access
+   Token** box, type `FB_PAGE_ID?fields=instagram_business_account` (with the
+   real digits), **Submit**. An answer containing
+   `"instagram_business_account": { "id": "1784..." }` means the website can
+   read your Instagram. If that part is missing, D1 is not done yet.
+
+### The other Instagram route (only if you ever want it)
+
+"API setup with Instagram login" (Use cases, Customize, Generate access
+tokens, Add account) gives an `IG_ACCESS_TOKEN` instead. It is the route that
+refused the account on 2026-10-02. If it is set, the site uses it and keeps
+it refreshed; if not, the site reads Instagram through the Page key above.
 
 ### Part E. Put the keys into Netlify (3 minutes)
 
 1. **https://app.netlify.com**, open the lavishleaf.org site.
 2. **Site configuration** (left menu), then **Environment variables**.
 3. **Add a variable**, **Add a single variable**:
-   * Key `IG_ACCESS_TOKEN`, value: the Instagram token. Tick **Contains
-     secret values**. Click **Create variable**.
-   * If you did Part D: the same for `FB_PAGE_ID` and `FB_PAGE_TOKEN`.
+   * Key `FB_PAGE_ID`, value: the digits. Click **Create variable**.
+   * Key `FB_PAGE_TOKEN`, value: the Page key. Tick **Contains secret
+     values**. Click **Create variable**.
+   (Those two are all the site needs for BOTH Instagram and Facebook.)
 4. **Deploys** (left menu), **Trigger deploy**, **Deploy site**.
 5. Open lavishleaf.org/social.html after a minute: the posts appear as cards.
    If they do not, tell Claude which step you reached; the function's log
@@ -155,3 +147,6 @@ not appear. In this order:
 * [Register as a Meta developer](https://developers.facebook.com/docs/development/register/)
 * [Instagram: Account type and tools](https://help.instagram.com/502981923235522)
 * [Switching to a Business or Creator account, 2026](https://sociality.io/blog/instagram-creator-account/)
+* [Link Instagram to a Facebook Page, 2026](https://fedica.com/blog/how-to-link-your-instagram-account-to-your-facebook-page/)
+* [Find the Instagram business account id from the Page](https://dev.to/superface/instagram-api-find-the-right-account-id-4k3j)
+* [Graph API access token for an Instagram business account](https://olegnax.com/documentation/generate-instagram-graph-api-access-token-for-instagram-business-account/)

@@ -12,6 +12,12 @@
 //              cannot be rewritten from a function.
 //   Facebook   graph.facebook.com/{page-id}/posts, with a Page access token
 //              (a long-lived Page token does not expire).
+//   Instagram, the simpler way (2026-10-02, after Meta's tester form refused
+//              the account): when the Instagram account is linked to the
+//              Facebook Page, the SAME Page token reads it through
+//              graph.facebook.com/{page}?fields=instagram_business_account
+//              and then /{ig-id}/media. No IG_ACCESS_TOKEN, no tester, no
+//              60-day refresh. Used whenever IG_ACCESS_TOKEN is not set.
 //
 // Environment (Netlify, never in this repository):
 //   IG_ACCESS_TOKEN   the first long-lived Instagram token
@@ -78,6 +84,16 @@ export async function fetchFacebook(pageId, token, fetchImpl = fetch) {
   return normalizeFacebook(await getJson(url, fetchImpl));
 }
 
+/** Instagram through the linked Facebook Page, with the Page token. */
+export async function fetchInstagramViaPage(pageId, pageToken, fetchImpl = fetch) {
+  if (!/^\d{5,25}$/.test(String(pageId))) throw new Error('FB_PAGE_ID must be the numeric page id');
+  const page = await getJson(`https://graph.facebook.com/${pageId}?fields=instagram_business_account&access_token=${encodeURIComponent(pageToken)}`, fetchImpl);
+  const igId = page.instagram_business_account && page.instagram_business_account.id;
+  if (!igId || !/^\d{5,30}$/.test(String(igId))) throw new Error('no Instagram account is linked to the Page');
+  const fields = 'id,caption,media_type,media_url,thumbnail_url,permalink,timestamp';
+  return normalizeInstagram(await getJson(`https://graph.facebook.com/${igId}/media?fields=${fields}&limit=${MAX_POSTS}&access_token=${encodeURIComponent(pageToken)}`, fetchImpl));
+}
+
 /** The Instagram token to use: the newest refreshed one, else the env's. */
 export async function instagramToken(store, env = process.env) {
   const saved = store ? await store.get('ig-token', { type: 'json' }).catch(() => null) : null;
@@ -106,10 +122,15 @@ export async function getFeed(store, env = process.env, fetchImpl = fetch, now =
   const cached = await store.get('feed', { type: 'json' }).catch(() => null);
   if (cached && cached.fetched && now - Date.parse(cached.fetched) < STALE_MS) return cached;
   const igToken = await instagramToken(store, env);
-  const configured = { ig: !!igToken, fb: !!(env.FB_PAGE_ID && env.FB_PAGE_TOKEN) };
+  const page = !!(env.FB_PAGE_ID && env.FB_PAGE_TOKEN);
+  const configured = { ig: !!igToken || page, fb: page };
   const feed = { configured, ig: (cached && cached.ig) || [], fb: (cached && cached.fb) || [], fetched: new Date(now).toISOString() };
   if (configured.ig) {
-    try { feed.ig = await fetchInstagram(igToken, fetchImpl); } catch { /* keep the last good posts */ }
+    try {
+      feed.ig = igToken
+        ? await fetchInstagram(igToken, fetchImpl)
+        : await fetchInstagramViaPage(env.FB_PAGE_ID, env.FB_PAGE_TOKEN, fetchImpl);
+    } catch { /* keep the last good posts */ }
   }
   if (configured.fb) {
     try { feed.fb = await fetchFacebook(env.FB_PAGE_ID, env.FB_PAGE_TOKEN, fetchImpl); } catch { /* same */ }
