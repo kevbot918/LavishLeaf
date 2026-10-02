@@ -111,3 +111,16 @@ test('more than one page of posts is followed, up to MAX_POSTS', async () => {
   assert.equal(posts.length, MAX_POSTS);
   assert.equal(calls, 2);
 });
+
+test('a Facebook refusal is reported in status, in Meta\'s words, without the token', async () => {
+  const store = fakeStore();
+  const fetchImpl = async (url) => {
+    if (url.includes('graph.instagram.com')) return new Response(JSON.stringify({ data: [] }));
+    return new Response(JSON.stringify({ error: { message: '(#10) This endpoint requires the pages_read_engagement permission' } }), { status: 400 });
+  };
+  const feed = await getFeed(store, { IG_ACCESS_TOKEN: 'IGT', FB_PAGE_ID: '1234567890', FB_PAGE_TOKEN: 'SECRETPAGETOKEN' }, fetchImpl);
+  assert.match(feed.status.fb, /pages_read_engagement/);
+  assert.ok(!JSON.stringify(feed.status).includes('SECRETPAGETOKEN'));
+  const bad = await getFeed(fakeStore(), { FB_PAGE_ID: 'EAAabc', FB_PAGE_TOKEN: 'X' }, fetchImpl);
+  assert.match(bad.status.fb, /Page ID digits/);
+});

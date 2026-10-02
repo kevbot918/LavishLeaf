@@ -83,7 +83,10 @@ async function getJson(url, fetchImpl) {
   const json = await res.json().catch(() => ({}));
   if (!res.ok) {
     console.error('[social]', url.split('?')[0], res.status, JSON.stringify(json).slice(0, 300));
-    throw new Error('meta request failed');
+    // Meta's own sentence (never the token), so the owner can read it at
+    // /.netlify/functions/social-feed under "status".
+    const msg = json && json.error && json.error.message ? String(json.error.message) : 'no message';
+    throw new Error(`Meta said ${res.status}: ${msg.replace(/access_token=[^&\s]+/g, 'access_token=...').slice(0, 300)}`);
   }
   return json;
 }
@@ -95,7 +98,7 @@ export async function fetchInstagram(token, fetchImpl = fetch) {
 }
 
 export async function fetchFacebook(pageId, token, fetchImpl = fetch) {
-  if (!/^\d{5,25}$/.test(String(pageId))) throw new Error('FB_PAGE_ID must be the numeric page id');
+  if (!/^\d{5,25}$/.test(String(pageId))) throw new Error('FB_PAGE_ID must be only the Page ID digits (it looks like something else is in it)');
   const fields = 'id,message,full_picture,permalink_url,created_time,attachments{media_type,title,description}';
   const url = `https://graph.facebook.com/${pageId}/posts?fields=${encodeURIComponent(fields)}&limit=${PAGE_SIZE}&access_token=${encodeURIComponent(token)}`;
   return normalizeFacebook(await getPaged(url, fetchImpl));
@@ -136,21 +139,36 @@ export async function refreshInstagramToken(store, env = process.env, fetchImpl 
  * failing keeps its last good posts rather than going blank.
  */
 export async function getFeed(store, env = process.env, fetchImpl = fetch, now = Date.now()) {
-  const cached = await store.get('feed', { type: 'json' }).catch(() => null);
-  if (cached && cached.fetched && now - Date.parse(cached.fetched) < STALE_MS) return cached;
   const igToken = await instagramToken(store, env);
-  const page = !!(env.FB_PAGE_ID && env.FB_PAGE_TOKEN);
+  const pageId = String(env.FB_PAGE_ID || '').trim();
+  const pageToken = String(env.FB_PAGE_TOKEN || '').trim();
+  const page = !!(pageId && pageToken);
   const configured = { ig: !!igToken || page, fb: page };
-  const feed = { configured, ig: (cached && cached.ig) || [], fb: (cached && cached.fb) || [], fetched: new Date(now).toISOString() };
+  // Which keys this cache was made with: a changed key in Netlify makes the
+  // cache stale at once instead of after 30 minutes. Only lengths and the
+  // last few characters, never a whole token.
+  const keys = [igToken.length, igToken.slice(-6), pageId, pageToken.length, pageToken.slice(-6)].join('|');
+  const cached = await store.get('feed', { type: 'json' }).catch(() => null);
+  if (cached && cached.keys === keys && cached.fetched && now - Date.parse(cached.fetched) < STALE_MS) return cached;
+  const feed = {
+    configured, keys,
+    ig: (cached && cached.ig) || [], fb: (cached && cached.fb) || [],
+    status: { ig: configured.ig ? 'ok' : 'not set up', fb: page ? 'ok' : 'not set up (FB_PAGE_ID and FB_PAGE_TOKEN)' },
+    fetched: new Date(now).toISOString(),
+  };
   if (configured.ig) {
     try {
       feed.ig = igToken
         ? await fetchInstagram(igToken, fetchImpl)
-        : await fetchInstagramViaPage(env.FB_PAGE_ID, env.FB_PAGE_TOKEN, fetchImpl);
-    } catch { /* keep the last good posts */ }
+        : await fetchInstagramViaPage(pageId, pageToken, fetchImpl);
+      feed.status.ig = `ok, ${feed.ig.length} posts`;
+    } catch (e) { feed.status.ig = 'error: ' + e.message; /* keep the last good posts */ }
   }
   if (configured.fb) {
-    try { feed.fb = await fetchFacebook(env.FB_PAGE_ID, env.FB_PAGE_TOKEN, fetchImpl); } catch { /* same */ }
+    try {
+      feed.fb = await fetchFacebook(pageId, pageToken, fetchImpl);
+      feed.status.fb = `ok, ${feed.fb.length} posts`;
+    } catch (e) { feed.status.fb = 'error: ' + e.message; }
   }
   if (configured.ig || configured.fb) await store.setJSON('feed', feed).catch(() => {});
   return feed;

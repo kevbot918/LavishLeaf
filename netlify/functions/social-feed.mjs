@@ -16,8 +16,8 @@ export default async (request) => {
   if (request.method !== 'GET') return new Response('GET only', { status: 405 });
   try {
     const feed = await getFeed(await store());
-    return new Response(JSON.stringify({ configured: feed.configured, ig: feed.ig, fb: feed.fb, fetched: feed.fetched }), {
-      headers: { 'Content-Type': 'application/json', 'Cache-Control': 'public, max-age=300' },
+    return new Response(JSON.stringify({ status: feed.status || null, configured: feed.configured, fetched: feed.fetched, ig: feed.ig, fb: feed.fb }, null, 1), {
+      headers: { 'Content-Type': 'application/json', 'Cache-Control': 'public, max-age=120' },
     });
   } catch (e) {
     console.error('[social-feed]', e);
