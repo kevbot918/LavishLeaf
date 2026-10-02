@@ -2,6 +2,9 @@
 /adult-sports.html  /rec-sports.html      301
 /oscilla.html      /symphonymph.html     301
 /oscilla           /symphonymph          301
+/careers.html      /company.html         301
+/careers           /company              301
+/company           /company.html         200
 /privacy           /privacy.html         200
 /symphonymph       /symphonymph.html     200
 /app-feedback      /app-feedback.html    200

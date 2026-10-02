@@ -13,7 +13,7 @@ store and its research.
 ## What the site is
 
 Plain HTML, CSS and JS. No framework, no build step for pages. Ten pages:
-`index`, `farms`, `rec-sports`, `gaming`, `symphonymph`, `store`, `careers`,
+`index`, `farms`, `rec-sports`, `gaming`, `symphonymph`, `store`, `company`,
 `social`, `privacy`, `app-feedback`, plus `p.html` (the personal-lane page),
 `refunds.html` and `terms-of-sale.html`. `compost.html`, `adult-sports.html`
 and `oscilla.html` are 301s in `_redirects`, not files. `_headers` carries the
@@ -248,3 +248,25 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     over 10 lb is "email us for a quote". The shipping line sits in the
     store bar on every view, one line, small, a fixed-width title slot so it
     never moves; full or short wording by a container query on `.ss-main`.
+
+## Changed 2026-10-02
+
+13. **Careers is now Company** (`company.html`, owner: "change it to Company
+    for now"; `_redirects` 301s `/careers.html` and `/careers`). It holds About
+    Us, the organisation chart (shareholders, board, founder, five divisions)
+    and Future Roles. **No unpaid internships**: a for-profit company must pay
+    interns who do productive work (DOL Fact Sheet #71), so every role says
+    "Paid, when it opens" and asks for an email of interest. **No investment
+    offer on the site**: "We are not offering shares or any other investment
+    through this website" stays (a public ask for investors is general
+    solicitation under SEC Rule 506). The founder's name, photo and story are
+    still to come from the owner.
+14. **Recycling Pick-Up** on `farms.html#recycling` and in `products.json`
+    (`recycle-monthly`, $15 a month, ship false, customer's own bin):
+    cardboard, mixed paper, cans, glass, plastics #1 and #2, to the McAlester
+    and Checotah centres. Price is a proposal for the owner to confirm.
+15. **Shelves scroll sideways** by arrows and the mouse wheel (`store.js`
+    `buildShelfArrows`); the wheel lets go at either end so the page scrolls.
+16. **Supplier accounts**: `docs/SUPPLIER-ACCOUNTS.md`, the checklist from
+    STORE-PRODUCTS §2 and §11. The Bangalla Excel and CSV files the owner
+    named are not in the repository yet.

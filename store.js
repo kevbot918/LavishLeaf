@@ -797,6 +797,48 @@
     if (id.currentUser()) signedIn(id.currentUser());
   }
 
+  // ------------------------------------------------------------ shelf arrows
+  // Owner, 2026-10-02: an arrow to press to scroll each shelf, and the mouse
+  // wheel sliding the shelf sideways. The wheel only takes over while the
+  // shelf can still move that way; at either end the page scrolls as usual.
+  var CHEV_L = 'M15 18l-6-6 6-6', CHEV_R = 'M9 18l6-6-6-6';
+  function buildShelfArrows() {
+    $$('#shelves .shelf-row').forEach(function (row) {
+      if (row.parentNode.classList.contains('shelf-track')) return;
+      var track = el('div', { class: 'shelf-track' });
+      row.parentNode.insertBefore(track, row);
+      track.appendChild(row);
+      function arrow(dir) {
+        var b = el('button', { type: 'button', class: 'shelf-arrow shelf-arrow-' + dir, 'aria-label': dir === 'left' ? 'Scroll left' : 'Scroll right' });
+        b.appendChild(svg(dir === 'left' ? CHEV_L : CHEV_R, true));
+        b.addEventListener('click', function () {
+          var step = Math.max(200, row.clientWidth * 0.85);
+          row.scrollBy({ left: dir === 'left' ? -step : step, behavior: 'smooth' });
+        });
+        track.appendChild(b);
+        return b;
+      }
+      var left = arrow('left'), right = arrow('right');
+      function update() {
+        var max = row.scrollWidth - row.clientWidth - 2;
+        left.hidden = row.scrollLeft <= 2;
+        right.hidden = row.scrollLeft >= max;
+      }
+      row.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+      row.addEventListener('wheel', function (e) {
+        if (e.ctrlKey || Math.abs(e.deltaX) > Math.abs(e.deltaY)) return; // pinch zoom, or a trackpad already going sideways
+        var dy = e.deltaMode === 1 ? e.deltaY * 32 : e.deltaY;
+        var max = row.scrollWidth - row.clientWidth;
+        if ((dy < 0 && row.scrollLeft <= 0) || (dy > 0 && row.scrollLeft >= max - 1)) return;
+        e.preventDefault();
+        row.scrollLeft += dy;
+      }, { passive: false });
+      update();
+      setTimeout(update, 400); // after the photos have laid out
+    });
+  }
+
   // ------------------------------------------------------------ go
   readCatalogue();
   fetchTags();
@@ -804,6 +846,7 @@
   buildChrome();
   buildSearch();
   layoutHome();
+  buildShelfArrows();
   buildSidebar();
   buildReorder();
   buildAccount();

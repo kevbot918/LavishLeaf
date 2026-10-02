@@ -754,8 +754,7 @@ textarea { min-height: 115px; resize: vertical; }
 .careers-header p { color: var(--gray); max-width: 58ch; margin: 0 auto; }
 
 .careers-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex; flex-wrap: wrap; justify-content: center;
   gap: 24px;
   max-width: 1280px;
   margin: 0 auto;
@@ -763,6 +762,7 @@ textarea { min-height: 115px; resize: vertical; }
 }
 
 .career-col {
+  flex: 0 1 290px;
   background: var(--card);
   border: 1px solid var(--rule-soft);
   border-radius: 10px;
@@ -786,6 +786,18 @@ textarea { min-height: 115px; resize: vertical; }
 .career-col ul li::before { content: "·"; position: absolute; left: 0; color: var(--leaf); font-weight: 700; }
 
 .vol-only { color: var(--leaf-bright); font-weight: 700; font-size: 0.88rem; }
+.career-col p.role-div { text-align: center; color: var(--leaf-bright); font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; margin-top: -6px; }
+
+/* The Company page's structure (owner, 2026-10-02): tiers, top down. */
+.org-chart { margin: 28px 0 24px; display: flex; flex-direction: column; align-items: center; gap: 0; }
+.org-tier { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; position: relative; padding-bottom: 26px; }
+.org-tier + .org-tier::before { content: ""; position: absolute; top: -26px; left: 50%; width: 2px; height: 26px; background: var(--leaf); }
+.org-tier:last-of-type { padding-bottom: 0; }
+.org-box { background: var(--card); border: 1px solid var(--rule-soft); border-top: 3px solid var(--leaf); border-radius: 10px; padding: 14px 18px; max-width: 340px; text-align: center; box-shadow: var(--shadow-sm); }
+.org-tier-wide .org-box { flex: 0 1 156px; padding: 12px 10px; }
+.org-box h3 { color: var(--leaf-bright); font-size: 1rem; font-weight: 800; margin-bottom: 4px; }
+.content-section .org-box p { color: var(--gray); font-size: 0.9rem; line-height: 1.45; margin: 0; }
+.content-section p.org-note { margin-top: 16px; font-size: 0.92rem; text-align: center; }
 
 /* ===== STORE =================================================== */
 .store-products {
@@ -1417,6 +1429,13 @@ footer {
 .feed-all { font-size: .92rem; font-weight: 700; color: var(--leaf-bright); white-space: nowrap; }
 /* Air between the Instagram feed and the Facebook feed. */
 .feed-section + .feed-section { margin-top: 36px; padding-top: 36px; border-top: 1px solid var(--rule-soft); }
+.feed-more { margin-top: 18px; text-align: center; font-weight: 700; }
 .feed-frame-fb { margin: 0 auto; }
 @media (max-width: 1100px) { .post-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 480px) { .post-grid { gap: 8px; } }
+
+/* Bullet lists in the Farms services (owner, 2026-10-02: indented bullets,
+   not lines starting with "*"). */
+.content-section ul.service-list { margin: 6px 0 16px 1.4em; padding-left: 1em; list-style: disc; }
+.content-section ul.service-list li { color: var(--gray); margin: 4px 0; line-height: 1.55; }
+.content-section ul.service-list li::marker { color: var(--leaf-bright); }

@@ -13,6 +13,18 @@ export const catalog = {
     "shipOz": null,
     "waiver": null
   },
+  "recycle-monthly": {
+    "id": "recycle-monthly",
+    "name": "Recycling Pick-Up",
+    "price": 1500,
+    "interval": "month",
+    "active": true,
+    "paypalPlanId": null,
+    "paypalSandboxPlanId": null,
+    "ship": false,
+    "shipOz": null,
+    "waiver": null
+  },
   "soccer-player-fall": {
     "id": "soccer-player-fall",
     "name": "Player Registration: 7v7 Adult Soccer League (Fall Season)",
