@@ -138,10 +138,10 @@ Once steps 1 to 4 are done, tell me and I will:
    waiver, pay, and come back through `?paypal=return`.
 3. Check the capture, the amount, the note and the waiver id on the sandbox
    transaction.
-4. Report what the three known gaps do in practice: **there is no order
-   record, no confirmation email to the buyer, and no address collection for a
-   physical pickup.** That is a session's work and it is the last piece before
-   real money.
+4. Check the three pieces built on 2026-10-02: the order is filed (it shows
+   on the dashboard), the buyer gets the Lavish Leaf confirmation email, and
+   you get the "new order" alert (docs/EMAIL.md; needs Brevo set up first).
+   Pickup is off for now (shipping only), so no pickup address is needed.
 
 ## Step 6: the live PayPal app
 
@@ -176,7 +176,7 @@ These are not optional and they are not mine to write:
 2. Three variables into Netlify, then **trigger a deploy**. *(5 minutes)*
 3. Photos and one sentence per product. *(an evening)*
 4. Waiver text at `waiver.html`, and the `waiver` block in `products.json`.
-5. Tell me: I run the sandbox order and close the three gaps. *(a session)*
+5. Tell me: I run the sandbox order and check the order record and emails. *(a session)*
 6. Live PayPal app, swap the keys, deploy, one real order and a refund.
 7. CPA on sales tax; refund policy and terms of sale; the two banners.
 

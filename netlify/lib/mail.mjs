@@ -163,5 +163,7 @@ export async function loadTemplate(name, env = process.env) {
   const base = env.URL || 'https://lavishleaf.org';
   const res = await (testFetch || fetch)(`${base}/emails/${name}.html`);
   if (!res.ok) throw new MailError(`template ${name} not found (${res.status})`);
-  return res.text();
+  // The files carry a small script for "View in your browser"; scripts in
+  // a sent email only raise spam scores, so they never go out.
+  return (await res.text()).replace(/<script[\s\S]*?<\/script>/gi, '');
 }

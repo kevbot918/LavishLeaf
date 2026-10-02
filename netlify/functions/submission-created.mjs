@@ -74,7 +74,7 @@ async function realSubmission(payload) {
   const token = process.env.NETLIFY_API_TOKEN;
   if (!token) return true;
   const id = String(payload.id || '');
-  if (!/^[a-f0-9]{24}$/i.test(id)) return false;
+  if (!/^[A-Za-z0-9_-]{8,64}$/.test(id)) return false;
   try {
     const res = await fetch(`https://api.netlify.com/api/v1/submissions/${id}`, { headers: { Authorization: `Bearer ${token}` } });
     return res.ok;

@@ -31,6 +31,9 @@
     })(window, document, 'clarity', 'script', 'yrei9vub09');
   }
 
+  // Clarity never sees what anybody types: every form is masked.
+  Array.prototype.forEach.call(document.querySelectorAll('form'), function (f) { f.setAttribute('data-clarity-mask', 'true'); });
+
   var page = location.pathname.replace(/^\/|\.html$/g, '') || 'index';
 
   function track(name, params) {

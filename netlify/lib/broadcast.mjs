@@ -50,18 +50,19 @@ export async function runBatch(store) {
   const tpl = await loadTemplate(job.issue);
   const done = new Set(job.sent);
   const todo = (await allSubscribers(store)).filter((s) => s.status === 'active' && !done.has(keyFor(s.email)));
+  let stopped = false;
   for (const sub of todo.slice(0, budget)) {
     const { html, unsub } = personalise(tpl, sub, job.issue);
     try {
       await sendEmail({ to: sub.email, toName: sub.first, subject: job.subject, html, text: textOf(html), kind: 'newsletter', unsubscribeUrl: unsub });
     } catch (e) {
-      if (/daily email limit/.test(e.message)) break;
+      if (/daily email limit/.test(e.message)) { stopped = true; break; }
       console.error('[broadcast]', e.message);
       job.failed++;
     }
     job.sent.push(keyFor(sub.email)); // a failed address is not retried forever
   }
-  if (todo.length <= budget) job.done = new Date().toISOString();
+  if (!stopped && todo.length <= budget) job.done = new Date().toISOString();
   await store.setJSON('job', job);
   return job;
 }
