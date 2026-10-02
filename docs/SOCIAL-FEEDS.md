@@ -90,6 +90,21 @@ already linked):
 3. **Instagram**, then **Connect account**, log in as **lavish_leaf_inc**,
    and confirm.
 
+**D1b. Add the permissions to the app first.** The Explorer's "Add a
+Permission" list only offers permissions the app has been given inside its use
+cases (2026-10-02: pages_read_engagement and instagram_basic were missing):
+1. In the app dashboard's left menu, **Use cases**.
+2. Beside **Manage everything on your Page**, **Customize**. In the
+   **Permissions** list, click **Add** beside `pages_read_engagement` and
+   beside `pages_show_list` (and `business_management` if listed).
+3. Back to **Use cases**. Beside **Manage messaging & content on
+   Instagram**, **Customize**, then choose **API setup with Facebook login**
+   (the OTHER one, not "with Instagram login"). In its permissions list click
+   **Add** beside `instagram_basic`.
+4. Each added permission shows "Ready for testing". That is enough: no App
+   Review is needed for our own Page and account.
+5. Reload the Graph API Explorer; the permissions are now in the list.
+
 **D2. Get the Page key:**
 1. Open **https://developers.facebook.com/tools/explorer/**.
 2. Right side: **Meta App** = `Lavish Leaf Website`; **User or Page** =
