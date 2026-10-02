@@ -240,8 +240,9 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     Blobs store `social`. Needs `IG_ACCESS_TOKEN`, `FB_PAGE_ID`,
     `FB_PAGE_TOKEN` in Netlify: steps in `docs/SOCIAL-FEEDS.md`. Until then
     the Behold widget (free tier: 6 posts) and the Page plugin stand in.
-12. **Shipping or Eufaula pickup, nothing else** (owner, 2026-10-01): no
-    McAlester pickup, no local delivery until there is stock to deliver from.
-    The shipping line sits in the store bar on every view, one line, small,
-    a fixed-width title slot so it never moves; full or short wording by a
-    container query on `.ss-main`.
+12. **Shipping only, for now** (owner, 2026-10-02): no pickup and no local
+    delivery until there is stock in storage (otherwise goods are shipped to
+    him first, at his cost). `SHIPPING.pickup` in `shipping.mjs` is `{}`;
+    over 10 lb is "email us for a quote". The shipping line sits in the
+    store bar on every view, one line, small, a fixed-width title slot so it
+    never moves; full or short wording by a container query on `.ss-main`.

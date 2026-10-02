@@ -12,7 +12,9 @@ packed `"shipOz"`, or `"ship": false`; the renderer refuses a product without
 one. The three products today are all `false` (compost, two registrations),
 so no order is charged shipping until a posted product is added. There is
 no local delivery (owner, 2026-10-01: "We don't do any delivery really, at
-least not yet"), and pickup is Eufaula only. Not yet done: the $1 built into light items' prices (that is
+least not yet"), and no pickup either (owner, 2026-10-02: no stock is held, so
+a pickup order would have to be shipped to him first). Shipping only; add a
+pickup back in `SHIPPING.pickup` in `shipping.mjs` once there is stock. Not yet done: the $1 built into light items' prices (that is
 pricing, when products are chosen).
 
 ## What the numbers say

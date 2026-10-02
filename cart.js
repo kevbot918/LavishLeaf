@@ -45,8 +45,9 @@
   var delivery = (function () {
     try {
       var d = JSON.parse(localStorage.getItem(SHIP_KEY) || '{}');
-      // Retired choices (McAlester pickup, local delivery) fall back.
-      var m = d.method === 'pickup-mcalester' ? 'pickup-eufaula' : d.method === 'local' ? 'ship' : d.method;
+      // Shipping is the only choice for now (no pickup, no delivery); a
+      // browser that remembered a retired choice falls back to it.
+      var m = 'ship';
       return { method: typeof m === 'string' ? m : 'ship', zip: typeof d.zip === 'string' ? d.zip : '' };
     } catch (e) {
       return { method: 'ship', zip: '' };
@@ -128,7 +129,7 @@
     // How it reaches you: shown only when something in the cart is posted.
     shipWrap = el('fieldset', { class: 'cart-ship', hidden: '' });
     shipWrap.appendChild(el('legend', null, 'Delivery'));
-    [['ship', 'Ship to me (48 states)'], ['pickup-eufaula', 'Pick up in Eufaula, free']]
+    [['ship', 'Ship to me (48 contiguous states)']]
       .forEach(function (m) {
         var row = el('label', { class: 'cart-ship-row' });
         var r = el('input', { type: 'radio', name: 'cart-ship', value: m[0] });
@@ -212,7 +213,8 @@
       .filter(function (x) { return x.product; });
     var posts = lines.some(function (x) { return x.product.ship === true; });
     var shipCents = 0, shipOk = true;
-    shipWrap.hidden = !posts;
+    // One way to receive an order (shipping only, for now): no choice to show.
+    shipWrap.hidden = !posts || shipWrap.querySelectorAll('input').length < 2;
     shipLine.hidden = !posts;
     shipNudge.hidden = true;
     if (posts) {

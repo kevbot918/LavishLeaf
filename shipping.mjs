@@ -5,9 +5,12 @@
 //
 // The rules are the owner's, 2026-10-01, from docs/SHIPPING.md:
 //   * flat by the order's packed weight: under 1 lb $6.95, 1 to 3 lb $9.95,
-//     3 to 10 lb $14.95; over 10 lb is pickup only;
+//     3 to 10 lb $14.95; over 10 lb cannot be posted (email for a quote);
 //   * any posted order of $100 or more: $4.95 flat;
-//   * free pickup in Eufaula (the owner, 2026-10-01: no shop in McAlester);
+//   * NO pickup and NO local delivery for now (owner, 2026-10-02: nothing is
+//     in stock; goods would have to be shipped to him first, at his cost).
+//     Add a pickup back here, e.g. { 'pickup-eufaula': 'Eufaula' }, once
+//     there is stock in storage; cart.js offers whatever is listed;
 //   * no local delivery (owner, 2026-10-01: "We don't do any delivery
 //     really, at least not yet"; the compost service is its own thing);
 //   * the contiguous United States only.
@@ -22,7 +25,7 @@ export const SHIPPING = {
   ],
   reducedOverCents: 10000,
   reducedCents: 495,
-  pickup: { 'pickup-eufaula': 'Eufaula' },
+  pickup: {},
   // Posted orders go to the 48 contiguous states and DC only.
   notPosted: ['AK', 'HI', 'PR', 'GU', 'VI', 'AS', 'MP', 'AA', 'AE', 'AP'],
 };
@@ -32,7 +35,7 @@ export class ShippingError extends Error {}
 const money = (cents) => '$' + (cents / 100).toFixed(2);
 
 /** The methods a buyer can pick, in the order the cart lists them. */
-export const METHODS = ['ship', 'pickup-eufaula'];
+export const METHODS = ['ship'];
 
 /**
  * The shipping charge for an order.
@@ -50,7 +53,7 @@ export function quote(lines, { method } = {}) {
     const oz = shipping.reduce((sum, { product, qty }) => sum + product.shipOz * qty, 0);
     if (!Number.isFinite(oz) || oz <= 0) throw new ShippingError('Something in your cart has no shipping weight yet. Please email support@lavishleaf.org.');
     const band = SHIPPING.bands.find((b) => oz <= b.upToOz);
-    if (!band) throw new ShippingError('This order is too heavy to post. Please choose free pickup in Eufaula.');
+    if (!band) throw new ShippingError('This order is over 10 lb, too heavy for our flat rates. Please email support@lavishleaf.org for a shipping quote.');
     if (subtotal >= SHIPPING.reducedOverCents) {
       return { cents: SHIPPING.reducedCents, method, needsAddress: true, label: `Shipping (orders over ${money(SHIPPING.reducedOverCents)})` };
     }

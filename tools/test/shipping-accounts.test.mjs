@@ -26,15 +26,15 @@ test('the weight bands, and the $4.95 rate at $100', () => {
   assert.equal(untilReduced(7500), 2500);
 });
 
-test('over 10 lb is never posted', () => {
-  assert.throws(() => quote([line(P(2000, 161))], { method: 'ship' }), ShippingError);
-  assert.equal(quote([line(P(2000, 400))], { method: 'pickup-eufaula' }).cents, 0);
+test('over 10 lb is never posted at a flat rate', () => {
+  assert.throws(() => quote([line(P(2000, 161))], { method: 'ship' }), /email/);
 });
 
-test('there is no local delivery (owner, 2026-10-01): only shipping and Eufaula pickup', () => {
-  assert.throws(() => quote([line(P(2000, 10))], { method: 'local', zip: '74432' }), /choose/);
-  assert.throws(() => quote([line(P(2000, 10))], { method: 'pickup-mcalester' }), /choose/);
-  assert.equal(SHIPPING.pickup['pickup-eufaula'], 'Eufaula');
+test('shipping only for now (owner, 2026-10-02): no pickup, no local delivery', () => {
+  for (const method of ['local', 'pickup-eufaula', 'pickup-mcalester']) {
+    assert.throws(() => quote([line(P(2000, 10))], { method }), /choose/);
+  }
+  assert.deepEqual(SHIPPING.pickup, {});
 });
 
 test('no method chosen is a question, not a guess', () => {
@@ -45,7 +45,6 @@ test('the address is checked against the method before money moves', () => {
   assert.equal(addressOk('ship', { country_code: 'US', admin_area_1: 'OK' }).ok, true);
   assert.equal(addressOk('ship', { country_code: 'US', admin_area_1: 'HI' }).ok, false);
   assert.equal(addressOk('ship', { country_code: 'CA', admin_area_1: 'ON' }).ok, false);
-  assert.equal(addressOk('pickup-eufaula', undefined).ok, true);
 });
 
 test('shipping is its own line on the PayPal order, and asks PayPal for the address', () => {

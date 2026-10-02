@@ -88,6 +88,27 @@ Leave the app in **Development** mode: it only reads our own account, so no
 App Review is needed. The website renews this token by itself every week
 (it would otherwise expire after 60 days).
 
+### If "Add account" cannot find lavish_leaf_inc
+
+Meta's search only finds an Instagram account that is **professional
+(Business or Creator) AND public**. A personal or private account simply does
+not appear. In this order:
+
+1. Do Part A on the phone and read the screen: if it offers **Switch to
+   professional account**, the account is still personal. Switch it to
+   Business, then make sure **Private account** is off.
+2. Wait a few minutes, then try **Add account** again.
+3. Still nothing? Invite it as a tester instead, which takes the exact
+   username: in the app dashboard's left menu **App roles**, **Roles**, then
+   **Add People** (or **Add Instagram Testers**), choose **Instagram Tester**,
+   type `lavish_leaf_inc`, send. Then on a computer go to **instagram.com**,
+   logged in as lavish_leaf_inc: **Settings**, **Website permissions** (or
+   **Apps and websites**), **Tester invites**, and **Accept**. Back in the
+   dashboard, **Add account** now opens an Instagram log-in window: log in as
+   lavish_leaf_inc and **Allow**.
+4. If the Instagram window logs in as a different account, log out of
+   instagram.com in that browser first, or use a private window.
+
 ### Part D (optional). The Facebook Page token (10 minutes)
 
 1. Open **https://developers.facebook.com/tools/explorer/** (Graph API
