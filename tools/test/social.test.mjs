@@ -97,3 +97,17 @@ test('with only the Page token, Instagram is read through the linked Page', asyn
   assert.equal(feed.fb.length, 1);
   assert.ok(urls.includes('https://graph.facebook.com/17841400000000000/media'));
 });
+
+test('more than one page of posts is followed, up to MAX_POSTS', async () => {
+  const { fetchInstagram, MAX_POSTS } = await import('../../netlify/lib/social.mjs');
+  let calls = 0;
+  const page = (start, n, next) => ({ data: Array.from({ length: n }, (_, i) => ({ id: String(start + i), media_type: 'IMAGE', media_url: 'https://c/x.jpg', permalink: 'https://www.instagram.com/p/' + (start + i) + '/' })), paging: next ? { next } : {} });
+  const fetchImpl = async (url) => {
+    calls++;
+    if (url.includes('after=2')) return new Response(JSON.stringify(page(100, 50, null)));
+    return new Response(JSON.stringify(page(0, 50, 'https://graph.instagram.com/v1/me/media?after=2')));
+  };
+  const posts = await fetchInstagram('T', fetchImpl);
+  assert.equal(posts.length, MAX_POSTS);
+  assert.equal(calls, 2);
+});

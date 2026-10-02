@@ -234,7 +234,7 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
 10. **Marketing videos and social posts**: the owner wants help making them
     soon (farm, league, studio). Not started.
 11. **Social page feeds (2026-10-01): BUILT, waiting on Meta keys.** Our own
-    Instagram (24) and Facebook (24) posts as cards, full width, each network
+    Instagram (60) and Facebook (60) posts as cards, full width, each network
     its own section (owner: not side by side). `social-feed.mjs` + daily
     `social-refresh.mjs` (keeps the 60-day Instagram token alive), cached in
     Blobs store `social`. Needs only `FB_PAGE_ID` + `FB_PAGE_TOKEN` in

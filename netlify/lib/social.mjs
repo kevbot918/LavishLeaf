@@ -26,7 +26,11 @@
 // Missing values just mean that network is not configured; the page falls
 // back to the Behold widget and the Page plugin. Setup: docs/SOCIAL-FEEDS.md.
 
-export const MAX_POSTS = 24;
+// How many posts the Social page shows per network (owner, 2026-10-02:
+// "can we include more than 24?"). Meta hands posts over in pages; getPaged
+// follows them until it has this many.
+export const MAX_POSTS = 60;
+const PAGE_SIZE = 50;
 export const STALE_MS = 30 * 60 * 1000; // re-read Meta at most every 30 minutes
 const REFRESH_AFTER_MS = 7 * 24 * 60 * 60 * 1000; // refresh the IG token weekly
 
@@ -61,6 +65,19 @@ export function normalizeFacebook(json) {
   }).filter((p) => p.url && /^https:\/\/(www\.|m\.)?facebook\.com\//.test(p.url) && (p.text || p.image));
 }
 
+/** Every page of a Meta list until MAX_POSTS items, as one { data } object. */
+async function getPaged(url, fetchImpl) {
+  const data = [];
+  let next = url;
+  for (let i = 0; next && data.length < MAX_POSTS && i < 5; i++) {
+    const json = await getJson(next, fetchImpl);
+    if (Array.isArray(json.data)) data.push(...json.data);
+    const n = json.paging && json.paging.next;
+    next = typeof n === 'string' && /^https:\/\/graph\.(instagram|facebook)\.com\//.test(n) ? n : null;
+  }
+  return { data: data.slice(0, MAX_POSTS) };
+}
+
 async function getJson(url, fetchImpl) {
   const res = await fetchImpl(url);
   const json = await res.json().catch(() => ({}));
@@ -73,15 +90,15 @@ async function getJson(url, fetchImpl) {
 
 export async function fetchInstagram(token, fetchImpl = fetch) {
   const fields = 'id,caption,media_type,media_url,thumbnail_url,permalink,timestamp';
-  const url = `https://graph.instagram.com/me/media?fields=${fields}&limit=${MAX_POSTS}&access_token=${encodeURIComponent(token)}`;
-  return normalizeInstagram(await getJson(url, fetchImpl));
+  const url = `https://graph.instagram.com/me/media?fields=${fields}&limit=${PAGE_SIZE}&access_token=${encodeURIComponent(token)}`;
+  return normalizeInstagram(await getPaged(url, fetchImpl));
 }
 
 export async function fetchFacebook(pageId, token, fetchImpl = fetch) {
   if (!/^\d{5,25}$/.test(String(pageId))) throw new Error('FB_PAGE_ID must be the numeric page id');
   const fields = 'id,message,full_picture,permalink_url,created_time,attachments{media_type,title,description}';
-  const url = `https://graph.facebook.com/${pageId}/posts?fields=${encodeURIComponent(fields)}&limit=${MAX_POSTS}&access_token=${encodeURIComponent(token)}`;
-  return normalizeFacebook(await getJson(url, fetchImpl));
+  const url = `https://graph.facebook.com/${pageId}/posts?fields=${encodeURIComponent(fields)}&limit=${PAGE_SIZE}&access_token=${encodeURIComponent(token)}`;
+  return normalizeFacebook(await getPaged(url, fetchImpl));
 }
 
 /** Instagram through the linked Facebook Page, with the Page token. */
@@ -91,7 +108,7 @@ export async function fetchInstagramViaPage(pageId, pageToken, fetchImpl = fetch
   const igId = page.instagram_business_account && page.instagram_business_account.id;
   if (!igId || !/^\d{5,30}$/.test(String(igId))) throw new Error('no Instagram account is linked to the Page');
   const fields = 'id,caption,media_type,media_url,thumbnail_url,permalink,timestamp';
-  return normalizeInstagram(await getJson(`https://graph.facebook.com/${igId}/media?fields=${fields}&limit=${MAX_POSTS}&access_token=${encodeURIComponent(pageToken)}`, fetchImpl));
+  return normalizeInstagram(await getPaged(`https://graph.facebook.com/${igId}/media?fields=${fields}&limit=${PAGE_SIZE}&access_token=${encodeURIComponent(pageToken)}`, fetchImpl));
 }
 
 /** The Instagram token to use: the newest refreshed one, else the env's. */

@@ -6,8 +6,8 @@ wants many more posts, each its own card, full width.
 
 ## How it works
 
-* `netlify/functions/social-feed.mjs` returns our latest **24 Instagram** and
-  **24 Facebook** posts as cards, read from Meta's APIs and cached in Netlify
+* `netlify/functions/social-feed.mjs` returns our latest **60 Instagram** and
+  **60 Facebook** posts as cards, read from Meta's APIs and cached in Netlify
   Blobs (store `social`) for 30 minutes.
 * `netlify/functions/social-refresh.mjs` runs **once a day** on Netlify's
   scheduler: it refreshes the Instagram token (it would expire after 60 days)
