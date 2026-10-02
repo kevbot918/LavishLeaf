@@ -4,19 +4,6 @@ Written 2026-10-01. The owner: Behold's free tier shows only six Instagram
 posts, and Facebook's Page plugin draws every post in one long column; he
 wants many more posts, each its own card, full width.
 
-## The route in use (2026-10-02): Behold's JSON feed
-
-Meta's own setup refused the account at every turn (the Instagram tester form,
-then `instagram_basic` missing from the Explorer), so Instagram now comes from
-**Behold's JSON feed**: Behold talks to Meta, the site draws its own cards.
-`social-feed.js` fetches `https://feeds.behold.so/<id>` (the id is
-`data-behold-feed` on `#ig-grid` in `social.html`, today the existing feed
-`BwwGefXMCskjz7DyYgcT`) and falls back to the Behold widget if that does not
-answer. Free plan: 6 posts. Starter ($10/month): up to 50. Pro ($30): 100.
-If the widget feed's id does not serve JSON, create a JSON feed in Behold and
-put its id in `data-behold-feed`. The Meta-key route below stays in the code
-and is used first if `FB_PAGE_ID`/`FB_PAGE_TOKEN` are ever set.
-
 ## How it works
 
 * `netlify/functions/social-feed.mjs` returns our latest **24 Instagram** and
@@ -178,5 +165,3 @@ it refreshed; if not, the site reads Instagram through the Page key above.
 * [Link Instagram to a Facebook Page, 2026](https://fedica.com/blog/how-to-link-your-instagram-account-to-your-facebook-page/)
 * [Find the Instagram business account id from the Page](https://dev.to/superface/instagram-api-find-the-right-account-id-4k3j)
 * [Graph API access token for an Instagram business account](https://olegnax.com/documentation/generate-instagram-graph-api-access-token-for-instagram-business-account/)
-* [Behold JSON feeds](https://behold.so/docs/json-feeds/)
-* [Behold pricing](https://behold.so/pricing/)

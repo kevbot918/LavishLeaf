@@ -1,16 +1,10 @@
 // The Social page's post cards (2026-10-01).
 //
 // Asks /.netlify/functions/social-feed for our latest Instagram and Facebook
-// posts and draws each one as a small card in a full-width grid.
-//
-// Instagram, in order (2026-10-02: Meta's own setup kept refusing the
-// account, so Behold does the Meta part):
-//   1. our function, if Meta keys are ever set in Netlify;
-//   2. Behold's JSON feed (feeds.behold.so/<feed id>, the id on #ig-grid's
-//      data-behold-feed): Behold talks to Meta, we draw the cards. The free
-//      plan returns 6 posts; Starter returns up to 50;
-//   3. the Behold widget, as before, if neither answers.
-// Facebook: our function's cards, else Facebook's Page plugin stays.
+// posts and draws each one as a small card in a full-width grid. When a
+// network is not set up yet (no Meta keys in Netlify, docs/SOCIAL-FEEDS.md)
+// or the request fails, that network's old widget stays: the Behold
+// Instagram widget, loaded only then, and Facebook's Page plugin.
 (function () {
   'use strict';
 
@@ -67,35 +61,6 @@
     return true;
   }
 
-  // Behold's JSON feed, as our cards. Accepts both shapes Behold has used:
-  // { posts: [...] } and a bare array.
-  function fromBehold(json) {
-    var list = Array.isArray(json) ? json : (json && Array.isArray(json.posts) ? json.posts : []);
-    return list.map(function (p) {
-      var sz = p.sizes || {};
-      var img = (sz.medium && sz.medium.mediaUrl) || (sz.small && sz.small.mediaUrl) || p.thumbnailUrl ||
-        (p.mediaType === 'VIDEO' ? null : p.mediaUrl);
-      return {
-        id: String(p.id || ''),
-        image: img || null,
-        video: p.mediaType === 'VIDEO',
-        album: p.mediaType === 'CAROUSEL_ALBUM',
-        text: typeof p.prunedCaption === 'string' ? p.prunedCaption : (typeof p.caption === 'string' ? p.caption : ''),
-        url: p.permalink,
-        date: p.timestamp,
-      };
-    });
-  }
-  function tryBeholdJson() {
-    var grid = document.getElementById('ig-grid');
-    var id = grid && grid.getAttribute('data-behold-feed');
-    if (!id || !/^[A-Za-z0-9_-]{6,64}$/.test(id)) { loadBehold(); return; }
-    fetch('https://feeds.behold.so/' + id)
-      .then(function (r) { if (!r.ok) throw new Error(); return r.json(); })
-      .then(function (json) { if (!fill('ig-grid', 'ig-fallback', fromBehold(json), 'ig')) loadBehold(); })
-      .catch(loadBehold);
-  }
-
   function loadBehold() {
     if (!document.getElementById('ig-fallback')) return;
     var s = document.createElement('script');
@@ -107,8 +72,8 @@
   fetch('/.netlify/functions/social-feed')
     .then(function (r) { if (!r.ok) throw new Error(); return r.json(); })
     .then(function (feed) {
-      if (!fill('ig-grid', 'ig-fallback', feed.ig, 'ig')) tryBeholdJson();
+      if (!fill('ig-grid', 'ig-fallback', feed.ig, 'ig')) loadBehold();
       fill('fb-grid', 'fb-fallback', feed.fb, 'fb');
     })
-    .catch(tryBeholdJson);
+    .catch(loadBehold);
 })();
