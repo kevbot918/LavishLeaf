@@ -11,7 +11,8 @@ import { userFromRequest } from './identity.mjs';
 
 export function isAdmin(user, env = process.env) {
   if (!user) return false;
-  if (Array.isArray(user.roles) && user.roles.includes('admin')) return true;
+  // "admin" in any capitals: Netlify's role box keeps what was typed.
+  if (Array.isArray(user.roles) && user.roles.some((r) => String(r).toLowerCase() === 'admin')) return true;
   const list = String(env.ADMIN_EMAILS || '').toLowerCase().split(',').map((s) => s.trim()).filter(Boolean);
   return !!user.email && list.includes(user.email.toLowerCase());
 }

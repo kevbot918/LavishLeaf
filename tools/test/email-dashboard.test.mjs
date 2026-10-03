@@ -167,6 +167,7 @@ test('a cart reminder is due once, 1 to 7 days after, never twice in 14 days', (
 test('only the owner opens the dashboard', () => {
   assert.equal(isAdmin(null), false);
   assert.equal(isAdmin({ email: 'x@y.co', roles: ['admin'] }), true);
+  assert.equal(isAdmin({ email: 'x@y.co', roles: ['Admin'] }), true);
   assert.equal(isAdmin({ email: 'Boss@Y.co', roles: [] }, { ADMIN_EMAILS: 'a@b.co, boss@y.co' }), true);
   assert.equal(isAdmin({ email: 'someone@y.co', roles: [] }, { ADMIN_EMAILS: 'boss@y.co' }), false);
   assert.equal(isAdmin({ email: 'someone@y.co', roles: [] }, {}), false);

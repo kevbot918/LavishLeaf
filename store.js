@@ -725,7 +725,7 @@
     var u = account.user, rec = account.record || { orders: [] };
     $('#acct-email').textContent = u ? u.email : '';
     // The owner (Identity role "admin") gets a way into the dashboard.
-    var roles = (u && u.app_metadata && u.app_metadata.roles) || [];
+    var roles = ((u && u.app_metadata && u.app_metadata.roles) || []).map(function (r) { return String(r).toLowerCase(); });
     $('#acct-dashboard').hidden = roles.indexOf('admin') < 0;
     var n = state.lists.reduce(function (sum, l) { return sum + l.items.length; }, 0);
     $('#acct-lists').textContent = state.lists.length
