@@ -59,13 +59,20 @@ you have its email): Search Console -> lavishleaf.org -> **Settings** ->
 **Users and permissions** -> **Add user** -> paste the service account email
 -> Permission **Restricted** -> **Add**.
 
-**Optional, later:** to stop the double DNS for good, Squarespace ->
-Domains -> lavishleaf.org -> **DNS** -> **Nameservers** -> **Use custom
-nameservers** and keep only `dns1.p01.nsone.net`, `dns2.p01.nsone.net`,
-`dns3.p01.nsone.net`, `dns4.p01.nsone.net` (Netlify's). Checked 2026-10-06:
-Netlify already holds every record Squarespace does (the website, the Google
-email MX records, SPF, DMARC, the verification code), so nothing would break.
-After that, records only ever go in Netlify.
+**Do this first (recommended 2026-10-06): stop the double DNS.** Squarespace
+is where the domain is REGISTERED (you pay them for the name); Netlify is
+where its records are SERVED. Both sets of nameservers are listed at the
+registry today. Checked 2026-10-06: Netlify holds every record Squarespace
+does, identically (website, www, Google email MX, SPF, DMARC, the Google
+code, domainconnect), so removing Squarespace's four changes nothing anybody
+sees. account.squarespace.com -> **Domains** -> **lavishleaf.org** -> **DNS**
+-> **Domain nameservers**. If it lists custom nameservers, delete the four
+`ns01.squarespacedns.com` to `ns04.squarespacedns.com` rows and keep
+`dns1.p01.nsone.net` to `dns4.p01.nsone.net`; if it says it uses Squarespace
+nameservers, choose
+**Use custom nameservers** and enter the four nsone ones. **Save**. Up to 48
+hours to settle; the domain registration and its renewal stay at
+Squarespace. After that, records only ever go in Netlify.
 
 ---
 
