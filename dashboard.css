@@ -127,3 +127,27 @@
   .db-tile-value { font-size: 1.6rem; }
   .db-chart svg { height: 200px; }
 }
+
+/* ---- store products, by tier (dashboard-store.js) */
+.db-store-load { margin-bottom: 12px; }
+.db-store-file { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 6px; }
+.db-store-file label { cursor: pointer; }
+.db-store-file .db-hint { margin: 0; }
+.db-store-tabs { flex-wrap: wrap; border-radius: 14px; margin-bottom: 10px; }
+.db-store-tools { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 8px; }
+.db-store-tools input, .db-store-tools select { background: #2e2e2e; color: var(--white); border: 1px solid var(--rule); border-radius: 8px; padding: 8px 10px; font: inherit; font-size: .9rem; }
+.db-store-tools input { flex: 1 1 260px; min-width: 0; }
+.db-store-tools .db-hint { margin: 0 0 0 6px; }
+.db-store-note { margin: 0 0 10px; }
+.db-store-scroll { overflow-x: auto; background: var(--card); border-radius: 12px; padding: 4px 14px; }
+.db-store-table { min-width: 860px; }
+.db-store-table td:nth-child(2) { min-width: 240px; max-width: 360px; }
+.db-store-table a { color: var(--leaf-bright); }
+.db-store-sub { color: var(--gray); font-size: .76rem; margin-top: 2px; }
+.db-store-why { color: var(--gray); font-size: .78rem; margin-top: 4px; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.db-store-why:hover { -webkit-line-clamp: unset; }
+.db-flag { display: inline-block; border: 1px solid var(--rule); border-radius: 999px; padding: 1px 7px; margin: 0 4px 4px 0; font-size: .72rem; font-weight: 700; color: var(--white); white-space: nowrap; }
+.db-flag.warn { border-color: #b97c66; color: #F2B8A0; }
+.db-store-more { margin-top: 10px; }
+.db-store-tools select { width: auto; flex: 0 0 auto; padding-right: 34px; }
+.db-store-tools input { width: auto; }

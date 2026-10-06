@@ -7,6 +7,21 @@ and terms) and §11 (the order). This page turns that into a checklist. The
 prices behind each account are in the register; nothing new was measured today
 (the supplier sites block this environment).
 
+## Read this first: the order changed on 2026-10-05
+
+The owner has no capital for stock, so **STORE-PRODUCTS.md was re-tiered**:
+Tier 0 is only what costs nothing to start, and that is two accounts.
+
+| First | Why | What to do |
+|---|---|---|
+| **Bangalla** (the account already exists: the product data file was downloaded 2026-10-01) | A real dropship programme: free wholesale account, no minimum, no per-order fee, billed when an order is placed. His costs are lower than the public prices and are in the dashboard, not here (this repository is public). Soap, brushes, sponges, compostables | Download the **Dropship Master** and the daily stock report; read a shipping quote from a test cart; ask for the returns policy |
+| **Arbico distributor programme** | No dropship fee, no minimum, blind shipped. The garden shelf | The application, with the discount, the Oklahoma list and the shipping charge asked in one email |
+
+Everything below still stands as the way to get better prices, and opening an
+account costs nothing. **Placing an order does**: Faire, Hummert,
+WebstaurantStore, Frontier and the games accounts are Tier 2 now, for when
+the first money exists.
+
 ## Before any account: the two papers every wholesaler asks for
 
 1. **EIN** (free, irs.gov, "Apply for an EIN online", about 10 minutes). Lavish

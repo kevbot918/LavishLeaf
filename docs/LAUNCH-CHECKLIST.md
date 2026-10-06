@@ -5,6 +5,11 @@ list of things I need to do to complete our full website setup, including
 opening the store and finalizing products."* In order. Each line says who
 does it ("You" or "Claude", meaning this session) and where the steps are.
 
+**2026-10-06: the click-by-click steps for everything left are
+docs/OWNER-STEPS.md.** Done since this list was written: 5 (Identity and
+the owner sign-in) and 19 (the Bangalla files: Tier 0 in STORE-PRODUCTS.md,
+the dashboard's Store products section).
+
 Rule for every secret below: it goes ONLY into Netlify -> Site configuration ->
 Environment variables (tick "Contains secret values"), then Deploys ->
 Trigger deploy. Never into chat, email or this repository.

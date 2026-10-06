@@ -10,9 +10,19 @@
 // those products as our demo store so I can then analyze and decide which
 // products to use. If prices are unknowns then list it at $0.00".
 //
-// What it reads: every linked product in the Tier 1 to 4 tables and the
+// What it reads: every linked product in the Tier 0 to 4 tables and the
 // Miscellany. A row that names several products becomes one card each.
 // Tier 5 is skipped: its rows are suppliers and categories, not products.
+//
+// What it writes (2026-10-06, the owner: "the current store page needs to be
+// changed to only include the items for tier 0 ... so that I can analyze
+// those"):
+//   * products.json: the demo cards for TIER 0 ONLY, beside the real products.
+//   * store-tiers.json: every tier, every product, for the dashboard's "Store
+//     products" section. Public facts only (the document is public): a
+//     supplier's own costs never go in either file; the dashboard reads them
+//     from the owner's upload, matched by the SKU in brackets on a Tier 0 row.
+//   node tools/demo-store.mjs --all   puts every tier back on the Store page.
 // The price is the document's own number (the low end of a range); a price
 // the document does not have (HIDDEN, "see page", "MSRP hidden") is 0.
 // The card's sentence says the tier, the rank, the supplier, the price
@@ -70,7 +80,7 @@ const PREFIX = [
   [/^Night's hemp/, 'Hemp'], [/^Arbico tools/, 'Arbico'], [/^Night's coasters/, 'Coaster:'],
   [/^Figurines/, 'Figurine:'], [/^Night's bowls/, ''], [/^Squishies/, 'Squishies:'],
   [/^The twenty-two Arbico DTE/, 'Down To Earth'], [/^GrowOrganic sacks/, ''],
-  [/^Seven Springs pest/, ''], [/^Herb bar: Frontier/, 'Frontier 1 lb'],
+  [/^Seven Springs pest/, ''], [/^Arbico compost and seed-starting tools/, 'Arbico'], [/^Herb bar: Frontier/, 'Frontier 1 lb'],
   [/^Heavy garden/, ''], [/^Live goods/, ''], [/^Display fixtures/, 'Display:'],
   [/^Peaceful Valley Gift Seed Tins/, ''], [/^Harvest/, ''],
 ];
@@ -133,7 +143,7 @@ const money = (s) => {
   }
   return null;
 };
-const kindOf = (s) => (s.match(/\b(WHOLESALE|RETAIL|MSRP|LISTED|HIDDEN)\b/) || [])[1] || '';
+const kindOf = (s) => (s.match(/\b(WHOLESALE|RETAIL|MSRP|LISTED|HIDDEN|LIST)\b/) || [])[1] || '';
 const plain = (s) => s.replace(LINK, '$1').replace(/\*\*/g, '').replace(/\s+/g, ' ').trim();
 const cells = (line) => line.trim().replace(/^\||\|$/g, '').split(/\s\|\s/).map((c) => c.trim());
 
@@ -144,7 +154,8 @@ function section(start, end) {
 }
 
 const TABLES = [
-  { tier: 1, rows: section('## 3. TIER 1', '### What Tier 1 asks'), cols: { cat: 2, price: 3, min: 4, src: 5 } },
+  { tier: 0, rows: section('## 3. TIER 0', '### What Tier 0 asks'), cols: { cat: 2, price: 3, min: 4, src: 5 } },
+  { tier: 1, rows: section('## 3A. TIER 1', '### What Tier 1 asks'), cols: { cat: 2, price: 3, min: 4, src: 5 } },
   { tier: 2, rows: section('## 4. TIER 2', '## 5. TIER 3'), cols: { cat: 2, price: 3, min: 4, src: 5 } },
   { tier: 3, rows: section('## 5. TIER 3', '## 6. TIER 4'), cols: { cat: 2, price: 3, min: 4, src: 5 } },
   { tier: 4, rows: section('## 6. TIER 4', '## 7. TIER 5'), cols: { cat: 2, price: 3, min: null, src: 4 } },
@@ -180,7 +191,10 @@ for (const t of TABLES) {
       if (name.includes('$')) { price = money(name); name = name.split(' $')[0].replace(/;.*$/, ''); }
       const inline = after.replace(/^\s*\/\s*/, '').split(/;|, (?=\[)/)[0];
       if (price == null) price = money(inline.split(/\[/)[0]);
-      return { name, url: m[2], price, group: groupOf(m.index), and: /^\s*and\s*$/.test(after) };
+      // A Tier 0 Bangalla row carries its SKU in brackets after the price:
+      // "[Name](url) $2.71 (B-44494-1PK)". The dashboard matches costs by it.
+      const sku = (after.match(/^[^[;]*?\((B-[A-Z0-9]+-\d+PK)\)/) || [])[1] || null;
+      return { name, url: m[2], price, sku, group: groupOf(m.index), and: /^\s*and\s*$/.test(after) };
     });
     // "[Grandpa's Oatmeal] and [Epsom Salt] $5.74": the pair shares a price.
     for (let i = items.length - 2; i >= 0; i--) if (items[i].and && items[i].price == null) items[i].price = items[i + 1].price;
@@ -210,11 +224,14 @@ for (const t of TABLES) {
       const supplier = (src.split(',')[0] || new URL(it.url).hostname.replace(/^www\./, '').split('.')[0]).trim();
       const bits = [`Tier ${t.tier}, rank ${rank}.`, `${supplier}${kind ? ' ' + kind : ''} price${it.price ? '' : ' not listed'}.`];
       if (min && !/^none$/i.test(min)) bits.push(`Minimum ${min}.`);
-      const rest = src.split(',').slice(1).join(',').trim();
+      // Only the first clause after the supplier: what follows a ";" is a
+      // note for the owner (login pages, restriction flags), not for a shopper.
+      const rest = src.split(',').slice(1).join(',').split(';')[0].trim();
       if (rest) bits.push(rest.replace(/\.$/, '') + '.');
       let blurb = bits.join(' ');
       if (blurb.length > 200) blurb = blurb.slice(0, 197).replace(/\s+\S*$/, '') + '...';
-      out.push({ tier: t.tier, rank, name, url: it.url, price: it.price || 0, shelf, blurb, kind, supplier });
+      const why = t.cols.src == null ? '' : plain(c.slice(t.cols.src + 1).join(' | '));
+      out.push({ tier: t.tier, rank, name, url: it.url, price: it.price || 0, shelf, blurb, kind, supplier, sku: it.sku, category, min, src, why });
     }
   }
 }
@@ -224,7 +241,21 @@ const ids = new Set(real.map((p) => p.id));
 const slug = (s) => s.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60).replace(/-$/, '');
 const tierOrder = (t) => (t === 'Misc' ? 9 : t);
 out.sort((a, b) => tierOrder(a.tier) - tierOrder(b.tier) || Number(a.rank) - Number(b.rank));
-const demo = out.map((p) => {
+// The dashboard's list: every tier, public facts only.
+const tiersOut = out.map((p) => ({
+  tier: p.tier, rank: p.rank, name: p.name, url: p.url, price: p.price, kind: p.kind,
+  supplier: p.supplier, shelf: p.shelf.title, category: p.category, min: p.min, source: p.src, why: p.why,
+  ...(p.sku ? { sku: p.sku } : {}),
+}));
+writeFileSync(join(ROOT, 'store-tiers.json'), JSON.stringify({
+  _help: 'GENERATED by tools/demo-store.mjs from docs/STORE-PRODUCTS.md. Do not edit. Every tier, for the owner dashboard. Prices are public ones (list, retail, MSRP), in cents; never a supplier cost.',
+  generated: new Date().toISOString().slice(0, 10),
+  products: tiersOut,
+}, null, 1) + '\n');
+
+const ALL = process.argv.includes('--all');
+const shown = ALL ? out : out.filter((p) => p.tier === 0);
+const demo = shown.map((p) => {
   let id = 'demo-' + slug(p.name), n = 2;
   while (ids.has(id)) id = 'demo-' + slug(p.name) + '-' + n++;
   ids.add(id);
@@ -251,5 +282,6 @@ data.products = [...real, ...demo];
 writeFileSync(JSON_PATH, JSON.stringify(data, null, 2) + '\n');
 const byShelf = {};
 for (const p of demo) byShelf[p.category] = (byShelf[p.category] || 0) + 1;
+console.log(`store-tiers.json: ${tiersOut.length} products across every tier.`);
 console.log(`${demo.length} demo products written (${demo.filter((p) => !p.price).length} at $0.00, price not listed).`);
 for (const [k, v] of Object.entries(byShelf)) console.log(`  ${k}: ${v}`);

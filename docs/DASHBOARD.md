@@ -46,6 +46,12 @@ variables also works.)
 
 ## Step 2. Connect Google (Analytics + Search Console), about 20 minutes
 
+**Click-by-click version: docs/OWNER-STEPS.md, sections A to C** (written
+2026-10-06; it adds what this short version missed: lavishleaf.org answers
+from TWO DNS services, Netlify's and Squarespace's, so a record goes in
+both; the key-creation block on Google Workspace organisations; where
+"Custom definitions" lives).
+
 One "service account" reads both. It can only read.
 
 **A. Search Console first (it is free and needs proving you own the site):**
@@ -88,7 +94,7 @@ Add a variable; tick "Contains secret values" for the key):
 
 Then **Deploys -> Trigger deploy** so the functions see them.
 
-**E. Two custom dimensions (so "Products people clicked" and "Searched in the
+**E. Three custom dimensions (so "Products people clicked" and "Searched in the
 store" fill in):** analytics.google.com -> Admin -> **Custom definitions ->
 Create custom dimension**, three times, scope **Event**:
 

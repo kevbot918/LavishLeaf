@@ -405,6 +405,9 @@
     var hour = new Date().getHours();
     $('#db-hello').textContent = (hour < 12 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening') + (name ? ', ' + name.split(' ')[0] : '');
     load(false);
+    // The store section has its own data (dashboard-store.js), so it draws
+    // whether or not the analytics sources are connected.
+    if (window.DBStore) window.DBStore.start($('#db-store'), PREVIEW);
   }
 
   document.querySelectorAll('.db-range button').forEach(function (b) {

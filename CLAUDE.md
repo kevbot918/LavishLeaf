@@ -301,3 +301,20 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     colours, no em dashes. The monthly issue is `emails/newsletter-YYYY-MM.html`
     copied from the last one; the owner sends it from the dashboard after a test.
 20. **Every account to open**: `docs/ACCOUNTS-TO-OPEN.md`.
+22. **Tier 0, and the owner's private costs** (2026-10-05 and 06). Owner: the
+    first stage must be products that cost nothing to start, from
+    dropshippers. `docs/STORE-PRODUCTS.md` now has a **Tier 0** (section 3:
+    his own services, Bangalla dropship, Arbico dropship), then **3A Tier 1**
+    (the old opening order) and Tier 2 onward as before; appendix K lists
+    every in-stock Bangalla line in his categories. **The Store page shows
+    Tier 0 only** (`tools/demo-store.mjs`; `--all` restores every tier),
+    and the same run writes `store-tiers.json` with every tier for the
+    dashboard's **Store products** section (`dashboard-store.js`).
+    **This GitHub repository is public, so a supplier's cost may never be
+    written into it**: the document carries Bangalla's public LIST price and
+    SKU only. His costs, stock and margins come from the Bangalla product
+    CSV he loads in the dashboard; it is parsed in his browser and the useful
+    rows are kept in the Blobs store `store-costs` through
+    `netlify/functions/store-costs.mjs` (owner only). At list price the
+    margin is about 30%. The owner's click-by-click steps for everything
+    left are `docs/OWNER-STEPS.md`.
