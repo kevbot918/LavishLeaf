@@ -319,7 +319,7 @@
     if (list) {
       nl.appendChild(bars([{ name: 'Subscribed', value: list.active }, { name: 'Joined in the last 30 days', value: list.newThisMonth }, { name: 'Unsubscribed in the last 30 days', value: list.unsubscribedThisMonth }], { unit: 'people' }));
       var m = list.mail;
-      nl.appendChild(el('p', 'db-hint', m.ready ? (num(m.sentToday) + ' of ' + num(m.daily) + ' emails sent today.' + (m.postal ? '' : ' Add MAIL_POSTAL_ADDRESS before sending a newsletter.')) : 'Email is not connected yet (BREVO_API_KEY). Sign-ups are still being saved.'));
+      nl.appendChild(el('p', 'db-hint', m.ready ? (num(m.sentToday) + ' of ' + num(m.daily) + ' emails sent today.' + (m.postal ? '' : ' Add MAIL_POSTAL_ADDRESS before sending a newsletter.')) : 'Email is not connected yet (the Amazon SES keys, docs/OWNER-STEPS.md). Sign-ups are still being saved.'));
       if (list.job) nl.appendChild(el('p', 'db-hint', (list.job.done ? 'Last newsletter: ' : 'Sending now: ') + list.job.subject + ', ' + num(list.job.sent) + ' sent' + (list.job.failed ? ', ' + list.job.failed + ' failed' : '') + '.'));
       nl.appendChild(sender());
     } else nl.appendChild(notice(d.list));

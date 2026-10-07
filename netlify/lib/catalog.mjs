@@ -16,7 +16,7 @@ export const catalog = {
   "recycle-monthly": {
     "id": "recycle-monthly",
     "name": "Recycling Pick-Up",
-    "price": 1500,
+    "price": 2000,
     "interval": "month",
     "active": true,
     "paypalPlanId": null,

@@ -198,47 +198,93 @@ button works.
 
 ---
 
-## F. Email: Brevo (30 minutes, needs the PO box)
+## F. Email: Amazon SES (about 45 minutes, plus up to a day for Amazon's review)
 
-**What it is for:** the welcome email, contact-form replies, newsletters,
-order confirmations, your "new order" alert. Until it is set, sign-ups are
-saved and nobody is emailed.
+**Chosen 2026-10-07 instead of Brevo** (the owner: Brevo's 300 a day was too
+few). Amazon SES "a la carte" is $0.10 per 1,000 emails. New AWS accounts get
+$100 of credit at sign-up and up to $100 more for trying other AWS services;
+SES's own 3,000-free-emails offer closed to new accounts in July 2026. Your
+subscriber list is ours (Netlify Blobs), so there is no contact limit
+anywhere. The website code is ready: it sends through SES as soon as the keys
+below are in Netlify.
 
-1. **A mailing address for the email footer** (the law requires one in
-   marketing email; it never goes on the website): a USPS PO box
-   (usps.com -> PO Boxes) or a UPS Store mailbox.
-2. **brevo.com** -> Sign up free (the business is Lavish Leaf Inc).
-3. Brevo -> your name (top right) -> **Senders, domains & dedicated IPs** ->
-   **Domains** -> **Add a domain** -> `lavishleaf.org` -> choose to add the
-   records yourself. Brevo shows 3 or 4 records (a `brevo-code` TXT, two DKIM
-   records, and DMARC). Add each **in both Netlify and Squarespace**, exactly
-   as in A2 (type, name/host, value as Brevo shows them). **DMARC already
-   exists** (`v=DMARC1; p=none`): do not add a second one; if Brevo asks for a
-   different value, edit the existing `_dmarc` record in both places
-   instead. Back in Brevo -> **Authenticate this email domain**.
-4. Brevo -> **SMTP & API** -> **API keys** -> **Generate a new API key** ->
-   name `website` -> copy it.
-5. Netlify keys:
+**F1. The AWS account.** aws.amazon.com -> **Create an AWS account** -> your
+email, account name **Lavish Leaf Inc** -> verify the email -> choose **Paid
+plan** (the Free plan closes the account after 6 months; the credits apply on
+the Paid plan too) -> card, phone check, **Basic support (free)**. Sign in to
+the console as the root user (the email you signed up with).
+
+**F2. Pick one region and keep it.** Top right of the console, the region
+menu -> **US East (N. Virginia) us-east-1**. SES settings are per region; the
+website uses us-east-1 unless you set `SES_REGION`.
+
+**F3. Verify the domain.** Search the console for **Amazon Simple Email
+Service** -> left menu **Identities** -> **Create identity** -> **Domain** ->
+`lavishleaf.org` -> leave "Use a custom MAIL FROM domain" off -> **Advanced
+DKIM settings**: **Easy DKIM**, **RSA_2048_BIT**, **Publish DNS records to
+Route53** OFF -> **Create identity**. SES shows **three CNAME records**. Add
+each in Netlify (Domains -> lavishleaf.org -> **Add new record**): Record
+type **CNAME**, Name: the part before `.lavishleaf.org` (it looks like
+`abc123..._domainkey`), Value: the `...dkim.amazonses.com` text. Wait 10
+minutes to a few hours; the identity's **DKIM configuration** turns
+**Successful** and its status **Verified**. Your DMARC record already exists;
+leave it.
+
+**F4. A sending key for the website** (a separate login with one
+permission, never your main one). Console search **IAM** -> **Users** ->
+**Create user** -> name `lavishleaf-website-mail`, do NOT give console
+access -> **Next** -> **Attach policies directly** -> **Create policy**
+(opens a tab) -> **JSON** -> replace everything with:
+
+    { "Version": "2012-10-17",
+      "Statement": [ { "Effect": "Allow", "Action": ["ses:SendEmail", "ses:SendRawEmail"], "Resource": "*" } ] }
+
+-> **Next** -> name `lavishleaf-send-email` -> **Create policy**. Back in the
+first tab press the refresh arrow, tick **lavishleaf-send-email** -> **Next**
+-> **Create user**. Open the user -> **Security credentials** -> **Create
+access key** -> **Application running outside AWS** -> **Next** -> **Create
+access key**. Copy the **Access key** and the **Secret access key** now (the
+secret is shown once; **Download .csv file** keeps a copy).
+
+**F5. Netlify variables** (then Trigger deploy):
 
 | Key | Value | Secret? |
 |---|---|---|
-| `BREVO_API_KEY` | the key from 4 | **yes** |
+| `SES_ACCESS_KEY_ID` | the Access key from F4 (starts `AKIA`) | no |
+| `SES_SECRET_ACCESS_KEY` | the Secret access key from F4 | **yes** |
+| `SES_REGION` | `us-east-1` | no |
 | `MAIL_FROM` | `support@lavishleaf.org` | no |
-| `MAIL_POSTAL_ADDRESS` | the PO box, e.g. `PO Box 123, Stigler, OK 74462` | no |
-| `OWNER_EMAIL` | where "new order" alerts should go | no |
-| `NEWSLETTER_SECRET` | 40 or more random letters and numbers (make it with a password generator). **Never change it later**: it signs the unsubscribe links | **yes** |
+| `OWNER_EMAIL` | where "new order" alerts go | no |
+| `MAIL_POSTAL_ADDRESS` | the PO box (marketing email is refused without it) | no |
+| `NEWSLETTER_SECRET` | 40 or more random letters and numbers; never change it later | **yes** |
+| `MAIL_DAILY_LIMIT` | leave out until F7; then the daily quota SES shows | no |
 
-6. Trigger a deploy -> dashboard -> **Send me the welcome email** (check it
-   arrives and is not in spam) -> **Import past sign-ups**.
+If `BREVO_API_KEY` was ever added, delete it.
 
-*While you are in the DNS records:* your SPF record reads
-`v=spf1 include:squarespace-mail.com ~all`, but your email is Google
-Workspace. Edit it (in both places) to
-`v=spf1 include:_spf.google.com include:squarespace-mail.com ~all`, so mail
-you send from Gmail as support@ is less likely to land in spam. Keep it to
-one SPF record.
+**F6. Test while still in the "sandbox".** A new SES account can only send to
+addresses it has verified, 200 a day. SES -> **Identities** -> **Create
+identity** -> **Email address** -> your own address -> open the email Amazon
+sends and click the link. Then the dashboard -> **Send me the welcome
+email**: it should arrive.
 
----
+**F7. Ask Amazon for production access** (to email anyone). SES -> **Account
+dashboard** -> the box "Your Amazon SES account is in the sandbox" -> **View
+Get set up page** -> **Request production access**. Mail type
+**Transactional**; Website URL `https://lavishleaf.org`; additional contacts:
+your email; language English; tick the acknowledgement; if it asks how you
+send, use: *"Lavish Leaf is an Oklahoma company (organic farm, compost and
+recycling pick-up, rec sports leagues, an online store). We send order
+confirmations and receipts, replies to our contact form, a welcome email to
+people who sign up for our newsletter on lavishleaf.org, and a monthly
+newsletter to those subscribers only. Every marketing email has a one-click
+unsubscribe link and our postal address; unsubscribes take effect at once and
+we never buy or rent lists. We expect under 1,000 emails a month to start."*
+-> **Submit request**. Amazon answers within about 24 hours. When approved,
+the Account dashboard shows your daily quota (often 50,000): put that number
+in `MAIL_DAILY_LIMIT` and deploy.
+
+**F8.** Dashboard -> **Import past sign-ups** (moves the old newsletter form
+sign-ups onto the list).
 
 ## G. The store: Tier 0, what costs nothing to start
 
@@ -249,9 +295,7 @@ cost, margin and stock beside each Bangalla product.
 1. **Load the Bangalla file in the dashboard.** Dashboard -> **Store
    products** (button at the top) -> **Load the Bangalla file** -> choose
    `Bangalla Product Data csv.csv` (the CSV, not the Excel). It stays private.
-2. **EIN**: irs.gov -> search "Apply for an EIN online" -> **Apply Online
-   Now** -> entity type **Corporation** -> follow the questions (about 10
-   minutes) -> save the confirmation letter (CP 575) as a PDF. Free.
+2. ~~EIN~~ **Done** (the owner has it).
 3. **Oklahoma resale certificate**: Oklahoma's resale form is filled in by
    you and given to each supplier, using your sales tax permit number. Find
    the current form on oklahoma.gov/tax (search "resale certificate" or
@@ -259,8 +303,8 @@ cost, margin and stock beside each Bangalla product.
 4. **Bangalla** (bangalla.com, sign in):
    * Confirm the account is the **free** wholesale level (Gold is paid and
      not needed).
-   * Account -> **Data Downloads** -> download the **Dropship Master**. Tell
-     Claude, and attach it: any Tier 0 row not on it comes off.
+   * ~~Dropship Master~~ **Done**: the product data file from the "Bangalla
+     Dropship Master Files" page is the Dropship Master (the owner, 2026-10-06).
    * Fill a cart with one bar of soap (0.5 lb), then a 3 pack (about 1 lb),
      then a box of sponges (about 2 lb), with an Oklahoma delivery address,
      and read the shipping charge at checkout **without paying**. Send Claude
@@ -283,6 +327,34 @@ cost, margin and stock beside each Bangalla product.
 
 ---
 
+
+### G1. The resale certificate for Arbico (and any other supplier)
+
+Use the **Streamlined Sales and Use Tax Agreement Certificate of Exemption**
+(the SST form). Oklahoma is a Streamlined Sales Tax member state, and the
+form itself says resale purchases **including drop shipments** are reason G.
+Fill in one per supplier; it is given to the supplier, never sent to any tax
+office. Keep a copy.
+
+* **Top of the form:** leave "single purchase" UNticked, so it covers every
+  purchase (a blanket certificate).
+* **Section 1, Purchaser:** Lavish Leaf Inc, your business mailing address
+  (the one on your Oklahoma sales tax permit), city, state OK, ZIP.
+* **Section 2, Seller:** ARBICO Organics and their address (from their
+  application or their Contact page).
+* **Section 3, Type of business:** **10, Retail trade.**
+* **Section 4, Reason for exemption:** **G, Resale.**
+* **Section 5, Identification:** state **OK**, ID number: your **Oklahoma
+  sales tax permit number** (STS-...), reason letter **G**. If the form has a
+  separate FEIN line, add your EIN there too.
+* **Section 6:** sign, print your name, title **President** (or Owner), and
+  date.
+
+Arbico asks for it with the distributor application: attach it to the same
+email.
+
+---
+
 ## H. Payments: PayPal (deferred by you; when you are ready)
 
 Steps 1 to 6 of docs/STORE-STEPS.md, unchanged. In short: developer.paypal.com
@@ -298,10 +370,10 @@ test order end to end. Then the same with a **Live** app and
 
 | | Step | Notes |
 |---|---|---|
-| 1 | **CPA about Oklahoma sales tax** on league fees, compost and recycling pick-up, and shipped goods | The most expensive thing to get wrong; a ten-minute question |
-| 2 | **Founder card** on the Company page | Send Claude your name, a square photo (600 px or more) and a few sentences |
+| 1 | **Sales tax rates** (the owner, 2026-10-06: league fees and registrations, services and shipped goods are all taxable) | Claude builds tax into the checkout before PayPal goes live. Needed from you: the combined rate for Stigler (for pick-ups and leagues), and whether shipped orders use the buyer's local rate. OkTAP's rate lookup or your CPA gives both |
+| 2 | ~~Founder card~~ **Done 2026-10-07** | Photo, name and story on the Company page; change the wording any time |
 | 3 | **Home page logos** for Rec Sports, Gaming and Lawn & Garden | Send the images |
-| 4 | **Confirm prices**: recycling $15 a month (a proposal), compost $20 | One line to Claude |
+| 4 | ~~Confirm prices~~ **Done 2026-10-06**: compost and recycling both $20 a month | |
 | 5 | **A photo for Recycling Pick-Up** | Landscape, 800 px wide or more |
 | 6 | **First YouTube video** | Then Claude swaps the Social page's Subscribe card for the feed |
 | 7 | **Pirate Ship** account (pirateship.com, free) | Labels for any order you post yourself |

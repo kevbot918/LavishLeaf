@@ -280,7 +280,7 @@ every game.
 
 | | What | Why it matters |
 |---|---|---|
-| 1 | **The Dropship Master list** from Bangalla's Data Downloads | Bangalla: *"only products listed on the Dropship Master are available for dropshipping, all other items on the site are for regular wholesale"*. The product data file cannot say which rows those are. Download it and strike any row that is not on it |
+| 1 | ~~The Dropship Master list~~ **Settled 2026-10-06** | The product data file he downloaded is from Bangalla's "Dropship Master Files" page, which says it "contains all product data and current pricing": the Tier 0 rows are on it |
 | 2 | **Bangalla's shipping charge** for a 0.5 lb, a 2 lb and a 7 lb order to an Oklahoma address | He is billed product plus shipping on every order. The store charges the customer $6.95, $9.95 or $14.95 by weight (docs/SHIPPING.md). If Bangalla charges more, the difference comes out of the margin: fill a cart in the account and read the quote without paying |
 | 3 | **The daily stock report**, each morning there are orders | Stock moves daily; an order for something sold out is a refund and an apology |
 | 4 | **A shelf-price check** on each product before its page | Whether a customer pays Bangalla's list price for a bar of Kirk's is a question about other shops' prices, and nobody has read those yet |

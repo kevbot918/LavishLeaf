@@ -2,10 +2,8 @@
 //
 // ONE place that sends: the welcome email, the newsletter, order
 // confirmations, cart reminders and the contact auto-reply all come through
-// sendEmail(). The provider is Brevo today (free: 300 emails a day). When
-// the list outgrows that, a second provider goes in send() below, chosen by
-// MAIL_PROVIDER, and nothing else changes (docs/EMAIL.md, "When 300 a day is
-// not enough").
+// sendEmail(). Two providers, chosen in mailConfig(): Amazon SES (the
+// owner's choice, 2026-10-07) or Brevo. Nothing outside send() knows which.
 //
 // Environment (Netlify, never in this repository):
 //   BREVO_API_KEY        the Brevo API key ("SMTP & API" -> "API keys")
@@ -35,14 +33,26 @@ const CAPPED = new Set(['welcome', 'newsletter', 'cart', 'contact-reply']);
 /** Kept back each day for order emails, so a newsletter never blocks a receipt. */
 const RESERVE = 40;
 
+// Amazon SES (2026-10-07, the owner: Brevo's 300 a day was too few; SES is
+// $0.10 per 1,000). The keys are SES_*, not AWS_*: Netlify functions run on
+// AWS Lambda, which reserves the AWS_ names for itself.
+//   SES_ACCESS_KEY_ID, SES_SECRET_ACCESS_KEY   an IAM user allowed ses:SendEmail
+//   SES_REGION                                 where lavishleaf.org is verified (default us-east-1)
+// With the SES keys present and no BREVO_API_KEY, SES is chosen; MAIL_PROVIDER
+// ("ses" or "brevo") decides when both exist.
 export function mailConfig(env = process.env) {
+  const ses = !!(env.SES_ACCESS_KEY_ID && env.SES_SECRET_ACCESS_KEY);
+  const provider = (env.MAIL_PROVIDER || (ses && !env.BREVO_API_KEY ? 'ses' : 'brevo')).toLowerCase();
   return {
-    provider: (env.MAIL_PROVIDER || 'brevo').toLowerCase(),
-    key: env.BREVO_API_KEY || '',
+    provider,
+    key: provider === 'ses' ? (ses ? 'ses' : '') : env.BREVO_API_KEY || '',
+    ses: { accessKeyId: env.SES_ACCESS_KEY_ID || '', secretAccessKey: env.SES_SECRET_ACCESS_KEY || '', region: (env.SES_REGION || 'us-east-1').trim() },
     from: env.MAIL_FROM || 'support@lavishleaf.org',
     fromName: env.MAIL_FROM_NAME || 'Lavish Leaf',
     replyTo: env.MAIL_REPLY_TO || 'support@lavishleaf.org',
-    daily: Math.max(1, parseInt(env.MAIL_DAILY_LIMIT, 10) || 300),
+    // A new SES account is in the "sandbox": 200 a day until Amazon approves
+    // production access. Set MAIL_DAILY_LIMIT to the quota SES then shows.
+    daily: Math.max(1, parseInt(env.MAIL_DAILY_LIMIT, 10) || (provider === 'ses' ? 200 : 300)),
     postal: (env.MAIL_POSTAL_ADDRESS || '').trim(),
     owner: (env.OWNER_EMAIL || '').trim(),
   };
@@ -94,7 +104,7 @@ export async function marketingBudget(env = process.env, now = Date.now()) {
  */
 export async function sendEmail({ to, toName = '', subject, html, text = '', kind, unsubscribeUrl = '' }, env = process.env) {
   const cfg = mailConfig(env);
-  if (!cfg.key) throw new MailError('email is not set up (BREVO_API_KEY)');
+  if (!cfg.key) throw new MailError(cfg.provider === 'ses' ? 'email is not set up (SES_ACCESS_KEY_ID and SES_SECRET_ACCESS_KEY)' : 'email is not set up (no SES keys or BREVO_API_KEY)');
   if (!validEmail(to)) throw new MailError('not an email address');
   if (!subject || !html) throw new MailError('subject and html are required');
   const marketing = !TRANSACTIONAL.has(kind);
@@ -114,8 +124,49 @@ export async function sendEmail({ to, toName = '', subject, html, text = '', kin
   return res;
 }
 
+/** A From line: "Lavish Leaf <support@lavishleaf.org>", the name quoted only if it needs it. */
+function fromLine(name, email) {
+  const clean = String(name || '').replace(/["\\\r\n]/g, '').trim();
+  if (!clean) return email;
+  return /^[A-Za-z0-9 .'-]+$/.test(clean) ? `${clean} <${email}>` : `"${clean}" <${email}>`;
+}
+
+async function sendSes(cfg, m, fetchImpl) {
+  const { signV4 } = await import('./aws-sign.mjs');
+  const host = `email.${cfg.ses.region}.amazonaws.com`;
+  const path = '/v2/email/outbound-emails';
+  const simple = {
+    Subject: { Data: m.subject.slice(0, 200), Charset: 'UTF-8' },
+    Body: { Html: { Data: m.html, Charset: 'UTF-8' }, ...(m.text ? { Text: { Data: m.text, Charset: 'UTF-8' } } : {}) },
+  };
+  const headers = Object.entries(m.headers).map(([Name, Value]) => ({ Name, Value }));
+  if (headers.length) simple.Headers = headers;
+  const to = m.toName ? fromLine(m.toName.slice(0, 70), m.to) : m.to;
+  const body = JSON.stringify({
+    FromEmailAddress: fromLine(cfg.fromName, cfg.from),
+    Destination: { ToAddresses: [to] },
+    ReplyToAddresses: [cfg.replyTo],
+    Content: { Simple: simple },
+    // Tag values allow letters, numbers, "_" and "-" only.
+    EmailTags: [{ Name: 'kind', Value: String(m.kind || 'other').replace(/[^A-Za-z0-9_-]/g, '-') }],
+  });
+  const signed = signV4({
+    method: 'POST', host, path, body, service: 'ses', region: cfg.ses.region,
+    headers: { 'content-type': 'application/json' },
+    accessKeyId: cfg.ses.accessKeyId, secretAccessKey: cfg.ses.secretAccessKey,
+  });
+  const res = await fetchImpl(`https://${host}${path}`, { method: 'POST', headers: signed, body });
+  const json = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    const why = String(json.message || json.Message || '').slice(0, 200);
+    throw new MailError(`Amazon SES said ${res.status}: ${why}`, { temporary: res.status === 429 || res.status >= 500 });
+  }
+  return { id: json.MessageId || null };
+}
+
 async function send(cfg, m) {
   const fetchImpl = testFetch || fetch;
+  if (cfg.provider === 'ses') return sendSes(cfg, m, fetchImpl);
   if (cfg.provider !== 'brevo') throw new MailError(`unknown MAIL_PROVIDER "${cfg.provider}"`);
   const body = {
     sender: { name: cfg.fromName, email: cfg.from },

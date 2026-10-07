@@ -37,7 +37,7 @@ export default async (request) => {
       const n = await importFromForms(store);
       return json(200, { ok: true, message: `${n} past sign-up${n === 1 ? '' : 's'} added to the list.` });
     }
-    if (!mailReady()) return json(400, { error: 'Email is not set up yet: BREVO_API_KEY is missing in Netlify.' });
+    if (!mailReady()) return json(400, { error: 'Email is not set up yet: add SES_ACCESS_KEY_ID and SES_SECRET_ACCESS_KEY in Netlify (docs/OWNER-STEPS.md).' });
     if (!cfg.postal) return json(400, { error: 'Add MAIL_POSTAL_ADDRESS (your PO box) in Netlify first. Every newsletter must carry it.' });
     const issue = String(body.issue || '');
 

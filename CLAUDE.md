@@ -264,7 +264,7 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     solicitation under SEC Rule 506). The founder's name, photo and story are
     still to come from the owner.
 14. **Recycling Pick-Up** on `farms.html#recycling` and in `products.json`
-    (`recycle-monthly`, $15 a month, ship false, customer's own bin):
+    (`recycle-monthly`, $20 a month since 2026-10-06 by the owner, ship false, customer's own bin):
     cardboard, mixed paper, cans, glass, plastics #1 and #2, to the McAlester
     and Checotah centres. Price is a proposal for the owner to confirm.
 15. **Shelves scroll sideways** by arrows and the mouse wheel (`store.js`
@@ -318,3 +318,13 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     `netlify/functions/store-costs.mjs` (owner only). At list price the
     margin is about 30%. The owner's click-by-click steps for everything
     left are `docs/OWNER-STEPS.md`.
+23. **Email is Amazon SES** (2026-10-07, owner: Brevo's 300 a day was too few).
+    `mail.mjs` picks SES when `SES_ACCESS_KEY_ID` and `SES_SECRET_ACCESS_KEY`
+    exist (SES_*, not AWS_*: Lambda reserves those); SigV4 in
+    `netlify/lib/aws-sign.mjs`, checked against AWS's own examples. Sandbox
+    limit 200 a day until production access; then `MAIL_DAILY_LIMIT`. Also
+    2026-10-07: the founder card (Kevin Wright, `images/founder.jpg`), and
+    compost and recycling pick-up both $20 a month. **Sales tax**: the owner
+    says league fees and registrations, services and shipped goods are all
+    taxable; the checkout charges none yet, and must before PayPal goes live
+    (rate per OkTAP or his CPA).

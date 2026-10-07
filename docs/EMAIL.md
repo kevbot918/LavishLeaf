@@ -73,7 +73,20 @@ Blanks the templates may use: `{{first_name}}` ("friend" when unknown),
 `{{unsubscribe_url}}`, `{{postal_address}}`, `{{view_online_url}}`. Keep the
 unsubscribe link and the postal address in the footer.
 
-## Setting it up (owner, about 30 minutes)
+## The provider is now Amazon SES (2026-10-07)
+
+The owner chose Amazon SES over Brevo (300 a day was too few; SES is $0.10
+per 1,000). `netlify/lib/mail.mjs` sends through SES whenever
+`SES_ACCESS_KEY_ID` and `SES_SECRET_ACCESS_KEY` are set (signed with
+`netlify/lib/aws-sign.mjs`, tested against two AWS reference examples in
+`tools/test/email-ses.test.mjs`). The variables are SES_*, never AWS_*,
+because Netlify functions run on AWS Lambda, which reserves the AWS_ names. A
+new SES account is in the sandbox (200 a day, verified recipients only), so
+the daily limit defaults to 200 until `MAIL_DAILY_LIMIT` is raised. The
+owner's click-by-click setup is docs/OWNER-STEPS.md section F. Brevo still
+works if `BREVO_API_KEY` is set and `MAIL_PROVIDER` is `brevo`.
+
+## Setting it up with Brevo (the earlier choice, kept for reference)
 
 1. **A mailing address for the email footer.** A USPS PO box
    (usps.com -> PO Boxes, rented by the month) or a private mailbox at a UPS
