@@ -33,6 +33,11 @@
   Content-Type: text/javascript; charset=utf-8
   Cache-Control: public, max-age=300
 
+# The sales-tax rules, the same way (tax.mjs, 2026-10-07).
+/tax.mjs
+  Content-Type: text/javascript; charset=utf-8
+  Cache-Control: public, max-age=300
+
 # The owner's dashboard, its sample data and the email templates (shown to
 # subscribers through "View in your browser") are not for search engines.
 /dashboard.html

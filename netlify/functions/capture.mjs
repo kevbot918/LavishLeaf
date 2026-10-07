@@ -12,6 +12,7 @@
 import { accountsStore, addOrder } from '../lib/accounts.mjs';
 import { CheckoutError, call, config, handle, parseCustomId } from '../lib/paypal.mjs';
 import { addressOk } from '../../shipping.mjs';
+import { taxAddressOk } from '../../tax.mjs';
 import { afterPayment, summarise } from '../lib/orders.mjs';
 
 export default async (request) =>
@@ -25,6 +26,10 @@ export default async (request) =>
     const meta = parseCustomId(unit.custom_id);
     if (order.status !== 'COMPLETED' && meta.m) {
       const ok = addressOk(meta.m, unit.shipping?.address);
+      if (!ok.ok) throw new CheckoutError(400, ok.message);
+    }
+    if (order.status !== 'COMPLETED' && meta.t) {
+      const ok = taxAddressOk(meta.t, unit.shipping?.address);
       if (!ok.ok) throw new CheckoutError(400, ok.message);
     }
 

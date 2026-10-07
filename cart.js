@@ -48,15 +48,23 @@
       // Shipping is the only choice for now (no pickup, no delivery); a
       // browser that remembered a retired choice falls back to it.
       var m = 'ship';
-      return { method: typeof m === 'string' ? m : 'ship', zip: typeof d.zip === 'string' ? d.zip : '' };
+      return {
+        method: typeof m === 'string' ? m : 'ship',
+        zip: typeof d.zip === 'string' ? d.zip : '',
+        // Oklahoma or another state: it decides the sales tax (tax.mjs).
+        shipTo: d.shipTo === 'OK' || d.shipTo === 'other' ? d.shipTo : '',
+      };
     } catch (e) {
-      return { method: 'ship', zip: '' };
+      return { method: 'ship', zip: '', shipTo: '' };
     }
   })();
   function saveDelivery() {
     try { localStorage.setItem(SHIP_KEY, JSON.stringify(delivery)); } catch (e) { /* fine */ }
   }
   import('/shipping.mjs').then(function (m) { ship = m; render(); }).catch(function () { /* the server still prices it */ });
+  // Sales tax: the same rules the server charges by (tax.mjs).
+  var tax = null;
+  import('/tax.mjs').then(function (m) { tax = m; render(); }).catch(function () { /* the server still taxes it */ });
 
   function money(cents) {
     return '$' + (cents / 100).toFixed(2);
@@ -81,7 +89,7 @@
 
   // ------------------------------------------------------------------ view
   var fab, panel, list, totalEl, noteEl, payBtn, statusEl, banner;
-  var shipWrap, shipLine, shipNudge;
+  var shipWrap, shipLine, shipNudge, shipToWrap, taxLine;
   var waiverWrap;
 
   // A product may require an agreement before it can be paid for. Today
@@ -140,10 +148,26 @@
         shipWrap.appendChild(row);
       });
     panel.appendChild(shipWrap);
+    // Where it ships decides the sales tax, so it is asked before PayPal;
+    // the server checks PayPal's address against it before any money moves.
+    shipToWrap = el('fieldset', { class: 'cart-ship', hidden: '' });
+    shipToWrap.appendChild(el('legend', null, 'Shipping to'));
+    [['OK', 'Oklahoma'], ['other', 'Another state']].forEach(function (m) {
+      var row = el('label', { class: 'cart-ship-row' });
+      var r = el('input', { type: 'radio', name: 'cart-ship-to', value: m[0] });
+      r.checked = delivery.shipTo === m[0];
+      r.addEventListener('change', function () { delivery.shipTo = m[0]; saveDelivery(); render(); });
+      row.appendChild(r);
+      row.appendChild(document.createTextNode(' ' + m[1]));
+      shipToWrap.appendChild(row);
+    });
+    panel.appendChild(shipToWrap);
     shipNudge = el('p', { class: 'cart-nudge', hidden: '' });
     panel.appendChild(shipNudge);
     shipLine = el('p', { class: 'cart-shipline', hidden: '' });
     panel.appendChild(shipLine);
+    taxLine = el('p', { class: 'cart-shipline', hidden: '' });
+    panel.appendChild(taxLine);
 
     totalEl = el('p', { class: 'cart-total' });
     panel.appendChild(totalEl);
@@ -236,7 +260,23 @@
         }
       }
     }
-    totalEl.textContent = cart.length ? 'Total ' + money(cents + shipCents) : 'Your cart is empty.';
+    // Sales tax, by the same rules the server will charge.
+    shipToWrap.hidden = !posts;
+    var taxCents = 0, taxOk = true;
+    taxLine.hidden = !cart.length;
+    if (!tax) {
+      taxLine.textContent = 'Sales tax is calculated at checkout.';
+    } else if (cart.length) {
+      try {
+        var t = tax.taxQuote(lines, { shipTo: delivery.shipTo });
+        taxCents = t.cents;
+        taxLine.textContent = t.cents ? t.label + ': ' + money(t.cents) : 'No Oklahoma sales tax on this order.';
+      } catch (e) {
+        taxOk = false;
+        taxLine.textContent = e.message;
+      }
+    }
+    totalEl.textContent = cart.length ? 'Total ' + money(cents + shipCents + taxCents) : 'Your cart is empty.';
 
     // The waiver, when something in the cart needs one. Drawn fresh each
     // render so removing the last registration removes the tick with it.
@@ -263,7 +303,7 @@
       Array.prototype.every.call(waiverWrap.querySelectorAll('input[type=checkbox]'),
         function (b) { return b.checked; });
 
-    payBtn.disabled = cart.length === 0 || !accepted || !shipOk;
+    payBtn.disabled = cart.length === 0 || !accepted || !shipOk || !taxOk;
     // The store shell (store.js) draws its own cart button in the top bar
     // and hides the floating one; this is how it learns the count.
     document.dispatchEvent(new CustomEvent('ll-cart', { detail: { count: count } }));
@@ -322,6 +362,7 @@
       note: noteEl.value,
       waivers: waivers.map(function (w) { return w.version; }),
       shipMethod: delivery.method,
+      shipTo: delivery.shipTo,
     })
       .then(function (r) { window.location.href = r.approveUrl; })
       .catch(function (e) {

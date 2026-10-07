@@ -296,31 +296,29 @@ cost, margin and stock beside each Bangalla product.
    products** (button at the top) -> **Load the Bangalla file** -> choose
    `Bangalla Product Data csv.csv` (the CSV, not the Excel). It stays private.
 2. ~~EIN~~ **Done** (the owner has it).
-3. **Oklahoma resale certificate**: Oklahoma's resale form is filled in by
-   you and given to each supplier, using your sales tax permit number. Find
-   the current form on oklahoma.gov/tax (search "resale certificate" or
-   "sales tax exemption") or ask through OkTAP; fill it in once per supplier.
+3. **The resale certificate**: the SST form, filled in field by field in
+   **G1** below. One per supplier; Arbico needs it with the application.
 4. **Bangalla** (bangalla.com, sign in):
    * Confirm the account is the **free** wholesale level (Gold is paid and
      not needed).
-   * ~~Dropship Master~~ **Done**: the product data file from the "Bangalla
-     Dropship Master Files" page is the Dropship Master (the owner, 2026-10-06).
+   * ~~Dropship Master~~ **Done**: the product data file is the Dropship
+     Master (the owner, 2026-10-06).
+   * ~~Returns and shipping~~ **Answered** (the owner, 2026-10-07): shipping
+     is FedEx/USPS rates by weight, location and speed; there is no returns
+     policy, each return is asked for and approved or not. So a dropshipped
+     item can be returned only if Bangalla approves it.
    * Fill a cart with one bar of soap (0.5 lb), then a 3 pack (about 1 lb),
-     then a box of sponges (about 2 lb), with an Oklahoma delivery address,
-     and read the shipping charge at checkout **without paying**. Send Claude
-     the three numbers.
-   * Email Bangalla asking: their returns policy; whether "Third Party
-     Restriction" brands (A La Maison, Desert Essence) may be sold on your
-     own website; whether you may use their product photos.
-5. **Arbico**: arbico-organics.com/category/distributor-program-information
-   -> download the **Distributor Application (PDF)** -> fill it in -> email it
-   to distributors@arbico.com, asking in the same email: your discount,
-   which products cannot ship to Oklahoma, and what they charge to ship a
-   dropshipped order.
-6. **ODAFF** (Oklahoma Department of Agriculture: ag.ok.gov -> **Plant
-   Industry**, the telephone number on that page): ask "Does a web store that dropships already-registered
-   bagged organic fertilizer to Oklahoma customers need the $50 fertilizer
-   license?" Note the answer and the name of who said it.
+     then a box of sponges (about 2 lb), with a **far-away address** (any
+     Seattle ZIP, e.g. 98101) and read the shipping charge at checkout
+     **without paying**. Send Claude the three numbers: the store's bands
+     ($11.95 / $17.95 / $27.95) were set from USPS's prices and must be
+     checked against Bangalla's.
+   * Still to ask Bangalla by email: whether "Third Party Restriction" brands
+     (A La Maison, Desert Essence) may be sold on your own website, and
+     whether you may use their product photos.
+5. **Arbico distributor application**, field by field in **G2** below.
+6. **Fertilizer licence** (you said 2026-10-07 it is needed): field by field
+   in **G3** below. $50 a location, expires 31 December every year.
 7. **Pick the Tier 0 products** you want, in the dashboard. Sort by margin,
    and decide your selling price: at Bangalla's list price your margin is
    about 30%, before PayPal's fee. Tell Claude the products and prices.
@@ -340,8 +338,8 @@ office. Keep a copy.
   purchase (a blanket certificate).
 * **Section 1, Purchaser:** Lavish Leaf Inc, your business mailing address
   (the one on your Oklahoma sales tax permit), city, state OK, ZIP.
-* **Section 2, Seller:** ARBICO Organics and their address (from their
-  application or their Contact page).
+* **Section 2, Seller:** **ARBICO Organics, P.O. Box 8910, Tucson, AZ
+  85738** (the address on their application).
 * **Section 3, Type of business:** **10, Retail trade.**
 * **Section 4, Reason for exemption:** **G, Resale.**
 * **Section 5, Identification:** state **OK**, ID number: your **Oklahoma
@@ -352,6 +350,70 @@ office. Keep a copy.
 
 Arbico asks for it with the distributor application: attach it to the same
 email.
+
+---
+
+### G2. The Arbico distributor application
+
+From arbico-organics.com/category/distributor-program-information ->
+**Distributor Application (PDF)**. Fill it in, then email it with its
+attachments to **distributors@arbico.com**.
+
+* **Business name:** Lavish Leaf Inc. **Contact:** Kevin Wright, President.
+  **Email:** kwright@lavishleaf.org. **Website:** lavishleaf.org.
+* **How you sell:** online retail store on your own website (Arbico does not
+  allow its products on Amazon, Walmart or other marketplaces: you do not
+  sell there).
+* **Are you tax exempt (a 501(c)(3))?** **No.** Lavish Leaf Inc is a
+  for-profit corporation. Any 501(c)(3) document field: **N/A**.
+* **State:** OK. **Tax ID / resale number:** your **Oklahoma sales tax
+  permit number**. Add a line: "Purchases are for resale; SST Certificate of
+  Exemption attached."
+* **Attachments:**
+  1. **Resale license form:** the SST certificate from G1.
+  2. **W-9:** irs.gov/forms-pubs/about-form-w-9 -> Lavish Leaf Inc, tick
+     **C corporation** (S corporation only if you filed IRS Form 2553), your
+     **EIN**, sign and date.
+  3. **Business license:** your Oklahoma sales tax permit (a PDF or photo
+     from OkTAP).
+* **Payment:** a credit card (charged when each order ships).
+* **Billing address:** your business mailing address. **Shipping address:**
+  the same (orders are dropshipped to customers blind, with no Arbico
+  paperwork in the box).
+* **Three business references:** Bangalla (your wholesale account), your
+  bank, and one more business you buy from on an account (the league's field
+  or equipment supplier, for example).
+* **In the email, ask:** your distributor discount; which products cannot
+  ship to Oklahoma; and what they charge to ship a dropshipped order.
+
+### G3. The Oklahoma fertilizer licence
+
+Form: https://ag.ok.gov/wp-content/uploads/2025/06/Fertilizer-License-Application.pdf
+(Consumer Protection Services, Form 41436A). Questions: Joshua Maples,
+405-522-4057, joshua.maples@ag.ok.gov.
+
+* **Products:** tick **BAGGED FERTILIZER**. If any Arbico line is a liquid,
+  tick **LIQUID FERTILIZER** too.
+* **Categories:** none of the six fits a shop that only resells registered
+  products (Registrant is the maker; Broker, Custom Applicator and Custom
+  Blend do not apply). Leave them blank and write beside them: "Retail sale
+  of registered packaged fertilizer, online, shipped directly from the
+  supplier." If ODAFF wants a box ticked, they will say which.
+* **Business name:** Lavish Leaf Inc. **Phone:** your business number.
+* **Location address and county:** where the business is (the farm),
+  county **Pittsburg**.
+* **Mailing address:** your PO box (or the farm until you have one).
+* **Email:** kwright@lavishleaf.org. **Contact:** Kevin Wright.
+* **Sign and date.** A check for **$50.00** payable to **Oklahoma Department
+  of Agriculture, Food and Forestry**, mailed with the form to **PO Box
+  528804, Oklahoma City, OK 73152-8804**.
+* **Timing:** every licence ends **31 December**. Applying now buys a
+  licence for only the rest of 2026; ask Joshua Maples whether to apply now
+  or for 2027 in December. A renewal after 31 January costs a $50 penalty.
+
+Related licences for later (docs/STORE-PLAN.md): nursery dealer **$38 a
+location** before selling plants or seedlings; **$100 a product** to register
+the farm's own bagged compost.
 
 ---
 
@@ -370,7 +432,7 @@ test order end to end. Then the same with a **Live** app and
 
 | | Step | Notes |
 |---|---|---|
-| 1 | **Sales tax rates** (the owner, 2026-10-06: league fees and registrations, services and shipped goods are all taxable) | Claude builds tax into the checkout before PayPal goes live. Needed from you: the combined rate for Stigler (for pick-ups and leagues), and whether shipped orders use the buyer's local rate. OkTAP's rate lookup or your CPA gives both |
+| 1 | ~~Sales tax rates~~ **Built 2026-10-07**: 6% (OK 4.5% + Pittsburg County 1.5%) on registrations, services and goods shipped to Oklahoma; none on goods shipped out of state | **Ask your CPA two things** (docs/STORE-PLAN.md, Sales tax): (a) the Tax Commission says an in-state delivery is taxed at the BUYER's local rate, not ours; (b) whether shipping charges are taxable. If (a) is yes, Claude switches to rates by address. When you make the PayPal subscription plans, leave their tax at 0%: the site adds the 6% itself |
 | 2 | ~~Founder card~~ **Done 2026-10-07** | Photo, name and story on the Company page; change the wording any time |
 | 3 | **Home page logos** for Rec Sports, Gaming and Lawn & Garden | Send the images |
 | 4 | ~~Confirm prices~~ **Done 2026-10-06**: compost and recycling both $20 a month | |
@@ -378,6 +440,8 @@ test order end to end. Then the same with a **Live** app and
 | 6 | **First YouTube video** | Then Claude swaps the Social page's Subscribe card for the feed |
 | 7 | **Pirate Ship** account (pirateship.com, free) | Labels for any order you post yourself |
 | 8 | **Clarity masking**: Settings -> Masking -> **Strict** | Only if you want page text hidden in recordings too |
+| 9 | **careers@ test** (sent 2026-10-07 from kevowright5@gmail.com, subject "Test: careers@ delivery check 2026-10-07") | Look in kwright@lavishleaf.org. It did not bounce. If it is not there: admin.google.com -> if careers@ is a **Group** (Directory -> Groups): Access settings, "Who can post" = **Anyone on the web**, and you a member with delivery "Each email"; if it is an **alias** (Directory -> Users -> you -> Alternate email addresses): check it is listed there |
+| 10 | **Read docs/STORE-PLAN.md** and pick the Phase 0 lanes | Claude builds whichever you choose (printables page, route pre-orders, merch, Green Swaps page) |
 
 When a step is done, tell Claude which one; the dashboard section it
 switches on gets checked against your real account.

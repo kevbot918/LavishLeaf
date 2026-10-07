@@ -16,14 +16,17 @@ test('nothing posted, nothing charged and no address asked for', () => {
   assert.deepEqual([q.cents, q.method, q.needsAddress], [0, 'none', false]);
 });
 
-test('the weight bands, and the $4.95 rate at $100', () => {
-  assert.equal(quote([line(P(800, 6))], { method: 'ship' }).cents, 695);      // 6 oz
-  assert.equal(quote([line(P(800, 16))], { method: 'ship' }).cents, 695);     // exactly 1 lb
-  assert.equal(quote([line(P(800, 20))], { method: 'ship' }).cents, 995);     // 1 lb 4 oz
-  assert.equal(quote([line(P(800, 30), 2)], { method: 'ship' }).cents, 1495); // 3 lb 12 oz
-  assert.equal(quote([line(P(5000, 10), 2)], { method: 'ship' }).cents, 495); // $100.00 exactly
-  assert.equal(quote([line(P(9999, 10))], { method: 'ship' }).cents, 695);    // a cent short
-  assert.equal(untilReduced(7500), 2500);
+test('the weight bands cover Zone 8, and there is no reduced rate (2026-10-07)', () => {
+  assert.equal(quote([line(P(800, 6))], { method: 'ship' }).cents, 1195);      // 6 oz
+  assert.equal(quote([line(P(800, 16))], { method: 'ship' }).cents, 1195);     // exactly 1 lb
+  assert.equal(quote([line(P(800, 20))], { method: 'ship' }).cents, 1795);     // 1 lb 4 oz
+  assert.equal(quote([line(P(800, 30), 2)], { method: 'ship' }).cents, 2795);  // 3 lb 12 oz
+  assert.equal(quote([line(P(5000, 10), 3)], { method: 'ship' }).cents, 1795); // $150, 1 lb 14 oz: full rate
+  assert.equal(untilReduced(7500), 0);
+  // USPS Ground Advantage commercial, Zone 8, effective 4 Oct 2026.
+  for (const [oz, cost] of [[16, 1122], [48, 1630], [160, 2639]]) {
+    assert.ok(SHIPPING.bands.find((b) => oz <= b.upToOz).cents > cost, oz + ' oz covers Zone 8');
+  }
 });
 
 test('over 10 lb is never posted at a flat rate', () => {
@@ -53,8 +56,8 @@ test('shipping is its own line on the PayPal order, and asks PayPal for the addr
   const shipping = quote(lines, { method: 'ship' });
   const body = orderBody(lines, { returnUrl: 'r', cancelUrl: 'c', shipping, userId: '1234abcd-0000' });
   const unit = body.purchase_units[0];
-  assert.equal(unit.amount.value, '22.85'); // 15.90 + 6.95
-  assert.equal(unit.amount.breakdown.shipping.value, '6.95');
+  assert.equal(unit.amount.value, '27.85'); // 15.90 + 11.95
+  assert.equal(unit.amount.breakdown.shipping.value, '11.95');
   assert.equal(unit.items[0].category, 'PHYSICAL_GOODS');
   assert.equal(body.payment_source.paypal.experience_context.shipping_preference, 'GET_FROM_FILE');
   assert.deepEqual(parseCustomId(unit.custom_id), { m: 'ship', u: '1234abcd-0000' });

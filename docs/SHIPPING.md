@@ -1,5 +1,16 @@
 # Shipping rates: the recommendation
 
+**Changed 2026-10-07 (owner: "bangalla shipping rates will cause us to lose
+money").** The bands are now up to 1 lb **$11.95**, 1 to 3 lb **$17.95**,
+3 to 10 lb **$27.95**, each above USPS Ground Advantage commercial Zone 8
+($11.22 at 1 lb, $16.30 at 3 lb, $26.39 at 10 lb, effective 4 Oct 2026), and
+the $4.95 rate on orders over $100 is gone. Bangalla bills its carrier rate
+by weight, distance and speed, so the first Bangalla shipping charges are
+checked against these bands (OWNER-STEPS G4). Sales tax is `tax.mjs`. The
+plan behind it is docs/STORE-PLAN.md. What follows is the 2026-10-01
+recommendation as written.
+
+
 Written 2026-10-01 for the owner's ask: *"I don't want to lose money on
 shipping, but I don't want it to deter customers from buying. Maybe even
 include a cheaper/reduced/flat shipping rate for orders over $100."*

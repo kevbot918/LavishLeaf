@@ -1,13 +1,14 @@
 // POST /.netlify/functions/checkout
-//   { items: [{id, qty}], note?, waivers?, shipMethod? }
+//   { items: [{id, qty}], note?, waivers?, shipMethod?, shipTo? }
 //   -> { approveUrl }   the PayPal page to send the buyer to
-// Prices AND shipping come from the catalog and shipping.mjs, never from the
+// Prices, shipping AND tax come from the catalog, shipping.mjs and tax.mjs, never from the
 // request. See netlify/lib/paypal.mjs. A signed-in customer (Authorization:
 // Bearer, Netlify Identity) has the order filed in their account at capture.
 import { catalog } from '../lib/catalog.mjs';
 import { userFromRequest } from '../lib/identity.mjs';
 import { approveLink, call, CheckoutError, config, handle, orderBody, returnUrls, validateCart } from '../lib/paypal.mjs';
 import { quote, ShippingError } from '../../shipping.mjs';
+import { taxQuote, TaxError } from '../../tax.mjs';
 
 export default async (request) =>
   handle(request, async (body) => {
@@ -32,12 +33,20 @@ export default async (request) =>
       if (e instanceof ShippingError) throw new CheckoutError(400, e.message);
       throw e;
     }
+    let tax;
+    try {
+      tax = taxQuote(lines, { shipTo: body.shipTo });
+    } catch (e) {
+      if (e instanceof TaxError) throw new CheckoutError(400, e.message);
+      throw e;
+    }
     const user = await userFromRequest(request);
     const order = await call(cfg, '/v2/checkout/orders', orderBody(lines, {
       ...returnUrls(request),
       note: body.note,
       waivers: required,
       shipping,
+      tax,
       userId: user ? user.id : '',
     }));
     return { approveUrl: approveLink(order) };

@@ -221,8 +221,9 @@ for (const t of TABLES) {
       if (prefix && !RENAME[name] && !Object.values(RENAME).includes(name) && !(prefix === 'Dr. Earth' && /Jobe/.test(name)) && !name.toLowerCase().startsWith(prefix.replace(/:$/, '').toLowerCase())) name = `${prefix} ${name}`;
       name = name.replace(/\s+/g, ' ').trim();
       const shelf = shelfFor(category, name);
-      const supplier = (src.split(',')[0] || new URL(it.url).hostname.replace(/^www\./, '').split('.')[0]).trim();
-      const bits = [`Tier ${t.tier}, rank ${rank}.`, `${supplier}${kind ? ' ' + kind : ''} price${it.price ? '' : ' not listed'}.`];
+      const supplier = (src.split(/[,;]/)[0] || new URL(it.url).hostname.replace(/^www\./, '').split('.')[0]).trim();
+      // No price words: demo cards carry no price (owner, 2026-10-07).
+      const bits = [`Tier ${t.tier}, rank ${rank}.`, `${supplier}.`];
       if (min && !/^none$/i.test(min)) bits.push(`Minimum ${min}.`);
       // Only the first clause after the supplier: what follows a ";" is a
       // note for the owner (login pages, restriction flags), not for a shopper.

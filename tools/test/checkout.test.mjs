@@ -130,8 +130,10 @@ test('the checkout function end to end, against a fake PayPal', async () => {
     const order = calls.find((c) => c.url.endsWith('/v2/checkout/orders'));
     assert.ok(order.url.startsWith('https://api-m.sandbox.paypal.com'), 'sandbox by default');
     const sent = JSON.parse(order.init.body);
-    // 2 x $25.00 from products.json, through the generated catalog.
-    assert.equal(sent.purchase_units[0].amount.value, '50.00');
+    // 2 x $25.00 from products.json, through the generated catalog, plus 6%
+    // Oklahoma sales tax (tax.mjs): a registration is always taxed.
+    assert.equal(sent.purchase_units[0].amount.value, '53.00');
+    assert.equal(sent.purchase_units[0].amount.breakdown.tax_total.value, '3.00');
     assert.equal(
       sent.payment_source.paypal.experience_context.return_url,
       'https://lavishleaf.org/store?paypal=return',

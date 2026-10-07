@@ -3,10 +3,15 @@
 // functions on the server (netlify/functions). The server's answer is the one
 // PayPal charges; the browser only shows the same sum in advance.
 //
-// The rules are the owner's, 2026-10-01, from docs/SHIPPING.md:
-//   * flat by the order's packed weight: under 1 lb $6.95, 1 to 3 lb $9.95,
-//     3 to 10 lb $14.95; over 10 lb cannot be posted (email for a quote);
-//   * any posted order of $100 or more: $4.95 flat;
+// The rules are the owner's, from docs/SHIPPING.md:
+//   * flat by the order's packed weight: up to 1 lb $11.95, 1 to 3 lb $17.95,
+//     3 to 10 lb $27.95; over 10 lb cannot be posted (email for a quote).
+//     Raised 2026-10-07 (owner: "bangalla shipping rates will cause us to
+//     lose money"): each band now covers the farthest zone (Zone 8) at the
+//     USPS Ground Advantage commercial price effective 4 Oct 2026, because
+//     the supplier charges us by weight, distance and speed;
+//   * no reduced rate over $100 any more (removed the same day: $4.95 on a
+//     heavy order lost money on every one);
 //   * NO pickup and NO local delivery for now (owner, 2026-10-02: nothing is
 //     in stock; goods would have to be shipped to him first, at his cost).
 //     Add a pickup back here, e.g. { 'pickup-eufaula': 'Eufaula' }, once
@@ -19,12 +24,13 @@
 
 export const SHIPPING = {
   bands: [
-    { upToOz: 16, cents: 695 },
-    { upToOz: 48, cents: 995 },
-    { upToOz: 160, cents: 1495 },
+    { upToOz: 16, cents: 1195 },   // Zone 8 cost $11.22 at 1 lb
+    { upToOz: 48, cents: 1795 },   // Zone 8 cost $16.30 at 3 lb
+    { upToOz: 160, cents: 2795 },  // Zone 8 cost $26.39 at 10 lb
   ],
-  reducedOverCents: 10000,
-  reducedCents: 495,
+  // A reduced rate for big orders: null means none (the owner's call, 2026-10-07).
+  reducedOverCents: null,
+  reducedCents: null,
   pickup: {},
   // Posted orders go to the 48 contiguous states and DC only.
   notPosted: ['AK', 'HI', 'PR', 'GU', 'VI', 'AS', 'MP', 'AA', 'AE', 'AP'],
@@ -54,7 +60,7 @@ export function quote(lines, { method } = {}) {
     if (!Number.isFinite(oz) || oz <= 0) throw new ShippingError('Something in your cart has no shipping weight yet. Please email support@lavishleaf.org.');
     const band = SHIPPING.bands.find((b) => oz <= b.upToOz);
     if (!band) throw new ShippingError('This order is over 10 lb, too heavy for our flat rates. Please email support@lavishleaf.org for a shipping quote.');
-    if (subtotal >= SHIPPING.reducedOverCents) {
+    if (SHIPPING.reducedOverCents != null && subtotal >= SHIPPING.reducedOverCents) {
       return { cents: SHIPPING.reducedCents, method, needsAddress: true, label: `Shipping (orders over ${money(SHIPPING.reducedOverCents)})` };
     }
     return { cents: band.cents, method, needsAddress: true, label: 'Shipping' };
@@ -81,7 +87,8 @@ export function addressOk(method, address) {
   return { ok: true };
 }
 
-/** For the cart's progress line: how far a posted order is from $4.95. */
+/** For the cart's progress line: how far a posted order is from the reduced rate (0 when there is none). */
 export function untilReduced(subtotalCents) {
+  if (SHIPPING.reducedOverCents == null) return 0;
   return Math.max(0, SHIPPING.reducedOverCents - subtotalCents);
 }

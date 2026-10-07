@@ -326,5 +326,16 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     2026-10-07: the founder card (Kevin Wright, `images/founder.jpg`), and
     compost and recycling pick-up both $20 a month. **Sales tax**: the owner
     says league fees and registrations, services and shipped goods are all
-    taxable; the checkout charges none yet, and must before PayPal goes live
-    (rate per OkTAP or his CPA).
+    taxable; built 2026-10-07 as item 24.
+
+24. **Shipping, prices and sales tax** (2026-10-07, the owner). Demo cards show
+    **no price** (only the registrations and the two pick-ups do); search sorts
+    unpriced products last. Shipping bands raised to cover USPS Zone 8 ($11.95 /
+    $17.95 / $27.95) and the over-$100 rate removed, because Bangalla bills its
+    carrier rate. **`tax.mjs`** is the one tax rule (cart, checkout, capture,
+    subscriptions): 6% on registrations, services and goods shipped to Oklahoma,
+    none out of state; the cart asks "Shipping to: Oklahoma / Another state" and
+    capture refuses an address that does not match. Open for his CPA: Oklahoma
+    destination rates for in-state deliveries, and tax on shipping charges. The
+    money plan is `docs/STORE-PLAN.md`. The refund page still promises 30-day
+    returns while Bangalla approves returns case by case: his decision.

@@ -755,14 +755,15 @@ textarea { min-height: 115px; resize: vertical; }
 
 .careers-grid {
   display: flex; flex-wrap: wrap; justify-content: center;
-  gap: 24px;
-  max-width: 1280px;
+  gap: 18px;
+  max-width: 1320px;
   margin: 0 auto;
   padding: var(--gap-md) 20px var(--gap-xl);
 }
 
+/* Five to a row on a wide screen (owner, 2026-10-07); they wrap below that. */
 .career-col {
-  flex: 0 1 290px;
+  flex: 0 1 232px;
   background: var(--card);
   border: 1px solid var(--rule-soft);
   border-radius: 10px;
@@ -770,8 +771,8 @@ textarea { min-height: 115px; resize: vertical; }
   box-shadow: var(--shadow-sm);
 }
 
-.career-col h3 { color: var(--leaf-bright); font-weight: 800; font-size: 1.05rem; margin-bottom: 12px; text-align: center; }
-.career-col p { color: var(--gray); font-size: 0.95rem; margin-bottom: 10px; line-height: 1.55; }
+.career-col h3 { color: var(--leaf-bright); font-weight: 800; font-size: 1rem; margin-bottom: 12px; text-align: center; }
+.career-col p { color: var(--gray); font-size: 0.9rem; margin-bottom: 10px; line-height: 1.55; }
 .career-col p strong { color: var(--white); }
 .career-col ul { list-style: none; padding: 0; margin: 0 0 14px; }
 

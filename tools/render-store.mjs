@@ -151,7 +151,9 @@ function card(p) {
     `    <h3 class="sp-name">${esc(p.name)}</h3>`,
     ...blurb,
     '    <div class="sp-foot">',
-    `      <span class="sp-price">${priceLine(p)}</span>`,
+    // Demo products show no price (owner, 2026-10-07: only the registrations
+    // and the pick-up services carry a price until products are chosen).
+    ...(p.demo ? [] : [`      <span class="sp-price">${priceLine(p)}</span>`]),
     button,
     '    </div>',
     '  </article>',
@@ -161,7 +163,7 @@ function card(p) {
 /** One Home shelf per category, in the order categories first appear. */
 function shelves(active) {
   const note = active.some((p) => p.demo)
-    ? '<p class="ss-demo-note"><strong>Demo catalogue.</strong> These are products we are considering, shown at the supplier\'s listed price ($0.00 where no price is published). They are not for sale yet; "Supplier page" opens the maker\'s own listing.</p>\n\n'
+    ? '<p class="ss-demo-note"><strong>Demo catalogue.</strong> These are products we are considering. They are not for sale yet, so they carry no price here; "Supplier page" opens the maker\'s own listing.</p>\n\n'
     : '';
   const groups = new Map();
   for (const p of active) {

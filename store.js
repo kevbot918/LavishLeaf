@@ -100,7 +100,7 @@
           blurb: ($('.sp-blurb', c) || {}).textContent || '',
           category: c.getAttribute('data-category') || def.title,
           shelf: def.slug,
-          price: m ? Math.round(parseFloat(m[1].replace(/,/g, '')) * 100) : 0,
+          price: m ? Math.round(parseFloat(m[1].replace(/,/g, '')) * 100) : null, // null: no price shown (a demo card)
           interval: /every (month|year)/.test(priceText) ? RegExp.$1 : null,
           tags: [],
           card: c,
@@ -540,8 +540,10 @@
       .filter(function (p) { return !onetime || !p.interval; })
       .map(function (p) { return { p: p, s: score(p, ws) }; })
       .filter(function (r) { return r.s > 0; });
-    if (state.sort === 'price-asc') rows.sort(function (a, b) { return a.p.price - b.p.price; });
-    else if (state.sort === 'price-desc') rows.sort(function (a, b) { return b.p.price - a.p.price; });
+    // Unpriced products (the demo catalogue) sort after the priced ones either way.
+    var unpriced = function (a, b) { return (a.p.price == null) - (b.p.price == null); };
+    if (state.sort === 'price-asc') rows.sort(function (a, b) { return unpriced(a, b) || a.p.price - b.p.price; });
+    else if (state.sort === 'price-desc') rows.sort(function (a, b) { return unpriced(a, b) || b.p.price - a.p.price; });
     else rows.sort(function (a, b) { return b.s - a.s || a.p.name.localeCompare(b.p.name); });
     var ul = $('#search-results'); ul.textContent = '';
     var count = $('#search-count');
@@ -559,7 +561,8 @@
       var body = el('div');
       var t = el('div', { class: 'ss-result-title' }); t.appendChild(highlight(p.name, ws)); body.appendChild(t);
       var meta = el('div', { class: 'ss-result-meta' });
-      var bits = [p.category, '$' + (p.price / 100).toFixed(2) + (p.interval ? ' every ' + p.interval : '')];
+      var bits = [p.category];
+      if (p.price != null) bits.push('$' + (p.price / 100).toFixed(2) + (p.interval ? ' every ' + p.interval : ''));
       meta.appendChild(highlight(bits.join(' · '), ws));
       if (p.blurb) { meta.appendChild(document.createTextNode(' · ')); meta.appendChild(highlight(p.blurb, ws)); }
       body.appendChild(meta);
