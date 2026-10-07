@@ -252,6 +252,8 @@ if (unknown.length) {
       paypalSandboxPlanId: p.paypalSandboxPlanId || null,
       ship: p.ship === true,
       shipOz: p.ship === true ? p.shipOz : null,
+      // Groceries carry the grocery tax rate (tax.mjs).
+      grocery: p.grocery === true,
       // The server refuses an order without its waiver (checkout.mjs), so
       // the waiver has to be in the catalog the server reads.
       waiver: p.waiver ? { version: p.waiver.version } : null,

@@ -1,70 +1,44 @@
 // Sales tax for the Lavish Leaf store: ONE set of rules, used by the cart in
-// the browser (cart.js imports this file) and by the checkout, capture and
-// subscribe functions on the server. Like shipping.mjs, the server's answer
-// is the one PayPal charges; the cart only shows the same sum in advance.
+// the browser (cart.js imports this file) and by the checkout and subscribe
+// functions on the server. Like shipping.mjs, the server's answer is the one
+// PayPal charges; the cart only shows the same sum in advance.
 //
-// The owner's rules, 2026-10-07:
-//   * Oklahoma 4.5% plus Pittsburg County 1.5%: 6% in all;
-//   * league fees, registrations and the pick-up services are taxable, and
-//     they all happen in Oklahoma, so they always carry it;
-//   * shipped goods are taxed when they are delivered in Oklahoma, at the
-//     same 6%; goods shipped to another state carry no tax, because Lavish
-//     Leaf has a physical place in Oklahoma only (and is far below every
-//     state's economic-nexus threshold).
-// Shipping charges are not taxed here. Two questions for the CPA are in
-// docs/SHIPPING.md: whether Oklahoma taxes a separately stated delivery
-// charge, and the Tax Commission's rule that an in-state delivery is taxed
-// at the rate where the buyer receives it (destination), not ours.
+// The owner's rule, 2026-10-07: "Our sales tax rate of 6% applies to every
+// product (except groceries) regardless of location and how it is paid or
+// delivered/shipped." Oklahoma 4.5% plus Pittsburg County 1.5%. Lavish Leaf
+// has a physical place in Oklahoma only, so no other state's rate is ever
+// charged. A product marked "grocery": true in products.json carries the
+// grocery rate instead (Oklahoma removed its STATE tax on groceries in 2024).
+// Shipping charges are not taxed here.
 
 export const TAX = {
-  home: 'OK',
   // Basis points: 450 = 4.5%.
   stateBp: 450,
   localBp: 150,
+  // Groceries: no STATE tax since 29 Aug 2024 (HB 1955), but the Tax
+  // Commission says "All local sales and use taxes still apply", so the
+  // county 1.5% stays (oklahoma.gov/tax, food and food ingredients). Live
+  // plants and garden seeds are NOT groceries: they carry the full 6%.
+  groceryBp: 150,
   label: 'Sales tax (Oklahoma 6%)',
 };
 
 export const RATE_BP = TAX.stateBp + TAX.localBp;
 
-/** Where a shipped order is going, as the cart asks it: Oklahoma or not. */
-export const SHIP_TO = ['OK', 'other'];
-
-export class TaxError extends Error {}
-
 /** Whole cents, half a cent rounding up. */
-export const taxOn = (cents) => Math.round((cents * RATE_BP) / 10000);
+const at = (cents, bp) => Math.round((cents * bp) / 10000);
+export const taxOn = (cents) => at(cents, RATE_BP);
 
 /**
  * The tax on an order.
- *   lines:  [{ product: { price, ship }, qty }]
- *   shipTo: 'OK' or 'other', required when something in the order ships
- * Returns { cents, taxableCents, shipTo, label }, or throws TaxError.
+ *   lines: [{ product: { price, grocery? }, qty }]
+ * Returns { cents, taxableCents, label }.
  */
-export function taxQuote(lines, { shipTo } = {}) {
-  const posts = lines.some(({ product }) => product && product.ship === true);
-  if (posts && !SHIP_TO.includes(shipTo)) {
-    throw new TaxError('Please choose whether your order ships to Oklahoma or another state.');
+export function taxQuote(lines) {
+  let full = 0, grocery = 0;
+  for (const { product, qty } of lines) {
+    if (product.grocery === true) grocery += product.price * qty;
+    else full += product.price * qty;
   }
-  const taxableCents = lines.reduce((sum, { product, qty }) => {
-    const taxed = product.ship === true ? shipTo === 'OK' : true;
-    return sum + (taxed ? product.price * qty : 0);
-  }, 0);
-  return { cents: taxOn(taxableCents), taxableCents, shipTo: posts ? shipTo : '', label: TAX.label };
-}
-
-/**
- * Whether the address PayPal collected is where the order was taxed for.
- * Checked on the server before the payment is captured, so an order taxed
- * as out of state cannot be delivered in Oklahoma, and the other way round.
- */
-export function taxAddressOk(shipTo, address) {
-  if (!shipTo) return { ok: true };
-  const inOk = String(address?.admin_area_1 || '').toUpperCase() === TAX.home;
-  if ((shipTo === 'OK') === inOk) return { ok: true };
-  return {
-    ok: false,
-    message: inOk
-      ? 'This order ships to Oklahoma, so it carries Oklahoma sales tax. Please choose Oklahoma in the cart and check out again. Nothing was charged.'
-      : 'This order ships outside Oklahoma, so it carries no Oklahoma sales tax. Please choose "Another state" in the cart and check out again. Nothing was charged.',
-  };
+  return { cents: taxOn(full) + at(grocery, TAX.groceryBp), taxableCents: full + grocery, label: TAX.label };
 }

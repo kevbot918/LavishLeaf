@@ -16,16 +16,19 @@ test('nothing posted, nothing charged and no address asked for', () => {
   assert.deepEqual([q.cents, q.method, q.needsAddress], [0, 'none', false]);
 });
 
-test('the weight bands cover Zone 8, and there is no reduced rate (2026-10-07)', () => {
-  assert.equal(quote([line(P(800, 6))], { method: 'ship' }).cents, 1195);      // 6 oz
-  assert.equal(quote([line(P(800, 16))], { method: 'ship' }).cents, 1195);     // exactly 1 lb
-  assert.equal(quote([line(P(800, 20))], { method: 'ship' }).cents, 1795);     // 1 lb 4 oz
-  assert.equal(quote([line(P(800, 30), 2)], { method: 'ship' }).cents, 2795);  // 3 lb 12 oz
-  assert.equal(quote([line(P(5000, 10), 3)], { method: 'ship' }).cents, 1795); // $150, 1 lb 14 oz: full rate
+test('the weight bands are the Zone 5 cost, and there is no reduced rate (2026-10-07)', () => {
+  assert.equal(quote([line(P(800, 6))], { method: 'ship' }).cents, 895);      // 6 oz
+  assert.equal(quote([line(P(800, 16))], { method: 'ship' }).cents, 895);     // exactly 1 lb
+  assert.equal(quote([line(P(800, 20))], { method: 'ship' }).cents, 1295);     // 1 lb 4 oz
+  assert.equal(quote([line(P(800, 30), 2)], { method: 'ship' }).cents, 1895);  // 3 lb 12 oz
+  assert.equal(quote([line(P(5000, 10), 3)], { method: 'ship' }).cents, 1295); // $150, 1 lb 14 oz: full rate
   assert.equal(untilReduced(7500), 0);
-  // USPS Ground Advantage commercial, Zone 8, effective 4 Oct 2026.
-  for (const [oz, cost] of [[16, 1122], [48, 1630], [160, 2639]]) {
-    assert.ok(SHIPPING.bands.find((b) => oz <= b.upToOz).cents > cost, oz + ' oz covers Zone 8');
+  // USPS Ground Advantage commercial, Zone 5, effective 4 Oct 2026: each band
+  // covers the middle of the country at its heaviest weight, and no more
+  // than $1 over it (the owner: no money made on shipping).
+  for (const [oz, cost] of [[15.99, 824], [48, 1212], [160, 1781]]) {
+    const band = SHIPPING.bands.find((b) => oz <= b.upToOz).cents;
+    assert.ok(band >= cost && band - cost <= 115, oz + ' oz: ' + band + ' vs Zone 5 ' + cost);
   }
 });
 
@@ -56,8 +59,8 @@ test('shipping is its own line on the PayPal order, and asks PayPal for the addr
   const shipping = quote(lines, { method: 'ship' });
   const body = orderBody(lines, { returnUrl: 'r', cancelUrl: 'c', shipping, userId: '1234abcd-0000' });
   const unit = body.purchase_units[0];
-  assert.equal(unit.amount.value, '27.85'); // 15.90 + 11.95
-  assert.equal(unit.amount.breakdown.shipping.value, '11.95');
+  assert.equal(unit.amount.value, '24.85'); // 15.90 + 8.95
+  assert.equal(unit.amount.breakdown.shipping.value, '8.95');
   assert.equal(unit.items[0].category, 'PHYSICAL_GOODS');
   assert.equal(body.payment_source.paypal.experience_context.shipping_preference, 'GET_FROM_FILE');
   assert.deepEqual(parseCustomId(unit.custom_id), { m: 'ship', u: '1234abcd-0000' });

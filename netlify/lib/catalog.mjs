@@ -11,6 +11,7 @@ export const catalog = {
     "paypalSandboxPlanId": null,
     "ship": false,
     "shipOz": null,
+    "grocery": false,
     "waiver": null
   },
   "recycle-monthly": {
@@ -23,6 +24,7 @@ export const catalog = {
     "paypalSandboxPlanId": null,
     "ship": false,
     "shipOz": null,
+    "grocery": false,
     "waiver": null
   },
   "soccer-player-fall": {
@@ -35,6 +37,7 @@ export const catalog = {
     "paypalSandboxPlanId": null,
     "ship": false,
     "shipOz": null,
+    "grocery": false,
     "waiver": {
       "version": "2026-09"
     }
@@ -49,6 +52,7 @@ export const catalog = {
     "paypalSandboxPlanId": null,
     "ship": false,
     "shipOz": null,
+    "grocery": false,
     "waiver": {
       "version": "2026-09"
     }

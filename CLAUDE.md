@@ -330,12 +330,16 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
 
 24. **Shipping, prices and sales tax** (2026-10-07, the owner). Demo cards show
     **no price** (only the registrations and the two pick-ups do); search sorts
-    unpriced products last. Shipping bands raised to cover USPS Zone 8 ($11.95 /
-    $17.95 / $27.95) and the over-$100 rate removed, because Bangalla bills its
-    carrier rate. **`tax.mjs`** is the one tax rule (cart, checkout, capture,
-    subscriptions): 6% on registrations, services and goods shipped to Oklahoma,
-    none out of state; the cart asks "Shipping to: Oklahoma / Another state" and
-    capture refuses an address that does not match. Open for his CPA: Oklahoma
-    destination rates for in-state deliveries, and tax on shipping charges. The
+    unpriced products last. Shipping bands are the USPS Zone 5 cost ($8.95 /
+    $12.95 / $18.95; he rejected Zone 8 bands as "way too high": no profit on
+    shipping, no loss, no scared buyers), over-$100 rate removed.
+    **`tax.mjs`** is the one tax rule (cart, checkout, subscriptions), HIS
+    rule: 6% on every product wherever it ships, groceries ("grocery": true)
+    1.5% county only. The legal check that disagrees (out-of-state shipments
+    exempt, in-state parcels at the buyer's rate, pick-ups probably untaxed)
+    is in docs/STORE-PLAN.md for his CPA; do not change the rule without him. The
     money plan is `docs/STORE-PLAN.md`. The refund page still promises 30-day
-    returns while Bangalla approves returns case by case: his decision.
+    returns while Bangalla approves returns case by case; he chose to keep
+    returns: 30 days from delivery, posted back within 14 days, buyer pays
+    return postage (refunds.html, 2026-10-07). Company page: division boxes
+    are names only; how each division is led is the list under them.

@@ -83,16 +83,14 @@ export function validateCart(cart, catalog) {
 /**
  * What the order carries in PayPal's custom_id, which PayPal returns at
  * capture: the waiver versions accepted (w), the shipping method (m) and
- * local ZIP (z) to check the address against, where the order was taxed for
- * (t: OK or other, tax.mjs), and the signed-in customer (u) whose order
- * history it belongs in. Written by the server only.
+ * local ZIP (z) to check the address against, and the signed-in customer (u)
+ * whose order history it belongs in. Written by the server only.
  */
-export function customId({ waivers = [], shipping = null, tax = null, userId = '' } = {}) {
+export function customId({ waivers = [], shipping = null, userId = '' } = {}) {
   const parts = [];
   if (waivers.length) parts.push('w=' + waivers.join(','));
   if (shipping && shipping.method && shipping.method !== 'none') parts.push('m=' + shipping.method);
   if (shipping && shipping.zip) parts.push('z=' + String(shipping.zip).slice(0, 5));
-  if (tax && tax.shipTo) parts.push('t=' + tax.shipTo);
   if (userId) parts.push('u=' + userId);
   const s = parts.join(';');
   if (s.length > 127) throw new CheckoutError(500, 'That order could not be labelled. Nothing was charged.');
@@ -148,7 +146,7 @@ export function orderBody(lines, { returnUrl, cancelUrl, note = '', waivers = []
   // What was agreed to, on the order itself. PayPal shows custom_id on the
   // transaction and returns it at capture, so an order is its own record of
   // the waiver the buyer accepted.
-  const custom = customId({ waivers, shipping, tax, userId });
+  const custom = customId({ waivers, shipping, userId });
   if (custom) unit.custom_id = custom;
   return {
     intent: 'CAPTURE',

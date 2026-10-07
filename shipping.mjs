@@ -4,12 +4,15 @@
 // PayPal charges; the browser only shows the same sum in advance.
 //
 // The rules are the owner's, from docs/SHIPPING.md:
-//   * flat by the order's packed weight: up to 1 lb $11.95, 1 to 3 lb $17.95,
-//     3 to 10 lb $27.95; over 10 lb cannot be posted (email for a quote).
-//     Raised 2026-10-07 (owner: "bangalla shipping rates will cause us to
-//     lose money"): each band now covers the farthest zone (Zone 8) at the
-//     USPS Ground Advantage commercial price effective 4 Oct 2026, because
-//     the supplier charges us by weight, distance and speed;
+//   * flat by the order's packed weight: up to 1 lb $8.95, 1 to 3 lb $12.95,
+//     3 to 10 lb $18.95; over 10 lb cannot be posted (email for a quote).
+//     The owner, 2026-10-07: "I don't want us to make money on shipping, I
+//     just don't want to lose money on shipping", and not to scare buyers
+//     off. So each band is what the order costs to post to the MIDDLE of the
+//     country (Zone 5, USPS Ground Advantage commercial, effective 4 Oct
+//     2026): nearer orders pay a little over cost, the far coasts a little
+//     under, and it evens out. (A first try that day covered Zone 8 and he
+//     called it far too high.) Check against the supplier's real charges;
 //   * no reduced rate over $100 any more (removed the same day: $4.95 on a
 //     heavy order lost money on every one);
 //   * NO pickup and NO local delivery for now (owner, 2026-10-02: nothing is
@@ -24,9 +27,9 @@
 
 export const SHIPPING = {
   bands: [
-    { upToOz: 16, cents: 1195 },   // Zone 8 cost $11.22 at 1 lb
-    { upToOz: 48, cents: 1795 },   // Zone 8 cost $16.30 at 3 lb
-    { upToOz: 160, cents: 2795 },  // Zone 8 cost $26.39 at 10 lb
+    { upToOz: 16, cents: 895 },    // Zone 5: $8.24 under 1 lb, $9.29 at 1 lb
+    { upToOz: 48, cents: 1295 },   // Zone 5: $9.29 to $12.12 (1 to 3 lb)
+    { upToOz: 160, cents: 1895 },  // Zone 5: $12.12 to $17.81 (3 to 10 lb)
   ],
   // A reduced rate for big orders: null means none (the owner's call, 2026-10-07).
   reducedOverCents: null,

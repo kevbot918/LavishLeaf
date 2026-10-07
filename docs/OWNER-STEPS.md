@@ -311,7 +311,7 @@ cost, margin and stock beside each Bangalla product.
      then a box of sponges (about 2 lb), with a **far-away address** (any
      Seattle ZIP, e.g. 98101) and read the shipping charge at checkout
      **without paying**. Send Claude the three numbers: the store's bands
-     ($11.95 / $17.95 / $27.95) were set from USPS's prices and must be
+     ($8.95 / $12.95 / $18.95) were set from USPS's prices and must be
      checked against Bangalla's.
    * Still to ask Bangalla by email: whether "Third Party Restriction" brands
      (A La Maison, Desert Essence) may be sold on your own website, and
@@ -417,6 +417,44 @@ the farm's own bagged compost.
 
 ---
 
+## G4. Email that lands in the inbox, not spam (15 minutes)
+
+Checked 2026-10-07 (the careers@ test reached you, but in Spam). The domain's
+records said:
+
+* **SPF** (a TXT record on lavishleaf.org): `v=spf1 include:squarespace-mail.com ~all`.
+  That names only **Squarespace's** mail servers, not Google's, so mail you
+  send from @lavishleaf.org through Gmail fails the check. **Fix it.**
+* **DKIM for Google** (`google._domainkey`): **missing.** Mail from you
+  carries no Lavish Leaf signature. **Add it.**
+* **DMARC**: `v=DMARC1; p=none`. Fine for now.
+
+1. **SPF, in Netlify:** app.netlify.com -> **Domains** -> lavishleaf.org ->
+   **DNS records** -> the TXT record whose value starts `v=spf1` -> **Edit**
+   -> value: `v=spf1 include:_spf.google.com ~all` -> Save. (You do not send
+   mail through Squarespace. Amazon SES needs nothing here: it passes on its
+   own DKIM records from section F.)
+2. **DKIM, in Google:** admin.google.com -> **Apps** -> **Google Workspace**
+   -> **Gmail** -> **Authenticate email** -> domain lavishleaf.org ->
+   **Generate new record** (2048 bit, prefix `google`) -> copy the long TXT
+   value.
+3. **In Netlify DNS:** **Add new record** -> type **TXT**, name
+   `google._domainkey`, value: what you copied -> Save.
+4. Wait about an hour, then on Google's **Authenticate email** page ->
+   **Start authentication**. It should then say it is authenticating email
+   with DKIM.
+5. **Teach your inbox:** open the test in Spam -> **Report not spam**. Then
+   the Gmail search box -> the sliders icon -> **To:** careers@lavishleaf.org
+   -> **Create filter** -> tick **Never send it to Spam** -> **Create
+   filter**. The same for support@ and gaming@.
+6. If careers@ is a Google **Group**: admin.google.com -> Directory -> Groups
+   -> careers@ -> **Settings** -> **Spam message handling**: "Skip the
+   moderation queue and post to the group".
+
+Tell Claude when 1 to 4 are done; the records get checked from outside.
+
+---
+
 ## H. Payments: PayPal (deferred by you; when you are ready)
 
 Steps 1 to 6 of docs/STORE-STEPS.md, unchanged. In short: developer.paypal.com
@@ -432,7 +470,7 @@ test order end to end. Then the same with a **Live** app and
 
 | | Step | Notes |
 |---|---|---|
-| 1 | ~~Sales tax rates~~ **Built 2026-10-07**: 6% (OK 4.5% + Pittsburg County 1.5%) on registrations, services and goods shipped to Oklahoma; none on goods shipped out of state | **Ask your CPA two things** (docs/STORE-PLAN.md, Sales tax): (a) the Tax Commission says an in-state delivery is taxed at the BUYER's local rate, not ours; (b) whether shipping charges are taxable. If (a) is yes, Claude switches to rates by address. When you make the PayPal subscription plans, leave their tax at 0%: the site adds the 6% itself |
+| 1 | ~~Sales tax~~ **Built 2026-10-07 to your rule**: 6% on every product wherever it ships; groceries 1.5% (the state part is gone, the county part stays) | **Take docs/STORE-PLAN.md "Sales tax" to your CPA**: the Tax Commission's own rules say goods shipped out of state carry no Oklahoma tax, parcels within Oklahoma take the buyer's local rate, and pick-up services are probably not taxable. Whatever the CPA says, it changes in one file. Leave the PayPal subscription plans at 0% tax: the site adds it |
 | 2 | ~~Founder card~~ **Done 2026-10-07** | Photo, name and story on the Company page; change the wording any time |
 | 3 | **Home page logos** for Rec Sports, Gaming and Lawn & Garden | Send the images |
 | 4 | ~~Confirm prices~~ **Done 2026-10-06**: compost and recycling both $20 a month | |
