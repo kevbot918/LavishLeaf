@@ -343,3 +343,18 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     returns: 30 days from delivery, posted back within 14 days, buyer pays
     return postage (refunds.html, 2026-10-07). Company page: division boxes
     are names only; how each division is led is the list under them.
+
+25. **Green Swaps and the second supplier round** (2026-10-07). The Store has
+    a **Green Swaps** view (sidebar, `#swaps`, static HTML in store.html, styles
+    `.gs-*` in store.css): ten swap cards linking to brands with
+    `rel="sponsored"` and an FTC disclosure; each brand's home-page link is
+    replaced by its affiliate link as he is approved (OWNER-STEPS G7). Tier 0
+    gained TeemDrop and AliExpress Choice (ranks 30 to 46, "see page" because
+    their prices ARE our cost), worm dropship and Oklahoma-registered pest
+    lines (47 to 51); Tier 1 gained Faire books and journals (87 to 96, new
+    shelf "Books & Journals") and seed, fertiliser, Faire and garden suppliers
+    (97 to 106). GrowOrganic REFUSED him (online-only); the register lists who
+    else is closed. Decisions with recommendations (Printful for merch, Lulu,
+    Greener Printer and Mixam for print, the affiliate list, bulk sources) are
+    in docs/STORE-PLAN.md; his ordered checklist is the top of
+    docs/OWNER-STEPS.md. Seed now needs the $25 Oklahoma retail seed licence.

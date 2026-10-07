@@ -63,6 +63,7 @@ const SHELF = [
   [/^(plastic-free|compostable|paper)/, 'Plastic-Free Home', '♻️'],
   [/^refill/, 'Refill Station', '🫙'],
   [/^herb bar/, 'Herb Bar', '🌶️'],
+  [/^books/, 'Books & Journals', '📚'],
   [/^(games|collectables|impulse)/, 'Games & Gifts', '🎲'],
   [/^misc/, 'Miscellany', '📦'],
 ];

@@ -22,6 +22,46 @@ deploy -> Deploy site** once you have added a batch.
 
 ---
 
+## THE ORDER TO DO IT ALL IN (updated 2026-10-07)
+
+Every open step, in the order that unblocks the most. Each line points to the
+section with the clicks. Cross a line out when it is done and tell Claude.
+
+**This week: free, and everything else waits on them**
+1. **Email out of spam** (G4): SPF record, Google DKIM, Not-spam filter. 15 min.
+2. **SST resale certificate** (G1), one per supplier. 15 min.
+3. **Arbico distributor application** (G2) with the certificate and a W-9.
+4. **Tax questions to the CPA**: S or C corporation (Form 2553 and its
+   deadline), and the sales tax notes in docs/STORE-PLAN.md.
+5. **Bangalla shipping check** (G item 4): three carts to a Seattle ZIP,
+   read the shipping, do not pay. Send Claude the numbers.
+6. **Licences by mail**: fertilizer $50 (G3, ask about timing first) and
+   **retail seed $25** (G5). Both to ODAFF.
+
+**Next: accounts that cost nothing**
+7. **Printful** account and the merch samples (G6).
+8. **Affiliate networks** for Green Swaps (G7): Awin, Impact, FlexOffers,
+   SeedsNow, Azure, Bookshop.org.
+9. **Supplier applications** (G8): Nature's Footprint and Urban Worm
+   (worm dropship), High Mowing (seeds), Hydrofarm, Exaco, Frontier Co-op,
+   Faire retailer account.
+10. **Sample orders** of the TeemDrop and AliExpress lines you want (G9),
+    before any goes on sale.
+11. **Amazon SES** for the store's own email (F). 45 min plus Amazon's review.
+
+**Then: switching the store on**
+12. **Pick the products and prices** in the dashboard's Store products.
+13. **PayPal** sandbox, then live (H). The store takes money after this.
+14. **Design files** for the first merch (logo, 2 to 4 slogans) and the first
+    seed calendar and brochure; Claude can draft both.
+
+**Still open from before** (section I): Home page logos, a recycling photo,
+the first YouTube video, Pirate Ship, a PO box, Google steps A to E if any
+are unfinished.
+
+---
+
+
 ## A. Google Search Console (10 minutes, then up to an hour of waiting)
 
 **What it is for:** the dashboard's "What people searched on Google" section.
@@ -452,6 +492,88 @@ records said:
    moderation queue and post to the group".
 
 Tell Claude when 1 to 4 are done; the records get checked from outside.
+
+---
+
+### G5. The Oklahoma retail seed licence ($25 a year)
+
+Needed before ANY seed packet is sold, a supplier's or ours.
+
+* Form: https://ag.ok.gov/wp-content/uploads/2023/04/Printable-Seed-License-Dec-2024.pdf
+  (ODAFF form 41413A). Questions: ODAFF Consumer Protection, 405-522-5452.
+* Tick **Retail** ("required by firms or individuals who sell seed to retail
+  purchasers"). Business Lavish Leaf Inc, the farm's address and county
+  Pittsburg, kwright@lavishleaf.org.
+* Sign the **affidavit** on the form that you "sell only seed which has been
+  labeled by another firm" (true while every packet is a supplier's). That
+  spares the inspection fee.
+* $25 check to the Oklahoma Department of Agriculture, Food and Forestry. It
+  expires **30 June** each year. Ask on the phone whether an online-only shop
+  counts its farm as the one location.
+
+### G6. Printful: the merch account (free)
+
+1. printful.com -> **Sign up** (business email) -> **Stores** -> **Add store**
+   -> **Manual order platform / API**. Name it Lavish Leaf.
+2. **Settings -> Billing**: a card (charged only when an order is confirmed).
+3. **Settings -> Branding**: upload the logo; set the **packing slip** message
+   and Lavish Leaf as the sender. Add an **inside label** design ($1.25 a shirt).
+4. Make the first products from these blanks: **Stanley/Stella SATU001 or
+   SATU007 organic tee**, **Econscious EC8000 organic tote**, **Stanley/Stella
+   organic hoodie (SASU009 or SASU003)**, **Econscious EC7000 organic cap**.
+   Tick "US fulfilment" on each.
+5. **Order one sample of each** (20% off, one sample order a month on the free
+   plan) and check the print, the fit and the label.
+6. Send Claude the product names and your prices; the store gets the pages and
+   the order goes to Printful by hand until the volume asks for the API.
+
+### G7. Green Swaps affiliates (free; apply to all)
+
+The page is live (Store -> Green Swaps). Networks look at it when they decide.
+For each: sign up as a **publisher** with Lavish Leaf Inc, lavishleaf.org,
+"eco home and garden store and guide", promotional method "content / website",
+and a **W-9 with the EIN**. Payouts by bank transfer.
+
+1. **Awin** (awin.com, may ask a small refundable deposit): then apply to
+   Botanical Interests, True Leaf Market, EarthHero, ThredUp, Earth Breeze.
+2. **Impact** (impact.com, "Partners"): then Blueland, Grove, Gardener's Supply.
+3. **FlexOffers** (flexoffers.com): Who Gives A Crap, Public Goods, Tru Earth, Pact.
+4. **SeedsNow** (seedsnow.com/pages/become-a-seedsnow-affiliate): 25%.
+5. **Azure Standard Share Azure** (place one order first) and **Bookshop.org**
+   affiliate (10%).
+6. As each approves, send Claude the link; it replaces the brand's home page
+   on the card. Amazon Associates last, if at all.
+
+### G8. Supplier applications (all free to open)
+
+| Supplier | What for | How |
+|---|---|---|
+| **Nature's Footprint** (Worm Factory) | worm bins, free dropship, no minimum | naturesfootprint.com/pages/sales-partners form |
+| **Urban Worm Company** | worm bags and live worms, dropship | shop.urbanwormcompany.com/pages/resellers (Google form); ask their heat and cold holds |
+| **High Mowing Organic Seeds** | organic seed packets, no minimum, part returnable | sign the Resellers Agreement; seedracks@highmowingseeds.com, 866-735-4454 opt. 4 (after the seed licence) |
+| **Sow True Seed** | heirloom seed, $150 | sowtrueseedwholesale.com registration; say you are online, they decide case by case |
+| **Hydrofarm** | seedling heat mats | hydrofarm.com/contact-us?opt=2 (Become a Retailer) |
+| **Exaco Trading** (Texas) | composters, kitchen pails | call (512) 407-8500 |
+| **Frontier Co-op** | bulk herbs and natural goods, free freight at $250 | wholesale.frontiercoop.com, a "Web Retailer" account |
+| **Faire** (retailer) | books, journals, reusables | faire.com -> Sign up as a retailer, online shop, with screenshots of lavishleaf.org; Net 60 and free returns on a first order |
+| **Down To Earth** (later, $250) | fertiliser direct | the 2026 account packet to sales@downtoearthdistributors.com |
+
+Already refused or closed (do not apply): GrowOrganic, Seed Savers, Baker
+Creek, Safer Brand, Bully Tools.
+
+### G9. Samples before anything from China goes on sale
+
+TeemDrop (teemdrop.com, free account; orders by CSV upload, PayPal) and
+AliExpress (your own account; order by hand to the customer's address).
+
+* Order **one of each** line you want, to yourself. Check it is what the
+  photo shows, and keep the photo you take: it is the store's photo.
+* Food-contact items (wraps, silicone bags, bowls, cutlery): ask the seller for
+  the food-safety test papers.
+* Solar and LED lights: check the battery and the build.
+* Squishies and fidget toys: listed as **desk toys for adults**.
+* Never copy a seller's "organic" or "biodegradable" wording; Claude writes
+  the product text from what the sample is.
 
 ---
 

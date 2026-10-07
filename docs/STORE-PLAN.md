@@ -241,6 +241,101 @@ affiliates).
   $75 to $200).
 * Not in reach: Bountiful Baskets, Country Life Natural Foods.
 
+## Decisions to make, with the recommendation (2026-10-07, second round)
+
+The owner, 2026-10-07: GrowOrganic refused an online-only shop; Lavish Leaf
+designs its OWN merch (name, logo, eco and community slogans), customers do
+not design; Faire for books and journals; squishies as desk toys; Green Swaps
+on the Store page; pallets that can be resold without a $10,000 a year
+account. The product rows are in docs/STORE-PRODUCTS.md (Tier 0 ranks 30 to
+51, Tier 1 ranks 87 to 106).
+
+### 1. Merch (tees, totes, hoodies, hats): **Printful**, Apliiq as runner-up
+
+| | Printful | Apliiq | Printify | Teemill |
+|---|---|---|---|---|
+| Organic, printed in the US | Stanley/Stella SATU001 tee from $15.91, SATU007 from $14.56, Econscious EC8000 organic tote $15.87, organic hoodies $36 to $42, organic cap $16.92, bucket hat $20.70 | Econscious EC1000 tee blank $13.13 + $7.49 print, EC8001 tote $12.85 + print, organic hoodie $35.75 + print | Econscious, Allmade, Bella+Canvas recycled via Ink Blot, SwiftPOD, Fulfill Engine; $16 to $23 a tee | All GOTS organic, renewable energy, plastic-free paper packaging, now a US facility |
+| US shipping, one tee | $4.95 (+$2.20 each extra) | about $4.49 for 3 tees + $1 a piece | $4.95 to $5.69 | **£15**, 10 to 15 days |
+| Our label in the neck | Yes, $1.25 inside | Yes, sewn or printed, $2.50 | **Not on the organic US blanks** | Logo on the shipping label only |
+| Packing slip / return address | Free Lavish Leaf slip; customer never sees Printful | Branded packaging $0.50 | Custom return address, $0.25 insert card | Plain, no invoice |
+| Fees | $0 a month; Growth $24.99 free from $12K a year | Free; VIP 20% off | $0; Premium $24.99 to $39 | none found |
+| Orders from our own site | Manual dashboard order or free API store | API (needs a developer), dashboard | Manual, CSV or free API | API |
+| Reviews | Trustpilot 4.2 (7,920) | 2.8 (5) | 4.5 (7,668) | 4.3 (4,512) |
+| Weak point | Recycled plastic mailers, not plastic-free | Few reviews | Quality varies by printer; no neck labels on organic | About twice the cost delivered |
+
+**Recommendation: Printful.** Every point that matters checked out on its own
+pages: US organic blanks in all four products, a Lavish Leaf neck label, a free
+branded packing slip, certified water-based inks, 2 to 5 day production, a free
+reprint for any misprint reported within 30 days, and an API store for our
+cart. Start with the free plan, order one sample of each item (20% off), then
+list. **Runner-up: Apliiq** for the best private labelling. **Teemill** if the
+packaging must be plastic-free and the price can be higher.
+
+**Later, for a best-seller: a bulk run.** 24 organic tees with a 2-colour
+front cost about $12.01 each at ooShirts ($10.43 at 48) and with a back print
+$15.09 ($12.75 at 48). With postage that is about the same as Printful for a
+front print and $3 to $5 cheaper with a back print, but every size has to sell.
+Oklahoma printers: Oklahoma Shirt Co (OKC, 24 minimum), Mythic Press (Tulsa,
+25), Broken Arrow Wear (water-based ink, 12 minimum); call for quotes.
+
+### 2. Printing our own brochures and seed calendars
+
+| Job | Recommendation | Price (2026-10-07) | Alternatives |
+|---|---|---|---|
+| Brochures to hand out, on recycled paper | **Greener Printer** (all recycled, FSC, soy inks) | 100 tri-fold $124.78, 250 $211.50 | GotPrint, cheapest: 100 $60.55, 250 $113.58 (no recycled stock); Vistaprint 100 $75.59 on sale |
+| Flyers, 250 | **Mixam** | $70.50 | Vistaprint $84.99 on sale; GotPrint $112.20 |
+| A wall calendar sold online, printed and shipped one at a time | **Lulu** (true 11 x 8.5 landscape, free API, unbranded) | $13.18 print + $5.69 mail | Printful (A4) about $20.98 delivered; Printify about $18.98 |
+| 25 calendars to sell at the farm and leagues | **Mixam** | $188 ($7.52 each) | Vistaprint about $266; UPrinting $317 |
+
+### 3. Green Swaps affiliates: more is better, within reason
+
+Every programme is free to join and each approved one is one more card on the
+page, so apply to all of these; a page of 10 to 15 swaps is plenty for
+visitors. The page is built (Store -> Green Swaps), linking to each brand's
+home page until its affiliate link arrives.
+
+| Network (free) | Programmes to apply for there |
+|---|---|
+| **Awin** (ShareASale merged into it) | Botanical Interests 15%, True Leaf Market 10 to 20%, EarthHero 3 to 8%, ThredUp 15% new, Earth Breeze |
+| **Impact** | Blueland 8% new / 4%, Grove Collaborative, Gardener's Supply |
+| **FlexOffers** | Who Gives A Crap 1.6%, Public Goods, Tru Earth, Pact, etc |
+| **Refersion** (brand's own) | SeedsNow 25% |
+| **Direct with the brand** | Azure Standard "Share Azure" ($25 credit per new customer), Bookshop.org 10% |
+| **AvantLink** | Patagonia (rate to confirm) |
+| Amazon Associates | last, as a backup: 3% and closed without 3 sales in 180 days |
+
+### 4. Pallets and bulk we can resell, without a $10,000 a year account
+
+| | Source | Minimum | Fit |
+|---|---|---|---|
+| 1 | **Frontier Co-op** "Web Retailer" account | none; free freight at $250 | Bulk herbs, spices, natural home goods; MAP rules |
+| 2 | **Faire** | per brand, often $50 to $150 | Books, journals, reusables; Net 60, free returns on a first order |
+| 3 | **Mountain Rose Herbs** | $200 an order | Organic herbs, teas, oils; the account itself needs no $10K |
+| 4 | **Starwest Botanicals** | none; free delivery at $250 | Second herb source, up to 40% off |
+| 5 | **WebstaurantStore** | none | Compostable plates, cutlery, to-go ware; upload the resale form |
+| 6 | **Costco Business / Sam's Club** | membership | Resale licence on file; bulk eco consumables to split |
+| 7 | **Direct Liquidation** (Bentonville AR pickup) | per lot, $300 to $1,500 | Only "Brand New" or shelf-pull lots with a manifest |
+| 8 | **Liquidation.com** (Garland TX pickup) | per lot | Same caution |
+
+Local pallet shops in Tulsa and OKC exist (Pallet Liquidation Wholesale USA,
+Tulsa Wholesale Liquidation) but sell mixed returns, not garden goods. Any
+pallet from a supplier can be marked "hold at terminal" for pickup at Estes in
+Atoka or ODFL in Tulsa. Closed: BULQ, Tundra, Abound.
+
+### 5. Licences the new products bring
+
+* **Seed: Oklahoma Retail Seed Dealer licence, $25 a year**, expires 30 June,
+  with an affidavit that the seed is labelled by another firm (ODAFF form
+  41413A, https://ag.ok.gov/wp-content/uploads/2023/04/Printable-Seed-License-Dec-2024.pdf,
+  405-522-5452). Needed before any seed packet is sold, ours or a supplier's.
+* **Fertilizer licence, $50** (OWNER-STEPS G3), and only fertilizers the maker
+  has registered in Oklahoma (Down To Earth's own sheet says All Purpose,
+  Acid Mix, Rose & Flower, Starter are NOT).
+* **Pesticides**: list only products shown "Approved" in ODAFF's search; no
+  licence for general-use products, a permit only for restricted-use ones.
+* **Children's products**: squishies and fidget toys are listed as adult desk
+  toys (owner, 2026-10-07).
+
 ## Not verified (pages blocked or behind a login)
 
 Faire's current terms, Kole Imports, Grove and Bee's Wrap commission rates,

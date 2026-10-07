@@ -380,7 +380,7 @@
   // changes with the viewport (and with its own phone menu).
   function measureSite() { document.documentElement.style.setProperty('--site-h', siteHeaderHeight() + 'px'); }
   function markCurrent() {
-    var key = current.view === 'home' ? 'home' : current.view === 'search' ? 'search' : current.view === 'list' ? current.arg : current.view === 'shelf' ? 'shelf/' + current.arg : '';
+    var key = current.view === 'home' ? 'home' : current.view === 'search' ? 'search' : current.view === 'swaps' ? 'swaps' : current.view === 'list' ? current.arg : current.view === 'shelf' ? 'shelf/' + current.arg : '';
     $$('[data-nav]').forEach(function (a) {
       if (a.getAttribute('data-nav') === key) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
     });
@@ -400,6 +400,8 @@
       if (q.get('q') != null && input.value !== q.get('q')) input.value = q.get('q');
       runSearch();
       setTimeout(function () { input.focus(); }, 50);
+    } else if (path === 'swaps') {
+      show('swaps'); setTitle('Green Swaps');
     } else if (path.indexOf('list/') === 0) {
       current.arg = path.slice(5);
       if (!listById(current.arg)) { location.hash = '#home'; return; }

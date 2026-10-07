@@ -646,3 +646,16 @@ body.ss-resizing .ss-side { transition: none; }
 .cart-ship-row input { accent-color: var(--accent-fill); }
 .cart-nudge { margin: 10px 0 0; padding: 8px 10px; border-radius: 8px; background: var(--accent-soft); color: var(--text); font-size: .88rem; }
 .cart-shipline { margin: 10px 0 0; text-align: right; color: var(--muted); }
+
+/* Green Swaps (owner, 2026-10-07): affiliate swaps we do not carry. */
+.gs-intro { max-width: 80ch; margin: 14px 32px 0; color: var(--text); line-height: 1.55; }
+.gs-disclosure { margin-top: 8px; padding: 10px 14px; border: 1px solid var(--accent-fill); border-radius: 10px; background: var(--accent-soft); font-size: .88rem; }
+.gs-disclosure strong { color: var(--accent); }
+.gs-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin: 18px 32px 28px; }
+.gs-card { flex: 0 1 230px; display: flex; flex-direction: column; gap: 6px; padding: 14px; border: 1px solid var(--border-soft); border-radius: 10px; background: var(--surface-3); box-shadow: var(--shadow); }
+.gs-icon { font-size: 1.8rem; }
+.gs-from { margin: 0; font-size: .78rem; color: var(--muted); }
+.gs-to { margin: 0 0 6px; font-size: .92rem; line-height: 1.35; color: var(--text); }
+.ss-shell .gs-card .btn { margin-top: auto; width: 100%; text-align: center; white-space: normal; }
+@media (max-width: 1000px) { .gs-intro { margin: 12px 16px 0; } .gs-grid { margin: 14px 16px 24px; } }
+@media (max-width: 560px) { .gs-card { flex-basis: 100%; } }
