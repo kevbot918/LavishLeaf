@@ -674,3 +674,7 @@ body.ss-resizing .ss-side { transition: none; }
 .ss-shell .gs-card .btn { margin-top: auto; width: 100%; text-align: center; white-space: normal; }
 @media (max-width: 1000px) { .gs-intro { margin: 12px 16px 0; } .gs-grid { margin: 14px 16px 24px; } }
 @media (max-width: 560px) { .gs-card { flex-basis: 100%; } }
+/* SeedsNow on Home, and the partners under Green Swaps (2026-10-10). */
+.gs-feature-home { margin-top: 6px; margin-bottom: 4px; }
+.ss-partners { margin: -2px 0 4px; }
+.ss-partners .ss-item-sub { padding-left: 46px; font-size: .9rem; }

@@ -1,0 +1,146 @@
+{
+ "_help": "The Bangalla lines worth offering (2026-10-10 analysis: the owner's cost against what shoppers pay at Vitacost, iHerb, Target, Walmart, Amazon and the brand sites). The analysis itself uses his cost and is NOT in this public repo. tools/demo-store.mjs shows only these Bangalla SKUs on the Store, with Bangalla's photo. group offer = a fair margin at a competitive price; add-on = thin margin, worth it only beside other items in one order. price = our suggested selling price (public market level), not shown until the store goes live. image = our local copy (downloaded from Bangalla's photo, source).",
+ "picks": [
+  {
+   "sku": "B-54937-1PK",
+   "group": "offer",
+   "price": 6.49,
+   "image": "images/store/b-54937-1pk.jpg",
+   "source": "https://cdn10.bigcommerce.com/s-ex8q3n8/products/15815/images/116376/8c4449f1-871f-4402-a754-9b03551a7764.ee10f7cec589f3b94af1409fbde69419__11466.1655390917.500.500.jpg?c=2"
+  },
+  {
+   "sku": "B-54939-1PK",
+   "group": "offer",
+   "price": 6.49,
+   "image": "images/store/b-54939-1pk.jpg",
+   "source": "https://cdn10.bigcommerce.com/s-ex8q3n8/products/15816/images/119092/c5feeb75-e931-4135-8838-ba000bf001c5.011152472c00712fc252c90568f475bf__15707.1655417251.500.500.jpg?c=2"
+  },
+  {
+   "sku": "B-54936-1PK",
+   "group": "offer",
+   "price": 4.99,
+   "image": "images/store/b-54936-1pk.jpg",
+   "source": "https://cdn10.bigcommerce.com/s-ex8q3n8/products/15812/images/116374/6ff097e9-568b-44b1-96dc-34ab1ecab25f.d3fbaee27165cfbfbbd870ca60c6a21e__77285.1655401538.500.500.jpg?c=2"
+  },
+  {
+   "sku": "B-83205-1PK",
+   "group": "offer",
+   "price": 8.99,
+   "image": "images/store/b-83205-1pk.jpg",
+   "source": "https://cdn10.bigcommerce.com/s-ex8q3n8/products/19095/images/129638/e6c21fd0-4cb6-4dee-bf01-e3017a9b23a2_1.9fe3f187f1f8b10fc69daec8bd0a3794__31914.1655413648.500.500.jpg?c=2"
+  },
+  {
+   "sku": "B-54129-1PK",
+   "group": "offer",
+   "price": 7.29,
+   "image": "images/store/b-54129-1pk.jpg",
+   "restricted": "Bangalla Third Party Restriction brand: ask Bangalla before listing",
+   "source": "https://cdn10.bigcommerce.com/s-ex8q3n8/products/46161/images/126308/18d12266-b0ff-4cfa-8724-d028061e240a_1.bc30e02aeb1489bdd6dd4f92156489a4__57000.1655403290.500.500.jpg?c=2"
+  },
+  {
+   "sku": "B-58440-1PK",
+   "group": "offer",
+   "price": 2.99,
+   "image": "images/store/b-58440-1pk.jpg",
+   "source": "https://cdn10.bigcommerce.com/s-ex8q3n8/products/13237/images/109569/3a86cb5b-a778-44f3-a8ca-83b8b4af64ad_1.fc9b465f56403efeaf427ee69f728b53__12466.1655365375.500.500.jpg?c=2"
+  },
+  {
+   "sku": "B-61860-1PK",
+   "group": "offer",
+   "price": 7.99,
+   "image": "images/store/b-61860-1pk.jpg",
+   "source": "https://cdn10.bigcommerce.com/s-ex8q3n8/products/64858/images/83851/277af8a4-00d4-4f8e-9f38-01369e1e7912.8f19d6c6a8810090919e4f02fe0962da__00774.1655468319.500.500.jpg?c=2"
+  },
+  {
+   "sku": "B-24616-8PK",
+   "group": "offer",
+   "price": 49.99,
+   "image": "images/store/b-24616-8pk.jpg",
+   "source": "https://cdn10.bigcommerce.com/s-ex8q3n8/products/67606/images/106800/bb687752-c755-4818-83c3-aa40633b1206.16a8c6d0e5491da43c8ee88fdc454f31__29286.1655191320.500.500.jpg?c=2"
+  },
+  {
+   "sku": "B-25849-6PK",
+   "group": "offer",
+   "price": 32.99,
+   "image": "images/store/b-25849-6pk.jpg",
+   "source": "https://cdn10.bigcommerce.com/s-ex8q3n8/products/44734/images/119929/b9bd4ef5-116d-46ac-989b-ecc0229d3f5f.0cd401e3ff04bafcc92b96d09f7a030e__10626.1655389032.500.500.jpg?c=2"
+  },
+  {
+   "sku": "B-60917-12PK",
+   "group": "offer",
+   "price": 34.99,
+   "image": "images/store/b-60917-12pk.jpg",
+   "source": "https://cdn10.bigcommerce.com/s-ex8q3n8/products/64834/images/104354/6d2ee632-09e7-4d9f-93fd-d135830e5896.72a7593bfa4b53cfa2f041fd38d36b3c__01983.1655210334.500.500.jpg?c=2"
+  },
+  {
+   "sku": "B-89495-12PK",
+   "group": "offer",
+   "price": 44.99,
+   "image": "images/store/b-89495-12pk.jpg",
+   "source": "https://cdn10.bigcommerce.com/s-ex8q3n8/products/19980/images/129714/a21f5775-6e4c-4e59-9f40-620b28f479ec.d60b8a82e163af254fc150a3d296689c__30347.1655433690.500.500.jpg?c=2"
+  },
+  {
+   "sku": "B-66316-1PK",
+   "group": "offer",
+   "price": 11.49,
+   "image": "images/store/b-66316-1pk.jpg",
+   "source": "https://cdn10.bigcommerce.com/s-ex8q3n8/products/64000/images/85437/760ebd1c-54d0-4331-8cda-f356772ee15c.0ecebb29c2858c77cea05552bf072a9b__37357.1655468440.500.500.jpg?c=2"
+  },
+  {
+   "sku": "B-34703-1PK",
+   "group": "add-on",
+   "price": 7.39,
+   "image": "images/store/b-34703-1pk.jpg",
+   "source": "https://cdn10.bigcommerce.com/s-ex8q3n8/products/64419/images/80826/d822ef75-3e05-4783-af44-ebfccd3c19c5.505b3d75ab0aab677138cd6bd31a6759__06268.1655201951.500.500.jpg?c=2"
+  },
+  {
+   "sku": "B-44495-1PK",
+   "group": "add-on",
+   "price": 7.39,
+   "image": "images/store/b-44495-1pk.jpg",
+   "source": "https://cdn10.bigcommerce.com/s-ex8q3n8/products/64546/images/81068/3e8caf34-3d5a-4f27-83a4-9de7a77c09d6.cfaaec819b72efcafe0fb64ddcb34f3c__92198.1655201951.500.500.jpg?c=2"
+  },
+  {
+   "sku": "B-82324-1PK",
+   "group": "add-on",
+   "price": 7.39,
+   "image": "images/store/b-82324-1pk.jpg",
+   "source": "https://cdn10.bigcommerce.com/s-ex8q3n8/products/48996/images/129619/474d1bab-c6c8-47d3-805b-daeca2037d46_1.4088f473409908bfda054a80989033ff__32159.1655428591.500.500.jpg?c=2"
+  },
+  {
+   "sku": "B-35310-1PK",
+   "group": "add-on",
+   "price": 5.29,
+   "image": "images/store/b-35310-1pk.jpg",
+   "source": "https://cdn10.bigcommerce.com/s-ex8q3n8/products/48986/images/128901/0eec34b8-8dda-47d7-b60f-932bfcb3c241.56e27b3635bbf37d60cb368a7669b270__05706.1655460938.500.500.jpg?c=2"
+  },
+  {
+   "sku": "B-35392-1PK",
+   "group": "add-on",
+   "price": 5.29,
+   "image": "images/store/b-35392-1pk.jpg",
+   "source": "https://cdn10.bigcommerce.com/s-ex8q3n8/products/48989/images/126059/159c469c-89b7-46d9-b725-1da330830a16.a3c9c035b8cdbe23775c03680462847a__54162.1655431502.500.500.jpg?c=2"
+  },
+  {
+   "sku": "B-33315-1PK",
+   "group": "add-on",
+   "price": 5.29,
+   "image": "images/store/b-33315-1pk.jpg",
+   "source": "https://cdn10.bigcommerce.com/s-ex8q3n8/products/48981/images/126026/a07d5320-8da0-4378-86dd-4929d27dce1b.18397c26791d4cbcaf1bf7dc47a43428__95535.1655410855.500.500.jpg?c=2"
+  },
+  {
+   "sku": "B-35336-1PK",
+   "group": "add-on",
+   "price": 5.29,
+   "image": "images/store/b-35336-1pk.jpg",
+   "source": "https://cdn10.bigcommerce.com/s-ex8q3n8/products/48987/images/130457/bb254aa6-fdcd-4688-9b24-5e39db872d96.0b138e00167575ef704a13612c5bf98e__69856.1655419303.500.500.jpg?c=2"
+  },
+  {
+   "sku": "B-81970-1PK",
+   "group": "add-on",
+   "price": 8.99,
+   "image": "images/store/b-81970-1pk.jpg",
+   "source": "https://cdn10.bigcommerce.com/s-ex8q3n8/products/55470/images/68440/7136ed2f-231b-49f8-8302-09dceaffb253.a43aceb1d21c8a5684a0f4ab3d73dcfc__90849.1655015302.500.500.jpg?c=2"
+  }
+ ]
+}

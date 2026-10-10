@@ -372,6 +372,39 @@
       } else sa.appendChild(notice(d.ga));
     }).catch(function () { ca.textContent = ''; ca.appendChild(el('p', 'db-empty', 'Could not read affiliates.json just now.')); });
 
+    // 7d. AliExpress (2026-10-10): connect the buyer account once, then read
+    // live prices and stock for the AliExpress lines in the store tiers.
+    var sx = section('aliexpress', 'fa-box', 'AliExpress', 'Connect the shop\'s AliExpress account once; then check the live price, stock and photos of every AliExpress line in the store tiers.');
+    var cx = card(null);
+    var flag = (location.search.match(/[?&]aliexpress=([^&]+)/) || [])[1];
+    if (flag) cx.appendChild(el('p', 'db-hint', 'AliExpress: ' + decodeURIComponent(flag) + '.'));
+    var stx = el('p', 'db-hint', 'Checking the connection...');
+    cx.appendChild(stx);
+    var rowx = el('div', 'db-links');
+    var bConnect = h('<button type="button" class="db-btn-ghost"><i class="fas fa-link"></i> Connect AliExpress</button>');
+    var bItems = h('<button type="button" class="db-btn-ghost"><i class="fas fa-rotate"></i> Check our AliExpress items</button>');
+    rowx.appendChild(bConnect); rowx.appendChild(bItems); cx.appendChild(rowx);
+    var outx = el('div'); cx.appendChild(outx);
+    sx.appendChild(cx); root.appendChild(sx);
+    api('aliexpress', { action: 'status' }).then(function (r) {
+      stx.textContent = r.connected ? 'Connected' + (r.account ? ' as ' + r.account : '') + (r.expires ? ', key renews itself (now valid to ' + niceDate(new Date(r.expires).toISOString()) + ').' : '.') : 'Not connected yet. Press Connect AliExpress and approve on AliExpress\'s page.';
+    }).catch(function (e) { stx.textContent = e.message; });
+    bConnect.addEventListener('click', function () {
+      api('aliexpress', { action: 'connect' }).then(function (r) { location.href = r.url; }).catch(function (e) { stx.textContent = e.message; });
+    });
+    bItems.addEventListener('click', function () {
+      outx.textContent = 'Reading AliExpress...';
+      fetch('/store-tiers.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (j) {
+        var ids = [], names = {};
+        (j.products || []).forEach(function (p) { var m = /aliexpress\.com\/item\/(\d+)/.exec(p.url || ''); if (m && ids.indexOf(m[1]) < 0) { ids.push(m[1]); names[m[1]] = p.name; } });
+        return api('aliexpress', { action: 'items', ids: ids }).then(function (r) {
+          outx.textContent = '';
+          outx.appendChild(table([{ label: 'Our line' }, { label: 'On AliExpress now' }, { label: 'Price', num: true }, { label: 'Regular', num: true }, { label: 'Stock', num: true }, { label: 'Rating' }],
+            r.items.map(function (it) { return it.ok ? [names[it.id] || it.id, (it.title || '').slice(0, 60), it.price == null ? '-' : money(it.price), it.regular == null ? '-' : money(it.regular), num(it.stock), it.rating || '-'] : [names[it.id] || it.id, it.error, '-', '-', '-', '-']; })));
+        });
+      }).catch(function (e) { outx.textContent = e.message; });
+    });
+
     // 8. newsletter, forms, orders
     var s8 = section('people', 'fa-envelope', 'Newsletter, messages and orders', 'Your own lists: who signed up, who wrote in, who bought.');
     var g8 = el('div', 'db-grid');

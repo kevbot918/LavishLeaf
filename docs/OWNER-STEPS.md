@@ -22,42 +22,56 @@ deploy -> Deploy site** once you have added a batch.
 
 ---
 
-## THE ORDER TO DO IT ALL IN (updated 2026-10-07)
+## THE ORDER TO DO IT ALL IN (updated 2026-10-10)
 
 Every open step, in the order that unblocks the most. Each line points to the
-section with the clicks. Cross a line out when it is done and tell Claude.
+section with the clicks. Tell Claude when one is done.
+
+**Done:** EIN; Bangalla account and its product file; nameservers on
+Netlify; Facebook and Instagram on the dashboard (10-10); SeedsNow affiliate
+(10-10); affiliate applications sent to Blueland, Botanical Interests, True
+Leaf Market, Azure, Bookshop.org and GrowOrganic (10-10); AliExpress
+developer app made (10-10).
 
 **This week: free, and everything else waits on them**
-1. **Email out of spam** (G4): SPF record, Google DKIM, Not-spam filter. 15 min.
-2. **SST resale certificate** (G1), one per supplier. 15 min.
-3. **Arbico distributor application** (G2) with the certificate and a W-9.
-4. **Tax questions to the CPA**: S or C corporation (Form 2553 and its
-   deadline), and the sales tax notes in docs/STORE-PLAN.md.
-5. **Bangalla shipping check** (G item 4): three carts to a Seattle ZIP,
-   read the shipping, do not pay. Send Claude the numbers.
-6. **Licences by mail**: fertilizer $50 (G3, ask about timing first) and
-   **retail seed $25** (G5). Both to ODAFF.
+1. **Email out of spam** (G4). Checked again 2026-10-10: the SPF record
+   still names only Squarespace and Google's DKIM key is still missing, so
+   this is NOT done yet. 15 minutes. Also check support@ reaches you (G4,
+   step 7): Awin's reply may be sitting there unseen.
+2. **AliExpress** (G10): keys into Netlify, the callback address, approvals,
+   then Connect from the dashboard.
+3. **SST resale certificate** (G1), one per supplier.
+4. **Arbico distributor application** (G2) with the certificate and a W-9.
+5. **CPA**: S or C corporation (Form 2553 and its deadline), and the sales
+   tax notes in docs/STORE-PLAN.md.
+6. **Bangalla**: three carts priced to a Seattle ZIP, read the shipping, do
+   not pay (G item 4); and ask Bangalla whether "Third Party Restriction"
+   brands (Desert Essence, A La Maison) may be sold on our own site.
+7. **Licences by mail to ODAFF**: fertilizer $50 (G3, ask about timing) and
+   retail seed $25 (G5).
 
 **Next: accounts that cost nothing**
-7. **Printful** account and the merch samples (G6).
-8. **Affiliate networks** for Green Swaps (G7): Awin, Impact, FlexOffers,
-   SeedsNow, Azure, Bookshop.org.
-9. **Supplier applications** (G8): Nature's Footprint and Urban Worm
-   (worm dropship), High Mowing (seeds), Hydrofarm, Exaco, Frontier Co-op,
-   Faire retailer account.
-10. **Sample orders** of the TeemDrop and AliExpress lines you want (G9),
-    before any goes on sale.
-11. **Amazon SES** for the store's own email (F). 45 min plus Amazon's review.
+8. **Printful** account and the merch samples (G6).
+9. **Affiliates still to do** (G7): wait for the six applications; if Awin
+   does not answer in a week, email Awin support from the address on the
+   application; apply to ThredUp once Awin approves. Send Claude each
+   approved link.
+10. **Supplier applications** (G8): Nature's Footprint and Urban Worm (worm
+    dropship), High Mowing (seeds), Hydrofarm, Exaco, Frontier Co-op, Faire.
+11. **Sample orders** of the AliExpress lines you want (G9), and a photo of
+    each sample: AliExpress's terms do not let us copy their photos.
+12. **Amazon SES** for the store's own email (F).
 
 **Then: switching the store on**
-12. **Pick the products and prices** in the dashboard's Store products.
-13. **PayPal** sandbox, then live (H). The store takes money after this.
-14. **Design files** for the first merch (logo, 2 to 4 slogans) and the first
+13. **Pick the products and prices**: the Bangalla picks and suggested
+    prices are in store-picks.json and the dashboard's Store products.
+14. **PayPal** sandbox, then live (H). The store takes money after this.
+15. **Design files** for the first merch (logo, 2 to 4 slogans) and the first
     seed calendar and brochure; Claude can draft both.
 
-**Still open from before** (section I): Home page logos, a recycling photo,
-the first YouTube video, Pirate Ship, a PO box, Google steps A to E if any
-are unfinished.
+**Still open from before** (section I): a recycling photo, the first
+YouTube video, Pirate Ship, a PO box, Google Analytics custom dimensions (C),
+Clarity and Netlify tokens (D, E) if not done.
 
 ---
 
@@ -495,6 +509,15 @@ records said:
    -> careers@ -> **Settings** -> **Spam message handling**: "Skip the
    moderation queue and post to the group".
 
+7. **Is support@ reaching you?** From your personal Gmail, send a short email
+   to support@lavishleaf.org. If it does not arrive in kwright@ (look in
+   Spam too): admin.google.com -> **Directory -> Users** -> Kevin Wright ->
+   **User information -> Alternate email addresses**: support@lavishleaf.org
+   should be listed there. If it is not, either add it there (Add an
+   alternate email) or, if support@ is a Group (Directory -> Groups), open it
+   and make sure you are a member with delivery "Each email" and "Who can
+   post" is "Anyone on the web". Then search your Spam for "awin".
+
 Tell Claude when 1 to 4 are done; the records get checked from outside.
 
 ---
@@ -580,6 +603,43 @@ AliExpress (your own account; order by hand to the customer's address).
 * Squishies and fidget toys: listed as **desk toys for adults**.
 * Never copy a seller's "organic" or "biodegradable" wording; Claude writes
   the product text from what the sample is.
+
+---
+
+### G10. AliExpress dropshipping (the API is built; these are yours)
+
+Checked 2026-10-10: the App Key works and the signature is accepted; every
+product call now asks only for the account connection.
+
+1. **Keys into Netlify** (Site configuration -> Environment variables):
+   `AE_APP_KEY` = 552452; `AE_APP_SECRET` = the App Secret (tick **Contains
+   secret values**). The secret was shared in chat on 10-10, so the safest
+   course is **Reset** it in the AliExpress console (App Management -> your
+   app -> App Secret) and put the NEW one in Netlify. Never put it anywhere
+   else.
+2. **Callback URL**: AliExpress console -> your app -> **Callback URL** =
+   `https://lavishleaf.org/.netlify/functions/aliexpress` -> save.
+3. **Approvals** in the console: the **developer profile** and the app
+   category **Dropshipping Developer** (it shows "Pending" until AliExpress
+   approves; guides say 1 to 3 business days). The app type must be **Drop
+   Shipping**.
+4. **The buyer account**: log in to aliexpress.com with the account the shop
+   will order from -> **DS Center** (ds.aliexpress.com) -> accept the
+   Dropshipping Program agreement. Link PayPal to that account.
+5. **Deploy** (Deploys -> Trigger deploy), then the dashboard -> **AliExpress**
+   -> **Connect AliExpress** -> log in with that buyer account -> approve. You
+   come back to the dashboard with "connected".
+6. **Check our AliExpress items** (same section): live price, stock and
+   rating for every AliExpress line in the tiers.
+7. **Paying orders**: an order the site places waits as "awaiting payment"
+   until it is paid in the AliExpress app or site. Automatic payment needs
+   AliExpress's approval: email ds-api@aliexpress.com with the main market
+   (US), the buyer account's User ID and Login ID, and its PayPal account.
+   Do this when PayPal is live on our store.
+8. **Apply Online** in the console once the connection works: a test app's
+   key lasts 1 day, an online app's 30 days (the site renews it itself).
+9. **Samples and photos** (G9): AliExpress's terms forbid copying sellers'
+   photos and text, so photograph each sample.
 
 ---
 

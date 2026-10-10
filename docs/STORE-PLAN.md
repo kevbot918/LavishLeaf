@@ -336,6 +336,64 @@ Atoka or ODFL in Tulsa. Closed: BULQ, Tundra, Abound.
 * **Children's products**: squishies and fidget toys are listed as adult desk
   toys (owner, 2026-10-07).
 
+## Bangalla: which of the 99 Tier 0 lines are worth selling (2026-10-10)
+
+Checked against what shoppers pay at Vitacost, iHerb, Target, Walmart,
+Amazon, Thrive, Grove and the brand sites (five research passes, 2026-10-10),
+and against the owner's own Bangalla cost (kept out of this public file).
+The pattern: Bangalla's wholesale cost is about 70% of its list price, and
+most of these brands already sell online at or BELOW that list price, so a
+single bar shipped on its own earns cents or loses money. The lines below are
+the ones that leave a fair margin at a price shoppers already pay; they are
+the only Bangalla lines on the Store now (store-picks.json, with Bangalla's
+photos), at the suggested prices shown.
+
+| Worth offering | Suggested price |
+|---|---|
+| Kiss My Face Pure Olive Oil bar 8 oz; Olive & Aloe 8 oz | $6.49 |
+| Kiss My Face Pure Olive Oil bar 4 oz | $4.99 |
+| Tea Tree Therapy Eucalyptus soap 3.5 oz | $8.99 |
+| Desert Essence Tea Tree bar 5 oz (a "Third Party Restriction" brand: ask Bangalla first) | $7.29 |
+| Chandrika Sandal soap (an add-on: small dollars) | $2.99 |
+| Full Circle The Ring veggie brush | $7.99 |
+| Giovanni bamboo oval hairbrush | $11.49 |
+| Casabella Kind plant-based sponges, case of 8 three-packs | $49.99 |
+| Weiman cooktop scrubbing pads, case of 6 three-packs | $32.99 |
+| Roland bamboo toothpicks, case of 12 x 300 | $34.99 |
+| World Centric 6 in ripple plates, case of 12 x 20 (no retail price found to compare) | $44.99 |
+
+**Add-ons only** (thin margin; fine beside other items in one order): Kirk's
+castile 3-packs ($7.39), South of France 6 oz in the four best-selling scents
+($5.29), A La Maison Lavender & Rosemary 4-pack ($8.99).
+
+**Not worth it now** (a loss or a few cents at the market price): Kirk's
+single bars, One With Nature, Grandpa's, Nubian Heritage, A La Maison single
+bars, Earth Therapeutics loofahs, Preserve containers, Thai deodorant stone,
+Bulldog razor, Citra-Solv, the compost bag cases, Natural Value and Full
+Circle sponge cases, Scrub Mommy, Seventh Generation, Rebel Green, Biokleen,
+and the Full Circle dustpans, squeegee and duster.
+
+What would change it: Bangalla Gold ($195 a year, about 5% off), a higher
+local price at the farm or market where shipping does not apply, or bundles
+that share one shipping charge.
+
+## AliExpress (2026-10-10)
+
+The developer app's key works (the gateway answers a signed call). The site
+now has the connection built (netlify/functions/aliexpress.mjs and the
+dashboard's AliExpress section). Left: approvals, the callback address, the
+buyer account connection, and paying each order in the AliExpress account
+unless auto-pay is approved (OWNER-STEPS G10). AliExpress's Business
+Program agreement forbids copying sellers' photos and text without written
+permission: our own photos from the sample orders. Tier 0 ranks 39 to 46 are
+the page-checked picks: seed starter tray, grow bags, terracotta watering
+spikes, pruning shears, jute twine, bamboo labels, succulent planter,
+macrame hanger, sprouting jar, cotton produce bags, stainless lunch box,
+beeswax wraps, bamboo cutlery, coconut bowl, wool dryer balls, solar mushroom
+lights, compost bin, pickle, tomato and vegetable squishies, jumping frogs.
+Suggested retail is about 2.3 x the item cost (40% left after PayPal and a
+duty allowance). TeemDrop is out: it needs a store on a partner platform.
+
 ## Not verified (pages blocked or behind a login)
 
 Faire's current terms, Kole Imports, Grove and Bee's Wrap commission rates,

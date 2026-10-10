@@ -256,7 +256,15 @@ writeFileSync(join(ROOT, 'store-tiers.json'), JSON.stringify({
 }, null, 1) + '\n');
 
 const ALL = process.argv.includes('--all');
-const shown = ALL ? out : out.filter((p) => p.tier === 0);
+// Bangalla rows: only the SKUs in store-picks.json reach the Store (owner,
+// 2026-10-10: "determine which ones would be worth actually offering"), each
+// with Bangalla's own photo. Other Tier 0 suppliers are shown as before.
+const PICKS = (() => {
+  try { return Object.fromEntries(JSON.parse(readFileSync(join(ROOT, 'store-picks.json'), 'utf8')).picks.map((x) => [x.sku, x])); }
+  catch { return null; }
+})();
+const isBangalla = (p) => /^bangalla/i.test(p.supplier || '');
+const shown = ALL ? out : out.filter((p) => p.tier === 0 && (!PICKS || !isBangalla(p) || (p.sku && PICKS[p.sku])));
 const demo = shown.map((p) => {
   let id = 'demo-' + slug(p.name), n = 2;
   while (ids.has(id)) id = 'demo-' + slug(p.name) + '-' + n++;
@@ -274,6 +282,7 @@ const demo = shown.map((p) => {
     button: 'Supplier page',
     emailSubject: `Store question: ${p.name}`.slice(0, 120),
     supplierUrl: p.url,
+    ...(p.sku && PICKS && PICKS[p.sku] && PICKS[p.sku].image ? { image: PICKS[p.sku].image, imageAlt: p.name } : {}),
     payLink: '',
     active: true,
     demo: true,

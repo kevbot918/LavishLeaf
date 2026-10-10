@@ -392,3 +392,17 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     store.html#cart when ll-cart has items. Home logos: logo-rec-sports.png,
     logo-gaming.png (black made transparent), logo-lawn-garden.png; no
     .oval-badge left on the home page.
+
+28. **2026-10-10, third list.** Store Home carries the SeedsNow block (button
+    to #swaps); the sidebar lists APPROVED affiliates under Green Swaps (only
+    SeedsNow). Earth Breeze card removed (programme ended). **Bangalla on the
+    Store = store-picks.json only** (20 SKUs worth selling, with Bangalla's
+    photos downloaded to images/store/; the margin analysis used his cost and
+    lives only in the session scratchpad). TeemDrop removed (needs a partner
+    platform). AliExpress: `netlify/lib/aliexpress.mjs` (both signatures,
+    OAuth state, token refresh, product facts; tests) and
+    `netlify/functions/aliexpress.mjs` (owner Connect, callback, live item
+    check), env `AE_APP_KEY` / `AE_APP_SECRET` (never in the repo); the
+    secret must not be written anywhere but Netlify. AliExpress terms forbid
+    copying seller photos: own sample photos only. affiliates.json carries
+    the six pending applications and a notAvailable list.
