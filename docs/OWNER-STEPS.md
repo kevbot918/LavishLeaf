@@ -190,7 +190,7 @@ delay, so its numbers start a few days back.)
 
 ---
 
-## C. Google Analytics: three custom dimensions (5 minutes)
+## C. Google Analytics: four custom dimensions (5 minutes)
 
 **What it is for:** the website already sends which product was clicked,
 what was typed into the store search, and which social button was clicked.
@@ -204,7 +204,7 @@ look for **Custom definitions** directly in the Property column; Google moves
 it between layouts. You need the Editor or Administrator role on the
 property, which the owner has.)
 
-Then, three times: the **Custom dimensions** tab -> **Create custom
+Then, four times: the **Custom dimensions** tab -> **Create custom
 dimension** -> fill in -> **Save**:
 
 | Dimension name | Scope | Description | Event parameter |
@@ -212,6 +212,10 @@ dimension** -> fill in -> **Save**:
 | `product` | Event | Which product was clicked | `product` |
 | `search_term` | Event | What was searched in the store | `search_term` |
 | `network` | Event | Which social network was clicked | `network` |
+| `file` | Event | Which Symphonymph APK was tapped | `file` |
+
+(If you already made the first three, make only `file`: it fills the
+dashboard's "Symphonymph downloads, by file" card.)
 
 The Event parameter box may offer a list; if the name is not in it yet, type
 it. They only collect from the day they are made, so make them now even
@@ -538,11 +542,13 @@ and a **W-9 with the EIN**. Payouts by bank transfer.
    Botanical Interests, True Leaf Market, EarthHero, ThredUp, Earth Breeze.
 2. **Impact** (impact.com, "Partners"): then Blueland, Grove, Gardener's Supply.
 3. **FlexOffers** (flexoffers.com): Who Gives A Crap, Public Goods, Tru Earth, Pact.
-4. **SeedsNow** (seedsnow.com/pages/become-a-seedsnow-affiliate): 25%.
+4. ~~**SeedsNow**~~ **Approved 2026-10-10**; its link is on the Green Swaps card. Earnings: the Refersion sign-in from the SeedsNow welcome email.
 5. **Azure Standard Share Azure** (place one order first) and **Bookshop.org**
    affiliate (10%).
 6. As each approves, send Claude the link; it replaces the brand's home page
    on the card. Amazon Associates last, if at all.
+7. **Every programme, its rate, payout and where to check it** is in the
+   dashboard's **Affiliate programmes** section (from affiliates.json).
 
 ### G8. Supplier applications (all free to open)
 

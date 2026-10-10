@@ -312,6 +312,47 @@
     s7.appendChild(h('<div class="db-links"><a href="https://clarity.microsoft.com/projects/view/yrei9vub09/heatmaps" target="_blank" rel="noopener"><i class="fas fa-fire"></i>Heatmaps</a><a href="https://clarity.microsoft.com/projects/view/yrei9vub09/impressions" target="_blank" rel="noopener"><i class="fas fa-circle-play"></i>Recordings</a><a href="https://clarity.microsoft.com/projects/view/yrei9vub09/dashboard" target="_blank" rel="noopener"><i class="fas fa-gauge"></i>Clarity dashboard</a></div>'));
     root.appendChild(s7);
 
+    // 7b. Symphonymph downloads (owner, 2026-10-10)
+    var sd = section('downloads', 'fa-mobile-screen', 'Symphonymph downloads', 'Taps on the APK download links on the Symphonymph page, counted by Google Analytics. A visitor with an ad blocker is not counted, so the real number is somewhat higher.');
+    if (ga) {
+      var dl = ga.downloads || { daily: [], allTime: 0, byFile: [] };
+      var tapsNow = (ga.events.filter(function (e) { return e.key === 'app_download'; })[0] || { now: 0, before: 0 });
+      var gd = el('div', 'db-grid');
+      var cd = card('Download taps');
+      var st2 = el('div', 'db-stats');
+      st2.appendChild(h('<div class="db-stat"><div class="v">' + esc(num(tapsNow.now)) + '</div><div class="l">In the last ' + days + ' days</div><div class="e">' + deltaHtml(tapsNow.now, tapsNow.before, days) + '</div></div>'));
+      st2.appendChild(h('<div class="db-stat"><div class="v">' + esc(num(dl.allTime)) + '</div><div class="l">Since ' + esc(niceDate(dl.since || '2026-10-02')) + '</div><div class="e">Every tap since counting began.</div></div>'));
+      cd.appendChild(st2);
+      gd.appendChild(cd);
+      var cf = card('By file', 'Which APK was tapped: the phone build or the TV build.');
+      cf.appendChild(dl.fileDimension ? bars(dl.byFile, { unit: 'taps', empty: 'No taps yet.' }) : notice({ status: 'setup', message: 'Register the custom dimension "file" in Google Analytics (docs/DASHBOARD.md, step 5) to see this.' }));
+      gd.appendChild(cf);
+      var cdd = card('Day by day');
+      cdd.appendChild(bars(dl.daily.slice().reverse().map(function (r) { return { name: niceDate(r.date), value: r.value }; }), { unit: 'taps', limit: 14, empty: 'No taps in this period.' }));
+      gd.appendChild(cdd);
+      sd.appendChild(gd);
+    } else sd.appendChild(notice(d.ga));
+    root.appendChild(sd);
+
+    // 7c. affiliates (owner, 2026-10-10: "save our affiliates somewhere so I
+    // remember to check payouts"). The list is affiliates.json.
+    var sa = section('affiliates', 'fa-handshake', 'Affiliate programmes', 'The Green Swaps partners: where to check earnings and when they pay. Add a new one to affiliates.json (or ask Claude).');
+    var ca = card(null);
+    ca.appendChild(el('p', 'db-hint', 'Loading the list...'));
+    sa.appendChild(ca);
+    root.appendChild(sa);
+    fetch('/affiliates.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (j) {
+      ca.textContent = '';
+      var rows = (j.programmes || []).map(function (p) { return [p.name, p.status, p.commission || '-', p.network || '-', (p.payout || '-') + (p.where ? '. ' + p.where : '')]; });
+      ca.appendChild(rows.length ? table([{ label: 'Programme' }, { label: 'Status' }, { label: 'Pays' }, { label: 'Network' }, { label: 'Payout' }], rows) : el('p', 'db-empty', 'No programmes yet.'));
+      var lk = el('div', 'db-links');
+      (j.programmes || []).forEach(function (p) {
+        if (p.dashboard) lk.appendChild(h('<a href="' + esc(p.dashboard) + '" target="_blank" rel="noopener"><i class="fas fa-sack-dollar"></i>' + esc(p.name) + ' earnings</a>'));
+      });
+      ca.appendChild(lk);
+      if (j.check) ca.appendChild(el('p', 'db-hint', j.check));
+    }).catch(function () { ca.textContent = ''; ca.appendChild(el('p', 'db-empty', 'Could not read affiliates.json just now.')); });
+
     // 8. newsletter, forms, orders
     var s8 = section('people', 'fa-envelope', 'Newsletter, messages and orders', 'Your own lists: who signed up, who wrote in, who bought.');
     var g8 = el('div', 'db-grid');
@@ -343,7 +384,7 @@
       '<a href="https://lookerstudio.google.com/" target="_blank" rel="noopener"><i class="fas fa-table-columns"></i>Looker Studio</a>' +
       '<a href="https://clarity.microsoft.com/projects/view/yrei9vub09/dashboard" target="_blank" rel="noopener"><i class="fas fa-fire"></i>Clarity</a>' +
       '<a href="https://business.facebook.com/latest/insights" target="_blank" rel="noopener"><i class="fab fa-meta"></i>Meta Business Suite</a>' +
-      '<a href="https://app.brevo.com/" target="_blank" rel="noopener"><i class="fas fa-paper-plane"></i>Brevo</a>' +
+      '<a href="https://console.aws.amazon.com/ses/home" target="_blank" rel="noopener"><i class="fas fa-paper-plane"></i>Amazon SES</a>' +
       '<a href="https://app.netlify.com/" target="_blank" rel="noopener"><i class="fas fa-server"></i>Netlify</a>' +
       '<a href="https://www.paypal.com/myaccount/summary" target="_blank" rel="noopener"><i class="fab fa-paypal"></i>PayPal</a></div>'));
     root.appendChild(links);

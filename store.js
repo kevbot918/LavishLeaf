@@ -25,7 +25,8 @@
 
   var KEY = 'll-store';
   var SHELF_LENGTH = 30; // products on a Home shelf; "See all" shows the rest
-  var SIDE_W = 340, SIDE_MIN = 260, SIDE_MAX = 560; // the sidebar's width, px
+  // The sidebar's width, px. Owner, 2026-10-10: start it a bit wider (was 340).
+  var SIDE_W = 390, SIDE_MIN = 260, SIDE_MAX = 560, OLD_SIDE_W = 340;
   var DEFAULTS = { sort: 'relevance', sideW: SIDE_W, lists: [], shelfOrder: [] };
 
   // ------------------------------------------------------------ state
@@ -38,6 +39,8 @@
     out.lists = out.lists.filter(function (l) { return l && l.id && typeof l.name === 'string'; })
       .map(function (l) { return { id: String(l.id), name: l.name, items: Array.isArray(l.items) ? l.items.filter(isStr) : [] }; });
     out.sideW = clampSide(parseInt(out.sideW, 10) || SIDE_W);
+    // A browser that only ever had the old default moves to the new one.
+    if (out.sideW === OLD_SIDE_W) out.sideW = SIDE_W;
     if (!Array.isArray(out.shelfOrder)) out.shelfOrder = [];
     out.shelfOrder = out.shelfOrder.filter(isStr);
     return out;
@@ -806,9 +809,9 @@
   }
 
   // ------------------------------------------------------------ shelf arrows
-  // Owner, 2026-10-02: an arrow to press to scroll each shelf, and the mouse
-  // wheel sliding the shelf sideways. The wheel only takes over while the
-  // shelf can still move that way; at either end the page scrolls as usual.
+  // Owner, 2026-10-02: an arrow to press to scroll each shelf. The mouse wheel
+  // no longer slides a shelf sideways (owner, 2026-10-10: it caught him when
+  // he meant to scroll down the page); a trackpad's sideways swipe still works.
   var CHEV_L = 'M15 18l-6-6 6-6', CHEV_R = 'M9 18l6-6-6-6';
   function buildShelfArrows() {
     $$('#shelves .shelf-row').forEach(function (row) {
@@ -834,14 +837,6 @@
       }
       row.addEventListener('scroll', update, { passive: true });
       window.addEventListener('resize', update);
-      row.addEventListener('wheel', function (e) {
-        if (e.ctrlKey || Math.abs(e.deltaX) > Math.abs(e.deltaY)) return; // pinch zoom, or a trackpad already going sideways
-        var dy = e.deltaMode === 1 ? e.deltaY * 32 : e.deltaY;
-        var max = row.scrollWidth - row.clientWidth;
-        if ((dy < 0 && row.scrollLeft <= 0) || (dy > 0 && row.scrollLeft >= max - 1)) return;
-        e.preventDefault();
-        row.scrollLeft += dy;
-      }, { passive: false });
       update();
       setTimeout(update, 400); // after the photos have laid out
     });

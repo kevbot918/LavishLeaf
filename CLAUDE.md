@@ -358,3 +358,20 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     Greener Printer and Mixam for print, the affiliate list, bulk sources) are
     in docs/STORE-PLAN.md; his ordered checklist is the top of
     docs/OWNER-STEPS.md. Seed now needs the $25 Oklahoma retail seed licence.
+
+26. **2026-10-10, the owner's list.** Company: the division cards carry their
+    own leadership line again (reworded); the board box says an officer
+    oversees a division; new shareholder and structure wording in his words;
+    roles intro no longer says "not hiring". Gaming roadmap: Phase 2 starts
+    with community server hosting, no educational mechanics; Phase 3 adds
+    "Complete Game System assets". Farms recycling list = everything the
+    McAlester center, Options Inc. (Checotah) and the Choctaw Nation centers
+    accept (sources in STORE-PLAN). Store: sidebar starts at 390px (a saved
+    340 moves up), and the mouse wheel no longer scrolls shelves sideways.
+    Dashboard: a **Symphonymph downloads** section (GA4 app_download: period,
+    since 2026-10-02, by file once the "file" custom dimension exists) and an
+    **Affiliate programmes** section read from `affiliates.json` (public
+    facts only). Facebook posts need `pages_read_user_content` on the Page
+    token (SOCIAL-FEEDS D1b, D2); the dashboard now shows followers and
+    Instagram even when the posts call fails. SeedsNow is the first approved
+    affiliate (Refersion, 25%).

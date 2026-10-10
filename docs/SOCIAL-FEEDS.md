@@ -95,8 +95,12 @@ Permission" list only offers permissions the app has been given inside its use
 cases (2026-10-02: pages_read_engagement and instagram_basic were missing):
 1. In the app dashboard's left menu, **Use cases**.
 2. Beside **Manage everything on your Page**, **Customize**. In the
-   **Permissions** list, click **Add** beside `pages_read_engagement` and
-   beside `pages_show_list` (and `business_management` if listed).
+   **Permissions** list, click **Add** beside `pages_read_engagement`,
+   `pages_read_user_content` and `pages_show_list` (and
+   `business_management` if listed). **`pages_read_user_content` is the
+   one the dashboard's error names** (2026-10-10: "(#10) This endpoint
+   requires the 'pages_read_user_content' permission"): without it Facebook
+   refuses to list the Page's posts with their likes and comments.
 3. Back to **Use cases**. Beside **Manage messaging & content on
    Instagram**, **Customize**, then choose **API setup with Facebook login**
    (the OTHER one, not "with Instagram login"). In its permissions list click
@@ -109,9 +113,10 @@ cases (2026-10-02: pages_read_engagement and instagram_basic were missing):
 1. Open **https://developers.facebook.com/tools/explorer/**.
 2. Right side: **Meta App** = `Lavish Leaf Website`; **User or Page** =
    **User Token**.
-3. **Permissions**: with **Add a Permission**, add all four:
-   `pages_show_list`, `pages_read_engagement`, `instagram_basic`,
-   `business_management`.
+3. **Permissions**: with **Add a Permission**, add all five:
+   `pages_show_list`, `pages_read_engagement`, `pages_read_user_content`,
+   `instagram_basic`, `business_management`. (Remove any others the box
+   starts with; they are not needed.)
 4. Click **Generate Access Token**. In Facebook's window choose **Opt in to
    all current and future Pages** (or tick **Lavish Leaf**), and also tick
    **lavish_leaf_inc** when it lists Instagram accounts. Save.

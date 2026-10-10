@@ -19,6 +19,9 @@ const fail = (e) => ({ status: 'error', message: String((e && e.message) || e).s
 
 const iso = (t) => new Date(t).toISOString().slice(0, 10);
 
+// The day analytics.js began counting clicks on every page.
+export const COUNTING_SINCE = '2026-10-02';
+
 // The events analytics.js sends, in plain words for the page.
 export const EVENTS = {
   sign_up_click: 'Sign-up buttons (compost, recycling, league)',
@@ -53,6 +56,12 @@ export async function gaSection(days, env = process.env, fetchImpl = fetch) {
     // registered in GA4 (docs/DASHBOARD.md); until then they come back empty.
     run({ dateRanges: [cur], dimensions: [{ name: 'eventName' }, { name: 'customEvent:product' }], metrics: [{ name: 'eventCount' }], dimensionFilter: { filter: { fieldName: 'eventName', inListFilter: { values: ['sign_up_click', 'add_to_cart', 'supplier_click', 'wish_list'] } } }, orderBys: [{ metric: { metricName: 'eventCount' }, desc: true }], limit: 40 }),
     run({ dateRanges: [cur], dimensions: [{ name: 'customEvent:search_term' }], metrics: [{ name: 'eventCount' }], dimensionFilter: { filter: { fieldName: 'eventName', stringFilter: { value: 'search' } } }, orderBys: [{ metric: { metricName: 'eventCount' }, desc: true }], limit: 15 }),
+    // Symphonymph APK taps (owner, 2026-10-10): every day of the period, the
+    // total since counting began, and which file (the "file" custom
+    // dimension; empty until it is registered, like the two above).
+    run({ dateRanges: [cur], dimensions: [{ name: 'date' }], metrics: [{ name: 'eventCount' }], dimensionFilter: { filter: { fieldName: 'eventName', stringFilter: { value: 'app_download' } } }, orderBys: [{ dimension: { dimensionName: 'date' } }], limit: 400 }),
+    run({ dateRanges: [{ startDate: COUNTING_SINCE, endDate: 'today' }], metrics: [{ name: 'eventCount' }], dimensionFilter: { filter: { fieldName: 'eventName', stringFilter: { value: 'app_download' } } } }),
+    run({ dateRanges: [{ startDate: COUNTING_SINCE, endDate: 'today' }], dimensions: [{ name: 'customEvent:file' }], metrics: [{ name: 'eventCount' }], dimensionFilter: { filter: { fieldName: 'eventName', stringFilter: { value: 'app_download' } } }, orderBys: [{ metric: { metricName: 'eventCount' }, desc: true }], limit: 20 }),
   ]);
   const v = (i) => (r[i].status === 'fulfilled' ? r[i].value : null);
   if (!v(0) && !v(1)) return fail(r[0].reason || r[1].reason);
@@ -90,6 +99,13 @@ export async function gaSection(days, env = process.env, fetchImpl = fetch) {
     products: (v(8) || []).filter((row) => row.dims[1] && row.dims[1] !== '(not set)').map((row) => ({ event: row.dims[0], name: row.dims[1], value: row.vals[0] })),
     searches: (v(9) || []).filter((row) => row.dims[0] && row.dims[0] !== '(not set)').map((row) => ({ name: row.dims[0], value: row.vals[0] })),
     customDimensions: r[8].status === 'fulfilled',
+    downloads: {
+      daily: (v(10) || []).map((row) => ({ date: fmtDate(row.dims[0]), value: row.vals[0] })),
+      allTime: ((v(11) || [])[0] || { vals: [0] }).vals[0],
+      since: COUNTING_SINCE,
+      byFile: (v(12) || []).filter((row) => row.dims[0] && row.dims[0] !== '(not set)').map((row) => ({ name: row.dims[0], value: row.vals[0] })),
+      fileDimension: r[12].status === 'fulfilled',
+    },
   });
 }
 
@@ -132,7 +148,14 @@ export async function socialSection(env = process.env, fetchImpl = fetch) {
   const out = { facebook: null, instagram: null, errors: [] };
   try {
     const info = await graph(`${G}/${page}?fields=name,followers_count,fan_count,instagram_business_account&access_token=${t}`, fetchImpl);
-    const posts = await graph(`${G}/${page}/posts?fields=${encodeURIComponent('message,created_time,permalink_url,full_picture,shares,reactions.summary(total_count).limit(0),comments.summary(total_count).limit(0)')}&limit=25&access_token=${t}`, fetchImpl);
+    // The posts need the pages_read_user_content permission on the Page token
+    // (docs/SOCIAL-FEEDS.md D1b); without it the followers still show.
+    let posts = { data: [] };
+    try {
+      posts = await graph(`${G}/${page}/posts?fields=${encodeURIComponent('message,created_time,permalink_url,full_picture,shares,reactions.summary(total_count).limit(0),comments.summary(total_count).limit(0)')}&limit=25&access_token=${t}`, fetchImpl);
+    } catch (e) {
+      out.errors.push('Facebook posts: ' + String(e.message).slice(0, 160) + ' The fix is docs/SOCIAL-FEEDS.md, D1b and D2 (add pages_read_user_content, then a new Page key).');
+    }
     out.facebook = {
       followers: info.followers_count ?? info.fan_count ?? null,
       posts: (posts.data || []).map((p) => {

@@ -1,0 +1,16 @@
+{
+  "_help": "The Green Swaps affiliate programmes (owner, 2026-10-10). The dashboard's Affiliate programmes section reads this file; store.html's Green Swaps cards carry the links. When a programme approves, set status to Approved, add its link here AND on its card in store.html. No passwords or payout details here: this repository is public.",
+  "check": "Check earnings on the first of each month; most programmes pay only above a minimum. Every network needs the W-9 with the EIN before it pays.",
+  "programmes": [
+    { "name": "SeedsNow", "status": "Approved 2026-10-10", "commission": "25% of each sale", "network": "Refersion", "payout": "Weekly by PayPal", "link": "https://www.seedsnow.com/?rfsn=9367513.1d5a377&utm_source=refersion&utm_medium=affiliate&utm_campaign=9367513.1d5a377", "where": "Sign in from the link in your SeedsNow affiliate welcome email (Refersion)" },
+    { "name": "Botanical Interests", "status": "To apply", "commission": "15%, 45-day cookie", "network": "Awin", "payout": "Awin, from $20" },
+    { "name": "True Leaf Market", "status": "To apply", "commission": "10 to 20%", "network": "Awin", "payout": "Awin, from $20" },
+    { "name": "EarthHero", "status": "To apply", "commission": "3 to 8%", "network": "Awin", "payout": "Awin, from $20" },
+    { "name": "ThredUp", "status": "To apply", "commission": "15% new customers", "network": "Awin", "payout": "Awin, from $20" },
+    { "name": "Earth Breeze", "status": "To apply", "commission": "per sale, rate on approval", "network": "Awin", "payout": "Awin, from $20" },
+    { "name": "Blueland", "status": "To apply", "commission": "8% new customers, 4% returning", "network": "Impact", "payout": "Impact, from $10" },
+    { "name": "Who Gives A Crap", "status": "To apply", "commission": "1.6% new customers", "network": "FlexOffers", "payout": "FlexOffers, from $25" },
+    { "name": "Azure Standard", "status": "To apply (one order first)", "commission": "$25 credit per new customer who spends $100", "network": "Share Azure (direct)", "payout": "Credit; cash out from $100 with a W-9" },
+    { "name": "Bookshop.org", "status": "To apply", "commission": "10% of each sale", "network": "Bookshop.org (direct)", "payout": "Monthly" }
+  ]
+}

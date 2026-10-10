@@ -103,6 +103,7 @@ Create custom dimension**, three times, scope **Event**:
 | product | `product` |
 | search_term | `search_term` |
 | network | `network` |
+| file | `file` (which Symphonymph APK was tapped; added 2026-10-10) |
 
 They collect from the day they are created.
 
