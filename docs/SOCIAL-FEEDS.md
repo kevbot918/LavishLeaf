@@ -135,6 +135,52 @@ cases (2026-10-02: pages_read_engagement and instagram_basic were missing):
    `"instagram_business_account": { "id": "1784..." }` means the website can
    read your Instagram. If that part is missing, D1 is not done yet.
 
+### Instagram not showing (2026-10-10)
+
+The dashboard says "Facebook did not return an Instagram account for this
+Page" when Facebook answers the Page question without an Instagram account.
+There are two causes, and one check tells them apart.
+
+**The check (2 minutes).** Graph API Explorer -> paste the FB_PAGE_TOKEN value
+from Netlify in the **Access Token** box -> in the query box type
+`FB_PAGE_ID?fields=instagram_business_account,connected_instagram_account`
+(the real Page digits in place of FB_PAGE_ID) -> **Submit**.
+* An answer with `"instagram_business_account": { "id": "1784..." }`: the
+  link is fine; Refresh the dashboard (it keeps a copy for 15 minutes).
+* An answer with only `"id"`: go through 1 to 3 below, in order.
+
+**1. Instagram must be a professional account.** Instagram app -> your
+profile -> the three lines (top right) -> **Settings and activity** ->
+**Account type and tools**. If it offers **Switch to professional account**,
+do it and choose **Business**. (If it offers "Switch to personal account",
+it is already professional: leave it.)
+
+**2. Link it to the Lavish Leaf Page.** business.facebook.com (Meta Business
+Suite) -> the gear (**Settings**) bottom left -> **Business assets** (or
+**Accounts -> Instagram accounts**) -> **Add** / **Connect Instagram
+account** -> log in as **lavish_leaf_inc** -> make sure the **Lavish Leaf**
+Page is ticked for it. Another way to the same link: on facebook.com switch
+into the Page -> **Settings** -> **Linked accounts** -> **Instagram** ->
+**Connect account**.
+
+**3. Give the key an Instagram permission, then make a new key.**
+* App dashboard (developers.facebook.com -> My Apps -> Lavish Leaf Website)
+  -> **Use cases** -> beside **Manage messaging & content on Instagram** ->
+  **Customize**. It must say **API setup with Facebook login**. In its
+  permissions list click **Add** beside `instagram_basic`. If that use case
+  is not in the list at all, **Add use cases** (top) and add it first.
+* In the Graph API Explorer, `instagram_basic` appears in **Add a
+  Permission** only after that. Type part of it and **click it in the drop-down
+  list** (Enter does not select it). `instagram_manage_comments` is not
+  needed; it does no harm.
+* Then D2 steps 4 to 7 again (Generate Access Token: tick the Page AND
+  lavish_leaf_inc in Facebook's window; Extend; me/accounts; copy the Page
+  access_token), and replace FB_PAGE_TOKEN in Netlify with the new value, then
+  **Deploys -> Trigger deploy**.
+
+Run the check again: once it shows the Instagram id, the dashboard and the
+Social page both show Instagram.
+
 ### The other Instagram route (only if you ever want it)
 
 "API setup with Instagram login" (Use cases, Customize, Generate access

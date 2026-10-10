@@ -375,3 +375,20 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     token (SOCIAL-FEEDS D1b, D2); the dashboard now shows followers and
     Instagram even when the posts call fails. SeedsNow is the first approved
     affiliate (Refersion, 25%).
+
+27. **2026-10-10, second list.** Green Swaps leads with **SeedsNow** (the one
+    approved affiliate): a feature block with a Shop button, then seven
+    SeedsNow shelves (58 products, their photos and prices, every link with
+    our Refersion code) written by **`node tools/seedsnow-shelf.mjs`** between
+    the SEEDSNOW markers in store.html (rerun it now and then: prices are
+    theirs); the other swaps follow under "More green swaps". Every
+    rel="sponsored" link sends GA4 `affiliate_click` with `link_url`, and APK
+    taps send `link_url` and `build`, so the dashboard splits App Store vs
+    Alpha builds and counts partner clicks with GA4's own linkUrl dimension
+    (no custom dimension). Follower growth: one reading a day in Blobs
+    "dashboard"/"followers" (dashboard load + daily social-refresh); 7/28/90
+    day growth is computed from it, so history starts 2026-10-10. Header cart
+    (`nav-cart.js`, every page but the dashboard): store.html, or
+    store.html#cart when ll-cart has items. Home logos: logo-rec-sports.png,
+    logo-gaming.png (black made transparent), logo-lawn-garden.png; no
+    .oval-badge left on the home page.

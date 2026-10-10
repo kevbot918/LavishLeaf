@@ -3,7 +3,7 @@
 // every connected source at once (netlify/lib/dashboard.mjs), kept for 15
 // minutes so opening the page twice does not ask Google and Meta twice.
 import { adminFromRequest, json } from '../lib/admin.mjs';
-import { claritySection, formsSection, gaSection, gscSection, ordersSummary, socialSection } from '../lib/dashboard.mjs';
+import { claritySection, formsSection, gaSection, gscSection, ordersSummary, snapshotFollowers, socialSection } from '../lib/dashboard.mjs';
 import { mailConfig, mailReady, sentToday } from '../lib/mail.mjs';
 import { allSubscribers, listStats, newsletterStore } from '../lib/newsletter.mjs';
 import { allOrders, ordersStore } from '../lib/orders.mjs';
@@ -74,6 +74,9 @@ export default async (request) => {
     listSection(days),
     ordersSection(days),
   ]);
+  if (social.status === 'ok') {
+    social.data.growth = await snapshotFollowers(cache, social.data, days).catch(() => null);
+  }
   const out = { generated: new Date().toISOString(), days, ga, gsc, social, clarity, forms, list, orders };
   await cache.setJSON(key, out).catch(() => {});
   return json(200, out);

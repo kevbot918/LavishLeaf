@@ -405,6 +405,8 @@
       setTimeout(function () { input.focus(); }, 50);
     } else if (path === 'swaps') {
       show('swaps'); setTitle('Green Swaps');
+      // Its shelves were measured while hidden: let the arrows measure again.
+      setTimeout(function () { window.dispatchEvent(new Event('resize')); }, 30);
     } else if (path.indexOf('list/') === 0) {
       current.arg = path.slice(5);
       if (!listById(current.arg)) { location.hash = '#home'; return; }
@@ -814,7 +816,7 @@
   // he meant to scroll down the page); a trackpad's sideways swipe still works.
   var CHEV_L = 'M15 18l-6-6 6-6', CHEV_R = 'M9 18l6-6-6-6';
   function buildShelfArrows() {
-    $$('#shelves .shelf-row').forEach(function (row) {
+    $$('#shelves .shelf-row, #view-swaps .shelf-row').forEach(function (row) {
       if (row.parentNode.classList.contains('shelf-track')) return;
       var track = el('div', { class: 'shelf-track' });
       row.parentNode.insertBefore(track, row);

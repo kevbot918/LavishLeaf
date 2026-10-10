@@ -2,6 +2,7 @@
 // after it was last refreshed) and warm the feed cache. Netlify runs this on
 // its own schedule; nothing calls it from the site. See netlify/lib/social.mjs.
 import { getFeed, refreshInstagramToken } from '../lib/social.mjs';
+import { snapshotFollowers, socialSection } from '../lib/dashboard.mjs';
 
 export default async () => {
   try {
@@ -11,6 +12,9 @@ export default async () => {
     await store.delete('feed').catch(() => {}); // the next visit reads Meta afresh
     await getFeed(store);
     console.log('[social-refresh]', JSON.stringify(r));
+    // One follower reading a day for the dashboard's growth numbers.
+    const s = await socialSection().catch(() => null);
+    if (s && s.status === 'ok') await snapshotFollowers(getStore('dashboard'), s.data, 0);
   } catch (e) {
     console.error('[social-refresh] failed', e);
   }

@@ -12,7 +12,8 @@
 //   wish_list         a heart on a store card                        {product}
 //   donate_click      the donate pop-up
 //   social_click      Facebook, Instagram or YouTube                 {network}
-//   app_download      a Symphonymph APK link
+//   app_download      a Symphonymph APK link              {file, build, link_url}
+//   affiliate_click   a Green Swaps / partner link (rel=sponsored) {brand, product, link_url}
 //   email_click       a mailto: link                                 {address}
 //   newsletter_signup the newsletter form sent                       {page}
 //   contact_sent      the contact form sent                          {page}
@@ -59,7 +60,15 @@
     if (el.matches('[data-product], [data-subscribe]')) return track('sign_up_click', { product: productOf(el) });
     if (el.matches('.sp-demo a.btn')) return track('supplier_click', { product: productOf(el) });
     if (el.matches('.donate-paypal') || /#donate$/.test(href)) return track('donate_click');
-    if (/\/downloads\/.+\.apk$/i.test(href)) return track('app_download', { file: href.split('/').pop() });
+    // link_url is one of GA4's own parameters, so the dashboard can split
+    // the two builds and the partner links with no custom dimension.
+    if (/\/downloads\/.+\.apk$/i.test(href)) {
+      var file = href.split('/').pop();
+      return track('app_download', { file: file, build: /alpha/i.test(file) ? 'alpha' : 'store', link_url: el.href });
+    }
+    if (/\bsponsored\b/.test(el.getAttribute('rel') || '')) {
+      return track('affiliate_click', { brand: el.getAttribute('data-swap') || el.getAttribute('data-affiliate') || el.hostname, product: el.getAttribute('data-sn') || '', link_url: el.href.split('?')[0] });
+    }
     var net = /facebook\.com/.test(href) ? 'facebook' : /instagram\.com/.test(href) ? 'instagram' : /youtube\.com/.test(href) ? 'youtube' : '';
     if (net) return track('social_click', { network: net });
     if (/^mailto:/i.test(href)) return track('email_click', { address: href.slice(7).split('?')[0] });

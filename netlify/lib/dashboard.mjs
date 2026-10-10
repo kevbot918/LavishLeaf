@@ -33,6 +33,7 @@ export const EVENTS = {
   donate_click: 'Opened the donate window',
   social_click: 'Clicked to Facebook, Instagram or YouTube',
   app_download: 'Downloaded Symphonymph',
+  affiliate_click: 'Clicked a Green Swaps partner link',
   email_click: 'Clicked an email address',
   search: 'Searched the store',
 };
@@ -61,7 +62,11 @@ export async function gaSection(days, env = process.env, fetchImpl = fetch) {
     // dimension; empty until it is registered, like the two above).
     run({ dateRanges: [cur], dimensions: [{ name: 'date' }], metrics: [{ name: 'eventCount' }], dimensionFilter: { filter: { fieldName: 'eventName', stringFilter: { value: 'app_download' } } }, orderBys: [{ dimension: { dimensionName: 'date' } }], limit: 400 }),
     run({ dateRanges: [{ startDate: COUNTING_SINCE, endDate: 'today' }], metrics: [{ name: 'eventCount' }], dimensionFilter: { filter: { fieldName: 'eventName', stringFilter: { value: 'app_download' } } } }),
-    run({ dateRanges: [{ startDate: COUNTING_SINCE, endDate: 'today' }], dimensions: [{ name: 'customEvent:file' }], metrics: [{ name: 'eventCount' }], dimensionFilter: { filter: { fieldName: 'eventName', stringFilter: { value: 'app_download' } } }, orderBys: [{ metric: { metricName: 'eventCount' }, desc: true }], limit: 20 }),
+    // By link (GA4's own linkUrl: no setup), all time.
+    run({ dateRanges: [{ startDate: COUNTING_SINCE, endDate: 'today' }], dimensions: [{ name: 'linkUrl' }], metrics: [{ name: 'eventCount' }], dimensionFilter: { filter: { fieldName: 'eventName', stringFilter: { value: 'app_download' } } }, orderBys: [{ metric: { metricName: 'eventCount' }, desc: true }], limit: 20 }),
+    // Partner (affiliate) clicks by link, this period and all time.
+    run({ dateRanges: [cur], dimensions: [{ name: 'linkUrl' }], metrics: [{ name: 'eventCount' }], dimensionFilter: { filter: { fieldName: 'eventName', stringFilter: { value: 'affiliate_click' } } }, orderBys: [{ metric: { metricName: 'eventCount' }, desc: true }], limit: 60 }),
+    run({ dateRanges: [{ startDate: COUNTING_SINCE, endDate: 'today' }], dimensions: [{ name: 'linkUrl' }], metrics: [{ name: 'eventCount' }], dimensionFilter: { filter: { fieldName: 'eventName', stringFilter: { value: 'affiliate_click' } } }, orderBys: [{ metric: { metricName: 'eventCount' }, desc: true }], limit: 60 }),
   ]);
   const v = (i) => (r[i].status === 'fulfilled' ? r[i].value : null);
   if (!v(0) && !v(1)) return fail(r[0].reason || r[1].reason);
@@ -103,10 +108,36 @@ export async function gaSection(days, env = process.env, fetchImpl = fetch) {
       daily: (v(10) || []).map((row) => ({ date: fmtDate(row.dims[0]), value: row.vals[0] })),
       allTime: ((v(11) || [])[0] || { vals: [0] }).vals[0],
       since: COUNTING_SINCE,
-      byFile: (v(12) || []).filter((row) => row.dims[0] && row.dims[0] !== '(not set)').map((row) => ({ name: row.dims[0], value: row.vals[0] })),
-      fileDimension: r[12].status === 'fulfilled',
+      byBuild: buildCounts(v(12) || []),
     },
+    affiliates: { now: linkCounts(v(13) || []), allTime: linkCounts(v(14) || []) },
   });
+}
+
+/** APK taps by build: the alpha file says "alpha" in its name. */
+function buildCounts(rows) {
+  const out = { store: 0, alpha: 0, unknown: 0 };
+  for (const row of rows) {
+    const url = row.dims[0] || '';
+    if (!url || url === '(not set)') out.unknown += row.vals[0];
+    else if (/alpha/i.test(url)) out.alpha += row.vals[0];
+    else out.store += row.vals[0];
+  }
+  return out;
+}
+
+/** Partner clicks by site and by link. */
+function linkCounts(rows) {
+  const bySite = {}, byLink = [];
+  for (const row of rows) {
+    const url = row.dims[0] || '';
+    if (!url || url === '(not set)') continue;
+    let host = url;
+    try { host = new URL(url).hostname.replace(/^www\./, ''); } catch { /* keep it */ }
+    bySite[host] = (bySite[host] || 0) + row.vals[0];
+    byLink.push({ name: url.replace(/^https?:\/\/(www\.)?/, ''), value: row.vals[0] });
+  }
+  return { bySite: Object.entries(bySite).map(([name, value]) => ({ name, value })).sort((a, b) => b.value - a.value), byLink };
 }
 
 // ------------------------------------------------------------ Search Console
@@ -147,7 +178,7 @@ export async function socialSection(env = process.env, fetchImpl = fetch) {
   const G = 'https://graph.facebook.com';
   const out = { facebook: null, instagram: null, errors: [] };
   try {
-    const info = await graph(`${G}/${page}?fields=name,followers_count,fan_count,instagram_business_account&access_token=${t}`, fetchImpl);
+    const info = await graph(`${G}/${page}?fields=name,followers_count,fan_count,instagram_business_account,connected_instagram_account&access_token=${t}`, fetchImpl);
     // The posts need the pages_read_user_content permission on the Page token
     // (docs/SOCIAL-FEEDS.md D1b); without it the followers still show.
     let posts = { data: [] };
@@ -165,7 +196,8 @@ export async function socialSection(env = process.env, fetchImpl = fetch) {
         return { text: String(p.message || '').slice(0, 140), date: p.created_time, url: p.permalink_url, image: p.full_picture || null, likes, comments, shares, total: likes + comments + shares };
       }),
     };
-    const ig = info.instagram_business_account && info.instagram_business_account.id;
+    const igLink = info.instagram_business_account || info.connected_instagram_account;
+    const ig = igLink && igLink.id;
     if (ig) {
       const acct = await graph(`${G}/${ig}?fields=username,followers_count,media_count&access_token=${t}`, fetchImpl);
       const media = await graph(`${G}/${ig}/media?fields=caption,media_type,media_url,thumbnail_url,permalink,timestamp,like_count,comments_count&limit=25&access_token=${t}`, fetchImpl);
@@ -179,13 +211,55 @@ export async function socialSection(env = process.env, fetchImpl = fetch) {
         })),
       };
     } else {
-      out.errors.push('No Instagram account is linked to the Facebook Page, so Instagram numbers are missing.');
+      out.errors.push('Facebook did not return an Instagram account for this Page, so Instagram numbers are missing. Either Instagram is not linked to the Page as a professional account, or the Page key lacks an Instagram permission: docs/SOCIAL-FEEDS.md, "Instagram not showing".');
     }
   } catch (e) {
     if (!out.facebook) return fail(e);
     out.errors.push(String(e.message).slice(0, 200));
   }
   return ok(out);
+}
+
+// ------------------------------------------------------------ follower history
+// Meta only reports today's follower count, so the dashboard keeps one
+// reading a day (Blobs "dashboard", key "followers"): written whenever the
+// dashboard loads and by the daily social-refresh function. Growth over 7,
+// 28 or 90 days is today's count minus the reading from that many days ago,
+// or from the oldest reading when the history is younger than that.
+export function recordFollowers(history, social, now = Date.now()) {
+  const list = Array.isArray(history) ? history.slice() : [];
+  if (!social) return list;
+  const fb = social.facebook ? social.facebook.followers : null;
+  const ig = social.instagram ? social.instagram.followers : null;
+  if (fb == null && ig == null) return list;
+  const date = iso(now);
+  const entry = { date, fb, ig };
+  const i = list.findIndex((x) => x.date === date);
+  if (i >= 0) list[i] = { date, fb: fb ?? list[i].fb, ig: ig ?? list[i].ig };
+  else list.push(entry);
+  list.sort((a, b) => a.date.localeCompare(b.date));
+  return list.slice(-400);
+}
+
+export function followerGrowth(history, days, now = Date.now()) {
+  const list = Array.isArray(history) ? history : [];
+  const today = list[list.length - 1];
+  if (!today) return null;
+  const want = iso(now - days * 864e5);
+  // The newest reading on or before the start day, else the oldest one.
+  let base = null;
+  for (const x of list) { if (x.date <= want) base = x; }
+  const complete = !!base;
+  base = base || list[0];
+  const gain = (k) => (today[k] == null || base[k] == null ? null : today[k] - base[k]);
+  return { from: base.date, to: today.date, complete, facebook: gain('fb'), instagram: gain('ig'), readings: list.length };
+}
+
+export async function snapshotFollowers(cache, social, days) {
+  const history = await cache.get('followers', { type: 'json' }).catch(() => null);
+  const next = recordFollowers(history, social);
+  if (next.length) await cache.setJSON('followers', next).catch(() => {});
+  return days ? followerGrowth(next, days) : null;
 }
 
 // ------------------------------------------------------------ Clarity

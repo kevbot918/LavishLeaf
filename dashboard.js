@@ -209,7 +209,11 @@
     if (orders) tile('Orders', 'fa-bag-shopping', num(orders.count), money(orders.revenue) + ' in the last ' + days + ' days');
     if (social) {
       var f = (social.facebook && social.facebook.followers) || 0, ig = (social.instagram && social.instagram.followers) || 0;
-      tile('Social followers', 'fa-share-nodes', num(f + ig), num(f) + ' on Facebook, ' + num(ig) + ' on Instagram');
+      var gr = social.growth;
+      var sign = function (n) { return n == null ? '-' : (n > 0 ? '+' : '') + num(n); };
+      tile('New followers', 'fa-share-nodes', gr ? sign((gr.facebook || 0) + (gr.instagram || 0)) : '-',
+        gr ? sign(gr.facebook) + ' Facebook, ' + sign(gr.instagram) + ' Instagram ' + (gr.complete ? 'in the last ' + days + ' days' : 'since ' + niceDate(gr.from) + ' (counting began then)') + '. Now ' + num(f) + ' and ' + num(ig) + '.'
+           : num(f) + ' on Facebook, ' + num(ig) + ' on Instagram. Growth appears from tomorrow.');
     }
 
     // ---- sections
@@ -324,8 +328,11 @@
       st2.appendChild(h('<div class="db-stat"><div class="v">' + esc(num(dl.allTime)) + '</div><div class="l">Since ' + esc(niceDate(dl.since || '2026-10-02')) + '</div><div class="e">Every tap since counting began.</div></div>'));
       cd.appendChild(st2);
       gd.appendChild(cd);
-      var cf = card('By file', 'Which APK was tapped: the phone build or the TV build.');
-      cf.appendChild(dl.fileDimension ? bars(dl.byFile, { unit: 'taps', empty: 'No taps yet.' }) : notice({ status: 'setup', message: 'Register the custom dimension "file" in Google Analytics (docs/DASHBOARD.md, step 5) to see this.' }));
+      var bb = dl.byBuild || { store: 0, alpha: 0, unknown: 0 };
+      var cf = card('By build', 'Since counting began. Both are phone apps: the App Store build, and the Alpha build with the extra sources. Taps before 10 October did not record which link.');
+      var bRows = [{ name: 'App Store build', value: bb.store }, { name: 'Alpha build', value: bb.alpha }];
+      if (bb.unknown) bRows.push({ name: 'Before 10 Oct (link not recorded)', value: bb.unknown });
+      cf.appendChild(bars(bRows, { unit: 'taps', empty: 'No taps yet.' }));
       gd.appendChild(cf);
       var cdd = card('Day by day');
       cdd.appendChild(bars(dl.daily.slice().reverse().map(function (r) { return { name: niceDate(r.date), value: r.value }; }), { unit: 'taps', limit: 14, empty: 'No taps in this period.' }));
@@ -351,6 +358,18 @@
       });
       ca.appendChild(lk);
       if (j.check) ca.appendChild(el('p', 'db-hint', j.check));
+      // Clicks on the partner links, from Google Analytics.
+      var aff = ga && ga.affiliates;
+      if (aff) {
+        var g9 = el('div', 'db-grid');
+        var k1 = card('Partner link clicks, last ' + days + ' days', 'Every click on a Green Swaps or SeedsNow link, by site.');
+        k1.appendChild(bars(aff.now.bySite, { unit: 'clicks', empty: 'No partner clicks in this period yet.' }));
+        g9.appendChild(k1);
+        var k2 = card('Most-clicked partner links', 'Since counting began on 10 October 2026.');
+        k2.appendChild(bars(aff.allTime.byLink, { unit: 'clicks', limit: 12, empty: 'No partner clicks yet.' }));
+        g9.appendChild(k2);
+        sa.appendChild(g9);
+      } else sa.appendChild(notice(d.ga));
     }).catch(function () { ca.textContent = ''; ca.appendChild(el('p', 'db-empty', 'Could not read affiliates.json just now.')); });
 
     // 8. newsletter, forms, orders

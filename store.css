@@ -648,7 +648,22 @@ body.ss-resizing .ss-side { transition: none; }
 .cart-shipline { margin: 10px 0 0; text-align: right; color: var(--muted); }
 
 /* Green Swaps (owner, 2026-10-07): affiliate swaps we do not carry. */
-.gs-intro { max-width: 80ch; margin: 14px 32px 0; color: var(--text); line-height: 1.55; }
+.gs-intro { margin: 14px 32px 0; color: var(--text); line-height: 1.55; text-align: center; }
+/* One line on a wide screen (owner, 2026-10-10); it wraps on a phone. */
+.gs-lede { margin: 0 auto; font-size: .98rem; }
+.gs-intro .gs-disclosure { display: inline-block; text-align: left; }
+.gs-feature { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin: 18px 32px 6px; padding: 18px 22px; border: 1px solid var(--accent-fill); border-radius: 12px; background: var(--accent-soft); }
+.gs-feature h2 { margin: 2px 0 6px; font-size: 1.5rem; font-weight: 800; color: var(--text); }
+.gs-feature p { margin: 0; max-width: 72ch; line-height: 1.5; color: var(--text); }
+.gs-feature .gs-feature-kicker { font-size: .78rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); }
+.ss-shell .gs-feature-btn { flex: 0 0 auto; padding: 12px 26px; font-size: 1rem; }
+.gs-sn-shelf { margin-top: 10px; }
+.gs-sn-card .sp-media { display: block; }
+.gs-sn-card .sp-media img { background: #fff; }
+.gs-sn-note { margin: 2px 32px 0; font-size: .78rem; color: var(--muted); }
+.gs-more { margin: 26px 32px 0; font-size: 1.12rem; font-weight: 800; color: var(--text); }
+@media (max-width: 1000px) { .gs-feature, .gs-sn-note, .gs-more { margin-left: 16px; margin-right: 16px; } }
+@media (max-width: 640px) { .gs-feature { flex-direction: column; align-items: stretch; } .ss-shell .gs-feature-btn { text-align: center; } }
 .gs-disclosure { margin-top: 8px; padding: 10px 14px; border: 1px solid var(--accent-fill); border-radius: 10px; background: var(--accent-soft); font-size: .88rem; }
 .gs-disclosure strong { color: var(--accent); }
 .gs-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin: 18px 32px 28px; }

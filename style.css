@@ -231,6 +231,10 @@ header {
 }
 
 .nav-right a:hover { color: var(--leaf-bright); background: rgba(74, 183, 60, 0.16); }
+/* The header cart (nav-cart.js, 2026-10-10): a count when the cart holds something. */
+.nav-right a.nav-cart { position: relative; }
+.nav-cart-n { position: absolute; top: 2px; right: 0; min-width: 17px; height: 17px; padding: 0 4px; border-radius: 9px; background: var(--leaf); color: var(--ink); font-size: 0.68rem; font-weight: 800; line-height: 17px; text-align: center; }
+.nav-cart-n[hidden] { display: none; }
 
 /* On a phone the page links live in the menu, so the left of the logo is free:
    Facebook and Instagram sit there, YouTube and Email stay on the right beside
@@ -801,6 +805,7 @@ textarea { min-height: 115px; resize: vertical; }
 .org-box h3 { color: var(--leaf-bright); font-size: 1rem; font-weight: 800; margin-bottom: 4px; }
 .content-section .org-box p { color: var(--gray); font-size: 0.9rem; line-height: 1.45; margin: 0; }
 .content-section p.org-note { margin-top: 16px; font-size: 0.92rem; text-align: center; }
+.content-section p.org-invite { text-align: center; margin-left: auto; margin-right: auto; }
 
 /* ===== STORE =================================================== */
 .store-products {
