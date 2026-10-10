@@ -141,13 +141,33 @@ The dashboard says "Facebook did not return an Instagram account for this
 Page" when Facebook answers the Page question without an Instagram account.
 There are two causes, and one check tells them apart.
 
-**The check (2 minutes).** Graph API Explorer -> paste the FB_PAGE_TOKEN value
-from Netlify in the **Access Token** box -> in the query box type
-`FB_PAGE_ID?fields=instagram_business_account,connected_instagram_account`
-(the real Page digits in place of FB_PAGE_ID) -> **Submit**.
-* An answer with `"instagram_business_account": { "id": "1784..." }`: the
-  link is fine; Refresh the dashboard (it keeps a copy for 15 minutes).
-* An answer with only `"id"`: go through 1 to 3 below, in order.
+**The check (3 minutes). Netlify never shows a saved key again, so this
+makes a fresh one in the Explorer instead of reading the old one.**
+1. https://developers.facebook.com/tools/explorer/ -> right side: **Meta
+   App** = Lavish Leaf Website, **User or Page** = **User Token**.
+2. **Permissions**: pages_show_list, pages_read_engagement,
+   pages_read_user_content, business_management, and instagram_basic if the
+   drop-down offers it.
+3. **Generate Access Token** -> in Facebook's window, Continue, choose the
+   Lavish Leaf Page (and lavish_leaf_inc if it lists Instagram), Save.
+4. Query box: `me/accounts?fields=name,id,instagram_business_account` ->
+   **Submit**.
+* Under "Lavish Leaf", an `"instagram_business_account": { "id": "1784..." }`
+  means the link works: make the key below ("Put the new key in Netlify").
+* No instagram_business_account: go through 1 to 3 below, then this check
+  again.
+
+**Put the new key in Netlify** (after the check shows the Instagram id):
+1. Copy the long token in the Explorer's **Access Token** box ->
+   https://developers.facebook.com/tools/debug/accesstoken/ -> paste ->
+   **Debug** -> **Extend Access Token** (bottom) -> copy the NEW token.
+2. Explorer: paste it into the **Access Token** box, query
+   `me/accounts?fields=name,id,access_token` -> **Submit** -> copy the
+   `access_token` under "Lavish Leaf" (the Page's key; it does not expire).
+3. Netlify -> the site -> **Site configuration -> Environment variables** ->
+   **FB_PAGE_TOKEN** -> **Edit** -> paste the new key over the value (the
+   old one never needs to be seen) -> **Save**. Then **Deploys -> Trigger
+   deploy -> Deploy site**, wait a minute, and **Refresh** the dashboard.
 
 **1. Instagram must be a professional account.** Instagram app -> your
 profile -> the three lines (top right) -> **Settings and activity** ->
