@@ -164,6 +164,42 @@ function card(p) {
   ].join('\n');
 }
 
+// The Seeds shelf (owner, 2026-10-11): our partner SeedsNow's products,
+// from seedsnow-home.json (tools/seedsnow-shelf.mjs). Never sold here: every
+// card links out with our affiliate code, and store.js keeps the prices live.
+const SEEDS = (() => { try { return JSON.parse(readFileSync(join(ROOT, 'seedsnow-home.json'), 'utf8')); } catch { return null; } })();
+function seedsShelf() {
+  if (!SEEDS || !SEEDS.products.length) return '';
+  const href = (h) => esc(`https://www.seedsnow.com/products/${h}?${SEEDS.affiliate}`);
+  const cards = SEEDS.products.map((s) => [
+    `  <article class="sp-card gs-sn-card" data-id="sn-${esc(s.handle)}" data-category="Seeds">`,
+    '    <div class="sp-media">',
+    `      <img src="${esc(s.image)}" alt="${esc(s.name)}" loading="lazy">`,
+    '      <span class="sp-badge sp-partner">SeedsNow</span>',
+    `      <button type="button" class="sp-wish" data-wish="sn-${esc(s.handle)}" aria-pressed="false" aria-label="Save ${esc(s.name)} to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>`,
+    '    </div>',
+    `    <h3 class="sp-name">${esc(s.name)}</h3>`,
+    `    <p class="sp-blurb">${esc(s.type ? s.type.replace(/^\*/, '') + ' seed' : 'Seed')} from our partner SeedsNow: non-GMO and open-pollinated.</p>`,
+    '    <div class="sp-foot">',
+    `      <span class="sp-price" data-sn-price="${esc(s.handle)}">${esc(s.price)}</span>`,
+    `      <a class="btn btn-sm" href="${href(s.handle)}" target="_blank" rel="sponsored noopener" data-affiliate="SeedsNow" data-sn="${esc(s.handle)}">View at SeedsNow</a>`,
+    '    </div>',
+    '  </article>',
+  ].join('\n'));
+  return [
+    '<section class="shelf" id="shelf-seeds" data-shelf="seeds" data-title="Seeds">',
+    '  <div class="shelf-head">',
+    '    <h2>Seeds</h2>',
+    '    <a class="shelf-all" href="#shelf/seeds">See all</a>',
+    '  </div>',
+    '  <p class="shelf-note">From our seed partner SeedsNow. Lavish Leaf earns a commission on orders through these links, at no extra cost to you.</p>',
+    '  <div class="shelf-row">',
+    cards.join('\n\n'),
+    '  </div>',
+    '</section>',
+  ].join('\n');
+}
+
 /** One Home shelf per category, in the order categories first appear. */
 function shelves(active) {
   const note = active.some((p) => p.demo)
@@ -184,7 +220,7 @@ function shelves(active) {
     ps.map(card).join('\n\n'),
     '  </div>',
     '</section>',
-  ].join('\n')).join('\n\n');
+  ].join('\n') + (name === 'Farm & Garden' && seedsShelf() ? '\n\n' + seedsShelf() : '')).join('\n\n');
 }
 
 /** In cart mode a button on another page goes to the Store, product added. */

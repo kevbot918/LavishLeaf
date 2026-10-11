@@ -24,7 +24,9 @@
   'use strict';
 
   var KEY = 'll-store';
-  var SHELF_LENGTH = 30; // products on a Home shelf; "See all" shows the rest
+  // Every product scrolls on its Home shelf (owner, 2026-10-11: "allow to scroll
+  // through much more than just 30"); "See all" still lays them out in a grid.
+  var SHELF_LENGTH = 1000;
   // The sidebar's width, px. Owner, 2026-10-10: start it a bit wider (was 340).
   var SIDE_W = 390, SIDE_MIN = 260, SIDE_MAX = 560, OLD_SIDE_W = 340;
   var DEFAULTS = { sort: 'relevance', sideW: SIDE_W, lists: [], shelfOrder: [] };
@@ -919,7 +921,13 @@
     var facts = $('#pop-facts'); facts.textContent = '';
     function fact(k, v) { if (!v) return; var li = el('li'); li.appendChild(el('strong', null, k + ': ')); li.appendChild(document.createTextNode(v)); facts.appendChild(li); }
     fact('Shelf', p.category);
-    if (d.ship) {
+    // A SeedsNow card (the Seeds shelf): sold and shipped by our partner.
+    var partner = p.card.classList.contains('gs-sn-card');
+    $('.sp-pop-fine', pop).hidden = partner;
+    if (partner) {
+      fact('Sold and shipped by', 'our seed partner SeedsNow, at their prices');
+      fact('Our link', 'Lavish Leaf earns a commission on your SeedsNow order, at no extra cost to you');
+    } else if (d.ship) {
       fact('Weight', weightText(d.shipOz) + ' packed');
       fact('Delivery', 'some items ship direct from the supplier and some from our warehouse, allow 1-3 weeks');
       var shipLi = el('li'); shipLi.appendChild(el('strong', null, d.shipFrom === 'aliexpress' ? 'Shipping: ' : 'Shipping ')); var shipTxt = document.createTextNode('...'); shipLi.appendChild(shipTxt); facts.appendChild(shipLi);
@@ -936,7 +944,7 @@
     } else {
       fact('Delivery', 'nothing is shipped');
     }
-    fact('Sales tax', 'Oklahoma 6%, added in the cart');
+    if (!partner) fact('Sales tax', 'Oklahoma 6%, added in the cart');
     var acts = $('#pop-actions'); acts.textContent = '';
     if (d.options) {
       // Choose the scent, colour or size, then add (2026-10-11).
