@@ -478,3 +478,29 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     (new shelves Oral Care and Bath & Body), photos resized to 600px JPEG.
     Search matches plurals ("squishies" finds Squishy) and a result row opens
     the pop-up.
+
+32. **2026-10-11, second list.** Shelves are seven (owner): Farm & Garden,
+    Recreation & Outdoors, Personal Care, Home & Kitchen, Cleaning Supplies,
+    Games & Gifts, Pets; products.json is sorted in that order. **Pricing
+    rule now**: AliExpress = today's dropship price x 1.15, then (c + 0.49) /
+    0.5651 to .49/.99, and only if it is within 10% of the comparable Amazon or
+    Walmart price; Bangalla at least 25% after PayPal and within 10% of list,
+    else dropped (23 raised, 15 dropped). AliExpress Choice charges about
+    $1.99 on a small order; our $2.99 covers it and margins stay over 25%.
+    Products whose listing photo shows a range say which one the buyer gets.
+    **50% off** registrations and pick-ups (oldPrice, a "% off" badge). **Pick-up
+    sign-up** (netlify/lib/pickups.mjs, functions/subscribe.mjs + pickups.mjs):
+    name, phone, email, address, day, instructions, optional $10 bucket
+    (compost only, "bucket": 1000); address within 25 miles of the farm or in
+    McAlester/Stigler/Checotah by the Census geocoder, else a ZIP list; the
+    subscription carries our price and the bucket setup fee as a plan
+    override; Blobs "pickups"; owner email on return; dashboard section;
+    privacy.html#pickups. **Search engines**: tools/seo.mjs writes sitemap.xml,
+    robots.txt, google-shopping.xml (Merchant Center feed) and store.html
+    JSON-LD; pages have canonical links, local titles and JSON-LD;
+    store.html?p=<id> opens a product; og-card.jpg is the 1200x630 preview.
+    Owner steps: docs/SEO.md. Run render-store then seo after any products.json
+    change. **Marketing**: tools/social-graphics.mjs draws marketing/social/*.png
+    (gitignored, with the screenshots and VIDEO-PLAN.md); the kit is the
+    artifact https://claude.ai/artifact/XtL53cixfCtdPm9BRpLM67. The held
+    app-usage commit went out with Symphonymph 3.0.0 (the app session pushed it).

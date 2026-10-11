@@ -154,7 +154,7 @@
   function allAccepted() {
     return waiversInCart().every(function (w) { return acceptedW[w.version]; });
   }
-  function isRegistration(p) { return !!(p && (p.waiver || p.category === 'Rec Sports')); }
+  function isRegistration(p) { return !!(p && p.waiver); }
 
   // A product may require an agreement before it can be paid for. Today
   // that is the two soccer registrations, which take a waiver in the email
@@ -423,7 +423,80 @@
       });
   }
 
+  // Pick-up sign-up (owner, 2026-10-11): name, phone, email, address, day,
+  // instructions and (compost) our $10 bucket. The server checks the address
+  // is in the pick-up area before PayPal opens (netlify/lib/pickups.mjs).
+  var signDlg;
+  var DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  function field(form, label, input, hint) {
+    var l = el('label', { class: 'su-field' });
+    l.appendChild(el('span', null, label));
+    l.appendChild(input);
+    if (hint) l.appendChild(el('small', null, hint));
+    form.appendChild(l);
+    return input;
+  }
+  function signUp(id, button) {
+    var p = products[id];
+    if (!signDlg) {
+      signDlg = el('dialog', { class: 'cart-doc su-dlg', 'aria-label': 'Sign up' });
+      document.body.appendChild(signDlg);
+    }
+    signDlg.textContent = '';
+    var bar = el('div', { class: 'cart-doc-bar' });
+    bar.appendChild(el('h2', { class: 'cart-doc-title' }, 'Sign up: ' + p.name));
+    var x = el('button', { type: 'button', class: 'btn btn-sm btn-ghost' }, 'Close');
+    x.addEventListener('click', function () { signDlg.close(); if (button) button.disabled = false; });
+    bar.appendChild(x);
+    signDlg.appendChild(bar);
+    var form = el('form', { class: 'cart-doc-body su-form', novalidate: '' });
+    form.appendChild(el('p', { class: 'su-lede' }, '$' + (p.price / 100).toFixed(2) + ' a month' + (p.oldPrice ? ' (50% off $' + (p.oldPrice / 100).toFixed(2) + ')' : '') + ', plus 6% Oklahoma sales tax. We pick up within 25 miles of Stigler, and anywhere in McAlester, Stigler and Checotah.'));
+    var f = {
+      name: field(form, 'Your name', el('input', { type: 'text', autocomplete: 'name', required: '', maxlength: '80' })),
+      phone: field(form, 'Phone number', el('input', { type: 'tel', autocomplete: 'tel', required: '', maxlength: '20' })),
+      email: field(form, 'Email', el('input', { type: 'email', autocomplete: 'email', required: '', maxlength: '120' })),
+      street: field(form, 'Street address', el('input', { type: 'text', autocomplete: 'address-line1', required: '', maxlength: '120' })),
+      city: field(form, 'City', el('input', { type: 'text', autocomplete: 'address-level2', required: '', maxlength: '60' })),
+      zip: field(form, 'ZIP code', el('input', { type: 'text', inputmode: 'numeric', autocomplete: 'postal-code', required: '', maxlength: '5' })),
+    };
+    var day = el('select', { required: '' });
+    day.appendChild(el('option', { value: '' }, 'Choose a day...'));
+    DAYS.forEach(function (d) { day.appendChild(el('option', { value: d }, d)); });
+    f.day = field(form, 'Preferred pick-up day', day);
+    f.notes = field(form, 'Instructions for pick-up', el('textarea', { rows: '3', maxlength: '500', placeholder: 'Where to find the bucket or bin, gate codes, dogs, anything we should know.' }));
+    var bucket = null;
+    if (p.bucket) {
+      var bl = el('label', { class: 'su-check' });
+      bucket = el('input', { type: 'checkbox' });
+      bl.appendChild(bucket);
+      bl.appendChild(document.createTextNode(' Add our 5 gallon bucket for $' + (p.bucket / 100).toFixed(2) + ' (one time). Leave unticked to use your own; we empty it into ours on the trailer.'));
+      form.appendChild(bl);
+    }
+    var msg = el('p', { class: 'su-msg', role: 'status' });
+    var go = el('button', { type: 'submit', class: 'btn' }, 'Continue to PayPal');
+    form.appendChild(msg);
+    form.appendChild(go);
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var details = { bucket: bucket ? bucket.checked : false };
+      Object.keys(f).forEach(function (k) { details[k] = f[k].value.trim(); });
+      if (!details.name || !details.phone || !details.email || !details.street || !details.city || !details.zip || !details.day) {
+        msg.textContent = 'Please fill in every field except the instructions.';
+        return;
+      }
+      go.disabled = true;
+      msg.textContent = 'Checking your address...';
+      post('subscribe', { id: id, details: details })
+        .then(function (r) { msg.textContent = 'Opening PayPal...'; window.location.href = r.approveUrl; })
+        .catch(function (err) { msg.textContent = err.message; go.disabled = false; });
+    });
+    signDlg.appendChild(form);
+    if (typeof signDlg.showModal === 'function') signDlg.showModal(); else signDlg.setAttribute('open', '');
+    f.name.focus();
+  }
+
   function subscribe(id, button) {
+    if (products[id] && products[id].pickup) { signUp(id, button); return; }
     if (button) button.disabled = true;
     post('subscribe', { id: id })
       .then(function (r) { window.location.href = r.approveUrl; })
@@ -444,6 +517,10 @@
       clean();
     } else if (q.get('paypal') === 'return' && q.get('subscription_id')) {
       say('You are signed up. PayPal will email you a confirmation.');
+      // A pick-up sign-up: tell the owner (once) now that PayPal has it.
+      post('pickups', { action: 'confirm', subscriptionId: q.get('subscription_id') })
+        .then(function (r) { if (r && r.day) say('You are signed up. Your pick-up day is ' + r.day + '; we will call or text before the first one. PayPal will email you a confirmation.'); })
+        .catch(function () { /* PayPal's own email still goes */ });
       clean();
     } else if (q.get('paypal') === 'return' && q.get('token')) {
       say('Finishing your payment…');
@@ -472,6 +549,9 @@
         b.scrollIntoView({ block: 'center' });
         b.focus();
       }
+      // A pick-up service opens its sign-up form straight away.
+      var sp = products[q.get('subscribe')];
+      if (sp && sp.pickup) signUp(sp.id, b);
     }
   }
 

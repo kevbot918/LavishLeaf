@@ -1469,3 +1469,4 @@ footer {
 .impact-num span { font-size: 1.1rem; font-weight: 700; color: var(--gray); }
 .impact-label { margin-top: 8px; color: var(--white); font-size: 0.95rem; line-height: 1.45; }
 .impact-updated { margin-top: 18px; font-size: 0.85rem; color: var(--gray); }
+.sale-tag { display: inline-block; background: var(--leaf); color: var(--ink); font-weight: 800; font-size: .8rem; padding: 2px 8px; border-radius: 999px; margin-right: 6px; vertical-align: middle; }

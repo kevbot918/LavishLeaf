@@ -32,16 +32,18 @@
       "icon": "🌱",
       "image": "images/compost-bucket.jpg",
       "imageAlt": "A pail of kitchen scraps and compost beside a potted seedling",
-      "blurb": "A 5 gallon bucket at your door, swapped for a clean one every 1 to 2 weeks, on the day you choose. $10 one-time bucket fee. Your scraps become living soil.",
-      "price": 3000,
-      "oldPrice": null,
+      "blurb": "Your kitchen scraps picked up on the day you choose, every 1 to 2 weeks. Use your own bucket, or add our 5 gallon bucket for $10 when you sign up. Your scraps become living soil.",
+      "price": 1500,
+      "oldPrice": 3000,
       "interval": "month",
       "button": "Sign Up",
       "emailSubject": "Compost Pick-Up Sign Up",
       "payLink": "",
       "active": true,
       "ship": false,
-      "paypalPlanId": "P-6BX47736CP523372JNLFP55Y"
+      "paypalPlanId": "P-6BX47736CP523372JNLFP55Y",
+      "pickup": true,
+      "bucket": 1000
     },
     {
       "id": "recycle-monthly",
@@ -59,8 +61,8 @@
       ],
       "icon": "♻️",
       "blurb": "Set out your own bin and we empty it on the day you choose: cardboard, paper, cans, glass, plastics #1, #2 and #5 and more, taken to local recycling centers.",
-      "price": 3000,
-      "oldPrice": null,
+      "price": 1500,
+      "oldPrice": 3000,
       "interval": "month",
       "button": "Sign Up",
       "emailSubject": "Recycling Pick-Up Sign Up",
@@ -69,12 +71,489 @@
       "ship": false,
       "paypalPlanId": "P-7NF99993LK537471HNLFQA3A",
       "image": "images/recycling-bins.jpg",
-      "imageAlt": "Recycling carts set out at the curb for pick-up"
+      "imageAlt": "Recycling carts set out at the curb for pick-up",
+      "pickup": true
+    },
+    {
+      "id": "ae-seed-starter-trays-with-grow-light-2-pack",
+      "name": "Seed Starter Trays with Grow Light, 2 pack",
+      "category": "Farm & Garden",
+      "tags": [
+        "aliexpress",
+        "seed",
+        "starter",
+        "trays",
+        "with",
+        "grow",
+        "light",
+        "pack"
+      ],
+      "image": "images/store/ae-3256810162225391.jpg",
+      "imageAlt": "Seed Starter Trays with Grow Light, 2 pack",
+      "blurb": "Two seed trays with humidity domes and an LED grow light, to start seeds indoors.",
+      "price": 2649,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Seed Starter Trays with Grow Light, 2 pack",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 40,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256810162225391"
+      }
+    },
+    {
+      "id": "ae-fabric-grow-bag",
+      "name": "Fabric Grow Bag",
+      "category": "Farm & Garden",
+      "tags": [
+        "aliexpress",
+        "fabric",
+        "grow"
+      ],
+      "image": "images/store/ae-3256811824629124.jpg",
+      "imageAlt": "Fabric Grow Bag",
+      "blurb": "A breathable fabric pot for tomatoes, peppers, potatoes and herbs.",
+      "price": 899,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Fabric Grow Bag",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 6,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256811824629124"
+      }
+    },
+    {
+      "id": "ae-natural-jute-twine",
+      "name": "Natural Jute Twine",
+      "category": "Farm & Garden",
+      "tags": [
+        "aliexpress",
+        "natural",
+        "jute",
+        "twine"
+      ],
+      "image": "images/store/ae-3256806674667884.jpg",
+      "imageAlt": "Natural Jute Twine",
+      "blurb": "Natural jute twine for tying up plants, crafts and gift wrap.",
+      "price": 549,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Natural Jute Twine",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 4,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256806674667884"
+      }
+    },
+    {
+      "id": "ae-ceramic-mini-planter",
+      "name": "Ceramic Mini Planter",
+      "category": "Farm & Garden",
+      "tags": [
+        "aliexpress",
+        "ceramic",
+        "mini",
+        "planter"
+      ],
+      "image": "images/store/ae-3256808473784197.jpg",
+      "imageAlt": "Ceramic Mini Planter",
+      "blurb": "A small ceramic pot for a succulent or herb on the windowsill.",
+      "price": 649,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Ceramic Mini Planter",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 8,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256808473784197"
+      }
+    },
+    {
+      "id": "ae-macrame-plant-hanger",
+      "name": "Macrame Plant Hanger",
+      "category": "Farm & Garden",
+      "tags": [
+        "aliexpress",
+        "macrame",
+        "plant",
+        "hanger"
+      ],
+      "image": "images/store/ae-3256809073271183.jpg",
+      "imageAlt": "Macrame Plant Hanger",
+      "blurb": "A woven cotton hanger for a potted plant.",
+      "price": 749,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Macrame Plant Hanger",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 3,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256809073271183"
+      }
+    },
+    {
+      "id": "ae-mini-garden-hand-tool-set-3-pieces",
+      "name": "Mini Garden Hand Tool Set, 3 pieces",
+      "category": "Farm & Garden",
+      "tags": [
+        "aliexpress",
+        "mini",
+        "garden",
+        "hand",
+        "tool",
+        "pieces"
+      ],
+      "image": "images/store/ae-3256811467689498.jpg",
+      "imageAlt": "Mini Garden Hand Tool Set, 3 pieces",
+      "blurb": "A small trowel, shovel and rake for pots, raised beds and seedlings.",
+      "price": 499,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Mini Garden Hand Tool Set, 3 pieces",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 6,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256811467689498"
+      }
+    },
+    {
+      "id": "ae-long-spout-watering-can",
+      "name": "Long Spout Watering Can",
+      "category": "Farm & Garden",
+      "tags": [
+        "aliexpress",
+        "long",
+        "spout",
+        "watering"
+      ],
+      "image": "images/store/ae-3256809042958449.jpg",
+      "imageAlt": "Long Spout Watering Can",
+      "blurb": "A watering can with a long, thin spout that reaches under leaves and into hanging pots.",
+      "price": 1249,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Long Spout Watering Can",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 14,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256809042958449"
+      }
+    },
+    {
+      "id": "ae-continuous-mist-plant-sprayer-200-ml",
+      "name": "Continuous Mist Plant Sprayer, 200 ml",
+      "category": "Farm & Garden",
+      "tags": [
+        "aliexpress",
+        "continuous",
+        "mist",
+        "plant",
+        "sprayer"
+      ],
+      "image": "images/store/ae-3256805783765688.jpg",
+      "imageAlt": "Continuous Mist Plant Sprayer, 200 ml",
+      "blurb": "One squeeze gives a long, fine mist for houseplants, seedlings and herbs.",
+      "price": 1049,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Continuous Mist Plant Sprayer, 200 ml",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 5,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256805783765688"
+      }
+    },
+    {
+      "id": "ae-bamboo-plant-stakes-10-pack",
+      "name": "Bamboo Plant Stakes, 10 pack",
+      "category": "Farm & Garden",
+      "tags": [
+        "aliexpress",
+        "bamboo",
+        "plant",
+        "stakes",
+        "pack"
+      ],
+      "image": "images/store/ae-3256809168755877.jpg",
+      "imageAlt": "Bamboo Plant Stakes, 10 pack",
+      "blurb": "Bamboo canes to hold up tomatoes, peppers and climbing plants.",
+      "price": 949,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Bamboo Plant Stakes, 10 pack",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 8,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256809168755877"
+      }
+    },
+    {
+      "id": "ae-plant-stabilizer-clip",
+      "name": "Plant Stabilizer Clip",
+      "category": "Farm & Garden",
+      "tags": [
+        "aliexpress",
+        "plant",
+        "stabilizer",
+        "clip",
+        "garden",
+        "supplies"
+      ],
+      "image": "images/store/ae-3256809395944100.jpg",
+      "imageAlt": "Plant Stabilizer Clip",
+      "blurb": "A clip that steadies a leaning plant stem, like a monstera, against its pole.",
+      "price": 499,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Plant Stabilizer Clip",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 2,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256809395944100"
+      }
+    },
+    {
+      "id": "ae-self-watering-plant-pot-small",
+      "name": "Self-Watering Plant Pot, Small",
+      "category": "Farm & Garden",
+      "tags": [
+        "aliexpress",
+        "self",
+        "watering",
+        "plant",
+        "pot",
+        "small",
+        "garden",
+        "supplies"
+      ],
+      "image": "images/store/ae-3256806675485517.jpg",
+      "imageAlt": "Self-Watering Plant Pot, Small",
+      "blurb": "A clear double-layer pot that waters the plant from a reservoir below.",
+      "price": 749,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Self-Watering Plant Pot, Small",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 6,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256806675485517"
+      }
+    },
+    {
+      "id": "ae-hanging-wooden-bird-feeder",
+      "name": "Hanging Wooden Bird Feeder",
+      "category": "Farm & Garden",
+      "tags": [
+        "aliexpress",
+        "hanging",
+        "wooden",
+        "bird",
+        "feeder",
+        "garden",
+        "supplies"
+      ],
+      "image": "images/store/ae-3256810253146322.jpg",
+      "imageAlt": "Hanging Wooden Bird Feeder",
+      "blurb": "A large wooden feeder to hang from a branch or hook.",
+      "price": 1499,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Hanging Wooden Bird Feeder",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 20,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256810253146322"
+      }
+    },
+    {
+      "id": "ae-garden-kneeling-pad",
+      "name": "Garden Kneeling Pad",
+      "category": "Farm & Garden",
+      "tags": [
+        "aliexpress",
+        "garden",
+        "kneeling",
+        "pad",
+        "supplies"
+      ],
+      "image": "images/store/ae-3256809850917948.jpg",
+      "imageAlt": "Garden Kneeling Pad",
+      "blurb": "A thick foam pad that saves your knees while weeding and planting.",
+      "price": 849,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Garden Kneeling Pad",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 8,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256809850917948"
+      }
+    },
+    {
+      "id": "ae-felt-wall-pocket-planter-2-pockets",
+      "name": "Felt Wall Pocket Planter, 2 pockets",
+      "category": "Farm & Garden",
+      "tags": [
+        "aliexpress",
+        "felt",
+        "wall",
+        "pocket",
+        "planter",
+        "pockets",
+        "garden",
+        "supplies"
+      ],
+      "image": "images/store/ae-3256806825478450.jpg",
+      "imageAlt": "Felt Wall Pocket Planter, 2 pockets",
+      "blurb": "A felt planter that hangs on a wall or fence, for herbs and flowers.",
+      "price": 799,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Felt Wall Pocket Planter, 2 pockets",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 5,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256806825478450"
+      }
+    },
+    {
+      "id": "ae-animal-on-a-bicycle-wind-spinner",
+      "name": "Animal on a Bicycle Wind Spinner",
+      "category": "Farm & Garden",
+      "tags": [
+        "aliexpress",
+        "animal",
+        "bicycle",
+        "wind",
+        "spinner",
+        "garden",
+        "supplies"
+      ],
+      "image": "images/store/ae-3256808061825608.jpg",
+      "imageAlt": "Animal on a Bicycle Wind Spinner",
+      "blurb": "A metal garden stake whose wheels spin in the wind.",
+      "price": 999,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Animal on a Bicycle Wind Spinner",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 12,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256808061825608"
+      }
+    },
+    {
+      "id": "ae-feather-parrot-garden-decor",
+      "name": "Feather Parrot Garden Decor",
+      "category": "Farm & Garden",
+      "tags": [
+        "aliexpress",
+        "feather",
+        "parrot",
+        "garden",
+        "decor",
+        "farm",
+        "and"
+      ],
+      "image": "images/store/ae-3256806796351182.jpg",
+      "imageAlt": "Feather Parrot Garden Decor",
+      "blurb": "A colourful feathered parrot that perches in a garden, porch or plant corner. The photo shows the range; you get the yellow parrot, 10 in (25 cm).",
+      "price": 799,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Feather Parrot Garden Decor",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 4,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256806796351182",
+        "variant": "yellow/25 cm"
+      }
     },
     {
       "id": "soccer-player-fall",
       "name": "Player Registration: 7v7 Adult Soccer League (Fall Season)",
-      "category": "Rec Sports",
+      "category": "Recreation & Outdoors",
       "tags": [
         "soccer",
         "7v7",
@@ -87,7 +566,7 @@
       "image": "images/soccer-player.jpg",
       "imageAlt": "Two players chasing a soccer ball across a grass field at sunset",
       "blurb": "One player's spot in the fall 7v7 league: Sunday games in Eufaula and McAlester through Christmas, with insurance, fields, equipment and prizes covered by the fee.",
-      "price": 2500,
+      "price": 1500,
       "oldPrice": 3000,
       "interval": null,
       "button": "Player Registration",
@@ -104,7 +583,7 @@
     {
       "id": "soccer-team-fall",
       "name": "Team Registration: 7v7 Adult Soccer",
-      "category": "Rec Sports",
+      "category": "Recreation & Outdoors",
       "tags": [
         "soccer",
         "7v7",
@@ -117,7 +596,7 @@
       "image": "images/soccer-team.jpg",
       "imageAlt": "Adults in practice pinnies playing a friendly soccer match on a grass field",
       "blurb": "Register a whole 7v7 squad for the fall season: Sunday games in Eufaula and McAlester through Christmas, and your team on the live standings from week one.",
-      "price": 25000,
+      "price": 15000,
       "oldPrice": 30000,
       "interval": null,
       "button": "Team Registration",
@@ -132,9 +611,669 @@
       "ship": false
     },
     {
+      "id": "ae-cotton-crew-socks-5-pairs",
+      "name": "Cotton Crew Socks, 5 pairs",
+      "category": "Recreation & Outdoors",
+      "tags": [
+        "aliexpress",
+        "cotton",
+        "crew",
+        "socks",
+        "pairs",
+        "clothing",
+        "and",
+        "shoes"
+      ],
+      "image": "images/store/ae-1005009384252185.jpg",
+      "imageAlt": "Cotton Crew Socks, 5 pairs",
+      "blurb": "Pure cotton crew socks, one size.",
+      "price": 949,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Cotton Crew Socks, 5 pairs",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 9,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "1005009384252185"
+      },
+      "options": {
+        "label": "Colour",
+        "values": [
+          {
+            "name": "Black"
+          },
+          {
+            "name": "White"
+          },
+          {
+            "name": "Mixed"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ae-cuffed-knit-beanie-black",
+      "name": "Cuffed Knit Beanie, Black",
+      "category": "Recreation & Outdoors",
+      "tags": [
+        "aliexpress",
+        "cuffed",
+        "knit",
+        "beanie",
+        "black",
+        "clothing",
+        "and",
+        "shoes"
+      ],
+      "image": "images/store/ae-1005010323901024.jpg",
+      "imageAlt": "Cuffed Knit Beanie, Black",
+      "blurb": "A warm cuffed knit beanie, one size (55 to 59 cm).",
+      "price": 849,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Cuffed Knit Beanie, Black",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 4,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "1005010323901024"
+      }
+    },
+    {
+      "id": "ae-soccer-shin-guards-neon-green",
+      "name": "Soccer Shin Guards, Neon Green",
+      "category": "Recreation & Outdoors",
+      "tags": [
+        "aliexpress",
+        "soccer",
+        "shin",
+        "guards",
+        "neon",
+        "green",
+        "recreation",
+        "and",
+        "outdoors"
+      ],
+      "image": "images/store/ae-3256810253080624.jpg",
+      "imageAlt": "Soccer Shin Guards, Neon Green",
+      "blurb": "Lightweight shin guards with honeycomb padding and a breathable sleeve for soccer practice and games. The photo shows the range; you get the neon green pair.",
+      "price": 899,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Soccer Shin Guards, Neon Green",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 6,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256810253080624",
+        "variant": "Fluorescent green"
+      },
+      "options": {
+        "label": "Size",
+        "values": [
+          {
+            "name": "S",
+            "note": "Fluorescent green / S"
+          },
+          {
+            "name": "M",
+            "note": "Fluorescent green / M"
+          },
+          {
+            "name": "L",
+            "note": "Fluorescent green / L"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ae-quick-dry-microfiber-towel-20-x-47-in",
+      "name": "Quick-Dry Microfiber Towel, 20 x 47 in",
+      "category": "Recreation & Outdoors",
+      "tags": [
+        "aliexpress",
+        "quick",
+        "dry",
+        "microfiber",
+        "towel",
+        "recreation",
+        "and",
+        "outdoor"
+      ],
+      "image": "images/store/ae-3256806596588868.jpg",
+      "imageAlt": "Quick-Dry Microfiber Towel, 20 x 47 in",
+      "blurb": "A fast-drying microfiber towel that packs small for the gym, the trail or the campsite.",
+      "price": 949,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Quick-Dry Microfiber Towel, 20 x 47 in",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 8,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256806596588868",
+        "variant": "Dark Grey OPP + 50x120cm"
+      }
+    },
+    {
+      "id": "ae-running-ankle-socks-3-pairs",
+      "name": "Running Ankle Socks, 3 pairs",
+      "category": "Recreation & Outdoors",
+      "tags": [
+        "aliexpress",
+        "running",
+        "ankle",
+        "socks",
+        "pairs",
+        "recreation",
+        "and",
+        "outdoors"
+      ],
+      "image": "images/store/ae-3256806541366694.jpg",
+      "imageAlt": "Running Ankle Socks, 3 pairs",
+      "blurb": "Three pairs of cushioned, breathable ankle socks made for running and training. One size (men 5 to 10). The photo shows the range; you get three black pairs.",
+      "price": 899,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Running Ankle Socks, 3 pairs",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 5,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256806541366694",
+        "variant": "3 Pairs Black + 37-44"
+      }
+    },
+    {
+      "id": "ae-athletic-running-shorts-navy",
+      "name": "Athletic Running Shorts, Navy",
+      "category": "Recreation & Outdoors",
+      "tags": [
+        "aliexpress",
+        "athletic",
+        "running",
+        "shorts",
+        "navy",
+        "recreation",
+        "and",
+        "outdoors"
+      ],
+      "image": "images/store/ae-3256807158782008.jpg",
+      "imageAlt": "Athletic Running Shorts, Navy",
+      "blurb": "Light quick-dry athletic shorts with an elastic waist for running, soccer and everyday workouts.",
+      "price": 1349,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Athletic Running Shorts, Navy",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 6,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256807158782008",
+        "variant": "Dark Blue"
+      },
+      "options": {
+        "label": "Size",
+        "values": [
+          {
+            "name": "M",
+            "note": "Dark Blue / M"
+          },
+          {
+            "name": "L",
+            "note": "Dark Blue / L"
+          },
+          {
+            "name": "XL",
+            "note": "Dark Blue / XL"
+          },
+          {
+            "name": "XXL",
+            "note": "Dark Blue / XXL"
+          },
+          {
+            "name": "XXXL",
+            "note": "Dark Blue / XXXL"
+          },
+          {
+            "name": "4XL",
+            "note": "Dark Blue / 4XL"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ae-cooling-uv-arm-sleeves-3-pairs",
+      "name": "Cooling UV Arm Sleeves, 3 pairs",
+      "category": "Recreation & Outdoors",
+      "tags": [
+        "aliexpress",
+        "cooling",
+        "arm",
+        "sleeves",
+        "pairs",
+        "recreation",
+        "and",
+        "outdoors"
+      ],
+      "image": "images/store/ae-3256808858847899.jpg",
+      "imageAlt": "Cooling UV Arm Sleeves, 3 pairs",
+      "blurb": "Three pairs of stretchy sun-blocking arm sleeves that keep your arms cool outdoors.",
+      "price": 549,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Cooling UV Arm Sleeves, 3 pairs",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 3,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256808858847899",
+        "variant": "black-3Pairs"
+      }
+    },
+    {
+      "id": "ae-quick-dry-running-cap",
+      "name": "Quick-Dry Running Cap",
+      "category": "Recreation & Outdoors",
+      "tags": [
+        "aliexpress",
+        "quick",
+        "dry",
+        "running",
+        "cap",
+        "recreation",
+        "and",
+        "outdoors"
+      ],
+      "image": "images/store/ae-3256806808994678.jpg",
+      "imageAlt": "Quick-Dry Running Cap",
+      "blurb": "A thin, quick-drying cap with an adjustable strap to keep sun and sweat off your face. The photo shows the range; you get the black cap.",
+      "price": 599,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Quick-Dry Running Cap",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 3,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256806808994678",
+        "variant": "Black + Adjustable"
+      }
+    },
+    {
+      "id": "ae-padded-sport-knee-pads-pair",
+      "name": "Padded Sport Knee Pads, pair",
+      "category": "Recreation & Outdoors",
+      "tags": [
+        "aliexpress",
+        "padded",
+        "sport",
+        "knee",
+        "pads",
+        "pair",
+        "recreation",
+        "and",
+        "outdoors"
+      ],
+      "image": "images/store/ae-3256806810360697.jpg",
+      "imageAlt": "Padded Sport Knee Pads, pair",
+      "blurb": "A pair of thick sponge knee pads that cushion falls and floor contact in volleyball and training. The photo shows the range; you get one black and white pair.",
+      "price": 999,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Padded Sport Knee Pads, pair",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 6,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256806810360697",
+        "variant": "BlackWhite-1Pair"
+      },
+      "options": {
+        "label": "Size",
+        "values": [
+          {
+            "name": "S",
+            "note": "BlackWhite-1Pair / S"
+          },
+          {
+            "name": "M",
+            "note": "BlackWhite-1Pair / M"
+          },
+          {
+            "name": "L",
+            "note": "BlackWhite-1Pair / L"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ae-hiking-compass",
+      "name": "Hiking Compass",
+      "category": "Recreation & Outdoors",
+      "tags": [
+        "aliexpress",
+        "hiking",
+        "compass",
+        "recreation",
+        "and",
+        "outdoors"
+      ],
+      "image": "images/store/ae-3256809968890154.jpg",
+      "imageAlt": "Hiking Compass",
+      "blurb": "A compact outdoor compass for finding your way on hikes and camping trips.",
+      "price": 649,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Hiking Compass",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 3,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256809968890154",
+        "variant": "1PCs"
+      }
+    },
+    {
+      "id": "ae-knee-compression-sleeve",
+      "name": "Knee Compression Sleeve",
+      "category": "Recreation & Outdoors",
+      "tags": [
+        "aliexpress",
+        "knee",
+        "compression",
+        "sleeve",
+        "recreation",
+        "and",
+        "outdoors"
+      ],
+      "image": "images/store/ae-3256806808189103.jpg",
+      "imageAlt": "Knee Compression Sleeve",
+      "blurb": "A breathable compression sleeve that gives the knee light support during running and sports.",
+      "price": 599,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Knee Compression Sleeve",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 3,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256806808189103",
+        "variant": "Black"
+      },
+      "options": {
+        "label": "Size",
+        "values": [
+          {
+            "name": "M",
+            "note": "Black / M"
+          },
+          {
+            "name": "L",
+            "note": "Black / L"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ae-foil-camping-ground-mat-79-x-59-in",
+      "name": "Foil Camping Ground Mat, 79 x 59 in",
+      "category": "Recreation & Outdoors",
+      "tags": [
+        "aliexpress",
+        "foil",
+        "camping",
+        "ground",
+        "mat",
+        "recreation",
+        "and",
+        "outdoors"
+      ],
+      "image": "images/store/ae-3256807120339674.jpg",
+      "imageAlt": "Foil Camping Ground Mat, 79 x 59 in",
+      "blurb": "A large foil-backed foam mat that keeps damp and cold off you at camp or a picnic.",
+      "price": 1349,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Foil Camping Ground Mat, 79 x 59 in",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 16,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256807120339674",
+        "variant": "200X150cm"
+      }
+    },
+    {
+      "id": "ae-waterproof-hiking-leg-gaiters",
+      "name": "Waterproof Hiking Leg Gaiters",
+      "category": "Recreation & Outdoors",
+      "tags": [
+        "aliexpress",
+        "waterproof",
+        "hiking",
+        "leg",
+        "gaiters",
+        "recreation",
+        "and",
+        "outdoors"
+      ],
+      "image": "images/store/ae-3256807690726650.jpg",
+      "imageAlt": "Waterproof Hiking Leg Gaiters",
+      "blurb": "Waterproof gaiters that keep snow, mud and trail grit out of your boots. The photo shows the range; you get the black and grey pair.",
+      "price": 1499,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Waterproof Hiking Leg Gaiters",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 10,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256807690726650",
+        "variant": "black grey"
+      }
+    },
+    {
+      "id": "ae-non-slip-yoga-mat-3-mm",
+      "name": "Non-Slip Yoga Mat, 3 mm",
+      "category": "Recreation & Outdoors",
+      "tags": [
+        "aliexpress",
+        "non",
+        "slip",
+        "yoga",
+        "mat",
+        "recreation",
+        "and",
+        "outdoors"
+      ],
+      "image": "images/store/ae-3256806808957451.jpg",
+      "imageAlt": "Non-Slip Yoga Mat, 3 mm",
+      "blurb": "A non-slip 3 mm mat for yoga, stretching and floor workouts.",
+      "price": 1499,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Non-Slip Yoga Mat, 3 mm",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 32,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256806808957451",
+        "variant": "black + 3mm"
+      }
+    },
+    {
+      "id": "ae-graduated-compression-socks",
+      "name": "Graduated Compression Socks",
+      "category": "Recreation & Outdoors",
+      "tags": [
+        "aliexpress",
+        "graduated",
+        "compression",
+        "socks",
+        "recreation",
+        "and",
+        "outdoors"
+      ],
+      "image": "images/store/ae-3256807120432672.jpg",
+      "imageAlt": "Graduated Compression Socks",
+      "blurb": "Graduated compression socks that support tired legs during sports, travel and long days on your feet. Blue. The photo shows the range; you get one blue pair.",
+      "price": 799,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Graduated Compression Socks",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 3,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256807120432672",
+        "variant": "1pair blue"
+      },
+      "options": {
+        "label": "Size",
+        "values": [
+          {
+            "name": "S/M",
+            "note": "1pair blue / S/M"
+          },
+          {
+            "name": "L/XL",
+            "note": "1pair blue / L/XL"
+          },
+          {
+            "name": "XXL",
+            "note": "1pair blue / XXL"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bg-earth-therapeutics-far-reach-back-brush",
+      "name": "Earth Therapeutics Far Reach Back Brush",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "earth",
+        "therapeutics",
+        "far",
+        "reach",
+        "back",
+        "brush"
+      ],
+      "image": "images/store/b-86791-1pk.jpg",
+      "imageAlt": "Earth Therapeutics Far Reach Back Brush",
+      "blurb": "A long-handled brush that reaches the middle of your back.",
+      "price": 1399,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Earth Therapeutics Far Reach Back Brush",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 9,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-86791-1PK"
+      }
+    },
+    {
+      "id": "bg-earth-therapeutics-natural-bristle-body-brush",
+      "name": "Earth Therapeutics Natural Bristle Body Brush",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "earth",
+        "therapeutics",
+        "natural",
+        "bristle",
+        "body",
+        "brush"
+      ],
+      "image": "images/store/b-86790-1pk.jpg",
+      "imageAlt": "Earth Therapeutics Natural Bristle Body Brush",
+      "blurb": "A natural-bristle brush for dry brushing or a scrub in the shower.",
+      "price": 1399,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Earth Therapeutics Natural Bristle Body Brush",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 8,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-86790-1PK"
+      }
+    },
+    {
       "id": "bg-kiss-my-face-pure-olive-oil-bar-soap-8-oz",
       "name": "Kiss My Face Pure Olive Oil Bar Soap, 8 oz",
-      "category": "Soap & Personal Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "kiss",
@@ -164,7 +1303,7 @@
     {
       "id": "bg-kiss-my-face-olive-and-aloe-bar-soap-8-oz",
       "name": "Kiss My Face Olive & Aloe Bar Soap, 8 oz",
-      "category": "Soap & Personal Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "kiss",
@@ -194,7 +1333,7 @@
     {
       "id": "bg-kiss-my-face-pure-olive-oil-bar-soap-4-oz",
       "name": "Kiss My Face Pure Olive Oil Bar Soap, 4 oz",
-      "category": "Soap & Personal Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "kiss",
@@ -224,7 +1363,7 @@
     {
       "id": "bg-tea-tree-therapy-eucalyptus-soap-3-5-oz",
       "name": "Tea Tree Therapy Eucalyptus Soap, 3.5 oz",
-      "category": "Soap & Personal Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "tree",
@@ -253,7 +1392,7 @@
     {
       "id": "bg-chandrika-sandal-soap-75-g",
       "name": "Chandrika Sandal Soap, 75 g",
-      "category": "Soap & Personal Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "chandrika",
@@ -279,162 +1418,9 @@
       }
     },
     {
-      "id": "bg-full-circle-the-ring-veggie-brush",
-      "name": "Full Circle The Ring Veggie Brush",
-      "category": "Cleaning",
-      "tags": [
-        "bangalla",
-        "full",
-        "circle",
-        "ring",
-        "veggie",
-        "brush"
-      ],
-      "image": "images/store/b-61860-1pk.jpg",
-      "imageAlt": "Full Circle The Ring Veggie Brush",
-      "blurb": "Slips over a finger to scrub potatoes and carrots clean under the tap.",
-      "price": 799,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Full Circle The Ring Veggie Brush",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 4,
-      "shipFrom": "bangalla",
-      "source": {
-        "supplier": "Bangalla",
-        "sku": "B-61860-1PK"
-      }
-    },
-    {
-      "id": "bg-casabella-kind-plant-based-scrub-sponges-case-of-8",
-      "name": "Casabella Kind Plant-Based Scrub Sponges, case of 8 three-packs",
-      "category": "Cleaning",
-      "tags": [
-        "bangalla",
-        "casabella",
-        "kind",
-        "plant",
-        "based",
-        "scrub",
-        "sponges",
-        "case"
-      ],
-      "image": "images/store/b-24616-8pk.jpg",
-      "imageAlt": "Casabella Kind Plant-Based Scrub Sponges, case of 8 three-packs",
-      "blurb": "24 plant-based scrub sponges in eight 3-packs.",
-      "price": 4999,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Casabella Kind Plant-Based Scrub Sponges, case of 8 three-packs",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 31,
-      "shipFrom": "bangalla",
-      "source": {
-        "supplier": "Bangalla",
-        "sku": "B-24616-8PK"
-      }
-    },
-    {
-      "id": "bg-weiman-cook-top-scrubbing-pads-case-of-6-three-pac",
-      "name": "Weiman Cook Top Scrubbing Pads, case of 6 three-packs",
-      "category": "Cleaning",
-      "tags": [
-        "bangalla",
-        "weiman",
-        "cook",
-        "scrubbing",
-        "pads",
-        "case",
-        "three",
-        "packs"
-      ],
-      "image": "images/store/b-25849-6pk.jpg",
-      "imageAlt": "Weiman Cook Top Scrubbing Pads, case of 6 three-packs",
-      "blurb": "18 non-scratch scrubbing pads made for glass and ceramic cooktops.",
-      "price": 3299,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Weiman Cook Top Scrubbing Pads, case of 6 three-packs",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 106,
-      "shipFrom": "bangalla",
-      "source": {
-        "supplier": "Bangalla",
-        "sku": "B-25849-6PK"
-      }
-    },
-    {
-      "id": "bg-roland-bamboo-toothpicks-case-of-12-x-300",
-      "name": "Roland Bamboo Toothpicks, case of 12 x 300",
-      "category": "Kitchen & Serving",
-      "tags": [
-        "bangalla",
-        "roland",
-        "bamboo",
-        "toothpicks",
-        "case"
-      ],
-      "image": "images/store/b-60917-12pk.jpg",
-      "imageAlt": "Roland Bamboo Toothpicks, case of 12 x 300",
-      "blurb": "Twelve canisters of 300 bamboo toothpicks.",
-      "price": 3499,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Roland Bamboo Toothpicks, case of 12 x 300",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 64,
-      "shipFrom": "bangalla",
-      "source": {
-        "supplier": "Bangalla",
-        "sku": "B-60917-12PK"
-      }
-    },
-    {
-      "id": "bg-world-centric-compostable-plates-6-in-case-of-240",
-      "name": "World Centric Compostable Plates, 6 in, case of 240",
-      "category": "Kitchen & Serving",
-      "tags": [
-        "bangalla",
-        "world",
-        "centric",
-        "compostable",
-        "plates",
-        "case"
-      ],
-      "image": "images/store/b-89495-12pk.jpg",
-      "imageAlt": "World Centric Compostable Plates, 6 in, case of 240",
-      "blurb": "12 packs of 20 commercially compostable 6 inch plates, for parties and events.",
-      "price": 4499,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: World Centric Compostable Plates, 6 in, case of 240",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 92,
-      "shipFrom": "bangalla",
-      "source": {
-        "supplier": "Bangalla",
-        "sku": "B-89495-12PK"
-      }
-    },
-    {
       "id": "bg-giovanni-bamboo-oval-hairbrush",
       "name": "Giovanni Bamboo Oval Hairbrush",
-      "category": "Soap & Personal Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "giovanni",
@@ -445,7 +1431,7 @@
       "image": "images/store/b-66316-1pk.jpg",
       "imageAlt": "Giovanni Bamboo Oval Hairbrush",
       "blurb": "An oval hairbrush with a bamboo handle.",
-      "price": 1149,
+      "price": 1249,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -461,222 +1447,9 @@
       }
     },
     {
-      "id": "bg-kirk-s-castile-soap-fragrance-free-3-pack",
-      "name": "Kirk's Castile Soap, Fragrance Free, 3 pack",
-      "category": "Soap & Personal Care",
-      "tags": [
-        "bangalla",
-        "kirk",
-        "castile",
-        "soap",
-        "fragrance",
-        "free",
-        "pack"
-      ],
-      "image": "images/store/b-34703-1pk.jpg",
-      "imageAlt": "Kirk's Castile Soap, Fragrance Free, 3 pack",
-      "blurb": "Three 4 oz coconut oil castile bars with no fragrance.",
-      "price": 739,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Kirk's Castile Soap, Fragrance Free, 3 pack",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 18,
-      "shipFrom": "bangalla",
-      "source": {
-        "supplier": "Bangalla",
-        "sku": "B-34703-1PK"
-      }
-    },
-    {
-      "id": "bg-kirk-s-castile-soap-original-fresh-3-pack",
-      "name": "Kirk's Castile Soap, Original Fresh, 3 pack",
-      "category": "Soap & Personal Care",
-      "tags": [
-        "bangalla",
-        "kirk",
-        "castile",
-        "soap",
-        "original",
-        "fresh",
-        "pack"
-      ],
-      "image": "images/store/b-44495-1pk.jpg",
-      "imageAlt": "Kirk's Castile Soap, Original Fresh, 3 pack",
-      "blurb": "Three 4 oz coconut oil castile bars in the original scent.",
-      "price": 739,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Kirk's Castile Soap, Original Fresh, 3 pack",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 16,
-      "shipFrom": "bangalla",
-      "source": {
-        "supplier": "Bangalla",
-        "sku": "B-44495-1PK"
-      }
-    },
-    {
-      "id": "bg-kirk-s-castile-soap-aloe-3-pack",
-      "name": "Kirk's Castile Soap, Aloe, 3 pack",
-      "category": "Soap & Personal Care",
-      "tags": [
-        "bangalla",
-        "kirk",
-        "castile",
-        "soap",
-        "aloe",
-        "pack"
-      ],
-      "image": "images/store/b-82324-1pk.jpg",
-      "imageAlt": "Kirk's Castile Soap, Aloe, 3 pack",
-      "blurb": "Three 4 oz coconut oil castile bars with aloe.",
-      "price": 739,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Kirk's Castile Soap, Aloe, 3 pack",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 18,
-      "shipFrom": "bangalla",
-      "source": {
-        "supplier": "Bangalla",
-        "sku": "B-82324-1PK"
-      }
-    },
-    {
-      "id": "bg-south-of-france-bar-soap-lavender-fields-6-oz",
-      "name": "South of France Bar Soap, Lavender Fields, 6 oz",
-      "category": "Soap & Personal Care",
-      "tags": [
-        "bangalla",
-        "south",
-        "france",
-        "soap",
-        "lavender",
-        "fields"
-      ],
-      "image": "images/store/b-35310-1pk.jpg",
-      "imageAlt": "South of France Bar Soap, Lavender Fields, 6 oz",
-      "blurb": "A French-milled 6 oz bar scented with lavender.",
-      "price": 529,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: South of France Bar Soap, Lavender Fields, 6 oz",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 8,
-      "shipFrom": "bangalla",
-      "source": {
-        "supplier": "Bangalla",
-        "sku": "B-35310-1PK"
-      }
-    },
-    {
-      "id": "bg-south-of-france-bar-soap-orange-blossom-honey-6-oz",
-      "name": "South of France Bar Soap, Orange Blossom Honey, 6 oz",
-      "category": "Soap & Personal Care",
-      "tags": [
-        "bangalla",
-        "south",
-        "france",
-        "soap",
-        "orange",
-        "blossom",
-        "honey"
-      ],
-      "image": "images/store/b-35392-1pk.jpg",
-      "imageAlt": "South of France Bar Soap, Orange Blossom Honey, 6 oz",
-      "blurb": "A French-milled 6 oz bar with orange blossom and honey.",
-      "price": 529,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: South of France Bar Soap, Orange Blossom Honey, 6 oz",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 8,
-      "shipFrom": "bangalla",
-      "source": {
-        "supplier": "Bangalla",
-        "sku": "B-35392-1PK"
-      }
-    },
-    {
-      "id": "bg-south-of-france-bar-soap-blooming-jasmine-6-oz",
-      "name": "South of France Bar Soap, Blooming Jasmine, 6 oz",
-      "category": "Soap & Personal Care",
-      "tags": [
-        "bangalla",
-        "south",
-        "france",
-        "soap",
-        "blooming",
-        "jasmine"
-      ],
-      "image": "images/store/b-33315-1pk.jpg",
-      "imageAlt": "South of France Bar Soap, Blooming Jasmine, 6 oz",
-      "blurb": "A French-milled 6 oz bar scented with jasmine.",
-      "price": 529,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: South of France Bar Soap, Blooming Jasmine, 6 oz",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 8,
-      "shipFrom": "bangalla",
-      "source": {
-        "supplier": "Bangalla",
-        "sku": "B-33315-1PK"
-      }
-    },
-    {
-      "id": "bg-south-of-france-bar-soap-lemon-verbena-6-oz",
-      "name": "South of France Bar Soap, Lemon Verbena, 6 oz",
-      "category": "Soap & Personal Care",
-      "tags": [
-        "bangalla",
-        "south",
-        "france",
-        "soap",
-        "lemon",
-        "verbena"
-      ],
-      "image": "images/store/b-35336-1pk.jpg",
-      "imageAlt": "South of France Bar Soap, Lemon Verbena, 6 oz",
-      "blurb": "A French-milled 6 oz bar scented with lemon verbena.",
-      "price": 529,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: South of France Bar Soap, Lemon Verbena, 6 oz",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 8,
-      "shipFrom": "bangalla",
-      "source": {
-        "supplier": "Bangalla",
-        "sku": "B-35336-1PK"
-      }
-    },
-    {
       "id": "bg-a-la-maison-lavender-and-rosemary-bar-soap-4-pack",
       "name": "A La Maison Lavender & Rosemary Bar Soap, 4 pack",
-      "category": "Soap & Personal Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "maison",
@@ -688,7 +1461,7 @@
       "image": "images/store/b-81970-1pk.jpg",
       "imageAlt": "A La Maison Lavender & Rosemary Bar Soap, 4 pack",
       "blurb": "Four 3.5 oz bars of lavender and rosemary soap.",
-      "price": 899,
+      "price": 1049,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -704,292 +1477,9 @@
       }
     },
     {
-      "id": "ae-seed-starter-trays-with-grow-light-2-pack",
-      "name": "Seed Starter Trays with Grow Light, 2 pack",
-      "category": "Garden Supplies",
-      "tags": [
-        "aliexpress",
-        "seed",
-        "starter",
-        "trays",
-        "with",
-        "grow",
-        "light",
-        "pack"
-      ],
-      "image": "images/store/ae-3256810162225391.jpg",
-      "imageAlt": "Seed Starter Trays with Grow Light, 2 pack",
-      "blurb": "Two seed trays with humidity domes and an LED grow light, to start seeds indoors.",
-      "price": 2349,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Seed Starter Trays with Grow Light, 2 pack",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 40,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "3256810162225391"
-      }
-    },
-    {
-      "id": "ae-fabric-grow-bag",
-      "name": "Fabric Grow Bag",
-      "category": "Garden Supplies",
-      "tags": [
-        "aliexpress",
-        "fabric",
-        "grow"
-      ],
-      "image": "images/store/ae-3256811824629124.jpg",
-      "imageAlt": "Fabric Grow Bag",
-      "blurb": "A breathable fabric pot for tomatoes, peppers, potatoes and herbs.",
-      "price": 799,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Fabric Grow Bag",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 6,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "3256811824629124"
-      }
-    },
-    {
-      "id": "ae-stainless-steel-pruning-shears",
-      "name": "Stainless Steel Pruning Shears",
-      "category": "Garden Supplies",
-      "tags": [
-        "aliexpress",
-        "stainless",
-        "steel",
-        "pruning",
-        "shears"
-      ],
-      "image": "images/store/ae-3256809857759381.jpg",
-      "imageAlt": "Stainless Steel Pruning Shears",
-      "blurb": "Straight-head pruning shears with a non-slip handle.",
-      "price": 749,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Stainless Steel Pruning Shears",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 6,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "3256809857759381"
-      }
-    },
-    {
-      "id": "ae-natural-jute-twine",
-      "name": "Natural Jute Twine",
-      "category": "Garden Supplies",
-      "tags": [
-        "aliexpress",
-        "natural",
-        "jute",
-        "twine"
-      ],
-      "image": "images/store/ae-3256806674667884.jpg",
-      "imageAlt": "Natural Jute Twine",
-      "blurb": "Natural jute twine for tying up plants, crafts and gift wrap.",
-      "price": 499,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Natural Jute Twine",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 4,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "3256806674667884"
-      }
-    },
-    {
-      "id": "ae-ceramic-mini-planter",
-      "name": "Ceramic Mini Planter",
-      "category": "Garden Supplies",
-      "tags": [
-        "aliexpress",
-        "ceramic",
-        "mini",
-        "planter"
-      ],
-      "image": "images/store/ae-3256808473784197.jpg",
-      "imageAlt": "Ceramic Mini Planter",
-      "blurb": "A small ceramic pot for a succulent or herb on the windowsill.",
-      "price": 599,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Ceramic Mini Planter",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 8,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "3256808473784197"
-      }
-    },
-    {
-      "id": "ae-macrame-plant-hanger",
-      "name": "Macrame Plant Hanger",
-      "category": "Garden Supplies",
-      "tags": [
-        "aliexpress",
-        "macrame",
-        "plant",
-        "hanger"
-      ],
-      "image": "images/store/ae-3256809073271183.jpg",
-      "imageAlt": "Macrame Plant Hanger",
-      "blurb": "A woven cotton hanger for a potted plant.",
-      "price": 649,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Macrame Plant Hanger",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 3,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "3256809073271183"
-      }
-    },
-    {
-      "id": "ae-solar-mushroom-string-lights",
-      "name": "Solar Mushroom String Lights",
-      "category": "Games & Gifts",
-      "tags": [
-        "aliexpress",
-        "solar",
-        "mushroom",
-        "string",
-        "lights"
-      ],
-      "image": "images/store/ae-3256809109396877.jpg",
-      "imageAlt": "Solar Mushroom String Lights",
-      "blurb": "Little mushroom lights on a string that charge in the sun and glow at night.",
-      "price": 1799,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Solar Mushroom String Lights",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 12,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "3256809109396877"
-      }
-    },
-    {
-      "id": "ae-jumbo-pickle-squishy",
-      "name": "Jumbo Pickle Squishy",
-      "category": "Squishies",
-      "tags": [
-        "aliexpress",
-        "jumbo",
-        "pickle",
-        "squishy"
-      ],
-      "image": "images/store/ae-3256812288616633.jpg",
-      "imageAlt": "Jumbo Pickle Squishy",
-      "blurb": "A squeezable pickle desk toy for grown-ups.",
-      "price": 749,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Jumbo Pickle Squishy",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 6,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "3256812288616633"
-      }
-    },
-    {
-      "id": "ae-tomato-squishy",
-      "name": "Tomato Squishy",
-      "category": "Squishies",
-      "tags": [
-        "aliexpress",
-        "tomato",
-        "squishy"
-      ],
-      "image": "images/store/ae-3256811638249866.jpg",
-      "imageAlt": "Tomato Squishy",
-      "blurb": "A squeezable tomato desk toy for grown-ups.",
-      "price": 749,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Tomato Squishy",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 6,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "3256811638249866"
-      }
-    },
-    {
-      "id": "ae-jumping-frogs-set-of-12",
-      "name": "Jumping Frogs, set of 12",
-      "category": "Games & Gifts",
-      "tags": [
-        "aliexpress",
-        "jumping",
-        "frogs"
-      ],
-      "image": "images/store/ae-3256806752931503.jpg",
-      "imageAlt": "Jumping Frogs, set of 12",
-      "blurb": "Press and let go: twelve little jumping frogs for the desk.",
-      "price": 449,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Jumping Frogs, set of 12",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 4,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "3256806752931503"
-      }
-    },
-    {
       "id": "bg-aura-cacia-lavender-shower-tablets-box-of-3",
       "name": "Aura Cacia Lavender Shower Tablets, box of 3",
-      "category": "Soap & Personal Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "aura",
@@ -1019,7 +1509,7 @@
     {
       "id": "bg-aura-cacia-eucalyptus-shower-tablets-box-of-3",
       "name": "Aura Cacia Eucalyptus Shower Tablets, box of 3",
-      "category": "Soap & Personal Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "aura",
@@ -1049,7 +1539,7 @@
     {
       "id": "bg-aura-cacia-frankincense-in-jojoba-oil-0-5-oz",
       "name": "Aura Cacia Frankincense in Jojoba Oil, 0.5 oz",
-      "category": "Soap & Personal Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "aura",
@@ -1060,7 +1550,7 @@
       "image": "images/store/b-85011-1pk.jpg",
       "imageAlt": "Aura Cacia Frankincense in Jojoba Oil, 0.5 oz",
       "blurb": "Frankincense essential oil already diluted in jojoba, ready to use on the skin.",
-      "price": 1399,
+      "price": 1499,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -1078,7 +1568,7 @@
     {
       "id": "bg-andalou-naturals-1000-roses-soothing-body-lotion-8",
       "name": "Andalou Naturals 1000 Roses Soothing Body Lotion, 8 oz",
-      "category": "Soap & Personal Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "andalou",
@@ -1091,7 +1581,7 @@
       "image": "images/store/b-32345-1pk.jpg",
       "imageAlt": "Andalou Naturals 1000 Roses Soothing Body Lotion, 8 oz",
       "blurb": "A light, rose-scented body lotion for dry skin.",
-      "price": 1199,
+      "price": 1249,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -1109,7 +1599,7 @@
     {
       "id": "bg-andalou-naturals-resveratrol-q10-night-repair-crea",
       "name": "Andalou Naturals Resveratrol Q10 Night Repair Cream, 1.7 oz",
-      "category": "Soap & Personal Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "andalou",
@@ -1122,7 +1612,7 @@
       "image": "images/store/b-49384-1pk.jpg",
       "imageAlt": "Andalou Naturals Resveratrol Q10 Night Repair Cream, 1.7 oz",
       "blurb": "A rich night cream with resveratrol and CoQ10.",
-      "price": 2899,
+      "price": 3149,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -1140,7 +1630,7 @@
     {
       "id": "bg-andalou-naturals-daily-defense-facial-lotion-spf-1",
       "name": "Andalou Naturals Daily Defense Facial Lotion SPF 18, 2.7 oz",
-      "category": "Soap & Personal Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "andalou",
@@ -1153,7 +1643,7 @@
       "image": "images/store/b-49385-1pk.jpg",
       "imageAlt": "Andalou Naturals Daily Defense Facial Lotion SPF 18, 2.7 oz",
       "blurb": "A sheer daily face lotion with SPF 18.",
-      "price": 1699,
+      "price": 1899,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -1171,7 +1661,7 @@
     {
       "id": "bg-crystal-mineral-deodorant-travel-stick-1-5-oz",
       "name": "Crystal Mineral Deodorant Travel Stick, 1.5 oz",
-      "category": "Soap & Personal Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "crystal",
@@ -1199,38 +1689,9 @@
       }
     },
     {
-      "id": "bg-crystal-mineral-deodorant-stick-4-25-oz",
-      "name": "Crystal Mineral Deodorant Stick, 4.25 oz",
-      "category": "Soap & Personal Care",
-      "tags": [
-        "bangalla",
-        "crystal",
-        "mineral",
-        "deodorant",
-        "stick"
-      ],
-      "image": "images/store/b-58521-1pk.jpg",
-      "imageAlt": "Crystal Mineral Deodorant Stick, 4.25 oz",
-      "blurb": "An unscented mineral salt deodorant stick that lasts for months.",
-      "price": 859,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Crystal Mineral Deodorant Stick, 4.25 oz",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 8,
-      "shipFrom": "bangalla",
-      "source": {
-        "supplier": "Bangalla",
-        "sku": "B-58521-1PK"
-      }
-    },
-    {
       "id": "bg-andalou-naturals-lavender-shea-hand-cream-3-4-oz",
       "name": "Andalou Naturals Lavender Shea Hand Cream, 3.4 oz",
-      "category": "Soap & Personal Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "andalou",
@@ -1243,7 +1704,7 @@
       "image": "images/store/b-49323-1pk.jpg",
       "imageAlt": "Andalou Naturals Lavender Shea Hand Cream, 3.4 oz",
       "blurb": "A lavender hand cream with shea butter.",
-      "price": 999,
+      "price": 1149,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -1259,355 +1720,9 @@
       }
     },
     {
-      "id": "bg-crystal-mineral-deodorant-roll-on-chamomile-and-gr",
-      "name": "Crystal Mineral Deodorant Roll-On, Chamomile and Green Tea, 2.25 oz",
-      "category": "Soap & Personal Care",
-      "tags": [
-        "bangalla",
-        "crystal",
-        "mineral",
-        "deodorant",
-        "roll",
-        "chamomile",
-        "green"
-      ],
-      "image": "images/store/b-58503-1pk.jpg",
-      "imageAlt": "Crystal Mineral Deodorant Roll-On, Chamomile and Green Tea, 2.25 oz",
-      "blurb": "A mineral salt roll-on deodorant with chamomile and green tea.",
-      "price": 649,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Crystal Mineral Deodorant Roll-On, Chamomile and Green Tea, 2.25 oz",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 6,
-      "shipFrom": "bangalla",
-      "source": {
-        "supplier": "Bangalla",
-        "sku": "B-58503-1PK"
-      }
-    },
-    {
-      "id": "ae-mini-garden-hand-tool-set-3-pieces",
-      "name": "Mini Garden Hand Tool Set, 3 pieces",
-      "category": "Garden Supplies",
-      "tags": [
-        "aliexpress",
-        "mini",
-        "garden",
-        "hand",
-        "tool",
-        "pieces"
-      ],
-      "image": "images/store/ae-3256811467689498.jpg",
-      "imageAlt": "Mini Garden Hand Tool Set, 3 pieces",
-      "blurb": "A small trowel, shovel and rake for pots, raised beds and seedlings.",
-      "price": 749,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Mini Garden Hand Tool Set, 3 pieces",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 6,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "3256811467689498"
-      }
-    },
-    {
-      "id": "ae-long-spout-watering-can",
-      "name": "Long Spout Watering Can",
-      "category": "Garden Supplies",
-      "tags": [
-        "aliexpress",
-        "long",
-        "spout",
-        "watering"
-      ],
-      "image": "images/store/ae-3256809042958449.jpg",
-      "imageAlt": "Long Spout Watering Can",
-      "blurb": "A watering can with a long, thin spout that reaches under leaves and into hanging pots.",
-      "price": 2099,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Long Spout Watering Can",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 14,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "3256809042958449"
-      }
-    },
-    {
-      "id": "ae-continuous-mist-plant-sprayer-200-ml",
-      "name": "Continuous Mist Plant Sprayer, 200 ml",
-      "category": "Garden Supplies",
-      "tags": [
-        "aliexpress",
-        "continuous",
-        "mist",
-        "plant",
-        "sprayer"
-      ],
-      "image": "images/store/ae-3256805783765688.jpg",
-      "imageAlt": "Continuous Mist Plant Sprayer, 200 ml",
-      "blurb": "One squeeze gives a long, fine mist for houseplants, seedlings and herbs.",
-      "price": 899,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Continuous Mist Plant Sprayer, 200 ml",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 5,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "3256805783765688"
-      }
-    },
-    {
-      "id": "ae-soil-moisture-meter",
-      "name": "Soil Moisture Meter",
-      "category": "Garden Supplies",
-      "tags": [
-        "aliexpress",
-        "soil",
-        "moisture",
-        "meter"
-      ],
-      "image": "images/store/ae-3256806983993071.jpg",
-      "imageAlt": "Soil Moisture Meter",
-      "blurb": "Push it into the soil to see whether a plant needs water. No batteries needed.",
-      "price": 1099,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Soil Moisture Meter",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 4,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "3256806983993071"
-      }
-    },
-    {
-      "id": "ae-bamboo-plant-stakes-10-pack",
-      "name": "Bamboo Plant Stakes, 10 pack",
-      "category": "Garden Supplies",
-      "tags": [
-        "aliexpress",
-        "bamboo",
-        "plant",
-        "stakes",
-        "pack"
-      ],
-      "image": "images/store/ae-3256809168755877.jpg",
-      "imageAlt": "Bamboo Plant Stakes, 10 pack",
-      "blurb": "Bamboo canes to hold up tomatoes, peppers and climbing plants.",
-      "price": 799,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Bamboo Plant Stakes, 10 pack",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 8,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "3256809168755877"
-      }
-    },
-    {
-      "id": "ae-clear-window-bird-feeder",
-      "name": "Clear Window Bird Feeder",
-      "category": "Garden Supplies",
-      "tags": [
-        "aliexpress",
-        "clear",
-        "window",
-        "bird",
-        "feeder"
-      ],
-      "image": "images/store/ae-3256808061859363.jpg",
-      "imageAlt": "Clear Window Bird Feeder",
-      "blurb": "A clear feeder that sticks to a window with suction cups, for watching birds up close.",
-      "price": 1399,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Clear Window Bird Feeder",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 10,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "3256808061859363"
-      }
-    },
-    {
-      "id": "ae-wind-chime-12-tubes",
-      "name": "Wind Chime, 12 Tubes",
-      "category": "Games & Gifts",
-      "tags": [
-        "aliexpress",
-        "wind",
-        "chime",
-        "tubes"
-      ],
-      "image": "images/store/ae-3256806491891376.jpg",
-      "imageAlt": "Wind Chime, 12 Tubes",
-      "blurb": "Twelve aluminum tubes under a wooden top, for a porch or garden.",
-      "price": 1749,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Wind Chime, 12 Tubes",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 14,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "3256806491891376"
-      }
-    },
-    {
-      "id": "ae-mesh-laundry-bags-4-pack",
-      "name": "Mesh Laundry Bags, 4 pack",
-      "category": "Laundry",
-      "tags": [
-        "aliexpress",
-        "mesh",
-        "laundry",
-        "bags",
-        "pack"
-      ],
-      "image": "images/store/ae-3256808220058561.jpg",
-      "imageAlt": "Mesh Laundry Bags, 4 pack",
-      "blurb": "Zip mesh bags that keep delicates, socks and small things together in the wash.",
-      "price": 1349,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Mesh Laundry Bags, 4 pack",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 8,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "3256808220058561"
-      }
-    },
-    {
-      "id": "ae-wool-dryer-balls-6-pack",
-      "name": "Wool Dryer Balls, 6 pack",
-      "category": "Laundry",
-      "tags": [
-        "aliexpress",
-        "wool",
-        "dryer",
-        "balls",
-        "pack"
-      ],
-      "image": "images/store/ae-3256807120373670.jpg",
-      "imageAlt": "Wool Dryer Balls, 6 pack",
-      "blurb": "Toss them in the dryer in place of dryer sheets; they shorten drying time and last for years.",
-      "price": 1549,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Wool Dryer Balls, 6 pack",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 8,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "3256807120373670"
-      }
-    },
-    {
-      "id": "ae-crochet-pocket-frog",
-      "name": "Crochet Pocket Frog",
-      "category": "Games & Gifts",
-      "tags": [
-        "aliexpress",
-        "crochet",
-        "pocket",
-        "frog"
-      ],
-      "image": "images/store/ae-3256809035538870.jpg",
-      "imageAlt": "Crochet Pocket Frog",
-      "blurb": "A tiny hand-crocheted frog to keep in a pocket or on a desk.",
-      "price": 699,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Crochet Pocket Frog",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 2,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "3256809035538870"
-      }
-    },
-    {
-      "id": "ae-turtle-desk-figure",
-      "name": "Turtle Desk Figure",
-      "category": "Games & Gifts",
-      "tags": [
-        "aliexpress",
-        "turtle",
-        "desk",
-        "figure"
-      ],
-      "image": "images/store/ae-3256809551814954.jpg",
-      "imageAlt": "Turtle Desk Figure",
-      "blurb": "A small 3D-printed turtle for the desk or shelf. Colour varies.",
-      "price": 1099,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Turtle Desk Figure",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 3,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "3256809551814954"
-      }
-    },
-    {
       "id": "bg-mountain-ocean-skin-trip-coconut-soap-45-oz",
       "name": "Mountain Ocean Skin Trip Coconut Soap, 4.5 oz",
-      "category": "Soap & Personal Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "mountain",
@@ -1638,7 +1753,7 @@
     {
       "id": "bg-davids-natural-toothpaste-spearmint-525-oz",
       "name": "Davids Natural Toothpaste, Spearmint, 5.25 oz",
-      "category": "Oral Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "davids",
@@ -1649,7 +1764,7 @@
       "image": "images/store/b-40200-1pk.jpg",
       "imageAlt": "Davids Natural Toothpaste, Spearmint, 5.25 oz",
       "blurb": "Premium natural toothpaste in a recyclable metal tube with a key, made in the USA. No fluoride, no SLS.",
-      "price": 1099,
+      "price": 1149,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -1667,7 +1782,7 @@
     {
       "id": "bg-desert-essence-kids-toothpaste-47-oz",
       "name": "Desert Essence Kids Toothpaste, 4.7 oz",
-      "category": "Oral Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "desert",
@@ -1712,38 +1827,9 @@
       }
     },
     {
-      "id": "bg-grandpa-soap-co-charcoal-bar-soap-425-oz",
-      "name": "Grandpa Soap Co. Charcoal Bar Soap, 4.25 oz",
-      "category": "Soap & Personal Care",
-      "tags": [
-        "bangalla",
-        "grandpa",
-        "soap",
-        "charcoal",
-        "bar"
-      ],
-      "image": "images/store/b-48930-1pk.jpg",
-      "imageAlt": "Grandpa Soap Co. Charcoal Bar Soap, 4.25 oz",
-      "blurb": "A deep-cleaning bar with activated charcoal, made in the USA by a soap company founded in 1878.",
-      "price": 599,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Grandpa Soap Co. Charcoal Bar Soap, 4.25 oz",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 8,
-      "shipFrom": "bangalla",
-      "source": {
-        "supplier": "Bangalla",
-        "sku": "B-48930-1PK"
-      }
-    },
-    {
       "id": "bg-essential-oxygen-brushing-rinse-16-oz",
       "name": "Essential Oxygen Brushing Rinse, 16 oz",
-      "category": "Oral Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "essential",
@@ -1787,7 +1873,7 @@
     {
       "id": "bg-herban-cowboy-deodorant-stick-forest-28-oz",
       "name": "Herban Cowboy Deodorant Stick, Forest, 2.8 oz",
-      "category": "Soap & Personal Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "herban",
@@ -1815,40 +1901,9 @@
       }
     },
     {
-      "id": "bg-earth-therapeutics-4-sided-nail-filing-block",
-      "name": "Earth Therapeutics 4-Sided Nail Filing Block",
-      "category": "Soap & Personal Care",
-      "tags": [
-        "bangalla",
-        "earth",
-        "therapeutics",
-        "sided",
-        "nail",
-        "filing",
-        "block"
-      ],
-      "image": "images/store/b-86777-1pk.jpg",
-      "imageAlt": "Earth Therapeutics 4-Sided Nail Filing Block",
-      "blurb": "Four grits on one block to file, smooth, buff and shine nails.",
-      "price": 599,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Earth Therapeutics 4-Sided Nail Filing Block",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 3,
-      "shipFrom": "bangalla",
-      "source": {
-        "supplier": "Bangalla",
-        "sku": "B-86777-1PK"
-      }
-    },
-    {
       "id": "bg-eco-dent-daily-care-toothpowder-mint-2-oz",
       "name": "Eco-Dent Daily Care Toothpowder, Mint, 2 oz",
-      "category": "Oral Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "eco",
@@ -1879,7 +1934,7 @@
     {
       "id": "bg-crystal-mineral-deodorant-stick-25-oz",
       "name": "Crystal Mineral Deodorant Stick, 2.5 oz",
-      "category": "Soap & Personal Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "crystal",
@@ -1926,7 +1981,7 @@
     {
       "id": "bg-seaweed-bath-co-detox-body-wash-awaken-12-oz",
       "name": "Seaweed Bath Co. Detox Body Wash, Awaken, 12 oz",
-      "category": "Bath & Body",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "seaweed",
@@ -1939,7 +1994,7 @@
       "image": "images/store/b-48214-1pk.jpg",
       "imageAlt": "Seaweed Bath Co. Detox Body Wash, Awaken, 12 oz",
       "blurb": "A body wash with organic seaweed and arnica, scented with eucalyptus and peppermint.",
-      "price": 1199,
+      "price": 1249,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -1957,7 +2012,7 @@
     {
       "id": "bg-redmond-earthpaste-wintergreen-4-oz",
       "name": "Redmond Earthpaste, Wintergreen, 4 oz",
-      "category": "Oral Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "redmond",
@@ -1985,7 +2040,7 @@
     {
       "id": "bg-grandpa-soap-co-pine-tar-bar-soap-425-oz",
       "name": "Grandpa Soap Co. Pine Tar Bar Soap, 4.25 oz",
-      "category": "Soap & Personal Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "grandpa",
@@ -1997,7 +2052,7 @@
       "image": "images/store/b-43932-1pk.jpg",
       "imageAlt": "Grandpa Soap Co. Pine Tar Bar Soap, 4.25 oz",
       "blurb": "The classic pine tar bar, a family favourite since 1878 for a deep, soothing clean.",
-      "price": 699,
+      "price": 749,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -2015,7 +2070,7 @@
     {
       "id": "bg-grandpa-soap-co-pine-tar-body-wash-95-oz",
       "name": "Grandpa Soap Co. Pine Tar Body Wash, 9.5 oz",
-      "category": "Bath & Body",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "grandpa",
@@ -2046,7 +2101,7 @@
     {
       "id": "bg-grandpa-soap-co-apple-cider-vinegar-body-wash-95-oz",
       "name": "Grandpa Soap Co. Apple Cider Vinegar Body Wash, 9.5 oz",
-      "category": "Bath & Body",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "grandpa",
@@ -2060,7 +2115,7 @@
       "image": "images/store/b-85862-1pk.jpg",
       "imageAlt": "Grandpa Soap Co. Apple Cider Vinegar Body Wash, 9.5 oz",
       "blurb": "A clarifying body wash with apple cider vinegar for a fresh, balanced feel.",
-      "price": 999,
+      "price": 1049,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -2078,7 +2133,7 @@
     {
       "id": "bg-oral-essentials-lumineux-whitening-mouthwash-16-oz",
       "name": "Oral Essentials Lumineux Whitening Mouthwash, 16 oz",
-      "category": "Oral Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "oral",
@@ -2090,7 +2145,7 @@
       "image": "images/store/b-46264-1pk.jpg",
       "imageAlt": "Oral Essentials Lumineux Whitening Mouthwash, 16 oz",
       "blurb": "An alcohol-free, peroxide-free whitening mouthwash made with Dead Sea salt and essential oils.",
-      "price": 1299,
+      "price": 1349,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -2108,7 +2163,7 @@
     {
       "id": "bg-oral-essentials-lumineux-whitening-toothpaste-375-oz",
       "name": "Oral Essentials Lumineux Whitening Toothpaste, 3.75 oz",
-      "category": "Oral Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "oral",
@@ -2120,7 +2175,7 @@
       "image": "images/store/b-46267-1pk.jpg",
       "imageAlt": "Oral Essentials Lumineux Whitening Toothpaste, 3.75 oz",
       "blurb": "A fluoride-free, peroxide-free whitening toothpaste developed by cosmetic dentists.",
-      "price": 1099,
+      "price": 1149,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -2138,7 +2193,7 @@
     {
       "id": "bg-oral-essentials-lumineux-kids-toothpaste-375-oz",
       "name": "Oral Essentials Lumineux Kids Toothpaste, 3.75 oz",
-      "category": "Oral Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "oral",
@@ -2150,7 +2205,7 @@
       "image": "images/store/b-46268-1pk.jpg",
       "imageAlt": "Oral Essentials Lumineux Kids Toothpaste, 3.75 oz",
       "blurb": "A fluoride-free toothpaste for kids, with a mild natural flavour.",
-      "price": 999,
+      "price": 1049,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -2168,7 +2223,7 @@
     {
       "id": "bg-oral-essentials-lumineux-whitening-strips-14-pack",
       "name": "Oral Essentials Lumineux Whitening Strips, 14 pack",
-      "category": "Oral Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "oral",
@@ -2198,7 +2253,7 @@
     {
       "id": "bg-auromere-ayurvedic-herbal-toothpaste-416-oz",
       "name": "Auromere Ayurvedic Herbal Toothpaste, 4.16 oz",
-      "category": "Oral Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "auromere",
@@ -2212,7 +2267,7 @@
       "image": "images/store/b-57249-1pk.jpg",
       "imageAlt": "Auromere Ayurvedic Herbal Toothpaste, 4.16 oz",
       "blurb": "An Ayurvedic toothpaste with neem, peelu and 22 herbs. Vegan, fluoride-free.",
-      "price": 999,
+      "price": 1049,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -2243,7 +2298,7 @@
     {
       "id": "bg-alba-botanica-very-emollient-body-lotion-32-oz",
       "name": "Alba Botanica Very Emollient Body Lotion, 32 oz",
-      "category": "Bath & Body",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "alba",
@@ -2261,7 +2316,7 @@
       "image": "images/store/b-44382-1pk.jpg",
       "imageAlt": "Alba Botanica Very Emollient Body Lotion, 32 oz",
       "blurb": "A big pump bottle of rich, fast-absorbing body lotion, vegan and paraben-free.",
-      "price": 2299,
+      "price": 2349,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -2292,7 +2347,7 @@
     {
       "id": "bg-nourish-organic-age-defense-face-serum-07-oz",
       "name": "Nourish Organic Age-Defense Face Serum, 0.7 oz",
-      "category": "Soap & Personal Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "nourish",
@@ -2323,7 +2378,7 @@
     {
       "id": "bg-eco-dent-mint-mouth-rinse-8-oz",
       "name": "Eco-Dent Mint Mouth Rinse, 8 oz",
-      "category": "Oral Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "eco",
@@ -2335,7 +2390,7 @@
       "image": "images/store/b-55321-1pk.jpg",
       "imageAlt": "Eco-Dent Mint Mouth Rinse, 8 oz",
       "blurb": "An alcohol-free mouth rinse with baking soda and essential oils.",
-      "price": 1299,
+      "price": 1349,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -2353,7 +2408,7 @@
     {
       "id": "bg-south-of-france-bar-soap-6-oz",
       "name": "South of France Bar Soap, 6 oz",
-      "category": "Soap & Personal Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "south",
@@ -2400,7 +2455,7 @@
     {
       "id": "bg-south-of-france-foaming-hand-soap-8-oz",
       "name": "South of France Foaming Hand Soap, 8 oz",
-      "category": "Soap & Personal Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "south",
@@ -2460,7 +2515,7 @@
     {
       "id": "bg-dr-plotkas-mouthwatchers-adult-toothbrush",
       "name": "Dr. Plotka's Mouthwatchers Adult Toothbrush",
-      "category": "Oral Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "plotkas",
@@ -2509,7 +2564,7 @@
     {
       "id": "bg-every-man-jack-body-wash-sandalwood-338-oz",
       "name": "Every Man Jack Body Wash, Sandalwood, 33.8 oz",
-      "category": "Bath & Body",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "every",
@@ -2538,98 +2593,9 @@
       }
     },
     {
-      "id": "bg-earth-therapeutics-body-sponge",
-      "name": "Earth Therapeutics Body Sponge",
-      "category": "Bath & Body",
-      "tags": [
-        "bangalla",
-        "earth",
-        "therapeutics",
-        "body",
-        "sponge"
-      ],
-      "image": "images/store/b-51220-1pk.jpg",
-      "imageAlt": "Earth Therapeutics Body Sponge",
-      "blurb": "A soft, long-lasting body sponge for the bath or shower.",
-      "price": 599,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Earth Therapeutics Body Sponge",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 4,
-      "shipFrom": "bangalla",
-      "source": {
-        "supplier": "Bangalla",
-        "sku": "B-51220-1PK"
-      }
-    },
-    {
-      "id": "bg-crystal-essence-lavender-deodorant-roll-on-225-oz",
-      "name": "Crystal Essence Lavender Deodorant Roll-On, 2.25 oz",
-      "category": "Soap & Personal Care",
-      "tags": [
-        "bangalla",
-        "crystal",
-        "essence",
-        "lavender",
-        "deodorant",
-        "roll"
-      ],
-      "image": "images/store/b-58506-1pk.jpg",
-      "imageAlt": "Crystal Essence Lavender Deodorant Roll-On, 2.25 oz",
-      "blurb": "A mineral roll-on deodorant scented with lavender and white tea.",
-      "price": 699,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Crystal Essence Lavender Deodorant Roll-On, 2.25 oz",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 8,
-      "shipFrom": "bangalla",
-      "source": {
-        "supplier": "Bangalla",
-        "sku": "B-58506-1PK"
-      }
-    },
-    {
-      "id": "bg-crystal-essence-lavender-deodorant-spray-4-oz",
-      "name": "Crystal Essence Lavender Deodorant Spray, 4 oz",
-      "category": "Soap & Personal Care",
-      "tags": [
-        "bangalla",
-        "crystal",
-        "essence",
-        "lavender",
-        "deodorant",
-        "spray"
-      ],
-      "image": "images/store/b-58504-1pk.jpg",
-      "imageAlt": "Crystal Essence Lavender Deodorant Spray, 4 oz",
-      "blurb": "The mineral deodorant as a body spray, scented with lavender and white tea.",
-      "price": 699,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Crystal Essence Lavender Deodorant Spray, 4 oz",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 10,
-      "shipFrom": "bangalla",
-      "source": {
-        "supplier": "Bangalla",
-        "sku": "B-58504-1PK"
-      }
-    },
-    {
       "id": "bg-herban-cowboy-body-wash-dusk-18-oz",
       "name": "Herban Cowboy Body Wash, Dusk, 18 oz",
-      "category": "Bath & Body",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "herban",
@@ -2641,7 +2607,7 @@
       "image": "images/store/b-82651-1pk.jpg",
       "imageAlt": "Herban Cowboy Body Wash, Dusk, 18 oz",
       "blurb": "A natural body wash with a warm, earthy scent.",
-      "price": 1499,
+      "price": 1549,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -2659,7 +2625,7 @@
     {
       "id": "bg-tea-tree-therapy-mouthwash-12-oz",
       "name": "Tea Tree Therapy Mouthwash, 12 oz",
-      "category": "Oral Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "tea",
@@ -2688,7 +2654,7 @@
     {
       "id": "bg-aura-cacia-eucalyptus-harvest-aroma-mist-4-oz",
       "name": "Aura Cacia Eucalyptus Harvest Aroma Mist, 4 oz",
-      "category": "Bath & Body",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "aura",
@@ -2701,7 +2667,7 @@
       "image": "images/store/b-40905-1pk.jpg",
       "imageAlt": "Aura Cacia Eucalyptus Harvest Aroma Mist, 4 oz",
       "blurb": "A room and body mist with pure eucalyptus essential oil.",
-      "price": 999,
+      "price": 1049,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -2717,39 +2683,9 @@
       }
     },
     {
-      "id": "bg-full-circle-be-good-dish-brush",
-      "name": "Full Circle Be Good Dish Brush",
-      "category": "Kitchen & Serving",
-      "tags": [
-        "bangalla",
-        "full",
-        "circle",
-        "good",
-        "dish",
-        "brush"
-      ],
-      "image": "images/store/b-61862-1pk.jpg",
-      "imageAlt": "Full Circle Be Good Dish Brush",
-      "blurb": "A bamboo-handled dish brush with a replaceable head, so only the head is thrown away.",
-      "price": 899,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Full Circle Be Good Dish Brush",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 8,
-      "shipFrom": "bangalla",
-      "source": {
-        "supplier": "Bangalla",
-        "sku": "B-61862-1PK"
-      }
-    },
-    {
       "id": "bg-soothing-touch-bath-salts-32-oz",
       "name": "Soothing Touch Bath Salts, 32 oz",
-      "category": "Bath & Body",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "soothing",
@@ -2800,7 +2736,7 @@
     {
       "id": "bg-pacha-soap-whipped-soap-scrub-vanilla-almond-8-oz",
       "name": "Pacha Soap Whipped Soap Scrub, Vanilla Almond, 8 oz",
-      "category": "Bath & Body",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "pacha",
@@ -2831,7 +2767,7 @@
     {
       "id": "bg-everyday-shea-bubble-bath-lemon-lavender-32-oz",
       "name": "EveryDay Shea Bubble Bath, Lemon Lavender, 32 oz",
-      "category": "Bath & Body",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "everyday",
@@ -2860,39 +2796,9 @@
       }
     },
     {
-      "id": "bg-fortify-firming-eye-pads-5-pairs",
-      "name": "Fortify+ Firming Eye Pads, 5 pairs",
-      "category": "Soap & Personal Care",
-      "tags": [
-        "bangalla",
-        "fortify",
-        "firming",
-        "eye",
-        "pads",
-        "pairs"
-      ],
-      "image": "images/store/b-36236-1pk.jpg",
-      "imageAlt": "Fortify+ Firming Eye Pads, 5 pairs",
-      "blurb": "Cooling hydrogel eye pads to refresh and firm the under-eye area.",
-      "price": 899,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Fortify+ Firming Eye Pads, 5 pairs",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 6,
-      "shipFrom": "bangalla",
-      "source": {
-        "supplier": "Bangalla",
-        "sku": "B-36236-1PK"
-      }
-    },
-    {
       "id": "bg-fortify-facial-mist-travel-size",
       "name": "Fortify+ Facial Mist, Travel Size",
-      "category": "Soap & Personal Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "fortify",
@@ -2903,7 +2809,7 @@
       "image": "images/store/b-36232-1pk.jpg",
       "imageAlt": "Fortify+ Facial Mist, Travel Size",
       "blurb": "A refreshing facial mist, sized for a bag or carry-on.",
-      "price": 999,
+      "price": 1049,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -2921,7 +2827,7 @@
     {
       "id": "bg-aura-cacia-relaxing-lavender-bubble-bath-13-oz",
       "name": "Aura Cacia Relaxing Lavender Bubble Bath, 13 oz",
-      "category": "Bath & Body",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "aura",
@@ -2952,7 +2858,7 @@
     {
       "id": "bg-cleanlogic-exfoliating-wash-cloth",
       "name": "CleanLogic Exfoliating Wash Cloth",
-      "category": "Bath & Body",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "cleanlogic",
@@ -2963,7 +2869,7 @@
       "image": "images/store/b-23925-1pk.jpg",
       "imageAlt": "CleanLogic Exfoliating Wash Cloth",
       "blurb": "A stretchy, quick-drying exfoliating wash cloth for a smooth, polished feel.",
-      "price": 1099,
+      "price": 1149,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -2981,7 +2887,7 @@
     {
       "id": "bg-spectrum-essentials-body-care-coconut-oil-15-oz",
       "name": "Spectrum Essentials Body Care Coconut Oil, 15 oz",
-      "category": "Bath & Body",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "spectrum",
@@ -3012,7 +2918,7 @@
     {
       "id": "bg-alaffia-authentic-african-black-soap-tangerine-citrus-32-oz",
       "name": "Alaffia Authentic African Black Soap, Tangerine Citrus, 32 oz",
-      "category": "Bath & Body",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "alaffia",
@@ -3044,7 +2950,7 @@
     {
       "id": "bg-mychelle-ultra-hyaluronic-cleanser-42-oz",
       "name": "MyChelle Ultra Hyaluronic Cleanser, 4.2 oz",
-      "category": "Soap & Personal Care",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "mychelle",
@@ -3073,7 +2979,7 @@
     {
       "id": "bg-babo-botanicals-sensitive-baby-fragrance-free-shampoo-and-wash-16-oz",
       "name": "Babo Botanicals Sensitive Baby Fragrance-Free Shampoo & Wash, 16 oz",
-      "category": "Bath & Body",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "babo",
@@ -3106,7 +3012,7 @@
     {
       "id": "bg-philip-adam-shampoo-verbena-sage-12-oz",
       "name": "Philip Adam Shampoo, Verbena Sage, 12 oz",
-      "category": "Bath & Body",
+      "category": "Personal Care",
       "tags": [
         "bangalla",
         "philip",
@@ -3134,9 +3040,1117 @@
       }
     },
     {
+      "id": "bg-roland-bamboo-toothpicks-case-of-12-x-300",
+      "name": "Roland Bamboo Toothpicks, case of 12 x 300",
+      "category": "Home & Kitchen",
+      "tags": [
+        "bangalla",
+        "roland",
+        "bamboo",
+        "toothpicks",
+        "case"
+      ],
+      "image": "images/store/b-60917-12pk.jpg",
+      "imageAlt": "Roland Bamboo Toothpicks, case of 12 x 300",
+      "blurb": "Twelve canisters of 300 bamboo toothpicks.",
+      "price": 3499,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Roland Bamboo Toothpicks, case of 12 x 300",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 64,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-60917-12PK"
+      }
+    },
+    {
+      "id": "bg-world-centric-compostable-plates-6-in-case-of-240",
+      "name": "World Centric Compostable Plates, 6 in, case of 240",
+      "category": "Home & Kitchen",
+      "tags": [
+        "bangalla",
+        "world",
+        "centric",
+        "compostable",
+        "plates",
+        "case"
+      ],
+      "image": "images/store/b-89495-12pk.jpg",
+      "imageAlt": "World Centric Compostable Plates, 6 in, case of 240",
+      "blurb": "12 packs of 20 commercially compostable 6 inch plates, for parties and events.",
+      "price": 4499,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: World Centric Compostable Plates, 6 in, case of 240",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 92,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-89495-12PK"
+      }
+    },
+    {
+      "id": "bg-full-circle-be-good-dish-brush",
+      "name": "Full Circle Be Good Dish Brush",
+      "category": "Home & Kitchen",
+      "tags": [
+        "bangalla",
+        "full",
+        "circle",
+        "good",
+        "dish",
+        "brush"
+      ],
+      "image": "images/store/b-61862-1pk.jpg",
+      "imageAlt": "Full Circle Be Good Dish Brush",
+      "blurb": "A bamboo-handled dish brush with a replaceable head, so only the head is thrown away.",
+      "price": 899,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Full Circle Be Good Dish Brush",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 8,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-61862-1PK"
+      }
+    },
+    {
+      "id": "ae-cotton-cross-back-apron",
+      "name": "Cotton Cross-Back Apron",
+      "category": "Home & Kitchen",
+      "tags": [
+        "aliexpress",
+        "cotton",
+        "cross",
+        "back",
+        "apron",
+        "clothing",
+        "and",
+        "shoes"
+      ],
+      "image": "images/store/ae-1005007635075989.jpg",
+      "imageAlt": "Cotton Cross-Back Apron",
+      "blurb": "A cotton apron with crossed straps and big pockets, for the kitchen, garden or workshop.",
+      "price": 1849,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Cotton Cross-Back Apron",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 9,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "1005007635075989"
+      },
+      "options": {
+        "label": "Colour",
+        "values": [
+          {
+            "name": "Pink"
+          },
+          {
+            "name": "Black"
+          },
+          {
+            "name": "Apricot"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ae-mini-artificial-bonsai",
+      "name": "Mini Artificial Bonsai",
+      "category": "Home & Kitchen",
+      "tags": [
+        "aliexpress",
+        "mini",
+        "artificial",
+        "bonsai",
+        "home",
+        "and",
+        "gadgets"
+      ],
+      "image": "images/store/ae-3256812980899315.jpg",
+      "imageAlt": "Mini Artificial Bonsai",
+      "blurb": "A little faux bonsai in a pot for a desk or shelf. No watering.",
+      "price": 849,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Mini Artificial Bonsai",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 6,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256812980899315"
+      }
+    },
+    {
+      "id": "ae-bag-sealing-clips-4-pack",
+      "name": "Bag Sealing Clips, 4 pack",
+      "category": "Home & Kitchen",
+      "tags": [
+        "aliexpress",
+        "bag",
+        "sealing",
+        "clips",
+        "pack",
+        "home",
+        "and",
+        "gadgets"
+      ],
+      "image": "images/store/ae-3256813079747401.jpg",
+      "imageAlt": "Bag Sealing Clips, 4 pack",
+      "blurb": "Clips that keep chip, coffee and snack bags shut.",
+      "price": 599,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Bag Sealing Clips, 4 pack",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 3,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256813079747401"
+      }
+    },
+    {
+      "id": "ae-retractable-carabiner-keychain",
+      "name": "Retractable Carabiner Keychain",
+      "category": "Home & Kitchen",
+      "tags": [
+        "aliexpress",
+        "retractable",
+        "carabiner",
+        "keychain",
+        "home",
+        "and",
+        "gadgets"
+      ],
+      "image": "images/store/ae-3256807751643159.jpg",
+      "imageAlt": "Retractable Carabiner Keychain",
+      "blurb": "A clip-on keychain with a steel-wire reel that pulls out and snaps back. Not for climbing.",
+      "price": 549,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Retractable Carabiner Keychain",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 2,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256807751643159"
+      }
+    },
+    {
+      "id": "ae-reusable-cable-ties-5-pack",
+      "name": "Reusable Cable Ties, 5 pack",
+      "category": "Home & Kitchen",
+      "tags": [
+        "aliexpress",
+        "reusable",
+        "cable",
+        "ties",
+        "pack",
+        "home",
+        "and",
+        "gadgets"
+      ],
+      "image": "images/store/ae-3256812791612763.jpg",
+      "imageAlt": "Reusable Cable Ties, 5 pack",
+      "blurb": "Hook-and-loop ties to tidy cords and bundle garden canes, reused again and again.",
+      "price": 399,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Reusable Cable Ties, 5 pack",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 1,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256812791612763"
+      }
+    },
+    {
+      "id": "ae-car-seat-gap-fillers-2-pack",
+      "name": "Car Seat Gap Fillers, 2 pack",
+      "category": "Home & Kitchen",
+      "tags": [
+        "aliexpress",
+        "car",
+        "seat",
+        "gap",
+        "fillers",
+        "pack",
+        "home",
+        "and",
+        "gadgets"
+      ],
+      "image": "images/store/ae-3256812816193878.jpg",
+      "imageAlt": "Car Seat Gap Fillers, 2 pack",
+      "blurb": "Fill the gap beside the car seats so phones and keys stop falling in.",
+      "price": 699,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Car Seat Gap Fillers, 2 pack",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 6,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256812816193878"
+      }
+    },
+    {
+      "id": "ae-unfinished-wood-candlestick",
+      "name": "Unfinished Wood Candlestick",
+      "category": "Home & Kitchen",
+      "tags": [
+        "aliexpress",
+        "unfinished",
+        "wood",
+        "candlestick",
+        "home",
+        "and",
+        "kitchen"
+      ],
+      "image": "images/store/ae-3256808790245550.jpg",
+      "imageAlt": "Unfinished Wood Candlestick",
+      "blurb": "A plain natural wood candlestick ready to paint, stain or leave rustic. Holder only.",
+      "price": 749,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Unfinished Wood Candlestick",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 6,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256808790245550",
+        "variant": "J250190-S"
+      }
+    },
+    {
+      "id": "ae-green-leaves-botanical-print-8-x-12-in",
+      "name": "Green Leaves Botanical Print, 8 x 12 in",
+      "category": "Home & Kitchen",
+      "tags": [
+        "aliexpress",
+        "green",
+        "leaves",
+        "botanical",
+        "print",
+        "home",
+        "and",
+        "kitchen"
+      ],
+      "image": "images/store/ae-3256808284357520.jpg",
+      "imageAlt": "Green Leaves Botanical Print, 8 x 12 in",
+      "blurb": "An unframed green leaf print that brings houseplant calm to any wall. The photo shows the range; you get one print (design 09).",
+      "price": 599,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Green Leaves Botanical Print, 8 x 12 in",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 3,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256808284357520",
+        "variant": "20x30cm/09"
+      }
+    },
+    {
+      "id": "ae-line-art-plant-print-8-x-12-in",
+      "name": "Line-Art Plant Print, 8 x 12 in",
+      "category": "Home & Kitchen",
+      "tags": [
+        "aliexpress",
+        "line",
+        "art",
+        "plant",
+        "print",
+        "home",
+        "and",
+        "kitchen"
+      ],
+      "image": "images/store/ae-3256810022816349.jpg",
+      "imageAlt": "Line-Art Plant Print, 8 x 12 in",
+      "blurb": "A modern line-art plant print for a quiet, natural touch. Unframed. The photo shows the range; you get one print (design WO1644-20).",
+      "price": 599,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Line-Art Plant Print, 8 x 12 in",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 3,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256810022816349",
+        "variant": "20X30cm Unframed/WO1644-20"
+      }
+    },
+    {
+      "id": "ae-olive-tree-prints-set-of-2-12-x-16-in",
+      "name": "Olive Tree Prints, set of 2, 12 x 16 in",
+      "category": "Home & Kitchen",
+      "tags": [
+        "aliexpress",
+        "olive",
+        "tree",
+        "prints",
+        "set",
+        "home",
+        "and",
+        "kitchen"
+      ],
+      "image": "images/store/ae-3256809902920374.jpg",
+      "imageAlt": "Olive Tree Prints, set of 2, 12 x 16 in",
+      "blurb": "A pair of soft olive tree prints that look lovely side by side. Unframed.",
+      "price": 899,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Olive Tree Prints, set of 2, 12 x 16 in",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 4,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256809902920374",
+        "variant": "30x40cm unframed/VA622-2pcs"
+      }
+    },
+    {
+      "id": "ae-clear-adhesive-hooks-20-pack",
+      "name": "Clear Adhesive Hooks, 20 pack",
+      "category": "Home & Kitchen",
+      "tags": [
+        "aliexpress",
+        "clear",
+        "adhesive",
+        "hooks",
+        "pack",
+        "home",
+        "and",
+        "kitchen"
+      ],
+      "image": "images/store/ae-3256806781058937.jpg",
+      "imageAlt": "Clear Adhesive Hooks, 20 pack",
+      "blurb": "Clear stick-on hooks that hold towels, keys and bags with no drilling.",
+      "price": 549,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Clear Adhesive Hooks, 20 pack",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 4,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256806781058937",
+        "variant": "20pcs Clear"
+      }
+    },
+    {
+      "id": "ae-reusable-cable-straps-20-pack",
+      "name": "Reusable Cable Straps, 20 pack",
+      "category": "Home & Kitchen",
+      "tags": [
+        "aliexpress",
+        "reusable",
+        "cable",
+        "straps",
+        "pack",
+        "home",
+        "and",
+        "kitchen"
+      ],
+      "image": "images/store/ae-3256807159204533.jpg",
+      "imageAlt": "Reusable Cable Straps, 20 pack",
+      "blurb": "Reusable hook-and-loop straps that keep cords and cables tidy.",
+      "price": 599,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Reusable Cable Straps, 20 pack",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 3,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256807159204533",
+        "variant": "20pcs Grey"
+      }
+    },
+    {
+      "id": "ae-honeycomb-silicone-trivet",
+      "name": "Honeycomb Silicone Trivet",
+      "category": "Home & Kitchen",
+      "tags": [
+        "aliexpress",
+        "honeycomb",
+        "silicone",
+        "trivet",
+        "home",
+        "and",
+        "kitchen"
+      ],
+      "image": "images/store/ae-3256810137385031.jpg",
+      "imageAlt": "Honeycomb Silicone Trivet",
+      "blurb": "A flexible, heat-resistant silicone pad that protects counters and tables from hot pots. The photo shows the range; you get one large trivet.",
+      "price": 549,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Honeycomb Silicone Trivet",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 5,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256810137385031",
+        "variant": "L / 1pcs"
+      }
+    },
+    {
+      "id": "ae-absorbent-kitchen-floor-mat-16-x-24-in",
+      "name": "Absorbent Kitchen Floor Mat, 16 x 24 in",
+      "category": "Home & Kitchen",
+      "tags": [
+        "aliexpress",
+        "absorbent",
+        "kitchen",
+        "floor",
+        "mat",
+        "home",
+        "and"
+      ],
+      "image": "images/store/ae-3256813069081223.jpg",
+      "imageAlt": "Absorbent Kitchen Floor Mat, 16 x 24 in",
+      "blurb": "A soft, absorbent floor mat for the kitchen or entryway that catches drips and dirt.",
+      "price": 1049,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Absorbent Kitchen Floor Mat, 16 x 24 in",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 14,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256813069081223",
+        "variant": "40cm x 60cm / Gray"
+      }
+    },
+    {
+      "id": "ae-under-door-draft-seal",
+      "name": "Under-Door Draft Seal",
+      "category": "Home & Kitchen",
+      "tags": [
+        "aliexpress",
+        "under",
+        "door",
+        "draft",
+        "seal",
+        "home",
+        "and",
+        "kitchen"
+      ],
+      "image": "images/store/ae-3256810343621083.jpg",
+      "imageAlt": "Under-Door Draft Seal",
+      "blurb": "A strip that seals the gap under a door to block drafts, dust and bugs.",
+      "price": 649,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Under-Door Draft Seal",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 8,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256810343621083",
+        "variant": "black / 1PC"
+      }
+    },
+    {
+      "id": "ae-door-and-window-weather-strip-33-ft",
+      "name": "Door and Window Weather Strip, 33 ft",
+      "category": "Home & Kitchen",
+      "tags": [
+        "aliexpress",
+        "door",
+        "and",
+        "window",
+        "weather",
+        "strip",
+        "home",
+        "kitchen"
+      ],
+      "image": "images/store/ae-3256806674750362.jpg",
+      "imageAlt": "Door and Window Weather Strip, 33 ft",
+      "blurb": "Self-adhesive foam strip that seals gaps around doors and windows to keep heat in. The photo shows the range; you get the grey E-profile strip.",
+      "price": 799,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Door and Window Weather Strip, 33 ft",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 8,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256806674750362",
+        "variant": "E grey / 10M"
+      }
+    },
+    {
+      "id": "bg-full-circle-wipe-out-squeegee",
+      "name": "Full Circle Wipe Out Squeegee",
+      "category": "Cleaning Supplies",
+      "tags": [
+        "bangalla",
+        "full",
+        "circle",
+        "wipe",
+        "out",
+        "squeegee"
+      ],
+      "image": "images/store/b-66382-1pk.jpg",
+      "imageAlt": "Full Circle Wipe Out Squeegee",
+      "blurb": "A bamboo-handled squeegee for shower walls, windows and mirrors.",
+      "price": 1399,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Full Circle Wipe Out Squeegee",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 10,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-66382-1PK"
+      }
+    },
+    {
+      "id": "bg-full-circle-clean-team-dustpan-and-brush-set",
+      "name": "Full Circle Clean Team Dustpan and Brush Set",
+      "category": "Cleaning Supplies",
+      "tags": [
+        "bangalla",
+        "full",
+        "circle",
+        "clean",
+        "team",
+        "dustpan",
+        "and",
+        "brush",
+        "set"
+      ],
+      "image": "images/store/b-66384-1pk.jpg",
+      "imageAlt": "Full Circle Clean Team Dustpan and Brush Set",
+      "blurb": "A bamboo-handled brush that clips onto its dustpan, with bristles made from recycled plastic.",
+      "price": 2499,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Full Circle Clean Team Dustpan and Brush Set",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 37,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-66384-1PK"
+      }
+    },
+    {
+      "id": "bg-full-circle-the-ring-veggie-brush",
+      "name": "Full Circle The Ring Veggie Brush",
+      "category": "Cleaning Supplies",
+      "tags": [
+        "bangalla",
+        "full",
+        "circle",
+        "ring",
+        "veggie",
+        "brush"
+      ],
+      "image": "images/store/b-61860-1pk.jpg",
+      "imageAlt": "Full Circle The Ring Veggie Brush",
+      "blurb": "Slips over a finger to scrub potatoes and carrots clean under the tap.",
+      "price": 799,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Full Circle The Ring Veggie Brush",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 4,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-61860-1PK"
+      }
+    },
+    {
+      "id": "bg-casabella-kind-plant-based-scrub-sponges-case-of-8",
+      "name": "Casabella Kind Plant-Based Scrub Sponges, case of 8 three-packs",
+      "category": "Cleaning Supplies",
+      "tags": [
+        "bangalla",
+        "casabella",
+        "kind",
+        "plant",
+        "based",
+        "scrub",
+        "sponges",
+        "case"
+      ],
+      "image": "images/store/b-24616-8pk.jpg",
+      "imageAlt": "Casabella Kind Plant-Based Scrub Sponges, case of 8 three-packs",
+      "blurb": "24 plant-based scrub sponges in eight 3-packs.",
+      "price": 4999,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Casabella Kind Plant-Based Scrub Sponges, case of 8 three-packs",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 31,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-24616-8PK"
+      }
+    },
+    {
+      "id": "bg-weiman-cook-top-scrubbing-pads-case-of-6-three-pac",
+      "name": "Weiman Cook Top Scrubbing Pads, case of 6 three-packs",
+      "category": "Cleaning Supplies",
+      "tags": [
+        "bangalla",
+        "weiman",
+        "cook",
+        "scrubbing",
+        "pads",
+        "case",
+        "three",
+        "packs"
+      ],
+      "image": "images/store/b-25849-6pk.jpg",
+      "imageAlt": "Weiman Cook Top Scrubbing Pads, case of 6 three-packs",
+      "blurb": "18 non-scratch scrubbing pads made for glass and ceramic cooktops.",
+      "price": 3299,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Weiman Cook Top Scrubbing Pads, case of 6 three-packs",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 106,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-25849-6PK"
+      }
+    },
+    {
+      "id": "ae-washable-lint-roller",
+      "name": "Washable Lint Roller",
+      "category": "Cleaning Supplies",
+      "tags": [
+        "aliexpress",
+        "washable",
+        "lint",
+        "roller",
+        "cleaning",
+        "supplies"
+      ],
+      "image": "images/store/ae-3256807907498713.jpg",
+      "imageAlt": "Washable Lint Roller",
+      "blurb": "A washable sticky roller that picks up lint and pet hair, then rinses clean to use again.",
+      "price": 549,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Washable Lint Roller",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 6,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256807907498713",
+        "variant": "Green"
+      }
+    },
+    {
+      "id": "ae-long-handle-tub-and-tile-brush",
+      "name": "Long-Handle Tub and Tile Brush",
+      "category": "Cleaning Supplies",
+      "tags": [
+        "aliexpress",
+        "long",
+        "handle",
+        "tub",
+        "and",
+        "tile",
+        "brush",
+        "cleaning",
+        "supplies"
+      ],
+      "image": "images/store/ae-3256807958665405.jpg",
+      "imageAlt": "Long-Handle Tub and Tile Brush",
+      "blurb": "A stiff-bristle brush on a long handle for scrubbing tubs, tile and floors without kneeling.",
+      "price": 1199,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Long-Handle Tub and Tile Brush",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 16,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256807958665405",
+        "variant": "WA1292-White"
+      }
+    },
+    {
+      "id": "ae-stove-and-crevice-brushes-3-pack",
+      "name": "Stove and Crevice Brushes, 3 pack",
+      "category": "Cleaning Supplies",
+      "tags": [
+        "aliexpress",
+        "stove",
+        "and",
+        "crevice",
+        "brushes",
+        "pack",
+        "cleaning",
+        "supplies"
+      ],
+      "image": "images/store/ae-3256807045633603.jpg",
+      "imageAlt": "Stove and Crevice Brushes, 3 pack",
+      "blurb": "Slim, stiff brushes that reach into stove grates, range hoods and tight corners.",
+      "price": 649,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Stove and Crevice Brushes, 3 pack",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 4,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256807045633603",
+        "variant": "Mixed colors / 3pcs"
+      }
+    },
+    {
+      "id": "ae-lint-and-fuzz-brush",
+      "name": "Lint and Fuzz Brush",
+      "category": "Cleaning Supplies",
+      "tags": [
+        "aliexpress",
+        "lint",
+        "and",
+        "fuzz",
+        "brush",
+        "cleaning",
+        "supplies"
+      ],
+      "image": "images/store/ae-3256803989126813.jpg",
+      "imageAlt": "Lint and Fuzz Brush",
+      "blurb": "A small handheld brush that sweeps lint and fuzz off clothes and upholstery, no refills needed.",
+      "price": 449,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Lint and Fuzz Brush",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 3,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256803989126813",
+        "variant": "Navy"
+      }
+    },
+    {
+      "id": "ae-sponge-tub-scrubber-with-handle",
+      "name": "Sponge Tub Scrubber with Handle",
+      "category": "Cleaning Supplies",
+      "tags": [
+        "aliexpress",
+        "sponge",
+        "tub",
+        "scrubber",
+        "with",
+        "handle",
+        "cleaning",
+        "supplies"
+      ],
+      "image": "images/store/ae-3256807066925161.jpg",
+      "imageAlt": "Sponge Tub Scrubber with Handle",
+      "blurb": "A sponge scrubber on a handle for easy cleaning of tubs, sinks and tile.",
+      "price": 399,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Sponge Tub Scrubber with Handle",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 4,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256807066925161",
+        "variant": "1Pc"
+      }
+    },
+    {
+      "id": "ae-solar-mushroom-string-lights",
+      "name": "Solar Mushroom String Lights",
+      "category": "Games & Gifts",
+      "tags": [
+        "aliexpress",
+        "solar",
+        "mushroom",
+        "string",
+        "lights"
+      ],
+      "image": "images/store/ae-3256809109396877.jpg",
+      "imageAlt": "Solar Mushroom String Lights",
+      "blurb": "Little mushroom lights on a string that charge in the sun and glow at night.",
+      "price": 2049,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Solar Mushroom String Lights",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 12,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256809109396877"
+      }
+    },
+    {
+      "id": "ae-jumbo-pickle-squishy",
+      "name": "Jumbo Pickle Squishy",
+      "category": "Games & Gifts",
+      "tags": [
+        "aliexpress",
+        "jumbo",
+        "pickle",
+        "squishy"
+      ],
+      "image": "images/store/ae-3256812288616633.jpg",
+      "imageAlt": "Jumbo Pickle Squishy",
+      "blurb": "A squeezable pickle desk toy for grown-ups.",
+      "price": 749,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Jumbo Pickle Squishy",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 6,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256812288616633"
+      }
+    },
+    {
+      "id": "ae-tomato-squishy",
+      "name": "Tomato Squishy",
+      "category": "Games & Gifts",
+      "tags": [
+        "aliexpress",
+        "tomato",
+        "squishy"
+      ],
+      "image": "images/store/ae-3256811638249866.jpg",
+      "imageAlt": "Tomato Squishy",
+      "blurb": "A squeezable tomato desk toy for grown-ups.",
+      "price": 749,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Tomato Squishy",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 6,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256811638249866"
+      }
+    },
+    {
+      "id": "ae-jumping-frogs-set-of-12",
+      "name": "Jumping Frogs, set of 12",
+      "category": "Games & Gifts",
+      "tags": [
+        "aliexpress",
+        "jumping",
+        "frogs"
+      ],
+      "image": "images/store/ae-3256806752931503.jpg",
+      "imageAlt": "Jumping Frogs, set of 12",
+      "blurb": "Press and let go: twelve little jumping frogs for the desk.",
+      "price": 499,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Jumping Frogs, set of 12",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 4,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256806752931503"
+      }
+    },
+    {
+      "id": "ae-wind-chime-12-tubes",
+      "name": "Wind Chime, 12 Tubes",
+      "category": "Games & Gifts",
+      "tags": [
+        "aliexpress",
+        "wind",
+        "chime",
+        "tubes"
+      ],
+      "image": "images/store/ae-3256806491891376.jpg",
+      "imageAlt": "Wind Chime, 12 Tubes",
+      "blurb": "Twelve aluminum tubes under a wooden top, for a porch or garden.",
+      "price": 1049,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Wind Chime, 12 Tubes",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 14,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256806491891376"
+      }
+    },
+    {
+      "id": "ae-crochet-pocket-frog",
+      "name": "Crochet Pocket Frog",
+      "category": "Games & Gifts",
+      "tags": [
+        "aliexpress",
+        "crochet",
+        "pocket",
+        "frog"
+      ],
+      "image": "images/store/ae-3256809035538870.jpg",
+      "imageAlt": "Crochet Pocket Frog",
+      "blurb": "A tiny hand-crocheted frog to keep in a pocket or on a desk.",
+      "price": 799,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Crochet Pocket Frog",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 2,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256809035538870"
+      }
+    },
+    {
       "id": "ae-strawberry-mochi-squishy",
       "name": "Strawberry Mochi Squishy",
-      "category": "Squishies",
+      "category": "Games & Gifts",
       "tags": [
         "aliexpress",
         "strawberry",
@@ -3165,7 +4179,7 @@
     {
       "id": "ae-jumbo-strawberry-squishy-cream-scented",
       "name": "Jumbo Strawberry Squishy, Cream Scented",
-      "category": "Squishies",
+      "category": "Games & Gifts",
       "tags": [
         "aliexpress",
         "jumbo",
@@ -3196,7 +4210,7 @@
     {
       "id": "ae-strawberry-taba-squishy",
       "name": "Strawberry Taba Squishy",
-      "category": "Squishies",
+      "category": "Games & Gifts",
       "tags": [
         "aliexpress",
         "strawberry",
@@ -3225,7 +4239,7 @@
     {
       "id": "ae-dumpling-squishy",
       "name": "Dumpling Squishy",
-      "category": "Squishies",
+      "category": "Games & Gifts",
       "tags": [
         "aliexpress",
         "dumpling",
@@ -3253,7 +4267,7 @@
     {
       "id": "ae-mini-dumpling-and-bun-squishy",
       "name": "Mini Dumpling and Bun Squishy",
-      "category": "Squishies",
+      "category": "Games & Gifts",
       "tags": [
         "aliexpress",
         "mini",
@@ -3284,7 +4298,7 @@
     {
       "id": "ae-toast-bread-squishy",
       "name": "Toast Bread Squishy",
-      "category": "Squishies",
+      "category": "Games & Gifts",
       "tags": [
         "aliexpress",
         "toast",
@@ -3313,7 +4327,7 @@
     {
       "id": "ae-strawberry-bread-bun-squishy",
       "name": "Strawberry Bread Bun Squishy",
-      "category": "Squishies",
+      "category": "Games & Gifts",
       "tags": [
         "aliexpress",
         "strawberry",
@@ -3343,7 +4357,7 @@
     {
       "id": "ae-butter-toast-squishy",
       "name": "Butter Toast Squishy",
-      "category": "Squishies",
+      "category": "Games & Gifts",
       "tags": [
         "aliexpress",
         "butter",
@@ -3372,7 +4386,7 @@
     {
       "id": "ae-cheese-cake-squishy",
       "name": "Cheese Cake Squishy",
-      "category": "Squishies",
+      "category": "Games & Gifts",
       "tags": [
         "aliexpress",
         "cheese",
@@ -3401,7 +4415,7 @@
     {
       "id": "ae-fluffy-taba-cat-squishy-13-cm",
       "name": "Fluffy Taba Cat Squishy, 13 cm",
-      "category": "Squishies",
+      "category": "Games & Gifts",
       "tags": [
         "aliexpress",
         "fluffy",
@@ -3431,7 +4445,7 @@
     {
       "id": "ae-chubby-cat-squishy",
       "name": "Chubby Cat Squishy",
-      "category": "Squishies",
+      "category": "Games & Gifts",
       "tags": [
         "aliexpress",
         "chubby",
@@ -3460,7 +4474,7 @@
     {
       "id": "ae-cat-cheese-bread-squishy",
       "name": "Cat Cheese Bread Squishy",
-      "category": "Squishies",
+      "category": "Games & Gifts",
       "tags": [
         "aliexpress",
         "cat",
@@ -3490,7 +4504,7 @@
     {
       "id": "ae-jumbo-french-fries-squishy",
       "name": "Jumbo French Fries Squishy",
-      "category": "Squishies",
+      "category": "Games & Gifts",
       "tags": [
         "aliexpress",
         "jumbo",
@@ -3501,7 +4515,7 @@
       ],
       "image": "images/store/ae-3256806675476554.jpg",
       "imageAlt": "Jumbo French Fries Squishy",
-      "blurb": "A jumbo box of fries that squashes and slowly rises. A slow-rising squishy for stress relief and fidgeting. Not for children under 3.",
+      "blurb": "A jumbo box of french fries that squashes and slowly rises. You get the fries; the photo shows the whole range. Not for children under 3.",
       "price": 749,
       "oldPrice": null,
       "interval": null,
@@ -3520,7 +4534,7 @@
     {
       "id": "ae-slow-rise-stress-ball",
       "name": "Slow Rise Stress Ball",
-      "category": "Squishies",
+      "category": "Games & Gifts",
       "tags": [
         "aliexpress",
         "slow",
@@ -3548,562 +4562,27 @@
       }
     },
     {
-      "id": "ae-bamboo-ankle-socks-5-pairs",
-      "name": "Bamboo Ankle Socks, 5 pairs",
-      "category": "Clothing & Shoes",
+      "id": "ae-secret-wooden-puzzle-box",
+      "name": "Secret Wooden Puzzle Box",
+      "category": "Games & Gifts",
       "tags": [
         "aliexpress",
-        "bamboo",
-        "ankle",
-        "socks",
-        "pairs",
-        "clothing",
+        "secret",
+        "wooden",
+        "puzzle",
+        "box",
+        "games",
         "and",
-        "shoes"
+        "gifts"
       ],
-      "image": "images/store/ae-1005007010142923.jpg",
-      "imageAlt": "Bamboo Ankle Socks, 5 pairs",
-      "blurb": "Soft bamboo-fibre ankle socks, one size (women 6 to men 10).",
-      "price": 2099,
+      "image": "images/store/ae-3256810199720744.jpg",
+      "imageAlt": "Secret Wooden Puzzle Box",
+      "blurb": "A carved wooden box that only opens once you find its hidden trick. Ages 14 and up.",
+      "price": 1049,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
-      "emailSubject": "Store order: Bamboo Ankle Socks, 5 pairs",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 8,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "1005007010142923"
-      },
-      "options": {
-        "label": "Colour",
-        "values": [
-          {
-            "name": "Black"
-          },
-          {
-            "name": "White"
-          },
-          {
-            "name": "Grey"
-          }
-        ]
-      }
-    },
-    {
-      "id": "ae-cotton-crew-socks-5-pairs",
-      "name": "Cotton Crew Socks, 5 pairs",
-      "category": "Clothing & Shoes",
-      "tags": [
-        "aliexpress",
-        "cotton",
-        "crew",
-        "socks",
-        "pairs",
-        "clothing",
-        "and",
-        "shoes"
-      ],
-      "image": "images/store/ae-1005009384252185.jpg",
-      "imageAlt": "Cotton Crew Socks, 5 pairs",
-      "blurb": "Pure cotton crew socks, one size.",
-      "price": 1599,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Cotton Crew Socks, 5 pairs",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 9,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "1005009384252185"
-      },
-      "options": {
-        "label": "Colour",
-        "values": [
-          {
-            "name": "Black"
-          },
-          {
-            "name": "White"
-          },
-          {
-            "name": "Mixed"
-          }
-        ]
-      }
-    },
-    {
-      "id": "ae-garden-clog-shoes-khaki",
-      "name": "Garden Clog Shoes, Khaki",
-      "category": "Clothing & Shoes",
-      "tags": [
-        "aliexpress",
-        "garden",
-        "clog",
-        "shoes",
-        "khaki",
-        "clothing",
-        "and"
-      ],
-      "image": "images/store/ae-1005006997199406.jpg",
-      "imageAlt": "Garden Clog Shoes, Khaki",
-      "blurb": "Light EVA garden clogs with a closed toe, easy to hose off. Sizes are EU pairs.",
-      "price": 2449,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Garden Clog Shoes, Khaki",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 16,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "1005006997199406"
-      },
-      "options": {
-        "label": "Size",
-        "values": [
-          {
-            "name": "EU 36-37 (US W 6-7)"
-          },
-          {
-            "name": "EU 38-39 (US W 8-9, M 6-7)"
-          },
-          {
-            "name": "EU 40-41 (US M 7.5-8.5)"
-          },
-          {
-            "name": "EU 42-43 (US M 9-10)"
-          },
-          {
-            "name": "EU 44-45 (US M 10.5-11.5)"
-          }
-        ]
-      }
-    },
-    {
-      "id": "ae-wide-brim-bucket-hat",
-      "name": "Wide Brim Bucket Hat",
-      "category": "Clothing & Shoes",
-      "tags": [
-        "aliexpress",
-        "wide",
-        "brim",
-        "bucket",
-        "hat",
-        "clothing",
-        "and",
-        "shoes"
-      ],
-      "image": "images/store/ae-1005009054798669.jpg",
-      "imageAlt": "Wide Brim Bucket Hat",
-      "blurb": "A wide-brim sun hat with a chin strap, for the garden or a hike. One size.",
-      "price": 1749,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Wide Brim Bucket Hat",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 5,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "1005009054798669"
-      },
-      "options": {
-        "label": "Colour",
-        "values": [
-          {
-            "name": "Khaki"
-          },
-          {
-            "name": "Grey"
-          },
-          {
-            "name": "Black"
-          },
-          {
-            "name": "Green"
-          }
-        ]
-      }
-    },
-    {
-      "id": "ae-cuffed-knit-beanie-black",
-      "name": "Cuffed Knit Beanie, Black",
-      "category": "Clothing & Shoes",
-      "tags": [
-        "aliexpress",
-        "cuffed",
-        "knit",
-        "beanie",
-        "black",
-        "clothing",
-        "and",
-        "shoes"
-      ],
-      "image": "images/store/ae-1005010323901024.jpg",
-      "imageAlt": "Cuffed Knit Beanie, Black",
-      "blurb": "A warm cuffed knit beanie, one size (55 to 59 cm).",
-      "price": 1399,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Cuffed Knit Beanie, Black",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 4,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "1005010323901024"
-      }
-    },
-    {
-      "id": "ae-coated-work-and-garden-gloves-12-pairs",
-      "name": "Coated Work and Garden Gloves, 12 pairs",
-      "category": "Clothing & Shoes",
-      "tags": [
-        "aliexpress",
-        "coated",
-        "work",
-        "and",
-        "garden",
-        "gloves",
-        "pairs",
-        "clothing",
-        "shoes"
-      ],
-      "image": "images/store/ae-1005003792468315.jpg",
-      "imageAlt": "Coated Work and Garden Gloves, 12 pairs",
-      "blurb": "Nylon gloves with a PU-coated palm for grip in the garden or shop. Latex-free. Colour varies.",
-      "price": 2449,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Coated Work and Garden Gloves, 12 pairs",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 14,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "1005003792468315"
-      },
-      "options": {
-        "label": "Size",
-        "values": [
-          {
-            "name": "S"
-          },
-          {
-            "name": "M"
-          },
-          {
-            "name": "L"
-          },
-          {
-            "name": "XL"
-          }
-        ]
-      }
-    },
-    {
-      "id": "ae-leather-thorn-proof-garden-gloves",
-      "name": "Leather Thorn-Proof Garden Gloves",
-      "category": "Clothing & Shoes",
-      "tags": [
-        "aliexpress",
-        "leather",
-        "thorn",
-        "proof",
-        "garden",
-        "gloves",
-        "clothing",
-        "and",
-        "shoes"
-      ],
-      "image": "images/store/ae-1005007314976880.jpg",
-      "imageAlt": "Leather Thorn-Proof Garden Gloves",
-      "blurb": "Brown leather gloves that keep out thorns when pruning roses and brambles. Latex-free.",
-      "price": 2049,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Leather Thorn-Proof Garden Gloves",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 6,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "1005007314976880"
-      },
-      "options": {
-        "label": "Size",
-        "values": [
-          {
-            "name": "L"
-          },
-          {
-            "name": "XL"
-          }
-        ]
-      }
-    },
-    {
-      "id": "ae-cotton-paisley-bandana",
-      "name": "Cotton Paisley Bandana",
-      "category": "Clothing & Shoes",
-      "tags": [
-        "aliexpress",
-        "cotton",
-        "paisley",
-        "bandana",
-        "clothing",
-        "and",
-        "shoes"
-      ],
-      "image": "images/store/ae-32821547275.jpg",
-      "imageAlt": "Cotton Paisley Bandana",
-      "blurb": "A 100% cotton paisley bandana, 55 cm square. Colour varies.",
-      "price": 499,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Cotton Paisley Bandana",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 2,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "32821547275"
-      }
-    },
-    {
-      "id": "ae-cotton-linen-henley-tee-khaki",
-      "name": "Cotton Linen Henley Tee, Khaki",
-      "category": "Clothing & Shoes",
-      "tags": [
-        "aliexpress",
-        "cotton",
-        "linen",
-        "henley",
-        "tee",
-        "khaki",
-        "clothing",
-        "and",
-        "shoes"
-      ],
-      "image": "images/store/ae-1005006996783204.jpg",
-      "imageAlt": "Cotton Linen Henley Tee, Khaki",
-      "blurb": "A relaxed cotton and linen henley. Runs loose; US sizing.",
-      "price": 3199,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Cotton Linen Henley Tee, Khaki",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 8,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "1005006996783204"
-      },
-      "options": {
-        "label": "Size",
-        "values": [
-          {
-            "name": "S"
-          },
-          {
-            "name": "M"
-          },
-          {
-            "name": "L"
-          },
-          {
-            "name": "XL"
-          },
-          {
-            "name": "XXL"
-          }
-        ]
-      }
-    },
-    {
-      "id": "ae-cotton-cross-back-apron",
-      "name": "Cotton Cross-Back Apron",
-      "category": "Clothing & Shoes",
-      "tags": [
-        "aliexpress",
-        "cotton",
-        "cross",
-        "back",
-        "apron",
-        "clothing",
-        "and",
-        "shoes"
-      ],
-      "image": "images/store/ae-1005007635075989.jpg",
-      "imageAlt": "Cotton Cross-Back Apron",
-      "blurb": "A cotton apron with crossed straps and big pockets, for the kitchen, garden or workshop.",
-      "price": 3249,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Cotton Cross-Back Apron",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 9,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "1005007635075989"
-      },
-      "options": {
-        "label": "Colour",
-        "values": [
-          {
-            "name": "Pink"
-          },
-          {
-            "name": "Black"
-          },
-          {
-            "name": "Apricot"
-          }
-        ]
-      }
-    },
-    {
-      "id": "ae-large-canvas-tote",
-      "name": "Large Canvas Tote",
-      "category": "Bags & Totes",
-      "tags": [
-        "aliexpress",
-        "large",
-        "canvas",
-        "tote",
-        "bags",
-        "and",
-        "totes"
-      ],
-      "image": "images/store/ae-1005006698892305.jpg",
-      "imageAlt": "Large Canvas Tote",
-      "blurb": "A big, plain canvas tote for groceries, books and the farmers market.",
-      "price": 1849,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Large Canvas Tote",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 9,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "1005006698892305"
-      },
-      "options": {
-        "label": "Colour",
-        "values": [
-          {
-            "name": "Khaki"
-          },
-          {
-            "name": "Black"
-          },
-          {
-            "name": "White"
-          }
-        ]
-      }
-    },
-    {
-      "id": "ae-foldable-waterproof-shopping-bag",
-      "name": "Foldable Waterproof Shopping Bag",
-      "category": "Bags & Totes",
-      "tags": [
-        "aliexpress",
-        "foldable",
-        "waterproof",
-        "shopping",
-        "bag",
-        "bags",
-        "and",
-        "totes"
-      ],
-      "image": "images/store/ae-1005006440741486.jpg",
-      "imageAlt": "Foldable Waterproof Shopping Bag",
-      "blurb": "A reusable shopping bag that folds into its own pouch.",
-      "price": 1449,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Foldable Waterproof Shopping Bag",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 4,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "1005006440741486"
-      },
-      "options": {
-        "label": "Pattern",
-        "values": [
-          {
-            "name": "Camo Coffee"
-          },
-          {
-            "name": "Coloured Letters"
-          }
-        ]
-      }
-    },
-    {
-      "id": "ae-canvas-shoulder-bag",
-      "name": "Canvas Shoulder Bag",
-      "category": "Bags & Totes",
-      "tags": [
-        "aliexpress",
-        "canvas",
-        "shoulder",
-        "bag",
-        "bags",
-        "and",
-        "totes"
-      ],
-      "image": "images/store/ae-1005008554547646.jpg",
-      "imageAlt": "Canvas Shoulder Bag",
-      "blurb": "A sturdy reusable canvas shoulder bag, 36 x 33 cm.",
-      "price": 2799,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Canvas Shoulder Bag",
+      "emailSubject": "Store order: Secret Wooden Puzzle Box",
       "payLink": "",
       "active": true,
       "ship": true,
@@ -4111,164 +4590,32 @@
       "shipFrom": "aliexpress",
       "source": {
         "supplier": "AliExpress",
-        "item": "1005008554547646"
-      },
-      "options": {
-        "label": "Colour",
-        "values": [
-          {
-            "name": "Yellow"
-          },
-          {
-            "name": "Green"
-          }
-        ]
+        "item": "3256810199720744",
+        "variant": "1 large magic box"
       }
     },
     {
-      "id": "ae-plant-stabilizer-clip",
-      "name": "Plant Stabilizer Clip",
-      "category": "Garden Supplies",
+      "id": "ae-hexagon-wooden-brain-teaser",
+      "name": "Hexagon Wooden Brain Teaser",
+      "category": "Games & Gifts",
       "tags": [
         "aliexpress",
-        "plant",
-        "stabilizer",
-        "clip",
-        "garden",
-        "supplies"
-      ],
-      "image": "images/store/ae-3256809395944100.jpg",
-      "imageAlt": "Plant Stabilizer Clip",
-      "blurb": "A clip that steadies a leaning plant stem, like a monstera, against its pole.",
-      "price": 799,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Plant Stabilizer Clip",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 2,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "3256809395944100"
-      }
-    },
-    {
-      "id": "ae-self-watering-plant-pot-small",
-      "name": "Self-Watering Plant Pot, Small",
-      "category": "Garden Supplies",
-      "tags": [
-        "aliexpress",
-        "self",
-        "watering",
-        "plant",
-        "pot",
-        "small",
-        "garden",
-        "supplies"
-      ],
-      "image": "images/store/ae-3256806675485517.jpg",
-      "imageAlt": "Self-Watering Plant Pot, Small",
-      "blurb": "A clear double-layer pot that waters the plant from a reservoir below.",
-      "price": 1249,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Self-Watering Plant Pot, Small",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 6,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "3256806675485517"
-      }
-    },
-    {
-      "id": "ae-hanging-wooden-bird-feeder",
-      "name": "Hanging Wooden Bird Feeder",
-      "category": "Garden Supplies",
-      "tags": [
-        "aliexpress",
-        "hanging",
+        "hexagon",
         "wooden",
-        "bird",
-        "feeder",
-        "garden",
-        "supplies"
+        "brain",
+        "teaser",
+        "games",
+        "and",
+        "gifts"
       ],
-      "image": "images/store/ae-3256810253146322.jpg",
-      "imageAlt": "Hanging Wooden Bird Feeder",
-      "blurb": "A large wooden feeder to hang from a branch or hook.",
-      "price": 2599,
+      "image": "images/store/ae-3256806851872843.jpg",
+      "imageAlt": "Hexagon Wooden Brain Teaser",
+      "blurb": "Eleven wooden pieces that fit back into a hexagon tray, harder than it looks.",
+      "price": 699,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
-      "emailSubject": "Store order: Hanging Wooden Bird Feeder",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 20,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "3256810253146322"
-      }
-    },
-    {
-      "id": "ae-garden-kneeling-pad",
-      "name": "Garden Kneeling Pad",
-      "category": "Garden Supplies",
-      "tags": [
-        "aliexpress",
-        "garden",
-        "kneeling",
-        "pad",
-        "supplies"
-      ],
-      "image": "images/store/ae-3256809850917948.jpg",
-      "imageAlt": "Garden Kneeling Pad",
-      "blurb": "A thick foam pad that saves your knees while weeding and planting.",
-      "price": 1399,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Garden Kneeling Pad",
-      "payLink": "",
-      "active": true,
-      "ship": true,
-      "shipOz": 8,
-      "shipFrom": "aliexpress",
-      "source": {
-        "supplier": "AliExpress",
-        "item": "3256809850917948"
-      }
-    },
-    {
-      "id": "ae-felt-wall-pocket-planter-2-pockets",
-      "name": "Felt Wall Pocket Planter, 2 pockets",
-      "category": "Garden Supplies",
-      "tags": [
-        "aliexpress",
-        "felt",
-        "wall",
-        "pocket",
-        "planter",
-        "pockets",
-        "garden",
-        "supplies"
-      ],
-      "image": "images/store/ae-3256806825478450.jpg",
-      "imageAlt": "Felt Wall Pocket Planter, 2 pockets",
-      "blurb": "A felt planter that hangs on a wall or fence, for herbs and flowers.",
-      "price": 1249,
-      "oldPrice": null,
-      "interval": null,
-      "button": "Add to cart",
-      "emailSubject": "Store order: Felt Wall Pocket Planter, 2 pockets",
+      "emailSubject": "Store order: Hexagon Wooden Brain Teaser",
       "payLink": "",
       "active": true,
       "ship": true,
@@ -4276,93 +4623,295 @@
       "shipFrom": "aliexpress",
       "source": {
         "supplier": "AliExpress",
-        "item": "3256806825478450"
+        "item": "3256806851872843",
+        "variant": "A2"
       }
     },
     {
-      "id": "ae-animal-on-a-bicycle-wind-spinner",
-      "name": "Animal on a Bicycle Wind Spinner",
-      "category": "Garden Supplies",
+      "id": "ae-round-bird-wooden-jigsaw-puzzle",
+      "name": "Round Bird Wooden Jigsaw Puzzle",
+      "category": "Games & Gifts",
       "tags": [
         "aliexpress",
-        "animal",
-        "bicycle",
-        "wind",
-        "spinner",
-        "garden",
-        "supplies"
+        "round",
+        "bird",
+        "wooden",
+        "jigsaw",
+        "puzzle",
+        "games",
+        "and",
+        "gifts"
       ],
-      "image": "images/store/ae-3256808061825608.jpg",
-      "imageAlt": "Animal on a Bicycle Wind Spinner",
-      "blurb": "A metal garden stake whose wheels spin in the wind.",
-      "price": 1649,
+      "image": "images/store/ae-3256807278662721.jpg",
+      "imageAlt": "Round Bird Wooden Jigsaw Puzzle",
+      "blurb": "A round wooden jigsaw with bird-shaped pieces that makes a pretty finished picture. The photo shows the range; you get the round bird design.",
+      "price": 1049,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
-      "emailSubject": "Store order: Animal on a Bicycle Wind Spinner",
+      "emailSubject": "Store order: Round Bird Wooden Jigsaw Puzzle",
       "payLink": "",
       "active": true,
       "ship": true,
-      "shipOz": 12,
+      "shipOz": 8,
       "shipFrom": "aliexpress",
       "source": {
         "supplier": "AliExpress",
-        "item": "3256808061825608"
+        "item": "3256807278662721",
+        "variant": "TT-NIAO-27-A5"
       }
     },
     {
-      "id": "ae-mini-artificial-bonsai",
-      "name": "Mini Artificial Bonsai",
-      "category": "Home & Gadgets",
+      "id": "ae-peacock-wooden-jigsaw-puzzle",
+      "name": "Peacock Wooden Jigsaw Puzzle",
+      "category": "Games & Gifts",
       "tags": [
         "aliexpress",
-        "mini",
-        "artificial",
-        "bonsai",
-        "home",
+        "peacock",
+        "wooden",
+        "jigsaw",
+        "puzzle",
+        "games",
         "and",
-        "gadgets"
+        "gifts"
       ],
-      "image": "images/store/ae-3256812980899315.jpg",
-      "imageAlt": "Mini Artificial Bonsai",
-      "blurb": "A little faux bonsai in a pot for a desk or shelf. No watering.",
-      "price": 1349,
+      "image": "images/store/ae-3256806786239663.jpg",
+      "imageAlt": "Peacock Wooden Jigsaw Puzzle",
+      "blurb": "A round wooden jigsaw of a peacock, cut into fun animal-shaped pieces.",
+      "price": 749,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
-      "emailSubject": "Store order: Mini Artificial Bonsai",
+      "emailSubject": "Store order: Peacock Wooden Jigsaw Puzzle",
       "payLink": "",
       "active": true,
       "ship": true,
-      "shipOz": 6,
+      "shipOz": 8,
       "shipFrom": "aliexpress",
       "source": {
         "supplier": "AliExpress",
-        "item": "3256812980899315"
+        "item": "3256806786239663",
+        "variant": "M147-A5"
       }
     },
     {
-      "id": "ae-bag-sealing-clips-4-pack",
-      "name": "Bag Sealing Clips, 4 pack",
-      "category": "Home & Gadgets",
+      "id": "ae-elephant-wooden-jigsaw-puzzle",
+      "name": "Elephant Wooden Jigsaw Puzzle",
+      "category": "Games & Gifts",
       "tags": [
         "aliexpress",
-        "bag",
-        "sealing",
-        "clips",
-        "pack",
-        "home",
+        "elephant",
+        "wooden",
+        "jigsaw",
+        "puzzle",
+        "games",
         "and",
-        "gadgets"
+        "gifts"
       ],
-      "image": "images/store/ae-3256813079747401.jpg",
-      "imageAlt": "Bag Sealing Clips, 4 pack",
-      "blurb": "Clips that keep chip, coffee and snack bags shut.",
-      "price": 949,
+      "image": "images/store/ae-3256806812205715.jpg",
+      "imageAlt": "Elephant Wooden Jigsaw Puzzle",
+      "blurb": "An elephant-shaped wooden jigsaw for a cozy evening, and a display piece after.",
+      "price": 849,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
-      "emailSubject": "Store order: Bag Sealing Clips, 4 pack",
+      "emailSubject": "Store order: Elephant Wooden Jigsaw Puzzle",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 8,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256806812205715",
+        "variant": "M164-A5"
+      }
+    },
+    {
+      "id": "ae-ocean-animals-wooden-jigsaw-puzzle",
+      "name": "Ocean Animals Wooden Jigsaw Puzzle",
+      "category": "Games & Gifts",
+      "tags": [
+        "aliexpress",
+        "ocean",
+        "animals",
+        "wooden",
+        "jigsaw",
+        "puzzle",
+        "games",
+        "and",
+        "gifts"
+      ],
+      "image": "images/store/ae-3256808061832504.jpg",
+      "imageAlt": "Ocean Animals Wooden Jigsaw Puzzle",
+      "blurb": "A wooden jigsaw of ocean animals with pieces cut in sea-creature shapes.",
+      "price": 1099,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Ocean Animals Wooden Jigsaw Puzzle",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 8,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256808061832504",
+        "variant": "Z153-S"
+      }
+    },
+    {
+      "id": "ae-vintage-pirate-playing-cards",
+      "name": "Vintage Pirate Playing Cards",
+      "category": "Games & Gifts",
+      "tags": [
+        "aliexpress",
+        "vintage",
+        "pirate",
+        "playing",
+        "cards",
+        "games",
+        "and",
+        "gifts"
+      ],
+      "image": "images/store/ae-3256807958553805.jpg",
+      "imageAlt": "Vintage Pirate Playing Cards",
+      "blurb": "A full deck of vintage-style pirate playing cards for game night.",
+      "price": 799,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Vintage Pirate Playing Cards",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 5,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256807958553805",
+        "variant": "Pirate"
+      }
+    },
+    {
+      "id": "ae-bamboo-phone-stand",
+      "name": "Bamboo Phone Stand",
+      "category": "Games & Gifts",
+      "tags": [
+        "aliexpress",
+        "bamboo",
+        "phone",
+        "stand",
+        "games",
+        "and",
+        "gifts"
+      ],
+      "image": "images/store/ae-3256809724610352.jpg",
+      "imageAlt": "Bamboo Phone Stand",
+      "blurb": "A simple bamboo stand that holds your phone upright on a desk or nightstand.",
+      "price": 599,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Bamboo Phone Stand",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 5,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256809724610352",
+        "variant": "1PC"
+      }
+    },
+    {
+      "id": "ae-walnut-phone-stand",
+      "name": "Walnut Phone Stand",
+      "category": "Games & Gifts",
+      "tags": [
+        "aliexpress",
+        "walnut",
+        "phone",
+        "stand",
+        "games",
+        "and",
+        "gifts"
+      ],
+      "image": "images/store/ae-3256809645665714.jpg",
+      "imageAlt": "Walnut Phone Stand",
+      "blurb": "A solid walnut phone stand with a clean, minimal look.",
+      "price": 749,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Walnut Phone Stand",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 5,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256809645665714",
+        "variant": "Style1"
+      }
+    },
+    {
+      "id": "ae-wooden-business-card-holder",
+      "name": "Wooden Business Card Holder",
+      "category": "Games & Gifts",
+      "tags": [
+        "aliexpress",
+        "wooden",
+        "business",
+        "card",
+        "holder",
+        "games",
+        "and",
+        "gifts"
+      ],
+      "image": "images/store/ae-3256808836050960.jpg",
+      "imageAlt": "Wooden Business Card Holder",
+      "blurb": "A natural wood holder that keeps business cards or notes tidy on a desk.",
+      "price": 799,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Wooden Business Card Holder",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 5,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256808836050960",
+        "variant": "Beige"
+      }
+    },
+    {
+      "id": "ae-crochet-lizard-coaster",
+      "name": "Crochet Lizard Coaster",
+      "category": "Games & Gifts",
+      "tags": [
+        "aliexpress",
+        "crochet",
+        "lizard",
+        "coaster",
+        "games",
+        "and",
+        "gifts"
+      ],
+      "image": "images/store/ae-3256812731931920.jpg",
+      "imageAlt": "Crochet Lizard Coaster",
+      "blurb": "A handmade crochet lizard that doubles as a cheerful drink coaster.",
+      "price": 1049,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Crochet Lizard Coaster",
       "payLink": "",
       "active": true,
       "ship": true,
@@ -4370,30 +4919,31 @@
       "shipFrom": "aliexpress",
       "source": {
         "supplier": "AliExpress",
-        "item": "3256813079747401"
+        "item": "3256812731931920",
+        "variant": "Blue"
       }
     },
     {
-      "id": "ae-retractable-carabiner-keychain",
-      "name": "Retractable Carabiner Keychain",
-      "category": "Home & Gadgets",
+      "id": "ae-crochet-positive-cat",
+      "name": "Crochet Positive Cat",
+      "category": "Games & Gifts",
       "tags": [
         "aliexpress",
-        "retractable",
-        "carabiner",
-        "keychain",
-        "home",
+        "crochet",
+        "positive",
+        "cat",
+        "games",
         "and",
-        "gadgets"
+        "gifts"
       ],
-      "image": "images/store/ae-3256807751643159.jpg",
-      "imageAlt": "Retractable Carabiner Keychain",
-      "blurb": "A clip-on keychain with a steel-wire reel that pulls out and snaps back. Not for climbing.",
-      "price": 849,
+      "image": "images/store/ae-3256809182249229.jpg",
+      "imageAlt": "Crochet Positive Cat",
+      "blurb": "A little crochet cat with a positive message card, a sweet pick-me-up gift. Ages 14 and up. The photo shows the range; you get one cat.",
+      "price": 799,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
-      "emailSubject": "Store order: Retractable Carabiner Keychain",
+      "emailSubject": "Store order: Crochet Positive Cat",
       "payLink": "",
       "active": true,
       "ship": true,
@@ -4401,31 +4951,64 @@
       "shipFrom": "aliexpress",
       "source": {
         "supplier": "AliExpress",
-        "item": "3256807751643159"
+        "item": "3256809182249229",
+        "variant": "V2"
       }
     },
     {
-      "id": "ae-reusable-cable-ties-5-pack",
-      "name": "Reusable Cable Ties, 5 pack",
-      "category": "Home & Gadgets",
+      "id": "ae-pressed-flower-crystal-bookmark",
+      "name": "Pressed Flower Crystal Bookmark",
+      "category": "Games & Gifts",
       "tags": [
         "aliexpress",
-        "reusable",
-        "cable",
-        "ties",
-        "pack",
-        "home",
+        "pressed",
+        "flower",
+        "crystal",
+        "bookmark",
+        "games",
         "and",
-        "gadgets"
+        "gifts"
       ],
-      "image": "images/store/ae-3256812791612763.jpg",
-      "imageAlt": "Reusable Cable Ties, 5 pack",
-      "blurb": "Hook-and-loop ties to tidy cords and bundle garden canes, reused again and again.",
-      "price": 599,
+      "image": "images/store/ae-3256807080143639.jpg",
+      "imageAlt": "Pressed Flower Crystal Bookmark",
+      "blurb": "A metal bookmark with real dried flowers and a crystal accent. The photo shows the range; you get one bookmark (green).",
+      "price": 549,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
-      "emailSubject": "Store order: Reusable Cable Ties, 5 pack",
+      "emailSubject": "Store order: Pressed Flower Crystal Bookmark",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 2,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256807080143639",
+        "variant": "green"
+      }
+    },
+    {
+      "id": "ae-botanical-enamel-pin",
+      "name": "Botanical Enamel Pin",
+      "category": "Games & Gifts",
+      "tags": [
+        "aliexpress",
+        "botanical",
+        "enamel",
+        "pin",
+        "games",
+        "and",
+        "gifts"
+      ],
+      "image": "images/store/ae-3256812217761773.jpg",
+      "imageAlt": "Botanical Enamel Pin",
+      "blurb": "A small enamel pin with a botanical design for a jacket, bag or hat. The photo shows the range; you get one pin (design A24).",
+      "price": 499,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Botanical Enamel Pin",
       "payLink": "",
       "active": true,
       "ship": true,
@@ -4433,32 +5016,30 @@
       "shipFrom": "aliexpress",
       "source": {
         "supplier": "AliExpress",
-        "item": "3256812791612763"
+        "item": "3256812217761773",
+        "variant": "A24"
       }
     },
     {
-      "id": "ae-car-seat-gap-fillers-2-pack",
-      "name": "Car Seat Gap Fillers, 2 pack",
-      "category": "Home & Gadgets",
+      "id": "ae-reflective-padded-dog-leash-5-ft",
+      "name": "Reflective Padded Dog Leash, 5 ft",
+      "category": "Pets",
       "tags": [
         "aliexpress",
-        "car",
-        "seat",
-        "gap",
-        "fillers",
-        "pack",
-        "home",
-        "and",
-        "gadgets"
+        "reflective",
+        "padded",
+        "dog",
+        "leash",
+        "pets"
       ],
-      "image": "images/store/ae-3256812816193878.jpg",
-      "imageAlt": "Car Seat Gap Fillers, 2 pack",
-      "blurb": "Fill the gap beside the car seats so phones and keys stop falling in.",
-      "price": 1149,
+      "image": "images/store/ae-3256806677616320.jpg",
+      "imageAlt": "Reflective Padded Dog Leash, 5 ft",
+      "blurb": "A dog leash with a padded handle and reflective stitching for safer evening walks. The photo shows the range; you get the black 5 ft leash.",
+      "price": 699,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
-      "emailSubject": "Store order: Car Seat Gap Fillers, 2 pack",
+      "emailSubject": "Store order: Reflective Padded Dog Leash, 5 ft",
       "payLink": "",
       "active": true,
       "ship": true,
@@ -4466,67 +5047,175 @@
       "shipFrom": "aliexpress",
       "source": {
         "supplier": "AliExpress",
-        "item": "3256812816193878"
+        "item": "3256806677616320",
+        "variant": "black / 1.5m"
       }
     },
     {
-      "id": "ae-catnip-chew-toy",
-      "name": "Catnip Chew Toy",
+      "id": "ae-padded-dog-collar",
+      "name": "Padded Dog Collar",
       "category": "Pets",
       "tags": [
         "aliexpress",
-        "catnip",
-        "chew",
+        "padded",
+        "dog",
+        "collar",
+        "pets"
+      ],
+      "image": "images/store/ae-3256811913331871.jpg",
+      "imageAlt": "Padded Dog Collar",
+      "blurb": "A soft, padded, adjustable dog collar that is comfortable for daily wear. Blue. The photo shows the range; you get the blue collar.",
+      "price": 699,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Padded Dog Collar",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 3,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256811913331871",
+        "variant": "Blue"
+      },
+      "options": {
+        "label": "Size",
+        "values": [
+          {
+            "name": "L",
+            "note": "Blue / L"
+          },
+          {
+            "name": "XL",
+            "note": "Blue / XL"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ae-pet-grooming-glove",
+      "name": "Pet Grooming Glove",
+      "category": "Pets",
+      "tags": [
+        "aliexpress",
+        "pet",
+        "grooming",
+        "glove",
+        "pets"
+      ],
+      "image": "images/store/ae-3256808480278416.jpg",
+      "imageAlt": "Pet Grooming Glove",
+      "blurb": "A glove with rubber nubs that loosens and lifts loose fur while you pet.",
+      "price": 349,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Pet Grooming Glove",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 3,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256808480278416",
+        "variant": "Black"
+      }
+    },
+    {
+      "id": "ae-poop-bag-dispenser",
+      "name": "Poop Bag Dispenser",
+      "category": "Pets",
+      "tags": [
+        "aliexpress",
+        "poop",
+        "bag",
+        "dispenser",
+        "pets"
+      ],
+      "image": "images/store/ae-3256808372007435.jpg",
+      "imageAlt": "Poop Bag Dispenser",
+      "blurb": "A small dispenser that clips to a leash so poop bags are always at hand. The photo shows the range; you get the purple dispenser.",
+      "price": 499,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Poop Bag Dispenser",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 2,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256808372007435",
+        "variant": "purple"
+      }
+    },
+    {
+      "id": "ae-cotton-rope-ball-dog-toy",
+      "name": "Cotton Rope Ball Dog Toy",
+      "category": "Pets",
+      "tags": [
+        "aliexpress",
+        "cotton",
+        "rope",
+        "ball",
+        "dog",
         "toy",
         "pets"
       ],
-      "image": "images/store/ae-3256807353574696.jpg",
-      "imageAlt": "Catnip Chew Toy",
-      "blurb": "A plush chew toy filled with dried catnip.",
+      "image": "images/store/ae-3256806984536806.jpg",
+      "imageAlt": "Cotton Rope Ball Dog Toy",
+      "blurb": "A knotted cotton rope ball for tugging, tossing and chewing. The photo shows the range; you get the rope ball toy.",
       "price": 599,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
-      "emailSubject": "Store order: Catnip Chew Toy",
+      "emailSubject": "Store order: Cotton Rope Ball Dog Toy",
       "payLink": "",
       "active": true,
       "ship": true,
-      "shipOz": 2,
+      "shipOz": 6,
       "shipFrom": "aliexpress",
       "source": {
         "supplier": "AliExpress",
-        "item": "3256807353574696"
+        "item": "3256806984536806",
+        "variant": "B 29cm / 1PC"
       }
     },
     {
-      "id": "ae-canvas-dog-poop-bag-holder",
-      "name": "Canvas Dog Poop Bag Holder",
+      "id": "ae-carrot-rope-chew-toys-3-pack",
+      "name": "Carrot Rope Chew Toys, 3 pack",
       "category": "Pets",
       "tags": [
         "aliexpress",
-        "canvas",
-        "dog",
-        "poop",
-        "bag",
-        "holder",
+        "carrot",
+        "rope",
+        "chew",
+        "toys",
+        "pack",
         "pets"
       ],
-      "image": "images/store/ae-3256808219741978.jpg",
-      "imageAlt": "Canvas Dog Poop Bag Holder",
-      "blurb": "A canvas pouch with a carabiner that clips to a leash and holds a roll of bags.",
-      "price": 749,
+      "image": "images/store/ae-3256809551842887.jpg",
+      "imageAlt": "Carrot Rope Chew Toys, 3 pack",
+      "blurb": "Three carrot-shaped cotton rope toys that are good for chewing and gentle on teeth.",
+      "price": 999,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
-      "emailSubject": "Store order: Canvas Dog Poop Bag Holder",
+      "emailSubject": "Store order: Carrot Rope Chew Toys, 3 pack",
       "payLink": "",
       "active": true,
       "ship": true,
-      "shipOz": 2,
+      "shipOz": 6,
       "shipFrom": "aliexpress",
       "source": {
         "supplier": "AliExpress",
-        "item": "3256808219741978"
+        "item": "3256809551842887",
+        "variant": "carrot / 3pcs"
       }
     }
   ]

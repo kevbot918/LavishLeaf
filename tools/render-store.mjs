@@ -148,6 +148,8 @@ function card(p) {
     `  <article class="sp-card${p.demo ? ' sp-demo' : ''}" data-id="${p.id}" data-category="${esc(p.category)}">`,
     '    <div class="sp-media">',
     media,
+    // A sale shows its saving on the photo (owner, 2026-10-11: "50% off").
+    ...(p.oldPrice && !p.demo ? [`      <span class="sp-badge">${Math.round((1 - p.price / p.oldPrice) * 100)}% off</span>`] : []),
     `      <button type="button" class="sp-wish" data-wish="${p.id}" aria-pressed="false" aria-label="Save ${esc(p.name)} to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>`,
     '    </div>',
     `    <h3 class="sp-name">${esc(p.name)}</h3>`,
@@ -262,6 +264,10 @@ if (unknown.length) {
       shipFrom: p.ship === true ? (p.shipFrom || 'bangalla') : null,
       // Options (scent, colour, size): the names the server accepts.
       options: p.options ? { label: p.options.label, values: p.options.values.map((v) => v.name) } : null,
+      // Pick-up services take the sign-up form; "bucket" is the optional
+      // bucket price in cents (netlify/lib/pickups.mjs).
+      pickup: p.pickup === true,
+      bucket: p.pickup === true && Number.isInteger(p.bucket) ? p.bucket : null,
       // Groceries carry the grocery tax rate (tax.mjs).
       grocery: p.grocery === true,
       // The server refuses an order without its waiver (checkout.mjs), so

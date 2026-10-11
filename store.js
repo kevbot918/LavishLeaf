@@ -113,6 +113,7 @@
       shelfDefs.push(def);
     });
   }
+  var pendingOpen = null;
   function fetchTags() {
     fetch('/products.json', { cache: 'no-store' })
       .then(function (r) { return r.json(); })
@@ -120,6 +121,7 @@
         (data.products || []).forEach(function (p) {
           if (products[p.id]) { products[p.id].tags = Array.isArray(p.tags) ? p.tags : []; products[p.id].data = p; }
         });
+        if (pendingOpen) { openProduct(pendingOpen); pendingOpen = null; }
       })
       .catch(function () { /* search still works on names, sentences and shelves */ });
   }
@@ -381,7 +383,8 @@
     if (!firstShow && window.scrollY > top) window.scrollTo({ top: top, behavior: 'auto' });
     firstShow = false;
   }
-  function setTitle(t) { $('#ss-title').textContent = t; document.title = (t === 'Home' ? '' : t + ': ') + 'Lavish Leaf Online Store'; }
+  var PAGE_TITLE = document.title; // the search-engine title in store.html (tools: heads, 2026-10-11)
+  function setTitle(t) { $('#ss-title').textContent = t; document.title = t === 'Home' ? PAGE_TITLE : t + ': Lavish Leaf Online Store'; }
   // The sidebar and the store bar stick under the site header, whose height
   // changes with the viewport (and with its own phone menu).
   function measureSite() { document.documentElement.style.setProperty('--site-h', siteHeaderHeight() + 'px'); }
@@ -724,6 +727,10 @@
 
     window.addEventListener('hashchange', route);
     document.addEventListener('ll-choose', function (e) { openProduct(e.detail.id); });
+    // store.html?p=<id> opens that product (Google Shopping and the sitemap
+    // link each product this way, tools/seo.mjs).
+    var linked = new URLSearchParams(location.search).get('p');
+    if (linked && products[linked]) { pendingOpen = linked; if (products[linked].data) openProduct(linked); }
     measureSite();
     window.addEventListener('resize', measureSite);
     if (window.ResizeObserver && $('body > header')) new ResizeObserver(measureSite).observe($('body > header'));

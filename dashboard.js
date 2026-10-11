@@ -408,6 +408,29 @@
     }).catch(function () { imsg.textContent = 'Could not read the current totals.'; });
     ci.appendChild(el('p', 'db-hint', 'Ideas worth tracking: households on the compost and recycling routes; pick-ups made; bags or buckets of finished compost given back to gardens; seedlings or trees planted; players and teams in the leagues; community events hosted.'));
 
+    // 7c3. Pick-up sign-ups (2026-10-11): every compost and recycling sign-up
+    // with the details from the form (netlify/functions/pickups.mjs).
+    var sp = section('pickups', 'fa-truck', 'Pick-up sign-ups', 'Compost and recycling customers: address, day, instructions and bucket. "Pending" means they left before finishing on PayPal.');
+    var cp = card(null); sp.appendChild(cp); root.appendChild(sp);
+    cp.appendChild(el('p', 'db-hint', 'Loading...'));
+    api('pickups', { action: 'list' }).then(function (r) {
+      cp.textContent = '';
+      var list = r.signups || [];
+      if (!list.length) { cp.appendChild(el('p', 'db-empty', 'No sign-ups yet.')); return; }
+      var t = el('table', 'db-table');
+      t.innerHTML = '<thead><tr><th>Date</th><th>Service</th><th>Name</th><th>Phone</th><th>Address</th><th>Day</th><th>Bucket</th><th>Instructions</th><th>Status</th></tr></thead>';
+      var tb = el('tbody');
+      list.forEach(function (s) {
+        var tr = el('tr');
+        [String(s.created || '').slice(0, 10), s.productName, s.name + ' (' + s.email + ')', String(s.phone).replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3'),
+          s.street + ', ' + s.city + ' ' + s.zip + (s.area && s.area.miles != null ? ' (' + s.area.miles + ' mi)' : ''), s.day, s.bucket ? 'Ours ($10)' : 'Own', s.notes || '', s.status]
+          .forEach(function (v) { tr.appendChild(el('td', null, v)); });
+        tb.appendChild(tr);
+      });
+      t.appendChild(tb);
+      var wrap = el('div', 'db-table-wrap'); wrap.appendChild(t); cp.appendChild(wrap);
+    }).catch(function (e) { cp.textContent = ''; cp.appendChild(el('p', 'db-empty', e.message)); });
+
     // 7d. AliExpress (2026-10-10): connect the buyer account once, then read
     // live prices and stock for the AliExpress lines in the store tiers.
     var sx = section('aliexpress', 'fa-box', 'AliExpress', 'Connect the shop\'s AliExpress account once; then check the live price, stock and photos of every AliExpress line in the store tiers.');
@@ -467,7 +490,7 @@
         fetch('/products.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (j) {
           var src = {};
           (j.products || []).forEach(function (p) {
-            src[p.name] = p.source ? (p.source.supplier + ' ' + (p.source.sku || ('item ' + p.source.item))) : (p.ship ? '-' : 'Our own service');
+            src[p.name] = p.source ? (p.source.supplier + ' ' + (p.source.sku || ('item ' + p.source.item)) + (p.source.variant ? ', variant "' + p.source.variant + '"' : '')) : (p.ship ? '-' : 'Our own service');
             // An option line: "Name (Scent: Almond)" orders that option's own code.
             (p.options ? p.options.values : []).forEach(function (v) {
               var s = v.sku || (v.item ? 'item ' + v.item : '') || (p.source ? (p.source.sku || 'item ' + p.source.item) : '');

@@ -158,3 +158,4 @@
 .db-impact-row input[type=text], .db-impact-row input[type=number] { padding: 8px 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,.18); background: rgba(0,0,0,.25); color: inherit; font: inherit; }
 .db-imp-plus { font-size: .85rem; white-space: nowrap; }
 @media (max-width: 700px) { .db-impact-row { grid-template-columns: 1fr 90px; } }
+.db-table-wrap { overflow-x: auto; }

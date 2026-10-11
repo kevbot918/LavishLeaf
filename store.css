@@ -737,3 +737,13 @@ body.ss-resizing .ss-side { transition: none; }
 .sp-pop-opt { display: flex; flex-direction: column; gap: 4px; font-size: .85rem; color: var(--muted); width: 100%; }
 .sp-pop-opt select { padding: 9px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface-2); color: var(--text); font: inherit; }
 .ss-result[data-pop] { cursor: pointer; }
+.sp-media { position: relative; }
+.sp-badge { position: absolute; left: 8px; top: 8px; background: var(--leaf); color: #14261A; font-weight: 800; font-size: .78rem; padding: 3px 9px; border-radius: 999px; box-shadow: 0 1px 4px rgba(0,0,0,.35); }
+.su-form { display: flex; flex-direction: column; gap: 12px; }
+.su-lede { color: var(--muted); margin: 8px 0 4px; }
+.su-field { display: flex; flex-direction: column; gap: 4px; font-size: .9rem; font-weight: 700; }
+.su-field input, .su-field select, .su-field textarea { padding: 10px 12px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface-2); color: var(--text); font: inherit; font-weight: 400; }
+.su-field small { font-weight: 400; color: var(--muted); }
+.su-check { display: flex; gap: 8px; align-items: flex-start; font-size: .9rem; line-height: 1.45; }
+.su-check input { margin-top: 3px; width: 18px; height: 18px; accent-color: var(--accent); }
+.su-msg { min-height: 1.2em; color: var(--accent); font-weight: 700; margin: 0; }

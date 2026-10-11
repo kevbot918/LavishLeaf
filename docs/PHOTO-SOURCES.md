@@ -18,3 +18,6 @@ compost" labels. It is a placeholder until a Lavish Leaf bucket is photographed.
 ## 2026-10-11, pick-up photos (Pexels licence: free to use, attribution not required)
 * images/compost-bucket.jpg: Leticia Alvares, https://www.pexels.com/photo/organic-waste-composting-in-kitchen-setting-31416063/
 * images/recycling-bins.jpg: Robert So, https://www.pexels.com/photo/colorful-recycling-bins-lined-up-on-street-36086364/
+
+## 2026-10-11, link-preview card (og-card.jpg)
+* Seedling photo: rawpixel, CC0, https://www.rawpixel.com/image/432526 ("Sprouts in a vegetable garden")
