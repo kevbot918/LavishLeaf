@@ -406,3 +406,19 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     secret must not be written anywhere but Netlify. AliExpress terms forbid
     copying seller photos: own sample photos only. affiliates.json carries
     the six pending applications and a notAvailable list.
+
+29. **The store sells (built 2026-10-11, NOT deployed: the owner's Netlify
+    credits are low until October 18).** `"checkout": "cart"`, the demo
+    catalogue removed, 29 real products: 19 Bangalla picks (`bg-*`, shipFrom
+    bangalla, source.sku) and 10 AliExpress items (`ae-*`, shipFrom
+    aliexpress, source.item; photos from the DS API under the dropshipping
+    programme), priced at cost x 1.3 + PayPal for 40% (AliExpress) or the
+    market price (Bangalla). Under 10 in stock, food-contact and battery-less
+    gone listings were left out. **Shipping per supplier** (shipping.mjs
+    SHIPPING.suppliers): Bangalla items by the weight bands on their own
+    weight; AliExpress free from $9.99 or 3 items, else $2.99; the cart and
+    PayPal show the parts. Subscriptions without a PayPal plan keep their
+    mailto sign-up in cart mode (render-store hasPlan). The dashboard's
+    Orders card shows "Order from" per line (products.json source). PayPal
+    is still sandbox (PAYPAL_ENV not live); the go-live list is OWNER-STEPS
+    "GO LIVE". DNS is at Squarespace now (2026-10-11).

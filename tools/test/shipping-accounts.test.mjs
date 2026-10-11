@@ -174,3 +174,17 @@ test('the account function: signed out is refused, a put cannot forge an order, 
     setStoreForTests(null);
   }
 });
+
+test('each supplier ships and is charged on its own (owner, 2026-10-11)', () => {
+  const B = (price, oz, qty = 1) => ({ product: { price, ship: true, shipOz: oz, shipFrom: 'bangalla' }, qty });
+  const A = (price, qty = 1) => ({ product: { price, ship: true, shipOz: 6, shipFrom: 'aliexpress' }, qty });
+  const q = (lines) => quote(lines, { method: 'ship' });
+  assert.equal(q([A(549)]).cents, 299, 'one small overseas item pays the small fee');
+  assert.equal(q([A(999)]).cents, 0, 'free from $9.99 of overseas items');
+  assert.equal(q([A(549, 3)]).cents, 0, 'free from 3 overseas items');
+  assert.equal(q([B(649, 10), A(999)]).cents, 895, 'the Bangalla band covers only Bangalla items');
+  assert.equal(q([B(649, 10), A(549)]).cents, 895 + 299);
+  assert.equal(q([B(3299, 106), B(649, 10)]).cents, 1895, 'Bangalla items share one band by their total weight');
+  assert.match(q([B(649, 10), A(549)]).label, /US supplier \$8\.95, overseas supplier \$2\.99/);
+  assert.equal(q([{ product: { price: 500, ship: true, shipOz: 5 }, qty: 1 }]).cents, 895, 'no shipFrom: the bands');
+});

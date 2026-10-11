@@ -39,7 +39,7 @@
   <script src="nav-cart.js" defer></script>
   <script src="identity-links.js" defer></script>
 </head>
-<body class="store-shell" data-checkout="links">
+<body class="store-shell" data-checkout="cart">
 
 <a class="skip" href="#main">Skip to the products</a>
 
@@ -168,7 +168,7 @@
       <span>Browse</span>
     </button>
     <h2 class="ss-title" id="ss-title">Home</h2>
-    <p class="ss-ship-note"><span class="ss-ship-long"><strong>Shipping</strong> is a flat rate by weight, from $8.95, shown in the cart.</span><span class="ss-ship-short"><strong>Shipping</strong> from $8.95, by weight.</span><span class="ss-ship-tiny"><strong>Shipping</strong> from $8.95.</span> <a href="terms-of-sale.html#shipping">Details</a></p>
+    <p class="ss-ship-note"><span class="ss-ship-long"><strong>Shipping</strong> is charged per supplier: overseas items free from $9.99, US items from $8.95.</span><span class="ss-ship-short"><strong>Shipping</strong>: overseas free from $9.99, US from $8.95.</span><span class="ss-ship-tiny"><strong>Shipping</strong> from $0.</span> <a href="terms-of-sale.html#shipping">Details</a></p>
     <div class="ss-top-right">
       <form class="ss-search" role="search" id="search-form">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m16 16 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -212,8 +212,6 @@
 <!-- PRODUCTS: generated from products.json by tools/render-store.mjs. Edit that file, not this block. -->
 <div id="shelves">
 <!-- PRODUCTS:BEGIN -->
-<p class="ss-demo-note"><strong>Demo catalogue.</strong> These are products we are considering. They are not for sale yet, so they carry no price here; "Supplier page" opens the maker's own listing.</p>
-
 <section class="shelf" id="shelf-farm-garden" data-shelf="farm-garden" data-title="Farm &amp; Garden">
   <div class="shelf-head">
     <h2>Farm &amp; Garden</h2>
@@ -263,7 +261,7 @@
     <p class="sp-blurb">One player's spot in the fall 7v7 league: Sunday games in Eufaula and McAlester through Christmas, with insurance, fields, equipment and prizes covered by the fee.</p>
     <div class="sp-foot">
       <span class="sp-price">$25.00 <span class="old-price">$30.00</span></span>
-      <a href="mailto:support@lavishleaf.org?subject=Player Registration - 7v7 Adult Soccer Fall Season" class="btn btn-sm" data-product="soccer-player-fall">Player Registration</a>
+      <button type="button" class="btn btn-sm" data-cart-add="soccer-player-fall">Add to cart</button>
     </div>
   </article>
 
@@ -276,7 +274,7 @@
     <p class="sp-blurb">Register a whole 7v7 squad for the fall season: Sunday games in Eufaula and McAlester through Christmas, and your team on the live standings from week one.</p>
     <div class="sp-foot">
       <span class="sp-price">$250.00 <span class="old-price">$300.00</span></span>
-      <a href="mailto:support@lavishleaf.org?subject=Team Registration - 7v7 Adult Soccer" class="btn btn-sm" data-product="soccer-team-fall">Team Registration</a>
+      <button type="button" class="btn btn-sm" data-cart-add="soccer-team-fall">Add to cart</button>
     </div>
   </article>
   </div>
@@ -288,183 +286,185 @@
     <a class="shelf-all" href="#shelf/soap-personal-care">See all</a>
   </div>
   <div class="shelf-row">
-  <article class="sp-card sp-demo" data-id="demo-kirk-s-castile-fragrance-free-3-pack" data-category="Soap &amp; Personal Care">
+  <article class="sp-card" data-id="bg-kiss-my-face-pure-olive-oil-bar-soap-8-oz" data-category="Soap &amp; Personal Care">
     <div class="sp-media">
-      <img src="images/store/b-34703-1pk.jpg" alt="Kirk's Castile Fragrance Free, 3 pack" loading="lazy">
-      <button type="button" class="sp-wish" data-wish="demo-kirk-s-castile-fragrance-free-3-pack" aria-pressed="false" aria-label="Save Kirk's Castile Fragrance Free, 3 pack to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
+      <img src="images/store/b-54937-1pk.jpg" alt="Kiss My Face Pure Olive Oil Bar Soap, 8 oz" loading="lazy">
+      <button type="button" class="sp-wish" data-wish="bg-kiss-my-face-pure-olive-oil-bar-soap-8-oz" aria-pressed="false" aria-label="Save Kiss My Face Pure Olive Oil Bar Soap, 8 oz to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
     </div>
-    <h3 class="sp-name">Kirk's Castile Fragrance Free, 3 pack</h3>
-    <p class="sp-blurb">Tier 0, rank 1. Bangalla dropship. 0.32 to 1.1 lb.</p>
+    <h3 class="sp-name">Kiss My Face Pure Olive Oil Bar Soap, 8 oz</h3>
+    <p class="sp-blurb">A big 8 oz bar of pure olive oil soap with no added fragrance. Ships from our US supplier in about a week.</p>
     <div class="sp-foot">
-      <a href="https://www.bangalla.com/products.php?productId=64419" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
+      <span class="sp-price">$6.49</span>
+      <button type="button" class="btn btn-sm" data-cart-add="bg-kiss-my-face-pure-olive-oil-bar-soap-8-oz">Add to cart</button>
     </div>
   </article>
 
-  <article class="sp-card sp-demo" data-id="demo-kirk-s-castile-original-fresh-3-pack" data-category="Soap &amp; Personal Care">
+  <article class="sp-card" data-id="bg-kiss-my-face-olive-and-aloe-bar-soap-8-oz" data-category="Soap &amp; Personal Care">
     <div class="sp-media">
-      <img src="images/store/b-44495-1pk.jpg" alt="Kirk's Castile Original Fresh, 3 pack" loading="lazy">
-      <button type="button" class="sp-wish" data-wish="demo-kirk-s-castile-original-fresh-3-pack" aria-pressed="false" aria-label="Save Kirk's Castile Original Fresh, 3 pack to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
+      <img src="images/store/b-54939-1pk.jpg" alt="Kiss My Face Olive &amp; Aloe Bar Soap, 8 oz" loading="lazy">
+      <button type="button" class="sp-wish" data-wish="bg-kiss-my-face-olive-and-aloe-bar-soap-8-oz" aria-pressed="false" aria-label="Save Kiss My Face Olive &amp; Aloe Bar Soap, 8 oz to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
     </div>
-    <h3 class="sp-name">Kirk's Castile Original Fresh, 3 pack</h3>
-    <p class="sp-blurb">Tier 0, rank 1. Bangalla dropship. 0.32 to 1.1 lb.</p>
+    <h3 class="sp-name">Kiss My Face Olive &amp; Aloe Bar Soap, 8 oz</h3>
+    <p class="sp-blurb">Olive oil soap with aloe in a big 8 oz bar. Ships from our US supplier in about a week.</p>
     <div class="sp-foot">
-      <a href="https://www.bangalla.com/products.php?productId=64546" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
+      <span class="sp-price">$6.49</span>
+      <button type="button" class="btn btn-sm" data-cart-add="bg-kiss-my-face-olive-and-aloe-bar-soap-8-oz">Add to cart</button>
     </div>
   </article>
 
-  <article class="sp-card sp-demo" data-id="demo-kirk-s-original-aloe-castile-3-pack" data-category="Soap &amp; Personal Care">
+  <article class="sp-card" data-id="bg-kiss-my-face-pure-olive-oil-bar-soap-4-oz" data-category="Soap &amp; Personal Care">
     <div class="sp-media">
-      <img src="images/store/b-82324-1pk.jpg" alt="Kirk's Original Aloe Castile, 3 pack" loading="lazy">
-      <button type="button" class="sp-wish" data-wish="demo-kirk-s-original-aloe-castile-3-pack" aria-pressed="false" aria-label="Save Kirk's Original Aloe Castile, 3 pack to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
+      <img src="images/store/b-54936-1pk.jpg" alt="Kiss My Face Pure Olive Oil Bar Soap, 4 oz" loading="lazy">
+      <button type="button" class="sp-wish" data-wish="bg-kiss-my-face-pure-olive-oil-bar-soap-4-oz" aria-pressed="false" aria-label="Save Kiss My Face Pure Olive Oil Bar Soap, 4 oz to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
     </div>
-    <h3 class="sp-name">Kirk's Original Aloe Castile, 3 pack</h3>
-    <p class="sp-blurb">Tier 0, rank 1. Bangalla dropship. 0.32 to 1.1 lb.</p>
+    <h3 class="sp-name">Kiss My Face Pure Olive Oil Bar Soap, 4 oz</h3>
+    <p class="sp-blurb">Pure olive oil soap with no added fragrance, in a 4 oz bar. Ships from our US supplier in about a week.</p>
     <div class="sp-foot">
-      <a href="https://www.bangalla.com/kirks-original-saloe-castile-bar-1x3-pack/" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
+      <span class="sp-price">$4.99</span>
+      <button type="button" class="btn btn-sm" data-cart-add="bg-kiss-my-face-pure-olive-oil-bar-soap-4-oz">Add to cart</button>
     </div>
   </article>
 
-  <article class="sp-card sp-demo" data-id="demo-south-of-france-lavender-fields-bar-soap-6-oz" data-category="Soap &amp; Personal Care">
+  <article class="sp-card" data-id="bg-tea-tree-therapy-eucalyptus-soap-3-5-oz" data-category="Soap &amp; Personal Care">
     <div class="sp-media">
-      <img src="images/store/b-35310-1pk.jpg" alt="South Of France Lavender Fields Bar Soap 6 oz" loading="lazy">
-      <button type="button" class="sp-wish" data-wish="demo-south-of-france-lavender-fields-bar-soap-6-oz" aria-pressed="false" aria-label="Save South Of France Lavender Fields Bar Soap 6 oz to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
+      <img src="images/store/b-83205-1pk.jpg" alt="Tea Tree Therapy Eucalyptus Soap, 3.5 oz" loading="lazy">
+      <button type="button" class="sp-wish" data-wish="bg-tea-tree-therapy-eucalyptus-soap-3-5-oz" aria-pressed="false" aria-label="Save Tea Tree Therapy Eucalyptus Soap, 3.5 oz to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
     </div>
-    <h3 class="sp-name">South Of France Lavender Fields Bar Soap 6 oz</h3>
-    <p class="sp-blurb">Tier 0, rank 3. Bangalla dropship. 0.47 to 0.48 lb.</p>
+    <h3 class="sp-name">Tea Tree Therapy Eucalyptus Soap, 3.5 oz</h3>
+    <p class="sp-blurb">A bar with tea tree and eucalyptus oils. Ships from our US supplier in about a week.</p>
     <div class="sp-foot">
-      <a href="https://www.bangalla.com/south-of-france-lavender-fields-bar-soap-1x6-oz/" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
+      <span class="sp-price">$8.99</span>
+      <button type="button" class="btn btn-sm" data-cart-add="bg-tea-tree-therapy-eucalyptus-soap-3-5-oz">Add to cart</button>
     </div>
   </article>
 
-  <article class="sp-card sp-demo" data-id="demo-south-of-france-bar-soap-lemon-verbena-6-oz" data-category="Soap &amp; Personal Care">
+  <article class="sp-card" data-id="bg-chandrika-sandal-soap-75-g" data-category="Soap &amp; Personal Care">
     <div class="sp-media">
-      <img src="images/store/b-35336-1pk.jpg" alt="South Of France Bar Soap Lemon Verbena 6 oz" loading="lazy">
-      <button type="button" class="sp-wish" data-wish="demo-south-of-france-bar-soap-lemon-verbena-6-oz" aria-pressed="false" aria-label="Save South Of France Bar Soap Lemon Verbena 6 oz to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
+      <img src="images/store/b-58440-1pk.jpg" alt="Chandrika Sandal Soap, 75 g" loading="lazy">
+      <button type="button" class="sp-wish" data-wish="bg-chandrika-sandal-soap-75-g" aria-pressed="false" aria-label="Save Chandrika Sandal Soap, 75 g to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
     </div>
-    <h3 class="sp-name">South Of France Bar Soap Lemon Verbena 6 oz</h3>
-    <p class="sp-blurb">Tier 0, rank 3. Bangalla dropship. 0.47 to 0.48 lb.</p>
+    <h3 class="sp-name">Chandrika Sandal Soap, 75 g</h3>
+    <p class="sp-blurb">The classic Ayurvedic sandalwood bar. Ships from our US supplier in about a week.</p>
     <div class="sp-foot">
-      <a href="https://www.bangalla.com/south-of-france-bar-soap-lemon-verbena-1x6-oz/" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
+      <span class="sp-price">$2.99</span>
+      <button type="button" class="btn btn-sm" data-cart-add="bg-chandrika-sandal-soap-75-g">Add to cart</button>
     </div>
   </article>
 
-  <article class="sp-card sp-demo" data-id="demo-south-of-france-bar-soap-orange-blossom-honey-6-oz" data-category="Soap &amp; Personal Care">
-    <div class="sp-media">
-      <img src="images/store/b-35392-1pk.jpg" alt="South of France Bar Soap Orange Blossom Honey 6 oz" loading="lazy">
-      <button type="button" class="sp-wish" data-wish="demo-south-of-france-bar-soap-orange-blossom-honey-6-oz" aria-pressed="false" aria-label="Save South of France Bar Soap Orange Blossom Honey 6 oz to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">South of France Bar Soap Orange Blossom Honey 6 oz</h3>
-    <p class="sp-blurb">Tier 0, rank 3. Bangalla dropship. 0.47 to 0.48 lb.</p>
-    <div class="sp-foot">
-      <a href="https://www.bangalla.com/south-of-france-bar-soap-orange-blossom-honey-1x6-oz/" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-south-of-france-bar-soap-blooming-jasmine-6-oz" data-category="Soap &amp; Personal Care">
-    <div class="sp-media">
-      <img src="images/store/b-33315-1pk.jpg" alt="South of France Bar Soap Blooming Jasmine 6 oz" loading="lazy">
-      <button type="button" class="sp-wish" data-wish="demo-south-of-france-bar-soap-blooming-jasmine-6-oz" aria-pressed="false" aria-label="Save South of France Bar Soap Blooming Jasmine 6 oz to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">South of France Bar Soap Blooming Jasmine 6 oz</h3>
-    <p class="sp-blurb">Tier 0, rank 3. Bangalla dropship. 0.47 to 0.48 lb.</p>
-    <div class="sp-foot">
-      <a href="https://www.bangalla.com/south-of-france-bar-soap-blooming-jasmine-1x6-oz/" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-kiss-my-face-pure-olive-oil-bar-soap-8-oz" data-category="Soap &amp; Personal Care">
-    <div class="sp-media">
-      <img src="images/store/b-54937-1pk.jpg" alt="Kiss My Face Pure Olive Oil Bar Soap 8 oz" loading="lazy">
-      <button type="button" class="sp-wish" data-wish="demo-kiss-my-face-pure-olive-oil-bar-soap-8-oz" aria-pressed="false" aria-label="Save Kiss My Face Pure Olive Oil Bar Soap 8 oz to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Kiss My Face Pure Olive Oil Bar Soap 8 oz</h3>
-    <p class="sp-blurb">Tier 0, rank 6. Bangalla dropship. 0.33 to 0.61 lb.</p>
-    <div class="sp-foot">
-      <a href="https://www.bangalla.com/kiss-my-face-pure-olive-oil-bar-soap-1x8-oz/" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-kiss-my-face-olive-aloe-bar-soap-8-oz" data-category="Soap &amp; Personal Care">
-    <div class="sp-media">
-      <img src="images/store/b-54939-1pk.jpg" alt="Kiss My Face Olive &amp; Aloe Bar Soap 8 oz" loading="lazy">
-      <button type="button" class="sp-wish" data-wish="demo-kiss-my-face-olive-aloe-bar-soap-8-oz" aria-pressed="false" aria-label="Save Kiss My Face Olive &amp; Aloe Bar Soap 8 oz to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Kiss My Face Olive &amp; Aloe Bar Soap 8 oz</h3>
-    <p class="sp-blurb">Tier 0, rank 6. Bangalla dropship. 0.33 to 0.61 lb.</p>
-    <div class="sp-foot">
-      <a href="https://www.bangalla.com/kiss-my-face-olive-aloe-bar-soap-1x8-oz/" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-kiss-my-face-pure-olive-oil-bar-soap-4-oz" data-category="Soap &amp; Personal Care">
-    <div class="sp-media">
-      <img src="images/store/b-54936-1pk.jpg" alt="Kiss My Face Pure Olive Oil Bar Soap 4 oz" loading="lazy">
-      <button type="button" class="sp-wish" data-wish="demo-kiss-my-face-pure-olive-oil-bar-soap-4-oz" aria-pressed="false" aria-label="Save Kiss My Face Pure Olive Oil Bar Soap 4 oz to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Kiss My Face Pure Olive Oil Bar Soap 4 oz</h3>
-    <p class="sp-blurb">Tier 0, rank 6. Bangalla dropship. 0.33 to 0.61 lb.</p>
-    <div class="sp-foot">
-      <a href="https://www.bangalla.com/kiss-my-face-pure-olive-oil-bar-soap-1x4-oz/" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-chandrika-sandal-soap-75-gm" data-category="Soap &amp; Personal Care">
-    <div class="sp-media">
-      <img src="images/store/b-58440-1pk.jpg" alt="Chandrika Sandal Soap 75 gm" loading="lazy">
-      <button type="button" class="sp-wish" data-wish="demo-chandrika-sandal-soap-75-gm" aria-pressed="false" aria-label="Save Chandrika Sandal Soap 75 gm to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Chandrika Sandal Soap 75 gm</h3>
-    <p class="sp-blurb">Tier 0, rank 7. Bangalla dropship. 0.04 to 0.33 lb.</p>
-    <div class="sp-foot">
-      <a href="https://www.bangalla.com/chandrika-sandal-soap-1x75-gm/" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-tea-tree-therapy-tea-tree-eucalyptus-soap-3-5-oz" data-category="Soap &amp; Personal Care">
-    <div class="sp-media">
-      <img src="images/store/b-83205-1pk.jpg" alt="Tea Tree Therapy Tea Tree Eucalyptus Soap 3.5 oz" loading="lazy">
-      <button type="button" class="sp-wish" data-wish="demo-tea-tree-therapy-tea-tree-eucalyptus-soap-3-5-oz" aria-pressed="false" aria-label="Save Tea Tree Therapy Tea Tree Eucalyptus Soap 3.5 oz to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Tea Tree Therapy Tea Tree Eucalyptus Soap 3.5 oz</h3>
-    <p class="sp-blurb">Tier 0, rank 7. Bangalla dropship. 0.04 to 0.33 lb.</p>
-    <div class="sp-foot">
-      <a href="https://www.bangalla.com/tea-tree-therapy-tea-tree-eucalyptus-soap-1x3-5-oz/" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-a-la-maison-lavender-and-rosemary-bar-soap-value-pack-of-4" data-category="Soap &amp; Personal Care">
-    <div class="sp-media">
-      <img src="images/store/b-81970-1pk.jpg" alt="A La Maison Lavender and Rosemary Bar Soap, value pack of 4" loading="lazy">
-      <button type="button" class="sp-wish" data-wish="demo-a-la-maison-lavender-and-rosemary-bar-soap-value-pack-of-4" aria-pressed="false" aria-label="Save A La Maison Lavender and Rosemary Bar Soap, value pack of 4 to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">A La Maison Lavender and Rosemary Bar Soap, value pack of 4</h3>
-    <p class="sp-blurb">Tier 0, rank 9. Bangalla dropship. 0.45 to 1.1 lb.</p>
-    <div class="sp-foot">
-      <a href="https://www.bangalla.com/products.php?productId=55470" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-desert-essence-tea-tree-therapy-bar-5-oz" data-category="Soap &amp; Personal Care">
-    <div class="sp-media">
-      <img src="images/store/b-54129-1pk.jpg" alt="Desert Essence Tea Tree Therapy Bar 5 oz" loading="lazy">
-      <button type="button" class="sp-wish" data-wish="demo-desert-essence-tea-tree-therapy-bar-5-oz" aria-pressed="false" aria-label="Save Desert Essence Tea Tree Therapy Bar 5 oz to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Desert Essence Tea Tree Therapy Bar 5 oz</h3>
-    <p class="sp-blurb">Tier 0, rank 9. Bangalla dropship. 0.45 to 1.1 lb.</p>
-    <div class="sp-foot">
-      <a href="https://www.bangalla.com/desert-essence-t-tree-thrpy-bar-1x5oz-1/" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-giovanni-bamboo-oval-hairbrush" data-category="Soap &amp; Personal Care">
+  <article class="sp-card" data-id="bg-giovanni-bamboo-oval-hairbrush" data-category="Soap &amp; Personal Care">
     <div class="sp-media">
       <img src="images/store/b-66316-1pk.jpg" alt="Giovanni Bamboo Oval Hairbrush" loading="lazy">
-      <button type="button" class="sp-wish" data-wish="demo-giovanni-bamboo-oval-hairbrush" aria-pressed="false" aria-label="Save Giovanni Bamboo Oval Hairbrush to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
+      <button type="button" class="sp-wish" data-wish="bg-giovanni-bamboo-oval-hairbrush" aria-pressed="false" aria-label="Save Giovanni Bamboo Oval Hairbrush to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
     </div>
     <h3 class="sp-name">Giovanni Bamboo Oval Hairbrush</h3>
-    <p class="sp-blurb">Tier 0, rank 13. Bangalla dropship. 0.25 to 0.44 lb.</p>
+    <p class="sp-blurb">An oval hairbrush with a bamboo handle. Ships from our US supplier in about a week.</p>
     <div class="sp-foot">
-      <a href="https://www.bangalla.com/products.php?productId=64000" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
+      <span class="sp-price">$11.49</span>
+      <button type="button" class="btn btn-sm" data-cart-add="bg-giovanni-bamboo-oval-hairbrush">Add to cart</button>
+    </div>
+  </article>
+
+  <article class="sp-card" data-id="bg-kirk-s-castile-soap-fragrance-free-3-pack" data-category="Soap &amp; Personal Care">
+    <div class="sp-media">
+      <img src="images/store/b-34703-1pk.jpg" alt="Kirk's Castile Soap, Fragrance Free, 3 pack" loading="lazy">
+      <button type="button" class="sp-wish" data-wish="bg-kirk-s-castile-soap-fragrance-free-3-pack" aria-pressed="false" aria-label="Save Kirk's Castile Soap, Fragrance Free, 3 pack to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
+    </div>
+    <h3 class="sp-name">Kirk's Castile Soap, Fragrance Free, 3 pack</h3>
+    <p class="sp-blurb">Three 4 oz coconut oil castile bars with no fragrance. Ships from our US supplier in about a week.</p>
+    <div class="sp-foot">
+      <span class="sp-price">$7.39</span>
+      <button type="button" class="btn btn-sm" data-cart-add="bg-kirk-s-castile-soap-fragrance-free-3-pack">Add to cart</button>
+    </div>
+  </article>
+
+  <article class="sp-card" data-id="bg-kirk-s-castile-soap-original-fresh-3-pack" data-category="Soap &amp; Personal Care">
+    <div class="sp-media">
+      <img src="images/store/b-44495-1pk.jpg" alt="Kirk's Castile Soap, Original Fresh, 3 pack" loading="lazy">
+      <button type="button" class="sp-wish" data-wish="bg-kirk-s-castile-soap-original-fresh-3-pack" aria-pressed="false" aria-label="Save Kirk's Castile Soap, Original Fresh, 3 pack to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
+    </div>
+    <h3 class="sp-name">Kirk's Castile Soap, Original Fresh, 3 pack</h3>
+    <p class="sp-blurb">Three 4 oz coconut oil castile bars in the original scent. Ships from our US supplier in about a week.</p>
+    <div class="sp-foot">
+      <span class="sp-price">$7.39</span>
+      <button type="button" class="btn btn-sm" data-cart-add="bg-kirk-s-castile-soap-original-fresh-3-pack">Add to cart</button>
+    </div>
+  </article>
+
+  <article class="sp-card" data-id="bg-kirk-s-castile-soap-aloe-3-pack" data-category="Soap &amp; Personal Care">
+    <div class="sp-media">
+      <img src="images/store/b-82324-1pk.jpg" alt="Kirk's Castile Soap, Aloe, 3 pack" loading="lazy">
+      <button type="button" class="sp-wish" data-wish="bg-kirk-s-castile-soap-aloe-3-pack" aria-pressed="false" aria-label="Save Kirk's Castile Soap, Aloe, 3 pack to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
+    </div>
+    <h3 class="sp-name">Kirk's Castile Soap, Aloe, 3 pack</h3>
+    <p class="sp-blurb">Three 4 oz coconut oil castile bars with aloe. Ships from our US supplier in about a week.</p>
+    <div class="sp-foot">
+      <span class="sp-price">$7.39</span>
+      <button type="button" class="btn btn-sm" data-cart-add="bg-kirk-s-castile-soap-aloe-3-pack">Add to cart</button>
+    </div>
+  </article>
+
+  <article class="sp-card" data-id="bg-south-of-france-bar-soap-lavender-fields-6-oz" data-category="Soap &amp; Personal Care">
+    <div class="sp-media">
+      <img src="images/store/b-35310-1pk.jpg" alt="South of France Bar Soap, Lavender Fields, 6 oz" loading="lazy">
+      <button type="button" class="sp-wish" data-wish="bg-south-of-france-bar-soap-lavender-fields-6-oz" aria-pressed="false" aria-label="Save South of France Bar Soap, Lavender Fields, 6 oz to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
+    </div>
+    <h3 class="sp-name">South of France Bar Soap, Lavender Fields, 6 oz</h3>
+    <p class="sp-blurb">A French-milled 6 oz bar scented with lavender. Ships from our US supplier in about a week.</p>
+    <div class="sp-foot">
+      <span class="sp-price">$5.29</span>
+      <button type="button" class="btn btn-sm" data-cart-add="bg-south-of-france-bar-soap-lavender-fields-6-oz">Add to cart</button>
+    </div>
+  </article>
+
+  <article class="sp-card" data-id="bg-south-of-france-bar-soap-orange-blossom-honey-6-oz" data-category="Soap &amp; Personal Care">
+    <div class="sp-media">
+      <img src="images/store/b-35392-1pk.jpg" alt="South of France Bar Soap, Orange Blossom Honey, 6 oz" loading="lazy">
+      <button type="button" class="sp-wish" data-wish="bg-south-of-france-bar-soap-orange-blossom-honey-6-oz" aria-pressed="false" aria-label="Save South of France Bar Soap, Orange Blossom Honey, 6 oz to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
+    </div>
+    <h3 class="sp-name">South of France Bar Soap, Orange Blossom Honey, 6 oz</h3>
+    <p class="sp-blurb">A French-milled 6 oz bar with orange blossom and honey. Ships from our US supplier in about a week.</p>
+    <div class="sp-foot">
+      <span class="sp-price">$5.29</span>
+      <button type="button" class="btn btn-sm" data-cart-add="bg-south-of-france-bar-soap-orange-blossom-honey-6-oz">Add to cart</button>
+    </div>
+  </article>
+
+  <article class="sp-card" data-id="bg-south-of-france-bar-soap-blooming-jasmine-6-oz" data-category="Soap &amp; Personal Care">
+    <div class="sp-media">
+      <img src="images/store/b-33315-1pk.jpg" alt="South of France Bar Soap, Blooming Jasmine, 6 oz" loading="lazy">
+      <button type="button" class="sp-wish" data-wish="bg-south-of-france-bar-soap-blooming-jasmine-6-oz" aria-pressed="false" aria-label="Save South of France Bar Soap, Blooming Jasmine, 6 oz to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
+    </div>
+    <h3 class="sp-name">South of France Bar Soap, Blooming Jasmine, 6 oz</h3>
+    <p class="sp-blurb">A French-milled 6 oz bar scented with jasmine. Ships from our US supplier in about a week.</p>
+    <div class="sp-foot">
+      <span class="sp-price">$5.29</span>
+      <button type="button" class="btn btn-sm" data-cart-add="bg-south-of-france-bar-soap-blooming-jasmine-6-oz">Add to cart</button>
+    </div>
+  </article>
+
+  <article class="sp-card" data-id="bg-south-of-france-bar-soap-lemon-verbena-6-oz" data-category="Soap &amp; Personal Care">
+    <div class="sp-media">
+      <img src="images/store/b-35336-1pk.jpg" alt="South of France Bar Soap, Lemon Verbena, 6 oz" loading="lazy">
+      <button type="button" class="sp-wish" data-wish="bg-south-of-france-bar-soap-lemon-verbena-6-oz" aria-pressed="false" aria-label="Save South of France Bar Soap, Lemon Verbena, 6 oz to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
+    </div>
+    <h3 class="sp-name">South of France Bar Soap, Lemon Verbena, 6 oz</h3>
+    <p class="sp-blurb">A French-milled 6 oz bar scented with lemon verbena. Ships from our US supplier in about a week.</p>
+    <div class="sp-foot">
+      <span class="sp-price">$5.29</span>
+      <button type="button" class="btn btn-sm" data-cart-add="bg-south-of-france-bar-soap-lemon-verbena-6-oz">Add to cart</button>
+    </div>
+  </article>
+
+  <article class="sp-card" data-id="bg-a-la-maison-lavender-and-rosemary-bar-soap-4-pack" data-category="Soap &amp; Personal Care">
+    <div class="sp-media">
+      <img src="images/store/b-81970-1pk.jpg" alt="A La Maison Lavender &amp; Rosemary Bar Soap, 4 pack" loading="lazy">
+      <button type="button" class="sp-wish" data-wish="bg-a-la-maison-lavender-and-rosemary-bar-soap-4-pack" aria-pressed="false" aria-label="Save A La Maison Lavender &amp; Rosemary Bar Soap, 4 pack to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
+    </div>
+    <h3 class="sp-name">A La Maison Lavender &amp; Rosemary Bar Soap, 4 pack</h3>
+    <p class="sp-blurb">Four 3.5 oz bars of lavender and rosemary soap. Ships from our US supplier in about a week.</p>
+    <div class="sp-foot">
+      <span class="sp-price">$8.99</span>
+      <button type="button" class="btn btn-sm" data-cart-add="bg-a-la-maison-lavender-and-rosemary-bar-soap-4-pack">Add to cart</button>
     </div>
   </article>
   </div>
@@ -476,623 +476,42 @@
     <a class="shelf-all" href="#shelf/cleaning">See all</a>
   </div>
   <div class="shelf-row">
-  <article class="sp-card sp-demo" data-id="demo-full-circle-the-ring-veggie-brush" data-category="Cleaning">
+  <article class="sp-card" data-id="bg-full-circle-the-ring-veggie-brush" data-category="Cleaning">
     <div class="sp-media">
       <img src="images/store/b-61860-1pk.jpg" alt="Full Circle The Ring Veggie Brush" loading="lazy">
-      <button type="button" class="sp-wish" data-wish="demo-full-circle-the-ring-veggie-brush" aria-pressed="false" aria-label="Save Full Circle The Ring Veggie Brush to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
+      <button type="button" class="sp-wish" data-wish="bg-full-circle-the-ring-veggie-brush" aria-pressed="false" aria-label="Save Full Circle The Ring Veggie Brush to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
     </div>
     <h3 class="sp-name">Full Circle The Ring Veggie Brush</h3>
-    <p class="sp-blurb">Tier 0, rank 11. Bangalla dropship. 0.2 to 2.18 lb.</p>
+    <p class="sp-blurb">Slips over a finger to scrub potatoes and carrots clean under the tap. Ships from our US supplier in about a week.</p>
     <div class="sp-foot">
-      <a href="https://www.bangalla.com/products.php?productId=64858" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
+      <span class="sp-price">$7.99</span>
+      <button type="button" class="btn btn-sm" data-cart-add="bg-full-circle-the-ring-veggie-brush">Add to cart</button>
     </div>
   </article>
 
-  <article class="sp-card sp-demo" data-id="demo-casabella-kind-plant-based-scrub-sponge-box-of-8-three-packs" data-category="Cleaning">
+  <article class="sp-card" data-id="bg-casabella-kind-plant-based-scrub-sponges-case-of-8" data-category="Cleaning">
     <div class="sp-media">
-      <img src="images/store/b-24616-8pk.jpg" alt="Casabella Kind Plant-Based Scrub Sponge, box of 8 three-packs" loading="lazy">
-      <button type="button" class="sp-wish" data-wish="demo-casabella-kind-plant-based-scrub-sponge-box-of-8-three-packs" aria-pressed="false" aria-label="Save Casabella Kind Plant-Based Scrub Sponge, box of 8 three-packs to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
+      <img src="images/store/b-24616-8pk.jpg" alt="Casabella Kind Plant-Based Scrub Sponges, case of 8 three-packs" loading="lazy">
+      <button type="button" class="sp-wish" data-wish="bg-casabella-kind-plant-based-scrub-sponges-case-of-8" aria-pressed="false" aria-label="Save Casabella Kind Plant-Based Scrub Sponges, case of 8 three-packs to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
     </div>
-    <h3 class="sp-name">Casabella Kind Plant-Based Scrub Sponge, box of 8 three-packs</h3>
-    <p class="sp-blurb">Tier 0, rank 16. Bangalla dropship. 0.61 to 1.93 lb.</p>
+    <h3 class="sp-name">Casabella Kind Plant-Based Scrub Sponges, case of 8 three-packs</h3>
+    <p class="sp-blurb">24 plant-based scrub sponges in eight 3-packs. Ships from our US supplier in about a week.</p>
     <div class="sp-foot">
-      <a href="https://www.bangalla.com/products.php?productId=67606" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
+      <span class="sp-price">$49.99</span>
+      <button type="button" class="btn btn-sm" data-cart-add="bg-casabella-kind-plant-based-scrub-sponges-case-of-8">Add to cart</button>
     </div>
   </article>
 
-  <article class="sp-card sp-demo" data-id="demo-weiman-cook-top-scrubbing-pads-box-of-6-three-packs" data-category="Cleaning">
+  <article class="sp-card" data-id="bg-weiman-cook-top-scrubbing-pads-case-of-6-three-pac" data-category="Cleaning">
     <div class="sp-media">
-      <img src="images/store/b-25849-6pk.jpg" alt="Weiman Cook Top Scrubbing Pads, box of 6 three-packs" loading="lazy">
-      <button type="button" class="sp-wish" data-wish="demo-weiman-cook-top-scrubbing-pads-box-of-6-three-packs" aria-pressed="false" aria-label="Save Weiman Cook Top Scrubbing Pads, box of 6 three-packs to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
+      <img src="images/store/b-25849-6pk.jpg" alt="Weiman Cook Top Scrubbing Pads, case of 6 three-packs" loading="lazy">
+      <button type="button" class="sp-wish" data-wish="bg-weiman-cook-top-scrubbing-pads-case-of-6-three-pac" aria-pressed="false" aria-label="Save Weiman Cook Top Scrubbing Pads, case of 6 three-packs to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
     </div>
-    <h3 class="sp-name">Weiman Cook Top Scrubbing Pads, box of 6 three-packs</h3>
-    <p class="sp-blurb">Tier 0, rank 18. Bangalla dropship. 2.56 to 9.65 lb.</p>
+    <h3 class="sp-name">Weiman Cook Top Scrubbing Pads, case of 6 three-packs</h3>
+    <p class="sp-blurb">18 non-scratch scrubbing pads made for glass and ceramic cooktops. Ships from our US supplier in about a week.</p>
     <div class="sp-foot">
-      <a href="https://www.bangalla.com/weiman-cook-top-scrubbin-6x3ea-1/" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-  </div>
-</section>
-
-<section class="shelf" id="shelf-plastic-free-home" data-shelf="plastic-free-home" data-title="Plastic-Free Home">
-  <div class="shelf-head">
-    <h2>Plastic-Free Home</h2>
-    <a class="shelf-all" href="#shelf/plastic-free-home">See all</a>
-  </div>
-  <div class="shelf-row">
-  <article class="sp-card sp-demo" data-id="demo-world-centric-ripple-edge-plate-6-inch-box-of-12-x-20" data-category="Plastic-Free Home">
-    <div class="sp-media">
-      <img src="images/store/b-89495-12pk.jpg" alt="World Centric Ripple Edge Plate 6 inch, box of 12 x 20" loading="lazy">
-      <button type="button" class="sp-wish" data-wish="demo-world-centric-ripple-edge-plate-6-inch-box-of-12-x-20" aria-pressed="false" aria-label="Save World Centric Ripple Edge Plate 6 inch, box of 12 x 20 to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">World Centric Ripple Edge Plate 6 inch, box of 12 x 20</h3>
-    <p class="sp-blurb">Tier 0, rank 17. Bangalla dropship. 3.77 to 5.75 lb.</p>
-    <div class="sp-foot">
-      <a href="https://www.bangalla.com/world-centric-ripple-edge-plate-6-inch-12x20-ct/" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-roland-bamboo-toothpicks-box-of-12-x-300" data-category="Plastic-Free Home">
-    <div class="sp-media">
-      <img src="images/store/b-60917-12pk.jpg" alt="Roland Bamboo Toothpicks, box of 12 x 300" loading="lazy">
-      <button type="button" class="sp-wish" data-wish="demo-roland-bamboo-toothpicks-box-of-12-x-300" aria-pressed="false" aria-label="Save Roland Bamboo Toothpicks, box of 12 x 300 to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Roland Bamboo Toothpicks, box of 12 x 300</h3>
-    <p class="sp-blurb">Tier 0, rank 17. Bangalla dropship. 3.77 to 5.75 lb.</p>
-    <div class="sp-foot">
-      <a href="https://www.bangalla.com/products.php?productId=64834" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-  </div>
-</section>
-
-<section class="shelf" id="shelf-garden-supplies" data-shelf="garden-supplies" data-title="Garden Supplies">
-  <div class="shelf-head">
-    <h2>Garden Supplies</h2>
-    <a class="shelf-all" href="#shelf/garden-supplies">See all</a>
-  </div>
-  <div class="shelf-row">
-  <article class="sp-card sp-demo" data-id="demo-arbico-reotemp-compost-thermometer" data-category="Garden Supplies">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🪴</span>
-      <button type="button" class="sp-wish" data-wish="demo-arbico-reotemp-compost-thermometer" aria-pressed="false" aria-label="Save Arbico REOTEMP Compost Thermometer to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Arbico REOTEMP Compost Thermometer</h3>
-    <p class="sp-blurb">Tier 0, rank 20. Arbico dropship (on approval).</p>
-    <div class="sp-foot">
-      <a href="https://www.arbico-organics.com/product/compost-thermometer/composting-supplies" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-arbico-scd-bokashi-kit" data-category="Garden Supplies">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🪴</span>
-      <button type="button" class="sp-wish" data-wish="demo-arbico-scd-bokashi-kit" aria-pressed="false" aria-label="Save Arbico SCD Bokashi Kit to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Arbico SCD Bokashi Kit</h3>
-    <p class="sp-blurb">Tier 0, rank 20. Arbico dropship (on approval).</p>
-    <div class="sp-foot">
-      <a href="https://www.arbico-organics.com/product/scd-organko-indoor-bokashi-composting-kit/composting-supplies" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-arbico-cowpots" data-category="Garden Supplies">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🪴</span>
-      <button type="button" class="sp-wish" data-wish="demo-arbico-cowpots" aria-pressed="false" aria-label="Save Arbico CowPots to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Arbico CowPots</h3>
-    <p class="sp-blurb">Tier 0, rank 20. Arbico dropship (on approval).</p>
-    <div class="sp-foot">
-      <a href="https://www.arbico-organics.com/product/cowpots-seed-starting-mixed-case/garden-tools-supplies" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-arbico-ihort-qplug" data-category="Garden Supplies">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🪴</span>
-      <button type="button" class="sp-wish" data-wish="demo-arbico-ihort-qplug" aria-pressed="false" aria-label="Save Arbico iHORT QPlug to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Arbico iHORT QPlug</h3>
-    <p class="sp-blurb">Tier 0, rank 20. Arbico dropship (on approval).</p>
-    <div class="sp-foot">
-      <a href="https://www.arbico-organics.com/product/ihort-propagation-kit/garden-tools-supplies" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-arbico-harvest-guard" data-category="Garden Supplies">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🪴</span>
-      <button type="button" class="sp-wish" data-wish="demo-arbico-harvest-guard" aria-pressed="false" aria-label="Save Arbico Harvest Guard to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Arbico Harvest Guard</h3>
-    <p class="sp-blurb">Tier 0, rank 20. Arbico dropship (on approval).</p>
-    <div class="sp-foot">
-      <a href="https://www.arbico-organics.com/product/harvest-guard-frost-protection-bags/garden-tools-supplies" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-arbico-dustin-mizer" data-category="Garden Supplies">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🪴</span>
-      <button type="button" class="sp-wish" data-wish="demo-arbico-dustin-mizer" aria-pressed="false" aria-label="Save Arbico Dustin Mizer to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Arbico Dustin Mizer</h3>
-    <p class="sp-blurb">Tier 0, rank 20. Arbico dropship (on approval).</p>
-    <div class="sp-foot">
-      <a href="https://www.arbico-organics.com/product/dustin-mizer-garden-duster/diatomaceous-earth" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-arbico-bug-blaster" data-category="Garden Supplies">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🪴</span>
-      <button type="button" class="sp-wish" data-wish="demo-arbico-bug-blaster" aria-pressed="false" aria-label="Save Arbico Bug Blaster to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Arbico Bug Blaster</h3>
-    <p class="sp-blurb">Tier 0, rank 20. Arbico dropship (on approval).</p>
-    <div class="sp-foot">
-      <a href="https://www.arbico-organics.com/product/bug-blaster/garden-tools-supplies" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-arbico-sustane-tea-bags" data-category="Garden Supplies">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🪴</span>
-      <button type="button" class="sp-wish" data-wish="demo-arbico-sustane-tea-bags" aria-pressed="false" aria-label="Save Arbico Sustane Tea Bags to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Arbico Sustane Tea Bags</h3>
-    <p class="sp-blurb">Tier 0, rank 20. Arbico dropship (on approval).</p>
-    <div class="sp-foot">
-      <a href="https://www.arbico-organics.com/product/sustane-compost-tea-bags/compost-worm-castings" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-arbico-bsf-frass" data-category="Garden Supplies">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🪴</span>
-      <button type="button" class="sp-wish" data-wish="demo-arbico-bsf-frass" aria-pressed="false" aria-label="Save Arbico BSF Frass to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Arbico BSF Frass</h3>
-    <p class="sp-blurb">Tier 0, rank 20. Arbico dropship (on approval).</p>
-    <div class="sp-foot">
-      <a href="https://www.arbico-organics.com/product/black-soldier-fly-frass-fertilizer/compost-worm-castings" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-arbico-great-white-mycorrhizae" data-category="Garden Supplies">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🪴</span>
-      <button type="button" class="sp-wish" data-wish="demo-arbico-great-white-mycorrhizae" aria-pressed="false" aria-label="Save Arbico Great White Mycorrhizae to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Arbico Great White Mycorrhizae</h3>
-    <p class="sp-blurb">Tier 0, rank 20. Arbico dropship (on approval).</p>
-    <div class="sp-foot">
-      <a href="https://www.arbico-organics.com/product/great-white-premium-mycorrhizae/mycorrhizae-fungi" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-boogie-blue-hose-water-filter" data-category="Garden Supplies">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🪴</span>
-      <button type="button" class="sp-wish" data-wish="demo-boogie-blue-hose-water-filter" aria-pressed="false" aria-label="Save Boogie Blue hose water filter to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Boogie Blue hose water filter</h3>
-    <p class="sp-blurb">Tier 0, rank 21. Arbico dropship (on approval).</p>
-    <div class="sp-foot">
-      <a href="https://www.arbico-organics.com/product/boogie-brew-boogie-blue/garden-tools-supplies" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-arbico-compost-tea-bag" data-category="Garden Supplies">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🪴</span>
-      <button type="button" class="sp-wish" data-wish="demo-arbico-compost-tea-bag" aria-pressed="false" aria-label="Save ARBICO Compost Tea Bag to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">ARBICO Compost Tea Bag</h3>
-    <p class="sp-blurb">Tier 0, rank 22. Arbico dropship (on approval).</p>
-    <div class="sp-foot">
-      <a href="https://www.arbico-organics.com/product/compost-tea-bag/compost-worm-castings" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-arbico-earthworm-castings" data-category="Garden Supplies">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🪴</span>
-      <button type="button" class="sp-wish" data-wish="demo-arbico-earthworm-castings" aria-pressed="false" aria-label="Save ARBICO Earthworm Castings to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">ARBICO Earthworm Castings</h3>
-    <p class="sp-blurb">Tier 0, rank 22. Arbico dropship (on approval).</p>
-    <div class="sp-foot">
-      <a href="https://www.arbico-organics.com/product/earthworm-castings-soil-amendment-conditioner/compost-worm-castings" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-diatomaceous-earth-omri-food-grade" data-category="Garden Supplies">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🪴</span>
-      <button type="button" class="sp-wish" data-wish="demo-diatomaceous-earth-omri-food-grade" aria-pressed="false" aria-label="Save Diatomaceous Earth, OMRI food grade to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Diatomaceous Earth, OMRI food grade</h3>
-    <p class="sp-blurb">Tier 0, rank 23. Arbico dropship (on approval).</p>
-    <div class="sp-foot">
-      <a href="https://www.arbico-organics.com/product/diatomaceous-earth-de-omri-listed-food-grade-insecticide-livestock/diatomaceous-earth" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-seed-starter-tray-with-grow-light-2-pack" data-category="Garden Supplies">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🪴</span>
-      <button type="button" class="sp-wish" data-wish="demo-seed-starter-tray-with-grow-light-2-pack" aria-pressed="false" aria-label="Save Seed Starter Tray with Grow Light, 2 pack to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Seed Starter Tray with Grow Light, 2 pack</h3>
-    <p class="sp-blurb">Tier 0, rank 39. AliExpress Choice. from China, about 6 to 14 days, free shipping.</p>
-    <div class="sp-foot">
-      <a href="https://www.aliexpress.com/item/3256810162225391.html" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-fabric-grow-bag-3-gal" data-category="Garden Supplies">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🪴</span>
-      <button type="button" class="sp-wish" data-wish="demo-fabric-grow-bag-3-gal" aria-pressed="false" aria-label="Save Fabric Grow Bag, 3 gal to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Fabric Grow Bag, 3 gal</h3>
-    <p class="sp-blurb">Tier 0, rank 39. AliExpress Choice. from China, about 6 to 14 days, free shipping.</p>
-    <div class="sp-foot">
-      <a href="https://www.aliexpress.com/item/3256811824629124.html" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-terracotta-self-watering-spikes-2-pack" data-category="Garden Supplies">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🪴</span>
-      <button type="button" class="sp-wish" data-wish="demo-terracotta-self-watering-spikes-2-pack" aria-pressed="false" aria-label="Save Terracotta Self-Watering Spikes, 2 pack to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Terracotta Self-Watering Spikes, 2 pack</h3>
-    <p class="sp-blurb">Tier 0, rank 39. AliExpress Choice. from China, about 6 to 14 days, free shipping.</p>
-    <div class="sp-foot">
-      <a href="https://www.aliexpress.com/item/3256808858963668.html" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-stainless-pruning-shears" data-category="Garden Supplies">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🪴</span>
-      <button type="button" class="sp-wish" data-wish="demo-stainless-pruning-shears" aria-pressed="false" aria-label="Save Stainless Pruning Shears to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Stainless Pruning Shears</h3>
-    <p class="sp-blurb">Tier 0, rank 40. AliExpress Choice. from China, about 6 to 14 days, free shipping.</p>
-    <div class="sp-foot">
-      <a href="https://www.aliexpress.com/item/3256809857759381.html" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-natural-jute-twine-60-m" data-category="Garden Supplies">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🪴</span>
-      <button type="button" class="sp-wish" data-wish="demo-natural-jute-twine-60-m" aria-pressed="false" aria-label="Save Natural Jute Twine, 60 m to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Natural Jute Twine, 60 m</h3>
-    <p class="sp-blurb">Tier 0, rank 40. AliExpress Choice. from China, about 6 to 14 days, free shipping.</p>
-    <div class="sp-foot">
-      <a href="https://www.aliexpress.com/item/3256806674667884.html" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-bamboo-plant-labels-50" data-category="Garden Supplies">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🪴</span>
-      <button type="button" class="sp-wish" data-wish="demo-bamboo-plant-labels-50" aria-pressed="false" aria-label="Save Bamboo Plant Labels, 50 to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Bamboo Plant Labels, 50</h3>
-    <p class="sp-blurb">Tier 0, rank 40. AliExpress Choice. from China, about 6 to 14 days, free shipping.</p>
-    <div class="sp-foot">
-      <a href="https://www.aliexpress.com/item/3256806226447404.html" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-ceramic-mini-succulent-planter" data-category="Garden Supplies">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🪴</span>
-      <button type="button" class="sp-wish" data-wish="demo-ceramic-mini-succulent-planter" aria-pressed="false" aria-label="Save Ceramic Mini Succulent Planter to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Ceramic Mini Succulent Planter</h3>
-    <p class="sp-blurb">Tier 0, rank 41. AliExpress Choice. from China, about 6 to 14 days, free shipping.</p>
-    <div class="sp-foot">
-      <a href="https://www.aliexpress.com/item/3256808473784197.html" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-macrame-plant-hanger" data-category="Garden Supplies">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🪴</span>
-      <button type="button" class="sp-wish" data-wish="demo-macrame-plant-hanger" aria-pressed="false" aria-label="Save Macrame Plant Hanger to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Macrame Plant Hanger</h3>
-    <p class="sp-blurb">Tier 0, rank 41. AliExpress Choice. from China, about 6 to 14 days, free shipping.</p>
-    <div class="sp-foot">
-      <a href="https://www.aliexpress.com/item/3256809073271183.html" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-solar-mushroom-garden-light" data-category="Garden Supplies">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🪴</span>
-      <button type="button" class="sp-wish" data-wish="demo-solar-mushroom-garden-light" aria-pressed="false" aria-label="Save Solar Mushroom Garden Light to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Solar Mushroom Garden Light</h3>
-    <p class="sp-blurb">Tier 0, rank 45. AliExpress Choice. from China, about 6 to 14 days, free shipping.</p>
-    <div class="sp-foot">
-      <a href="https://www.aliexpress.com/item/3256812453773029.html" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-solar-mushroom-string-light-8" data-category="Garden Supplies">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🪴</span>
-      <button type="button" class="sp-wish" data-wish="demo-solar-mushroom-string-light-8" aria-pressed="false" aria-label="Save Solar Mushroom String Light, 8 to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Solar Mushroom String Light, 8</h3>
-    <p class="sp-blurb">Tier 0, rank 45. AliExpress Choice. from China, about 6 to 14 days, free shipping.</p>
-    <div class="sp-foot">
-      <a href="https://www.aliexpress.com/item/3256809109396877.html" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-kitchen-compost-bin-2-tier" data-category="Garden Supplies">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🪴</span>
-      <button type="button" class="sp-wish" data-wish="demo-kitchen-compost-bin-2-tier" aria-pressed="false" aria-label="Save Kitchen Compost Bin, 2 tier to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Kitchen Compost Bin, 2 tier</h3>
-    <p class="sp-blurb">Tier 0, rank 45. AliExpress Choice. from China, about 6 to 14 days, free shipping.</p>
-    <div class="sp-foot">
-      <a href="https://www.aliexpress.com/item/3256810190220289.html" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-worm-factory-360-4-tray" data-category="Garden Supplies">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🪴</span>
-      <button type="button" class="sp-wish" data-wish="demo-worm-factory-360-4-tray" aria-pressed="false" aria-label="Save Worm Factory 360, 4 tray to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Worm Factory 360, 4 tray</h3>
-    <p class="sp-blurb">Tier 0, rank 47. Nature's Footprint dropship: &quot;FREE drop ship program&quot;. &quot;No minimum order requirements&quot;.</p>
-    <div class="sp-foot">
-      <a href="https://www.naturesfootprint.com/products/worm-factory-360" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-worm-factory-360-with-worms" data-category="Garden Supplies">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🪴</span>
-      <button type="button" class="sp-wish" data-wish="demo-worm-factory-360-with-worms" aria-pressed="false" aria-label="Save Worm Factory 360 with Worms to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Worm Factory 360 with Worms</h3>
-    <p class="sp-blurb">Tier 0, rank 47. Nature's Footprint dropship: &quot;FREE drop ship program&quot;. &quot;No minimum order requirements&quot;.</p>
-    <div class="sp-foot">
-      <a href="https://www.naturesfootprint.com/products/worm-factory-360-with-worms" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-worm-factory-basic" data-category="Garden Supplies">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🪴</span>
-      <button type="button" class="sp-wish" data-wish="demo-worm-factory-basic" aria-pressed="false" aria-label="Save Worm Factory Basic to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Worm Factory Basic</h3>
-    <p class="sp-blurb">Tier 0, rank 47. Nature's Footprint dropship: &quot;FREE drop ship program&quot;. &quot;No minimum order requirements&quot;.</p>
-    <div class="sp-foot">
-      <a href="https://www.naturesfootprint.com/products/worm-factory-basic" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-urban-worm-bag-version-2" data-category="Garden Supplies">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🪴</span>
-      <button type="button" class="sp-wish" data-wish="demo-urban-worm-bag-version-2" aria-pressed="false" aria-label="Save Urban Worm Bag Version 2 to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Urban Worm Bag Version 2</h3>
-    <p class="sp-blurb">Tier 0, rank 48. Urban Worm Company dropship reseller programme (about 20% margin). Pennsylvania.</p>
-    <div class="sp-foot">
-      <a href="https://shop.urbanwormcompany.com/products/urban-worm-bag-version-2" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-worm-success-bundle" data-category="Garden Supplies">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🪴</span>
-      <button type="button" class="sp-wish" data-wish="demo-worm-success-bundle" aria-pressed="false" aria-label="Save Worm Success Bundle to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Worm Success Bundle</h3>
-    <p class="sp-blurb">Tier 0, rank 48. Urban Worm Company dropship reseller programme (about 20% margin). Pennsylvania.</p>
-    <div class="sp-foot">
-      <a href="https://shop.urbanwormcompany.com/collections/bundles/products/worm-success-bundle" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-pure-red-wigglers" data-category="Garden Supplies">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🪴</span>
-      <button type="button" class="sp-wish" data-wish="demo-pure-red-wigglers" aria-pressed="false" aria-label="Save Pure Red Wigglers to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Pure Red Wigglers</h3>
-    <p class="sp-blurb">Tier 0, rank 48. Urban Worm Company dropship reseller programme (about 20% margin). Pennsylvania.</p>
-    <div class="sp-foot">
-      <a href="https://shop.urbanwormcompany.com/collections/worms/products/pure-red-wigglers-composting-worms" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-  </div>
-</section>
-
-<section class="shelf" id="shelf-fertilizer-soil" data-shelf="fertilizer-soil" data-title="Fertilizer &amp; Soil">
-  <div class="shelf-head">
-    <h2>Fertilizer &amp; Soil</h2>
-    <a class="shelf-all" href="#shelf/fertilizer-soil">See all</a>
-  </div>
-  <div class="shelf-row">
-  <article class="sp-card sp-demo" data-id="demo-plant-success-organics-granular-3-1-2" data-category="Fertilizer &amp; Soil">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🌿</span>
-      <button type="button" class="sp-wish" data-wish="demo-plant-success-organics-granular-3-1-2" aria-pressed="false" aria-label="Save Plant Success Organics Granular 3-1-2 to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Plant Success Organics Granular 3-1-2</h3>
-    <p class="sp-blurb">Tier 0, rank 24. Arbico dropship (on approval).</p>
-    <div class="sp-foot">
-      <a href="https://www.arbico-organics.com/product/plant-success-organics-granular-mycorrhizae-inoculant/mycorrhizae-fungi" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-dte-vegetable-garden-4-4-4" data-category="Fertilizer &amp; Soil">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🌿</span>
-      <button type="button" class="sp-wish" data-wish="demo-dte-vegetable-garden-4-4-4" aria-pressed="false" aria-label="Save DTE Vegetable Garden 4-4-4 to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">DTE Vegetable Garden 4-4-4</h3>
-    <p class="sp-blurb">Tier 0, rank 25. Arbico dropship (on approval).</p>
-    <div class="sp-foot">
-      <a href="https://www.arbico-organics.com/product/down-to-earth-vegetable-garden-organic-fertilizer/down-to-earth-fertilizers" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-dte-blood-meal-12-0-0" data-category="Fertilizer &amp; Soil">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🌿</span>
-      <button type="button" class="sp-wish" data-wish="demo-dte-blood-meal-12-0-0" aria-pressed="false" aria-label="Save DTE Blood Meal 12-0-0 to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">DTE Blood Meal 12-0-0</h3>
-    <p class="sp-blurb">Tier 0, rank 26. Arbico dropship (on approval).</p>
-    <div class="sp-foot">
-      <a href="https://www.arbico-organics.com/product/blood-meal-12-0-0-fertilizer/down-to-earth-fertilizers" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-dte-fish-bone-meal-4-12-0" data-category="Fertilizer &amp; Soil">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🌿</span>
-      <button type="button" class="sp-wish" data-wish="demo-dte-fish-bone-meal-4-12-0" aria-pressed="false" aria-label="Save DTE Fish Bone Meal 4-12-0 to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">DTE Fish Bone Meal 4-12-0</h3>
-    <p class="sp-blurb">Tier 0, rank 27. Arbico dropship (on approval).</p>
-    <div class="sp-foot">
-      <a href="https://www.arbico-organics.com/product/fish-bone-meal-organic-fertilizer/down-to-earth-fertilizers" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-dte-bone-meal-3-15-0" data-category="Fertilizer &amp; Soil">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🌿</span>
-      <button type="button" class="sp-wish" data-wish="demo-dte-bone-meal-3-15-0" aria-pressed="false" aria-label="Save DTE Bone Meal 3-15-0 to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">DTE Bone Meal 3-15-0</h3>
-    <p class="sp-blurb">Tier 0, rank 28. Arbico dropship (on approval).</p>
-    <div class="sp-foot">
-      <a href="https://www.arbico-organics.com/product/down-to-earth-bone-meal/down-to-earth-fertilizers" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-  </div>
-</section>
-
-<section class="shelf" id="shelf-pest-control" data-shelf="pest-control" data-title="Pest Control">
-  <div class="shelf-head">
-    <h2>Pest Control</h2>
-    <a class="shelf-all" href="#shelf/pest-control">See all</a>
-  </div>
-  <div class="shelf-row">
-  <article class="sp-card sp-demo" data-id="demo-bonide-neem-oil-concentrate" data-category="Pest Control">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🐞</span>
-      <button type="button" class="sp-wish" data-wish="demo-bonide-neem-oil-concentrate" aria-pressed="false" aria-label="Save BONIDE Neem Oil concentrate to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">BONIDE Neem Oil concentrate</h3>
-    <p class="sp-blurb">Tier 0, rank 29. Arbico dropship (on approval).</p>
-    <div class="sp-foot">
-      <a href="https://www.arbico-organics.com/product/neem-oil-concentrate-insecticide-fungicide-miticide/neem-oil-insecticides" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-monterey-garden-insect-spray-spinosad" data-category="Pest Control">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🐞</span>
-      <button type="button" class="sp-wish" data-wish="demo-monterey-garden-insect-spray-spinosad" aria-pressed="false" aria-label="Save Monterey Garden Insect Spray, spinosad to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Monterey Garden Insect Spray, spinosad</h3>
-    <p class="sp-blurb">Tier 0, rank 49. Arbico dropship (on approval). EPA 62719-314-54705, 67702-45-54705).</p>
-    <div class="sp-foot">
-      <a href="https://www.arbico-organics.com/product/2472/" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-monterey-garden-insect-spray-rtu-32-oz" data-category="Pest Control">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🐞</span>
-      <button type="button" class="sp-wish" data-wish="demo-monterey-garden-insect-spray-rtu-32-oz" aria-pressed="false" aria-label="Save Monterey Garden Insect Spray RTU 32 oz to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Monterey Garden Insect Spray RTU 32 oz</h3>
-    <p class="sp-blurb">Tier 0, rank 49. Arbico dropship (on approval). EPA 62719-314-54705, 67702-45-54705).</p>
-    <div class="sp-foot">
-      <a href="https://www.arbico-organics.com/product/4765/20" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-monterey-b-t" data-category="Pest Control">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🐞</span>
-      <button type="button" class="sp-wish" data-wish="demo-monterey-b-t" aria-pressed="false" aria-label="Save Monterey B.t. to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Monterey B.t.</h3>
-    <p class="sp-blurb">Tier 0, rank 50. Through Arbico (Arbico carries Monterey).</p>
-    <div class="sp-foot">
-      <a href="https://www.montereylawngarden.com/product/monterey-b-t/" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-sluggo" data-category="Pest Control">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🐞</span>
-      <button type="button" class="sp-wish" data-wish="demo-sluggo" aria-pressed="false" aria-label="Save Sluggo to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Sluggo</h3>
-    <p class="sp-blurb">Tier 0, rank 50. Through Arbico (Arbico carries Monterey).</p>
-    <div class="sp-foot">
-      <a href="https://www.montereylawngarden.com/product/sluggo/" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-monterey-insecticidal-soap-rtu" data-category="Pest Control">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🐞</span>
-      <button type="button" class="sp-wish" data-wish="demo-monterey-insecticidal-soap-rtu" aria-pressed="false" aria-label="Save Monterey Insecticidal Soap RTU to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Monterey Insecticidal Soap RTU</h3>
-    <p class="sp-blurb">Tier 0, rank 50. Through Arbico (Arbico carries Monterey).</p>
-    <div class="sp-foot">
-      <a href="https://www.montereylawngarden.com/product/monterey-insecticidal-soap-rtu/" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-captain-jack-s-deadbug-brew-concentrate" data-category="Pest Control">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🐞</span>
-      <button type="button" class="sp-wish" data-wish="demo-captain-jack-s-deadbug-brew-concentrate" aria-pressed="false" aria-label="Save Captain Jack's Deadbug Brew Concentrate to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Captain Jack's Deadbug Brew Concentrate</h3>
-    <p class="sp-blurb">Tier 0, rank 51. Through Arbico (Arbico carries BONIDE). NOT OMRI: never call it OMRI.</p>
-    <div class="sp-foot">
-      <a href="https://bonide.com/captain-jacks/product/ddb-conc" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-captain-jack-s-bt-rtu" data-category="Pest Control">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🐞</span>
-      <button type="button" class="sp-wish" data-wish="demo-captain-jack-s-bt-rtu" aria-pressed="false" aria-label="Save Captain Jack's Bt RTU to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Captain Jack's Bt RTU</h3>
-    <p class="sp-blurb">Tier 0, rank 51. Through Arbico (Arbico carries BONIDE). NOT OMRI: never call it OMRI.</p>
-    <div class="sp-foot">
-      <a href="https://bonide.com/captain-jacks/product/thuricide-liquid-rtu" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
+      <span class="sp-price">$32.99</span>
+      <button type="button" class="btn btn-sm" data-cart-add="bg-weiman-cook-top-scrubbing-pads-case-of-6-three-pac">Add to cart</button>
     </div>
   </article>
   </div>
@@ -1104,95 +523,115 @@
     <a class="shelf-all" href="#shelf/kitchen-serving">See all</a>
   </div>
   <div class="shelf-row">
-  <article class="sp-card sp-demo" data-id="demo-sprouting-jar-kit-16-oz" data-category="Kitchen &amp; Serving">
+  <article class="sp-card" data-id="bg-roland-bamboo-toothpicks-case-of-12-x-300" data-category="Kitchen &amp; Serving">
     <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🥄</span>
-      <button type="button" class="sp-wish" data-wish="demo-sprouting-jar-kit-16-oz" aria-pressed="false" aria-label="Save Sprouting Jar Kit, 16 oz to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
+      <img src="images/store/b-60917-12pk.jpg" alt="Roland Bamboo Toothpicks, case of 12 x 300" loading="lazy">
+      <button type="button" class="sp-wish" data-wish="bg-roland-bamboo-toothpicks-case-of-12-x-300" aria-pressed="false" aria-label="Save Roland Bamboo Toothpicks, case of 12 x 300 to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
     </div>
-    <h3 class="sp-name">Sprouting Jar Kit, 16 oz</h3>
-    <p class="sp-blurb">Tier 0, rank 42. AliExpress Choice. from China, about 6 to 14 days, free shipping.</p>
+    <h3 class="sp-name">Roland Bamboo Toothpicks, case of 12 x 300</h3>
+    <p class="sp-blurb">Twelve canisters of 300 bamboo toothpicks. Ships from our US supplier in about a week.</p>
     <div class="sp-foot">
-      <a href="https://www.aliexpress.com/item/3256809048591297.html" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
+      <span class="sp-price">$34.99</span>
+      <button type="button" class="btn btn-sm" data-cart-add="bg-roland-bamboo-toothpicks-case-of-12-x-300">Add to cart</button>
     </div>
   </article>
 
-  <article class="sp-card sp-demo" data-id="demo-cotton-mesh-produce-bags-3" data-category="Kitchen &amp; Serving">
+  <article class="sp-card" data-id="bg-world-centric-compostable-plates-6-in-case-of-240" data-category="Kitchen &amp; Serving">
     <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🥄</span>
-      <button type="button" class="sp-wish" data-wish="demo-cotton-mesh-produce-bags-3" aria-pressed="false" aria-label="Save Cotton Mesh Produce Bags, 3 to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
+      <img src="images/store/b-89495-12pk.jpg" alt="World Centric Compostable Plates, 6 in, case of 240" loading="lazy">
+      <button type="button" class="sp-wish" data-wish="bg-world-centric-compostable-plates-6-in-case-of-240" aria-pressed="false" aria-label="Save World Centric Compostable Plates, 6 in, case of 240 to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
     </div>
-    <h3 class="sp-name">Cotton Mesh Produce Bags, 3</h3>
-    <p class="sp-blurb">Tier 0, rank 42. AliExpress Choice. from China, about 6 to 14 days, free shipping.</p>
+    <h3 class="sp-name">World Centric Compostable Plates, 6 in, case of 240</h3>
+    <p class="sp-blurb">12 packs of 20 commercially compostable 6 inch plates, for parties and events. Ships from our US supplier in about a week.</p>
     <div class="sp-foot">
-      <a href="https://www.aliexpress.com/item/3256806851828021.html" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-stainless-steel-lunch-box-600-ml" data-category="Kitchen &amp; Serving">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🥄</span>
-      <button type="button" class="sp-wish" data-wish="demo-stainless-steel-lunch-box-600-ml" aria-pressed="false" aria-label="Save Stainless Steel Lunch Box, 600 ml to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Stainless Steel Lunch Box, 600 ml</h3>
-    <p class="sp-blurb">Tier 0, rank 42. AliExpress Choice. from China, about 6 to 14 days, free shipping.</p>
-    <div class="sp-foot">
-      <a href="https://www.aliexpress.com/item/3256811827611976.html" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-beeswax-wraps-3-piece-organic-cotton" data-category="Kitchen &amp; Serving">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🥄</span>
-      <button type="button" class="sp-wish" data-wish="demo-beeswax-wraps-3-piece-organic-cotton" aria-pressed="false" aria-label="Save Beeswax Wraps, 3 piece organic cotton to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Beeswax Wraps, 3 piece organic cotton</h3>
-    <p class="sp-blurb">Tier 0, rank 43. AliExpress Choice. from China, about 6 to 14 days, free shipping.</p>
-    <div class="sp-foot">
-      <a href="https://www.aliexpress.com/item/3256808322919507.html" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-bamboo-cutlery-travel-set" data-category="Kitchen &amp; Serving">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🥄</span>
-      <button type="button" class="sp-wish" data-wish="demo-bamboo-cutlery-travel-set" aria-pressed="false" aria-label="Save Bamboo Cutlery Travel Set to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Bamboo Cutlery Travel Set</h3>
-    <p class="sp-blurb">Tier 0, rank 43. AliExpress Choice. from China, about 6 to 14 days, free shipping.</p>
-    <div class="sp-foot">
-      <a href="https://www.aliexpress.com/item/3256802068386077.html" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
-    </div>
-  </article>
-
-  <article class="sp-card sp-demo" data-id="demo-coconut-bowl-and-spoon-set" data-category="Kitchen &amp; Serving">
-    <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🥄</span>
-      <button type="button" class="sp-wish" data-wish="demo-coconut-bowl-and-spoon-set" aria-pressed="false" aria-label="Save Coconut Bowl and Spoon Set to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
-    </div>
-    <h3 class="sp-name">Coconut Bowl and Spoon Set</h3>
-    <p class="sp-blurb">Tier 0, rank 43. AliExpress Choice. from China, about 6 to 14 days, free shipping.</p>
-    <div class="sp-foot">
-      <a href="https://www.aliexpress.com/item/3256808314252070.html" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
+      <span class="sp-price">$44.99</span>
+      <button type="button" class="btn btn-sm" data-cart-add="bg-world-centric-compostable-plates-6-in-case-of-240">Add to cart</button>
     </div>
   </article>
   </div>
 </section>
 
-<section class="shelf" id="shelf-laundry" data-shelf="laundry" data-title="Laundry">
+<section class="shelf" id="shelf-garden-supplies" data-shelf="garden-supplies" data-title="Garden Supplies">
   <div class="shelf-head">
-    <h2>Laundry</h2>
-    <a class="shelf-all" href="#shelf/laundry">See all</a>
+    <h2>Garden Supplies</h2>
+    <a class="shelf-all" href="#shelf/garden-supplies">See all</a>
   </div>
   <div class="shelf-row">
-  <article class="sp-card sp-demo" data-id="demo-wool-dryer-balls-6" data-category="Laundry">
+  <article class="sp-card" data-id="ae-seed-starter-trays-with-grow-light-2-pack" data-category="Garden Supplies">
     <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🧺</span>
-      <button type="button" class="sp-wish" data-wish="demo-wool-dryer-balls-6" aria-pressed="false" aria-label="Save Wool Dryer Balls, 6 to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
+      <img src="images/store/ae-3256810162225391.jpg" alt="Seed Starter Trays with Grow Light, 2 pack" loading="lazy">
+      <button type="button" class="sp-wish" data-wish="ae-seed-starter-trays-with-grow-light-2-pack" aria-pressed="false" aria-label="Save Seed Starter Trays with Grow Light, 2 pack to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
     </div>
-    <h3 class="sp-name">Wool Dryer Balls, 6</h3>
-    <p class="sp-blurb">Tier 0, rank 44. AliExpress Choice. from China, about 6 to 14 days, free shipping.</p>
+    <h3 class="sp-name">Seed Starter Trays with Grow Light, 2 pack</h3>
+    <p class="sp-blurb">Two seed trays with humidity domes and an LED grow light, to start seeds indoors. Ships from overseas: allow 1 to 2 weeks.</p>
     <div class="sp-foot">
-      <a href="https://www.aliexpress.com/item/3256812035396029.html" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
+      <span class="sp-price">$29.99</span>
+      <button type="button" class="btn btn-sm" data-cart-add="ae-seed-starter-trays-with-grow-light-2-pack">Add to cart</button>
+    </div>
+  </article>
+
+  <article class="sp-card" data-id="ae-fabric-grow-bag" data-category="Garden Supplies">
+    <div class="sp-media">
+      <img src="images/store/ae-3256811824629124.jpg" alt="Fabric Grow Bag" loading="lazy">
+      <button type="button" class="sp-wish" data-wish="ae-fabric-grow-bag" aria-pressed="false" aria-label="Save Fabric Grow Bag to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
+    </div>
+    <h3 class="sp-name">Fabric Grow Bag</h3>
+    <p class="sp-blurb">A breathable fabric pot for tomatoes, peppers, potatoes and herbs. Ships from overseas: allow 1 to 2 weeks.</p>
+    <div class="sp-foot">
+      <span class="sp-price">$9.99</span>
+      <button type="button" class="btn btn-sm" data-cart-add="ae-fabric-grow-bag">Add to cart</button>
+    </div>
+  </article>
+
+  <article class="sp-card" data-id="ae-stainless-steel-pruning-shears" data-category="Garden Supplies">
+    <div class="sp-media">
+      <img src="images/store/ae-3256809857759381.jpg" alt="Stainless Steel Pruning Shears" loading="lazy">
+      <button type="button" class="sp-wish" data-wish="ae-stainless-steel-pruning-shears" aria-pressed="false" aria-label="Save Stainless Steel Pruning Shears to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
+    </div>
+    <h3 class="sp-name">Stainless Steel Pruning Shears</h3>
+    <p class="sp-blurb">Straight-head pruning shears with a non-slip handle. Ships from overseas: allow 1 to 2 weeks.</p>
+    <div class="sp-foot">
+      <span class="sp-price">$9.49</span>
+      <button type="button" class="btn btn-sm" data-cart-add="ae-stainless-steel-pruning-shears">Add to cart</button>
+    </div>
+  </article>
+
+  <article class="sp-card" data-id="ae-natural-jute-twine" data-category="Garden Supplies">
+    <div class="sp-media">
+      <img src="images/store/ae-3256806674667884.jpg" alt="Natural Jute Twine" loading="lazy">
+      <button type="button" class="sp-wish" data-wish="ae-natural-jute-twine" aria-pressed="false" aria-label="Save Natural Jute Twine to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
+    </div>
+    <h3 class="sp-name">Natural Jute Twine</h3>
+    <p class="sp-blurb">Natural jute twine for tying up plants, crafts and gift wrap. Ships from overseas: allow 1 to 2 weeks.</p>
+    <div class="sp-foot">
+      <span class="sp-price">$5.99</span>
+      <button type="button" class="btn btn-sm" data-cart-add="ae-natural-jute-twine">Add to cart</button>
+    </div>
+  </article>
+
+  <article class="sp-card" data-id="ae-ceramic-mini-planter" data-category="Garden Supplies">
+    <div class="sp-media">
+      <img src="images/store/ae-3256808473784197.jpg" alt="Ceramic Mini Planter" loading="lazy">
+      <button type="button" class="sp-wish" data-wish="ae-ceramic-mini-planter" aria-pressed="false" aria-label="Save Ceramic Mini Planter to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
+    </div>
+    <h3 class="sp-name">Ceramic Mini Planter</h3>
+    <p class="sp-blurb">A small ceramic pot for a succulent or herb on the windowsill. Ships from overseas: allow 1 to 2 weeks.</p>
+    <div class="sp-foot">
+      <span class="sp-price">$6.99</span>
+      <button type="button" class="btn btn-sm" data-cart-add="ae-ceramic-mini-planter">Add to cart</button>
+    </div>
+  </article>
+
+  <article class="sp-card" data-id="ae-macrame-plant-hanger" data-category="Garden Supplies">
+    <div class="sp-media">
+      <img src="images/store/ae-3256809073271183.jpg" alt="Macrame Plant Hanger" loading="lazy">
+      <button type="button" class="sp-wish" data-wish="ae-macrame-plant-hanger" aria-pressed="false" aria-label="Save Macrame Plant Hanger to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
+    </div>
+    <h3 class="sp-name">Macrame Plant Hanger</h3>
+    <p class="sp-blurb">A woven cotton hanger for a potted plant. Ships from overseas: allow 1 to 2 weeks.</p>
+    <div class="sp-foot">
+      <span class="sp-price">$7.99</span>
+      <button type="button" class="btn btn-sm" data-cart-add="ae-macrame-plant-hanger">Add to cart</button>
     </div>
   </article>
   </div>
@@ -1204,51 +643,55 @@
     <a class="shelf-all" href="#shelf/games-gifts">See all</a>
   </div>
   <div class="shelf-row">
-  <article class="sp-card sp-demo" data-id="demo-squishies-pickle" data-category="Games &amp; Gifts">
+  <article class="sp-card" data-id="ae-solar-mushroom-string-lights" data-category="Games &amp; Gifts">
     <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🎲</span>
-      <button type="button" class="sp-wish" data-wish="demo-squishies-pickle" aria-pressed="false" aria-label="Save Squishies: Pickle to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
+      <img src="images/store/ae-3256809109396877.jpg" alt="Solar Mushroom String Lights" loading="lazy">
+      <button type="button" class="sp-wish" data-wish="ae-solar-mushroom-string-lights" aria-pressed="false" aria-label="Save Solar Mushroom String Lights to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
     </div>
-    <h3 class="sp-name">Squishies: Pickle</h3>
-    <p class="sp-blurb">Tier 0, rank 46. AliExpress Choice. from China, about 6 to 14 days, free shipping.</p>
+    <h3 class="sp-name">Solar Mushroom String Lights</h3>
+    <p class="sp-blurb">Little mushroom lights on a string that charge in the sun and glow at night. Ships from overseas: allow 1 to 2 weeks.</p>
     <div class="sp-foot">
-      <a href="https://www.aliexpress.com/item/3256812288616633.html" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
+      <span class="sp-price">$22.99</span>
+      <button type="button" class="btn btn-sm" data-cart-add="ae-solar-mushroom-string-lights">Add to cart</button>
     </div>
   </article>
 
-  <article class="sp-card sp-demo" data-id="demo-squishies-tomato" data-category="Games &amp; Gifts">
+  <article class="sp-card" data-id="ae-jumbo-pickle-squishy" data-category="Games &amp; Gifts">
     <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🎲</span>
-      <button type="button" class="sp-wish" data-wish="demo-squishies-tomato" aria-pressed="false" aria-label="Save Squishies: Tomato to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
+      <img src="images/store/ae-3256812288616633.jpg" alt="Jumbo Pickle Squishy" loading="lazy">
+      <button type="button" class="sp-wish" data-wish="ae-jumbo-pickle-squishy" aria-pressed="false" aria-label="Save Jumbo Pickle Squishy to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
     </div>
-    <h3 class="sp-name">Squishies: Tomato</h3>
-    <p class="sp-blurb">Tier 0, rank 46. AliExpress Choice. from China, about 6 to 14 days, free shipping.</p>
+    <h3 class="sp-name">Jumbo Pickle Squishy</h3>
+    <p class="sp-blurb">A squeezable pickle desk toy for grown-ups. Ships from overseas: allow 1 to 2 weeks.</p>
     <div class="sp-foot">
-      <a href="https://www.aliexpress.com/item/3256811638249866.html" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
+      <span class="sp-price">$8.99</span>
+      <button type="button" class="btn btn-sm" data-cart-add="ae-jumbo-pickle-squishy">Add to cart</button>
     </div>
   </article>
 
-  <article class="sp-card sp-demo" data-id="demo-squishies-pop-out-eye-vegetable" data-category="Games &amp; Gifts">
+  <article class="sp-card" data-id="ae-tomato-squishy" data-category="Games &amp; Gifts">
     <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🎲</span>
-      <button type="button" class="sp-wish" data-wish="demo-squishies-pop-out-eye-vegetable" aria-pressed="false" aria-label="Save Squishies: Pop-Out-Eye Vegetable to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
+      <img src="images/store/ae-3256811638249866.jpg" alt="Tomato Squishy" loading="lazy">
+      <button type="button" class="sp-wish" data-wish="ae-tomato-squishy" aria-pressed="false" aria-label="Save Tomato Squishy to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
     </div>
-    <h3 class="sp-name">Squishies: Pop-Out-Eye Vegetable</h3>
-    <p class="sp-blurb">Tier 0, rank 46. AliExpress Choice. from China, about 6 to 14 days, free shipping.</p>
+    <h3 class="sp-name">Tomato Squishy</h3>
+    <p class="sp-blurb">A squeezable tomato desk toy for grown-ups. Ships from overseas: allow 1 to 2 weeks.</p>
     <div class="sp-foot">
-      <a href="https://www.aliexpress.com/item/3256809308635818.html" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
+      <span class="sp-price">$9.49</span>
+      <button type="button" class="btn btn-sm" data-cart-add="ae-tomato-squishy">Add to cart</button>
     </div>
   </article>
 
-  <article class="sp-card sp-demo" data-id="demo-jumping-frog-fidget-toys-12" data-category="Games &amp; Gifts">
+  <article class="sp-card" data-id="ae-jumping-frogs-set-of-12" data-category="Games &amp; Gifts">
     <div class="sp-media">
-      <span class="sp-icon" aria-hidden="true">🎲</span>
-      <button type="button" class="sp-wish" data-wish="demo-jumping-frog-fidget-toys-12" aria-pressed="false" aria-label="Save Jumping Frog Fidget Toys, 12 to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
+      <img src="images/store/ae-3256806752931503.jpg" alt="Jumping Frogs, set of 12" loading="lazy">
+      <button type="button" class="sp-wish" data-wish="ae-jumping-frogs-set-of-12" aria-pressed="false" aria-label="Save Jumping Frogs, set of 12 to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>
     </div>
-    <h3 class="sp-name">Jumping Frog Fidget Toys, 12</h3>
-    <p class="sp-blurb">Tier 0, rank 46. AliExpress Choice. from China, about 6 to 14 days, free shipping.</p>
+    <h3 class="sp-name">Jumping Frogs, set of 12</h3>
+    <p class="sp-blurb">Press and let go: twelve little jumping frogs for the desk. Ships from overseas: allow 1 to 2 weeks.</p>
     <div class="sp-foot">
-      <a href="https://www.aliexpress.com/item/3256806752931503.html" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">Supplier page</a>
+      <span class="sp-price">$5.49</span>
+      <button type="button" class="btn btn-sm" data-cart-add="ae-jumping-frogs-set-of-12">Add to cart</button>
     </div>
   </article>
   </div>
@@ -2066,5 +1509,7 @@
 <!-- Netlify Identity: the sign-in and sign-up forms for customer accounts. -->
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
 <script src="store.js" defer></script>
+<script src="cart.js" defer></script>
+<script src="cart.js" defer></script>
 </body>
 </html>

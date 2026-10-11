@@ -643,6 +643,45 @@ product call now asks only for the account connection.
 
 ---
 
+## GO LIVE (built 2026-10-11, waiting for the October 18 deploy)
+
+The store is ready on the owner's computer, committed but NOT deployed (the
+owner, 2026-10-11: no deploys until the Netlify credits reset on October 18).
+It sells 19 Bangalla products, 10 AliExpress products and the two soccer
+registrations; compost and recycling keep their email sign-up until their
+PayPal plans exist. Shipping is charged per supplier (shipping.mjs).
+Already working: PayPal in TEST mode (a test checkout opened a PayPal
+sandbox page on 2026-10-11).
+
+Before the deploy:
+1. **PayPal live keys** (H): developer.paypal.com -> **Apps & Credentials** ->
+   switch to **Live** -> **Create App** (Merchant) -> copy Client ID and
+   Secret. Netlify -> Environment variables: replace `PAYPAL_CLIENT_ID` and
+   `PAYPAL_SECRET` with the live ones, and set `PAYPAL_ENV` = `live`.
+   (Until then the site stays in test mode and takes no real money.)
+2. **Supplier payment ready**: a card or PayPal on the Bangalla account and
+   on the AliExpress buyer account, for the orders you place after a sale.
+3. **Pick-up subscriptions (optional now)**: paypal.com -> **Pay & Get Paid**
+   -> **Subscriptions** -> **Subscription plans** -> **Create plan**: product
+   "Compost Pick-up", plan "Monthly", $20.00 every month, no tax (the site
+   adds the 6% itself). The same for "Recycling Pick-Up". Send Claude the two
+   plan ids (they start with P-); the Sign Up buttons then take payment.
+
+On October 18 Claude deploys once, places one test order with the PayPal
+sandbox if you are still in test mode, and checks the live pages.
+
+**When an order comes in** (every day, until email is connected): dashboard
+-> **Newsletter, messages and orders** -> **Orders**: the "Order from" table
+says the supplier and its code for each line. Order each line from that
+supplier to the customer's address (it is in the PayPal transaction):
+Bangalla by SKU in your Bangalla account (dropship to the customer), and
+AliExpress by item number in the AliExpress app (choose the variant at the
+price shown, ship to the customer, then pay the order). Mark it shipped in
+PayPal with the tracking number. The order alert email starts once Amazon
+SES (F) is connected.
+
+---
+
 ## H. Payments: PayPal (deferred by you; when you are ready)
 
 Steps 1 to 6 of docs/STORE-STEPS.md, unchanged. In short: developer.paypal.com

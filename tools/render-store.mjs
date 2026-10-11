@@ -129,7 +129,7 @@ const slug = (name) => name.toLowerCase().replace(/&/g, ' ').replace(/[^a-z0-9]+
 function card(p) {
   const button = p.demo
     ? `      <a href="${esc(p.supplierUrl)}" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">${esc(p.button || 'Supplier page')}</a>`
-    : CART
+    : CART && !(p.interval && !hasPlan(p))
     ? p.interval
       ? `      <button type="button" class="btn btn-sm" data-subscribe="${p.id}">${esc(p.button)}</button>`
       : `      <button type="button" class="btn btn-sm" data-cart-add="${p.id}">Add to cart</button>`
@@ -184,8 +184,12 @@ function shelves(active) {
 }
 
 /** In cart mode a button on another page goes to the Store, product added. */
+// A subscription with no PayPal plan yet keeps its email sign-up even in
+// cart mode (2026-10-11), so nobody meets a "not set up yet" error.
+const hasPlan = (p) => !!(p && (p.paypalPlanId || p.paypalSandboxPlanId));
 function cartHref(p) {
   if (!p || p.active === false) return hrefFor(null);
+  if (p.interval && !hasPlan(p)) return hrefFor(p);
   return p.interval ? `store.html?subscribe=${p.id}` : `store.html?add=${p.id}`;
 }
 
@@ -252,6 +256,7 @@ if (unknown.length) {
       paypalSandboxPlanId: p.paypalSandboxPlanId || null,
       ship: p.ship === true,
       shipOz: p.ship === true ? p.shipOz : null,
+      shipFrom: p.ship === true ? (p.shipFrom || 'bangalla') : null,
       // Groceries carry the grocery tax rate (tax.mjs).
       grocery: p.grocery === true,
       // The server refuses an order without its waiver (checkout.mjs), so

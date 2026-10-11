@@ -24,6 +24,18 @@
 //   * the contiguous United States only.
 // A product ships only if products.json gives it "ship": true and a packed
 // weight "shipOz". Registrations and the compost service never ship.
+//
+// BY SUPPLIER (owner, 2026-10-11: "I also don't want to charge Bangalla's
+// high shipping costs for other suppliers if they don't have high shipping
+// costs"). Each supplier sends its own parcel, so each is charged on its own
+// and the order's shipping is the sum. A product says which with "shipFrom":
+//   * "bangalla" (and anything without shipFrom): the weight bands above,
+//     on that supplier's items only. Bangalla bills its carrier rate by
+//     weight, distance and speed (owner, 2026-10-07).
+//   * "aliexpress": AliExpress Choice ships free to the US once an order
+//     clears a small minimum (about $1.99 to $3.99 of goods, or 3 items) and
+//     charges about $1.50 to $3.00 below it (secretali.com 2026 guide, read
+//     2026-10-11). So: free at $9.99 of our price or 3 items, else $2.99.
 
 export const SHIPPING = {
   bands: [
@@ -35,6 +47,11 @@ export const SHIPPING = {
   reducedOverCents: null,
   reducedCents: null,
   pickup: {},
+  // Per-supplier rules. "bands" = the weight bands above.
+  suppliers: {
+    bangalla: { rule: 'bands', label: 'US supplier' },
+    aliexpress: { rule: 'flat', freeOverCents: 999, freeOverItems: 3, cents: 299, label: 'overseas supplier' },
+  },
   // Posted orders go to the 48 contiguous states and DC only.
   notPosted: ['AK', 'HI', 'PR', 'GU', 'VI', 'AS', 'MP', 'AA', 'AE', 'AP'],
 };
@@ -55,21 +72,40 @@ export const METHODS = ['ship'];
  */
 export function quote(lines, { method } = {}) {
   const shipping = lines.filter(({ product }) => product && product.ship === true);
-  if (!shipping.length) return { cents: 0, method: 'none', needsAddress: false, label: '' };
-  const subtotal = lines.reduce((sum, { product, qty }) => sum + product.price * qty, 0);
+  if (!shipping.length) return { cents: 0, method: 'none', needsAddress: false, label: '', parts: [] };
 
   if (method === 'ship') {
-    const oz = shipping.reduce((sum, { product, qty }) => sum + product.shipOz * qty, 0);
-    if (!Number.isFinite(oz) || oz <= 0) throw new ShippingError('Something in your cart has no shipping weight yet. Please email support@lavishleaf.org.');
-    const band = SHIPPING.bands.find((b) => oz <= b.upToOz);
-    if (!band) throw new ShippingError('This order is over 10 lb, too heavy for our flat rates. Please email support@lavishleaf.org for a shipping quote.');
-    if (SHIPPING.reducedOverCents != null && subtotal >= SHIPPING.reducedOverCents) {
-      return { cents: SHIPPING.reducedCents, method, needsAddress: true, label: `Shipping (orders over ${money(SHIPPING.reducedOverCents)})` };
+    // One parcel per supplier, each charged by its own rule.
+    const groups = new Map();
+    for (const l of shipping) {
+      const from = SHIPPING.suppliers[l.product.shipFrom] ? l.product.shipFrom : 'bangalla';
+      if (!groups.has(from)) groups.set(from, []);
+      groups.get(from).push(l);
     }
-    return { cents: band.cents, method, needsAddress: true, label: 'Shipping' };
+    const parts = [];
+    for (const [from, group] of groups) {
+      const rule = SHIPPING.suppliers[from];
+      const subtotal = group.reduce((sum, { product, qty }) => sum + product.price * qty, 0);
+      const items = group.reduce((n, { qty }) => n + qty, 0);
+      if (rule.rule === 'flat') {
+        const free = subtotal >= rule.freeOverCents || items >= rule.freeOverItems;
+        parts.push({ from, label: rule.label, cents: free ? 0 : rule.cents });
+        continue;
+      }
+      const oz = group.reduce((sum, { product, qty }) => sum + product.shipOz * qty, 0);
+      if (!Number.isFinite(oz) || oz <= 0) throw new ShippingError('Something in your cart has no shipping weight yet. Please email support@lavishleaf.org.');
+      const band = SHIPPING.bands.find((x) => oz <= x.upToOz);
+      if (!band) throw new ShippingError('This order is over 10 lb, too heavy for our flat rates. Please email support@lavishleaf.org for a shipping quote.');
+      parts.push({ from, label: rule.label, cents: band.cents });
+    }
+    const cents = parts.reduce((n, p) => n + p.cents, 0);
+    const label = parts.length > 1
+      ? 'Shipping (' + parts.map((p) => p.label + ' ' + (p.cents ? money(p.cents) : 'free')).join(', ') + ')'
+      : 'Shipping';
+    return { cents, method, needsAddress: true, label, parts };
   }
   if (SHIPPING.pickup[method]) {
-    return { cents: 0, method, needsAddress: false, label: `Pickup in ${SHIPPING.pickup[method]}` };
+    return { cents: 0, method, needsAddress: false, label: `Pickup in ${SHIPPING.pickup[method]}`, parts: [] };
   }
   throw new ShippingError('Please choose how you would like to receive your order.');
 }

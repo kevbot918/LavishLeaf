@@ -424,6 +424,24 @@
     if (orders) {
       od.appendChild(el('p', 'db-hint', num(orders.count) + ' orders, ' + money(orders.revenue) + ' in the last ' + days + ' days. ' + num(orders.accounts) + ' customer accounts, ' + num(orders.openCarts) + ' with something in the cart.'));
       od.appendChild(orders.latest.length ? table([{ label: 'Date' }, { label: 'Items' }, { label: 'Total', num: true }], orders.latest.map(function (o) { return [niceDate(o.date), o.items, money(o.total)]; })) : el('p', 'db-empty', 'No orders yet. They appear here the moment one is paid.'));
+      // What to order from whom, for each paid order (2026-10-11): the
+      // supplier and its code, from products.json "source".
+      if (orders.latest.length) {
+        var fill = el('div'); od.appendChild(fill);
+        fetch('/products.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (j) {
+          var src = {};
+          (j.products || []).forEach(function (p) { src[p.name] = p.source ? (p.source.supplier + ' ' + (p.source.sku || ('item ' + p.source.item))) : (p.ship ? '-' : 'Our own service'); });
+          var rows = [];
+          orders.latest.forEach(function (o) {
+            String(o.items || '').split(', ').forEach(function (it) {
+              var name = it.replace(/ x\d+$/, '');
+              rows.push([niceDate(o.date), it, src[name] || 'Unknown: check the order in PayPal']);
+            });
+          });
+          fill.appendChild(el('p', 'db-hint', 'To fulfil: place each line with its supplier (Bangalla by SKU in your account; AliExpress by item number in the app), to the address in the PayPal order.'));
+          fill.appendChild(table([{ label: 'Date' }, { label: 'Line' }, { label: 'Order from' }], rows));
+        }).catch(function () {});
+      }
     } else od.appendChild(notice(d.orders));
     g8.appendChild(od);
     s8.appendChild(g8);
