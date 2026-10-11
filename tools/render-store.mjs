@@ -132,7 +132,9 @@ function card(p) {
     : CART && !(p.interval && !hasPlan(p))
     ? p.interval
       ? `      <button type="button" class="btn btn-sm" data-subscribe="${p.id}">${esc(p.button)}</button>`
-      : `      <button type="button" class="btn btn-sm" data-cart-add="${p.id}">Add to cart</button>`
+      : p.options
+        ? `      <button type="button" class="btn btn-sm" data-choose="${p.id}">Choose ${esc(p.options.label.toLowerCase())}</button>`
+        : `      <button type="button" class="btn btn-sm" data-cart-add="${p.id}">Add to cart</button>`
     : `      <a href="${esc(hrefFor(p))}"${linkAttrs(p)} class="btn btn-sm" data-product="${p.id}">${esc(p.button)}</a>`;
   // A photo when there is one, the emoji when there is not. Both sit in the
   // same box so a half-photographed store still lines up. The heart saves
@@ -258,6 +260,8 @@ if (unknown.length) {
       ship: p.ship === true,
       shipOz: p.ship === true ? p.shipOz : null,
       shipFrom: p.ship === true ? (p.shipFrom || 'bangalla') : null,
+      // Options (scent, colour, size): the names the server accepts.
+      options: p.options ? { label: p.options.label, values: p.options.values.map((v) => v.name) } : null,
       // Groceries carry the grocery tax rate (tax.mjs).
       grocery: p.grocery === true,
       // The server refuses an order without its waiver (checkout.mjs), so

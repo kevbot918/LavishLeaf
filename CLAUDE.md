@@ -445,3 +445,25 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     Bangalla lines (Aura Cacia shower tablets and frankincense, Andalou
     lotions with MAP, Crystal deodorants); the no-margin ones (Schmidt's,
     hello, Spry, Clearly Natural, Jason, Aura Cacia single oils) were left out.
+
+31. **2026-10-11, the owner's 9-point list.** Making a Difference: no
+    "Updated" line, no archery targets (impact.mjs also strips it from a
+    saved copy), intro "What Lavish Leaf and its community has kept out of
+    the landfill so far." Company: his partnership/volunteer/board/shareholder
+    invite and "Division leaders create additional roles...". Pop-up: one
+    Delivery sentence for every product ("allow 1-3 weeks"); Shipping says
+    "$2.99. Items from the same supplier share costs." (flat) or "from this
+    supplier is per US Postal weight, minimum of $8.95" (bands); delivery
+    sentences are gone from blurbs. **Cart weight meter**: band parts carry
+    `oz` and `upToOz`, so the cart says "Shipped by weight: 3.5 oz / 16 oz =
+    $8.95. Add up to 12.5 oz more for the same shipping." **Product options**:
+    a product may carry `"options": { "label": "Scent", "values": [{ "name",
+    "sku" | "item", "note"? }] }`; its card says "Choose scent" and opens the
+    pop-up's select; cart lines carry `opt`; catalog.mjs carries the names;
+    validateCart refuses a missing or unknown option and keeps options apart;
+    PayPal's item reads "Name (Scent: Almond)", sku "id:Almond"; the
+    dashboard's "Order from" gives each option's own supplier code; signed-in
+    carts keep `opt` (accounts.mjs). 45 more Bangalla lines at list price
+    (new shelves Oral Care and Bath & Body), photos resized to 600px JPEG.
+    Search matches plurals ("squishies" finds Squishy) and a result row opens
+    the pop-up.

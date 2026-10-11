@@ -734,3 +734,6 @@ body.ss-resizing .ss-side { transition: none; }
 #view-lists .ss-list-head { padding: 0 32px; }
 #lists-shelves .shelf-row .ss-empty { padding: 8px 2px; }
 @media (max-width: 1000px) { #view-lists .ss-list-head { padding: 0 16px; } }
+.sp-pop-opt { display: flex; flex-direction: column; gap: 4px; font-size: .85rem; color: var(--muted); width: 100%; }
+.sp-pop-opt select { padding: 9px 10px; border-radius: 8px; border: 1px solid var(--border); background: var(--surface-2); color: var(--text); font: inherit; }
+.ss-result[data-pop] { cursor: pointer; }

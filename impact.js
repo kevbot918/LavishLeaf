@@ -14,10 +14,5 @@
       return '<div class="impact-stat"><div class="impact-num">' + esc(Number(s.value).toLocaleString('en-US')) + (s.plus ? '+' : '') +
         (s.unit ? ' <span>' + esc(s.unit) + '</span>' : '') + '</div><div class="impact-label">' + esc(s.label) + '</div></div>';
     }).join('');
-    var when = box.querySelector('.impact-updated');
-    if (when && d.updated) {
-      var dt = new Date(d.updated + 'T12:00:00');
-      when.textContent = 'Updated ' + dt.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }) + '. We add to these as we go.';
-    }
   }).catch(function () { /* the numbers in the page stay */ });
 })();

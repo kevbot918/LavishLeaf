@@ -21,7 +21,7 @@
       var raw = JSON.parse(localStorage.getItem(KEY) || '[]');
       return Array.isArray(raw) ? raw.filter(function (l) {
         return l && typeof l.id === 'string' && Number.isInteger(l.qty) && l.qty > 0;
-      }) : [];
+      }).map(function (l) { return l.opt ? { id: l.id, qty: l.qty, opt: String(l.opt) } : { id: l.id, qty: l.qty }; }) : [];
     } catch (e) {
       return [];
     }
@@ -68,25 +68,28 @@
     return '$' + (cents / 100).toFixed(2);
   }
 
-  function add(id) {
+  function add(id, opt) {
     var p = products[id];
     if (!p || p.interval || p.active === false) return;
-    var line = cart.find(function (l) { return l.id === id; });
+    // A product with options needs one: the store opens its pop-up to choose.
+    if (p.options && !opt) { document.dispatchEvent(new CustomEvent('ll-choose', { detail: { id: id } })); return; }
+    opt = opt || '';
+    var line = cart.find(function (l) { return l.id === id && (l.opt || '') === opt; });
     if (line) line.qty = Math.min(MAX_QTY, line.qty + 1);
-    else cart.push({ id: id, qty: 1 });
+    else cart.push(opt ? { id: id, qty: 1, opt: opt } : { id: id, qty: 1 });
     save(cart);
-    notify(p);
+    notify(p, opt);
   }
 
   // A notice the buyer cannot miss: bottom of the screen, with a way to the
   // cart (owner, 2026-10-11).
-  function notify(p) {
+  function notify(p, opt) {
     if (!toastEl) return;
     toastEl.textContent = '';
     if (p.image) toastEl.appendChild(el('img', { src: p.image, alt: '' }));
     var txt = el('div', { class: 'cart-toast-text' });
     txt.appendChild(el('strong', null, 'Added to your cart'));
-    txt.appendChild(el('span', null, p.name));
+    txt.appendChild(el('span', null, p.name + (opt ? ' (' + opt + ')' : '')));
     toastEl.appendChild(txt);
     var view = el('button', { type: 'button', class: 'btn btn-sm' }, 'View cart');
     view.addEventListener('click', function () { toastEl.hidden = true; open(); });
@@ -132,9 +135,10 @@
     return a;
   }
 
-  function setQty(id, qty) {
+  function setQty(id, qty, opt) {
+    opt = opt || '';
     cart = cart
-      .map(function (l) { return l.id === id ? { id: id, qty: Math.max(0, Math.min(MAX_QTY, qty)) } : l; })
+      .map(function (l) { return l.id === id && (l.opt || '') === opt ? Object.assign({}, l, { qty: Math.max(0, Math.min(MAX_QTY, qty)) }) : l; })
       .filter(function (l) { return l.qty > 0; });
     save(cart);
   }
@@ -271,12 +275,12 @@
       if (!p) return;
       cents += p.price * l.qty;
       var li = el('li', { class: 'cart-line' });
-      li.appendChild(el('span', { class: 'cart-name' }, p.name));
+      li.appendChild(el('span', { class: 'cart-name' }, p.name + (l.opt ? ' (' + p.options.label + ': ' + l.opt + ')' : '')));
       var qty = el('span', { class: 'cart-qty' });
       var minus = el('button', { type: 'button', 'aria-label': 'One fewer ' + p.name }, '−');
-      minus.addEventListener('click', function () { setQty(l.id, l.qty - 1); });
+      minus.addEventListener('click', function () { setQty(l.id, l.qty - 1, l.opt); });
       var plus = el('button', { type: 'button', 'aria-label': 'One more ' + p.name }, '+');
-      plus.addEventListener('click', function () { setQty(l.id, l.qty + 1); });
+      plus.addEventListener('click', function () { setQty(l.id, l.qty + 1, l.opt); });
       qty.appendChild(minus);
       qty.appendChild(el('span', { class: 'cart-n' }, String(l.qty)));
       qty.appendChild(plus);
@@ -302,6 +306,14 @@
           shipCents = q.cents;
           shipLine.textContent = q.label + ': ' + (q.cents ? money(q.cents) : 'free');
           shipLine.title = 'Each supplier ships its own parcel, so each part is charged on its own. See Terms of Sale.';
+          // Weight meter for items shipped by weight (owner, 2026-10-11):
+          // "3.5 oz / 16 oz = $8.95", so a buyer sees the room left in the band.
+          var meter = (q.parts || []).filter(function (pt) { return pt.upToOz; }).map(function (pt) {
+            var room = Math.round((pt.upToOz - pt.oz) * 10) / 10;
+            return 'Shipped by weight: ' + (Math.round(pt.oz * 10) / 10) + ' oz / ' + pt.upToOz + ' oz = ' + money(pt.cents) + '.' +
+              (room > 0 ? ' Add up to ' + room + ' oz more for the same shipping.' : '');
+          });
+          if (meter.length) { shipNudge.textContent = meter.join(' '); shipNudge.hidden = false; }
           if (delivery.method === 'ship' && ship.untilReduced(cents) > 0) {
             shipNudge.textContent = money(ship.untilReduced(cents)) + ' more and shipping is ' +
               money(ship.SHIPPING.reducedCents) + ' on the whole order.';
@@ -465,7 +477,13 @@
 
   function start(data) {
     (data.products || []).forEach(function (p) { products[p.id] = p; });
-    cart = cart.filter(function (l) { return products[l.id] && !products[l.id].interval; });
+    cart = cart.filter(function (l) {
+      var p = products[l.id];
+      if (!p || p.interval) return false;
+      // An option that no longer exists, or a product that gained options: drop the line.
+      if (p.options) return !!l.opt && p.options.values.some(function (v) { return v.name === l.opt; });
+      return !l.opt;
+    });
     build();
     // reload(): the account (store.js) merged a saved cart into this browser.
     window.LLCart = { open: open, add: add, subscribe: subscribe, reload: function () { cart = load(); render(); } };

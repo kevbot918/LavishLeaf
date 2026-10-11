@@ -12,7 +12,7 @@ export const DEFAULT_STATS = {
   stats: [
     { key: 'compost', label: 'Pounds of food scraps and yard waste turned into soil', value: 1000, unit: 'lb', plus: true },
     { key: 'recycled', label: 'Pounds of cardboard, cans, glass and plastic recycled', value: 1500, unit: 'lb', plus: true },
-    { key: 'repurposed', label: 'Pounds of cardboard reused instead of thrown away, including archery targets', value: 200, unit: 'lb', plus: true },
+    { key: 'repurposed', label: 'Pounds of cardboard reused instead of thrown away', value: 200, unit: 'lb', plus: true },
   ],
 };
 
@@ -40,6 +40,8 @@ export default async (request) => {
   const s = await store();
   if (request.method === 'GET') {
     const saved = await s.get('stats', { type: 'json' }).catch(() => null);
+    // The owner took "including archery targets" off (2026-10-11), saved copies too.
+    if (saved && Array.isArray(saved.stats)) saved.stats.forEach((x) => { x.label = String(x.label).replace(', including archery targets', ''); });
     return new Response(JSON.stringify(saved || DEFAULT_STATS), {
       headers: {
         'Content-Type': 'application/json',

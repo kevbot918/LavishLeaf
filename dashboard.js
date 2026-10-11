@@ -466,7 +466,14 @@
         var fill = el('div'); od.appendChild(fill);
         fetch('/products.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (j) {
           var src = {};
-          (j.products || []).forEach(function (p) { src[p.name] = p.source ? (p.source.supplier + ' ' + (p.source.sku || ('item ' + p.source.item))) : (p.ship ? '-' : 'Our own service'); });
+          (j.products || []).forEach(function (p) {
+            src[p.name] = p.source ? (p.source.supplier + ' ' + (p.source.sku || ('item ' + p.source.item))) : (p.ship ? '-' : 'Our own service');
+            // An option line: "Name (Scent: Almond)" orders that option's own code.
+            (p.options ? p.options.values : []).forEach(function (v) {
+              var s = v.sku || (v.item ? 'item ' + v.item : '') || (p.source ? (p.source.sku || 'item ' + p.source.item) : '');
+              src[p.name + ' (' + p.options.label + ': ' + v.name + ')'] = (p.source ? p.source.supplier : '') + ' ' + s + (v.note ? ' (' + v.note + ')' : '');
+            });
+          });
           var rows = [];
           orders.latest.forEach(function (o) {
             String(o.items || '').split(', ').forEach(function (it) {

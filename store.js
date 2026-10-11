@@ -542,17 +542,34 @@
     });
     $('#filter-onetime').addEventListener('change', runSearch);
   }
+  // Matching is by whole words (2026-10-11): a typed word matches the start
+  // of a word ("sock" finds "socks") or the same word in singular or plural
+  // ("squishies" finds "Squishy", "brushes" finds "Brush"), never the middle
+  // of one ("hat" no longer finds "that").
+  function single(w) {
+    if (w.length < 4) return w;
+    if (/ies$/.test(w)) return w.slice(0, -3) + 'y';
+    if (/(sh|ch|x|ss)es$/.test(w)) return w.slice(0, -2);
+    if (/[^s]s$/.test(w)) return w.slice(0, -1);
+    return w;
+  }
   function words(s) { return s.toLowerCase().replace(/[^a-z0-9$.]+/g, ' ').trim().split(' ').filter(Boolean); }
+  function hit(text, w) {
+    var ws = words(text), sw = single(w);
+    for (var i = 0; i < ws.length; i++) if (ws[i].indexOf(w) === 0 || single(ws[i]) === sw) return i === 0 ? 2 : 1;
+    return 0;
+  }
   function score(p, ws) {
     if (!ws.length) return 1;
     var name = p.name.toLowerCase(), blurb = p.blurb.toLowerCase(), cat = p.category.toLowerCase(), tags = p.tags.join(' ').toLowerCase();
     var total = 0;
     for (var i = 0; i < ws.length; i++) {
       var w = ws[i], s = 0;
-      if (name.indexOf(w) >= 0) s = name.indexOf(w) === 0 ? 10 : 6;
-      else if (tags.indexOf(w) >= 0) s = 4;
-      else if (cat.indexOf(w) >= 0) s = 3;
-      else if (blurb.indexOf(w) >= 0) s = 2;
+      var n = hit(name, w);
+      if (n) s = n === 2 ? 10 : 6;
+      else if (hit(tags, w)) s = 4;
+      else if (hit(cat, w)) s = 3;
+      else if (hit(blurb, w)) s = 2;
       if (!s) return 0; // every word must land somewhere
       total += s;
     }
@@ -561,7 +578,7 @@
   function highlight(text, ws) {
     if (!ws.length) return document.createTextNode(text);
     var frag = document.createDocumentFragment();
-    var re = new RegExp('(' + ws.map(function (w) { return w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }).join('|') + ')', 'ig');
+    var re = new RegExp('(' + ws.map(single).map(function (w) { return w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }).join('|') + ')', 'ig');
     var last = 0, m;
     while ((m = re.exec(text))) {
       if (m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
@@ -592,7 +609,7 @@
       : (q ? 'Nothing matches "' + q + '"' + (chip !== 'all' ? ' in ' + shelfTitle(chip) : '') + '. Try fewer words, or Everything.' : 'Nothing on this shelf yet.');
     rows.forEach(function (r) {
       var p = r.p;
-      var li = el('li', { class: 'ss-result' });
+      var li = el('li', { class: 'ss-result', 'data-pop': p.id });
       var th = el('div', { class: 'ss-result-thumb' });
       var img = $('.sp-media img', p.card);
       if (img) th.appendChild(el('img', { src: img.getAttribute('src'), alt: '', loading: 'lazy' }));
@@ -664,9 +681,15 @@
     document.addEventListener('click', function (e) {
       var w = e.target.closest('[data-wish]');
       if (w) { heart(w.getAttribute('data-wish')); return; }
+      // "Choose scent/colour/size" opens the pop-up to choose.
+      var ch = e.target.closest('[data-choose]');
+      if (ch) { openProduct(ch.getAttribute('data-choose')); return; }
       // A product card, anywhere but its buttons, opens the product pop-up.
       var card = e.target.closest('.sp-card[data-id]');
       if (card && !e.target.closest('a, button') && !card.closest('#pop')) { openProduct(card.getAttribute('data-id')); return; }
+      // A search result row opens it too.
+      var row = e.target.closest('[data-pop]');
+      if (row && !e.target.closest('a, button, select')) { openProduct(row.getAttribute('data-pop')); return; }
       if (e.target.closest('#pop [data-cart-add], #pop [data-subscribe]') && window.LLCart) {
         var b = e.target.closest('[data-cart-add], [data-subscribe]');
         if (b.hasAttribute('data-cart-add')) window.LLCart.add(b.getAttribute('data-cart-add'));
@@ -700,6 +723,7 @@
     }
 
     window.addEventListener('hashchange', route);
+    document.addEventListener('ll-choose', function (e) { openProduct(e.detail.id); });
     measureSite();
     window.addEventListener('resize', measureSite);
     if (window.ResizeObserver && $('body > header')) new ResizeObserver(measureSite).observe($('body > header'));
@@ -753,8 +777,8 @@
     if (!state.shelfOrder.length && rec.shelfOrder && rec.shelfOrder.length) state.shelfOrder = rec.shelfOrder.slice();
     var c = localCart();
     (rec.cart || []).forEach(function (sl) {
-      var m = c.filter(function (x) { return x.id === sl.id; })[0];
-      if (m) m.qty = Math.min(20, Math.max(m.qty, sl.qty)); else c.push({ id: sl.id, qty: sl.qty });
+      var m = c.filter(function (x) { return x.id === sl.id && (x.opt || '') === (sl.opt || ''); })[0];
+      if (m) m.qty = Math.min(20, Math.max(m.qty, sl.qty)); else c.push(sl.opt ? { id: sl.id, qty: sl.qty, opt: sl.opt } : { id: sl.id, qty: sl.qty });
     });
     try { localStorage.setItem('ll-cart', JSON.stringify(c)); } catch (e) { /* fine */ }
     if (window.LLCart && window.LLCart.reload) window.LLCart.reload();
@@ -890,11 +914,15 @@
     fact('Shelf', p.category);
     if (d.ship) {
       fact('Weight', weightText(d.shipOz) + ' packed');
-      fact('Delivery', d.shipFrom === 'aliexpress' ? 'ships direct from the maker, allow 1 to 2 weeks' : 'ships from our US supplier, about a week');
-      var shipLi = el('li'); shipLi.appendChild(el('strong', null, 'Shipping on its own: ')); var shipTxt = document.createTextNode('...'); shipLi.appendChild(shipTxt); facts.appendChild(shipLi);
+      fact('Delivery', 'some items ship direct from the supplier and some from our warehouse, allow 1-3 weeks');
+      var shipLi = el('li'); shipLi.appendChild(el('strong', null, d.shipFrom === 'aliexpress' ? 'Shipping: ' : 'Shipping ')); var shipTxt = document.createTextNode('...'); shipLi.appendChild(shipTxt); facts.appendChild(shipLi);
       shippingModule().then(function (m) {
         var q = m.quote([{ product: d, qty: 1 }], { method: 'ship' });
-        shipTxt.textContent = (q.cents ? '$' + (q.cents / 100).toFixed(2) : 'free') + '. Shipping is per supplier, so items from the same one share it.';
+        // The owner's wording (2026-10-11): flat-rate items, and items by weight.
+        var flat = m.SHIPPING.suppliers[d.shipFrom];
+        shipTxt.textContent = flat && flat.rule === 'flat'
+          ? '$' + (flat.cents / 100).toFixed(2) + '. Items from the same supplier share costs.'
+          : 'from this supplier is per US Postal weight, minimum of $' + (m.SHIPPING.bands[0].cents / 100).toFixed(2) + '.';
       }).catch(function () { shipTxt.textContent = 'shown in the cart.'; });
     } else if (d.interval) {
       fact('Delivery', 'a local service; we arrange the day with you');
@@ -903,8 +931,26 @@
     }
     fact('Sales tax', 'Oklahoma 6%, added in the cart');
     var acts = $('#pop-actions'); acts.textContent = '';
-    var btn = $('.sp-foot .btn', p.card);
-    if (btn) { var b = btn.cloneNode(true); b.classList.remove('btn-sm'); acts.appendChild(b); }
+    if (d.options) {
+      // Choose the scent, colour or size, then add (2026-10-11).
+      var lab = el('label', { class: 'sp-pop-opt' });
+      lab.appendChild(el('span', null, d.options.label));
+      var sel = el('select', { id: 'pop-opt' });
+      sel.appendChild(el('option', { value: '' }, 'Choose...'));
+      d.options.values.forEach(function (v) { sel.appendChild(el('option', { value: v.name }, v.name)); });
+      lab.appendChild(sel);
+      acts.appendChild(lab);
+      var addB = el('button', { type: 'button', class: 'btn' }, 'Add to cart');
+      addB.addEventListener('click', function () {
+        if (!sel.value) { toast('Please choose a ' + d.options.label.toLowerCase() + ' first.'); sel.focus(); return; }
+        if (window.LLCart) window.LLCart.add(pid, sel.value);
+        $('#pop').close();
+      });
+      acts.appendChild(addB);
+    } else {
+      var btn = $('.sp-foot .btn', p.card);
+      if (btn) { var b = btn.cloneNode(true); b.classList.remove('btn-sm'); acts.appendChild(b); }
+    }
     var h = el('button', { type: 'button', class: 'btn btn-ghost', 'data-wish': pid }, 'Save to a list');
     acts.appendChild(h);
     openDialog(pop);

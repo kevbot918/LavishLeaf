@@ -61,6 +61,11 @@ export function validateCart(cart, catalog) {
     const id = line && typeof line.id === 'string' ? line.id : '';
     const qty = line ? line.qty : undefined;
     const p = catalog[id];
+    // A product with options (scent, colour, size: 2026-10-11) needs one of
+    // its own; anything else is refused rather than guessed.
+    const opt = line && typeof line.opt === 'string' ? line.opt : '';
+    if (p && p.options && !p.options.values.includes(opt)) throw new CheckoutError(400, `Please choose a ${p.options.label.toLowerCase()} for ${p.name}.`);
+    if (p && !p.options && opt) throw new CheckoutError(400, 'Something in your cart has changed. Remove it and add it again.');
     if (!p || !p.active) throw new CheckoutError(400, 'Something in your cart is no longer for sale. Remove it and try again.');
     if (p.interval) throw new CheckoutError(400, `${p.name} is a subscription and is signed up for on its own.`);
     if (!Number.isInteger(qty) || qty < 1) throw new CheckoutError(400, 'Each item needs a quantity of at least one.');
@@ -73,11 +78,15 @@ export function validateCart(cart, catalog) {
     if (!Number.isInteger(p.price) || p.price <= 0) {
       throw new CheckoutError(500, 'That item is not priced correctly yet. Please let us know and we will fix it.');
     }
-    const total = (merged.get(id) || 0) + qty;
+    const key = id + '|' + opt;
+    const total = (merged.get(key) || 0) + qty;
     if (total > MAX_QTY) throw new CheckoutError(400, `At most ${MAX_QTY} of one item per order.`);
-    merged.set(id, total);
+    merged.set(key, total);
   }
-  return [...merged].map(([id, qty]) => ({ product: catalog[id], qty }));
+  return [...merged].map(([key, qty]) => {
+    const [id, opt] = key.split('|');
+    return opt ? { product: catalog[id], qty, opt } : { product: catalog[id], qty };
+  });
 }
 
 /**
@@ -109,9 +118,9 @@ export function parseCustomId(s) {
 
 /** The body of PayPal's "create order" call for a validated cart. */
 export function orderBody(lines, { returnUrl, cancelUrl, note = '', waivers = [], shipping = null, tax = null, userId = '' }) {
-  const items = lines.map(({ product, qty }) => ({
-    name: product.name.slice(0, 127),
-    sku: product.id,
+  const items = lines.map(({ product, qty, opt }) => ({
+    name: (opt ? `${product.name} (${product.options.label}: ${opt})` : product.name).slice(0, 127),
+    sku: (opt ? product.id + ':' + opt : product.id).slice(0, 127),
     quantity: String(qty),
     unit_amount: { currency_code: 'USD', value: money(product.price) },
     // A posted product is physical; registrations and services are not.

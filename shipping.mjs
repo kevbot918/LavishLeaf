@@ -98,7 +98,8 @@ export function quote(lines, { method } = {}) {
       if (!band) throw new ShippingError('This order is over 10 lb, too heavy for our flat rates. Please email support@lavishleaf.org for a shipping quote.');
       const i = SHIPPING.bands.indexOf(band);
       const desc = i === 0 ? 'by weight, up to 1 lb' : 'by weight, ' + (SHIPPING.bands[i - 1].upToOz / 16) + ' to ' + (band.upToOz / 16) + ' lb';
-      parts.push({ from, label: rule.label, cents: band.cents, desc });
+      // oz and upToOz feed the cart's weight meter (owner, 2026-10-11).
+      parts.push({ from, label: rule.label, cents: band.cents, desc, oz, upToOz: band.upToOz });
     }
     const cents = parts.reduce((n, p) => n + p.cents, 0);
     // Plain words, no supplier names (owner, 2026-10-11).
