@@ -518,3 +518,20 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     Maps links of 9 stops) plus "Suggest route days" (sweep by direction from
     the farm into k days, each keeping its customers' most-asked day). The
     form and the confirmation email say the day may change to save fuel.
+
+34. **2026-10-11, fourth list.** **Seeds shelf** on Home, after Farm &
+    Garden: tools/seedsnow-shelf.mjs also writes seedsnow-home.json (94
+    SeedsNow products, public data) and tools/render-store.mjs draws it as
+    the "Seeds" shelf (cards .gs-sn-card, data-id sn-<handle>, every link with
+    the Refersion code, a disclosure line under the title; store.js shows a
+    partner pop-up with no tax or returns line; prices refresh live). Rerun
+    seedsnow-shelf then render-store to refresh it. **Shelves** show every
+    product (SHELF_LENGTH 1000), arrows 56px, a thicker scrollbar, and "See
+    all" is a bold green pill. **More products**: 34 Bangalla lines that came
+    within 10% of Amazon/Walmart (an agent checked 119; brands Amazon
+    undercuts stay out), including cases (compostable cutlery, cups, bowls,
+    recycled foil, Snapware, sponges), and 25 AliExpress lines. AliExpress
+    research lessons: the "10,000+ sold" on a search card counts every seller,
+    the item page's "This seller" count is the real one, and most listings
+    under 5,000 sold have fewer than 10 left; 12 searches and 25 item pages
+    per agent with 5 s waits never met a robot check.

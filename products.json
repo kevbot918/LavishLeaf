@@ -551,6 +551,246 @@
       }
     },
     {
+      "id": "ae-crack-and-gap-weeder",
+      "name": "Crack and Gap Weeder",
+      "category": "Farm & Garden",
+      "tags": [
+        "aliexpress",
+        "crack",
+        "and",
+        "gap",
+        "weeder",
+        "farm",
+        "garden"
+      ],
+      "image": "images/store/ae-3256808710279891.jpg",
+      "imageAlt": "Crack and Gap Weeder",
+      "blurb": "A stainless steel L-shaped hand tool that pulls weeds out of cracks in patios, paths and driveways.",
+      "price": 949,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Crack and Gap Weeder",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 6,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256808710279891",
+        "variant": "Size: S, Color: Silver"
+      }
+    },
+    {
+      "id": "ae-hollow-hand-hoe",
+      "name": "Hollow Hand Hoe",
+      "category": "Farm & Garden",
+      "tags": [
+        "aliexpress",
+        "hollow",
+        "hand",
+        "hoe",
+        "farm",
+        "and",
+        "garden"
+      ],
+      "image": "images/store/ae-3256809042828794.jpg",
+      "imageAlt": "Hollow Hand Hoe",
+      "blurb": "An all-steel hollow hoe that cuts weeds and loosens soil in raised beds and vegetable rows.",
+      "price": 849,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Hollow Hand Hoe",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 14,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256809042828794",
+        "variant": "(no options)"
+      }
+    },
+    {
+      "id": "ae-brass-hose-nozzle",
+      "name": "Brass Hose Nozzle",
+      "category": "Farm & Garden",
+      "tags": [
+        "aliexpress",
+        "brass",
+        "hose",
+        "nozzle",
+        "farm",
+        "and",
+        "garden"
+      ],
+      "image": "images/store/ae-3256806677410097.jpg",
+      "imageAlt": "Brass Hose Nozzle",
+      "blurb": "A brass twist nozzle that goes from a soft shower to a strong jet for watering and washing.",
+      "price": 749,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Brass Hose Nozzle",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 6,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256806677410097",
+        "variant": "Color: Nozzle-Connector 12"
+      }
+    },
+    {
+      "id": "ae-bird-watering-globes-5-pack",
+      "name": "Bird Watering Globes, 5 pack",
+      "category": "Farm & Garden",
+      "tags": [
+        "aliexpress",
+        "bird",
+        "watering",
+        "globes",
+        "pack",
+        "farm",
+        "and",
+        "garden"
+      ],
+      "image": "images/store/ae-3256807958408165.jpg",
+      "imageAlt": "Bird Watering Globes, 5 pack",
+      "blurb": "Five bird-shaped watering globes that slowly feed water to potted plants while you are away. The photo shows the range; you get 5 globes.",
+      "price": 749,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Bird Watering Globes, 5 pack",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 6,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256807958408165",
+        "variant": "Color: 5pcs"
+      }
+    },
+    {
+      "id": "ae-honeycomb-pot-trellis-2-pack",
+      "name": "Honeycomb Pot Trellis, 2 pack",
+      "category": "Farm & Garden",
+      "tags": [
+        "aliexpress",
+        "honeycomb",
+        "pot",
+        "trellis",
+        "pack",
+        "farm",
+        "and",
+        "garden"
+      ],
+      "image": "images/store/ae-3256811780628276.jpg",
+      "imageAlt": "Honeycomb Pot Trellis, 2 pack",
+      "blurb": "Two rustproof honeycomb trellises that give climbing houseplants and vines something to grow on.",
+      "price": 599,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Honeycomb Pot Trellis, 2 pack",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 4,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256811780628276",
+        "variant": "Color: 2pcs"
+      }
+    },
+    {
+      "id": "ae-nylon-garden-gloves-12-pairs",
+      "name": "Nylon Garden Gloves, 12 pairs",
+      "category": "Farm & Garden",
+      "tags": [
+        "aliexpress",
+        "nylon",
+        "garden",
+        "gloves",
+        "pairs",
+        "farm",
+        "and"
+      ],
+      "image": "images/store/ae-3256808372636749.jpg",
+      "imageAlt": "Nylon Garden Gloves, 12 pairs",
+      "blurb": "Twelve pairs of breathable nylon garden gloves for planting, weeding and digging. Latex-free.",
+      "price": 1199,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Nylon Garden Gloves, 12 pairs",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 12,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256808372636749",
+        "variant": "Color: 12PAIRS, Size: One Size"
+      }
+    },
+    {
+      "id": "ae-thorn-proof-gauntlet-garden-gloves",
+      "name": "Thorn-Proof Gauntlet Garden Gloves",
+      "category": "Farm & Garden",
+      "tags": [
+        "aliexpress",
+        "thorn",
+        "proof",
+        "gauntlet",
+        "garden",
+        "gloves",
+        "farm",
+        "and"
+      ],
+      "image": "images/store/ae-3256808061782665.jpg",
+      "imageAlt": "Thorn-Proof Gauntlet Garden Gloves",
+      "blurb": "Long-cuff gardening gloves that guard hands and forearms from thorns when pruning roses and brambles. Colour varies.",
+      "price": 1149,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Thorn-Proof Gauntlet Garden Gloves",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 8,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256808061782665",
+        "variant": "Color: Color random"
+      },
+      "options": {
+        "label": "Size",
+        "values": [
+          {
+            "name": "S",
+            "note": "Color: Color random / S"
+          },
+          {
+            "name": "L",
+            "note": "Color: Color random / L"
+          }
+        ]
+      }
+    },
+    {
       "id": "soccer-player-fall",
       "name": "Player Registration: 7v7 Adult Soccer League (Fall Season)",
       "category": "Recreation & Outdoors",
@@ -1204,6 +1444,147 @@
           {
             "name": "XXL",
             "note": "1pair blue / XXL"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ae-folding-foam-sit-pad-blue",
+      "name": "Folding Foam Sit Pad, Blue",
+      "category": "Recreation & Outdoors",
+      "tags": [
+        "aliexpress",
+        "folding",
+        "foam",
+        "sit",
+        "pad",
+        "blue",
+        "recreation",
+        "and",
+        "outdoors"
+      ],
+      "image": "images/store/ae-3256806541089598.jpg",
+      "imageAlt": "Folding Foam Sit Pad, Blue",
+      "blurb": "A light folding foam pad that keeps you dry and comfortable on damp ground, bleachers or trail rocks. The photo shows the range; you get the blue pad.",
+      "price": 499,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Folding Foam Sit Pad, Blue",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 3,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256806541089598",
+        "variant": "Color: Blue"
+      }
+    },
+    {
+      "id": "ae-resistance-band-with-handles",
+      "name": "Resistance Band with Handles",
+      "category": "Recreation & Outdoors",
+      "tags": [
+        "aliexpress",
+        "resistance",
+        "band",
+        "with",
+        "handles",
+        "recreation",
+        "and",
+        "outdoors"
+      ],
+      "image": "images/store/ae-3256812816369253.jpg",
+      "imageAlt": "Resistance Band with Handles",
+      "blurb": "A stretch band with padded handles for strength workouts at home, at the park or on the road. Latex band.",
+      "price": 699,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Resistance Band with Handles",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 6,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256812816369253",
+        "variant": "Color"
+      },
+      "options": {
+        "label": "Resistance",
+        "values": [
+          {
+            "name": "10 lb",
+            "note": "Color: 10LB"
+          },
+          {
+            "name": "15 lb",
+            "note": "Color: 15LB"
+          },
+          {
+            "name": "20 lb",
+            "note": "Color: 20LB"
+          },
+          {
+            "name": "25 lb",
+            "note": "Color: 25LB"
+          },
+          {
+            "name": "30 lb",
+            "note": "Color: 30LB"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ae-sports-sweatband-headband",
+      "name": "Sports Sweatband Headband",
+      "category": "Recreation & Outdoors",
+      "tags": [
+        "aliexpress",
+        "sports",
+        "sweatband",
+        "headband",
+        "recreation",
+        "and",
+        "outdoors"
+      ],
+      "image": "images/store/ae-3256806084022608.jpg",
+      "imageAlt": "Sports Sweatband Headband",
+      "blurb": "A soft, stretchy, quick-dry band that keeps sweat and hair out of your eyes during soccer, running or workouts.",
+      "price": 449,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Sports Sweatband Headband",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 1,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256806084022608",
+        "variant": "Color"
+      },
+      "options": {
+        "label": "Colour",
+        "values": [
+          {
+            "name": "Gray",
+            "note": "Color: GRAY"
+          },
+          {
+            "name": "Dark Blue",
+            "note": "Color: dark blue"
+          },
+          {
+            "name": "Rose Red",
+            "note": "Color: Rose Red"
           }
         ]
       }
@@ -5972,6 +6353,378 @@
       }
     },
     {
+      "id": "bg-one-with-nature-dead-sea-mineral-bar-soap-7-oz",
+      "name": "One With Nature Dead Sea Mineral Bar Soap, 7 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "one",
+        "with",
+        "nature",
+        "dead",
+        "sea",
+        "mineral",
+        "bar",
+        "soap",
+        "lemon",
+        "sage",
+        "salt",
+        "eucalyptus",
+        "rose",
+        "petal",
+        "mud"
+      ],
+      "image": "images/store/b-51323-1pk.jpg",
+      "imageAlt": "One With Nature Dead Sea Mineral Bar Soap, 7 oz",
+      "blurb": "A big bar soap made with Dead Sea minerals and shea butter.",
+      "price": 699,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: One With Nature Dead Sea Mineral Bar Soap, 7 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 11,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-51323-1PK"
+      },
+      "options": {
+        "label": "Scent",
+        "values": [
+          {
+            "name": "Lemon Sage",
+            "sku": "B-51323-1PK"
+          },
+          {
+            "name": "Dead Sea Salt",
+            "sku": "B-51328-1PK"
+          },
+          {
+            "name": "Eucalyptus",
+            "sku": "B-51704-1PK"
+          },
+          {
+            "name": "Rose Petal",
+            "sku": "B-51330-1PK"
+          },
+          {
+            "name": "Dead Sea Mud",
+            "sku": "B-51327-1PK"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bg-spry-xylitol-toothpaste-fluoride-free-5-oz",
+      "name": "Spry Xylitol Toothpaste, Fluoride-Free, 5 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "spry",
+        "xylitol",
+        "toothpaste",
+        "fluoride",
+        "free",
+        "peppermint",
+        "spearmint"
+      ],
+      "image": "images/store/b-27167-1pk.jpg",
+      "imageAlt": "Spry Xylitol Toothpaste, Fluoride-Free, 5 oz",
+      "blurb": "A fluoride-free toothpaste sweetened with xylitol for a fresh, clean mouth.",
+      "price": 899,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Spry Xylitol Toothpaste, Fluoride-Free, 5 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 9,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-27167-1PK"
+      },
+      "options": {
+        "label": "Flavour",
+        "values": [
+          {
+            "name": "Peppermint",
+            "sku": "B-27167-1PK"
+          },
+          {
+            "name": "Spearmint",
+            "sku": "B-31110-1PK"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bg-spry-xylitol-oral-rinse-16-oz",
+      "name": "Spry Xylitol Oral Rinse, 16 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "spry",
+        "xylitol",
+        "oral",
+        "rinse",
+        "spearmint",
+        "cool",
+        "mint"
+      ],
+      "image": "images/store/b-87050-1pk.jpg",
+      "imageAlt": "Spry Xylitol Oral Rinse, 16 oz",
+      "blurb": "An alcohol-free mouth rinse with xylitol for fresh breath.",
+      "price": 1099,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Spry Xylitol Oral Rinse, 16 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 25,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-87050-1PK"
+      },
+      "options": {
+        "label": "Flavour",
+        "values": [
+          {
+            "name": "Spearmint",
+            "sku": "B-87050-1PK"
+          },
+          {
+            "name": "Cool Mint",
+            "sku": "B-87047-1PK"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bg-spry-kids-xylitol-oral-rinse-bubble-gum-16-oz",
+      "name": "Spry Kids Xylitol Oral Rinse, Bubble Gum, 16 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "spry",
+        "kids",
+        "xylitol",
+        "oral",
+        "rinse",
+        "bubble",
+        "gum"
+      ],
+      "image": "images/store/b-17261-1pk.jpg",
+      "imageAlt": "Spry Kids Xylitol Oral Rinse, Bubble Gum, 16 oz",
+      "blurb": "A bubble gum flavoured, alcohol-free xylitol mouth rinse made for kids.",
+      "price": 1099,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Spry Kids Xylitol Oral Rinse, Bubble Gum, 16 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 25,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-17261-1PK"
+      }
+    },
+    {
+      "id": "bg-clearly-natural-glycerine-liquid-hand-soap-12-oz",
+      "name": "Clearly Natural Glycerine Liquid Hand Soap, 12 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "clearly",
+        "natural",
+        "glycerine",
+        "liquid",
+        "hand",
+        "soap",
+        "aloe",
+        "vera",
+        "unscented"
+      ],
+      "image": "images/store/b-82973-1pk.jpg",
+      "imageAlt": "Clearly Natural Glycerine Liquid Hand Soap, 12 oz",
+      "blurb": "A pure glycerine pump hand soap, gentle on skin.",
+      "price": 799,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Clearly Natural Glycerine Liquid Hand Soap, 12 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 21,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-82973-1PK"
+      },
+      "options": {
+        "label": "Kind",
+        "values": [
+          {
+            "name": "Aloe Vera",
+            "sku": "B-82973-1PK"
+          },
+          {
+            "name": "Unscented",
+            "sku": "B-82891-1PK"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bg-nubian-heritage-raw-shea-butter-bar-soap-5-oz",
+      "name": "Nubian Heritage Raw Shea Butter Bar Soap, 5 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "nubian",
+        "heritage",
+        "raw",
+        "shea",
+        "butter",
+        "bar",
+        "soap"
+      ],
+      "image": "images/store/b-87533-1pk.jpg",
+      "imageAlt": "Nubian Heritage Raw Shea Butter Bar Soap, 5 oz",
+      "blurb": "A rich raw shea butter bar with frankincense and myrrh for dry skin.",
+      "price": 799,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Nubian Heritage Raw Shea Butter Bar Soap, 5 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 9,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-87533-1PK"
+      }
+    },
+    {
+      "id": "bg-kirks-lemon-eucalyptus-castile-hand-soap-12-oz",
+      "name": "Kirk's Lemon Eucalyptus Castile Hand Soap, 12 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "kirks",
+        "lemon",
+        "eucalyptus",
+        "castile",
+        "hand",
+        "soap"
+      ],
+      "image": "images/store/b-14711-1pk.jpg",
+      "imageAlt": "Kirk's Lemon Eucalyptus Castile Hand Soap, 12 oz",
+      "blurb": "A castile pump hand soap with a fresh lemon eucalyptus scent.",
+      "price": 699,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Kirk's Lemon Eucalyptus Castile Hand Soap, 12 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 16,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-14711-1PK"
+      }
+    },
+    {
+      "id": "bg-hello-activated-charcoal-toothbrush-soft",
+      "name": "Hello Activated Charcoal Toothbrush, Soft",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "hello",
+        "activated",
+        "charcoal",
+        "toothbrush",
+        "soft"
+      ],
+      "image": "images/store/b-77612-1pk.jpg",
+      "imageAlt": "Hello Activated Charcoal Toothbrush, Soft",
+      "blurb": "A soft toothbrush with charcoal-infused bristles and a BPA-free handle.",
+      "price": 699,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Hello Activated Charcoal Toothbrush, Soft",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 10,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-77612-1PK"
+      }
+    },
+    {
+      "id": "bg-herban-cowboy-dry-spray-deodorant-28-oz",
+      "name": "Herban Cowboy Dry Spray Deodorant, 2.8 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "herban",
+        "cowboy",
+        "dry",
+        "spray",
+        "deodorant",
+        "dusk",
+        "sport"
+      ],
+      "image": "images/store/b-41223-1pk.jpg",
+      "imageAlt": "Herban Cowboy Dry Spray Deodorant, 2.8 oz",
+      "blurb": "An aluminium-free dry spray deodorant.",
+      "price": 1499,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Herban Cowboy Dry Spray Deodorant, 2.8 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 8,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-41223-1PK"
+      },
+      "options": {
+        "label": "Scent",
+        "values": [
+          {
+            "name": "Dusk",
+            "sku": "B-41223-1PK"
+          },
+          {
+            "name": "Sport",
+            "sku": "B-41224-1PK"
+          }
+        ]
+      }
+    },
+    {
       "id": "bg-roland-bamboo-toothpicks-case-of-12-x-300",
       "name": "Roland Bamboo Toothpicks, case of 12 x 300",
       "category": "Home & Kitchen",
@@ -6593,6 +7346,288 @@
       }
     },
     {
+      "id": "bg-if-you-care-recycled-aluminum-foil-50-sq-ft-case-of-12",
+      "name": "If You Care Recycled Aluminum Foil, 50 sq ft, case of 12",
+      "category": "Home & Kitchen",
+      "tags": [
+        "bangalla",
+        "you",
+        "care",
+        "recycled",
+        "aluminum",
+        "foil",
+        "case"
+      ],
+      "image": "images/store/b-62208-12pk.jpg",
+      "imageAlt": "If You Care Recycled Aluminum Foil, 50 sq ft, case of 12",
+      "blurb": "Kitchen foil made from 100% recycled aluminum: twelve rolls, about $9.50 a roll.",
+      "price": 11399,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: If You Care Recycled Aluminum Foil, 50 sq ft, case of 12",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 105,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-62208-12PK"
+      }
+    },
+    {
+      "id": "bg-world-centric-compostable-spoons-24-count-case-of-12",
+      "name": "World Centric Compostable Spoons, 24 count, case of 12",
+      "category": "Home & Kitchen",
+      "tags": [
+        "bangalla",
+        "world",
+        "centric",
+        "compostable",
+        "spoons",
+        "count",
+        "case"
+      ],
+      "image": "images/store/b-64765-12pk.jpg",
+      "imageAlt": "World Centric Compostable Spoons, 24 count, case of 12",
+      "blurb": "Compostable corn starch spoons for parties and picnics: 288 spoons.",
+      "price": 3299,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: World Centric Compostable Spoons, 24 count, case of 12",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 90,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-64765-12PK"
+      }
+    },
+    {
+      "id": "bg-world-centric-compostable-knives-24-count-case-of-12",
+      "name": "World Centric Compostable Knives, 24 count, case of 12",
+      "category": "Home & Kitchen",
+      "tags": [
+        "bangalla",
+        "world",
+        "centric",
+        "compostable",
+        "knives",
+        "count",
+        "case"
+      ],
+      "image": "images/store/b-64766-12pk.jpg",
+      "imageAlt": "World Centric Compostable Knives, 24 count, case of 12",
+      "blurb": "Compostable corn starch knives for parties and picnics: 288 knives.",
+      "price": 3299,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: World Centric Compostable Knives, 24 count, case of 12",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 90,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-64766-12PK"
+      }
+    },
+    {
+      "id": "bg-preserve-recycled-cutlery-24-count-case-of-12",
+      "name": "Preserve Recycled Cutlery, 24 count, case of 12",
+      "category": "Home & Kitchen",
+      "tags": [
+        "bangalla",
+        "preserve",
+        "recycled",
+        "cutlery",
+        "count",
+        "case"
+      ],
+      "image": "images/store/b-67595-12pk.jpg",
+      "imageAlt": "Preserve Recycled Cutlery, 24 count, case of 12",
+      "blurb": "Sturdy reusable cutlery made in the USA from recycled plastic: 288 pieces.",
+      "price": 5499,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Preserve Recycled Cutlery, 24 count, case of 12",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 63,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-67595-12PK"
+      }
+    },
+    {
+      "id": "bg-world-centric-compostable-hot-cups-12-oz-20-count-case-of-12",
+      "name": "World Centric Compostable Hot Cups, 12 oz, 20 count, case of 12",
+      "category": "Home & Kitchen",
+      "tags": [
+        "bangalla",
+        "world",
+        "centric",
+        "compostable",
+        "hot",
+        "cups",
+        "count",
+        "case"
+      ],
+      "image": "images/store/b-89513-12pk.jpg",
+      "imageAlt": "World Centric Compostable Hot Cups, 12 oz, 20 count, case of 12",
+      "blurb": "Compostable paper cups for coffee, tea and other hot drinks: 240 cups.",
+      "price": 6799,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: World Centric Compostable Hot Cups, 12 oz, 20 count, case of 12",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 126,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-89513-12PK"
+      }
+    },
+    {
+      "id": "bg-repurpose-compostable-bowls-16-oz-20-count-case-of-12",
+      "name": "Repurpose Compostable Bowls, 16 oz, 20 count, case of 12",
+      "category": "Home & Kitchen",
+      "tags": [
+        "bangalla",
+        "repurpose",
+        "compostable",
+        "bowls",
+        "count",
+        "case"
+      ],
+      "image": "images/store/b-82389-12pk.jpg",
+      "imageAlt": "Repurpose Compostable Bowls, 16 oz, 20 count, case of 12",
+      "blurb": "Sturdy compostable plant-fiber bowls for soups, salads and snacks: 240 bowls.",
+      "price": 7799,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Repurpose Compostable Bowls, 16 oz, 20 count, case of 12",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 127,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-82389-12PK"
+      }
+    },
+    {
+      "id": "bg-natural-value-reclosable-sandwich-bags-40-count-case-of-12",
+      "name": "Natural Value Reclosable Sandwich Bags, 40 count, case of 12",
+      "category": "Home & Kitchen",
+      "tags": [
+        "bangalla",
+        "natural",
+        "value",
+        "reclosable",
+        "sandwich",
+        "bags",
+        "count",
+        "case"
+      ],
+      "image": "images/store/b-61782-12pk.jpg",
+      "imageAlt": "Natural Value Reclosable Sandwich Bags, 40 count, case of 12",
+      "blurb": "Reclosable sandwich bags for lunches and snacks: 480 bags.",
+      "price": 5899,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Natural Value Reclosable Sandwich Bags, 40 count, case of 12",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 71,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-61782-12PK"
+      }
+    },
+    {
+      "id": "bg-snapware-total-solution-4-cup-round-glass-container-4-pack",
+      "name": "Snapware Total Solution 4-Cup Round Glass Container, 4 pack",
+      "category": "Home & Kitchen",
+      "tags": [
+        "bangalla",
+        "snapware",
+        "total",
+        "solution",
+        "cup",
+        "round",
+        "glass",
+        "container",
+        "pack"
+      ],
+      "image": "images/store/b-57931-4pk.jpg",
+      "imageAlt": "Snapware Total Solution 4-Cup Round Glass Container, 4 pack",
+      "blurb": "Glass storage bowls with locking lids, safe for oven, microwave and freezer.",
+      "price": 4499,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Snapware Total Solution 4-Cup Round Glass Container, 4 pack",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 105,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-57931-4PK"
+      }
+    },
+    {
+      "id": "bg-snapware-total-solution-6-cup-rectangle-glass-container-2-pa",
+      "name": "Snapware Total Solution 6-Cup Rectangle Glass Container, 2 pack",
+      "category": "Home & Kitchen",
+      "tags": [
+        "bangalla",
+        "snapware",
+        "total",
+        "solution",
+        "cup",
+        "rectangle",
+        "glass",
+        "container"
+      ],
+      "image": "images/store/b-57925-2pk.jpg",
+      "imageAlt": "Snapware Total Solution 6-Cup Rectangle Glass Container, 2 pack",
+      "blurb": "Large glass storage containers with locking lids for leftovers and meal prep.",
+      "price": 2599,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Snapware Total Solution 6-Cup Rectangle Glass Container, 2 pack",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 89,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-57925-2PK"
+      }
+    },
+    {
       "id": "bg-full-circle-wipe-out-squeegee",
       "name": "Full Circle Wipe Out Squeegee",
       "category": "Cleaning Supplies",
@@ -6910,6 +7945,267 @@
         "supplier": "AliExpress",
         "item": "3256807066925161",
         "variant": "1Pc"
+      }
+    },
+    {
+      "id": "bg-natural-value-kitchen-scrubber-sponge-case-of-24",
+      "name": "Natural Value Kitchen Scrubber Sponge, case of 24",
+      "category": "Cleaning Supplies",
+      "tags": [
+        "bangalla",
+        "natural",
+        "value",
+        "kitchen",
+        "scrubber",
+        "sponge",
+        "case"
+      ],
+      "image": "images/store/b-60710-24pk.jpg",
+      "imageAlt": "Natural Value Kitchen Scrubber Sponge, case of 24",
+      "blurb": "Everyday kitchen scrubber sponges for dishes and counters: 24 sponges.",
+      "price": 5199,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Natural Value Kitchen Scrubber Sponge, case of 24",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 32,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-60710-24PK"
+      }
+    },
+    {
+      "id": "bg-full-circle-walnut-scrubber-sponge-2-count-case-of-6",
+      "name": "Full Circle Walnut Scrubber Sponge, 2 count, case of 6",
+      "category": "Cleaning Supplies",
+      "tags": [
+        "bangalla",
+        "full",
+        "circle",
+        "walnut",
+        "scrubber",
+        "sponge",
+        "count",
+        "case"
+      ],
+      "image": "images/store/b-60214-6pk.jpg",
+      "imageAlt": "Full Circle Walnut Scrubber Sponge, 2 count, case of 6",
+      "blurb": "Plant-based sponges with a walnut shell scrubber that cleans without scratching: 12 sponges.",
+      "price": 3299,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Full Circle Walnut Scrubber Sponge, 2 count, case of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 12,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-60214-6PK"
+      }
+    },
+    {
+      "id": "bg-full-circle-wash-and-dry-microfiber-duster-case-of-6",
+      "name": "Full Circle Wash and Dry Microfiber Duster, case of 6",
+      "category": "Cleaning Supplies",
+      "tags": [
+        "bangalla",
+        "full",
+        "circle",
+        "wash",
+        "and",
+        "dry",
+        "microfiber",
+        "duster",
+        "case"
+      ],
+      "image": "images/store/b-61850-6pk.jpg",
+      "imageAlt": "Full Circle Wash and Dry Microfiber Duster, case of 6",
+      "blurb": "A fluffy microfiber duster you can wash and reuse, for blinds and shelves: 6 dusters.",
+      "price": 9499,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Full Circle Wash and Dry Microfiber Duster, case of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 44,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-61850-6PK"
+      }
+    },
+    {
+      "id": "bg-casabella-kind-plant-based-scrub-sponges-6-count-case-of-8",
+      "name": "Casabella Kind Plant-Based Scrub Sponges, 6 count, case of 8",
+      "category": "Cleaning Supplies",
+      "tags": [
+        "bangalla",
+        "casabella",
+        "kind",
+        "plant",
+        "based",
+        "scrub",
+        "sponges",
+        "count",
+        "case"
+      ],
+      "image": "images/store/b-24621-8pk.jpg",
+      "imageAlt": "Casabella Kind Plant-Based Scrub Sponges, 6 count, case of 8",
+      "blurb": "Plant-based scrub sponges for everyday dishwashing: 48 sponges.",
+      "price": 8599,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Casabella Kind Plant-Based Scrub Sponges, 6 count, case of 8",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 54,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-24621-8PK"
+      }
+    },
+    {
+      "id": "ae-long-handle-scrub-brush-blue",
+      "name": "Long-Handle Scrub Brush, Blue",
+      "category": "Cleaning Supplies",
+      "tags": [
+        "aliexpress",
+        "long",
+        "handle",
+        "scrub",
+        "brush",
+        "blue",
+        "cleaning",
+        "supplies"
+      ],
+      "image": "images/store/ae-3256813079699562.jpg",
+      "imageAlt": "Long-Handle Scrub Brush, Blue",
+      "blurb": "A small stiff-bristle brush on a long handle for scrubbing tubs, tile and floors without bending over. The photo shows the range; you get the blue brush.",
+      "price": 899,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Long-Handle Scrub Brush, Blue",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 8,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256813079699562",
+        "variant": "Color: Blue"
+      }
+    },
+    {
+      "id": "ae-stiff-bristle-scrub-brush-set",
+      "name": "Stiff Bristle Scrub Brush Set",
+      "category": "Cleaning Supplies",
+      "tags": [
+        "aliexpress",
+        "stiff",
+        "bristle",
+        "scrub",
+        "brush",
+        "set",
+        "cleaning",
+        "supplies"
+      ],
+      "image": "images/store/ae-3256812781466180.jpg",
+      "imageAlt": "Stiff Bristle Scrub Brush Set",
+      "blurb": "Firm-bristle scrub brushes with non-slip handles for sinks, grout lines and tight gaps.",
+      "price": 899,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Stiff Bristle Scrub Brush Set",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 8,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256812781466180",
+        "variant": "Color: -"
+      }
+    },
+    {
+      "id": "ae-3-in-1-window-squeegee-with-sprayer",
+      "name": "3-in-1 Window Squeegee with Sprayer",
+      "category": "Cleaning Supplies",
+      "tags": [
+        "aliexpress",
+        "window",
+        "squeegee",
+        "with",
+        "sprayer",
+        "cleaning",
+        "supplies"
+      ],
+      "image": "images/store/ae-3256812970624972.jpg",
+      "imageAlt": "3-in-1 Window Squeegee with Sprayer",
+      "blurb": "A window tool that combines a squeegee, a scrubbing pad and an empty spray bottle in one handle.",
+      "price": 799,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: 3-in-1 Window Squeegee with Sprayer",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 10,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256812970624972",
+        "variant": "Color: ps-Blue"
+      }
+    },
+    {
+      "id": "ae-long-handle-shoe-and-laundry-brush",
+      "name": "Long-Handle Shoe and Laundry Brush",
+      "category": "Cleaning Supplies",
+      "tags": [
+        "aliexpress",
+        "long",
+        "handle",
+        "shoe",
+        "and",
+        "laundry",
+        "brush",
+        "cleaning",
+        "supplies"
+      ],
+      "image": "images/store/ae-3256805572566316.jpg",
+      "imageAlt": "Long-Handle Shoe and Laundry Brush",
+      "blurb": "A soft-bristle brush with a long handle for cleaning sneakers, collars and cuffs.",
+      "price": 649,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Long-Handle Shoe and Laundry Brush",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 4,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256805572566316",
+        "variant": "Color: Green"
       }
     },
     {
@@ -7953,6 +9249,104 @@
       }
     },
     {
+      "id": "ae-vintage-leather-look-a5-notebook",
+      "name": "Vintage Leather-Look A5 Notebook",
+      "category": "Games & Gifts",
+      "tags": [
+        "aliexpress",
+        "vintage",
+        "leather",
+        "look",
+        "notebook",
+        "games",
+        "and",
+        "gifts"
+      ],
+      "image": "images/store/ae-3256811871884730.jpg",
+      "imageAlt": "Vintage Leather-Look A5 Notebook",
+      "blurb": "A soft-cover A5 notebook with a vintage leather look, good for journaling or notes. The photo shows the range; you get the black notebook.",
+      "price": 949,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Vintage Leather-Look A5 Notebook",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 10,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256811871884730",
+        "variant": "Color: black + Size: A5"
+      }
+    },
+    {
+      "id": "ae-thick-a5-notebook-256-pages",
+      "name": "Thick A5 Notebook, 256 pages",
+      "category": "Games & Gifts",
+      "tags": [
+        "aliexpress",
+        "thick",
+        "notebook",
+        "pages",
+        "games",
+        "and",
+        "gifts"
+      ],
+      "image": "images/store/ae-3256810386453611.jpg",
+      "imageAlt": "Thick A5 Notebook, 256 pages",
+      "blurb": "A thick 256-page A5 notebook for sketches, lists and daily writing.",
+      "price": 949,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Thick A5 Notebook, 256 pages",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 14,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256810386453611",
+        "variant": "Color: Black"
+      }
+    },
+    {
+      "id": "ae-mini-magnetic-travel-chess",
+      "name": "Mini Magnetic Travel Chess",
+      "category": "Games & Gifts",
+      "tags": [
+        "aliexpress",
+        "mini",
+        "magnetic",
+        "travel",
+        "chess",
+        "games",
+        "and",
+        "gifts"
+      ],
+      "image": "images/store/ae-3256806823876168.jpg",
+      "imageAlt": "Mini Magnetic Travel Chess",
+      "blurb": "A folding magnetic chess set whose pieces stay put, made for travel and quick games. Ages 14 and up.",
+      "price": 749,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Mini Magnetic Travel Chess",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 6,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256806823876168",
+        "variant": "Color: Mini chess"
+      }
+    },
+    {
       "id": "ae-reflective-padded-dog-leash-5-ft",
       "name": "Reflective Padded Dog Leash, 5 ft",
       "category": "Pets",
@@ -8148,6 +9542,278 @@
         "supplier": "AliExpress",
         "item": "3256809551842887",
         "variant": "carrot / 3pcs"
+      }
+    },
+    {
+      "id": "ae-reflective-dog-car-seat-belt",
+      "name": "Reflective Dog Car Seat Belt",
+      "category": "Pets",
+      "tags": [
+        "aliexpress",
+        "reflective",
+        "dog",
+        "car",
+        "seat",
+        "belt",
+        "pets"
+      ],
+      "image": "images/store/ae-3256805459747163.jpg",
+      "imageAlt": "Reflective Dog Car Seat Belt",
+      "blurb": "A reflective, adjustable strap that clips a dog's harness to the car seat belt buckle. The photo shows the range; you get the black belt.",
+      "price": 599,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Reflective Dog Car Seat Belt",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 3,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256805459747163",
+        "variant": "Color: black"
+      }
+    },
+    {
+      "id": "ae-cat-harness-and-leash-set-small",
+      "name": "Cat Harness and Leash Set, Small",
+      "category": "Pets",
+      "tags": [
+        "aliexpress",
+        "cat",
+        "harness",
+        "and",
+        "leash",
+        "set",
+        "small",
+        "pets"
+      ],
+      "image": "images/store/ae-3256807159507269.jpg",
+      "imageAlt": "Cat Harness and Leash Set, Small",
+      "blurb": "A soft vest-style harness with a matching leash, sized for cats and small pets (3 to 9 lb).",
+      "price": 599,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Cat Harness and Leash Set, Small",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 4,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256807159507269",
+        "variant": "Color: yellow + Size: S 1.5-4kg of pet"
+      }
+    },
+    {
+      "id": "ae-feather-bird-cat-wand-with-bell",
+      "name": "Feather Bird Cat Wand with Bell",
+      "category": "Pets",
+      "tags": [
+        "aliexpress",
+        "feather",
+        "bird",
+        "cat",
+        "wand",
+        "with",
+        "bell",
+        "pets"
+      ],
+      "image": "images/store/ae-3256809198376368.jpg",
+      "imageAlt": "Feather Bird Cat Wand with Bell",
+      "blurb": "A wand with a feather bird and a bell on the end for chase-and-pounce play with your cat. The photo shows the range; you get the brown (coffee) bird wand.",
+      "price": 599,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Feather Bird Cat Wand with Bell",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 3,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256809198376368",
+        "variant": "Color: Coffee Bird"
+      }
+    },
+    {
+      "id": "ae-cat-toy-variety-pack-14-pieces",
+      "name": "Cat Toy Variety Pack, 14 pieces",
+      "category": "Pets",
+      "tags": [
+        "aliexpress",
+        "cat",
+        "toy",
+        "variety",
+        "pack",
+        "pieces",
+        "pets"
+      ],
+      "image": "images/store/ae-3256809551690154.jpg",
+      "imageAlt": "Cat Toy Variety Pack, 14 pieces",
+      "blurb": "A mixed bag of 14 plush and plastic cat toys to rotate through playtime. The photo shows the range; you get the 14-piece pack.",
+      "price": 799,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Cat Toy Variety Pack, 14 pieces",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 6,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256809551690154",
+        "variant": "Color: 14pcs"
+      }
+    },
+    {
+      "id": "ae-self-cleaning-slicker-brush",
+      "name": "Self-Cleaning Slicker Brush",
+      "category": "Pets",
+      "tags": [
+        "aliexpress",
+        "self",
+        "cleaning",
+        "slicker",
+        "brush",
+        "pets"
+      ],
+      "image": "images/store/ae-3256812949370751.jpg",
+      "imageAlt": "Self-Cleaning Slicker Brush",
+      "blurb": "A pet brush that lifts loose undercoat and releases the hair with one click for easy cleanup.",
+      "price": 649,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Self-Cleaning Slicker Brush",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 5,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256812949370751",
+        "variant": "Color: Gray"
+      }
+    },
+    {
+      "id": "ae-trimmable-cat-scratch-mat-12-x-39-in",
+      "name": "Trimmable Cat Scratch Mat, 12 x 39 in",
+      "category": "Pets",
+      "tags": [
+        "aliexpress",
+        "trimmable",
+        "cat",
+        "scratch",
+        "mat",
+        "pets"
+      ],
+      "image": "images/store/ae-3256807159225450.jpg",
+      "imageAlt": "Trimmable Cat Scratch Mat, 12 x 39 in",
+      "blurb": "A carpet-style mat that sticks to sofa sides or walls and can be cut to size, so cats scratch it instead of the furniture.",
+      "price": 949,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Trimmable Cat Scratch Mat, 12 x 39 in",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 10,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256807159225450",
+        "variant": "Size: 30x100CM"
+      },
+      "options": {
+        "label": "Colour",
+        "values": [
+          {
+            "name": "Black",
+            "note": "Size: 30x100CM / Black"
+          },
+          {
+            "name": "Brown",
+            "note": "Size: 30x100CM / Brown"
+          },
+          {
+            "name": "White",
+            "note": "Size: 30x100CM / White"
+          }
+        ]
+      }
+    },
+    {
+      "id": "ae-oval-cardboard-cat-scratcher-bed-16-in",
+      "name": "Oval Cardboard Cat Scratcher Bed, 16 in",
+      "category": "Pets",
+      "tags": [
+        "aliexpress",
+        "oval",
+        "cardboard",
+        "cat",
+        "scratcher",
+        "bed",
+        "pets"
+      ],
+      "image": "images/store/ae-3256809620493683.jpg",
+      "imageAlt": "Oval Cardboard Cat Scratcher Bed, 16 in",
+      "blurb": "A curved cardboard scratcher shaped like a shallow bowl, so a cat can scratch it and nap in it.",
+      "price": 1049,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Oval Cardboard Cat Scratcher Bed, 16 in",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 40,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256809620493683",
+        "variant": "41cm"
+      }
+    },
+    {
+      "id": "ae-dog-poop-bags-5-rolls-75-bags",
+      "name": "Dog Poop Bags, 5 rolls (75 bags)",
+      "category": "Pets",
+      "tags": [
+        "aliexpress",
+        "dog",
+        "poop",
+        "bags",
+        "rolls",
+        "pets"
+      ],
+      "image": "images/store/ae-3256813069125172.jpg",
+      "imageAlt": "Dog Poop Bags, 5 rolls (75 bags)",
+      "blurb": "Five rolls of leak-resistant green waste bags that fit standard leash dispensers. The photo shows the range; you get 5 rolls, 75 bags.",
+      "price": 649,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Dog Poop Bags, 5 rolls (75 bags)",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 6,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256813069125172",
+        "variant": "Color: Green, Size: 5 Rolls 75pcs"
       }
     }
   ]
