@@ -215,8 +215,9 @@ for (const file of readdirSync(ROOT).filter((f) => f.endsWith('.html'))) {
   // links mode costs visitors nothing.
   if (b >= 0 && e > b) {
     const TAG = '<script src="cart.js" defer></script>\n';
-    if (CART && !s.includes(TAG)) s = s.replace('</body>', TAG + '</body>');
-    if (!CART) s = s.split(TAG).join('');
+    // One tag, whatever the line endings (a CRLF file once collected three).
+    s = s.replace(/<script src="cart\.js" defer><\/script>\r?\n?/g, '');
+    if (CART) s = s.replace('</body>', TAG + '</body>');
   }
 
   // 2. Every tagged button, wherever it is. Only the href and the tab
