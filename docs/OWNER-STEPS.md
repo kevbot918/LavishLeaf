@@ -113,7 +113,9 @@ you have its email): Search Console -> lavishleaf.org -> **Settings** ->
 **Users and permissions** -> **Add user** -> paste the service account email
 -> Permission **Restricted** -> **Add**.
 
-**Do this first (recommended 2026-10-06): stop the double DNS.** Squarespace
+**DNS lives at SQUARESPACE (settled 2026-10-11; the paragraph below is history).** The domain now uses only ns01 to ns04.squarespacedns.com (set with Squarespace 'Use custom nameservers', the only way to drop the old entries). Every DNS record goes in Squarespace: Domains -> lavishleaf.org -> DNS -> DNS Settings. Netlify DNS cannot be set up while an orphaned zone for lavishleaf.org sits at Netlify's provider ('A DNS zone for this domain already exists on NS1'); only Netlify support can remove it.
+
+~~**Do this first (recommended 2026-10-06): stop the double DNS.** Squarespace
 is where the domain is REGISTERED (you pay them for the name); Netlify is
 where its records are SERVED. Both sets of nameservers are listed at the
 registry today. Checked 2026-10-06: Netlify holds every record Squarespace
@@ -476,6 +478,8 @@ the farm's own bagged compost.
 ---
 
 ## G4. Email that lands in the inbox, not spam (15 minutes)
+
+**DONE 2026-10-11** in Squarespace: SPF names Google, the google._domainkey DKIM key is published (checked from outside). Left: Start authentication in Google Admin, and the Gmail Not-spam filters (step 5). The Netlify steps below are history.
 
 Checked 2026-10-07 (the careers@ test reached you, but in Spam). The domain's
 records said:
