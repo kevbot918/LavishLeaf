@@ -32,15 +32,16 @@
       "icon": "🌱",
       "image": "images/compost-pickup.jpg",
       "imageAlt": "Green compost collection buckets lined with compostable bags, ready for pickup",
-      "blurb": "A 5 gallon bucket at your door, swapped for a clean one every 1 to 2 weeks, or sooner, on the day you choose. Your scraps become living soil on our farm.",
-      "price": 2000,
+      "blurb": "A 5 gallon bucket at your door, swapped for a clean one every 1 to 2 weeks, on the day you choose. $10 one-time bucket fee. Your scraps become living soil.",
+      "price": 3000,
       "oldPrice": null,
       "interval": "month",
       "button": "Sign Up",
       "emailSubject": "Compost Pick-Up Sign Up",
       "payLink": "",
       "active": true,
-      "ship": false
+      "ship": false,
+      "paypalPlanId": "P-6BX47736CP523372JNLFP55Y"
     },
     {
       "id": "recycle-monthly",
@@ -58,14 +59,15 @@
       ],
       "icon": "♻️",
       "blurb": "Set out your own bin and we empty it on the day you choose: cardboard, paper, cans, glass, plastics #1, #2 and #5 and more, taken to local recycling centers.",
-      "price": 2000,
+      "price": 3000,
       "oldPrice": null,
       "interval": "month",
       "button": "Sign Up",
       "emailSubject": "Recycling Pick-Up Sign Up",
       "payLink": "",
       "active": true,
-      "ship": false
+      "ship": false,
+      "paypalPlanId": "P-7NF99993LK537471HNLFQA3A"
     },
     {
       "id": "soccer-player-fall",
