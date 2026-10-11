@@ -50,7 +50,7 @@ export const SHIPPING = {
   // Per-supplier rules. "bands" = the weight bands above.
   suppliers: {
     bangalla: { rule: 'bands', label: 'US supplier' },
-    aliexpress: { rule: 'flat', freeOverCents: 999, freeOverItems: 3, cents: 299, label: 'overseas supplier' },
+    aliexpress: { rule: 'flat', freeOverCents: 999, freeOverItems: 3, cents: 299, label: 'direct-ship' },
   },
   // Posted orders go to the 48 contiguous states and DC only.
   notPosted: ['AK', 'HI', 'PR', 'GU', 'VI', 'AS', 'MP', 'AA', 'AE', 'AP'],
@@ -89,19 +89,20 @@ export function quote(lines, { method } = {}) {
       const items = group.reduce((n, { qty }) => n + qty, 0);
       if (rule.rule === 'flat') {
         const free = subtotal >= rule.freeOverCents || items >= rule.freeOverItems;
-        parts.push({ from, label: rule.label, cents: free ? 0 : rule.cents });
+        parts.push({ from, label: rule.label, cents: free ? 0 : rule.cents, desc: free ? 'direct-ship items' : 'direct-ship items under $9.99' });
         continue;
       }
       const oz = group.reduce((sum, { product, qty }) => sum + product.shipOz * qty, 0);
       if (!Number.isFinite(oz) || oz <= 0) throw new ShippingError('Something in your cart has no shipping weight yet. Please email support@lavishleaf.org.');
       const band = SHIPPING.bands.find((x) => oz <= x.upToOz);
       if (!band) throw new ShippingError('This order is over 10 lb, too heavy for our flat rates. Please email support@lavishleaf.org for a shipping quote.');
-      parts.push({ from, label: rule.label, cents: band.cents });
+      const i = SHIPPING.bands.indexOf(band);
+      const desc = i === 0 ? 'by weight, up to 1 lb' : 'by weight, ' + (SHIPPING.bands[i - 1].upToOz / 16) + ' to ' + (band.upToOz / 16) + ' lb';
+      parts.push({ from, label: rule.label, cents: band.cents, desc });
     }
     const cents = parts.reduce((n, p) => n + p.cents, 0);
-    const label = parts.length > 1
-      ? 'Shipping (' + parts.map((p) => p.label + ' ' + (p.cents ? money(p.cents) : 'free')).join(', ') + ')'
-      : 'Shipping';
+    // Plain words, no supplier names (owner, 2026-10-11).
+    const label = 'Shipping (' + parts.map((p) => p.desc + (parts.length > 1 ? ': ' + (p.cents ? money(p.cents) : 'free') : '')).join(' + ') + ')';
     return { cents, method, needsAddress: true, label, parts };
   }
   if (SHIPPING.pickup[method]) {

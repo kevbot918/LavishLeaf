@@ -372,6 +372,42 @@
       } else sa.appendChild(notice(d.ga));
     }).catch(function () { ca.textContent = ''; ca.appendChild(el('p', 'db-empty', 'Could not read affiliates.json just now.')); });
 
+    // 7c2. Making a Difference (2026-10-11): the totals on the Home and Farms
+    // pages. Change a number and Save; the pages show it within 10 minutes.
+    var si = section('impact', 'fa-seedling', 'Making a Difference', 'The running totals on the Home and Farms pages. Add to them after each pick-up run; the pages update within 10 minutes. Leave a value at 0 to hide that stat.');
+    var ci = card(null); si.appendChild(ci); root.appendChild(si);
+    var rowsBox = el('div', 'db-impact'); ci.appendChild(rowsBox);
+    var imsg = el('p', 'db-hint', '');
+    function impactRow(st) {
+      var r = el('div', 'db-impact-row');
+      r.innerHTML = '<input type="text" class="db-imp-label" maxlength="120" placeholder="What it counts, e.g. Households on our pick-up routes"><input type="number" class="db-imp-value" min="0" step="1"><input type="text" class="db-imp-unit" maxlength="12" placeholder="lb"><label class="db-imp-plus"><input type="checkbox"> show +</label><button type="button" class="db-btn-ghost db-imp-del" title="Remove">&times;</button>';
+      r.querySelector('.db-imp-label').value = st.label || '';
+      r.querySelector('.db-imp-value').value = st.value || 0;
+      r.querySelector('.db-imp-unit').value = st.unit || '';
+      r.querySelector('.db-imp-plus input').checked = !!st.plus;
+      r.dataset.key = st.key || ('stat-' + Date.now().toString(36));
+      r.querySelector('.db-imp-del').addEventListener('click', function () { r.remove(); });
+      rowsBox.appendChild(r);
+    }
+    var ibar = el('div', 'db-links');
+    var bAdd = h('<button type="button" class="db-btn-ghost"><i class="fas fa-plus"></i> Add a stat</button>');
+    var bSave = h('<button type="button" class="db-btn-ghost"><i class="fas fa-floppy-disk"></i> Save to the website</button>');
+    ibar.appendChild(bAdd); ibar.appendChild(bSave); ci.appendChild(ibar); ci.appendChild(imsg);
+    bAdd.addEventListener('click', function () { impactRow({ label: '', value: 0, unit: '', plus: false }); });
+    bSave.addEventListener('click', function () {
+      var stats = Array.prototype.map.call(rowsBox.querySelectorAll('.db-impact-row'), function (r) {
+        return { key: r.dataset.key, label: r.querySelector('.db-imp-label').value.trim(), value: Number(r.querySelector('.db-imp-value').value) || 0, unit: r.querySelector('.db-imp-unit').value.trim(), plus: r.querySelector('.db-imp-plus input').checked };
+      }).filter(function (x) { return x.label; });
+      imsg.textContent = 'Saving...';
+      api('impact', { action: 'save', stats: stats }).then(function (r) { imsg.textContent = 'Saved (' + r.stats.length + ' stats, ' + r.updated + '). The pages show it within 10 minutes.'; })
+        .catch(function (e) { imsg.textContent = e.message; });
+    });
+    fetch('/.netlify/functions/impact', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) {
+      (d.stats || []).forEach(impactRow);
+      imsg.textContent = d.updated ? 'Last saved ' + d.updated + '.' : '';
+    }).catch(function () { imsg.textContent = 'Could not read the current totals.'; });
+    ci.appendChild(el('p', 'db-hint', 'Ideas worth tracking: households on the compost and recycling routes; pick-ups made; bags or buckets of finished compost given back to gardens; seedlings or trees planted; players and teams in the leagues; community events hosted.'));
+
     // 7d. AliExpress (2026-10-10): connect the buyer account once, then read
     // live prices and stock for the AliExpress lines in the store tiers.
     var sx = section('aliexpress', 'fa-box', 'AliExpress', 'Connect the shop\'s AliExpress account once; then check the live price, stock and photos of every AliExpress line in the store tiers.');

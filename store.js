@@ -118,7 +118,7 @@
       .then(function (r) { return r.json(); })
       .then(function (data) {
         (data.products || []).forEach(function (p) {
-          if (products[p.id]) products[p.id].tags = Array.isArray(p.tags) ? p.tags : [];
+          if (products[p.id]) { products[p.id].tags = Array.isArray(p.tags) ? p.tags : []; products[p.id].data = p; }
         });
       })
       .catch(function () { /* search still works on names, sentences and shelves */ });
@@ -295,6 +295,7 @@
   function afterListsChange() {
     save(); refreshHearts(); renderSideLists(); renderHomeLists();
     if (current.view === 'list') showList(current.arg);
+    if (current.view === 'lists') showAllLists();
   }
   function askListName(existing) {
     var d = $('#listname'), input = $('#listname-input');
@@ -321,11 +322,13 @@
   }
   var pendingPick = null;
   function heart(pid) {
+    // The first heart makes a "Wishlist" and saves to it; from then on the
+    // heart always asks which list, with "+ New list" at the bottom (owner,
+    // 2026-10-11: "choose which list an item goes to").
     if (!state.lists.length) {
       state.lists.push({ id: newId(), name: 'Wishlist', items: [] });
+      toggleIn(state.lists[0], pid);
     }
-    if (state.lists.length === 1) { toggleIn(state.lists[0], pid); return; }
-    // Several lists: ask which. Tapping a list toggles the product in it.
     pendingPick = pid;
     renderPick();
     openDialog($('#pick'));
@@ -393,8 +396,16 @@
     var path = h.split('?')[0], q = new URLSearchParams(h.split('?')[1] || '');
     closeMenu();
     if (path === 'cart') {
+      // The cart script may still be loading: open it the moment it is ready.
       if (window.LLCart) window.LLCart.open();
+      else document.addEventListener('ll-cart-ready', function once() { document.removeEventListener('ll-cart-ready', once); window.LLCart.open(); });
       history.replaceState(null, '', location.pathname + (current.view === 'home' ? '' : '#' + current.view));
+      if (current.view !== 'home' || firstShow) { show('home'); setTitle('Home'); }
+      return;
+    }
+    if (path === 'lists') {
+      show('lists'); setTitle('Your lists'); showAllLists();
+      markCurrent();
       return;
     }
     if (path === 'search') {
@@ -453,6 +464,28 @@
     l.items.forEach(function (pid) { var c = cardFor(pid); if (c) { grid.appendChild(c); shown++; } });
     empty.hidden = shown > 0;
     empty.textContent = 'Nothing here yet. The heart on any product saves it to a list.';
+    refreshHearts();
+  }
+  // Every list, each as a shelf (owner, 2026-10-11: the heart in the top
+  // bar opens the lists).
+  function showAllLists() {
+    var box = $('#lists-shelves'); box.textContent = '';
+    if (!state.lists.length) {
+      box.appendChild(el('p', { class: 'ss-empty' }, 'No lists yet. Tap the heart on any product to save it, or make a list now.'));
+    }
+    state.lists.forEach(function (l) {
+      var sec = el('section', { class: 'shelf' });
+      var head = el('div', { class: 'shelf-head' });
+      head.appendChild(el('h2', null, l.name + ' (' + l.items.length + ')'));
+      var open = el('a', { class: 'shelf-all', href: '#list/' + l.id }, 'Open');
+      head.appendChild(open);
+      sec.appendChild(head);
+      var row = el('div', { class: 'shelf-row' });
+      l.items.forEach(function (pid) { var c = cardFor(pid); if (c) row.appendChild(c); });
+      if (!l.items.length) row.appendChild(el('p', { class: 'ss-empty' }, 'Nothing saved here yet.'));
+      sec.appendChild(row);
+      box.appendChild(sec);
+    });
     refreshHearts();
   }
   function showShelf(slug) {
@@ -620,12 +653,28 @@
       ln.close(); afterListsChange();
     });
     $('#pick-close').addEventListener('click', function () { $('#pick').close(); });
+    $('#pop-close').addEventListener('click', function () { $('#pop').close(); });
+    $('#pop').addEventListener('click', function (e) { if (e.target === $('#pop')) $('#pop').close(); });
+    // The sidebar's "New list" (it had no listener: owner, 2026-10-11).
+    $('#ss-new-list').addEventListener('click', function () { closeMenu(); askListName(null); });
+    var newTop = $('#lists-new');
+    if (newTop) newTop.addEventListener('click', function () { askListName(null); });
 
     // Hearts and cloned cart buttons, wherever they are drawn.
     document.addEventListener('click', function (e) {
       var w = e.target.closest('[data-wish]');
       if (w) { heart(w.getAttribute('data-wish')); return; }
-      var inView = e.target.closest('#view-list, #view-search');
+      // A product card, anywhere but its buttons, opens the product pop-up.
+      var card = e.target.closest('.sp-card[data-id]');
+      if (card && !e.target.closest('a, button') && !card.closest('#pop')) { openProduct(card.getAttribute('data-id')); return; }
+      if (e.target.closest('#pop [data-cart-add], #pop [data-subscribe]') && window.LLCart) {
+        var b = e.target.closest('[data-cart-add], [data-subscribe]');
+        if (b.hasAttribute('data-cart-add')) window.LLCart.add(b.getAttribute('data-cart-add'));
+        else window.LLCart.subscribe(b.getAttribute('data-subscribe'), b);
+        $('#pop').close();
+        return;
+      }
+      var inView = e.target.closest('#view-list, #view-search, #view-lists');
       if (!inView || !window.LLCart) return;
       var add = e.target.closest('[data-cart-add]');
       if (add) { window.LLCart.add(add.getAttribute('data-cart-add')); return; }
@@ -810,6 +859,57 @@
     if (id.currentUser()) signedIn(id.currentUser());
   }
 
+  // ------------------------------------------------------------ product pop-up
+  // Owner, 2026-10-11: "a product pop-up that looks similar to the product
+  // card just has the full info visible". What a shopper looks for before
+  // buying: big photo, full name, price, the whole description, what THIS
+  // item costs to ship and how long it takes, its weight, tax, returns, and
+  // the buttons.
+  var shipMod = null;
+  function shippingModule() {
+    if (shipMod) return Promise.resolve(shipMod);
+    return import('/shipping.mjs').then(function (m) { shipMod = m; return m; });
+  }
+  function weightText(oz) {
+    if (!oz) return '';
+    return oz < 16 ? oz + ' oz' : (Math.round(oz / 16 * 10) / 10) + ' lb';
+  }
+  function openProduct(pid) {
+    var p = products[pid]; if (!p) return;
+    var d = p.data || {};
+    var pop = $('#pop');
+    var img = $('.sp-media img', p.card);
+    var media = $('#pop-media'); media.textContent = '';
+    if (img) media.appendChild(el('img', { src: img.getAttribute('src'), alt: img.getAttribute('alt') || p.name }));
+    else media.appendChild(el('span', { class: 'sp-icon' }, ($('.sp-icon', p.card) || {}).textContent || ''));
+    $('#pop-name').textContent = p.name;
+    $('#pop-price').textContent = ($('.sp-price', p.card) || {}).textContent || '';
+    $('#pop-blurb').textContent = d.blurb || p.blurb;
+    var facts = $('#pop-facts'); facts.textContent = '';
+    function fact(k, v) { if (!v) return; var li = el('li'); li.appendChild(el('strong', null, k + ': ')); li.appendChild(document.createTextNode(v)); facts.appendChild(li); }
+    fact('Shelf', p.category);
+    if (d.ship) {
+      fact('Weight', weightText(d.shipOz) + ' packed');
+      fact('Delivery', d.shipFrom === 'aliexpress' ? 'ships direct from the maker, allow 1 to 2 weeks' : 'ships from our US supplier, about a week');
+      var shipLi = el('li'); shipLi.appendChild(el('strong', null, 'Shipping on its own: ')); var shipTxt = document.createTextNode('...'); shipLi.appendChild(shipTxt); facts.appendChild(shipLi);
+      shippingModule().then(function (m) {
+        var q = m.quote([{ product: d, qty: 1 }], { method: 'ship' });
+        shipTxt.textContent = (q.cents ? '$' + (q.cents / 100).toFixed(2) : 'free') + '. Shipping is per supplier, so items from the same one share it.';
+      }).catch(function () { shipTxt.textContent = 'shown in the cart.'; });
+    } else if (d.interval) {
+      fact('Delivery', 'a local service; we arrange the day with you');
+    } else {
+      fact('Delivery', 'nothing is shipped');
+    }
+    fact('Sales tax', 'Oklahoma 6%, added in the cart');
+    var acts = $('#pop-actions'); acts.textContent = '';
+    var btn = $('.sp-foot .btn', p.card);
+    if (btn) { var b = btn.cloneNode(true); b.classList.remove('btn-sm'); acts.appendChild(b); }
+    var h = el('button', { type: 'button', class: 'btn btn-ghost', 'data-wish': pid }, 'Save to a list');
+    acts.appendChild(h);
+    openDialog(pop);
+  }
+
   // ------------------------------------------------------------ shelf arrows
   // Owner, 2026-10-02: an arrow to press to scroll each shelf. The mouse wheel
   // no longer slides a shelf sideways (owner, 2026-10-10: it caught him when
@@ -844,8 +944,25 @@
     });
   }
 
+  // SeedsNow prices kept current (owner, 2026-10-11): the cached prices
+  // function answers in milliseconds; a sold-out product hides.
+  function refreshSeedsNow() {
+    var spans = $$("[data-sn-price]");
+    if (!spans.length) return;
+    fetch("/.netlify/functions/seedsnow-prices").then(function (r) { if (!r.ok) throw new Error(); return r.json(); }).then(function (d) {
+      spans.forEach(function (sp) {
+        var h = sp.getAttribute("data-sn-price");
+        if (!(h in d.prices)) return;
+        var card = sp.closest(".sp-card");
+        if (d.prices[h] === null) { if (card) card.hidden = true; return; }
+        sp.textContent = d.prices[h];
+      });
+    }).catch(function () { /* the prices written into the page stay */ });
+  }
+
   // ------------------------------------------------------------ go
   readCatalogue();
+  refreshSeedsNow();
   fetchTags();
   buildResize();
   buildChrome();

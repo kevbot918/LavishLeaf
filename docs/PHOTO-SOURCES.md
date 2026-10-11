@@ -14,3 +14,7 @@ replace these as they are taken.
 
 Note on the compost photo: the caddies carry another programme's "what can I
 compost" labels. It is a placeholder until a Lavish Leaf bucket is photographed.
+
+## 2026-10-11, pick-up photos (Pexels licence: free to use, attribution not required)
+* images/compost-bucket.jpg: Leticia Alvares, https://www.pexels.com/photo/organic-waste-composting-in-kitchen-setting-31416063/
+* images/recycling-bins.jpg: Robert So, https://www.pexels.com/photo/colorful-recycling-bins-lined-up-on-street-36086364/

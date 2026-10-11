@@ -1459,3 +1459,13 @@ footer {
 .content-section .founder-text p { margin: 0 0 6px; }
 .content-section .founder-text p.founder-name { color: var(--white); font-weight: 700; }
 @media (max-width: 600px) { .founder { flex-direction: column; text-align: center; align-items: center; } }
+
+/* Making a Difference (2026-10-11): Home, above Future; Farms, at the bottom. */
+.impact-section { padding: 56px 24px 48px; text-align: center; background: #2e2e2e; }
+.impact-intro { color: var(--gray); max-width: 640px; margin: 0 auto 26px; }
+.impact-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; max-width: 1100px; margin: 0 auto; }
+.impact-stat { flex: 0 1 300px; padding: 22px 18px; background: var(--card); border: 1px solid var(--rule-soft); border-top: 3px solid var(--leaf); border-radius: 12px; }
+.impact-num { font-size: 2.4rem; font-weight: 800; color: var(--leaf-bright); line-height: 1.1; }
+.impact-num span { font-size: 1.1rem; font-weight: 700; color: var(--gray); }
+.impact-label { margin-top: 8px; color: var(--white); font-size: 0.95rem; line-height: 1.45; }
+.impact-updated { margin-top: 18px; font-size: 0.85rem; color: var(--gray); }

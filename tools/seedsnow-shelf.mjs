@@ -59,7 +59,7 @@ function card(p) {
     `    <a class="sp-media" href="${esc(link('/products/' + p.handle))}" target="_blank" rel="sponsored noopener" data-affiliate="SeedsNow" data-sn="${esc(p.handle)}" tabindex="-1" aria-hidden="true"><img src="${esc(small(p.images[0].src))}" alt="${esc(name)}" loading="lazy"></a>`,
     `    <h3 class="sp-name">${esc(name)}</h3>`,
     `    <div class="sp-foot">`,
-    `      <span class="sp-price">${price}</span>`,
+    `      <span class="sp-price" data-sn-price="${esc(p.handle)}">${price}</span>`,
     `      <a class="btn btn-sm" href="${esc(link('/products/' + p.handle))}" target="_blank" rel="sponsored noopener" data-affiliate="SeedsNow" data-sn="${esc(p.handle)}">View at SeedsNow</a>`,
     `    </div>`,
     `  </article>`,
@@ -89,7 +89,6 @@ const html = [
     `  </div>`,
     `</section>`,
   ].join('\n')),
-  `<p class="gs-sn-note">Prices and stock are SeedsNow's, read on ${today}; SeedsNow's own page has today's price.</p>`,
   `<!-- SEEDSNOW:END -->`,
 ].join('\n');
 

@@ -185,6 +185,7 @@ test('each supplier ships and is charged on its own (owner, 2026-10-11)', () => 
   assert.equal(q([B(649, 10), A(999)]).cents, 895, 'the Bangalla band covers only Bangalla items');
   assert.equal(q([B(649, 10), A(549)]).cents, 895 + 299);
   assert.equal(q([B(3299, 106), B(649, 10)]).cents, 1895, 'Bangalla items share one band by their total weight');
-  assert.match(q([B(649, 10), A(549)]).label, /US supplier \$8\.95, overseas supplier \$2\.99/);
+  assert.equal(q([B(649, 10), A(549)]).label, 'Shipping (by weight, up to 1 lb: $8.95 + direct-ship items under $9.99: $2.99)');
+  assert.doesNotMatch(q([B(649, 10), A(549)]).label, /overseas|supplier/i, 'no supplier talk (owner, 2026-10-11)');
   assert.equal(q([{ product: { price: 500, ship: true, shipOz: 5 }, qty: 1 }]).cents, 895, 'no shipFrom: the bands');
 });

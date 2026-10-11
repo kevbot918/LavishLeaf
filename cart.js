@@ -75,7 +75,61 @@
     if (line) line.qty = Math.min(MAX_QTY, line.qty + 1);
     else cart.push({ id: id, qty: 1 });
     save(cart);
-    say(p.name + ' added to your cart.');
+    notify(p);
+  }
+
+  // A notice the buyer cannot miss: bottom of the screen, with a way to the
+  // cart (owner, 2026-10-11).
+  function notify(p) {
+    if (!toastEl) return;
+    toastEl.textContent = '';
+    if (p.image) toastEl.appendChild(el('img', { src: p.image, alt: '' }));
+    var txt = el('div', { class: 'cart-toast-text' });
+    txt.appendChild(el('strong', null, 'Added to your cart'));
+    txt.appendChild(el('span', null, p.name));
+    toastEl.appendChild(txt);
+    var view = el('button', { type: 'button', class: 'btn btn-sm' }, 'View cart');
+    view.addEventListener('click', function () { toastEl.hidden = true; open(); });
+    toastEl.appendChild(view);
+    toastEl.hidden = false;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toastEl.hidden = true; }, 5000);
+  }
+
+  // The waiver, the Terms of Sale and the Refund Policy open over the cart,
+  // so reading them never loses the cart (owner, 2026-10-11).
+  function openDoc(url, title) {
+    if (!docDlg) {
+      docDlg = el('dialog', { class: 'cart-doc', 'aria-label': 'Document' });
+      var bar = el('div', { class: 'cart-doc-bar' });
+      bar.appendChild(el('h2', { class: 'cart-doc-title' }));
+      var x = el('button', { type: 'button', class: 'btn btn-sm' }, 'Back to cart');
+      x.addEventListener('click', function () { docDlg.close(); });
+      bar.appendChild(x);
+      docDlg.appendChild(bar);
+      docDlg.appendChild(el('div', { class: 'cart-doc-body' }));
+      document.body.appendChild(docDlg);
+    }
+    docDlg.querySelector('.cart-doc-title').textContent = title;
+    var body = docDlg.querySelector('.cart-doc-body');
+    body.textContent = 'Loading...';
+    if (typeof docDlg.showModal === 'function') docDlg.showModal(); else docDlg.setAttribute('open', '');
+    fetch(url).then(function (r) { return r.text(); }).then(function (html) {
+      var d = new DOMParser().parseFromString(html, 'text/html');
+      var parts = d.querySelectorAll('section.content-section');
+      body.textContent = '';
+      Array.prototype.forEach.call(parts, function (s) {
+        Array.prototype.forEach.call(s.querySelectorAll('script, form, .btn'), function (n) { n.remove(); });
+        body.appendChild(document.importNode(s, true));
+      });
+      if (!parts.length) body.textContent = 'Open ' + url + ' to read it.';
+      body.scrollTop = 0;
+    }).catch(function () { body.textContent = 'This did not load. It is at lavishleaf.org/' + url; });
+  }
+  function docLink(text, url, title) {
+    var a = el('a', { href: url }, text);
+    a.addEventListener('click', function (e) { e.preventDefault(); openDoc(url, title); });
+    return a;
   }
 
   function setQty(id, qty) {
@@ -88,7 +142,15 @@
   // ------------------------------------------------------------------ view
   var fab, panel, list, totalEl, noteEl, payBtn, statusEl, banner;
   var shipWrap, shipLine, shipNudge, taxLine;
-  var waiverWrap;
+  var waiverWrap, noteWrap, toastEl, toastTimer, docDlg;
+  // Ticked waivers, by version: the cart redraws often, and a redraw must
+  // never untick what the buyer ticked (owner, 2026-10-11: the box would
+  // not stay ticked).
+  var acceptedW = {};
+  function allAccepted() {
+    return waiversInCart().every(function (w) { return acceptedW[w.version]; });
+  }
+  function isRegistration(p) { return !!(p && (p.waiver || p.category === 'Rec Sports')); }
 
   // A product may require an agreement before it can be paid for. Today
   // that is the two soccer registrations, which take a waiver in the email
@@ -156,10 +218,13 @@
     totalEl = el('p', { class: 'cart-total' });
     panel.appendChild(totalEl);
 
-    var label = el('label', { for: 'cart-note', class: 'cart-note-label' }, 'Who is this for? (player or team name, so we can match your payment)');
+    // Only for a registration, under its own heading (owner, 2026-10-11).
+    noteWrap = el('div', { class: 'cart-reg', hidden: '' });
+    noteWrap.appendChild(el('h3', { class: 'cart-reg-head' }, 'Rec Sports registration'));
+    noteWrap.appendChild(el('label', { for: 'cart-note', class: 'cart-note-label' }, 'Player or team name, so we can match your payment to the roster'));
     noteEl = el('textarea', { id: 'cart-note', rows: '2', maxlength: '127' });
-    panel.appendChild(label);
-    panel.appendChild(noteEl);
+    noteWrap.appendChild(noteEl);
+    panel.appendChild(noteWrap);
 
     waiverWrap = el('div', { class: 'cart-waiver', hidden: '' });
     panel.appendChild(waiverWrap);
@@ -173,14 +238,17 @@
     // this question gets asked.
     var legal = el('p', { class: 'cart-fine' });
     legal.appendChild(document.createTextNode('By paying you accept our '));
-    legal.appendChild(el('a', { href: 'terms-of-sale.html', target: '_blank', rel: 'noopener' }, 'Terms of Sale'));
+    legal.appendChild(docLink('Terms of Sale', 'terms-of-sale.html', 'Terms of Sale'));
     legal.appendChild(document.createTextNode(' and '));
-    legal.appendChild(el('a', { href: 'refunds.html', target: '_blank', rel: 'noopener' }, 'Refund Policy'));
+    legal.appendChild(docLink('Refund Policy', 'refunds.html', 'Refund Policy'));
     legal.appendChild(document.createTextNode('.'));
     panel.appendChild(legal);
     statusEl = el('p', { class: 'cart-status', role: 'status', 'aria-live': 'polite' });
     panel.appendChild(statusEl);
     document.body.appendChild(panel);
+
+    toastEl = el('div', { class: 'cart-toast', role: 'status', 'aria-live': 'polite', hidden: '' });
+    document.body.appendChild(toastEl);
 
     // Above the products, where the buyer is looking when they come back.
     banner = el('div', { class: 'cart-banner', role: 'status', 'aria-live': 'polite', hidden: '' });
@@ -233,6 +301,7 @@
           var q = ship.quote(lines, { method: delivery.method });
           shipCents = q.cents;
           shipLine.textContent = q.label + ': ' + (q.cents ? money(q.cents) : 'free');
+          shipLine.title = 'Each supplier ships its own parcel, so each part is charged on its own. See Terms of Sale.';
           if (delivery.method === 'ship' && ship.untilReduced(cents) > 0) {
             shipNudge.textContent = money(ship.untilReduced(cents)) + ' more and shipping is ' +
               money(ship.SHIPPING.reducedCents) + ' on the whole order.';
@@ -264,22 +333,19 @@
     waivers.forEach(function (w) {
       var row = el('label', { class: 'cart-waiver-row' });
       var box = el('input', { type: 'checkbox' });
-      box.addEventListener('change', render);
+      box.checked = !!acceptedW[w.version];
+      box.addEventListener('change', function () { acceptedW[w.version] = box.checked; render(); });
       row.appendChild(box);
       row.appendChild(document.createTextNode(
         ' ' + (w.label || 'I have read and accept the waiver') + ' '
       ));
-      if (w.url) {
-        var link = el('a', { href: w.url, target: '_blank', rel: 'noopener' }, 'Read it');
-        row.appendChild(link);
-      }
+      if (w.url) row.appendChild(docLink('Read it', w.url, 'Liability waiver'));
       waiverWrap.appendChild(row);
     });
     // One tick per version, and with two versions in one cart all of them
     // must be ticked.
-    var accepted = waivers.length === 0 ||
-      Array.prototype.every.call(waiverWrap.querySelectorAll('input[type=checkbox]'),
-        function (b) { return b.checked; });
+    var accepted = allAccepted();
+    noteWrap.hidden = !lines.some(function (x) { return isRegistration(x.product); });
 
     payBtn.disabled = cart.length === 0 || !accepted || !shipOk;
     // The store shell (store.js) draws its own cart button in the top bar
@@ -324,10 +390,7 @@
 
   function checkout() {
     var waivers = waiversInCart();
-    var accepted = waivers.length === 0 ||
-      Array.prototype.every.call(waiverWrap.querySelectorAll('input[type=checkbox]'),
-        function (b) { return b.checked; });
-    if (!accepted) {
+    if (!allAccepted()) {
       statusEl.textContent = 'Please accept the waiver before paying.';
       return;
     }
@@ -414,6 +477,7 @@
       b.addEventListener('click', function () { subscribe(b.getAttribute('data-subscribe'), b); });
     });
     handleArrival();
+    document.dispatchEvent(new CustomEvent('ll-cart-ready'));
   }
 
   fetch('/products.json', { cache: 'no-store' })

@@ -422,3 +422,26 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     Orders card shows "Order from" per line (products.json source). PayPal
     is still sandbox (PAYPAL_ENV not live); the go-live list is OWNER-STEPS
     "GO LIVE". DNS is at Squarespace now (2026-10-11).
+
+30. **2026-10-11, the owner's 15-point store list.** Store: product pop-up on
+    any card click (`#pop`, store.js openProduct: photo, price, full text,
+    weight, delivery, shipping on its own via shipping.mjs, tax, returns,
+    buttons); add-to-cart notice (`.cart-toast`, cart.js notify); waiver
+    ticks persist across cart redraws (acceptedW); waiver, Terms and Refunds
+    open over the cart (`.cart-doc`, cart.js openDoc); the order note only
+    for registrations under a green "Rec Sports registration" heading; cart
+    shipping wording without supplier names ("by weight, up to 1 lb: $8.95 +
+    direct-ship items under $9.99: $2.99"); header cart opens the cart on
+    any page (store.js waits for `ll-cart-ready`); sidebar "New list" wired;
+    the heart always asks which list; the top-bar heart opens `#lists`
+    (every list as a shelf). Green Swaps shows ONLY approved partners
+    (SeedsNow); SeedsNow prices refresh live from
+    `/.netlify/functions/seedsnow-prices` (SeedsNow's products.json, CDN
+    cached 12 h; sold out hides the card). **Making a Difference** on Home
+    (above Future) and Farms (bottom): `impact.js` reads
+    `/.netlify/functions/impact` (Blobs "impact"; dashboard section to edit;
+    starting estimates 1,000+ lb composted, 1,500+ lb recycled, 200+ lb
+    reused). New pick-up photos (Pexels, docs/PHOTO-SOURCES.md). 10 more
+    Bangalla lines (Aura Cacia shower tablets and frankincense, Andalou
+    lotions with MAP, Crystal deodorants); the no-margin ones (Schmidt's,
+    hello, Spry, Clearly Natural, Jason, Aura Cacia single oils) were left out.
