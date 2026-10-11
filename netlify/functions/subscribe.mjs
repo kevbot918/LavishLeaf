@@ -30,7 +30,8 @@ export default async (request) =>
       const area = await checkArea(s);
       const planInfo = await call(cfg, `/v1/billing/plans/${plan}`, null, { method: 'GET' });
       subBody.plan = planOverride(planInfo, p, s, (RATE_BP / 100).toFixed(2));
-      rec = { id: randomUUID(), product: p.id, productName: p.name, price: p.price, ...s, area, status: 'pending', created: new Date().toISOString() };
+      // lat/lon put the stop on the route planner (routes.mjs, dashboard).
+      rec = { id: randomUUID(), product: p.id, productName: p.name, price: p.price, ...s, area, lat: area.lat, lon: area.lon, assignedDay: null, status: 'pending', created: new Date().toISOString() };
       subBody.custom_id = rec.id;
       const [first, ...rest] = s.name.split(' ');
       subBody.subscriber = { name: { given_name: first.slice(0, 140), ...(rest.length ? { surname: rest.join(' ').slice(0, 140) } : {}) }, email_address: s.email };

@@ -504,3 +504,17 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     (gitignored, with the screenshots and VIDEO-PLAN.md); the kit is the
     artifact https://claude.ai/artifact/XtL53cixfCtdPm9BRpLM67. The held
     app-usage commit went out with Symphonymph 3.0.0 (the app session pushed it).
+
+33. **2026-10-11, third list.** Margin floor is now **15%** (owner) for
+    Bangalla and AliExpress, still "fairly competitive": Bangalla at its list
+    price rounded up to .99 when that clears 15% after PayPal (29 prices went
+    back down to list, 86 lines added, 12 scents added to existing option
+    products; 245 products). Brands that sell well below list online stay out
+    (bulkbg skipBrand list), and so do medical, supplement and sun-care lines.
+    **Pick-up routes**: each sign-up stores lat/lon (Census point, or the ZIP
+    centre from ZIP_POINTS); the dashboard section "Pick-ups and routes" sets
+    the day we come (assignedDay) and status, exports CSV, and plans each
+    day's route with routes.mjs (nearest stop + 2-opt, farm to farm, Google
+    Maps links of 9 stops) plus "Suggest route days" (sweep by direction from
+    the farm into k days, each keeping its customers' most-asked day). The
+    form and the confirmation email say the day may change to save fuel.

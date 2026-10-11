@@ -1285,7 +1285,7 @@
       "image": "images/store/b-54937-1pk.jpg",
       "imageAlt": "Kiss My Face Pure Olive Oil Bar Soap, 8 oz",
       "blurb": "A big 8 oz bar of pure olive oil soap with no added fragrance.",
-      "price": 649,
+      "price": 499,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -1315,7 +1315,7 @@
       "image": "images/store/b-54939-1pk.jpg",
       "imageAlt": "Kiss My Face Olive & Aloe Bar Soap, 8 oz",
       "blurb": "Olive oil soap with aloe in a big 8 oz bar.",
-      "price": 649,
+      "price": 499,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -1345,7 +1345,7 @@
       "image": "images/store/b-54936-1pk.jpg",
       "imageAlt": "Kiss My Face Pure Olive Oil Bar Soap, 4 oz",
       "blurb": "Pure olive oil soap with no added fragrance, in a 4 oz bar.",
-      "price": 499,
+      "price": 399,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -1374,7 +1374,7 @@
       "image": "images/store/b-83205-1pk.jpg",
       "imageAlt": "Tea Tree Therapy Eucalyptus Soap, 3.5 oz",
       "blurb": "A bar with tea tree and eucalyptus oils.",
-      "price": 899,
+      "price": 599,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -1431,7 +1431,7 @@
       "image": "images/store/b-66316-1pk.jpg",
       "imageAlt": "Giovanni Bamboo Oval Hairbrush",
       "blurb": "An oval hairbrush with a bamboo handle.",
-      "price": 1249,
+      "price": 1199,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -1461,7 +1461,7 @@
       "image": "images/store/b-81970-1pk.jpg",
       "imageAlt": "A La Maison Lavender & Rosemary Bar Soap, 4 pack",
       "blurb": "Four 3.5 oz bars of lavender and rosemary soap.",
-      "price": 1049,
+      "price": 999,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -1491,7 +1491,7 @@
       "image": "images/store/b-41192-1pk.jpg",
       "imageAlt": "Aura Cacia Lavender Shower Tablets, box of 3",
       "blurb": "Set one on the shower floor and the steam fills the room with lavender. Three tablets.",
-      "price": 999,
+      "price": 899,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -1521,7 +1521,7 @@
       "image": "images/store/b-41191-1pk.jpg",
       "imageAlt": "Aura Cacia Eucalyptus Shower Tablets, box of 3",
       "blurb": "A shower full of eucalyptus steam, from three tablets set on the shower floor.",
-      "price": 999,
+      "price": 899,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -1581,7 +1581,7 @@
       "image": "images/store/b-32345-1pk.jpg",
       "imageAlt": "Andalou Naturals 1000 Roses Soothing Body Lotion, 8 oz",
       "blurb": "A light, rose-scented body lotion for dry skin.",
-      "price": 1249,
+      "price": 1199,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -1673,7 +1673,7 @@
       "image": "images/store/b-52560-1pk.jpg",
       "imageAlt": "Crystal Mineral Deodorant Travel Stick, 1.5 oz",
       "blurb": "The unscented mineral salt deodorant stone in a size for the bag.",
-      "price": 549,
+      "price": 499,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -1704,7 +1704,7 @@
       "image": "images/store/b-49323-1pk.jpg",
       "imageAlt": "Andalou Naturals Lavender Shea Hand Cream, 3.4 oz",
       "blurb": "A lavender hand cream with shea butter.",
-      "price": 1149,
+      "price": 1099,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -1764,7 +1764,7 @@
       "image": "images/store/b-40200-1pk.jpg",
       "imageAlt": "Davids Natural Toothpaste, Spearmint, 5.25 oz",
       "blurb": "Premium natural toothpaste in a recyclable metal tube with a key, made in the USA. No fluoride, no SLS.",
-      "price": 1149,
+      "price": 1099,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -1866,6 +1866,10 @@
           {
             "name": "Wintergreen",
             "sku": "B-40106-1PK"
+          },
+          {
+            "name": "Cinnamint",
+            "sku": "B-75300-1PK"
           }
         ]
       }
@@ -1974,6 +1978,10 @@
           {
             "name": "Charcoal Tea Tree",
             "sku": "B-56391-1PK"
+          },
+          {
+            "name": "Sea Salt Sage",
+            "sku": "B-56396-1PK"
           }
         ]
       }
@@ -1994,7 +2002,7 @@
       "image": "images/store/b-48214-1pk.jpg",
       "imageAlt": "Seaweed Bath Co. Detox Body Wash, Awaken, 12 oz",
       "blurb": "A body wash with organic seaweed and arnica, scented with eucalyptus and peppermint.",
-      "price": 1249,
+      "price": 1199,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -2052,7 +2060,7 @@
       "image": "images/store/b-43932-1pk.jpg",
       "imageAlt": "Grandpa Soap Co. Pine Tar Bar Soap, 4.25 oz",
       "blurb": "The classic pine tar bar, a family favourite since 1878 for a deep, soothing clean.",
-      "price": 749,
+      "price": 699,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -2115,7 +2123,7 @@
       "image": "images/store/b-85862-1pk.jpg",
       "imageAlt": "Grandpa Soap Co. Apple Cider Vinegar Body Wash, 9.5 oz",
       "blurb": "A clarifying body wash with apple cider vinegar for a fresh, balanced feel.",
-      "price": 1049,
+      "price": 999,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -2145,7 +2153,7 @@
       "image": "images/store/b-46264-1pk.jpg",
       "imageAlt": "Oral Essentials Lumineux Whitening Mouthwash, 16 oz",
       "blurb": "An alcohol-free, peroxide-free whitening mouthwash made with Dead Sea salt and essential oils.",
-      "price": 1349,
+      "price": 1299,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -2175,7 +2183,7 @@
       "image": "images/store/b-46267-1pk.jpg",
       "imageAlt": "Oral Essentials Lumineux Whitening Toothpaste, 3.75 oz",
       "blurb": "A fluoride-free, peroxide-free whitening toothpaste developed by cosmetic dentists.",
-      "price": 1149,
+      "price": 1099,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -2205,7 +2213,7 @@
       "image": "images/store/b-46268-1pk.jpg",
       "imageAlt": "Oral Essentials Lumineux Kids Toothpaste, 3.75 oz",
       "blurb": "A fluoride-free toothpaste for kids, with a mild natural flavour.",
-      "price": 1049,
+      "price": 999,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -2267,7 +2275,7 @@
       "image": "images/store/b-57249-1pk.jpg",
       "imageAlt": "Auromere Ayurvedic Herbal Toothpaste, 4.16 oz",
       "blurb": "An Ayurvedic toothpaste with neem, peelu and 22 herbs. Vegan, fluoride-free.",
-      "price": 1049,
+      "price": 999,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -2291,6 +2299,10 @@
           {
             "name": "Mint-Free",
             "sku": "B-57251-1PK"
+          },
+          {
+            "name": "Cardamom Fennel",
+            "sku": "B-57293-1PK"
           }
         ]
       }
@@ -2316,7 +2328,7 @@
       "image": "images/store/b-44382-1pk.jpg",
       "imageAlt": "Alba Botanica Very Emollient Body Lotion, 32 oz",
       "blurb": "A big pump bottle of rich, fast-absorbing body lotion, vegan and paraben-free.",
-      "price": 2349,
+      "price": 2299,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -2340,6 +2352,10 @@
           {
             "name": "Original (Dry Skin)",
             "sku": "B-56295-1PK"
+          },
+          {
+            "name": "Unscented",
+            "sku": "B-56306-1PK"
           }
         ]
       }
@@ -2390,7 +2406,7 @@
       "image": "images/store/b-55321-1pk.jpg",
       "imageAlt": "Eco-Dent Mint Mouth Rinse, 8 oz",
       "blurb": "An alcohol-free mouth rinse with baking soda and essential oils.",
-      "price": 1349,
+      "price": 1299,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -2448,6 +2464,22 @@
           {
             "name": "Climbing Wild Rose",
             "sku": "B-35269-1PK"
+          },
+          {
+            "name": "Blooming Jasmine",
+            "sku": "B-33315-1PK"
+          },
+          {
+            "name": "Lemon Verbena",
+            "sku": "B-35336-1PK"
+          },
+          {
+            "name": "Orange Blossom Honey",
+            "sku": "B-35392-1PK"
+          },
+          {
+            "name": "Lavender Fields",
+            "sku": "B-35310-1PK"
           }
         ]
       }
@@ -2557,6 +2589,10 @@
           {
             "name": "Red",
             "sku": "B-83549-1PK"
+          },
+          {
+            "name": "Orange",
+            "sku": "B-83550-1PK"
           }
         ]
       }
@@ -2607,7 +2643,7 @@
       "image": "images/store/b-82651-1pk.jpg",
       "imageAlt": "Herban Cowboy Body Wash, Dusk, 18 oz",
       "blurb": "A natural body wash with a warm, earthy scent.",
-      "price": 1549,
+      "price": 1499,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -2667,7 +2703,7 @@
       "image": "images/store/b-40905-1pk.jpg",
       "imageAlt": "Aura Cacia Eucalyptus Harvest Aroma Mist, 4 oz",
       "blurb": "A room and body mist with pure eucalyptus essential oil.",
-      "price": 1049,
+      "price": 999,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -2729,6 +2765,18 @@
           {
             "name": "Lavender",
             "sku": "B-69172-1PK"
+          },
+          {
+            "name": "Muscle Soak",
+            "sku": "B-69182-1PK"
+          },
+          {
+            "name": "Peppermint Rosemary",
+            "sku": "B-69180-1PK"
+          },
+          {
+            "name": "Balancing Soak",
+            "sku": "B-69188-1PK"
           }
         ]
       }
@@ -2809,7 +2857,7 @@
       "image": "images/store/b-36232-1pk.jpg",
       "imageAlt": "Fortify+ Facial Mist, Travel Size",
       "blurb": "A refreshing facial mist, sized for a bag or carry-on.",
-      "price": 1049,
+      "price": 999,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -2869,7 +2917,7 @@
       "image": "images/store/b-23925-1pk.jpg",
       "imageAlt": "CleanLogic Exfoliating Wash Cloth",
       "blurb": "A stretchy, quick-drying exfoliating wash cloth for a smooth, polished feel.",
-      "price": 1149,
+      "price": 1099,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -3040,6 +3088,2890 @@
       }
     },
     {
+      "id": "bg-south-of-france-liquid-hand-wash-8-oz",
+      "name": "South of France Liquid Hand Wash, 8 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "south",
+        "france",
+        "liquid",
+        "hand",
+        "wash",
+        "lemon",
+        "verbena",
+        "lavender",
+        "fields",
+        "climbing",
+        "wild",
+        "rose",
+        "orange",
+        "blossom",
+        "honey"
+      ],
+      "image": "images/store/b-35442-1pk.jpg",
+      "imageAlt": "South of France Liquid Hand Wash, 8 oz",
+      "blurb": "A gentle liquid hand wash with organic aloe and shea butter in Provence-style scents.",
+      "price": 599,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: South of France Liquid Hand Wash, 8 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 14,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-35442-1PK"
+      },
+      "options": {
+        "label": "Scent",
+        "values": [
+          {
+            "name": "Lemon Verbena",
+            "sku": "B-35442-1PK"
+          },
+          {
+            "name": "Lavender Fields",
+            "sku": "B-35437-1PK"
+          },
+          {
+            "name": "Climbing Wild Rose",
+            "sku": "B-35406-1PK"
+          },
+          {
+            "name": "Orange Blossom Honey",
+            "sku": "B-35461-1PK"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bg-andalou-naturals-body-lotion-8-oz",
+      "name": "Andalou Naturals Body Lotion, 8 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "andalou",
+        "naturals",
+        "body",
+        "lotion",
+        "mandarin",
+        "vanilla",
+        "lavender",
+        "thyme",
+        "citrus",
+        "verbena"
+      ],
+      "image": "images/store/b-44315-1pk.jpg",
+      "imageAlt": "Andalou Naturals Body Lotion, 8 oz",
+      "blurb": "A light, fast-absorbing body lotion with fruit stem cells and aloe.",
+      "price": 1199,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Andalou Naturals Body Lotion, 8 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 12,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-44315-1PK"
+      },
+      "options": {
+        "label": "Scent",
+        "values": [
+          {
+            "name": "Mandarin Vanilla",
+            "sku": "B-44315-1PK"
+          },
+          {
+            "name": "Lavender Thyme",
+            "sku": "B-44311-1PK"
+          },
+          {
+            "name": "Citrus Verbena",
+            "sku": "B-44312-1PK"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bg-crystal-essence-mineral-deodorant-roll-on-225-oz",
+      "name": "Crystal Essence Mineral Deodorant Roll-On, 2.25 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "crystal",
+        "essence",
+        "mineral",
+        "deodorant",
+        "roll",
+        "chamomile",
+        "green",
+        "tea",
+        "pomegranate",
+        "lavender",
+        "white"
+      ],
+      "image": "images/store/b-58503-1pk.jpg",
+      "imageAlt": "Crystal Essence Mineral Deodorant Roll-On, 2.25 oz",
+      "blurb": "A mineral salt roll-on deodorant with a light natural scent, free of aluminium chlorohydrate.",
+      "price": 699,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Crystal Essence Mineral Deodorant Roll-On, 2.25 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 8,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-58503-1PK"
+      },
+      "options": {
+        "label": "Scent",
+        "values": [
+          {
+            "name": "Chamomile Green Tea",
+            "sku": "B-58503-1PK"
+          },
+          {
+            "name": "Pomegranate",
+            "sku": "B-58508-1PK"
+          },
+          {
+            "name": "Lavender White Tea",
+            "sku": "B-58506-1PK"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bg-crystal-body-deodorant-roll-on-unscented-225-oz",
+      "name": "Crystal Body Deodorant Roll-On, Unscented, 2.25 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "crystal",
+        "body",
+        "deodorant",
+        "roll",
+        "unscented"
+      ],
+      "image": "images/store/b-58921-1pk.jpg",
+      "imageAlt": "Crystal Body Deodorant Roll-On, Unscented, 2.25 oz",
+      "blurb": "The unscented mineral salt roll-on that lasts for months.",
+      "price": 699,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Crystal Body Deodorant Roll-On, Unscented, 2.25 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 6,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-58921-1PK"
+      }
+    },
+    {
+      "id": "bg-crystal-body-deodorant-spray-unscented-4-oz",
+      "name": "Crystal Body Deodorant Spray, Unscented, 4 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "crystal",
+        "body",
+        "deodorant",
+        "spray",
+        "unscented"
+      ],
+      "image": "images/store/b-58915-1pk.jpg",
+      "imageAlt": "Crystal Body Deodorant Spray, Unscented, 4 oz",
+      "blurb": "The mineral salt deodorant as an unscented body spray.",
+      "price": 699,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Crystal Body Deodorant Spray, Unscented, 4 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 9,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-58915-1PK"
+      }
+    },
+    {
+      "id": "bg-crystal-essence-lavender-deodorant-spray-4-oz",
+      "name": "Crystal Essence Lavender Deodorant Spray, 4 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "crystal",
+        "essence",
+        "lavender",
+        "deodorant",
+        "spray"
+      ],
+      "image": "images/store/b-58504-1pk.jpg",
+      "imageAlt": "Crystal Essence Lavender Deodorant Spray, 4 oz",
+      "blurb": "A mineral body spray deodorant scented with lavender and white tea.",
+      "price": 699,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Crystal Essence Lavender Deodorant Spray, 4 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 10,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-58504-1PK"
+      }
+    },
+    {
+      "id": "bg-crystal-mineral-deodorant-stick-twist-up-425-oz",
+      "name": "Crystal Mineral Deodorant Stick, Twist-Up, 4.25 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "crystal",
+        "mineral",
+        "deodorant",
+        "stick",
+        "twist"
+      ],
+      "image": "images/store/b-58521-1pk.jpg",
+      "imageAlt": "Crystal Mineral Deodorant Stick, Twist-Up, 4.25 oz",
+      "blurb": "A big twist-up mineral salt deodorant stick, unscented.",
+      "price": 899,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Crystal Mineral Deodorant Stick, Twist-Up, 4.25 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 10,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-58521-1PK"
+      }
+    },
+    {
+      "id": "bg-seaweed-bath-co-body-wash-12-oz",
+      "name": "Seaweed Bath Co. Body Wash, 12 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "seaweed",
+        "bath",
+        "body",
+        "wash",
+        "eucalyptus",
+        "peppermint",
+        "sleep",
+        "calm",
+        "energize",
+        "uplift"
+      ],
+      "image": "images/store/b-52759-1pk.jpg",
+      "imageAlt": "Seaweed Bath Co. Body Wash, 12 oz",
+      "blurb": "A sulfate-free body wash with sustainably harvested seaweed.",
+      "price": 1199,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Seaweed Bath Co. Body Wash, 12 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 18,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-52759-1PK"
+      },
+      "options": {
+        "label": "Scent",
+        "values": [
+          {
+            "name": "Eucalyptus Peppermint",
+            "sku": "B-52759-1PK"
+          },
+          {
+            "name": "Sleep Calm",
+            "sku": "B-66501-1PK"
+          },
+          {
+            "name": "Energize Uplift",
+            "sku": "B-66499-1PK"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bg-seaweed-bath-co-body-cream-6-oz",
+      "name": "Seaweed Bath Co. Body Cream, 6 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "seaweed",
+        "bath",
+        "body",
+        "cream",
+        "unscented",
+        "sleep",
+        "calm"
+      ],
+      "image": "images/store/b-56078-1pk.jpg",
+      "imageAlt": "Seaweed Bath Co. Body Cream, 6 oz",
+      "blurb": "A rich body cream with seaweed and shea butter for dry skin.",
+      "price": 1699,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Seaweed Bath Co. Body Cream, 6 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 10,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-56078-1PK"
+      },
+      "options": {
+        "label": "Scent",
+        "values": [
+          {
+            "name": "Unscented",
+            "sku": "B-56078-1PK"
+          },
+          {
+            "name": "Sleep Calm",
+            "sku": "B-66511-1PK"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bg-seaweed-bath-co-detox-facial-bar-375-oz",
+      "name": "Seaweed Bath Co. Detox Facial Bar, 3.75 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "seaweed",
+        "bath",
+        "detox",
+        "facial",
+        "bar"
+      ],
+      "image": "images/store/b-48219-1pk.jpg",
+      "imageAlt": "Seaweed Bath Co. Detox Facial Bar, 3.75 oz",
+      "blurb": "An unscented facial bar with seaweed and charcoal for a deep clean.",
+      "price": 899,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Seaweed Bath Co. Detox Facial Bar, 3.75 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 7,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-48219-1PK"
+      }
+    },
+    {
+      "id": "bg-seaweed-bath-co-exfoliating-detox-soap-375-oz",
+      "name": "Seaweed Bath Co. Exfoliating Detox Soap, 3.75 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "seaweed",
+        "bath",
+        "exfoliating",
+        "detox",
+        "soap"
+      ],
+      "image": "images/store/b-52396-1pk.jpg",
+      "imageAlt": "Seaweed Bath Co. Exfoliating Detox Soap, 3.75 oz",
+      "blurb": "A scrubbing bar soap with seaweed and charcoal.",
+      "price": 899,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Seaweed Bath Co. Exfoliating Detox Soap, 3.75 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 7,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-52396-1PK"
+      }
+    },
+    {
+      "id": "bg-seaweed-bath-co-detox-body-scrub-awaken-6-oz",
+      "name": "Seaweed Bath Co. Detox Body Scrub, Awaken, 6 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "seaweed",
+        "bath",
+        "detox",
+        "body",
+        "scrub",
+        "awaken"
+      ],
+      "image": "images/store/b-48211-1pk.jpg",
+      "imageAlt": "Seaweed Bath Co. Detox Body Scrub, Awaken, 6 oz",
+      "blurb": "A sugar and seaweed body scrub with eucalyptus and peppermint.",
+      "price": 1699,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Seaweed Bath Co. Detox Body Scrub, Awaken, 6 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 10,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-48211-1PK"
+      }
+    },
+    {
+      "id": "bg-soothing-touch-salt-scrub-20-oz",
+      "name": "Soothing Touch Salt Scrub, 20 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "soothing",
+        "touch",
+        "salt",
+        "scrub",
+        "lavender",
+        "peppermint",
+        "rosemary"
+      ],
+      "image": "images/store/b-59343-1pk.jpg",
+      "imageAlt": "Soothing Touch Salt Scrub, 20 oz",
+      "blurb": "A big jar of salt scrub with oils that leaves skin smooth.",
+      "price": 1399,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Soothing Touch Salt Scrub, 20 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 28,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-59343-1PK"
+      },
+      "options": {
+        "label": "Scent",
+        "values": [
+          {
+            "name": "Lavender",
+            "sku": "B-59343-1PK"
+          },
+          {
+            "name": "Peppermint Rosemary",
+            "sku": "B-59344-1PK"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bg-soothing-touch-muscle-comfort-massage-oil-8-oz",
+      "name": "Soothing Touch Muscle Comfort Massage Oil, 8 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "soothing",
+        "touch",
+        "muscle",
+        "comfort",
+        "massage",
+        "oil"
+      ],
+      "image": "images/store/b-59348-1pk.jpg",
+      "imageAlt": "Soothing Touch Muscle Comfort Massage Oil, 8 oz",
+      "blurb": "A massage oil with arnica and essential oils for tired muscles.",
+      "price": 1299,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Soothing Touch Muscle Comfort Massage Oil, 8 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 13,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-59348-1PK"
+      }
+    },
+    {
+      "id": "bg-soothing-touch-fractionated-coconut-oil-unscented-8-oz",
+      "name": "Soothing Touch Fractionated Coconut Oil, Unscented, 8 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "soothing",
+        "touch",
+        "fractionated",
+        "coconut",
+        "oil",
+        "unscented"
+      ],
+      "image": "images/store/b-40290-1pk.jpg",
+      "imageAlt": "Soothing Touch Fractionated Coconut Oil, Unscented, 8 oz",
+      "blurb": "Light, non-greasy coconut oil for massage and for diluting essential oils.",
+      "price": 1299,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Soothing Touch Fractionated Coconut Oil, Unscented, 8 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 13,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-40290-1PK"
+      }
+    },
+    {
+      "id": "bg-everyday-shea-bubble-bath-lavender-32-oz",
+      "name": "EveryDay Shea Bubble Bath, Lavender, 32 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "everyday",
+        "shea",
+        "bubble",
+        "bath",
+        "lavender"
+      ],
+      "image": "images/store/b-45212-1pk.jpg",
+      "imageAlt": "EveryDay Shea Bubble Bath, Lavender, 32 oz",
+      "blurb": "A big bottle of shea butter bubble bath with a lavender scent.",
+      "price": 1799,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: EveryDay Shea Bubble Bath, Lavender, 32 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 46,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-45212-1PK"
+      }
+    },
+    {
+      "id": "bg-everyday-shea-bubble-bath-unscented-32-oz",
+      "name": "EveryDay Shea Bubble Bath, Unscented, 32 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "everyday",
+        "shea",
+        "bubble",
+        "bath",
+        "unscented"
+      ],
+      "image": "images/store/b-81657-1pk.jpg",
+      "imageAlt": "EveryDay Shea Bubble Bath, Unscented, 32 oz",
+      "blurb": "A big bottle of gentle, unscented shea butter bubble bath.",
+      "price": 1799,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: EveryDay Shea Bubble Bath, Unscented, 32 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 46,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-81657-1PK"
+      }
+    },
+    {
+      "id": "bg-everyday-coconut-body-wash-32-oz",
+      "name": "EveryDay Coconut Body Wash, 32 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "everyday",
+        "coconut",
+        "body",
+        "wash"
+      ],
+      "image": "images/store/b-41367-1pk.jpg",
+      "imageAlt": "EveryDay Coconut Body Wash, 32 oz",
+      "blurb": "A big bottle of super-hydrating coconut body wash.",
+      "price": 1799,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: EveryDay Coconut Body Wash, 32 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 46,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-41367-1PK"
+      }
+    },
+    {
+      "id": "bg-everyday-coconut-conditioner-32-oz",
+      "name": "EveryDay Coconut Conditioner, 32 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "everyday",
+        "coconut",
+        "conditioner"
+      ],
+      "image": "images/store/b-41390-1pk.jpg",
+      "imageAlt": "EveryDay Coconut Conditioner, 32 oz",
+      "blurb": "A big bottle of super-hydrating coconut conditioner.",
+      "price": 1799,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: EveryDay Coconut Conditioner, 32 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 43,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-41390-1PK"
+      }
+    },
+    {
+      "id": "bg-everyday-coconut-lime-lotion-32-oz",
+      "name": "EveryDay Coconut Lime Lotion, 32 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "everyday",
+        "coconut",
+        "lime",
+        "lotion"
+      ],
+      "image": "images/store/b-45020-1pk.jpg",
+      "imageAlt": "EveryDay Coconut Lime Lotion, 32 oz",
+      "blurb": "A big pump bottle of coconut lime hand and body lotion.",
+      "price": 1799,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: EveryDay Coconut Lime Lotion, 32 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 43,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-45020-1PK"
+      }
+    },
+    {
+      "id": "bg-philip-adam-shampoo-12-oz",
+      "name": "Philip Adam Shampoo, 12 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "philip",
+        "adam",
+        "shampoo",
+        "apple",
+        "cider",
+        "vinegar",
+        "unscented",
+        "orange",
+        "vanilla"
+      ],
+      "image": "images/store/b-47370-1pk.jpg",
+      "imageAlt": "Philip Adam Shampoo, 12 oz",
+      "blurb": "A clean, simple shampoo made with apple cider vinegar or fruit extracts.",
+      "price": 2199,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Philip Adam Shampoo, 12 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 20,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-47370-1PK"
+      },
+      "options": {
+        "label": "Kind",
+        "values": [
+          {
+            "name": "Apple Cider Vinegar",
+            "sku": "B-47370-1PK"
+          },
+          {
+            "name": "Apple Cider Vinegar Unscented",
+            "sku": "B-47372-1PK"
+          },
+          {
+            "name": "Orange Vanilla",
+            "sku": "B-47395-1PK"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bg-philip-adam-apple-cider-vinegar-conditioner-12-oz",
+      "name": "Philip Adam Apple Cider Vinegar Conditioner, 12 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "philip",
+        "adam",
+        "apple",
+        "cider",
+        "vinegar",
+        "conditioner"
+      ],
+      "image": "images/store/b-47371-1pk.jpg",
+      "imageAlt": "Philip Adam Apple Cider Vinegar Conditioner, 12 oz",
+      "blurb": "A light conditioner with apple cider vinegar that leaves hair soft and shiny.",
+      "price": 2199,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Philip Adam Apple Cider Vinegar Conditioner, 12 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 20,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-47371-1PK"
+      }
+    },
+    {
+      "id": "bg-herban-cowboy-body-wash-forest-18-oz",
+      "name": "Herban Cowboy Body Wash, Forest, 18 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "herban",
+        "cowboy",
+        "body",
+        "wash",
+        "forest"
+      ],
+      "image": "images/store/b-82653-1pk.jpg",
+      "imageAlt": "Herban Cowboy Body Wash, Forest, 18 oz",
+      "blurb": "A natural body wash with a woodsy forest scent.",
+      "price": 1499,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Herban Cowboy Body Wash, Forest, 18 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 25,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-82653-1PK"
+      }
+    },
+    {
+      "id": "bg-herban-cowboy-cologne-17-oz",
+      "name": "Herban Cowboy Cologne, 1.7 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "herban",
+        "cowboy",
+        "cologne",
+        "dusk",
+        "forest"
+      ],
+      "image": "images/store/b-53369-1pk.jpg",
+      "imageAlt": "Herban Cowboy Cologne, 1.7 oz",
+      "blurb": "A natural cologne in the brand's signature scents.",
+      "price": 3399,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Herban Cowboy Cologne, 1.7 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 11,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-53369-1PK"
+      },
+      "options": {
+        "label": "Scent",
+        "values": [
+          {
+            "name": "Dusk",
+            "sku": "B-53369-1PK"
+          },
+          {
+            "name": "Forest",
+            "sku": "B-37890-1PK"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bg-grandpa-soap-co-charcoal-bar-soap-425-oz",
+      "name": "Grandpa Soap Co. Charcoal Bar Soap, 4.25 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "grandpa",
+        "soap",
+        "charcoal",
+        "bar"
+      ],
+      "image": "images/store/b-48930-1pk.jpg",
+      "imageAlt": "Grandpa Soap Co. Charcoal Bar Soap, 4.25 oz",
+      "blurb": "A deep-cleaning bar with activated charcoal, made in the USA.",
+      "price": 599,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Grandpa Soap Co. Charcoal Bar Soap, 4.25 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 8,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-48930-1PK"
+      }
+    },
+    {
+      "id": "bg-grandpa-soap-co-epsom-salt-bar-soap-425-oz",
+      "name": "Grandpa Soap Co. Epsom Salt Bar Soap, 4.25 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "grandpa",
+        "soap",
+        "epsom",
+        "salt",
+        "bar"
+      ],
+      "image": "images/store/b-85854-1pk.jpg",
+      "imageAlt": "Grandpa Soap Co. Epsom Salt Bar Soap, 4.25 oz",
+      "blurb": "A bar soap with Epsom salt for a soothing soak in the shower.",
+      "price": 599,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Grandpa Soap Co. Epsom Salt Bar Soap, 4.25 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 8,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-85854-1PK"
+      }
+    },
+    {
+      "id": "bg-grandpa-soap-co-pine-tar-bar-soap-325-oz",
+      "name": "Grandpa Soap Co. Pine Tar Bar Soap, 3.25 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "grandpa",
+        "soap",
+        "pine",
+        "tar",
+        "bar"
+      ],
+      "image": "images/store/b-87554-1pk.jpg",
+      "imageAlt": "Grandpa Soap Co. Pine Tar Bar Soap, 3.25 oz",
+      "blurb": "The classic pine tar bar in a smaller size.",
+      "price": 599,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Grandpa Soap Co. Pine Tar Bar Soap, 3.25 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 6,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-87554-1PK"
+      }
+    },
+    {
+      "id": "bg-grandpa-soap-co-charcoal-shower-cream-95-oz",
+      "name": "Grandpa Soap Co. Charcoal Shower Cream, 9.5 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "grandpa",
+        "soap",
+        "charcoal",
+        "shower",
+        "cream"
+      ],
+      "image": "images/store/b-85863-1pk.jpg",
+      "imageAlt": "Grandpa Soap Co. Charcoal Shower Cream, 9.5 oz",
+      "blurb": "A creamy charcoal body wash for a deep, soft clean.",
+      "price": 999,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Grandpa Soap Co. Charcoal Shower Cream, 9.5 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 13,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-85863-1PK"
+      }
+    },
+    {
+      "id": "bg-earth-therapeutics-bath-blossom-sponge-green",
+      "name": "Earth Therapeutics Bath Blossom Sponge, Green",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "earth",
+        "therapeutics",
+        "bath",
+        "blossom",
+        "sponge",
+        "green"
+      ],
+      "image": "images/store/b-86797-1pk.jpg",
+      "imageAlt": "Earth Therapeutics Bath Blossom Sponge, Green",
+      "blurb": "A soft, fluffy mesh bath sponge that lathers well.",
+      "price": 599,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Earth Therapeutics Bath Blossom Sponge, Green",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 9,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-86797-1PK"
+      }
+    },
+    {
+      "id": "bg-earth-therapeutics-lavender-body-sponge",
+      "name": "Earth Therapeutics Lavender Body Sponge",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "earth",
+        "therapeutics",
+        "lavender",
+        "body",
+        "sponge"
+      ],
+      "image": "images/store/b-51221-1pk.jpg",
+      "imageAlt": "Earth Therapeutics Lavender Body Sponge",
+      "blurb": "A lavender-coloured body sponge for the bath or shower.",
+      "price": 599,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Earth Therapeutics Lavender Body Sponge",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 4,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-51221-1PK"
+      }
+    },
+    {
+      "id": "bg-earth-therapeutics-blue-body-sponge",
+      "name": "Earth Therapeutics Blue Body Sponge",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "earth",
+        "therapeutics",
+        "blue",
+        "body",
+        "sponge"
+      ],
+      "image": "images/store/b-51220-1pk.jpg",
+      "imageAlt": "Earth Therapeutics Blue Body Sponge",
+      "blurb": "A soft, long-lasting body sponge for the bath or shower.",
+      "price": 599,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Earth Therapeutics Blue Body Sponge",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 4,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-51220-1PK"
+      }
+    },
+    {
+      "id": "bg-earth-therapeutics-exfoliating-gloves",
+      "name": "Earth Therapeutics Exfoliating Gloves",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "earth",
+        "therapeutics",
+        "exfoliating",
+        "gloves"
+      ],
+      "image": "images/store/b-86819-1pk.jpg",
+      "imageAlt": "Earth Therapeutics Exfoliating Gloves",
+      "blurb": "A pair of exfoliating bath gloves for smooth skin.",
+      "price": 999,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Earth Therapeutics Exfoliating Gloves",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 3,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-86819-1PK"
+      }
+    },
+    {
+      "id": "bg-earth-therapeutics-exfoliating-hydro-towel",
+      "name": "Earth Therapeutics Exfoliating Hydro Towel",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "earth",
+        "therapeutics",
+        "exfoliating",
+        "hydro",
+        "towel"
+      ],
+      "image": "images/store/b-86874-1pk.jpg",
+      "imageAlt": "Earth Therapeutics Exfoliating Hydro Towel",
+      "blurb": "A long exfoliating cloth that reaches your back.",
+      "price": 899,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Earth Therapeutics Exfoliating Hydro Towel",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 3,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-86874-1PK"
+      }
+    },
+    {
+      "id": "bg-earth-therapeutics-loofah-terry-pad",
+      "name": "Earth Therapeutics Loofah Terry Pad",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "earth",
+        "therapeutics",
+        "loofah",
+        "terry",
+        "pad"
+      ],
+      "image": "images/store/b-86794-1pk.jpg",
+      "imageAlt": "Earth Therapeutics Loofah Terry Pad",
+      "blurb": "A loofah pad backed with soft terry cloth.",
+      "price": 799,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Earth Therapeutics Loofah Terry Pad",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 4,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-86794-1PK"
+      }
+    },
+    {
+      "id": "bg-earth-therapeutics-pocket-comb",
+      "name": "Earth Therapeutics Pocket Comb",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "earth",
+        "therapeutics",
+        "pocket",
+        "comb"
+      ],
+      "image": "images/store/b-86644-1pk.jpg",
+      "imageAlt": "Earth Therapeutics Pocket Comb",
+      "blurb": "A small comb for a pocket, purse or gym bag.",
+      "price": 499,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Earth Therapeutics Pocket Comb",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 3,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-86644-1PK"
+      }
+    },
+    {
+      "id": "bg-earth-therapeutics-4-sided-nail-filing-block",
+      "name": "Earth Therapeutics 4-Sided Nail Filing Block",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "earth",
+        "therapeutics",
+        "sided",
+        "nail",
+        "filing",
+        "block"
+      ],
+      "image": "images/store/b-86777-1pk.jpg",
+      "imageAlt": "Earth Therapeutics 4-Sided Nail Filing Block",
+      "blurb": "Four grits on one block to file, smooth, buff and shine nails.",
+      "price": 599,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Earth Therapeutics 4-Sided Nail Filing Block",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 3,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-86777-1PK"
+      }
+    },
+    {
+      "id": "bg-cleanlogic-detox-charcoal-washcloth",
+      "name": "CleanLogic Detox Charcoal Washcloth",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "cleanlogic",
+        "detox",
+        "charcoal",
+        "washcloth"
+      ],
+      "image": "images/store/b-69197-1pk.jpg",
+      "imageAlt": "CleanLogic Detox Charcoal Washcloth",
+      "blurb": "An exfoliating washcloth infused with charcoal.",
+      "price": 899,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: CleanLogic Detox Charcoal Washcloth",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 6,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-69197-1PK"
+      }
+    },
+    {
+      "id": "bg-cleanlogic-detox-charcoal-body-scrubber",
+      "name": "CleanLogic Detox Charcoal Body Scrubber",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "cleanlogic",
+        "detox",
+        "charcoal",
+        "body",
+        "scrubber"
+      ],
+      "image": "images/store/b-69193-1pk.jpg",
+      "imageAlt": "CleanLogic Detox Charcoal Body Scrubber",
+      "blurb": "A charcoal-infused body scrubber for a deep clean.",
+      "price": 699,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: CleanLogic Detox Charcoal Body Scrubber",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 4,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-69193-1PK"
+      }
+    },
+    {
+      "id": "bg-cleanlogic-detox-charcoal-bath-glove",
+      "name": "CleanLogic Detox Charcoal Bath Glove",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "cleanlogic",
+        "detox",
+        "charcoal",
+        "bath",
+        "glove"
+      ],
+      "image": "images/store/b-69202-1pk.jpg",
+      "imageAlt": "CleanLogic Detox Charcoal Bath Glove",
+      "blurb": "An exfoliating bath glove infused with charcoal.",
+      "price": 1099,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: CleanLogic Detox Charcoal Bath Glove",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 6,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-69202-1PK"
+      }
+    },
+    {
+      "id": "bg-cleanlogic-charcoal-sea-sponge-foam",
+      "name": "CleanLogic Charcoal Sea Sponge Foam",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "cleanlogic",
+        "charcoal",
+        "sea",
+        "sponge",
+        "foam"
+      ],
+      "image": "images/store/b-23911-1pk.jpg",
+      "imageAlt": "CleanLogic Charcoal Sea Sponge Foam",
+      "blurb": "A soft foam sponge infused with charcoal.",
+      "price": 899,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: CleanLogic Charcoal Sea Sponge Foam",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 4,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-23911-1PK"
+      }
+    },
+    {
+      "id": "bg-cleanlogic-exfoliating-soap-saver",
+      "name": "CleanLogic Exfoliating Soap Saver",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "cleanlogic",
+        "exfoliating",
+        "soap",
+        "saver"
+      ],
+      "image": "images/store/b-69191-1pk.jpg",
+      "imageAlt": "CleanLogic Exfoliating Soap Saver",
+      "blurb": "A mesh pouch that holds a bar of soap and turns it into a scrubber.",
+      "price": 899,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: CleanLogic Exfoliating Soap Saver",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 4,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-69191-1PK"
+      }
+    },
+    {
+      "id": "bg-cleanlogic-stretch-bath-cloth-for-men",
+      "name": "CleanLogic Stretch Bath Cloth for Men",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "cleanlogic",
+        "stretch",
+        "bath",
+        "cloth",
+        "for",
+        "men"
+      ],
+      "image": "images/store/b-23890-1pk.jpg",
+      "imageAlt": "CleanLogic Stretch Bath Cloth for Men",
+      "blurb": "A stretchy exfoliating bath cloth.",
+      "price": 899,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: CleanLogic Stretch Bath Cloth for Men",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 5,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-23890-1PK"
+      }
+    },
+    {
+      "id": "bg-aura-cacia-lavender-aroma-mist-4-oz",
+      "name": "Aura Cacia Lavender Aroma Mist, 4 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "aura",
+        "cacia",
+        "lavender",
+        "aroma",
+        "mist"
+      ],
+      "image": "images/store/b-50890-1pk.jpg",
+      "imageAlt": "Aura Cacia Lavender Aroma Mist, 4 oz",
+      "blurb": "A room and body mist with pure lavender essential oil.",
+      "price": 999,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Aura Cacia Lavender Aroma Mist, 4 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 9,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-50890-1PK"
+      }
+    },
+    {
+      "id": "bg-shikai-shower-gel-12-oz",
+      "name": "Shikai Shower Gel, 12 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "shikai",
+        "shower",
+        "gel",
+        "yuzu",
+        "fruit",
+        "sandalwood",
+        "amber"
+      ],
+      "image": "images/store/b-87629-1pk.jpg",
+      "imageAlt": "Shikai Shower Gel, 12 oz",
+      "blurb": "A gentle, moisturizing shower gel.",
+      "price": 1199,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Shikai Shower Gel, 12 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 21,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-87629-1PK"
+      },
+      "options": {
+        "label": "Scent",
+        "values": [
+          {
+            "name": "Yuzu Fruit",
+            "sku": "B-87629-1PK"
+          },
+          {
+            "name": "Sandalwood Amber",
+            "sku": "B-87634-1PK"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bg-shikai-hand-and-body-lotion-8-oz",
+      "name": "Shikai Hand and Body Lotion, 8 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "shikai",
+        "hand",
+        "and",
+        "body",
+        "lotion",
+        "coconut",
+        "sandalwood"
+      ],
+      "image": "images/store/b-50184-1pk.jpg",
+      "imageAlt": "Shikai Hand and Body Lotion, 8 oz",
+      "blurb": "A moisturizing hand and body lotion with aloe and vitamin E.",
+      "price": 1199,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Shikai Hand and Body Lotion, 8 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 14,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-50184-1PK"
+      },
+      "options": {
+        "label": "Scent",
+        "values": [
+          {
+            "name": "Coconut",
+            "sku": "B-50184-1PK"
+          },
+          {
+            "name": "Sandalwood",
+            "sku": "B-50694-1PK"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bg-shikai-borage-dry-skin-foot-cream-42-oz",
+      "name": "Shikai Borage Dry Skin Foot Cream, 4.2 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "shikai",
+        "borage",
+        "dry",
+        "skin",
+        "foot",
+        "cream"
+      ],
+      "image": "images/store/b-55782-1pk.jpg",
+      "imageAlt": "Shikai Borage Dry Skin Foot Cream, 4.2 oz",
+      "blurb": "A rich foot cream with borage oil for dry, cracked heels.",
+      "price": 1499,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Shikai Borage Dry Skin Foot Cream, 4.2 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 11,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-55782-1PK"
+      }
+    },
+    {
+      "id": "bg-shikai-borage-dry-skin-therapy-lotion-8-oz",
+      "name": "Shikai Borage Dry Skin Therapy Lotion, 8 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "shikai",
+        "borage",
+        "dry",
+        "skin",
+        "therapy",
+        "lotion"
+      ],
+      "image": "images/store/b-54548-1pk.jpg",
+      "imageAlt": "Shikai Borage Dry Skin Therapy Lotion, 8 oz",
+      "blurb": "A fragrance-free lotion with borage oil for very dry skin.",
+      "price": 1799,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Shikai Borage Dry Skin Therapy Lotion, 8 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 14,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-54548-1PK"
+      }
+    },
+    {
+      "id": "bg-andalou-naturals-apricot-probiotic-cleansing-milk-6-oz",
+      "name": "Andalou Naturals Apricot Probiotic Cleansing Milk, 6 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "andalou",
+        "naturals",
+        "apricot",
+        "probiotic",
+        "cleansing",
+        "milk"
+      ],
+      "image": "images/store/b-49324-1pk.jpg",
+      "imageAlt": "Andalou Naturals Apricot Probiotic Cleansing Milk, 6 oz",
+      "blurb": "A gentle cleansing milk for the face, with apricot and probiotics.",
+      "price": 1799,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Andalou Naturals Apricot Probiotic Cleansing Milk, 6 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 12,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-49324-1PK"
+      }
+    },
+    {
+      "id": "bg-andalou-naturals-clementine-hand-cream-34-oz",
+      "name": "Andalou Naturals Clementine Hand Cream, 3.4 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "andalou",
+        "naturals",
+        "clementine",
+        "hand",
+        "cream"
+      ],
+      "image": "images/store/b-41998-1pk.jpg",
+      "imageAlt": "Andalou Naturals Clementine Hand Cream, 3.4 oz",
+      "blurb": "A rich hand cream with a bright clementine scent.",
+      "price": 1099,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Andalou Naturals Clementine Hand Cream, 3.4 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 8,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-41998-1PK"
+      }
+    },
+    {
+      "id": "bg-andalou-naturals-kukui-cocoa-body-butter-8-oz",
+      "name": "Andalou Naturals Kukui Cocoa Body Butter, 8 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "andalou",
+        "naturals",
+        "kukui",
+        "cocoa",
+        "body",
+        "butter"
+      ],
+      "image": "images/store/b-49321-1pk.jpg",
+      "imageAlt": "Andalou Naturals Kukui Cocoa Body Butter, 8 oz",
+      "blurb": "A thick body butter with kukui oil and cocoa butter.",
+      "price": 1699,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Andalou Naturals Kukui Cocoa Body Butter, 8 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 13,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-49321-1PK"
+      }
+    },
+    {
+      "id": "bg-andalou-naturals-dmae-lift-and-firm-cream-17-oz",
+      "name": "Andalou Naturals DMAE Lift and Firm Cream, 1.7 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "andalou",
+        "naturals",
+        "dmae",
+        "lift",
+        "and",
+        "firm",
+        "cream"
+      ],
+      "image": "images/store/b-42443-1pk.jpg",
+      "imageAlt": "Andalou Naturals DMAE Lift and Firm Cream, 1.7 oz",
+      "blurb": "A face cream with DMAE and fruit stem cells.",
+      "price": 3199,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Andalou Naturals DMAE Lift and Firm Cream, 1.7 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 8,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-42443-1PK"
+      }
+    },
+    {
+      "id": "bg-alba-botanica-body-bath-32-oz",
+      "name": "Alba Botanica Body Bath, 32 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "alba",
+        "botanica",
+        "body",
+        "bath",
+        "honey",
+        "mango",
+        "french",
+        "lavender",
+        "midnight",
+        "rose"
+      ],
+      "image": "images/store/b-56279-1pk.jpg",
+      "imageAlt": "Alba Botanica Body Bath, 32 oz",
+      "blurb": "A big bottle of moisturizing body wash, vegan and paraben-free.",
+      "price": 2299,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Alba Botanica Body Bath, 32 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 46,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-56279-1PK"
+      },
+      "options": {
+        "label": "Scent",
+        "values": [
+          {
+            "name": "Honey Mango",
+            "sku": "B-56279-1PK"
+          },
+          {
+            "name": "French Lavender",
+            "sku": "B-56283-1PK"
+          },
+          {
+            "name": "Midnight Rose",
+            "sku": "B-56280-1PK"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bg-fortify-reviving-face-serum-17-oz",
+      "name": "Fortify+ Reviving Face Serum, 1.7 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "fortify",
+        "reviving",
+        "face",
+        "serum"
+      ],
+      "image": "images/store/b-36244-1pk.jpg",
+      "imageAlt": "Fortify+ Reviving Face Serum, 1.7 oz",
+      "blurb": "A lightweight serum that brightens and hydrates the face.",
+      "price": 1599,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Fortify+ Reviving Face Serum, 1.7 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 10,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-36244-1PK"
+      }
+    },
+    {
+      "id": "bg-fortify-face-moisturizer-17-oz",
+      "name": "Fortify+ Face Moisturizer, 1.7 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "fortify",
+        "face",
+        "moisturizer"
+      ],
+      "image": "images/store/b-36238-1pk.jpg",
+      "imageAlt": "Fortify+ Face Moisturizer, 1.7 oz",
+      "blurb": "A daily face moisturizer.",
+      "price": 1699,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Fortify+ Face Moisturizer, 1.7 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 10,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-36238-1PK"
+      }
+    },
+    {
+      "id": "bg-fortify-protecting-face-wipes-30-count",
+      "name": "Fortify+ Protecting Face Wipes, 30 count",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "fortify",
+        "protecting",
+        "face",
+        "wipes",
+        "count"
+      ],
+      "image": "images/store/b-36248-1pk.jpg",
+      "imageAlt": "Fortify+ Protecting Face Wipes, 30 count",
+      "blurb": "Soft cleansing wipes for the face, on the go.",
+      "price": 699,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Fortify+ Protecting Face Wipes, 30 count",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 13,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-36248-1PK"
+      }
+    },
+    {
+      "id": "bg-fortify-nourishing-face-cleanser-5-oz",
+      "name": "Fortify+ Nourishing Face Cleanser, 5 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "fortify",
+        "nourishing",
+        "face",
+        "cleanser"
+      ],
+      "image": "images/store/b-36237-1pk.jpg",
+      "imageAlt": "Fortify+ Nourishing Face Cleanser, 5 oz",
+      "blurb": "A gentle daily face cleanser.",
+      "price": 999,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Fortify+ Nourishing Face Cleanser, 5 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 13,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-36237-1PK"
+      }
+    },
+    {
+      "id": "bg-fortify-firming-eye-pads-5-pairs",
+      "name": "Fortify+ Firming Eye Pads, 5 pairs",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "fortify",
+        "firming",
+        "eye",
+        "pads",
+        "pairs"
+      ],
+      "image": "images/store/b-36236-1pk.jpg",
+      "imageAlt": "Fortify+ Firming Eye Pads, 5 pairs",
+      "blurb": "Cooling hydrogel eye pads to refresh and firm the under-eye area.",
+      "price": 899,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Fortify+ Firming Eye Pads, 5 pairs",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 6,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-36236-1PK"
+      }
+    },
+    {
+      "id": "bg-auromere-tulsi-neem-bar-soap-275-oz",
+      "name": "Auromere Tulsi Neem Bar Soap, 2.75 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "auromere",
+        "tulsi",
+        "neem",
+        "bar",
+        "soap"
+      ],
+      "image": "images/store/b-57254-1pk.jpg",
+      "imageAlt": "Auromere Tulsi Neem Bar Soap, 2.75 oz",
+      "blurb": "An Ayurvedic bar soap with tulsi and neem.",
+      "price": 499,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Auromere Tulsi Neem Bar Soap, 2.75 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 3,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-57254-1PK"
+      }
+    },
+    {
+      "id": "bg-eco-dent-daily-care-toothpowder-2-oz",
+      "name": "Eco-Dent Daily Care Toothpowder, 2 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "eco",
+        "dent",
+        "daily",
+        "care",
+        "toothpowder",
+        "anise",
+        "cinnamon"
+      ],
+      "image": "images/store/b-55557-1pk.jpg",
+      "imageAlt": "Eco-Dent Daily Care Toothpowder, 2 oz",
+      "blurb": "A fluoride-free tooth powder with baking soda and essential oils.",
+      "price": 1099,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Eco-Dent Daily Care Toothpowder, 2 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 5,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-55557-1PK"
+      },
+      "options": {
+        "label": "Flavour",
+        "values": [
+          {
+            "name": "Anise",
+            "sku": "B-55557-1PK"
+          },
+          {
+            "name": "Cinnamon",
+            "sku": "B-55559-1PK"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bg-eco-dent-extrabrite-toothpowder-2-oz",
+      "name": "Eco-Dent Extrabrite Toothpowder, 2 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "eco",
+        "dent",
+        "extrabrite",
+        "toothpowder"
+      ],
+      "image": "images/store/b-54137-1pk.jpg",
+      "imageAlt": "Eco-Dent Extrabrite Toothpowder, 2 oz",
+      "blurb": "A fluoride-free whitening tooth powder.",
+      "price": 1199,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Eco-Dent Extrabrite Toothpowder, 2 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 5,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-54137-1PK"
+      }
+    },
+    {
+      "id": "bg-eco-dent-cinnamon-mouth-rinse-8-oz",
+      "name": "Eco-Dent Cinnamon Mouth Rinse, 8 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "eco",
+        "dent",
+        "cinnamon",
+        "mouth",
+        "rinse"
+      ],
+      "image": "images/store/b-55165-1pk.jpg",
+      "imageAlt": "Eco-Dent Cinnamon Mouth Rinse, 8 oz",
+      "blurb": "An alcohol-free mouth rinse with baking soda and cinnamon.",
+      "price": 1299,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Eco-Dent Cinnamon Mouth Rinse, 8 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 13,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-55165-1PK"
+      }
+    },
+    {
+      "id": "bg-tea-tree-therapy-whitening-toothpaste-3-oz",
+      "name": "Tea Tree Therapy Whitening Toothpaste, 3 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "tea",
+        "tree",
+        "therapy",
+        "whitening",
+        "toothpaste"
+      ],
+      "image": "images/store/b-74407-1pk.jpg",
+      "imageAlt": "Tea Tree Therapy Whitening Toothpaste, 3 oz",
+      "blurb": "A toothpaste with tea tree oil that whitens gently.",
+      "price": 699,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Tea Tree Therapy Whitening Toothpaste, 3 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 6,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-74407-1PK"
+      }
+    },
+    {
+      "id": "bg-tea-tree-therapy-toothpaste-with-baking-soda-5-oz",
+      "name": "Tea Tree Therapy Toothpaste with Baking Soda, 5 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "tea",
+        "tree",
+        "therapy",
+        "toothpaste",
+        "with",
+        "baking",
+        "soda"
+      ],
+      "image": "images/store/b-74406-1pk.jpg",
+      "imageAlt": "Tea Tree Therapy Toothpaste with Baking Soda, 5 oz",
+      "blurb": "A toothpaste with tea tree oil and baking soda.",
+      "price": 799,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Tea Tree Therapy Toothpaste with Baking Soda, 5 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 9,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-74406-1PK"
+      }
+    },
+    {
+      "id": "bg-essential-oxygen-brushing-rinse-peppermint-travel-size",
+      "name": "Essential Oxygen Brushing Rinse, Peppermint, Travel Size",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "essential",
+        "oxygen",
+        "brushing",
+        "rinse",
+        "peppermint",
+        "travel",
+        "size"
+      ],
+      "image": "images/store/b-10888-1pk.jpg",
+      "imageAlt": "Essential Oxygen Brushing Rinse, Peppermint, Travel Size",
+      "blurb": "The all-natural brushing rinse in a travel size.",
+      "price": 799,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Essential Oxygen Brushing Rinse, Peppermint, Travel Size",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 8,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-10888-1PK"
+      }
+    },
+    {
+      "id": "bg-saltworks-ultra-epsom-salt-lavender-2-lb",
+      "name": "SaltWorks Ultra Epsom Salt, Lavender, 2 lb",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "saltworks",
+        "ultra",
+        "epsom",
+        "salt",
+        "lavender"
+      ],
+      "image": "images/store/b-28515-1pk.jpg",
+      "imageAlt": "SaltWorks Ultra Epsom Salt, Lavender, 2 lb",
+      "blurb": "Epsom bath salt with lavender for a relaxing soak.",
+      "price": 799,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: SaltWorks Ultra Epsom Salt, Lavender, 2 lb",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 46,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-28515-1PK"
+      }
+    },
+    {
+      "id": "bg-redmond-clay-facial-mud-4-oz",
+      "name": "Redmond Clay Facial Mud, 4 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "redmond",
+        "clay",
+        "facial",
+        "mud"
+      ],
+      "image": "images/store/b-48250-1pk.jpg",
+      "imageAlt": "Redmond Clay Facial Mud, 4 oz",
+      "blurb": "A clay face mask made from Redmond bentonite clay.",
+      "price": 1399,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Redmond Clay Facial Mud, 4 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 8,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-48250-1PK"
+      }
+    },
+    {
+      "id": "bg-hand-in-hand-sugar-scrub-9-oz",
+      "name": "Hand in Hand Sugar Scrub, 9 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "hand",
+        "sugar",
+        "scrub",
+        "sea",
+        "salt",
+        "island",
+        "mimosa",
+        "cactus",
+        "blossom"
+      ],
+      "image": "images/store/b-57475-1pk.jpg",
+      "imageAlt": "Hand in Hand Sugar Scrub, 9 oz",
+      "blurb": "A sugar body scrub with shea butter; every purchase donates soap and clean water.",
+      "price": 1699,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Hand in Hand Sugar Scrub, 9 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 15,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-57475-1PK"
+      },
+      "options": {
+        "label": "Scent",
+        "values": [
+          {
+            "name": "Sea Salt",
+            "sku": "B-57475-1PK"
+          },
+          {
+            "name": "Island Mimosa",
+            "sku": "B-52306-1PK"
+          },
+          {
+            "name": "Cactus Blossom",
+            "sku": "B-57454-1PK"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bg-flower-valley-ayate-fiber-washcloth",
+      "name": "Flower Valley Ayate Fiber Washcloth",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "flower",
+        "valley",
+        "ayate",
+        "fiber",
+        "washcloth"
+      ],
+      "image": "images/store/b-58400-1pk.jpg",
+      "imageAlt": "Flower Valley Ayate Fiber Washcloth",
+      "blurb": "A handwoven agave fiber washcloth that exfoliates gently.",
+      "price": 1699,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Flower Valley Ayate Fiber Washcloth",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 4,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-58400-1PK"
+      }
+    },
+    {
+      "id": "bg-bass-brushes-detangler-flex-hair-brush",
+      "name": "Bass Brushes Detangler Flex Hair Brush",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "bass",
+        "brushes",
+        "detangler",
+        "flex",
+        "hair",
+        "brush"
+      ],
+      "image": "images/store/b-44225-1pk.jpg",
+      "imageAlt": "Bass Brushes Detangler Flex Hair Brush",
+      "blurb": "A flexible brush that detangles wet or dry hair without pulling.",
+      "price": 999,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Bass Brushes Detangler Flex Hair Brush",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 7,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-44225-1PK"
+      }
+    },
+    {
+      "id": "bg-bass-brushes-bio-flex-swirl-hair-brush",
+      "name": "Bass Brushes Bio-Flex Swirl Hair Brush",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "bass",
+        "brushes",
+        "bio",
+        "flex",
+        "swirl",
+        "hair",
+        "brush"
+      ],
+      "image": "images/store/b-44226-1pk.jpg",
+      "imageAlt": "Bass Brushes Bio-Flex Swirl Hair Brush",
+      "blurb": "A plant-based flex brush for smooth, gentle brushing.",
+      "price": 999,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Bass Brushes Bio-Flex Swirl Hair Brush",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 7,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-44226-1PK"
+      }
+    },
+    {
+      "id": "bg-lafes-active-deodorant-twist-stick-25-oz",
+      "name": "Lafe's Active Deodorant Twist Stick, 2.5 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "lafes",
+        "active",
+        "deodorant",
+        "twist",
+        "stick"
+      ],
+      "image": "images/store/b-58951-1pk.jpg",
+      "imageAlt": "Lafe's Active Deodorant Twist Stick, 2.5 oz",
+      "blurb": "An aluminium-free deodorant for active days.",
+      "price": 999,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Lafe's Active Deodorant Twist Stick, 2.5 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 4,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-58951-1PK"
+      }
+    },
+    {
+      "id": "bg-lavilin-underarm-deodorant-125-g",
+      "name": "Lavilin Underarm Deodorant, 12.5 g",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "lavilin",
+        "underarm",
+        "deodorant"
+      ],
+      "image": "images/store/b-84755-1pk.jpg",
+      "imageAlt": "Lavilin Underarm Deodorant, 12.5 g",
+      "blurb": "A long-lasting cream deodorant: one application works for up to 7 days.",
+      "price": 2299,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Lavilin Underarm Deodorant, 12.5 g",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 5,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-84755-1PK"
+      }
+    },
+    {
+      "id": "bg-lavanila-healthy-deodorant-vanilla-grapefruit-2-oz",
+      "name": "Lavanila Healthy Deodorant, Vanilla Grapefruit, 2 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "lavanila",
+        "healthy",
+        "deodorant",
+        "vanilla",
+        "grapefruit"
+      ],
+      "image": "images/store/b-83308-1pk.jpg",
+      "imageAlt": "Lavanila Healthy Deodorant, Vanilla Grapefruit, 2 oz",
+      "blurb": "An aluminium-free deodorant with vanilla and grapefruit.",
+      "price": 1599,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Lavanila Healthy Deodorant, Vanilla Grapefruit, 2 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 9,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-83308-1PK"
+      }
+    },
+    {
+      "id": "bg-babo-botanicals-sensitive-baby-daily-lotion-8-oz",
+      "name": "Babo Botanicals Sensitive Baby Daily Lotion, 8 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "babo",
+        "botanicals",
+        "sensitive",
+        "baby",
+        "daily",
+        "lotion"
+      ],
+      "image": "images/store/b-49073-1pk.jpg",
+      "imageAlt": "Babo Botanicals Sensitive Baby Daily Lotion, 8 oz",
+      "blurb": "A fragrance-free daily lotion for babies and sensitive skin.",
+      "price": 1999,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Babo Botanicals Sensitive Baby Daily Lotion, 8 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 20,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-49073-1PK"
+      }
+    },
+    {
+      "id": "bg-babo-botanicals-moisturizing-baby-shampoo-and-wash-16-oz",
+      "name": "Babo Botanicals Moisturizing Baby Shampoo and Wash, 16 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "babo",
+        "botanicals",
+        "moisturizing",
+        "baby",
+        "shampoo",
+        "and",
+        "wash"
+      ],
+      "image": "images/store/b-48513-1pk.jpg",
+      "imageAlt": "Babo Botanicals Moisturizing Baby Shampoo and Wash, 16 oz",
+      "blurb": "A gentle 2-in-1 shampoo and wash for babies.",
+      "price": 2399,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Babo Botanicals Moisturizing Baby Shampoo and Wash, 16 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 27,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-48513-1PK"
+      }
+    },
+    {
+      "id": "bg-a-la-maison-liquid-hand-soap-169-oz",
+      "name": "A La Maison Liquid Hand Soap, 16.9 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "maison",
+        "liquid",
+        "hand",
+        "soap",
+        "lemon",
+        "plumeria"
+      ],
+      "image": "images/store/b-24159-1pk.jpg",
+      "imageAlt": "A La Maison Liquid Hand Soap, 16.9 oz",
+      "blurb": "A French liquid hand soap made with plant oils.",
+      "price": 1199,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: A La Maison Liquid Hand Soap, 16.9 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 26,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-24159-1PK"
+      },
+      "options": {
+        "label": "Scent",
+        "values": [
+          {
+            "name": "Lemon",
+            "sku": "B-24159-1PK"
+          },
+          {
+            "name": "Plumeria",
+            "sku": "B-81956-1PK"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bg-alaffia-african-black-soap-32-oz",
+      "name": "Alaffia African Black Soap, 32 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "alaffia",
+        "african",
+        "black",
+        "soap",
+        "eucalyptus",
+        "tea",
+        "tree",
+        "unscented"
+      ],
+      "image": "images/store/b-44945-1pk.jpg",
+      "imageAlt": "Alaffia African Black Soap, 32 oz",
+      "blurb": "A big bottle of fair-trade African black soap for face, body and hair.",
+      "price": 1799,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Alaffia African Black Soap, 32 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 43,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-44945-1PK"
+      },
+      "options": {
+        "label": "Scent",
+        "values": [
+          {
+            "name": "Eucalyptus Tea Tree",
+            "sku": "B-44945-1PK"
+          },
+          {
+            "name": "Unscented",
+            "sku": "B-44926-1PK"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bg-dr-singhas-mustard-bath-8-oz",
+      "name": "Dr. Singha's Mustard Bath, 8 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "singhas",
+        "mustard",
+        "bath"
+      ],
+      "image": "images/store/b-85971-1pk.jpg",
+      "imageAlt": "Dr. Singha's Mustard Bath, 8 oz",
+      "blurb": "A warming mustard and eucalyptus bath soak.",
+      "price": 1699,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Dr. Singha's Mustard Bath, 8 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 14,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-85971-1PK"
+      }
+    },
+    {
+      "id": "bg-bodhi-whipped-soap-eucalyptus-spearmint-14-oz",
+      "name": "Bodhi Whipped Soap, Eucalyptus Spearmint, 14 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "bodhi",
+        "whipped",
+        "soap",
+        "eucalyptus",
+        "spearmint"
+      ],
+      "image": "images/store/b-69268-1pk.jpg",
+      "imageAlt": "Bodhi Whipped Soap, Eucalyptus Spearmint, 14 oz",
+      "blurb": "A whipped soap and shave cream in one.",
+      "price": 1399,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Bodhi Whipped Soap, Eucalyptus Spearmint, 14 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 21,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-69268-1PK"
+      }
+    },
+    {
+      "id": "bg-attitude-body-cream-8-oz",
+      "name": "ATTITUDE Body Cream, 8 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "attitude",
+        "body",
+        "cream",
+        "nourishing",
+        "energizing",
+        "soothing"
+      ],
+      "image": "images/store/b-84284-1pk.jpg",
+      "imageAlt": "ATTITUDE Body Cream, 8 oz",
+      "blurb": "A plant-based body cream, vegan and EWG Verified.",
+      "price": 1999,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: ATTITUDE Body Cream, 8 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 14,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-84284-1PK"
+      },
+      "options": {
+        "label": "Kind",
+        "values": [
+          {
+            "name": "Nourishing",
+            "sku": "B-84284-1PK"
+          },
+          {
+            "name": "Energizing",
+            "sku": "B-84287-1PK"
+          },
+          {
+            "name": "Soothing",
+            "sku": "B-84285-1PK"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bg-avalon-organics-vitamin-c-cleansing-gel-6-oz",
+      "name": "Avalon Organics Vitamin C Cleansing Gel, 6 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "avalon",
+        "organics",
+        "vitamin",
+        "cleansing",
+        "gel"
+      ],
+      "image": "images/store/b-64412-1pk.jpg",
+      "imageAlt": "Avalon Organics Vitamin C Cleansing Gel, 6 oz",
+      "blurb": "A refreshing face cleanser with vitamin C.",
+      "price": 1799,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Avalon Organics Vitamin C Cleansing Gel, 6 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 12,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-64412-1PK"
+      }
+    },
+    {
+      "id": "bg-avalon-organics-vitamin-c-renewal-cream-17-oz",
+      "name": "Avalon Organics Vitamin C Renewal Cream, 1.7 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "avalon",
+        "organics",
+        "vitamin",
+        "renewal",
+        "cream"
+      ],
+      "image": "images/store/b-64407-1pk.jpg",
+      "imageAlt": "Avalon Organics Vitamin C Renewal Cream, 1.7 oz",
+      "blurb": "A rich vitamin C face cream.",
+      "price": 3499,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Avalon Organics Vitamin C Renewal Cream, 1.7 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 7,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-64407-1PK"
+      }
+    },
+    {
+      "id": "bg-avalon-organics-lavender-hand-and-body-lotion-32-oz",
+      "name": "Avalon Organics Lavender Hand and Body Lotion, 32 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "avalon",
+        "organics",
+        "lavender",
+        "hand",
+        "and",
+        "body",
+        "lotion"
+      ],
+      "image": "images/store/b-55888-1pk.jpg",
+      "imageAlt": "Avalon Organics Lavender Hand and Body Lotion, 32 oz",
+      "blurb": "A big bottle of lavender hand and body lotion.",
+      "price": 2699,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Avalon Organics Lavender Hand and Body Lotion, 32 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 43,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-55888-1PK"
+      }
+    },
+    {
+      "id": "bg-yes-to-avocado-daily-eye-cream-05-oz",
+      "name": "Yes To Avocado Daily Eye Cream, 0.5 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "yes",
+        "avocado",
+        "daily",
+        "eye",
+        "cream"
+      ],
+      "image": "images/store/b-76690-1pk.jpg",
+      "imageAlt": "Yes To Avocado Daily Eye Cream, 0.5 oz",
+      "blurb": "A fragrance-free eye cream with avocado.",
+      "price": 1399,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Yes To Avocado Daily Eye Cream, 0.5 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 7,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-76690-1PK"
+      }
+    },
+    {
+      "id": "bg-yes-to-avocado-daily-cream-cleanser-4-oz",
+      "name": "Yes To Avocado Daily Cream Cleanser, 4 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "yes",
+        "avocado",
+        "daily",
+        "cream",
+        "cleanser"
+      ],
+      "image": "images/store/b-76671-1pk.jpg",
+      "imageAlt": "Yes To Avocado Daily Cream Cleanser, 4 oz",
+      "blurb": "A fragrance-free cream cleanser with avocado for sensitive skin.",
+      "price": 1199,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Yes To Avocado Daily Cream Cleanser, 4 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 9,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-76671-1PK"
+      }
+    },
+    {
+      "id": "bg-mineral-fusion-nail-polish-remover-6-oz",
+      "name": "Mineral Fusion Nail Polish Remover, 6 oz",
+      "category": "Personal Care",
+      "tags": [
+        "bangalla",
+        "mineral",
+        "fusion",
+        "nail",
+        "polish",
+        "remover"
+      ],
+      "image": "images/store/b-39460-1pk.jpg",
+      "imageAlt": "Mineral Fusion Nail Polish Remover, 6 oz",
+      "blurb": "An acetone-free nail polish remover.",
+      "price": 1099,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Mineral Fusion Nail Polish Remover, 6 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 9,
+      "shipFrom": "bangalla",
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-39460-1PK"
+      }
+    },
+    {
       "id": "bg-roland-bamboo-toothpicks-case-of-12-x-300",
       "name": "Roland Bamboo Toothpicks, case of 12 x 300",
       "category": "Home & Kitchen",
@@ -3053,7 +5985,7 @@
       "image": "images/store/b-60917-12pk.jpg",
       "imageAlt": "Roland Bamboo Toothpicks, case of 12 x 300",
       "blurb": "Twelve canisters of 300 bamboo toothpicks.",
-      "price": 3499,
+      "price": 3399,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -3083,7 +6015,7 @@
       "image": "images/store/b-89495-12pk.jpg",
       "imageAlt": "World Centric Compostable Plates, 6 in, case of 240",
       "blurb": "12 packs of 20 commercially compostable 6 inch plates, for parties and events.",
-      "price": 4499,
+      "price": 3399,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -3770,7 +6702,7 @@
       "image": "images/store/b-24616-8pk.jpg",
       "imageAlt": "Casabella Kind Plant-Based Scrub Sponges, case of 8 three-packs",
       "blurb": "24 plant-based scrub sponges in eight 3-packs.",
-      "price": 4999,
+      "price": 4799,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",
@@ -3802,7 +6734,7 @@
       "image": "images/store/b-25849-6pk.jpg",
       "imageAlt": "Weiman Cook Top Scrubbing Pads, case of 6 three-packs",
       "blurb": "18 non-scratch scrubbing pads made for glass and ceramic cooktops.",
-      "price": 3299,
+      "price": 2799,
       "oldPrice": null,
       "interval": null,
       "button": "Add to cart",

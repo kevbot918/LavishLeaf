@@ -38,6 +38,11 @@
   Content-Type: text/javascript; charset=utf-8
   Cache-Control: public, max-age=300
 
+# The pick-up route planner, imported by the dashboard (routes.mjs, 2026-10-11).
+/routes.mjs
+  Content-Type: text/javascript; charset=utf-8
+  Cache-Control: public, max-age=300
+
 # The owner's dashboard, its sample data and the email templates (shown to
 # subscribers through "View in your browser") are not for search engines.
 /dashboard.html

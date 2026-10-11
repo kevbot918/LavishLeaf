@@ -159,3 +159,8 @@
 .db-imp-plus { font-size: .85rem; white-space: nowrap; }
 @media (max-width: 700px) { .db-impact-row { grid-template-columns: 1fr 90px; } }
 .db-table-wrap { overflow-x: auto; }
+.db-route { border-top: 1px solid var(--rule); padding: 12px 0; }
+.db-route h4, .db-suggest h4 { margin: 0 0 6px; font-size: 1rem; }
+.db-route ol { margin: 0 0 8px; padding-left: 22px; font-size: .9rem; }
+.db-suggest { border-top: 1px solid var(--rule); padding-top: 12px; }
+.db-total { font-weight: 700; }

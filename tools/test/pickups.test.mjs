@@ -49,3 +49,11 @@ test('the owner gets every detail', () => {
   assert.equal(rows['Pick-up day'], 'Tuesday');
   assert.equal(rows.Instructions, 'Bin by the gate');
 });
+
+test('every accepted sign-up lands on the route map, even when only its ZIP is known', async () => {
+  const s = cleanSignup(form, {});
+  const byStreet = await checkArea(s, census(at(35.30, -95.40, 'KEOTA')));
+  assert.deepEqual([byStreet.lat, byStreet.lon], [35.30, -95.40]);
+  const byZip = await checkArea(s, census(null));
+  assert.ok(Number.isFinite(byZip.lat) && Number.isFinite(byZip.lon), 'ZIP centre used');
+});

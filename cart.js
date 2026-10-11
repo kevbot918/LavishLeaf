@@ -462,7 +462,7 @@
     var day = el('select', { required: '' });
     day.appendChild(el('option', { value: '' }, 'Choose a day...'));
     DAYS.forEach(function (d) { day.appendChild(el('option', { value: d }, d)); });
-    f.day = field(form, 'Preferred pick-up day', day);
+    f.day = field(form, 'Preferred pick-up day', day, 'We group pick-ups by area to save fuel and keep prices low, so we may confirm a different day with you.');
     f.notes = field(form, 'Instructions for pick-up', el('textarea', { rows: '3', maxlength: '500', placeholder: 'Where to find the bucket or bin, gate codes, dogs, anything we should know.' }));
     var bucket = null;
     if (p.bucket) {

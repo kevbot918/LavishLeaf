@@ -19,6 +19,9 @@ export const RADIUS_MILES = 25;
 export const TOWNS = { MCALESTER: ['74501', '74502'], STIGLER: ['74462'], CHECOTAH: ['74426'] };
 export const NEAR_ZIPS = ['74425', '74426', '74428', '74430', '74432', '74438', '74442', '74450', '74455', '74459', '74462', '74469', '74470', '74472', '74552', '74561', '74845', '74943'];
 export const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+// Where a ZIP-only sign-up sits on the route map: the ZIP's centre (2024
+// Census ZCTA gazetteer). 74502 is McAlester's PO-box ZIP: the town's centre.
+export const ZIP_POINTS = {"74425":[35.1712,-95.623],"74426":[35.4455,-95.5293],"74428":[35.5487,-95.6481],"74430":[35.1294,-95.6464],"74432":[35.2822,-95.6506],"74438":[35.5132,-95.7621],"74442":[35.1238,-95.8166],"74450":[35.5996,-95.4727],"74455":[35.3616,-95.2689],"74459":[35.5188,-95.4921],"74462":[35.2796,-95.1467],"74469":[35.5119,-95.3215],"74470":[35.4767,-95.1669],"74472":[35.25,-95.2597],"74501":[34.9842,-95.7867],"74502":[34.9842,-95.7867],"74552":[35.1134,-95.2489],"74561":[35.1303,-95.4152],"74845":[35.2532,-95.8798],"74943":[35.1,-95.0994]};
 export const BUCKET_CENTS = 1000;
 
 export function miles(a, b) {
@@ -68,11 +71,14 @@ export async function checkArea(s, fetchImpl = fetch) {
     if (c.state && c.state !== 'OK') throw new CheckoutError(400, 'We pick up in Oklahoma only, near Stigler, McAlester and Checotah.');
     const city = String(c.city || '').toUpperCase().replace(/[^A-Z]/g, '');
     const d = miles(FARM, { lat: match.coordinates.y, lon: match.coordinates.x });
-    if (TOWNS[city] || d <= RADIUS_MILES) return { ok: true, how: TOWNS[city] ? 'town' : 'radius', miles: Math.round(d * 10) / 10, matched: match.matchedAddress };
+    if (TOWNS[city] || d <= RADIUS_MILES) return { ok: true, how: TOWNS[city] ? 'town' : 'radius', miles: Math.round(d * 10) / 10, matched: match.matchedAddress, lat: match.coordinates.y, lon: match.coordinates.x };
     throw new CheckoutError(400, `That address is about ${Math.round(d)} miles from us, outside our ${RADIUS_MILES} mile pick-up area (plus McAlester, Stigler and Checotah). Email support@lavishleaf.org and we will let you know when we reach you.`);
   }
   const townZip = Object.entries(TOWNS).some(([t, zips]) => t === town && zips.includes(s.zip));
-  if (townZip || NEAR_ZIPS.includes(s.zip) || Object.values(TOWNS).flat().includes(s.zip)) return { ok: true, how: 'zip' };
+  if (townZip || NEAR_ZIPS.includes(s.zip) || Object.values(TOWNS).flat().includes(s.zip)) {
+    const pt = ZIP_POINTS[s.zip];
+    return { ok: true, how: 'zip', ...(pt ? { lat: pt[0], lon: pt[1], miles: Math.round(miles(FARM, { lat: pt[0], lon: pt[1] }) * 10) / 10 } : {}) };
+  }
   throw new CheckoutError(400, `We could not place that address inside our pick-up area (${RADIUS_MILES} miles of Stigler, plus McAlester and Checotah). Check the street and ZIP, or email support@lavishleaf.org.`);
 }
 

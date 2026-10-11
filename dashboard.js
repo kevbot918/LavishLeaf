@@ -408,27 +408,134 @@
     }).catch(function () { imsg.textContent = 'Could not read the current totals.'; });
     ci.appendChild(el('p', 'db-hint', 'Ideas worth tracking: households on the compost and recycling routes; pick-ups made; bags or buckets of finished compost given back to gardens; seedlings or trees planted; players and teams in the leagues; community events hosted.'));
 
-    // 7c3. Pick-up sign-ups (2026-10-11): every compost and recycling sign-up
-    // with the details from the form (netlify/functions/pickups.mjs).
-    var sp = section('pickups', 'fa-truck', 'Pick-up sign-ups', 'Compost and recycling customers: address, day, instructions and bucket. "Pending" means they left before finishing on PayPal.');
+    // 7c3. Pick-ups (2026-10-11): every compost and recycling sign-up with
+    // the form's details, the day we actually come and the status (saved to
+    // Blobs "pickups"), a spreadsheet export, and the route planner
+    // (routes.mjs): each day's stops in driving order, farm to farm, with
+    // Google Maps links, and a helper that groups customers by area into
+    // route days to save fuel.
+    var sp = section('pickups', 'fa-truck', 'Pick-ups and routes', 'Compost and recycling customers, the day we come, and each day\'s route in driving order. "Pending" means they left before finishing on PayPal.');
     var cp = card(null); sp.appendChild(cp); root.appendChild(sp);
+    var cr = card('Routes', 'Active customers only. Miles are estimates (straight line x 1.25); the Maps links give the real road route.'); sp.appendChild(cr);
     cp.appendChild(el('p', 'db-hint', 'Loading...'));
-    api('pickups', { action: 'list' }).then(function (r) {
+    var PDAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    var PSTAT = ['pending', 'approved', 'active', 'paused', 'cancelled'];
+    var signups = [], R = null;
+    function routeDay(s) { return s.assignedDay || s.day; }
+    function onRoute(s) { return s.status === 'active' || s.status === 'approved'; }
+    function stopOf(s) { return { id: s.id, lat: s.lat, lon: s.lon, day: s.day, name: s.name, address: s.street + ', ' + s.city + ', OK ' + s.zip, s: s }; }
+    function save(s, patch) {
+      return api('pickups', Object.assign({ action: 'update', id: s.id }, patch)).then(function (r) { Object.assign(s, r.signup); drawRoutes(); });
+    }
+    function csv() {
+      var cols = ['created', 'productName', 'status', 'name', 'phone', 'email', 'street', 'city', 'zip', 'day', 'assignedDay', 'bucket', 'notes', 'ownerNote', 'subscriptionId'];
+      var q = function (v) { v = v == null ? '' : String(v); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; };
+      var text = cols.join(',') + '\n' + signups.map(function (s) { return cols.map(function (c) { return q(s[c]); }).join(','); }).join('\n');
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(new Blob([text], { type: 'text/csv' }));
+      a.download = 'lavish-leaf-pickups-' + new Date().toISOString().slice(0, 10) + '.csv';
+      document.body.appendChild(a); a.click(); a.remove();
+    }
+    function drawTable() {
       cp.textContent = '';
-      var list = r.signups || [];
-      if (!list.length) { cp.appendChild(el('p', 'db-empty', 'No sign-ups yet.')); return; }
+      if (!signups.length) { cp.appendChild(el('p', 'db-empty', 'No sign-ups yet. Each one appears here with its address, preferred day, bucket and instructions.')); return; }
+      var bar = el('div', 'db-links');
+      var bx = h('<button type="button" class="db-btn-ghost"><i class="fas fa-file-csv"></i> Download as a spreadsheet (CSV)</button>');
+      bx.addEventListener('click', csv); bar.appendChild(bx); cp.appendChild(bar);
       var t = el('table', 'db-table');
-      t.innerHTML = '<thead><tr><th>Date</th><th>Service</th><th>Name</th><th>Phone</th><th>Address</th><th>Day</th><th>Bucket</th><th>Instructions</th><th>Status</th></tr></thead>';
+      t.innerHTML = '<thead><tr><th>Signed up</th><th>Service</th><th>Customer</th><th>Address</th><th>Asked for</th><th>We come</th><th>Status</th><th>Bucket</th><th>Instructions</th></tr></thead>';
       var tb = el('tbody');
-      list.forEach(function (s) {
+      signups.forEach(function (s) {
         var tr = el('tr');
-        [String(s.created || '').slice(0, 10), s.productName, s.name + ' (' + s.email + ')', String(s.phone).replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3'),
-          s.street + ', ' + s.city + ' ' + s.zip + (s.area && s.area.miles != null ? ' (' + s.area.miles + ' mi)' : ''), s.day, s.bucket ? 'Ours ($10)' : 'Own', s.notes || '', s.status]
-          .forEach(function (v) { tr.appendChild(el('td', null, v)); });
+        tr.appendChild(el('td', null, String(s.created || '').slice(0, 10)));
+        tr.appendChild(el('td', null, s.productName));
+        tr.appendChild(el('td', null, s.name + ' · ' + String(s.phone).replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3') + ' · ' + s.email));
+        tr.appendChild(el('td', null, s.street + ', ' + s.city + ' ' + s.zip + (s.area && s.area.miles != null ? ' (' + s.area.miles + ' mi)' : '') + (Number.isFinite(s.lat) ? '' : ' · not on the map')));
+        tr.appendChild(el('td', null, s.day));
+        var dsel = el('select'); dsel.setAttribute('aria-label', 'Pick-up day for ' + s.name);
+        PDAYS.forEach(function (d) { var o = el('option', null, d); o.value = d; if (d === routeDay(s)) o.selected = true; dsel.appendChild(o); });
+        dsel.addEventListener('change', function () { save(s, { assignedDay: dsel.value }).catch(function (e) { alert(e.message); }); });
+        var td1 = el('td'); td1.appendChild(dsel); tr.appendChild(td1);
+        var ssel = el('select'); ssel.setAttribute('aria-label', 'Status for ' + s.name);
+        PSTAT.forEach(function (st) { var o = el('option', null, st); o.value = st; if (st === s.status) o.selected = true; ssel.appendChild(o); });
+        ssel.addEventListener('change', function () { save(s, { status: ssel.value }).catch(function (e) { alert(e.message); }); });
+        var td2 = el('td'); td2.appendChild(ssel); tr.appendChild(td2);
+        tr.appendChild(el('td', null, s.bucket ? 'Ours ($10)' : 'Own'));
+        tr.appendChild(el('td', null, s.notes || ''));
         tb.appendChild(tr);
       });
       t.appendChild(tb);
       var wrap = el('div', 'db-table-wrap'); wrap.appendChild(t); cp.appendChild(wrap);
+      cp.appendChild(el('p', 'db-hint', 'Change "We come" or "Status" and it saves straight away. Mark a customer active once PayPal shows the subscription active; cancelled and paused customers drop off the routes.'));
+    }
+    function routeBlock(day, stops) {
+      var box = el('div', 'db-route');
+      var r = R.orderRoute(stops);
+      box.appendChild(el('h4', null, day + ': ' + r.stops.length + ' stop' + (r.stops.length === 1 ? '' : 's') + ', about ' + r.miles + ' miles'));
+      var ol = el('ol');
+      r.stops.forEach(function (st) { ol.appendChild(el('li', null, st.name + ', ' + st.address + (st.s.bucket ? ' · bring a bucket' : '') + (st.s.notes ? ' · ' + st.s.notes : ''))); });
+      box.appendChild(ol);
+      var links = el('div', 'db-links');
+      R.mapsLinks(r.stops).forEach(function (u, i, all) {
+        var a = el('a', 'db-btn-ghost', all.length > 1 ? 'Open in Google Maps, part ' + (i + 1) : 'Open in Google Maps');
+        a.href = u; a.target = '_blank'; a.rel = 'noopener'; links.appendChild(a);
+      });
+      box.appendChild(links);
+      return { box: box, miles: r.miles };
+    }
+    function drawRoutes() {
+      if (!R) return;
+      cr.querySelectorAll('.db-route, .db-suggest, .db-empty, .db-total').forEach(function (n) { n.remove(); });
+      var live = signups.filter(onRoute);
+      var mapped = live.filter(function (s) { return Number.isFinite(s.lat); });
+      if (!live.length) { cr.appendChild(el('p', 'db-empty', 'No active customers yet. Mark sign-ups "active" above and their routes appear here.')); return; }
+      var total = 0;
+      PDAYS.forEach(function (d) {
+        var stops = mapped.filter(function (s) { return routeDay(s) === d; }).map(stopOf);
+        if (!stops.length) return;
+        var b = routeBlock(d, stops); total += b.miles; cr.appendChild(b.box);
+      });
+      var unmapped = live.length - mapped.length;
+      cr.appendChild(el('p', 'db-total', 'This week: about ' + Math.round(total) + ' miles over ' + new Set(mapped.map(routeDay)).size + ' day(s).' + (unmapped ? ' ' + unmapped + ' customer(s) could not be placed on the map; add them by hand.' : '')));
+      // Group by area to save fuel.
+      var sg = el('div', 'db-suggest');
+      sg.appendChild(el('h4', null, 'Save fuel: group customers by area'));
+      sg.appendChild(el('p', 'db-hint', 'Splits active customers into route days by direction from the farm, so each day drives one area. Each group keeps the day most of its customers asked for when it can.'));
+      var row = el('div', 'db-links');
+      var kIn = el('input'); kIn.type = 'number'; kIn.min = '1'; kIn.max = '6'; kIn.value = String(Math.max(1, Math.min(6, Math.ceil(mapped.length / 12)))); kIn.setAttribute('aria-label', 'Route days per week'); kIn.style.width = '4em';
+      var bS = h('<button type="button" class="db-btn-ghost"><i class="fas fa-route"></i> Suggest route days</button>');
+      row.appendChild(el('span', 'db-hint', 'Route days a week:')); row.appendChild(kIn); row.appendChild(bS);
+      sg.appendChild(row);
+      var out = el('div'); sg.appendChild(out);
+      bS.addEventListener('click', function () {
+        out.textContent = '';
+        var plan = R.suggestDays(mapped.map(stopOf), Number(kIn.value) || 1);
+        var miles = 0, kept = 0;
+        plan.forEach(function (g) { miles += g.route.miles; kept += g.kept; });
+        out.appendChild(el('p', null, 'Suggested: about ' + Math.round(miles) + ' miles a week (now ' + Math.round(total) + '). ' + kept + ' of ' + mapped.length + ' customers keep the day they asked for.'));
+        var t = el('table', 'db-table'); t.innerHTML = '<thead><tr><th>Day</th><th>Customers</th><th>Miles</th></tr></thead>';
+        var tb = el('tbody');
+        plan.forEach(function (g) { var tr = el('tr'); tr.appendChild(el('td', null, g.day)); tr.appendChild(el('td', null, g.customers.map(function (c) { return c.name + ' (' + c.s.city + ')'; }).join(', '))); tr.appendChild(el('td', 'num', String(g.route.miles))); tb.appendChild(tr); });
+        t.appendChild(tb); out.appendChild(t);
+        var bA = h('<button type="button" class="db-btn-ghost"><i class="fas fa-check"></i> Use these days</button>');
+        var msg = el('p', 'db-hint', 'Customers whose day changes need a call or text; the list below shows who.');
+        bA.addEventListener('click', function () {
+          bA.disabled = true; msg.textContent = 'Saving...';
+          var moves = [];
+          plan.forEach(function (g) { g.customers.forEach(function (c) { if (routeDay(c.s) !== g.day) moves.push({ s: c.s, day: g.day }); }); });
+          moves.reduce(function (p, m) { return p.then(function () { return api('pickups', { action: 'update', id: m.s.id, assignedDay: m.day }).then(function (r) { Object.assign(m.s, r.signup); }); }); }, Promise.resolve())
+            .then(function () {
+              msg.textContent = moves.length ? 'Saved. Call or text: ' + moves.map(function (m) { return m.s.name + ' (' + String(m.s.phone).replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3') + ') now ' + m.day; }).join('; ') + '.' : 'Nothing to change.';
+              drawTable(); drawRoutes();
+            }).catch(function (e) { msg.textContent = e.message; bA.disabled = false; });
+        });
+        out.appendChild(bA); out.appendChild(msg);
+      });
+      cr.appendChild(sg);
+    }
+    Promise.all([api('pickups', { action: 'list' }), import('/routes.mjs')]).then(function (res) {
+      signups = res[0].signups || []; R = res[1];
+      drawTable(); drawRoutes();
     }).catch(function (e) { cp.textContent = ''; cp.appendChild(el('p', 'db-empty', e.message)); });
 
     // 7d. AliExpress (2026-10-10): connect the buyer account once, then read
