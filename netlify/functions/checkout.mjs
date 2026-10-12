@@ -9,6 +9,7 @@ import { userFromRequest } from '../lib/identity.mjs';
 import { approveLink, call, CheckoutError, config, handle, orderBody, returnUrls, validateCart } from '../lib/paypal.mjs';
 import { quote, ShippingError } from '../../shipping.mjs';
 import { taxQuote } from '../../tax.mjs';
+import { registrationsStore } from '../lib/registrations.mjs';
 
 export default async (request) =>
   handle(request, async (body) => {
@@ -43,5 +44,13 @@ export default async (request) =>
       tax,
       userId: user ? user.id : '',
     }));
+    // League registrations are kept under the PayPal order id (pending until
+    // the payment is captured, capture.mjs marks them paid).
+    const regs = lines.filter((l) => l.reg).map((l) => ({ product: l.product.id, productName: l.product.name, ...l.reg }));
+    if (regs.length) {
+      try {
+        await (await registrationsStore()).setJSON('o-' + order.id, { orderId: order.id, created: new Date().toISOString(), status: 'pending', waivers: required, regs });
+      } catch (e) { console.error('[checkout] could not keep the registration', e.message); }
+    }
     return { approveUrl: approveLink(order) };
   });

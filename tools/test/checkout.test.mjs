@@ -108,6 +108,9 @@ test('no keys, no checkout; and sandbox unless told otherwise', () => {
   assert.equal(config({ PAYPAL_CLIENT_ID: 'a', PAYPAL_SECRET: 'b', PAYPAL_ENV: 'live' }).base, 'https://api-m.paypal.com');
 });
 
+// A player registration line carries its form (2026-10-12, registrations.mjs).
+const P = (name) => ({ id: 'soccer-player-fall', qty: 1, rid: 'r' + name.length + 'abcdef', reg: { name, phone: '9185550142', email: 'p@example.com', comms: true, bothTowns: true } });
+
 test('the checkout function end to end, against a fake PayPal', async () => {
   process.env.PAYPAL_CLIENT_ID = 'id';
   process.env.PAYPAL_SECRET = 'secret';
@@ -123,7 +126,7 @@ test('the checkout function end to end, against a fake PayPal', async () => {
     const { default: checkout } = await import('../../netlify/functions/checkout.mjs');
     const res = await checkout(new Request('https://lavishleaf.org/.netlify/functions/checkout', {
       method: 'POST',
-      body: JSON.stringify({ items: [{ id: 'soccer-player-fall', qty: 2 }], note: 'Sam', waivers: ['2026-09'] }),
+      body: JSON.stringify({ items: [P('Sam Lee'), P('Ana Ruiz')], note: 'Sam', waivers: ['2026-09'] }),
     }));
     assert.equal(res.status, 200);
     assert.equal((await res.json()).approveUrl, 'https://www.sandbox.paypal.com/checkoutnow?token=ORDER1');
@@ -142,7 +145,7 @@ test('the checkout function end to end, against a fake PayPal', async () => {
     // The waiver is enforced on the server, not only by the tick in the cart.
     const noWaiver = await checkout(new Request('https://lavishleaf.org/x', {
       method: 'POST',
-      body: JSON.stringify({ items: [{ id: 'soccer-player-fall', qty: 1 }] }),
+      body: JSON.stringify({ items: [P('Sam Lee')] }),
     }));
     assert.equal(noWaiver.status, 400);
     assert.match((await noWaiver.json()).error, /waiver/);

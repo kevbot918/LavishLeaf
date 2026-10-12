@@ -14,6 +14,7 @@ export const catalog = {
     "shipFrom": null,
     "options": null,
     "pickup": true,
+    "registration": null,
     "bucket": 1000,
     "grocery": false,
     "waiver": null
@@ -31,6 +32,7 @@ export const catalog = {
     "shipFrom": null,
     "options": null,
     "pickup": true,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -48,6 +50,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -65,6 +68,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -82,6 +86,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -99,6 +104,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -116,6 +122,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -133,6 +140,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -150,6 +158,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -167,6 +176,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -184,6 +194,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -201,6 +212,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -218,6 +230,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -235,6 +248,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -252,6 +266,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -269,6 +284,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -286,6 +302,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -303,6 +320,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -320,6 +338,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -337,6 +356,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -354,6 +374,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -371,6 +392,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -388,6 +410,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -405,6 +428,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -428,6 +452,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -445,6 +470,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -462,6 +488,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -479,6 +506,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -496,6 +524,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -513,6 +542,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -530,6 +560,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -547,6 +578,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -564,6 +596,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -581,6 +614,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -598,6 +632,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -615,6 +650,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -632,6 +668,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -649,6 +686,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -666,6 +704,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -683,6 +722,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -700,6 +740,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -717,6 +758,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -734,6 +776,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -751,6 +794,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -768,6 +812,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -785,6 +830,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -809,6 +855,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -826,6 +873,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -843,6 +891,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -860,6 +909,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -877,6 +927,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -894,6 +945,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -911,6 +963,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -928,6 +981,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -945,6 +999,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -968,6 +1023,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -985,6 +1041,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1002,6 +1059,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1019,6 +1077,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1036,6 +1095,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1059,6 +1119,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1083,6 +1144,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1100,6 +1162,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1117,6 +1180,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1134,6 +1198,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1151,6 +1216,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1168,6 +1234,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1185,6 +1252,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1202,6 +1270,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1219,6 +1288,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1236,6 +1306,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1253,6 +1324,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1270,6 +1342,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1287,6 +1360,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1304,6 +1378,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1321,6 +1396,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1338,6 +1414,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1355,6 +1432,7 @@ export const catalog = {
     "shipFrom": null,
     "options": null,
     "pickup": false,
+    "registration": "player",
     "bucket": null,
     "grocery": false,
     "waiver": {
@@ -1374,6 +1452,7 @@ export const catalog = {
     "shipFrom": null,
     "options": null,
     "pickup": false,
+    "registration": "team",
     "bucket": null,
     "grocery": false,
     "waiver": {
@@ -1400,6 +1479,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1417,6 +1497,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1441,6 +1522,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1458,6 +1540,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1475,6 +1558,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1502,6 +1586,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1519,6 +1604,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1536,6 +1622,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1560,6 +1647,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1577,6 +1665,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1600,6 +1689,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1617,6 +1707,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1634,6 +1725,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1651,6 +1743,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1675,6 +1768,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1692,6 +1786,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1718,6 +1813,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1742,6 +1838,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1759,6 +1856,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1776,6 +1874,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1793,6 +1892,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1810,6 +1910,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1827,6 +1928,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1844,6 +1946,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1861,6 +1964,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1878,6 +1982,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1895,6 +2000,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1912,6 +2018,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1929,6 +2036,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1946,6 +2054,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1963,6 +2072,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1980,6 +2090,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1997,6 +2108,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2014,6 +2126,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2031,6 +2144,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2048,6 +2162,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2065,6 +2180,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2088,6 +2204,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2112,6 +2229,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2129,6 +2247,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2146,6 +2265,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2170,6 +2290,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2187,6 +2308,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2204,6 +2326,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2221,6 +2344,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2238,6 +2362,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2255,6 +2380,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2272,6 +2398,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2289,6 +2416,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2306,6 +2434,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2323,6 +2452,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2347,6 +2477,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2371,6 +2502,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2388,6 +2520,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2405,6 +2538,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2432,6 +2566,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2457,6 +2592,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2482,6 +2618,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2499,6 +2636,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2516,6 +2654,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2533,6 +2672,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2550,6 +2690,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2577,6 +2718,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2594,6 +2736,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2611,6 +2754,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2628,6 +2772,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2645,6 +2790,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2662,6 +2808,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2679,6 +2826,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2696,6 +2844,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2713,6 +2862,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2730,6 +2880,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2747,6 +2898,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2772,6 +2924,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2796,6 +2949,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2820,6 +2974,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2837,6 +2992,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2854,6 +3010,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2871,6 +3028,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2888,6 +3046,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2912,6 +3071,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2935,6 +3095,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2952,6 +3113,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2969,6 +3131,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2986,6 +3149,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3009,6 +3173,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3026,6 +3191,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3043,6 +3209,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3060,6 +3227,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3077,6 +3245,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3094,6 +3263,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3111,6 +3281,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3128,6 +3299,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3152,6 +3324,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3169,6 +3342,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3186,6 +3360,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3209,6 +3384,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3226,6 +3402,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3243,6 +3420,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3260,6 +3438,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3277,6 +3456,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3294,6 +3474,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3311,6 +3492,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3328,6 +3510,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3345,6 +3528,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3362,6 +3546,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3379,6 +3564,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3396,6 +3582,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3413,6 +3600,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3430,6 +3618,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3447,6 +3636,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3464,6 +3654,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3481,6 +3672,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3498,6 +3690,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3515,6 +3708,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3532,6 +3726,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3555,6 +3750,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3578,6 +3774,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3595,6 +3792,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3612,6 +3810,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3629,6 +3828,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3646,6 +3846,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3663,6 +3864,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3680,6 +3882,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3704,6 +3907,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3721,6 +3925,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3738,6 +3943,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3755,6 +3961,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3772,6 +3979,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3789,6 +3997,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3806,6 +4015,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3829,6 +4039,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3846,6 +4057,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3863,6 +4075,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3880,6 +4093,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3897,6 +4111,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3914,6 +4129,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3931,6 +4147,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3948,6 +4165,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3972,6 +4190,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3989,6 +4208,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4006,6 +4226,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4023,6 +4244,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4040,6 +4262,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4057,6 +4280,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4074,6 +4298,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4091,6 +4316,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4108,6 +4334,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4131,6 +4358,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4154,6 +4382,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4171,6 +4400,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4188,6 +4418,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4212,6 +4443,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4229,6 +4461,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4246,6 +4479,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4263,6 +4497,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4280,6 +4515,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4297,6 +4533,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4314,6 +4551,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4340,6 +4578,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4363,6 +4602,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4386,6 +4626,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4403,6 +4644,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4426,6 +4668,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4443,6 +4686,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4460,6 +4704,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4477,6 +4722,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4500,6 +4746,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4517,6 +4764,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4534,6 +4782,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4551,6 +4800,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4568,6 +4818,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4585,6 +4836,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4609,6 +4861,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4626,6 +4879,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4643,6 +4897,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4660,6 +4915,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4677,6 +4933,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4694,6 +4951,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4711,6 +4969,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4728,6 +4987,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4745,6 +5005,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4762,6 +5023,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4779,6 +5041,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4796,6 +5059,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4813,6 +5077,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4830,6 +5095,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4847,6 +5113,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4864,6 +5131,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4881,6 +5149,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4898,6 +5167,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4915,6 +5185,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4932,6 +5203,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4949,6 +5221,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4966,6 +5239,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4983,6 +5257,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5000,6 +5275,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5017,6 +5293,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5034,6 +5311,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5051,6 +5329,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5068,6 +5347,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5085,6 +5365,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5102,6 +5383,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5119,6 +5401,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5136,6 +5419,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5153,6 +5437,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5170,6 +5455,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5187,6 +5473,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5204,6 +5491,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5221,6 +5509,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5238,6 +5527,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5255,6 +5545,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5272,6 +5563,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5289,6 +5581,7 @@ export const catalog = {
     "shipFrom": "bangalla",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5306,6 +5599,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5323,6 +5617,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5340,6 +5635,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5357,6 +5653,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5374,6 +5671,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5391,6 +5689,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5408,6 +5707,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5425,6 +5725,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5442,6 +5743,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5459,6 +5761,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5476,6 +5779,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5493,6 +5797,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5510,6 +5815,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5527,6 +5833,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5544,6 +5851,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5561,6 +5869,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5578,6 +5887,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5595,6 +5905,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5612,6 +5923,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5629,6 +5941,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5646,6 +5959,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5663,6 +5977,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5680,6 +5995,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5697,6 +6013,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5714,6 +6031,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5731,6 +6049,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5748,6 +6067,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5765,6 +6085,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5782,6 +6103,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5799,6 +6121,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5816,6 +6139,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5833,6 +6157,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5850,6 +6175,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5867,6 +6193,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5884,6 +6211,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5901,6 +6229,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5918,6 +6247,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5935,6 +6265,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5952,6 +6283,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5969,6 +6301,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5986,6 +6319,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6003,6 +6337,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6026,6 +6361,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6043,6 +6379,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6060,6 +6397,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6077,6 +6415,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6094,6 +6433,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6111,6 +6451,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6128,6 +6469,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6145,6 +6487,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6162,6 +6505,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6179,6 +6523,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6203,6 +6548,7 @@ export const catalog = {
       ]
     },
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6220,6 +6566,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6237,6 +6584,7 @@ export const catalog = {
     "shipFrom": "aliexpress",
     "options": null,
     "pickup": false,
+    "registration": null,
     "bucket": null,
     "grocery": false,
     "waiver": null

@@ -11,6 +11,7 @@
 // With either missing, every function answers 503 "not set up yet".
 
 import { RATE_BP } from '../../tax.mjs';
+import { cleanReg, regLabel } from './registrations.mjs';
 
 const API = {
   live: 'https://api-m.paypal.com',
@@ -57,6 +58,7 @@ export function validateCart(cart, catalog) {
   if (!Array.isArray(cart) || cart.length === 0) throw new CheckoutError(400, 'Your cart is empty.');
   if (cart.length > 50) throw new CheckoutError(400, 'That cart is too long for one order.');
   const merged = new Map();
+  const regs = []; // league registrations: one line each, never merged (registrations.mjs)
   for (const line of cart) {
     const id = line && typeof line.id === 'string' ? line.id : '';
     const qty = line ? line.qty : undefined;
@@ -78,6 +80,11 @@ export function validateCart(cart, catalog) {
     if (!Number.isInteger(p.price) || p.price <= 0) {
       throw new CheckoutError(500, 'That item is not priced correctly yet. Please let us know and we will fix it.');
     }
+    if (p.registration) {
+      if (qty !== 1) throw new CheckoutError(400, 'Each registration is its own line: add one for each player or team.');
+      regs.push({ product: p, qty: 1, reg: cleanReg(p.registration, line.reg) });
+      continue;
+    }
     const key = id + '|' + opt;
     const total = (merged.get(key) || 0) + qty;
     if (total > MAX_QTY) throw new CheckoutError(400, `At most ${MAX_QTY} of one item per order.`);
@@ -86,7 +93,7 @@ export function validateCart(cart, catalog) {
   return [...merged].map(([key, qty]) => {
     const [id, opt] = key.split('|');
     return opt ? { product: catalog[id], qty, opt } : { product: catalog[id], qty };
-  });
+  }).concat(regs);
 }
 
 /**
@@ -118,8 +125,8 @@ export function parseCustomId(s) {
 
 /** The body of PayPal's "create order" call for a validated cart. */
 export function orderBody(lines, { returnUrl, cancelUrl, note = '', waivers = [], shipping = null, tax = null, userId = '' }) {
-  const items = lines.map(({ product, qty, opt }) => ({
-    name: (opt ? `${product.name} (${product.options.label}: ${opt})` : product.name).slice(0, 127),
+  const items = lines.map(({ product, qty, opt, reg }) => ({
+    name: (reg ? `${product.name}: ${regLabel(reg)}` : opt ? `${product.name} (${product.options.label}: ${opt})` : product.name).slice(0, 127),
     sku: (opt ? product.id + ':' + opt : product.id).slice(0, 127),
     quantity: String(qty),
     unit_amount: { currency_code: 'USD', value: money(product.price) },

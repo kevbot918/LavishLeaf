@@ -2767,7 +2767,8 @@
         "url": "waiver.html",
         "label": "I have read and accept the liability waiver"
       },
-      "ship": false
+      "ship": false,
+      "registration": "player"
     },
     {
       "id": "soccer-team-fall",
@@ -2797,7 +2798,8 @@
         "url": "waiver.html",
         "label": "I have read and accept the liability waiver"
       },
-      "ship": false
+      "ship": false,
+      "registration": "team"
     },
     {
       "id": "ae-cotton-crew-socks-5-pairs",

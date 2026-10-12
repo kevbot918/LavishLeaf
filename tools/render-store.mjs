@@ -305,6 +305,8 @@ if (unknown.length) {
       // Pick-up services take the sign-up form; "bucket" is the optional
       // bucket price in cents (netlify/lib/pickups.mjs).
       pickup: p.pickup === true,
+      // League registrations take the player or team form (registrations.mjs).
+      registration: p.registration === 'player' || p.registration === 'team' ? p.registration : null,
       bucket: p.pickup === true && Number.isInteger(p.bucket) ? p.bucket : null,
       // Groceries carry the grocery tax rate (tax.mjs).
       grocery: p.grocery === true,

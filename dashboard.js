@@ -538,6 +538,45 @@
       drawTable(); drawRoutes();
     }).catch(function (e) { cp.textContent = ''; cp.appendChild(el('p', 'db-empty', e.message)); });
 
+    // 7c4. League registrations (2026-10-12): every player and team roster from
+    // the registration forms, paid or still waiting on PayPal, with a
+    // spreadsheet export (one row a person) for the league's contact list.
+    var sr = section('registrations', 'fa-futbol', 'League registrations', 'Every player and team roster from the registration forms. "Pending" means they left before finishing on PayPal.');
+    var crg = card(null); sr.appendChild(crg); root.appendChild(sr);
+    crg.appendChild(el('p', 'db-hint', 'Loading...'));
+    api('registrations', { action: 'list' }).then(function (r) {
+      crg.textContent = '';
+      var regs = r.registrations || [];
+      if (!regs.length) { crg.appendChild(el('p', 'db-empty', 'No registrations yet. Each one appears here with every player\'s name, phone and email.')); return; }
+      var ph = function (p) { return String(p || '').replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3'); };
+      var rows = [];
+      regs.forEach(function (o) {
+        o.regs.forEach(function (g) {
+          var people = g.kind === 'team' ? [Object.assign({ role: 'Captain' }, g.captain)].concat(g.players.map(function (p) { return Object.assign({ role: 'Player' }, p); })) : [{ role: 'Player', name: g.name, phone: g.phone, email: g.email }];
+          people.forEach(function (p) { rows.push({ date: String(o.created || '').slice(0, 10), status: o.status, kind: g.productName, team: g.team || '', role: p.role, name: p.name, phone: ph(p.phone), email: p.email, order: o.orderId }); });
+        });
+      });
+      var bar = el('div', 'db-links');
+      var bx = h('<button type="button" class="db-btn-ghost"><i class="fas fa-file-csv"></i> Download as a spreadsheet (CSV)</button>');
+      bx.addEventListener('click', function () {
+        var cols = ['date', 'status', 'kind', 'team', 'role', 'name', 'phone', 'email', 'order'];
+        var q = function (v) { v = v == null ? '' : String(v); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; };
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob([cols.join(',') + '\n' + rows.map(function (x) { return cols.map(function (c) { return q(x[c]); }).join(','); }).join('\n')], { type: 'text/csv' }));
+        a.download = 'lavish-leaf-registrations-' + new Date().toISOString().slice(0, 10) + '.csv';
+        document.body.appendChild(a); a.click(); a.remove();
+      });
+      bar.appendChild(bx); crg.appendChild(bar);
+      var paid = rows.filter(function (x) { return x.status === 'paid'; });
+      crg.appendChild(el('p', 'db-hint', paid.length + ' paid player(s) across ' + regs.filter(function (o) { return o.status === 'paid'; }).length + ' order(s); ' + (rows.length - paid.length) + ' still pending.'));
+      var t = el('table', 'db-table');
+      t.innerHTML = '<thead><tr><th>Date</th><th>Status</th><th>Registration</th><th>Team</th><th>Role</th><th>Name</th><th>Phone</th><th>Email</th></tr></thead>';
+      var tb = el('tbody');
+      rows.forEach(function (x) { var tr = el('tr'); [x.date, x.status, x.kind.replace(/:.*/, ''), x.team, x.role, x.name, x.phone, x.email].forEach(function (v) { tr.appendChild(el('td', null, v)); }); tb.appendChild(tr); });
+      t.appendChild(tb);
+      var wrap = el('div', 'db-table-wrap'); wrap.appendChild(t); crg.appendChild(wrap);
+    }).catch(function (e) { crg.textContent = ''; crg.appendChild(el('p', 'db-empty', e.message)); });
+
     // 7d. AliExpress (2026-10-10): connect the buyer account once, then read
     // live prices and stock for the AliExpress lines in the store tiers.
     var sx = section('aliexpress', 'fa-box', 'AliExpress', 'Connect the shop\'s AliExpress account once; then check the live price, stock and photos of every AliExpress line in the store tiers.');

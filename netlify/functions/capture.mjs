@@ -13,6 +13,7 @@ import { accountsStore, addOrder } from '../lib/accounts.mjs';
 import { CheckoutError, call, config, handle, parseCustomId } from '../lib/paypal.mjs';
 import { addressOk } from '../../shipping.mjs';
 import { afterPayment, summarise } from '../lib/orders.mjs';
+import { registrationsPaid } from '../lib/registration-mail.mjs';
 
 export default async (request) =>
   handle(request, async (body) => {
@@ -54,6 +55,8 @@ export default async (request) =>
     // alert (netlify/lib/orders.mjs). Each happens once; none can fail the
     // payment, which has already gone through.
     if (done.status === 'COMPLETED') await afterPayment(summarise(done, meta));
+    // League registrations on this order: paid, and the owner gets the roster.
+    if (done.status === 'COMPLETED') await registrationsPaid(done.id, done.payer);
 
     return {
       status: done.status,

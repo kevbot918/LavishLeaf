@@ -21,7 +21,10 @@
       var raw = JSON.parse(localStorage.getItem(KEY) || '[]');
       return Array.isArray(raw) ? raw.filter(function (l) {
         return l && typeof l.id === 'string' && Number.isInteger(l.qty) && l.qty > 0;
-      }).map(function (l) { return l.opt ? { id: l.id, qty: l.qty, opt: String(l.opt) } : { id: l.id, qty: l.qty }; }) : [];
+      }).map(function (l) {
+        if (l.rid && l.reg) return { id: l.id, qty: 1, rid: String(l.rid), reg: l.reg };
+        return l.opt ? { id: l.id, qty: l.qty, opt: String(l.opt) } : { id: l.id, qty: l.qty };
+      }) : [];
     } catch (e) {
       return [];
     }
@@ -68,9 +71,17 @@
     return '$' + (cents / 100).toFixed(2);
   }
 
-  function add(id, opt) {
+  function add(id, opt, reg) {
     var p = products[id];
     if (!p || p.interval || p.active === false) return;
+    // A league registration takes its form first (2026-10-12), one line each.
+    if (p.registration && !reg) { regForm(id); return; }
+    if (p.registration) {
+      cart.push({ id: id, qty: 1, rid: Math.random().toString(36).slice(2, 12), reg: reg });
+      save(cart);
+      notify(p, reg.kind === 'team' ? 'Team ' + reg.team : reg.name);
+      return;
+    }
     // A product with options needs one: the store opens its pop-up to choose.
     if (p.options && !opt) { document.dispatchEvent(new CustomEvent('ll-choose', { detail: { id: id } })); return; }
     opt = opt || '';
@@ -135,8 +146,9 @@
     return a;
   }
 
-  function setQty(id, qty, opt) {
+  function setQty(id, qty, opt, rid) {
     opt = opt || '';
+    if (rid) { cart = cart.filter(function (l) { return l.rid !== rid || qty > 0; }); save(cart); return; }
     cart = cart
       .map(function (l) { return l.id === id && (l.opt || '') === opt ? Object.assign({}, l, { qty: Math.max(0, Math.min(MAX_QTY, qty)) }) : l; })
       .filter(function (l) { return l.qty > 0; });
@@ -275,7 +287,16 @@
       if (!p) return;
       cents += p.price * l.qty;
       var li = el('li', { class: 'cart-line' });
-      li.appendChild(el('span', { class: 'cart-name' }, p.name + (l.opt ? ' (' + p.options.label + ': ' + l.opt + ')' : '')));
+      li.appendChild(el('span', { class: 'cart-name' }, p.name + (l.opt ? ' (' + p.options.label + ': ' + l.opt + ')' : '') +
+        (l.reg ? ': ' + (l.reg.kind === 'team' ? 'Team ' + l.reg.team + ', ' + ((l.reg.players || []).length + 1) + ' players' : l.reg.name) : '')));
+      if (l.reg) {
+        var rm = el('button', { type: 'button', class: 'cart-remove', 'aria-label': 'Remove this registration' }, 'Remove');
+        rm.addEventListener('click', function () { setQty(l.id, 0, '', l.rid); });
+        li.appendChild(rm);
+        li.appendChild(el('span', { class: 'cart-price' }, money(p.price)));
+        list.appendChild(li);
+        return;
+      }
       var qty = el('span', { class: 'cart-qty' });
       var minus = el('button', { type: 'button', 'aria-label': 'One fewer ' + p.name }, '−');
       minus.addEventListener('click', function () { setQty(l.id, l.qty - 1, l.opt); });
@@ -423,6 +444,78 @@
       });
   }
 
+  // League registration form (owner, 2026-10-12): the player, or the team
+  // and its whole roster, with phones and emails; both ticks required. The
+  // server checks it all again (netlify/lib/registrations.mjs).
+  var regDlg;
+  function personFields(form, who, data) {
+    var box = el('div', { class: 'su-row' });
+    var f = {};
+    [['name', 'Name', 'text', 'name'], ['phone', 'Phone', 'tel', 'tel'], ['email', 'Email', 'email', 'email']].forEach(function (d) {
+      var i = el('input', { type: d[2], autocomplete: who === 'you' ? d[3] : 'off', maxlength: d[0] === 'email' ? '120' : '80', 'aria-label': (who === 'you' ? '' : who + ' ') + d[1], placeholder: d[1] });
+      if (data && data[d[0]]) i.value = data[d[0]];
+      box.appendChild(i); f[d[0]] = i;
+    });
+    form.appendChild(box);
+    return f;
+  }
+  function regForm(id) {
+    var p = products[id];
+    var team = p.registration === 'team';
+    if (!regDlg) { regDlg = el('dialog', { class: 'cart-doc su-dlg', 'aria-label': 'Registration' }); document.body.appendChild(regDlg); }
+    regDlg.textContent = '';
+    var bar = el('div', { class: 'cart-doc-bar' });
+    bar.appendChild(el('h2', { class: 'cart-doc-title' }, p.name));
+    var x = el('button', { type: 'button', class: 'btn btn-sm btn-ghost' }, 'Close');
+    x.addEventListener('click', function () { regDlg.close(); });
+    bar.appendChild(x); regDlg.appendChild(bar);
+    var form = el('form', { class: 'cart-doc-body su-form', novalidate: '' });
+    form.appendChild(el('p', { class: 'su-lede' }, team
+      ? 'Your team name, the captain, and every player with a phone and email (at least 7 players with the captain, up to 15). We use these for schedules, weather calls and results.'
+      : 'Who is playing, and how we reach them. Joining a team already? Add its name; leave it blank and we will place you on a team.'));
+    var f = {}, roster = [];
+    if (team) {
+      f.team = field(form, 'Team name', el('input', { type: 'text', maxlength: '60', required: '' }));
+      form.appendChild(el('h3', { class: 'su-h' }, 'Captain'));
+      f.captain = personFields(form, 'you');
+      form.appendChild(el('h3', { class: 'su-h' }, 'Players'));
+      var list = el('div', { class: 'su-roster' }); form.appendChild(list);
+      var addRow = function () { if (roster.length >= 14) return; var n = roster.length + 2; var wrap = el('div', { class: 'su-player' }); wrap.appendChild(el('span', { class: 'su-n' }, String(n))); list.appendChild(wrap); roster.push(personFields(wrap, 'Player ' + n)); };
+      for (var i = 0; i < 6; i++) addRow();
+      var more = el('button', { type: 'button', class: 'btn btn-sm btn-ghost' }, 'Add a player');
+      more.addEventListener('click', function () { addRow(); if (roster.length >= 14) more.disabled = true; });
+      form.appendChild(more);
+    } else {
+      form.appendChild(el('h3', { class: 'su-h' }, 'Player'));
+      f.player = personFields(form, 'you');
+      f.team = field(form, 'Team name (optional)', el('input', { type: 'text', maxlength: '60' }));
+    }
+    var tick = function (text) { var l = el('label', { class: 'su-check' }); var c = el('input', { type: 'checkbox' }); l.appendChild(c); l.appendChild(document.createTextNode(' ' + text)); form.appendChild(l); return c; };
+    var comms = tick(team ? 'Everyone on this roster agrees to receive calls, texts and emails about league play (schedules, weather, results).' : 'I agree to receive calls, texts and emails about league play (schedules, weather, results).');
+    var towns = tick(team ? 'Our team will play games in both Eufaula, OK and McAlester, OK.' : 'I will play games in both Eufaula, OK and McAlester, OK.');
+    var msg = el('p', { class: 'su-msg', role: 'status' });
+    var go = el('button', { type: 'submit', class: 'btn' }, 'Add to cart');
+    form.appendChild(msg); form.appendChild(go);
+    var val = function (o) { return { name: o.name.value.trim(), phone: o.phone.value.trim(), email: o.email.value.trim() }; };
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var reg = team
+        ? { kind: 'team', team: f.team.value.trim(), captain: val(f.captain), players: roster.map(val).filter(function (r) { return r.name || r.phone || r.email; }), comms: comms.checked, bothTowns: towns.checked }
+        : Object.assign({ kind: 'player', team: f.team.value.trim(), comms: comms.checked, bothTowns: towns.checked }, val(f.player));
+      var people = team ? [reg.captain].concat(reg.players) : [reg];
+      var bad = people.filter(function (r) { return r.name.length < 2 || r.phone.replace(/\D/g, '').replace(/^1(?=\d{10}$)/, '').length !== 10 || !/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(r.email); });
+      if (team && reg.team.length < 2) { msg.textContent = 'Please enter the team name.'; return; }
+      if (bad.length) { msg.textContent = 'Please give a name, a 10-digit phone and an email for ' + (bad[0].name || 'every player') + '.'; return; }
+      if (team && people.length < 7) { msg.textContent = 'A team needs at least 7 players, the captain included.'; return; }
+      if (!reg.comms) { msg.textContent = 'Please tick that you accept communication about league play.'; return; }
+      if (!reg.bothTowns) { msg.textContent = 'Please tick that you will play in both Eufaula and McAlester.'; return; }
+      regDlg.close();
+      add(id, '', reg);
+    });
+    regDlg.appendChild(form);
+    if (typeof regDlg.showModal === 'function') regDlg.showModal(); else regDlg.setAttribute('open', '');
+  }
+
   // Pick-up sign-up (owner, 2026-10-11): name, phone, email, address, day,
   // instructions and (compost) our $10 bucket. The server checks the address
   // is in the pick-up area before PayPal opens (netlify/lib/pickups.mjs).
@@ -562,11 +655,13 @@
       if (!p || p.interval) return false;
       // An option that no longer exists, or a product that gained options: drop the line.
       if (p.options) return !!l.opt && p.options.values.some(function (v) { return v.name === l.opt; });
+      // A registration added before the form existed: dropped, to be added again with it.
+      if (p.registration) return !!l.reg;
       return !l.opt;
     });
     build();
     // reload(): the account (store.js) merged a saved cart into this browser.
-    window.LLCart = { open: open, add: add, subscribe: subscribe, reload: function () { cart = load(); render(); } };
+    window.LLCart = { open: open, add: function (id, opt) { add(id, opt); }, subscribe: subscribe, reload: function () { cart = load(); render(); } };
     render();
     document.querySelectorAll('[data-cart-add]').forEach(function (b) {
       b.addEventListener('click', function () { add(b.getAttribute('data-cart-add')); });

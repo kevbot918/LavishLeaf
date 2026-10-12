@@ -550,3 +550,16 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     render-store draws a small "Eco" badge; 80 products. Run eco.mjs, then
     render-store, then seo after any products.json change. Blueland denied
     the affiliate application (2026-10-11); Arbico has not answered.
+
+36. **2026-10-12, league registrations.** Player Registration and Team
+    Registration ("registration": "player" | "team") open a form before the
+    cart: player name, phone, email and optional team; or team name, captain
+    and every player (7 to 15) with phone and email; both ticks required
+    (league communication; play in both Eufaula and McAlester). Each
+    registration is its own cart line (rid + reg), checked again on the server
+    (netlify/lib/registrations.mjs via validateCart), named on the PayPal item,
+    kept in Blobs "registrations" under the PayPal order id at checkout,
+    marked paid with a roster email to the owner at capture
+    (registration-mail.mjs), and listed with a CSV export in the dashboard
+    (functions/registrations.mjs). privacy.html#registrations. Email: SES
+    must run in the region where lavishleaf.org is verified (SES_REGION).
