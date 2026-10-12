@@ -27,7 +27,8 @@
         "bucket",
         "pickup",
         "subscription",
-        "farm"
+        "farm",
+        "eco"
       ],
       "icon": "🌱",
       "image": "images/compost-bucket.jpg",
@@ -43,7 +44,8 @@
       "ship": false,
       "paypalPlanId": "P-6BX47736CP523372JNLFP55Y",
       "pickup": true,
-      "bucket": 1000
+      "bucket": 1000,
+      "eco": true
     },
     {
       "id": "recycle-monthly",
@@ -57,7 +59,8 @@
         "glass",
         "plastic",
         "pickup",
-        "subscription"
+        "subscription",
+        "eco"
       ],
       "icon": "♻️",
       "blurb": "Set out your own bin and we empty it on the day you choose: cardboard, paper, cans, glass, plastics #1, #2 and #5 and more, taken to local recycling centers.",
@@ -72,7 +75,8 @@
       "paypalPlanId": "P-7NF99993LK537471HNLFQA3A",
       "image": "images/recycling-bins.jpg",
       "imageAlt": "Recycling carts set out at the curb for pick-up",
-      "pickup": true
+      "pickup": true,
+      "eco": true
     },
     {
       "id": "ae-seed-starter-trays-with-grow-light-2-pack",
@@ -141,7 +145,8 @@
         "aliexpress",
         "natural",
         "jute",
-        "twine"
+        "twine",
+        "eco"
       ],
       "image": "images/store/ae-3256806674667884.jpg",
       "imageAlt": "Natural Jute Twine",
@@ -159,7 +164,8 @@
       "source": {
         "supplier": "AliExpress",
         "item": "3256806674667884"
-      }
+      },
+      "eco": true
     },
     {
       "id": "ae-ceramic-mini-planter",
@@ -313,7 +319,8 @@
         "bamboo",
         "plant",
         "stakes",
-        "pack"
+        "pack",
+        "eco"
       ],
       "image": "images/store/ae-3256809168755877.jpg",
       "imageAlt": "Bamboo Plant Stakes, 10 pack",
@@ -331,7 +338,8 @@
       "source": {
         "supplier": "AliExpress",
         "item": "3256809168755877"
-      }
+      },
+      "eco": true
     },
     {
       "id": "ae-plant-stabilizer-clip",
@@ -788,6 +796,1947 @@
             "note": "Color: Color random / L"
           }
         ]
+      }
+    },
+    {
+      "id": "bg-bobs-red-mill-organic-pancake-and-waffle-mix-24-oz-pack-of-4",
+      "name": "Bob's Red Mill Organic Pancake and Waffle Mix, 24 oz, pack of 4",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "bobs",
+        "red",
+        "mill",
+        "organic",
+        "pancake",
+        "and",
+        "waffle",
+        "mix",
+        "pack",
+        "eco"
+      ],
+      "image": "images/store/b-78353-4pk.jpg",
+      "imageAlt": "Bob's Red Mill Organic Pancake and Waffle Mix, 24 oz, pack of 4",
+      "blurb": "Organic whole grain buttermilk pancake and waffle mix for fluffy, hearty breakfasts. Four bags.",
+      "price": 2899,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Bob's Red Mill Organic Pancake and Waffle Mix, 24 oz, pack of 4",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 117,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-78353-4PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-bobs-red-mill-organic-buckwheat-flour-22-oz-pack-of-4",
+      "name": "Bob's Red Mill Organic Buckwheat Flour, 22 oz, pack of 4",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "bobs",
+        "red",
+        "mill",
+        "organic",
+        "buckwheat",
+        "flour",
+        "pack",
+        "eco"
+      ],
+      "image": "images/store/b-81942-4pk.jpg",
+      "imageAlt": "Bob's Red Mill Organic Buckwheat Flour, 22 oz, pack of 4",
+      "blurb": "Organic stone-ground buckwheat flour with a rich, nutty taste for pancakes, soba and baking. Four bags.",
+      "price": 3099,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Bob's Red Mill Organic Buckwheat Flour, 22 oz, pack of 4",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 108,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-81942-4PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-bobs-red-mill-organic-white-rice-flour-24-oz-pack-of-4",
+      "name": "Bob's Red Mill Organic White Rice Flour, 24 oz, pack of 4",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "bobs",
+        "red",
+        "mill",
+        "organic",
+        "white",
+        "rice",
+        "flour",
+        "pack",
+        "eco"
+      ],
+      "image": "images/store/b-81741-4pk.jpg",
+      "imageAlt": "Bob's Red Mill Organic White Rice Flour, 24 oz, pack of 4",
+      "blurb": "Organic white rice flour for gluten-free baking and for thickening. Four bags.",
+      "price": 3549,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Bob's Red Mill Organic White Rice Flour, 24 oz, pack of 4",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 117,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-81741-4PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-mikes-mighty-good-organic-spicy-beef-ramen-cup-pack-of-6",
+      "name": "Mike's Mighty Good Organic Spicy Beef Ramen Cup, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "mikes",
+        "mighty",
+        "good",
+        "organic",
+        "spicy",
+        "beef",
+        "ramen",
+        "cup",
+        "pack",
+        "eco"
+      ],
+      "image": "images/store/b-54333-6pk.jpg",
+      "imageAlt": "Mike's Mighty Good Organic Spicy Beef Ramen Cup, pack of 6",
+      "blurb": "Organic steamed noodles in a spicy beef bone broth, ready in minutes. Six cups.",
+      "price": 2299,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Mike's Mighty Good Organic Spicy Beef Ramen Cup, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 25,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-54333-6PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-dr-mcdougalls-organic-teriyaki-noodle-cup-pack-of-6",
+      "name": "Dr. McDougall's Organic Teriyaki Noodle Cup, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "mcdougalls",
+        "organic",
+        "teriyaki",
+        "noodle",
+        "cup",
+        "pack",
+        "eco"
+      ],
+      "image": "images/store/b-76573-6pk.jpg",
+      "imageAlt": "Dr. McDougall's Organic Teriyaki Noodle Cup, pack of 6",
+      "blurb": "Vegan organic noodles in a sweet and savory teriyaki sauce, ready with hot water. Six cups.",
+      "price": 2299,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Dr. McDougall's Organic Teriyaki Noodle Cup, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 25,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-76573-6PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-lotus-foods-organic-garlicky-veggie-rice-ramen-cup-pack-of-6",
+      "name": "Lotus Foods Organic Garlicky Veggie Rice Ramen Cup, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "lotus",
+        "foods",
+        "organic",
+        "garlicky",
+        "veggie",
+        "rice",
+        "ramen",
+        "cup",
+        "pack",
+        "eco"
+      ],
+      "image": "images/store/b-19997-6pk.jpg",
+      "imageAlt": "Lotus Foods Organic Garlicky Veggie Rice Ramen Cup, pack of 6",
+      "blurb": "Organic rice ramen in a garlicky vegetable broth, ready with hot water. Six cups.",
+      "price": 2299,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Lotus Foods Organic Garlicky Veggie Rice Ramen Cup, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 29,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-19997-6PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-oceans-halo-organic-chicken-flavor-noodle-bowl-pack-of-6",
+      "name": "Ocean's Halo Organic Chicken-Flavor Noodle Bowl, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "oceans",
+        "halo",
+        "organic",
+        "chicken",
+        "flavor",
+        "noodle",
+        "bowl",
+        "pack",
+        "eco"
+      ],
+      "image": "images/store/b-36826-6pk.jpg",
+      "imageAlt": "Ocean's Halo Organic Chicken-Flavor Noodle Bowl, pack of 6",
+      "blurb": "A vegan, organic ramen bowl with a savory chicken-style broth, ready in minutes. Six bowls.",
+      "price": 4499,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Ocean's Halo Organic Chicken-Flavor Noodle Bowl, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 46,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-36826-6PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-flavorganics-organic-almond-extract-2-oz",
+      "name": "Flavorganics Organic Almond Extract, 2 oz",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "flavorganics",
+        "organic",
+        "almond",
+        "extract",
+        "eco"
+      ],
+      "image": "images/store/b-32030-1pk.jpg",
+      "imageAlt": "Flavorganics Organic Almond Extract, 2 oz",
+      "blurb": "Organic pure almond extract that adds warm, sweet flavour to cookies, cakes and frostings.",
+      "price": 1299,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Flavorganics Organic Almond Extract, 2 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 7,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-32030-1PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-lundberg-organic-thin-stackers-red-rice-and-quinoa-pack-of-6",
+      "name": "Lundberg Organic Thin Stackers, Red Rice and Quinoa, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "lundberg",
+        "organic",
+        "thin",
+        "stackers",
+        "red",
+        "rice",
+        "and",
+        "quinoa",
+        "pack",
+        "eco"
+      ],
+      "image": "images/store/b-55461-6pk.jpg",
+      "imageAlt": "Lundberg Organic Thin Stackers, Red Rice and Quinoa, pack of 6",
+      "blurb": "Organic thin rice cakes made from red rice and quinoa, a crunchy, light snack. Six packs.",
+      "price": 3999,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Lundberg Organic Thin Stackers, Red Rice and Quinoa, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 56,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-55461-6PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-lakewood-organic-tart-cherry-juice-concentrate-125-oz",
+      "name": "Lakewood Organic Tart Cherry Juice Concentrate, 12.5 oz",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "lakewood",
+        "organic",
+        "tart",
+        "cherry",
+        "juice",
+        "concentrate",
+        "eco"
+      ],
+      "image": "images/store/b-74733-1pk.jpg",
+      "imageAlt": "Lakewood Organic Tart Cherry Juice Concentrate, 12.5 oz",
+      "blurb": "Organic tart cherry juice concentrate to mix with water or sparkling water.",
+      "price": 1199,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Lakewood Organic Tart Cherry Juice Concentrate, 12.5 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 25,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-74733-1PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-lakewood-organic-black-cherry-juice-concentrate-125-oz",
+      "name": "Lakewood Organic Black Cherry Juice Concentrate, 12.5 oz",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "lakewood",
+        "organic",
+        "black",
+        "cherry",
+        "juice",
+        "concentrate",
+        "eco"
+      ],
+      "image": "images/store/b-31297-1pk.jpg",
+      "imageAlt": "Lakewood Organic Black Cherry Juice Concentrate, 12.5 oz",
+      "blurb": "Organic black cherry juice concentrate for rich, sweet drinks.",
+      "price": 1399,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Lakewood Organic Black Cherry Juice Concentrate, 12.5 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 25,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-31297-1PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-lotus-foods-organic-brown-jasmine-rice-heat-and-eat-pack-of-",
+      "name": "Lotus Foods Organic Brown Jasmine Rice, Heat and Eat, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "lotus",
+        "foods",
+        "organic",
+        "brown",
+        "jasmine",
+        "rice",
+        "heat",
+        "and",
+        "eat",
+        "pack",
+        "eco"
+      ],
+      "image": "images/store/b-67516-6pk.jpg",
+      "imageAlt": "Lotus Foods Organic Brown Jasmine Rice, Heat and Eat, pack of 6",
+      "blurb": "Organic fragrant brown jasmine rice, fully cooked and ready to heat. Six 8 oz pouches.",
+      "price": 2699,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Lotus Foods Organic Brown Jasmine Rice, Heat and Eat, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 64,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-67516-6PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-lotus-foods-organic-white-jasmine-rice-heat-and-eat-pack-of-",
+      "name": "Lotus Foods Organic White Jasmine Rice, Heat and Eat, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "lotus",
+        "foods",
+        "organic",
+        "white",
+        "jasmine",
+        "rice",
+        "heat",
+        "and",
+        "eat",
+        "pack",
+        "eco"
+      ],
+      "image": "images/store/b-67518-6pk.jpg",
+      "imageAlt": "Lotus Foods Organic White Jasmine Rice, Heat and Eat, pack of 6",
+      "blurb": "Organic fragrant white jasmine rice, fully cooked and ready to heat. Six 8 oz pouches.",
+      "price": 2649,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Lotus Foods Organic White Jasmine Rice, Heat and Eat, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 64,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-67518-6PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-spicely-organic-whole-cloves-pack-of-6",
+      "name": "Spicely Organic Whole Cloves, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "spicely",
+        "organic",
+        "whole",
+        "cloves",
+        "pack",
+        "eco"
+      ],
+      "image": "images/store/b-14275-6pk.jpg",
+      "imageAlt": "Spicely Organic Whole Cloves, pack of 6",
+      "blurb": "Organic whole cloves for mulled drinks, baking and slow-cooked dishes, in recyclable paper boxes. Six boxes.",
+      "price": 2599,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Spicely Organic Whole Cloves, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 10,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-14275-6PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-spicely-organic-zaatar-14-oz-pack-of-3",
+      "name": "Spicely Organic Za'atar, 1.4 oz, pack of 3",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "spicely",
+        "organic",
+        "zaatar",
+        "pack",
+        "eco"
+      ],
+      "image": "images/store/b-13844-3pk.jpg",
+      "imageAlt": "Spicely Organic Za'atar, 1.4 oz, pack of 3",
+      "blurb": "Certified organic za'atar with thyme, sumac and sesame for flatbreads, roasted vegetables and dips. Three jars.",
+      "price": 2999,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Spicely Organic Za'atar, 1.4 oz, pack of 3",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 25,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-13844-3PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-maya-kaimal-organic-everyday-chana-10-oz-pack-of-6",
+      "name": "Maya Kaimal Organic Everyday Chana, 10 oz, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "maya",
+        "kaimal",
+        "organic",
+        "everyday",
+        "chana",
+        "pack",
+        "eco"
+      ],
+      "image": "images/store/b-53550-6pk.jpg",
+      "imageAlt": "Maya Kaimal Organic Everyday Chana, 10 oz, pack of 6",
+      "blurb": "Organic chickpeas simmered with tomato and onion in a mild Indian sauce, fully cooked. Six pouches.",
+      "price": 3999,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Maya Kaimal Organic Everyday Chana, 10 oz, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 80,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-53550-6PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-native-forest-organic-sliced-bamboo-shoots-14-oz-pack-of-6",
+      "name": "Native Forest Organic Sliced Bamboo Shoots, 14 oz, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "native",
+        "forest",
+        "organic",
+        "sliced",
+        "bamboo",
+        "shoots",
+        "pack",
+        "eco"
+      ],
+      "image": "images/store/b-77282-6pk.jpg",
+      "imageAlt": "Native Forest Organic Sliced Bamboo Shoots, 14 oz, pack of 6",
+      "blurb": "Organic sliced bamboo shoots for stir-fries, soups and salads. Six cans.",
+      "price": 3299,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Native Forest Organic Sliced Bamboo Shoots, 14 oz, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 115,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-77282-6PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-native-forest-organic-sliced-water-chestnuts-8-oz-pack-of-6",
+      "name": "Native Forest Organic Sliced Water Chestnuts, 8 oz, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "native",
+        "forest",
+        "organic",
+        "sliced",
+        "water",
+        "chestnuts",
+        "pack",
+        "eco"
+      ],
+      "image": "images/store/b-33891-6pk.jpg",
+      "imageAlt": "Native Forest Organic Sliced Water Chestnuts, 8 oz, pack of 6",
+      "blurb": "Crisp organic water chestnuts for stir-fries and salads. Six cans.",
+      "price": 2599,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Native Forest Organic Sliced Water Chestnuts, 8 oz, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 73,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-33891-6PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-native-forest-organic-pineapple-chunks-14-oz-pack-of-6",
+      "name": "Native Forest Organic Pineapple Chunks, 14 oz, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "native",
+        "forest",
+        "organic",
+        "pineapple",
+        "chunks",
+        "pack",
+        "eco"
+      ],
+      "image": "images/store/b-20995-6pk.jpg",
+      "imageAlt": "Native Forest Organic Pineapple Chunks, 14 oz, pack of 6",
+      "blurb": "Organic pineapple chunks in their own juice. Six cans.",
+      "price": 4099,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Native Forest Organic Pineapple Chunks, 14 oz, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 119,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-20995-6PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-suzies-organic-tartar-sauce-8-oz-pack-of-6",
+      "name": "Suzie's Organic Tartar Sauce, 8 oz, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "suzies",
+        "organic",
+        "tartar",
+        "sauce",
+        "pack",
+        "eco"
+      ],
+      "image": "images/store/b-72870-6pk.jpg",
+      "imageAlt": "Suzie's Organic Tartar Sauce, 8 oz, pack of 6",
+      "blurb": "Organic creamy tartar sauce for fish, crab cakes and fries. Six jars.",
+      "price": 4199,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Suzie's Organic Tartar Sauce, 8 oz, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 108,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-72870-6PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-suzies-organic-yellow-mustard-8-oz-pack-of-6",
+      "name": "Suzie's Organic Yellow Mustard, 8 oz, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "suzies",
+        "organic",
+        "yellow",
+        "mustard",
+        "pack",
+        "eco"
+      ],
+      "image": "images/store/b-81507-6pk.jpg",
+      "imageAlt": "Suzie's Organic Yellow Mustard, 8 oz, pack of 6",
+      "blurb": "Classic organic yellow mustard for burgers, hot dogs and sandwiches. Six bottles.",
+      "price": 2699,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Suzie's Organic Yellow Mustard, 8 oz, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 108,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-81507-6PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-alessi-organic-italian-pasta-16-oz-pack-of-6",
+      "name": "Alessi Organic Italian Pasta, 16 oz, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "alessi",
+        "organic",
+        "italian",
+        "pasta",
+        "pack",
+        "penne",
+        "rigatoni",
+        "mezzi",
+        "paccheri",
+        "eco"
+      ],
+      "image": "images/store/b-75610-6pk.jpg",
+      "imageAlt": "Alessi Organic Italian Pasta, 16 oz, pack of 6",
+      "blurb": "Organic durum wheat pasta made in Italy. Six one-pound bags.",
+      "price": 3399,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Alessi Organic Italian Pasta, 16 oz, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 126,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-75610-6PK"
+      },
+      "options": {
+        "label": "Shape",
+        "values": [
+          {
+            "name": "Penne",
+            "sku": "B-75610-6PK"
+          },
+          {
+            "name": "Rigatoni",
+            "sku": "B-75611-6PK"
+          },
+          {
+            "name": "Mezzi Paccheri",
+            "sku": "B-75612-6PK"
+          }
+        ]
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-raos-homemade-fusilli-16-oz-pack-of-6",
+      "name": "Rao's Homemade Fusilli, 16 oz, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "raos",
+        "homemade",
+        "fusilli",
+        "pack"
+      ],
+      "image": "images/store/b-79368-6pk.jpg",
+      "imageAlt": "Rao's Homemade Fusilli, 16 oz, pack of 6",
+      "blurb": "Bronze-cut Italian fusilli whose spirals catch every bit of sauce. Six one-pound bags.",
+      "price": 3299,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Rao's Homemade Fusilli, 16 oz, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 122,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-79368-6PK"
+      }
+    },
+    {
+      "id": "bg-mrs-millers-wide-egg-noodles-16-oz-pack-of-6",
+      "name": "Mrs. Miller's Wide Egg Noodles, 16 oz, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "mrs",
+        "millers",
+        "wide",
+        "egg",
+        "noodles",
+        "pack"
+      ],
+      "image": "images/store/b-18090-6pk.jpg",
+      "imageAlt": "Mrs. Miller's Wide Egg Noodles, 16 oz, pack of 6",
+      "blurb": "Homestyle wide egg noodles for soups, stroganoff and casseroles. Six bags.",
+      "price": 3699,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Mrs. Miller's Wide Egg Noodles, 16 oz, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 108,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-18090-6PK"
+      }
+    },
+    {
+      "id": "bg-frontera-taco-seasoning-sauce-for-ground-beef-8-oz-pack-of-6",
+      "name": "Frontera Taco Seasoning Sauce for Ground Beef, 8 oz, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "frontera",
+        "taco",
+        "seasoning",
+        "sauce",
+        "for",
+        "ground",
+        "beef",
+        "pack"
+      ],
+      "image": "images/store/b-57425-6pk.jpg",
+      "imageAlt": "Frontera Taco Seasoning Sauce for Ground Beef, 8 oz, pack of 6",
+      "blurb": "A ready-made taco sauce that seasons a pound of ground beef in minutes. Six pouches.",
+      "price": 2599,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Frontera Taco Seasoning Sauce for Ground Beef, 8 oz, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 60,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-57425-6PK"
+      }
+    },
+    {
+      "id": "bg-uncle-lees-organic-oolong-tea-40-bags-pack-of-6",
+      "name": "Uncle Lee's Organic Oolong Tea, 40 bags, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "uncle",
+        "lees",
+        "organic",
+        "oolong",
+        "tea",
+        "bags",
+        "pack",
+        "eco"
+      ],
+      "image": "images/store/b-47141-6pk.jpg",
+      "imageAlt": "Uncle Lee's Organic Oolong Tea, 40 bags, pack of 6",
+      "blurb": "Smooth, lightly roasted organic oolong tea bags for an everyday cup. Six boxes.",
+      "price": 3399,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Uncle Lee's Organic Oolong Tea, 40 bags, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 52,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-47141-6PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-uncle-lees-organic-green-tea-40-bags-pack-of-6",
+      "name": "Uncle Lee's Organic Green Tea, 40 bags, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "uncle",
+        "lees",
+        "organic",
+        "green",
+        "tea",
+        "bags",
+        "pack",
+        "eco"
+      ],
+      "image": "images/store/b-47136-6pk.jpg",
+      "imageAlt": "Uncle Lee's Organic Green Tea, 40 bags, pack of 6",
+      "blurb": "Organic green tea bags for a light, fresh cup. Six boxes.",
+      "price": 3249,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Uncle Lee's Organic Green Tea, 40 bags, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 52,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-47136-6PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-uncle-lees-organic-black-tea-100-bags",
+      "name": "Uncle Lee's Organic Black Tea, 100 bags",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "uncle",
+        "lees",
+        "organic",
+        "black",
+        "tea",
+        "bags",
+        "eco"
+      ],
+      "image": "images/store/b-34324-1pk.jpg",
+      "imageAlt": "Uncle Lee's Organic Black Tea, 100 bags",
+      "blurb": "A big box of organic black tea bags for a strong everyday cup.",
+      "price": 799,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Uncle Lee's Organic Black Tea, 100 bags",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 9,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-34324-1PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-lets-do-organic-granulated-tapioca-6-oz-pack-of-6",
+      "name": "Let's Do Organic Granulated Tapioca, 6 oz, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "lets",
+        "organic",
+        "granulated",
+        "tapioca",
+        "pack",
+        "eco"
+      ],
+      "image": "images/store/b-12717-6pk.jpg",
+      "imageAlt": "Let's Do Organic Granulated Tapioca, 6 oz, pack of 6",
+      "blurb": "Organic quick-cooking tapioca for puddings and for thickening pies and sauces. Six boxes.",
+      "price": 3199,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Let's Do Organic Granulated Tapioca, 6 oz, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 51,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-12717-6PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-lets-do-organic-sweetened-condensed-coconut-milk-pack-of-6",
+      "name": "Let's Do Organic Sweetened Condensed Coconut Milk, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "lets",
+        "organic",
+        "sweetened",
+        "condensed",
+        "coconut",
+        "milk",
+        "pack",
+        "eco"
+      ],
+      "image": "images/store/b-25060-6pk.jpg",
+      "imageAlt": "Let's Do Organic Sweetened Condensed Coconut Milk, pack of 6",
+      "blurb": "Organic, dairy-free sweetened condensed coconut milk for desserts, coffee and baking. Six cans.",
+      "price": 3149,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Let's Do Organic Sweetened Condensed Coconut Milk, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 69,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-25060-6PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-element-organic-dipped-rice-cakes-pack-of-6",
+      "name": "Element Organic Dipped Rice Cakes, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "element",
+        "organic",
+        "dipped",
+        "rice",
+        "cakes",
+        "pack",
+        "strawberry",
+        "n",
+        "cream",
+        "vanilla",
+        "orange",
+        "eco"
+      ],
+      "image": "images/store/b-53126-6pk.jpg",
+      "imageAlt": "Element Organic Dipped Rice Cakes, pack of 6",
+      "blurb": "Crisp organic rice cakes dipped in a creamy coating for a light sweet snack. Six packs.",
+      "price": 4099,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Element Organic Dipped Rice Cakes, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 31,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-53126-6PK"
+      },
+      "options": {
+        "label": "Flavour",
+        "values": [
+          {
+            "name": "Strawberry 'N' Cream",
+            "sku": "B-53126-6PK"
+          },
+          {
+            "name": "Vanilla Orange",
+            "sku": "B-53111-6PK"
+          }
+        ]
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-napoleon-anchovy-paste-2-oz",
+      "name": "Napoleon Anchovy Paste, 2 oz",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "napoleon",
+        "anchovy",
+        "paste"
+      ],
+      "image": "images/store/b-13286-1pk.jpg",
+      "imageAlt": "Napoleon Anchovy Paste, 2 oz",
+      "blurb": "A tube of savory anchovy paste that adds deep flavor to Caesar dressing, pasta sauces and spreads.",
+      "price": 399,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Napoleon Anchovy Paste, 2 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 5,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-13286-1PK"
+      }
+    },
+    {
+      "id": "bg-sun-luck-spicy-oyster-sauce-9-oz",
+      "name": "Sun Luck Spicy Oyster Sauce, 9 oz",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "sun",
+        "luck",
+        "spicy",
+        "oyster",
+        "sauce"
+      ],
+      "image": "images/store/b-69987-1pk.jpg",
+      "imageAlt": "Sun Luck Spicy Oyster Sauce, 9 oz",
+      "blurb": "A rich oyster sauce with a chili kick for stir-fries, noodles and marinades.",
+      "price": 599,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Sun Luck Spicy Oyster Sauce, 9 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 22,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-69987-1PK"
+      }
+    },
+    {
+      "id": "bg-bellino-minced-garlic-75-oz",
+      "name": "Bellino Minced Garlic, 7.5 oz",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "bellino",
+        "minced",
+        "garlic"
+      ],
+      "image": "images/store/b-69943-1pk.jpg",
+      "imageAlt": "Bellino Minced Garlic, 7.5 oz",
+      "blurb": "Ready-to-use minced garlic in a jar for everyday cooking.",
+      "price": 449,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Bellino Minced Garlic, 7.5 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 18,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-69943-1PK"
+      }
+    },
+    {
+      "id": "bg-beaver-cream-style-horseradish-12-oz-pack-of-6",
+      "name": "Beaver Cream Style Horseradish, 12 oz, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "beaver",
+        "cream",
+        "style",
+        "horseradish",
+        "pack"
+      ],
+      "image": "images/store/b-78386-6pk.jpg",
+      "imageAlt": "Beaver Cream Style Horseradish, 12 oz, pack of 6",
+      "blurb": "Zesty cream-style horseradish for roast beef, sandwiches and cocktail sauce. Six jars.",
+      "price": 3699,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Beaver Cream Style Horseradish, 12 oz, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 108,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-78386-6PK"
+      }
+    },
+    {
+      "id": "bg-vermints-organic-breath-mints-pack-of-6",
+      "name": "VerMints Organic Breath Mints, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "vermints",
+        "organic",
+        "breath",
+        "mints",
+        "pack",
+        "cinnamint",
+        "gingermint",
+        "eco"
+      ],
+      "image": "images/store/b-29578-6pk.jpg",
+      "imageAlt": "VerMints Organic Breath Mints, pack of 6",
+      "blurb": "Organic breath mints in a pocket tin. Six tins.",
+      "price": 2599,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: VerMints Organic Breath Mints, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 20,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-29578-6PK"
+      },
+      "options": {
+        "label": "Flavour",
+        "values": [
+          {
+            "name": "Cinnamint",
+            "sku": "B-29578-6PK"
+          },
+          {
+            "name": "Gingermint",
+            "sku": "B-29577-6PK"
+          }
+        ]
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-spry-xylitol-gum-100-count",
+      "name": "Spry Xylitol Gum, 100 count",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "spry",
+        "xylitol",
+        "gum",
+        "count",
+        "peppermint",
+        "spearmint",
+        "cinnamon"
+      ],
+      "image": "images/store/b-75271-1pk.jpg",
+      "imageAlt": "Spry Xylitol Gum, 100 count",
+      "blurb": "Sugar-free chewing gum sweetened with xylitol.",
+      "price": 1049,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Spry Xylitol Gum, 100 count",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 16,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-75271-1PK"
+      },
+      "options": {
+        "label": "Flavour",
+        "values": [
+          {
+            "name": "Peppermint",
+            "sku": "B-75271-1PK"
+          },
+          {
+            "name": "Spearmint",
+            "sku": "B-75274-1PK"
+          },
+          {
+            "name": "Cinnamon",
+            "sku": "B-75229-1PK"
+          }
+        ]
+      }
+    },
+    {
+      "id": "bg-frontier-co-op-organic-fair-trade-ceylon-cinnamon-176-oz",
+      "name": "Frontier Co-op Organic Fair Trade Ceylon Cinnamon, 1.76 oz",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "frontier",
+        "organic",
+        "fair",
+        "trade",
+        "ceylon",
+        "cinnamon",
+        "eco"
+      ],
+      "image": "images/store/b-64134-1pk.jpg",
+      "imageAlt": "Frontier Co-op Organic Fair Trade Ceylon Cinnamon, 1.76 oz",
+      "blurb": "Organic, fair trade Ceylon cinnamon with a sweet, delicate flavour.",
+      "price": 949,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Frontier Co-op Organic Fair Trade Ceylon Cinnamon, 1.76 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 10,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-64134-1PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-watkins-organic-garlic-powder-31-oz",
+      "name": "Watkins Organic Garlic Powder, 3.1 oz",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "watkins",
+        "organic",
+        "garlic",
+        "powder",
+        "eco"
+      ],
+      "image": "images/store/b-77324-1pk.jpg",
+      "imageAlt": "Watkins Organic Garlic Powder, 3.1 oz",
+      "blurb": "Organic garlic powder for rubs, sauces and everyday seasoning.",
+      "price": 849,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Watkins Organic Garlic Powder, 3.1 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 13,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-77324-1PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-frontier-co-op-organic-salt-free-italian-seasoning-064-oz",
+      "name": "Frontier Co-op Organic Salt-Free Italian Seasoning, 0.64 oz",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "frontier",
+        "organic",
+        "salt",
+        "free",
+        "italian",
+        "seasoning",
+        "eco"
+      ],
+      "image": "images/store/b-28478-1pk.jpg",
+      "imageAlt": "Frontier Co-op Organic Salt-Free Italian Seasoning, 0.64 oz",
+      "blurb": "A salt-free organic blend of Italian herbs for sauces, pizza and roasted vegetables.",
+      "price": 649,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Frontier Co-op Organic Salt-Free Italian Seasoning, 0.64 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 8,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-28478-1PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-sunfood-organic-chia-seeds-1-lb",
+      "name": "Sunfood Organic Chia Seeds, 1 lb",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "sunfood",
+        "organic",
+        "chia",
+        "seeds",
+        "eco"
+      ],
+      "image": "images/store/b-32415-1pk.jpg",
+      "imageAlt": "Sunfood Organic Chia Seeds, 1 lb",
+      "blurb": "Organic chia seeds for smoothies, oatmeal, puddings and baking.",
+      "price": 1349,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Sunfood Organic Chia Seeds, 1 lb",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 21,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-32415-1PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-flora-organic-cold-pressed-flax-oil-17-oz",
+      "name": "Flora Organic Cold-Pressed Flax Oil, 17 oz",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "flora",
+        "organic",
+        "cold",
+        "pressed",
+        "flax",
+        "oil",
+        "eco"
+      ],
+      "image": "images/store/b-22749-1pk.jpg",
+      "imageAlt": "Flora Organic Cold-Pressed Flax Oil, 17 oz",
+      "blurb": "Organic cold-pressed flax oil, rich in omega-3, for dressings and smoothies.",
+      "price": 2849,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Flora Organic Cold-Pressed Flax Oil, 17 oz",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 34,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-22749-1PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-real-foods-organic-sesame-corn-thins-53-oz-pack-of-6",
+      "name": "Real Foods Organic Sesame Corn Thins, 5.3 oz, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "real",
+        "foods",
+        "organic",
+        "sesame",
+        "corn",
+        "thins",
+        "pack",
+        "eco"
+      ],
+      "image": "images/store/b-53339-6pk.jpg",
+      "imageAlt": "Real Foods Organic Sesame Corn Thins, 5.3 oz, pack of 6",
+      "blurb": "Thin, crunchy organic corn cakes with sesame. Six packs.",
+      "price": 2099,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Real Foods Organic Sesame Corn Thins, 5.3 oz, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 49,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-53339-6PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-barnana-organic-plantain-chips-himalayan-pink-salt-pack-of-6",
+      "name": "Barnana Organic Plantain Chips, Himalayan Pink Salt, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "barnana",
+        "organic",
+        "plantain",
+        "chips",
+        "himalayan",
+        "pink",
+        "salt",
+        "pack",
+        "eco"
+      ],
+      "image": "images/store/b-64813-6pk.jpg",
+      "imageAlt": "Barnana Organic Plantain Chips, Himalayan Pink Salt, pack of 6",
+      "blurb": "Crunchy organic plantain chips with pink salt. Six bags.",
+      "price": 4049,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Barnana Organic Plantain Chips, Himalayan Pink Salt, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 44,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-64813-6PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-mavuno-harvest-organic-dried-pineapple-2-oz-pack-of-6",
+      "name": "Mavuno Harvest Organic Dried Pineapple, 2 oz, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "mavuno",
+        "harvest",
+        "organic",
+        "dried",
+        "pineapple",
+        "pack",
+        "eco"
+      ],
+      "image": "images/store/b-38353-6pk.jpg",
+      "imageAlt": "Mavuno Harvest Organic Dried Pineapple, 2 oz, pack of 6",
+      "blurb": "Organic, fair trade dried pineapple with no added sugar. Six bags.",
+      "price": 2849,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Mavuno Harvest Organic Dried Pineapple, 2 oz, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 21,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-38353-6PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-mavuno-harvest-organic-dried-jackfruit-2-oz-pack-of-6",
+      "name": "Mavuno Harvest Organic Dried Jackfruit, 2 oz, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "mavuno",
+        "harvest",
+        "organic",
+        "dried",
+        "jackfruit",
+        "pack",
+        "eco"
+      ],
+      "image": "images/store/b-38356-6pk.jpg",
+      "imageAlt": "Mavuno Harvest Organic Dried Jackfruit, 2 oz, pack of 6",
+      "blurb": "Organic, fair trade dried jackfruit with no added sugar. Six bags.",
+      "price": 2949,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Mavuno Harvest Organic Dried Jackfruit, 2 oz, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 21,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-38356-6PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-dr-mcdougalls-organic-lentil-vegetable-soup-18-oz-pack-of-6",
+      "name": "Dr. McDougall's Organic Lentil Vegetable Soup, 18 oz, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "mcdougalls",
+        "organic",
+        "lentil",
+        "vegetable",
+        "soup",
+        "pack",
+        "eco"
+      ],
+      "image": "images/store/b-49681-6pk.jpg",
+      "imageAlt": "Dr. McDougall's Organic Lentil Vegetable Soup, 18 oz, pack of 6",
+      "blurb": "Ready-to-serve organic lentil and vegetable soup. Six cartons.",
+      "price": 3299,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Dr. McDougall's Organic Lentil Vegetable Soup, 18 oz, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 131,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-49681-6PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-jyoti-organic-black-beans-10-oz-pack-of-6",
+      "name": "Jyoti Organic Black Beans, 10 oz, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "jyoti",
+        "organic",
+        "black",
+        "beans",
+        "pack",
+        "eco"
+      ],
+      "image": "images/store/b-62328-6pk.jpg",
+      "imageAlt": "Jyoti Organic Black Beans, 10 oz, pack of 6",
+      "blurb": "Organic black beans, fully cooked and ready to heat. Six cans.",
+      "price": 1999,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Jyoti Organic Black Beans, 10 oz, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 78,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-62328-6PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-noka-organic-mango-coconut-smoothie-pouch-pack-of-6",
+      "name": "Noka Organic Mango Coconut Smoothie Pouch, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "noka",
+        "organic",
+        "mango",
+        "coconut",
+        "smoothie",
+        "pouch",
+        "pack",
+        "eco"
+      ],
+      "image": "images/store/b-61415-6pk.jpg",
+      "imageAlt": "Noka Organic Mango Coconut Smoothie Pouch, pack of 6",
+      "blurb": "An organic fruit and veggie smoothie in a squeeze pouch. Six pouches.",
+      "price": 2149,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Noka Organic Mango Coconut Smoothie Pouch, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 38,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-61415-6PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-cocomels-organic-coconut-milk-caramels-sea-salt-pack-of-6",
+      "name": "Cocomels Organic Coconut Milk Caramels, Sea Salt, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "cocomels",
+        "organic",
+        "coconut",
+        "milk",
+        "caramels",
+        "sea",
+        "salt",
+        "pack",
+        "eco"
+      ],
+      "image": "images/store/b-64117-6pk.jpg",
+      "imageAlt": "Cocomels Organic Coconut Milk Caramels, Sea Salt, pack of 6",
+      "blurb": "Dairy-free organic caramels made with coconut milk and sea salt. Six boxes.",
+      "price": 3899,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Cocomels Organic Coconut Milk Caramels, Sea Salt, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 29,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-64117-6PK"
+      },
+      "eco": true
+    },
+    {
+      "id": "bg-breton-gluten-free-crackers-original-with-flax-pack-of-6",
+      "name": "Breton Gluten-Free Crackers, Original with Flax, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "breton",
+        "gluten",
+        "free",
+        "crackers",
+        "original",
+        "with",
+        "flax",
+        "pack"
+      ],
+      "image": "images/store/b-67448-6pk.jpg",
+      "imageAlt": "Breton Gluten-Free Crackers, Original with Flax, pack of 6",
+      "blurb": "Crisp gluten-free crackers with flax seed. Six boxes.",
+      "price": 3749,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Breton Gluten-Free Crackers, Original with Flax, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 115,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-67448-6PK"
+      }
+    },
+    {
+      "id": "bg-breton-gluten-free-crackers-herb-and-garlic-pack-of-6",
+      "name": "Breton Gluten-Free Crackers, Herb and Garlic, pack of 6",
+      "category": "Groceries",
+      "tags": [
+        "bangalla",
+        "grocery",
+        "food",
+        "breton",
+        "gluten",
+        "free",
+        "crackers",
+        "herb",
+        "and",
+        "garlic",
+        "pack"
+      ],
+      "image": "images/store/b-67449-6pk.jpg",
+      "imageAlt": "Breton Gluten-Free Crackers, Herb and Garlic, pack of 6",
+      "blurb": "Crisp gluten-free crackers with herbs and garlic. Six boxes.",
+      "price": 3949,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Breton Gluten-Free Crackers, Herb and Garlic, pack of 6",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 115,
+      "shipFrom": "bangalla",
+      "grocery": true,
+      "source": {
+        "supplier": "Bangalla",
+        "sku": "B-67449-6PK"
       }
     },
     {
@@ -1807,7 +3756,8 @@
         "giovanni",
         "bamboo",
         "oval",
-        "hairbrush"
+        "hairbrush",
+        "eco"
       ],
       "image": "images/store/b-66316-1pk.jpg",
       "imageAlt": "Giovanni Bamboo Oval Hairbrush",
@@ -1825,7 +3775,8 @@
       "source": {
         "supplier": "Bangalla",
         "sku": "B-66316-1PK"
-      }
+      },
+      "eco": true
     },
     {
       "id": "bg-a-la-maison-lavender-and-rosemary-bar-soap-4-pack",
@@ -2265,7 +4216,8 @@
         "cowboy",
         "deodorant",
         "stick",
-        "forest"
+        "forest",
+        "eco"
       ],
       "image": "images/store/b-53376-1pk.jpg",
       "imageAlt": "Herban Cowboy Deodorant Stick, Forest, 2.8 oz",
@@ -2283,7 +4235,8 @@
       "source": {
         "supplier": "Bangalla",
         "sku": "B-53376-1PK"
-      }
+      },
+      "eco": true
     },
     {
       "id": "bg-eco-dent-daily-care-toothpowder-mint-2-oz",
@@ -2291,7 +4244,6 @@
       "category": "Personal Care",
       "tags": [
         "bangalla",
-        "eco",
         "dent",
         "daily",
         "care",
@@ -2378,7 +4330,8 @@
         "detox",
         "body",
         "wash",
-        "awaken"
+        "awaken",
+        "eco"
       ],
       "image": "images/store/b-48214-1pk.jpg",
       "imageAlt": "Seaweed Bath Co. Detox Body Wash, Awaken, 12 oz",
@@ -2396,7 +4349,8 @@
       "source": {
         "supplier": "Bangalla",
         "sku": "B-48214-1PK"
-      }
+      },
+      "eco": true
     },
     {
       "id": "bg-redmond-earthpaste-wintergreen-4-oz",
@@ -2752,7 +4706,8 @@
         "age",
         "defense",
         "face",
-        "serum"
+        "serum",
+        "eco"
       ],
       "image": "images/store/b-42889-1pk.jpg",
       "imageAlt": "Nourish Organic Age-Defense Face Serum, 0.7 oz",
@@ -2770,7 +4725,8 @@
       "source": {
         "supplier": "Bangalla",
         "sku": "B-42889-1PK"
-      }
+      },
+      "eco": true
     },
     {
       "id": "bg-eco-dent-mint-mouth-rinse-8-oz",
@@ -2778,7 +4734,6 @@
       "category": "Personal Care",
       "tags": [
         "bangalla",
-        "eco",
         "dent",
         "mint",
         "mouth",
@@ -2884,7 +4839,8 @@
         "blossom",
         "honey",
         "lemon",
-        "verbena"
+        "verbena",
+        "eco"
       ],
       "image": "images/store/b-27320-1pk.jpg",
       "imageAlt": "South of France Foaming Hand Soap, 8 oz",
@@ -2923,7 +4879,8 @@
             "sku": "B-27312-1PK"
           }
         ]
-      }
+      },
+      "eco": true
     },
     {
       "id": "bg-dr-plotkas-mouthwatchers-adult-toothbrush",
@@ -3356,7 +5313,8 @@
         "black",
         "soap",
         "tangerine",
-        "citrus"
+        "citrus",
+        "eco"
       ],
       "image": "images/store/b-44925-1pk.jpg",
       "imageAlt": "Alaffia Authentic African Black Soap, Tangerine Citrus, 32 oz",
@@ -3374,7 +5332,8 @@
       "source": {
         "supplier": "Bangalla",
         "sku": "B-44925-1PK"
-      }
+      },
+      "eco": true
     },
     {
       "id": "bg-mychelle-ultra-hyaluronic-cleanser-42-oz",
@@ -3488,7 +5447,8 @@
         "rose",
         "orange",
         "blossom",
-        "honey"
+        "honey",
+        "eco"
       ],
       "image": "images/store/b-35442-1pk.jpg",
       "imageAlt": "South of France Liquid Hand Wash, 8 oz",
@@ -3527,7 +5487,8 @@
             "sku": "B-35461-1PK"
           }
         ]
-      }
+      },
+      "eco": true
     },
     {
       "id": "bg-andalou-naturals-body-lotion-8-oz",
@@ -4629,7 +6590,8 @@
         "therapeutics",
         "loofah",
         "terry",
-        "pad"
+        "pad",
+        "eco"
       ],
       "image": "images/store/b-86794-1pk.jpg",
       "imageAlt": "Earth Therapeutics Loofah Terry Pad",
@@ -4647,7 +6609,8 @@
       "source": {
         "supplier": "Bangalla",
         "sku": "B-86794-1PK"
-      }
+      },
+      "eco": true
     },
     {
       "id": "bg-earth-therapeutics-pocket-comb",
@@ -5428,7 +7391,6 @@
       "category": "Personal Care",
       "tags": [
         "bangalla",
-        "eco",
         "dent",
         "daily",
         "care",
@@ -5473,7 +7435,6 @@
       "category": "Personal Care",
       "tags": [
         "bangalla",
-        "eco",
         "dent",
         "extrabrite",
         "toothpowder"
@@ -5502,7 +7463,6 @@
       "category": "Personal Care",
       "tags": [
         "bangalla",
-        "eco",
         "dent",
         "cinnamon",
         "mouth",
@@ -5740,7 +7700,8 @@
         "valley",
         "ayate",
         "fiber",
-        "washcloth"
+        "washcloth",
+        "eco"
       ],
       "image": "images/store/b-58400-1pk.jpg",
       "imageAlt": "Flower Valley Ayate Fiber Washcloth",
@@ -5758,7 +7719,8 @@
       "source": {
         "supplier": "Bangalla",
         "sku": "B-58400-1PK"
-      }
+      },
+      "eco": true
     },
     {
       "id": "bg-bass-brushes-detangler-flex-hair-brush",
@@ -5803,7 +7765,8 @@
         "flex",
         "swirl",
         "hair",
-        "brush"
+        "brush",
+        "eco"
       ],
       "image": "images/store/b-44226-1pk.jpg",
       "imageAlt": "Bass Brushes Bio-Flex Swirl Hair Brush",
@@ -5821,7 +7784,8 @@
       "source": {
         "supplier": "Bangalla",
         "sku": "B-44226-1PK"
-      }
+      },
+      "eco": true
     },
     {
       "id": "bg-lafes-active-deodorant-twist-stick-25-oz",
@@ -6031,7 +7995,8 @@
         "eucalyptus",
         "tea",
         "tree",
-        "unscented"
+        "unscented",
+        "eco"
       ],
       "image": "images/store/b-44945-1pk.jpg",
       "imageAlt": "Alaffia African Black Soap, 32 oz",
@@ -6062,7 +8027,8 @@
             "sku": "B-44926-1PK"
           }
         ]
-      }
+      },
+      "eco": true
     },
     {
       "id": "bg-dr-singhas-mustard-bath-8-oz",
@@ -6133,7 +8099,8 @@
         "cream",
         "nourishing",
         "energizing",
-        "soothing"
+        "soothing",
+        "eco"
       ],
       "image": "images/store/b-84284-1pk.jpg",
       "imageAlt": "ATTITUDE Body Cream, 8 oz",
@@ -6168,7 +8135,8 @@
             "sku": "B-84285-1PK"
           }
         ]
-      }
+      },
+      "eco": true
     },
     {
       "id": "bg-avalon-organics-vitamin-c-cleansing-gel-6-oz",
@@ -6725,6 +8693,73 @@
       }
     },
     {
+      "id": "ae-natural-loofah-sponge-12-to-14-in",
+      "name": "Natural Loofah Sponge, 12 to 14 in",
+      "category": "Personal Care",
+      "tags": [
+        "aliexpress",
+        "natural",
+        "loofah",
+        "sponge",
+        "personal",
+        "care",
+        "eco"
+      ],
+      "image": "images/store/ae-3256805693610424.jpg",
+      "imageAlt": "Natural Loofah Sponge, 12 to 14 in",
+      "blurb": "A whole dried loofah gourd, 12 to 14 inches long, that you can cut to size for the shower or for scrubbing around the house. Plant fiber, compostable.",
+      "price": 699,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Natural Loofah Sponge, 12 to 14 in",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 4,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256805693610424",
+        "variant": "1pcs 29-35cm"
+      },
+      "eco": true
+    },
+    {
+      "id": "ae-bamboo-wide-tooth-comb",
+      "name": "Bamboo Wide-Tooth Comb",
+      "category": "Personal Care",
+      "tags": [
+        "aliexpress",
+        "bamboo",
+        "wide",
+        "tooth",
+        "comb",
+        "personal",
+        "care",
+        "eco"
+      ],
+      "image": "images/store/ae-3256806280963993.jpg",
+      "imageAlt": "Bamboo Wide-Tooth Comb",
+      "blurb": "A smooth bamboo wide-tooth comb that glides through hair gently and reduces static.",
+      "price": 699,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Bamboo Wide-Tooth Comb",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 2,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256806280963993",
+        "variant": "Style B"
+      },
+      "eco": true
+    },
+    {
       "id": "bg-roland-bamboo-toothpicks-case-of-12-x-300",
       "name": "Roland Bamboo Toothpicks, case of 12 x 300",
       "category": "Home & Kitchen",
@@ -6733,7 +8768,8 @@
         "roland",
         "bamboo",
         "toothpicks",
-        "case"
+        "case",
+        "eco"
       ],
       "image": "images/store/b-60917-12pk.jpg",
       "imageAlt": "Roland Bamboo Toothpicks, case of 12 x 300",
@@ -6751,7 +8787,8 @@
       "source": {
         "supplier": "Bangalla",
         "sku": "B-60917-12PK"
-      }
+      },
+      "eco": true
     },
     {
       "id": "bg-world-centric-compostable-plates-6-in-case-of-240",
@@ -6763,7 +8800,8 @@
         "centric",
         "compostable",
         "plates",
-        "case"
+        "case",
+        "eco"
       ],
       "image": "images/store/b-89495-12pk.jpg",
       "imageAlt": "World Centric Compostable Plates, 6 in, case of 240",
@@ -6781,7 +8819,8 @@
       "source": {
         "supplier": "Bangalla",
         "sku": "B-89495-12PK"
-      }
+      },
+      "eco": true
     },
     {
       "id": "bg-full-circle-be-good-dish-brush",
@@ -6793,7 +8832,8 @@
         "circle",
         "good",
         "dish",
-        "brush"
+        "brush",
+        "eco"
       ],
       "image": "images/store/b-61862-1pk.jpg",
       "imageAlt": "Full Circle Be Good Dish Brush",
@@ -6811,7 +8851,8 @@
       "source": {
         "supplier": "Bangalla",
         "sku": "B-61862-1PK"
-      }
+      },
+      "eco": true
     },
     {
       "id": "ae-cotton-cross-back-apron",
@@ -6965,7 +9006,8 @@
         "pack",
         "home",
         "and",
-        "gadgets"
+        "gadgets",
+        "eco"
       ],
       "image": "images/store/ae-3256812791612763.jpg",
       "imageAlt": "Reusable Cable Ties, 5 pack",
@@ -6983,7 +9025,8 @@
       "source": {
         "supplier": "AliExpress",
         "item": "3256812791612763"
-      }
+      },
+      "eco": true
     },
     {
       "id": "ae-car-seat-gap-fillers-2-pack",
@@ -7194,7 +9237,8 @@
         "pack",
         "home",
         "and",
-        "kitchen"
+        "kitchen",
+        "eco"
       ],
       "image": "images/store/ae-3256807159204533.jpg",
       "imageAlt": "Reusable Cable Straps, 20 pack",
@@ -7213,7 +9257,8 @@
         "supplier": "AliExpress",
         "item": "3256807159204533",
         "variant": "20pcs Grey"
-      }
+      },
+      "eco": true
     },
     {
       "id": "ae-honeycomb-silicone-trivet",
@@ -7356,7 +9401,8 @@
         "recycled",
         "aluminum",
         "foil",
-        "case"
+        "case",
+        "eco"
       ],
       "image": "images/store/b-62208-12pk.jpg",
       "imageAlt": "If You Care Recycled Aluminum Foil, 50 sq ft, case of 12",
@@ -7374,7 +9420,8 @@
       "source": {
         "supplier": "Bangalla",
         "sku": "B-62208-12PK"
-      }
+      },
+      "eco": true
     },
     {
       "id": "bg-world-centric-compostable-spoons-24-count-case-of-12",
@@ -7387,7 +9434,8 @@
         "compostable",
         "spoons",
         "count",
-        "case"
+        "case",
+        "eco"
       ],
       "image": "images/store/b-64765-12pk.jpg",
       "imageAlt": "World Centric Compostable Spoons, 24 count, case of 12",
@@ -7405,7 +9453,8 @@
       "source": {
         "supplier": "Bangalla",
         "sku": "B-64765-12PK"
-      }
+      },
+      "eco": true
     },
     {
       "id": "bg-world-centric-compostable-knives-24-count-case-of-12",
@@ -7418,7 +9467,8 @@
         "compostable",
         "knives",
         "count",
-        "case"
+        "case",
+        "eco"
       ],
       "image": "images/store/b-64766-12pk.jpg",
       "imageAlt": "World Centric Compostable Knives, 24 count, case of 12",
@@ -7436,7 +9486,8 @@
       "source": {
         "supplier": "Bangalla",
         "sku": "B-64766-12PK"
-      }
+      },
+      "eco": true
     },
     {
       "id": "bg-preserve-recycled-cutlery-24-count-case-of-12",
@@ -7448,7 +9499,8 @@
         "recycled",
         "cutlery",
         "count",
-        "case"
+        "case",
+        "eco"
       ],
       "image": "images/store/b-67595-12pk.jpg",
       "imageAlt": "Preserve Recycled Cutlery, 24 count, case of 12",
@@ -7466,7 +9518,8 @@
       "source": {
         "supplier": "Bangalla",
         "sku": "B-67595-12PK"
-      }
+      },
+      "eco": true
     },
     {
       "id": "bg-world-centric-compostable-hot-cups-12-oz-20-count-case-of-12",
@@ -7480,7 +9533,8 @@
         "hot",
         "cups",
         "count",
-        "case"
+        "case",
+        "eco"
       ],
       "image": "images/store/b-89513-12pk.jpg",
       "imageAlt": "World Centric Compostable Hot Cups, 12 oz, 20 count, case of 12",
@@ -7498,7 +9552,8 @@
       "source": {
         "supplier": "Bangalla",
         "sku": "B-89513-12PK"
-      }
+      },
+      "eco": true
     },
     {
       "id": "bg-repurpose-compostable-bowls-16-oz-20-count-case-of-12",
@@ -7510,7 +9565,8 @@
         "compostable",
         "bowls",
         "count",
-        "case"
+        "case",
+        "eco"
       ],
       "image": "images/store/b-82389-12pk.jpg",
       "imageAlt": "Repurpose Compostable Bowls, 16 oz, 20 count, case of 12",
@@ -7528,7 +9584,8 @@
       "source": {
         "supplier": "Bangalla",
         "sku": "B-82389-12PK"
-      }
+      },
+      "eco": true
     },
     {
       "id": "bg-natural-value-reclosable-sandwich-bags-40-count-case-of-12",
@@ -7628,6 +9685,74 @@
       }
     },
     {
+      "id": "ae-countertop-compost-scrap-bin-3-l",
+      "name": "Countertop Compost Scrap Bin, 3 L",
+      "category": "Home & Kitchen",
+      "tags": [
+        "aliexpress",
+        "countertop",
+        "compost",
+        "scrap",
+        "bin",
+        "home",
+        "and",
+        "kitchen"
+      ],
+      "image": "images/store/ae-3256808465129244.jpg",
+      "imageAlt": "Countertop Compost Scrap Bin, 3 L",
+      "blurb": "A small 3 liter bin with a sealed lid that keeps kitchen scraps tidy and odor-free until compost day.",
+      "price": 1499,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Countertop Compost Scrap Bin, 3 L",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 24,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256808465129244",
+        "variant": "Black + 3L"
+      }
+    },
+    {
+      "id": "ae-large-jute-tote-bag",
+      "name": "Large Jute Tote Bag",
+      "category": "Home & Kitchen",
+      "tags": [
+        "aliexpress",
+        "large",
+        "jute",
+        "tote",
+        "bag",
+        "home",
+        "and",
+        "kitchen",
+        "eco"
+      ],
+      "image": "images/store/ae-3256811524301595.jpg",
+      "imageAlt": "Large Jute Tote Bag",
+      "blurb": "A roomy natural jute tote with sturdy handles for market runs, groceries and everyday errands, in place of plastic bags.",
+      "price": 1249,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Large Jute Tote Bag",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 12,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256811524301595",
+        "variant": "38x27x16cm"
+      },
+      "eco": true
+    },
+    {
       "id": "bg-full-circle-wipe-out-squeegee",
       "name": "Full Circle Wipe Out Squeegee",
       "category": "Cleaning Supplies",
@@ -7637,7 +9762,8 @@
         "circle",
         "wipe",
         "out",
-        "squeegee"
+        "squeegee",
+        "eco"
       ],
       "image": "images/store/b-66382-1pk.jpg",
       "imageAlt": "Full Circle Wipe Out Squeegee",
@@ -7655,7 +9781,8 @@
       "source": {
         "supplier": "Bangalla",
         "sku": "B-66382-1PK"
-      }
+      },
+      "eco": true
     },
     {
       "id": "bg-full-circle-clean-team-dustpan-and-brush-set",
@@ -7670,7 +9797,8 @@
         "dustpan",
         "and",
         "brush",
-        "set"
+        "set",
+        "eco"
       ],
       "image": "images/store/b-66384-1pk.jpg",
       "imageAlt": "Full Circle Clean Team Dustpan and Brush Set",
@@ -7688,7 +9816,8 @@
       "source": {
         "supplier": "Bangalla",
         "sku": "B-66384-1PK"
-      }
+      },
+      "eco": true
     },
     {
       "id": "bg-full-circle-the-ring-veggie-brush",
@@ -7700,7 +9829,8 @@
         "circle",
         "ring",
         "veggie",
-        "brush"
+        "brush",
+        "eco"
       ],
       "image": "images/store/b-61860-1pk.jpg",
       "imageAlt": "Full Circle The Ring Veggie Brush",
@@ -7718,7 +9848,8 @@
       "source": {
         "supplier": "Bangalla",
         "sku": "B-61860-1PK"
-      }
+      },
+      "eco": true
     },
     {
       "id": "bg-casabella-kind-plant-based-scrub-sponges-case-of-8",
@@ -7732,7 +9863,8 @@
         "based",
         "scrub",
         "sponges",
-        "case"
+        "case",
+        "eco"
       ],
       "image": "images/store/b-24616-8pk.jpg",
       "imageAlt": "Casabella Kind Plant-Based Scrub Sponges, case of 8 three-packs",
@@ -7750,7 +9882,8 @@
       "source": {
         "supplier": "Bangalla",
         "sku": "B-24616-8PK"
-      }
+      },
+      "eco": true
     },
     {
       "id": "bg-weiman-cook-top-scrubbing-pads-case-of-6-three-pac",
@@ -7990,7 +10123,8 @@
         "scrubber",
         "sponge",
         "count",
-        "case"
+        "case",
+        "eco"
       ],
       "image": "images/store/b-60214-6pk.jpg",
       "imageAlt": "Full Circle Walnut Scrubber Sponge, 2 count, case of 6",
@@ -8008,7 +10142,8 @@
       "source": {
         "supplier": "Bangalla",
         "sku": "B-60214-6PK"
-      }
+      },
+      "eco": true
     },
     {
       "id": "bg-full-circle-wash-and-dry-microfiber-duster-case-of-6",
@@ -8023,7 +10158,8 @@
         "dry",
         "microfiber",
         "duster",
-        "case"
+        "case",
+        "eco"
       ],
       "image": "images/store/b-61850-6pk.jpg",
       "imageAlt": "Full Circle Wash and Dry Microfiber Duster, case of 6",
@@ -8041,7 +10177,8 @@
       "source": {
         "supplier": "Bangalla",
         "sku": "B-61850-6PK"
-      }
+      },
+      "eco": true
     },
     {
       "id": "bg-casabella-kind-plant-based-scrub-sponges-6-count-case-of-8",
@@ -8056,7 +10193,8 @@
         "scrub",
         "sponges",
         "count",
-        "case"
+        "case",
+        "eco"
       ],
       "image": "images/store/b-24621-8pk.jpg",
       "imageAlt": "Casabella Kind Plant-Based Scrub Sponges, 6 count, case of 8",
@@ -8074,7 +10212,8 @@
       "source": {
         "supplier": "Bangalla",
         "sku": "B-24621-8PK"
-      }
+      },
+      "eco": true
     },
     {
       "id": "ae-long-handle-scrub-brush-blue",
@@ -9033,7 +11172,8 @@
         "stand",
         "games",
         "and",
-        "gifts"
+        "gifts",
+        "eco"
       ],
       "image": "images/store/ae-3256809724610352.jpg",
       "imageAlt": "Bamboo Phone Stand",
@@ -9052,7 +11192,8 @@
         "supplier": "AliExpress",
         "item": "3256809724610352",
         "variant": "1PC"
-      }
+      },
+      "eco": true
     },
     {
       "id": "ae-walnut-phone-stand",

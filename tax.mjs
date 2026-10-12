@@ -40,5 +40,9 @@ export function taxQuote(lines) {
     if (product.grocery === true) grocery += product.price * qty;
     else full += product.price * qty;
   }
-  return { cents: taxOn(full) + at(grocery, TAX.groceryBp), taxableCents: full + grocery, label: TAX.label };
+  // The label says which rates apply (2026-10-11, the Groceries shelf).
+  const label = !grocery ? TAX.label
+    : !full ? `Sales tax (Oklahoma groceries ${TAX.groceryBp / 100}%)`
+    : `Sales tax (Oklahoma 6%; groceries ${TAX.groceryBp / 100}%)`;
+  return { cents: taxOn(full) + at(grocery, TAX.groceryBp), taxableCents: full + grocery, label };
 }

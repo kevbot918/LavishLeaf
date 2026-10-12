@@ -944,7 +944,7 @@
     } else {
       fact('Delivery', 'nothing is shipped');
     }
-    if (!partner) fact('Sales tax', 'Oklahoma 6%, added in the cart');
+    if (!partner) fact('Sales tax', d.grocery ? 'Oklahoma groceries 1.5%, added in the cart' : 'Oklahoma 6%, added in the cart');
     var acts = $('#pop-actions'); acts.textContent = '';
     if (d.options) {
       // Choose the scent, colour or size, then add (2026-10-11).

@@ -149,6 +149,8 @@ function card(p) {
     '    <div class="sp-media">',
     media,
     // A sale shows its saving on the photo (owner, 2026-10-11: "50% off").
+    // Eco-friendly products (tools/eco.mjs) carry a small badge (owner, 2026-10-11).
+    ...(p.eco && !p.demo ? ['      <span class="sp-eco" title="Eco-friendly: compostable, recycled, reusable, organic or natural material">Eco</span>'] : []),
     ...(p.oldPrice && !p.demo ? [`      <span class="sp-badge">${Math.round((1 - p.price / p.oldPrice) * 100)}% off</span>`] : []),
     `      <button type="button" class="sp-wish" data-wish="${p.id}" aria-pressed="false" aria-label="Save ${esc(p.name)} to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>`,
     '    </div>',

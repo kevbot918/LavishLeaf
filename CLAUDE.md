@@ -535,3 +535,18 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     the item page's "This seller" count is the real one, and most listings
     under 5,000 sold have fewer than 10 left; 12 searches and 25 item pages
     per agent with 5 s waits never met a robot check.
+
+35. **2026-10-11, fifth list.** **Groceries shelf** (owner: "call this
+    category Groceries"), after Farm & Garden and Seeds: 52 Bangalla listings
+    (organic and fair trade preferred; 200 candidates price-checked against
+    Walmart/Amazon per unit; a line is kept at list price, or priced down to
+    the 15% floor when that lands within 10% of the comparable). Every one is
+    "grocery": true, so tax.mjs charges 1.5%; the cart label and the pop-up
+    name the grocery rate. Most Bangalla food comes only in cases of 4 to 6.
+    **Eco badge**: tools/eco.mjs marks "eco": true and an "eco" tag from what a
+    product is made of or replaces (compostable, recycled, bamboo, organic,
+    plant-based, reusable, wool, jute, sisal, loofah, fair trade, and the If
+    You Care / Full Circle / World Centric / Preserve / Repurpose brands);
+    render-store draws a small "Eco" badge; 80 products. Run eco.mjs, then
+    render-store, then seo after any products.json change. Blueland denied
+    the affiliate application (2026-10-11); Arbico has not answered.
