@@ -46,7 +46,7 @@ export default async (request) =>
     }));
     // League registrations are kept under the PayPal order id (pending until
     // the payment is captured, capture.mjs marks them paid).
-    const regs = lines.filter((l) => l.reg).map((l) => ({ product: l.product.id, productName: l.product.name, ...l.reg }));
+    const regs = lines.filter((l) => l.reg).map((l) => ({ product: l.product.id, productName: l.product.name, league: l.product.league || '', ...l.reg }));
     if (regs.length) {
       try {
         await (await registrationsStore()).setJSON('o-' + order.id, { orderId: order.id, created: new Date().toISOString(), status: 'pending', waivers: required, regs });

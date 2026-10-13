@@ -15,6 +15,7 @@ export const catalog = {
     "options": null,
     "pickup": true,
     "registration": null,
+    "league": null,
     "bucket": 1000,
     "grocery": false,
     "waiver": null
@@ -33,6 +34,7 @@ export const catalog = {
     "options": null,
     "pickup": true,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -51,6 +53,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -69,6 +72,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -87,6 +91,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -105,6 +110,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -123,6 +129,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -141,6 +148,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -159,6 +167,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -177,6 +186,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -195,6 +205,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -213,6 +224,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -231,6 +243,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -249,6 +262,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -267,6 +281,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -285,6 +300,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -303,6 +319,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -321,6 +338,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -339,6 +357,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -357,6 +376,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -375,6 +395,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -393,6 +414,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -411,6 +433,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -429,6 +452,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -453,6 +477,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -471,6 +496,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -489,6 +515,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -507,6 +534,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -525,6 +553,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -543,6 +572,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -561,6 +591,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -579,6 +610,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -597,6 +629,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -615,6 +648,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -633,6 +667,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -651,6 +686,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -669,6 +705,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -687,6 +724,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -705,6 +743,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -723,6 +762,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -741,6 +781,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -759,6 +800,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -777,6 +819,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -795,6 +838,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -813,6 +857,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -831,6 +876,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -856,6 +902,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -874,6 +921,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -892,6 +940,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -910,6 +959,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -928,6 +978,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -946,6 +997,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -964,6 +1016,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -982,6 +1035,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1000,6 +1054,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1024,6 +1079,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1042,6 +1098,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1060,6 +1117,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1078,6 +1136,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1096,6 +1155,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1120,6 +1180,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1145,6 +1206,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1163,6 +1225,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1181,6 +1244,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1199,6 +1263,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1217,6 +1282,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1235,6 +1301,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1253,6 +1320,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1271,6 +1339,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1289,6 +1358,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1307,6 +1377,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1325,6 +1396,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1343,6 +1415,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1361,6 +1434,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1379,6 +1453,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1397,6 +1472,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1415,6 +1491,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": true,
     "waiver": null
@@ -1433,6 +1510,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": "player",
+    "league": "Soccer: 7v7 Adult League, Fall 2026",
     "bucket": null,
     "grocery": false,
     "waiver": {
@@ -1453,6 +1531,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": "team",
+    "league": "Soccer: 7v7 Adult League, Fall 2026",
     "bucket": null,
     "grocery": false,
     "waiver": {
@@ -1480,6 +1559,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1498,6 +1578,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1523,6 +1604,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1541,6 +1623,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1559,6 +1642,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1587,6 +1671,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1605,6 +1690,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1623,6 +1709,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1648,6 +1735,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1666,6 +1754,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1690,6 +1779,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1708,6 +1798,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1726,6 +1817,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1744,6 +1836,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1769,6 +1862,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1787,6 +1881,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1814,6 +1909,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1839,6 +1935,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1857,6 +1954,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1875,6 +1973,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1893,6 +1992,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1911,6 +2011,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1929,6 +2030,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1947,6 +2049,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1965,6 +2068,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -1983,6 +2087,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2001,6 +2106,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2019,6 +2125,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2037,6 +2144,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2055,6 +2163,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2073,6 +2182,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2091,6 +2201,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2109,6 +2220,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2127,6 +2239,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2145,6 +2258,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2163,6 +2277,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2181,6 +2296,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2205,6 +2321,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2230,6 +2347,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2248,6 +2366,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2266,6 +2385,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2291,6 +2411,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2309,6 +2430,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2327,6 +2449,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2345,6 +2468,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2363,6 +2487,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2381,6 +2506,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2399,6 +2525,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2417,6 +2544,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2435,6 +2563,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2453,6 +2582,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2478,6 +2608,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2503,6 +2634,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2521,6 +2653,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2539,6 +2672,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2567,6 +2701,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2593,6 +2728,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2619,6 +2755,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2637,6 +2774,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2655,6 +2793,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2673,6 +2812,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2691,6 +2831,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2719,6 +2860,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2737,6 +2879,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2755,6 +2898,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2773,6 +2917,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2791,6 +2936,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2809,6 +2955,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2827,6 +2974,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2845,6 +2993,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2863,6 +3012,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2881,6 +3031,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2899,6 +3050,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2925,6 +3077,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2950,6 +3103,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2975,6 +3129,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -2993,6 +3148,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3011,6 +3167,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3029,6 +3186,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3047,6 +3205,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3072,6 +3231,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3096,6 +3256,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3114,6 +3275,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3132,6 +3294,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3150,6 +3313,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3174,6 +3338,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3192,6 +3357,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3210,6 +3376,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3228,6 +3395,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3246,6 +3414,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3264,6 +3433,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3282,6 +3452,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3300,6 +3471,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3325,6 +3497,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3343,6 +3516,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3361,6 +3535,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3385,6 +3560,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3403,6 +3579,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3421,6 +3598,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3439,6 +3617,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3457,6 +3636,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3475,6 +3655,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3493,6 +3674,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3511,6 +3693,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3529,6 +3712,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3547,6 +3731,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3565,6 +3750,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3583,6 +3769,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3601,6 +3788,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3619,6 +3807,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3637,6 +3826,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3655,6 +3845,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3673,6 +3864,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3691,6 +3883,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3709,6 +3902,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3727,6 +3921,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3751,6 +3946,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3775,6 +3971,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3793,6 +3990,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3811,6 +4009,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3829,6 +4028,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3847,6 +4047,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3865,6 +4066,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3883,6 +4085,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3908,6 +4111,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3926,6 +4130,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3944,6 +4149,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3962,6 +4168,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3980,6 +4187,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -3998,6 +4206,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4016,6 +4225,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4040,6 +4250,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4058,6 +4269,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4076,6 +4288,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4094,6 +4307,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4112,6 +4326,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4130,6 +4345,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4148,6 +4364,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4166,6 +4383,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4191,6 +4409,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4209,6 +4428,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4227,6 +4447,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4245,6 +4466,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4263,6 +4485,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4281,6 +4504,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4299,6 +4523,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4317,6 +4542,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4335,6 +4561,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4359,6 +4586,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4383,6 +4611,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4401,6 +4630,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4419,6 +4649,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4444,6 +4675,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4462,6 +4694,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4480,6 +4713,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4498,6 +4732,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4516,6 +4751,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4534,6 +4770,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4552,6 +4789,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4579,6 +4817,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4603,6 +4842,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4627,6 +4867,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4645,6 +4886,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4669,6 +4911,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4687,6 +4930,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4705,6 +4949,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4723,6 +4968,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4747,6 +4993,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4765,6 +5012,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4783,6 +5031,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4801,6 +5050,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4819,6 +5069,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4837,6 +5088,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4862,6 +5114,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4880,6 +5133,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4898,6 +5152,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4916,6 +5171,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4934,6 +5190,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4952,6 +5209,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4970,6 +5228,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -4988,6 +5247,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5006,6 +5266,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5024,6 +5285,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5042,6 +5304,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5060,6 +5323,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5078,6 +5342,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5096,6 +5361,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5114,6 +5380,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5132,6 +5399,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5150,6 +5418,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5168,6 +5437,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5186,6 +5456,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5204,6 +5475,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5222,6 +5494,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5240,6 +5513,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5258,6 +5532,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5276,6 +5551,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5294,6 +5570,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5312,6 +5589,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5330,6 +5608,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5348,6 +5627,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5366,6 +5646,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5384,6 +5665,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5402,6 +5684,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5420,6 +5703,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5438,6 +5722,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5456,6 +5741,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5474,6 +5760,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5492,6 +5779,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5510,6 +5798,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5528,6 +5817,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5546,6 +5836,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5564,6 +5855,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5582,6 +5874,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5600,6 +5893,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5618,6 +5912,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5636,6 +5931,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5654,6 +5950,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5672,6 +5969,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5690,6 +5988,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5708,6 +6007,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5726,6 +6026,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5744,6 +6045,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5762,6 +6064,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5780,6 +6083,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5798,6 +6102,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5816,6 +6121,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5834,6 +6140,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5852,6 +6159,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5870,6 +6178,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5888,6 +6197,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5906,6 +6216,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5924,6 +6235,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5942,6 +6254,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5960,6 +6273,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5978,6 +6292,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -5996,6 +6311,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6014,6 +6330,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6032,6 +6349,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6050,6 +6368,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6068,6 +6387,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6086,6 +6406,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6104,6 +6425,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6122,6 +6444,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6140,6 +6463,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6158,6 +6482,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6176,6 +6501,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6194,6 +6520,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6212,6 +6539,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6230,6 +6558,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6248,6 +6577,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6266,6 +6596,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6284,6 +6615,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6302,6 +6634,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6320,6 +6653,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6338,6 +6672,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6362,6 +6697,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6380,6 +6716,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6398,6 +6735,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6416,6 +6754,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6434,6 +6773,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6452,6 +6792,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6470,6 +6811,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6488,6 +6830,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6506,6 +6849,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6524,6 +6868,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6549,6 +6894,7 @@ export const catalog = {
     },
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6567,6 +6913,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null
@@ -6585,6 +6932,7 @@ export const catalog = {
     "options": null,
     "pickup": false,
     "registration": null,
+    "league": null,
     "bucket": null,
     "grocery": false,
     "waiver": null

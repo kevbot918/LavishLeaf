@@ -60,5 +60,7 @@ export function setRegistrationsStoreForTests(s) { testStore = s; }
 export async function registrationsStore() {
   if (testStore) return testStore;
   const { getStore } = await import('@netlify/blobs');
-  return getStore('registrations');
+  // Strong reads: an owner's change must show on the next load (2026-10-12; the
+  // default eventual reads could show the old value for up to a minute).
+  return getStore({ name: 'registrations', consistency: 'strong' });
 }

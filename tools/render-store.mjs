@@ -307,6 +307,7 @@ if (unknown.length) {
       pickup: p.pickup === true,
       // League registrations take the player or team form (registrations.mjs).
       registration: p.registration === 'player' || p.registration === 'team' ? p.registration : null,
+      league: p.registration ? String(p.league || p.category || '') : null,
       bucket: p.pickup === true && Number.isInteger(p.bucket) ? p.bucket : null,
       // Groceries carry the grocery tax rate (tax.mjs).
       grocery: p.grocery === true,

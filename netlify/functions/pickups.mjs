@@ -1,31 +1,24 @@
 // /.netlify/functions/pickups   compost and recycling sign-ups (2026-10-11)
 //   POST { action: "confirm", subscriptionId }  the buyer's return from PayPal:
-//        marks the sign-up active once PayPal says so and emails the owner
-//        every detail (and the customer a short note), once.
-//   POST { action: "list" }                     owner only: every sign-up.
+//        active once PayPal says so; the owner's alert and the customer's
+//        welcome, once (the webhook does the same if the buyer never returns).
+//   Owner only:
+//   POST { action: "list" }                      every sign-up (unpaid ones over
+//        30 days old are deleted here)
 //   POST { action: "update", id, assignedDay?, status?, ownerNote? }
-//        owner only: the day we actually come (routes), active/paused/cancelled.
+//   POST { action: "cancel", id }                cancels the PayPal subscription
+//        (no more charges) and tells the customer
+//   POST { action: "emailDay", id, note? }       emails the customer their day
+//   POST { action: "remove", id }                deletes an unpaid sign-up
 import { adminFromRequest, json } from '../lib/admin.mjs';
 import { CheckoutError, call, config } from '../lib/paypal.mjs';
 import { DAYS, pickupsStore } from '../lib/pickups.mjs';
-import { esc, mailConfig, sendEmail, textOf, validEmail } from '../lib/mail.mjs';
+import { activated, canceled, pickupDay, statusFromPayPal } from '../lib/pickup-events.mjs';
 
-const money = (c) => '$' + (c / 100).toFixed(2);
-const phone = (p) => String(p).replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
+export { ownerRows } from '../lib/pickup-events.mjs';
 
-/** The owner's email: every detail of one sign-up. */
-export function ownerRows(rec) {
-  return [
-    ['Service', rec.productName + ', ' + money(rec.price) + ' a month'],
-    ['Name', rec.name], ['Phone', phone(rec.phone)], ['Email', rec.email],
-    ['Address', `${rec.street}, ${rec.city}, OK ${rec.zip}`],
-    ['Checked', rec.area && rec.area.how === 'zip' ? 'by ZIP (the Census could not place the street)' : `${(rec.area && rec.area.matched) || ''}, ${rec.area && rec.area.miles} miles from the farm`],
-    ['Pick-up day', rec.day],
-    ['Bucket', rec.bucket ? 'Yes: our $10 bucket (setup fee charged)' : 'No: they use their own'],
-    ['Instructions', rec.notes || '(none)'],
-    ['PayPal subscription', rec.subscriptionId],
-  ];
-}
+const STALE_MS = 30 * 24 * 3600 * 1000;
+const keyOf = (id) => 's-' + String(id || '').replace(/[^a-z0-9-]/gi, '');
 
 export default async (request) => {
   if (request.method !== 'POST') return json(405, { error: 'POST only.' });
@@ -33,54 +26,86 @@ export default async (request) => {
   try { body = await request.json(); } catch { /* below */ }
   const store = await pickupsStore();
 
-  if (body.action === 'list') {
-    if (!(await adminFromRequest(request))) return json(403, { error: 'Owner only.' });
-    const { blobs } = await store.list({ prefix: 's-' });
-    const out = [];
-    for (const b of blobs) { const r = await store.get(b.key, { type: 'json' }); if (r) out.push(r); }
-    out.sort((a, b) => String(b.created).localeCompare(String(a.created)));
-    return json(200, { signups: out });
-  }
-
-  if (body.action === 'update') {
-    if (!(await adminFromRequest(request))) return json(403, { error: 'Owner only.' });
-    const key = 's-' + String(body.id || '').replace(/[^a-z0-9-]/gi, '');
-    const rec = await store.get(key, { type: 'json' });
-    if (!rec) return json(404, { error: 'No such sign-up.' });
-    if ('assignedDay' in body) rec.assignedDay = DAYS.includes(body.assignedDay) ? body.assignedDay : null;
-    if ('status' in body && ['pending', 'active', 'approved', 'paused', 'canceled'].includes(body.status)) rec.status = body.status;
-    if ('ownerNote' in body) rec.ownerNote = String(body.ownerNote || '').replace(/[<>]/g, '').slice(0, 300);
-    rec.updated = new Date().toISOString();
-    await store.setJSON(key, rec);
-    return json(200, { signup: rec });
-  }
-
   if (body.action === 'confirm') {
     const sid = String(body.subscriptionId || '');
     if (!/^I-[A-Z0-9]{6,30}$/.test(sid)) return json(400, { error: 'Unknown sign-up.' });
     try {
       const sub = await call(config(), `/v1/billing/subscriptions/${sid}`, null, { method: 'GET' });
-      const key = 's-' + String(sub.custom_id || '');
+      const key = keyOf(sub.custom_id);
       const rec = await store.get(key, { type: 'json' });
-      if (!rec || rec.subscriptionId !== sid) return json(200, { status: String(sub.status || '').toLowerCase() });
-      rec.status = String(sub.status || 'unknown').toLowerCase();
-      if (['active', 'approved'].includes(rec.status) && !rec.alerted) {
-        try {
-          const owner = mailConfig().owner;
-          const html = `<div style="font-family:Arial,sans-serif;font-size:15px;color:#222"><p><strong>New pick-up sign-up</strong></p><table>${ownerRows(rec).map(([k, v]) => `<tr><td style="padding:2px 12px 2px 0;color:#666">${esc(k)}</td><td>${esc(v)}</td></tr>`).join('')}</table><p>Every sign-up is also listed in the dashboard.</p></div>`;
-          if (validEmail(owner)) await sendEmail({ to: owner, subject: `New ${rec.productName} sign-up: ${rec.name}, ${rec.city} (${rec.day})`, html, text: textOf(html), kind: 'owner' });
-          const mine = `<div style="font-family:Arial,sans-serif;font-size:15px;color:#222"><p>Hi ${esc(rec.name.split(' ')[0])},</p><p>Thank you for signing up for ${esc(rec.productName)}. Your pick-up day is <strong>${esc(rec.day)}</strong> at ${esc(rec.street)}, ${esc(rec.city)}.${rec.bucket ? ' We will bring your 5 gallon bucket on the first pick-up.' : ''} To keep fuel costs and prices down we group pick-ups by area, so we may suggest a different day; we will call or text ${esc(phone(rec.phone))} to confirm your day before the first pick-up.</p><p>Questions: reply to this email or write to support@lavishleaf.org.</p><p>Lavish Leaf</p></div>`;
-          await sendEmail({ to: rec.email, toName: rec.name, subject: `Your ${rec.productName} sign-up`, html: mine, text: textOf(mine), kind: 'order' });
-          rec.alerted = new Date().toISOString();
-        } catch (e) { console.error('[pickups] email', e.message); }
-      }
+      if (!rec || rec.subscriptionId !== sid) return json(200, { status: statusFromPayPal(sub.status) });
+      const st = statusFromPayPal(sub.status);
+      if (st === 'active') await activated(rec); else rec.status = st;
       await store.setJSON(key, rec);
-      return json(200, { status: rec.status, day: rec.day });
+      return json(200, { status: rec.status });
     } catch (e) {
       if (e instanceof CheckoutError) return json(e.status || 502, { error: e.message });
       console.error('[pickups] confirm', e.message);
       return json(502, { error: 'Could not check the sign-up just now. PayPal will email your confirmation.' });
     }
   }
+
+  if (!(await adminFromRequest(request))) return json(403, { error: 'Owner only.' });
+
+  if (body.action === 'list') {
+    const { blobs } = await store.list({ prefix: 's-' });
+    const out = [];
+    for (const b of blobs) {
+      const r = await store.get(b.key, { type: 'json' });
+      if (!r) continue;
+      // Never paid and a month old: gone (owner, 2026-10-12: "are those going
+      // to sit there forever").
+      if (r.status === 'pending' && Date.now() - Date.parse(r.created) > STALE_MS) { await store.delete(b.key); continue; }
+      out.push(r);
+    }
+    out.sort((a, b) => String(b.created).localeCompare(String(a.created)));
+    return json(200, { signups: out });
+  }
+
+  const key = keyOf(body.id);
+  const rec = await store.get(key, { type: 'json' });
+  if (!rec) return json(404, { error: 'No such sign-up.' });
+
+  if (body.action === 'update') {
+    if ('assignedDay' in body) rec.assignedDay = DAYS.includes(body.assignedDay) ? body.assignedDay : null;
+    if ('status' in body && ['pending', 'active', 'paused', 'canceled'].includes(body.status)) rec.status = body.status;
+    if ('ownerNote' in body) rec.ownerNote = String(body.ownerNote || '').replace(/[<>]/g, '').slice(0, 300);
+    rec.updated = new Date().toISOString();
+    await store.setJSON(key, rec);
+    return json(200, { signup: rec });
+  }
+
+  if (body.action === 'cancel') {
+    // Refunding a payment in PayPal does NOT stop the subscription; this does.
+    if (rec.subscriptionId && rec.status !== 'canceled') {
+      try {
+        await call(config(), `/v1/billing/subscriptions/${rec.subscriptionId}/cancel`, { reason: 'Canceled by Lavish Leaf' });
+      } catch (e) {
+        // Already canceled in PayPal (or never approved): carry on and record it.
+        console.error('[pickups] cancel', e.message);
+      }
+    }
+    await canceled(rec, true);
+    rec.updated = new Date().toISOString();
+    await store.setJSON(key, rec);
+    return json(200, { signup: rec });
+  }
+
+  if (body.action === 'emailDay') {
+    try {
+      await pickupDay(rec, String(body.note || '').replace(/[<>]/g, '').trim());
+    } catch (e) {
+      return json(502, { error: 'The email did not send: ' + e.message });
+    }
+    await store.setJSON(key, rec);
+    return json(200, { signup: rec });
+  }
+
+  if (body.action === 'remove') {
+    if (rec.status === 'active') return json(400, { error: 'Cancel the subscription first; an active customer is not removed.' });
+    await store.delete(key);
+    return json(200, { removed: true });
+  }
+
   return json(400, { error: 'Unknown action.' });
 };

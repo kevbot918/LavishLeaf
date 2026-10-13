@@ -2768,7 +2768,8 @@
         "label": "I have read and accept the liability waiver"
       },
       "ship": false,
-      "registration": "player"
+      "registration": "player",
+      "league": "Soccer: 7v7 Adult League, Fall 2026"
     },
     {
       "id": "soccer-team-fall",
@@ -2799,7 +2800,8 @@
         "label": "I have read and accept the liability waiver"
       },
       "ship": false,
-      "registration": "team"
+      "registration": "team",
+      "league": "Soccer: 7v7 Adult League, Fall 2026"
     },
     {
       "id": "ae-cotton-crew-socks-5-pairs",
