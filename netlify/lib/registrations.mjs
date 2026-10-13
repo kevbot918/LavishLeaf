@@ -13,7 +13,7 @@
 import { CheckoutError } from './paypal.mjs';
 
 export const ROSTER_MIN = 7;   // 7v7: a full side, captain included
-export const ROSTER_MAX = 15;
+export const ROSTER_MAX = 12;
 
 const line = (s, max) => String(s == null ? '' : s).replace(/[\x00-\x1f<>]/g, ' ').replace(/\s+/g, ' ').trim().slice(0, max);
 const phone = (s) => String(s || '').replace(/\D/g, '').replace(/^1(?=\d{10}$)/, '');

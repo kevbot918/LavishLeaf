@@ -20,7 +20,7 @@ export const TAX = {
   // county 1.5% stays (oklahoma.gov/tax, food and food ingredients). Live
   // plants and garden seeds are NOT groceries: they carry the full 6%.
   groceryBp: 150,
-  label: 'Sales tax (Oklahoma 6%)',
+  label: 'Sales tax (6%)',
 };
 
 export const RATE_BP = TAX.stateBp + TAX.localBp;
@@ -42,7 +42,7 @@ export function taxQuote(lines) {
   }
   // The label says which rates apply (2026-10-11, the Groceries shelf).
   const label = !grocery ? TAX.label
-    : !full ? `Sales tax (Oklahoma groceries ${TAX.groceryBp / 100}%)`
-    : `Sales tax (Oklahoma 6%; groceries ${TAX.groceryBp / 100}%)`;
+    : !full ? `Sales tax (groceries ${TAX.groceryBp / 100}%)`
+    : `Sales tax (6%; groceries ${TAX.groceryBp / 100}%)`;
   return { cents: taxOn(full) + at(grocery, TAX.groceryBp), taxableCents: full + grocery, label };
 }

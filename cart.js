@@ -471,7 +471,7 @@
     bar.appendChild(x); regDlg.appendChild(bar);
     var form = el('form', { class: 'cart-doc-body su-form', novalidate: '' });
     form.appendChild(el('p', { class: 'su-lede' }, team
-      ? 'Your team name, the captain, and every player with a phone and email (at least 7 players with the captain, up to 15). We use these for schedules, weather calls and results.'
+      ? 'Your team name, the captain, and every player with a phone and email (at least 7 players with the captain, up to 12). We use these for schedules, weather calls and results.'
       : 'Who is playing, and how we reach them. Joining a team already? Add its name; leave it blank and we will place you on a team.'));
     var f = {}, roster = [];
     if (team) {
@@ -480,15 +480,15 @@
       f.captain = personFields(form, 'you');
       form.appendChild(el('h3', { class: 'su-h' }, 'Players'));
       var list = el('div', { class: 'su-roster' }); form.appendChild(list);
-      var addRow = function () { if (roster.length >= 14) return; var n = roster.length + 2; var wrap = el('div', { class: 'su-player' }); wrap.appendChild(el('span', { class: 'su-n' }, String(n))); list.appendChild(wrap); roster.push(personFields(wrap, 'Player ' + n)); };
+      var addRow = function () { if (roster.length >= 11) return; var n = roster.length + 2; var wrap = el('div', { class: 'su-player' }); wrap.appendChild(el('span', { class: 'su-n' }, String(n))); list.appendChild(wrap); roster.push(personFields(wrap, 'Player ' + n)); };
       for (var i = 0; i < 6; i++) addRow();
       var more = el('button', { type: 'button', class: 'btn btn-sm btn-ghost' }, 'Add a player');
-      more.addEventListener('click', function () { addRow(); if (roster.length >= 14) more.disabled = true; });
+      more.addEventListener('click', function () { addRow(); if (roster.length >= 11) more.disabled = true; });
       form.appendChild(more);
     } else {
       form.appendChild(el('h3', { class: 'su-h' }, 'Player'));
       f.player = personFields(form, 'you');
-      f.team = field(form, 'Team name (optional)', el('input', { type: 'text', maxlength: '60' }));
+      f.team = field(form, 'Team name or Free Agent', el('input', { type: 'text', maxlength: '60' }));
     }
     var tick = function (text) { var l = el('label', { class: 'su-check' }); var c = el('input', { type: 'checkbox' }); l.appendChild(c); l.appendChild(document.createTextNode(' ' + text)); form.appendChild(l); return c; };
     var comms = tick(team ? 'Everyone on this roster agrees to receive calls, texts and emails about league play (schedules, weather, results).' : 'I agree to receive calls, texts and emails about league play (schedules, weather, results).');
@@ -520,7 +520,7 @@
   // instructions and (compost) our $10 bucket. The server checks the address
   // is in the pick-up area before PayPal opens (netlify/lib/pickups.mjs).
   var signDlg;
-  var DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  var DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
   function field(form, label, input, hint) {
     var l = el('label', { class: 'su-field' });
     l.appendChild(el('span', null, label));
@@ -543,7 +543,7 @@
     bar.appendChild(x);
     signDlg.appendChild(bar);
     var form = el('form', { class: 'cart-doc-body su-form', novalidate: '' });
-    form.appendChild(el('p', { class: 'su-lede' }, '$' + (p.price / 100).toFixed(2) + ' a month' + (p.oldPrice ? ' (50% off $' + (p.oldPrice / 100).toFixed(2) + ')' : '') + ', plus 6% Oklahoma sales tax. We pick up within 25 miles of Stigler, and anywhere in McAlester, Stigler and Checotah.'));
+    form.appendChild(el('p', { class: 'su-lede' }, '$' + (p.price / 100).toFixed(2) + ' a month' + (p.oldPrice ? ' (50% off $' + (p.oldPrice / 100).toFixed(2) + ')' : '') + ', plus 6% sales tax. We pick up within 25 miles of Stigler, and anywhere in McAlester, Stigler and Checotah.'));
     var f = {
       name: field(form, 'Your name', el('input', { type: 'text', autocomplete: 'name', required: '', maxlength: '80' })),
       phone: field(form, 'Phone number', el('input', { type: 'tel', autocomplete: 'tel', required: '', maxlength: '20' })),
@@ -606,7 +606,7 @@
       history.replaceState(null, '', window.location.pathname + window.location.hash);
     };
     if (q.get('paypal') === 'cancel') {
-      say('Checkout cancelled. Nothing was charged, and your cart is still here.');
+      say('Checkout canceled. Nothing was charged, and your cart is still here.');
       clean();
     } else if (q.get('paypal') === 'return' && q.get('subscription_id')) {
       say('You are signed up. PayPal will email you a confirmation.');

@@ -39,6 +39,8 @@ export function summarise(done, meta = {}) {
     items,
     itemTotal: Number(b.item_total && b.item_total.value) || items.reduce((s, i) => s + i.each * i.qty, 0),
     shipping: Number(b.shipping && b.shipping.value) || 0,
+    tax: Number(b.tax_total && b.tax_total.value) || 0,
+    first_last: String((unit.shipping && unit.shipping.name && unit.shipping.name.full_name) || [done.payer && done.payer.name && done.payer.name.given_name, done.payer && done.payer.name && done.payer.name.surname].filter(Boolean).join(' ')),
     total: Number((capture && capture.amount && capture.amount.value) || (unit.amount && unit.amount.value)) || 0,
     delivery: meta.m || 'none',
     waivers: meta.w ? String(meta.w).split(',') : [],
@@ -51,8 +53,18 @@ function itemRows(o) {
   const row = (l, r, strong) => `<tr><td style="padding:6px 0;color:#C8CFC8;font-size:15px;${strong ? 'font-weight:700;color:#F2F4F2;' : ''}">${l}</td><td align="right" style="padding:6px 0;color:#F2F4F2;font-size:15px;${strong ? 'font-weight:700;' : ''}">${r}</td></tr>`;
   const lines = o.items.map((i) => row(`${esc(i.name)}${i.qty > 1 ? ' &times; ' + i.qty : ''}`, money(i.each * i.qty)));
   if (o.delivery !== 'none') lines.push(row('Shipping', money(o.shipping)));
+  if (o.tax) lines.push(row('Sales tax', money(o.tax)));
   lines.push(row('Total paid', money(o.total), true));
   return lines.join('');
+}
+
+/** What happens next, in plain words, with no promised turnaround (owner, 2026-10-12). */
+export function deliveryText(o) {
+  const parts = [];
+  if (o.delivery === 'ship') parts.push(`We will email you a tracking number as soon as your order ships. It is going to: ${o.shipTo}.`);
+  if (o.waivers && o.waivers.length) parts.push('Your league registration is confirmed. We will be in touch about the schedule, fields and the season.');
+  if (!parts.length) parts.push('Thank you! We will be in touch if we need anything else.');
+  return parts.join(' ');
 }
 
 /** File the order and send its two emails, each at most once. Never throws. */
@@ -72,9 +84,7 @@ export async function afterPayment(o) {
           first_name: o.first || 'there',
           order_id: o.id,
           items_html: itemRows(o),
-          delivery_text: o.delivery === 'ship'
-            ? `We will post it within 2 business days and email you the tracking number. It is going to: ${o.shipTo}.`
-            : 'Nothing to post: we will be in touch about your sign-up or registration within 2 business days.',
+          delivery_text: deliveryText(o),
           waiver_text: o.waivers.length ? 'You accepted the Lavish Leaf liability waiver with this order. A copy is always at lavishleaf.org/waiver.html.' : '',
         });
         await sendEmail({ to: o.email, toName: o.first, subject: `Your Lavish Leaf order ${o.id}`, html, text: textOf(html), kind: 'order' });

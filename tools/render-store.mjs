@@ -205,7 +205,7 @@ function seedsShelf() {
 /** One Home shelf per category, in the order categories first appear. */
 function shelves(active) {
   const note = active.some((p) => p.demo)
-    ? '<p class="ss-demo-note"><strong>Demo catalogue.</strong> These are products we are considering. They are not for sale yet, so they carry no price here; "Supplier page" opens the maker\'s own listing.</p>\n\n'
+    ? '<p class="ss-demo-note"><strong>Demo catalog.</strong> These are products we are considering. They are not for sale yet, so they carry no price here; "Supplier page" opens the maker\'s own listing.</p>\n\n'
     : '';
   const groups = new Map();
   for (const p of active) {

@@ -9,7 +9,7 @@
 
 export const FARM = { lat: 35.259911, lon: -95.490796, address: '41 Last Resort Rd, Stigler, OK 74462' };
 export const ROAD_FACTOR = 1.25;
-export const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+export const DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
 export function miles(a, b) {
   const R = (d) => (d * Math.PI) / 180;

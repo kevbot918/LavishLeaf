@@ -301,7 +301,7 @@
     root.appendChild(s6);
 
     // 7. behaviour (Clarity)
-    var s7 = section('behaviour', 'fa-arrow-pointer', 'How people use the pages', 'From Microsoft Clarity, the last 3 days. Open Clarity to watch real visits and see heatmaps of where people click and how far they scroll.');
+    var s7 = section('behavior', 'fa-arrow-pointer', 'How people use the pages', 'From Microsoft Clarity, the last 3 days. Open Clarity to watch real visits and see heatmaps of where people click and how far they scroll.');
     if (clarity) {
       var st = el('div', 'db-stats');
       function stat(v, l, e, good) { st.appendChild(h('<div class="db-stat"><div class="v ' + (good === true ? 'good' : good === false ? 'watch' : '') + '">' + esc(v) + '</div><div class="l">' + esc(l) + '</div><div class="e">' + esc(e) + '</div></div>')); }
@@ -418,8 +418,8 @@
     var cp = card(null); sp.appendChild(cp); root.appendChild(sp);
     var cr = card('Routes', 'Active customers only. Miles are estimates (straight line x 1.25); the Maps links give the real road route.'); sp.appendChild(cr);
     cp.appendChild(el('p', 'db-hint', 'Loading...'));
-    var PDAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    var PSTAT = ['pending', 'approved', 'active', 'paused', 'cancelled'];
+    var PDAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    var PSTAT = ['pending', 'approved', 'active', 'paused', 'canceled'];
     var signups = [], R = null;
     function routeDay(s) { return s.assignedDay || s.day; }
     function onRoute(s) { return s.status === 'active' || s.status === 'approved'; }
@@ -466,7 +466,7 @@
       });
       t.appendChild(tb);
       var wrap = el('div', 'db-table-wrap'); wrap.appendChild(t); cp.appendChild(wrap);
-      cp.appendChild(el('p', 'db-hint', 'Change "We come" or "Status" and it saves straight away. Mark a customer active once PayPal shows the subscription active; cancelled and paused customers drop off the routes.'));
+      cp.appendChild(el('p', 'db-hint', 'Change "We come" or "Status" and it saves straight away. Mark a customer active once PayPal shows the subscription active; canceled and paused customers drop off the routes.'));
     }
     function routeBlock(day, stops) {
       var box = el('div', 'db-route');
@@ -650,7 +650,7 @@
               rows.push([niceDate(o.date), it, src[name] || 'Unknown: check the order in PayPal']);
             });
           });
-          fill.appendChild(el('p', 'db-hint', 'To fulfil: place each line with its supplier (Bangalla by SKU in your account; AliExpress by item number in the app), to the address in the PayPal order.'));
+          fill.appendChild(el('p', 'db-hint', 'To fulfill: place each line with its supplier (Bangalla by SKU in your account; AliExpress by item number in the app), to the address in the PayPal order.'));
           fill.appendChild(table([{ label: 'Date' }, { label: 'Line' }, { label: 'Order from' }], rows));
         }).catch(function () {});
       }

@@ -18,7 +18,8 @@ test('the form: every field but instructions, the bucket only where offered', ()
   assert.equal(s.bucket, true);
   assert.equal(cleanSignup(form, {}).bucket, false, 'recycling has no bucket');
   assert.throws(() => cleanSignup({ ...form, phone: '555-01' }), /phone/);
-  assert.throws(() => cleanSignup({ ...form, day: 'Sunday' }), /day/);
+  assert.throws(() => cleanSignup({ ...form, day: 'Funday' }), /day/);
+  assert.equal(cleanSignup({ ...form, day: 'Sunday' }, {}).day, 'Sunday', 'Sunday is a pick-up day (2026-10-12)');
   assert.throws(() => cleanSignup({ ...form, zip: '7446' }), /ZIP/);
 });
 

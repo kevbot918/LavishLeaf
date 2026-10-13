@@ -48,7 +48,7 @@ export default async (request) => {
     const rec = await store.get(key, { type: 'json' });
     if (!rec) return json(404, { error: 'No such sign-up.' });
     if ('assignedDay' in body) rec.assignedDay = DAYS.includes(body.assignedDay) ? body.assignedDay : null;
-    if ('status' in body && ['pending', 'active', 'approved', 'paused', 'cancelled'].includes(body.status)) rec.status = body.status;
+    if ('status' in body && ['pending', 'active', 'approved', 'paused', 'canceled'].includes(body.status)) rec.status = body.status;
     if ('ownerNote' in body) rec.ownerNote = String(body.ownerNote || '').replace(/[<>]/g, '').slice(0, 300);
     rec.updated = new Date().toISOString();
     await store.setJSON(key, rec);

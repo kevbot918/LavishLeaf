@@ -1016,7 +1016,7 @@ export const catalog = {
     "shipOz": 31,
     "shipFrom": "bangalla",
     "options": {
-      "label": "Flavour",
+      "label": "Flavor",
       "values": [
         "Strawberry 'N' Cream",
         "Vanilla Orange"
@@ -1112,7 +1112,7 @@ export const catalog = {
     "shipOz": 20,
     "shipFrom": "bangalla",
     "options": {
-      "label": "Flavour",
+      "label": "Flavor",
       "values": [
         "Cinnamint",
         "Gingermint"
@@ -1136,7 +1136,7 @@ export const catalog = {
     "shipOz": 16,
     "shipFrom": "bangalla",
     "options": {
-      "label": "Flavour",
+      "label": "Flavor",
       "values": [
         "Peppermint",
         "Spearmint",
@@ -1471,7 +1471,7 @@ export const catalog = {
     "shipOz": 9,
     "shipFrom": "aliexpress",
     "options": {
-      "label": "Colour",
+      "label": "Color",
       "values": [
         "Black",
         "White",
@@ -1830,7 +1830,7 @@ export const catalog = {
     "shipOz": 1,
     "shipFrom": "aliexpress",
     "options": {
-      "label": "Colour",
+      "label": "Color",
       "values": [
         "Gray",
         "Dark Blue",
@@ -2197,7 +2197,7 @@ export const catalog = {
     "shipOz": 9,
     "shipFrom": "bangalla",
     "options": {
-      "label": "Flavour",
+      "label": "Flavor",
       "values": [
         "Green Apple Watermelon",
         "Tutti Frutti"
@@ -2221,7 +2221,7 @@ export const catalog = {
     "shipOz": 25,
     "shipFrom": "bangalla",
     "options": {
-      "label": "Flavour",
+      "label": "Flavor",
       "values": [
         "Peppermint",
         "Wintergreen",
@@ -2469,7 +2469,7 @@ export const catalog = {
     "shipOz": 9,
     "shipFrom": "bangalla",
     "options": {
-      "label": "Flavour",
+      "label": "Flavor",
       "values": [
         "Freshmint",
         "Mint-Free",
@@ -2609,7 +2609,7 @@ export const catalog = {
     "shipOz": 4,
     "shipFrom": "bangalla",
     "options": {
-      "label": "Colour",
+      "label": "Color",
       "values": [
         "Blue",
         "Green",
@@ -4032,7 +4032,7 @@ export const catalog = {
     "shipOz": 5,
     "shipFrom": "bangalla",
     "options": {
-      "label": "Flavour",
+      "label": "Flavor",
       "values": [
         "Anise",
         "Cinnamon"
@@ -4595,7 +4595,7 @@ export const catalog = {
     "shipOz": 9,
     "shipFrom": "bangalla",
     "options": {
-      "label": "Flavour",
+      "label": "Flavor",
       "values": [
         "Peppermint",
         "Spearmint"
@@ -4619,7 +4619,7 @@ export const catalog = {
     "shipOz": 25,
     "shipFrom": "bangalla",
     "options": {
-      "label": "Flavour",
+      "label": "Flavor",
       "values": [
         "Spearmint",
         "Cool Mint"
@@ -4853,7 +4853,7 @@ export const catalog = {
     "shipOz": 9,
     "shipFrom": "aliexpress",
     "options": {
-      "label": "Colour",
+      "label": "Color",
       "values": [
         "Pink",
         "Black",
@@ -6540,7 +6540,7 @@ export const catalog = {
     "shipOz": 10,
     "shipFrom": "aliexpress",
     "options": {
-      "label": "Colour",
+      "label": "Color",
       "values": [
         "Black",
         "Brown",
