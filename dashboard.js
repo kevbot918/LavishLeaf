@@ -845,6 +845,16 @@
           shipRow.appendChild(carrier); shipRow.appendChild(track); shipRow.appendChild(bs); shipRow.appendChild(msg);
           c.appendChild(shipRow);
         }
+        // A refund the webhook did not see (given before it was set up).
+        var refRow = el('div', 'db-links');
+        var refunded = /refunded/.test(o.status || '');
+        var bRef = h('<button type="button" class="db-btn-ghost db-btn-sm">' + (refunded ? '<i class="fas fa-rotate-left"></i> Not refunded' : '<i class="fas fa-money-bill-transfer"></i> Mark refunded') + '</button>');
+        bRef.addEventListener('click', function () {
+          if (!refunded && !window.confirm('Mark order ' + o.id + ' as refunded here? This does not refund it in PayPal; do that in PayPal first.')) return;
+          api('orders-admin', { action: 'refunded', id: o.id, undo: refunded }).then(function (r) { Object.keys(o).forEach(function (k) { delete o[k]; }); Object.assign(o, r.order); drawOrders(); }).catch(function (e) { alert(e.message); });
+        });
+        refRow.appendChild(bRef);
+        c.appendChild(refRow);
         ordersBox.appendChild(c);
       });
       ordersBox.appendChild(el('p', 'db-hint', 'Bangalla: in your Bangalla account, add each SKU to the cart and check out with the customer\'s name and address as the ship-to. AliExpress: open the item number, pick the variant shown, and check out with the customer\'s address. Then send the shipped email here. Refunds you give in PayPal mark the order Refunded by themselves once the webhook is set.'));

@@ -1,6 +1,7 @@
 // /.netlify/functions/orders-admin   owner only (2026-10-12)
 //   POST { action: "list" }                         the last 100 orders, every field
 //   POST { action: "ordered", id, sku, done }       tick a line as placed with its supplier
+//   POST { action: "refunded", id, undo? }       mark a refund the webhook did not see
 //   POST { action: "ship", id, carrier?, tracking?, note? }
 //        emails the customer that the order is on its way (once per call) and
 //        records it on the order
@@ -38,6 +39,14 @@ export default async (request) => {
     o.ordered = o.ordered || {};
     const sku = clean(body.sku, 160);
     if (body.done) o.ordered[sku] = new Date().toISOString(); else delete o.ordered[sku];
+    await store.setJSON(key, o);
+    return json(200, { order: o });
+  }
+
+  // A refund PayPal's webhook did not report (before it was set up, or a
+  // refund given another way): the owner marks it here; "undo" clears it.
+  if (body.action === 'refunded') {
+    if (body.undo) { delete o.status; delete o.markedRefunded; } else { o.status = 'refunded'; o.markedRefunded = new Date().toISOString(); }
     await store.setJSON(key, o);
     return json(200, { order: o });
   }
