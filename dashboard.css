@@ -164,3 +164,27 @@
 .db-route ol { margin: 0 0 8px; padding-left: 22px; font-size: .9rem; }
 .db-suggest { border-top: 1px solid var(--rule); padding-top: 12px; }
 .db-total { font-weight: 700; }
+/* 2026-10-12: Orders section, pick-up and registration actions, linked tiles */
+.db-tile-link { text-decoration: none; color: inherit; cursor: pointer; transition: transform .12s ease, box-shadow .12s ease; }
+.db-tile-link:hover, .db-tile-link:focus-visible { transform: translateY(-2px); box-shadow: 0 4px 14px rgba(0,0,0,.35); }
+.db-tile-go { margin-left: auto; font-size: .75rem; opacity: .7; }
+.db-btn-sm { padding: 4px 10px !important; font-size: .8rem !important; }
+.db-actions { white-space: nowrap; }
+.db-actions .db-btn-ghost { margin: 0 4px 4px 0; }
+.db-on { background: var(--leaf) !important; color: #14261A !important; border-color: var(--leaf) !important; }
+.db-order { margin: 0 0 16px; }
+.db-order-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 10px; }
+.db-pill { font-size: .78rem; font-weight: 800; text-transform: uppercase; letter-spacing: .05em; padding: 2px 9px; border-radius: 999px; background: #4a4a4a; color: var(--white); }
+.db-pill-ok { background: var(--leaf); color: #14261A; }
+.db-pill-warn { background: #b5642a; color: #fff; }
+.db-cust { display: grid; gap: 4px; margin: 0 0 12px; padding: 10px 12px; background: rgba(0,0,0,.18); border-radius: 10px; }
+.db-cust-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.db-cust-k { min-width: 7.5em; color: var(--gray); font-size: .82rem; font-weight: 700; }
+.db-cust-v { flex: 1 1 14em; min-width: 0; overflow-wrap: anywhere; }
+.db-copy { background: none; border: 1px solid #5a5a5a; color: var(--leaf-bright, #6FD65F); border-radius: 6px; padding: 1px 8px; font: inherit; font-size: .75rem; cursor: pointer; margin-left: 4px; }
+.db-copy:hover { border-color: var(--leaf-bright, #6FD65F); }
+.db-ship { align-items: center; margin-top: 8px; }
+.db-ship select, .db-ship input { padding: 7px 10px; border-radius: 8px; border: 1px solid #5a5a5a; background: #2e2e2e; color: var(--white); font: inherit; }
+.db-st-0 { color: var(--leaf-bright, #6FD65F); font-weight: 700; }
+.db-st-1 { color: #e0b04a; font-weight: 700; }
+.db-pick td { vertical-align: top; }
