@@ -799,6 +799,73 @@
       }
     },
     {
+      "id": "ae-curved-pruning-snips",
+      "name": "Curved Pruning Snips",
+      "category": "Farm & Garden",
+      "tags": [
+        "aliexpress",
+        "curved",
+        "pruning",
+        "snips",
+        "farm",
+        "and",
+        "garden"
+      ],
+      "image": "images/store/ae-3256809909879062.jpg",
+      "imageAlt": "Curved Pruning Snips",
+      "blurb": "Small stainless steel snips with curved blades for deadheading flowers, trimming herbs and shaping houseplants.",
+      "price": 849,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Curved Pruning Snips",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 4,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256809909879062",
+        "variant": "Color: Curved Scissors"
+      }
+    },
+    {
+      "id": "ae-hanging-suet-ball-bird-feeder-black",
+      "name": "Hanging Suet Ball Bird Feeder, Black",
+      "category": "Farm & Garden",
+      "tags": [
+        "aliexpress",
+        "hanging",
+        "suet",
+        "ball",
+        "bird",
+        "feeder",
+        "black",
+        "farm",
+        "and",
+        "garden"
+      ],
+      "image": "images/store/ae-3256810386487605.jpg",
+      "imageAlt": "Hanging Suet Ball Bird Feeder, Black",
+      "blurb": "A black metal wire cage that holds fat balls or suet for wild birds, with a chain to hang it from a branch or hook.",
+      "price": 999,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Hanging Suet Ball Bird Feeder, Black",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 5,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256810386487605",
+        "variant": "Color: Black, Size: 1pc"
+      }
+    },
+    {
       "id": "bg-bobs-red-mill-organic-pancake-and-waffle-mix-24-oz-pack-of-4",
       "name": "Bob's Red Mill Organic Pancake and Waffle Mix, 24 oz, pack of 4",
       "category": "Groceries",
@@ -2753,7 +2820,8 @@
         "squares",
         "strawberry",
         "pack",
-        "boxes"
+        "boxes",
+        "eco"
       ],
       "image": "images/store/b-33566-6pk.jpg",
       "imageAlt": "MadeGood Organic Crispy Squares, Strawberry, pack of 6 boxes",
@@ -2772,7 +2840,8 @@
       "source": {
         "supplier": "Bangalla",
         "sku": "B-33566-6PK"
-      }
+      },
+      "eco": true
     },
     {
       "id": "bg-lakewood-organic-cranberry-juice-concentrate-125-oz",
@@ -2786,7 +2855,8 @@
         "organic",
         "cranberry",
         "juice",
-        "concentrate"
+        "concentrate",
+        "eco"
       ],
       "image": "images/store/b-31299-1pk.jpg",
       "imageAlt": "Lakewood Organic Cranberry Juice Concentrate, 12.5 oz",
@@ -2805,7 +2875,8 @@
       "source": {
         "supplier": "Bangalla",
         "sku": "B-31299-1PK"
-      }
+      },
+      "eco": true
     },
     {
       "id": "bg-olyra-organic-breakfast-biscuits-cinnamon-pack-of-6",
@@ -2820,7 +2891,8 @@
         "breakfast",
         "biscuits",
         "cinnamon",
-        "pack"
+        "pack",
+        "eco"
       ],
       "image": "images/store/b-30065-6pk.jpg",
       "imageAlt": "Olyra Organic Breakfast Biscuits, Cinnamon, pack of 6",
@@ -2839,7 +2911,8 @@
       "source": {
         "supplier": "Bangalla",
         "sku": "B-30065-6PK"
-      }
+      },
+      "eco": true
     },
     {
       "id": "bg-beanvivo-three-bean-vegan-chili-10-oz-pack-of-6",
@@ -2889,7 +2962,8 @@
         "milk",
         "caramels",
         "original",
-        "pack"
+        "pack",
+        "eco"
       ],
       "image": "images/store/b-64114-6pk.jpg",
       "imageAlt": "Cocomels Organic Coconut Milk Caramels, Original, pack of 6",
@@ -2908,7 +2982,8 @@
       "source": {
         "supplier": "Bangalla",
         "sku": "B-64114-6PK"
-      }
+      },
+      "eco": true
     },
     {
       "id": "bg-banza-chickpea-pasta-shells-8-oz-pack-of-6",
@@ -3878,6 +3953,39 @@
             "note": "Color: Rose Red"
           }
         ]
+      }
+    },
+    {
+      "id": "ae-spiky-massage-ball-24-in-white",
+      "name": "Spiky Massage Ball, 2.4 in, White",
+      "category": "Recreation & Outdoors",
+      "tags": [
+        "aliexpress",
+        "spiky",
+        "massage",
+        "ball",
+        "white",
+        "recreation",
+        "and",
+        "outdoors"
+      ],
+      "image": "images/store/ae-3256806984910351.jpg",
+      "imageAlt": "Spiky Massage Ball, 2.4 in, White",
+      "blurb": "A firm 6 cm ball with soft spikes for rolling out your feet, back and shoulders after a workout or a long day.",
+      "price": 799,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Spiky Massage Ball, 2.4 in, White",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 3,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256806984910351",
+        "variant": "Color: White"
       }
     },
     {
@@ -10095,6 +10203,44 @@
       "eco": true
     },
     {
+      "id": "ae-stainless-steel-pour-over-coffee-filter-with-stand",
+      "name": "Stainless Steel Pour-Over Coffee Filter with Stand",
+      "category": "Home & Kitchen",
+      "tags": [
+        "aliexpress",
+        "stainless",
+        "steel",
+        "pour",
+        "over",
+        "coffee",
+        "filter",
+        "with",
+        "stand",
+        "home",
+        "and",
+        "eco"
+      ],
+      "image": "images/store/ae-3256809767050635.jpg",
+      "imageAlt": "Stainless Steel Pour-Over Coffee Filter with Stand",
+      "blurb": "A reusable double-layer stainless steel mesh coffee filter on its own base, so you can brew pour-over coffee without paper filters.",
+      "price": 1449,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Stainless Steel Pour-Over Coffee Filter with Stand",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 7,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256809767050635",
+        "variant": "Color: With base"
+      },
+      "eco": true
+    },
+    {
       "id": "bg-full-circle-wipe-out-squeegee",
       "name": "Full Circle Wipe Out Squeegee",
       "category": "Cleaning Supplies",
@@ -10687,6 +10833,72 @@
         "supplier": "AliExpress",
         "item": "3256805572566316",
         "variant": "Color: Green"
+      }
+    },
+    {
+      "id": "ae-wool-dryer-balls-6-pack",
+      "name": "Wool Dryer Balls, 6 pack",
+      "category": "Cleaning Supplies",
+      "tags": [
+        "aliexpress",
+        "wool",
+        "dryer",
+        "balls",
+        "pack",
+        "cleaning",
+        "supplies",
+        "eco"
+      ],
+      "image": "images/store/ae-3256805428831580.jpg",
+      "imageAlt": "Wool Dryer Balls, 6 pack",
+      "blurb": "Six balls of natural wool, about 2.75 inches each, that tumble with your laundry to soften clothes without dryer sheets.",
+      "price": 1399,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Wool Dryer Balls, 6 pack",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 10,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256805428831580",
+        "variant": "Color: 6PCS"
+      },
+      "eco": true
+    },
+    {
+      "id": "ae-wooden-handle-bottle-brush-12-in",
+      "name": "Wooden Handle Bottle Brush, 12 in",
+      "category": "Cleaning Supplies",
+      "tags": [
+        "aliexpress",
+        "wooden",
+        "handle",
+        "bottle",
+        "brush",
+        "cleaning",
+        "supplies"
+      ],
+      "image": "images/store/ae-3256806440275884.jpg",
+      "imageAlt": "Wooden Handle Bottle Brush, 12 in",
+      "blurb": "A long brush with a wooden handle, 12 inches long and 2 inches wide, for scrubbing water bottles, jars, vases and tall glasses.",
+      "price": 899,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Wooden Handle Bottle Brush, 12 in",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 3,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256806440275884",
+        "variant": "Color: 30x5cm"
       }
     },
     {
@@ -11830,6 +12042,85 @@
       }
     },
     {
+      "id": "ae-wooden-3-in-1-chess-checkers-and-backgammon-set",
+      "name": "Wooden 3-in-1 Chess, Checkers and Backgammon Set",
+      "category": "Games & Gifts",
+      "tags": [
+        "aliexpress",
+        "wooden",
+        "chess",
+        "checkers",
+        "and",
+        "backgammon",
+        "set",
+        "games"
+      ],
+      "image": "images/store/ae-3256807801479699.jpg",
+      "imageAlt": "Wooden 3-in-1 Chess, Checkers and Backgammon Set",
+      "blurb": "A folding wooden board that stores its own pieces inside and plays three classic games: chess, checkers and backgammon.",
+      "price": 2149,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Wooden 3-in-1 Chess, Checkers and Backgammon Set",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 28,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256807801479699",
+        "variant": ""
+      }
+    },
+    {
+      "id": "ae-kalimba-thumb-piano-17-keys",
+      "name": "Kalimba Thumb Piano, 17 Keys",
+      "category": "Games & Gifts",
+      "tags": [
+        "aliexpress",
+        "kalimba",
+        "thumb",
+        "piano",
+        "keys",
+        "games",
+        "and",
+        "gifts"
+      ],
+      "image": "images/store/ae-3256809857759332.jpg",
+      "imageAlt": "Kalimba Thumb Piano, 17 Keys",
+      "blurb": "A wooden 17-key thumb piano with an engraved animal design, an easy instrument for older kids and adults to pick up and play.",
+      "price": 2599,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Kalimba Thumb Piano, 17 Keys",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 16,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256809857759332",
+        "variant": "Color: 17key elephant pink"
+      },
+      "options": {
+        "label": "Design",
+        "values": [
+          {
+            "name": "Elephant, Pink",
+            "note": "Color: 17key elephant pink"
+          },
+          {
+            "name": "Reindeer, Blue",
+            "note": "Color: 17key reindeer blue"
+          }
+        ]
+      }
+    },
+    {
       "id": "ae-qcy-t13-anc-wireless-earbuds",
       "name": "QCY T13 ANC Wireless Earbuds",
       "category": "Technology",
@@ -12787,6 +13078,106 @@
         "supplier": "AliExpress",
         "item": "3256813069125172",
         "variant": "Color: Green, Size: 5 Rolls 75pcs"
+      }
+    },
+    {
+      "id": "ae-felt-cat-tunnel-bed-20-in-light-gray",
+      "name": "Felt Cat Tunnel Bed, 20 in, Light Gray",
+      "category": "Pets",
+      "tags": [
+        "aliexpress",
+        "felt",
+        "cat",
+        "tunnel",
+        "bed",
+        "light",
+        "gray",
+        "pets"
+      ],
+      "image": "images/store/ae-3256810386614403.jpg",
+      "imageAlt": "Felt Cat Tunnel Bed, 20 in, Light Gray",
+      "blurb": "A round felt donut that works as a hideaway bed and a play tunnel, with a peek hole on the side, about 20 inches across.",
+      "price": 2349,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Felt Cat Tunnel Bed, 20 in, Light Gray",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 30,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256810386614403",
+        "variant": "Color: Light Grey with hole, Size: M 50"
+      }
+    },
+    {
+      "id": "ae-dog-walking-and-treat-waist-bag-gray",
+      "name": "Dog Walking and Treat Waist Bag, Gray",
+      "category": "Pets",
+      "tags": [
+        "aliexpress",
+        "dog",
+        "walking",
+        "and",
+        "treat",
+        "waist",
+        "bag",
+        "gray",
+        "pets"
+      ],
+      "image": "images/store/ae-3256811753958349.jpg",
+      "imageAlt": "Dog Walking and Treat Waist Bag, Gray",
+      "blurb": "A gray waist bag for walks and training that holds treats, poop bags, keys and a phone, on an adjustable strap.",
+      "price": 1299,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Dog Walking and Treat Waist Bag, Gray",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 8,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256811753958349",
+        "variant": "Color: GRAY"
+      }
+    },
+    {
+      "id": "ae-silvervine-chew-sticks-for-cats-20-pack",
+      "name": "Silvervine Chew Sticks for Cats, 20 pack",
+      "category": "Pets",
+      "tags": [
+        "aliexpress",
+        "silvervine",
+        "chew",
+        "sticks",
+        "for",
+        "cats",
+        "pack",
+        "pets"
+      ],
+      "image": "images/store/ae-3256812154371284.jpg",
+      "imageAlt": "Silvervine Chew Sticks for Cats, 20 pack",
+      "blurb": "Twenty natural silvervine twigs, 4 to 6 mm thick, that many cats love to sniff, lick and chew.",
+      "price": 699,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Silvervine Chew Sticks for Cats, 20 pack",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 2,
+      "shipFrom": "aliexpress",
+      "source": {
+        "supplier": "AliExpress",
+        "item": "3256812154371284",
+        "variant": "Color: 20Pcs 4-6mm"
       }
     }
   ]
