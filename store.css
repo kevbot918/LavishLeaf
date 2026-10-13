@@ -766,3 +766,7 @@ body.ss-resizing .ss-side { transition: none; }
 .su-n { font-weight: 800; color: var(--muted); font-size: .85rem; text-align: right; }
 .cart-remove { background: none; border: 1px solid var(--border); color: var(--muted); border-radius: 8px; padding: 3px 10px; font: inherit; font-size: .8rem; cursor: pointer; }
 @media (max-width: 560px) { .su-row { grid-template-columns: 1fr; } }
+.cart-reg-who { flex-basis: 100%; order: 5; font-size: .82rem; color: var(--muted); }
+.cart-line { flex-wrap: wrap; }
+.cart-waiver-hint { margin: 4px 0 0 26px; font-size: .82rem; color: var(--muted); }
+.cart-waiver-row input:disabled { opacity: .45; }

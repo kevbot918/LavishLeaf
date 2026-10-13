@@ -12,6 +12,15 @@
 (function () {
   'use strict';
 
+  // Inside the PayPal pop-up, back on our own return page: tell the store
+  // window that opened it, then close (2026-10-12).
+  (function () {
+    var q = window.location.search;
+    if (window.name === 'llpaypal' && /[?&]paypal=/.test(q) && window.opener && !window.opener.closed) {
+      try { window.opener.postMessage({ llPayPal: q }, window.location.origin); window.close(); } catch (e) { /* fall through: the page handles it itself */ }
+    }
+  })();
+
   var KEY = 'll-cart';
   var MAX_QTY = 20;
   var products = {};
@@ -159,6 +168,7 @@
   var fab, panel, list, totalEl, noteEl, payBtn, statusEl, banner;
   var shipWrap, shipLine, shipNudge, taxLine;
   var waiverWrap, noteWrap, toastEl, toastTimer, docDlg;
+  var readW = {}; // waiver versions opened with "Read it" in this visit
   // Ticked waivers, by version: the cart redraws often, and a redraw must
   // never untick what the buyer ticked (owner, 2026-10-11: the box would
   // not stay ticked).
@@ -234,13 +244,10 @@
     totalEl = el('p', { class: 'cart-total' });
     panel.appendChild(totalEl);
 
-    // Only for a registration, under its own heading (owner, 2026-10-11).
-    noteWrap = el('div', { class: 'cart-reg', hidden: '' });
-    noteWrap.appendChild(el('h3', { class: 'cart-reg-head' }, 'Rec Sports registration'));
-    noteWrap.appendChild(el('label', { for: 'cart-note', class: 'cart-note-label' }, 'Player or team name, so we can match your payment to the roster'));
-    noteEl = el('textarea', { id: 'cart-note', rows: '2', maxlength: '127' });
-    noteWrap.appendChild(noteEl);
-    panel.appendChild(noteWrap);
+    // The registration form carries the player or team (2026-10-12), so the
+    // old "player or team name" box is gone; noteEl stays empty.
+    noteWrap = el('div', { hidden: '' });
+    noteEl = el('textarea', { hidden: '' });
 
     waiverWrap = el('div', { class: 'cart-waiver', hidden: '' });
     panel.appendChild(waiverWrap);
@@ -290,6 +297,14 @@
       li.appendChild(el('span', { class: 'cart-name' }, p.name + (l.opt ? ' (' + p.options.label + ': ' + l.opt + ')' : '') +
         (l.reg ? ': ' + (l.reg.kind === 'team' ? 'Team ' + l.reg.team + ', ' + ((l.reg.players || []).length + 1) + ' players' : l.reg.name) : '')));
       if (l.reg) {
+        var who = el('span', { class: 'cart-reg-who' });
+        who.textContent = l.reg.kind === 'team'
+          ? 'Captain ' + l.reg.captain.name + ' (' + l.reg.captain.phone + ', ' + l.reg.captain.email + '); players: ' + (l.reg.players || []).map(function (x) { return x.name; }).join(', ')
+          : l.reg.phone + ', ' + l.reg.email + (l.reg.team ? '; ' + l.reg.team : '');
+        li.appendChild(who);
+        var ed = el('button', { type: 'button', class: 'cart-remove', 'aria-label': 'Edit this registration' }, 'Edit');
+        ed.addEventListener('click', function () { regForm(l.id, l); });
+        li.appendChild(ed);
         var rm = el('button', { type: 'button', class: 'cart-remove', 'aria-label': 'Remove this registration' }, 'Remove');
         rm.addEventListener('click', function () { setQty(l.id, 0, '', l.rid); });
         li.appendChild(rm);
@@ -325,7 +340,13 @@
         try {
           var q = ship.quote(lines, { method: delivery.method });
           shipCents = q.cents;
-          shipLine.textContent = q.label + ': ' + (q.cents ? money(q.cents) : 'free');
+          // One line per part (owner, 2026-10-12: the joined line confused).
+          shipLine.textContent = '';
+          (q.parts && q.parts.length ? q.parts : [{ desc: q.label.replace(/^Shipping \(|\)$/g, ''), cents: q.cents }]).forEach(function (pt, i) {
+            if (i) shipLine.appendChild(el('br'));
+            var d = String(pt.desc || '');
+            shipLine.appendChild(document.createTextNode('Shipping, ' + d + ': ' + (pt.cents ? money(pt.cents) : 'free')));
+          });
           shipLine.title = 'Each supplier ships its own parcel, so each part is charged on its own. See Terms of Sale.';
           // Weight meter for items shipped by weight (owner, 2026-10-11):
           // "3.5 oz / 16 oz = $8.95", so a buyer sees the room left in the band.
@@ -367,18 +388,24 @@
       var row = el('label', { class: 'cart-waiver-row' });
       var box = el('input', { type: 'checkbox' });
       box.checked = !!acceptedW[w.version];
+      // The waiver must be opened before it can be ticked (owner, 2026-10-12).
+      box.disabled = !!w.url && !readW[w.version];
       box.addEventListener('change', function () { acceptedW[w.version] = box.checked; render(); });
       row.appendChild(box);
       row.appendChild(document.createTextNode(
         ' ' + (w.label || 'I have read and accept the waiver') + ' '
       ));
-      if (w.url) row.appendChild(docLink('Read it', w.url, 'Liability waiver'));
+      if (w.url) {
+        var rd = docLink('Read it', w.url, 'Liability waiver');
+        rd.addEventListener('click', function () { if (!readW[w.version]) { readW[w.version] = true; setTimeout(render, 0); } });
+        row.appendChild(rd);
+      }
       waiverWrap.appendChild(row);
+      if (w.url && !readW[w.version]) waiverWrap.appendChild(el('p', { class: 'cart-waiver-hint' }, 'Open "Read it" first; then the box can be ticked.'));
     });
     // One tick per version, and with two versions in one cart all of them
     // must be ticked.
     var accepted = allAccepted();
-    noteWrap.hidden = !lines.some(function (x) { return isRegistration(x.product); });
 
     payBtn.disabled = cart.length === 0 || !accepted || !shipOk;
     // The store shell (store.js) draws its own cart button in the top bar
@@ -421,14 +448,43 @@
     });
   }
 
+  // PayPal in its own window (owner, 2026-10-12): opened on the click (so no
+  // pop-up blocker stops it), pointed at PayPal once the order exists, and
+  // the result comes back here by postMessage from our return page. Where a
+  // browser refuses pop-ups, the whole page goes to PayPal as before.
+  function payWindow() {
+    var w = 520, h = 760, x = Math.max(0, (screen.width - w) / 2), y = Math.max(0, (screen.height - h) / 2);
+    var pw = null;
+    try { pw = window.open('', 'llpaypal', 'popup=yes,width=' + w + ',height=' + h + ',left=' + x + ',top=' + y); } catch (e) { pw = null; }
+    if (pw) { try { pw.document.title = 'PayPal'; pw.document.body.innerHTML = '<p style="font:16px sans-serif;padding:24px;color:#333">Opening PayPal...</p>'; } catch (e) { /* already elsewhere */ } }
+    return pw;
+  }
+  var payWatch = null;
+  function goPayPal(pw, url, onClosed) {
+    if (!pw || pw.closed) { window.location.href = url; return; }
+    pw.location.href = url;
+    clearInterval(payWatch);
+    payWatch = setInterval(function () {
+      if (pw.closed) { clearInterval(payWatch); payWatch = null; if (onClosed) onClosed(); }
+    }, 700);
+  }
+  window.addEventListener('message', function (e) {
+    if (e.origin !== window.location.origin || !e.data || typeof e.data.llPayPal !== 'string') return;
+    clearInterval(payWatch); payWatch = null;
+    if (!panel.open) open();
+    processReturn(new URLSearchParams(e.data.llPayPal));
+  });
+
   function checkout() {
+    var pw = payWindow();
     var waivers = waiversInCart();
     if (!allAccepted()) {
       statusEl.textContent = 'Please accept the waiver before paying.';
+      if (pw) pw.close();
       return;
     }
     payBtn.disabled = true;
-    statusEl.textContent = 'Opening PayPal…';
+    statusEl.textContent = 'Opening PayPal in a new window…';
     // The versions accepted travel with the order, so what was agreed to
     // is on the order itself and not only in this browser.
     post('checkout', {
@@ -437,8 +493,11 @@
       waivers: waivers.map(function (w) { return w.version; }),
       shipMethod: delivery.method,
     })
-      .then(function (r) { window.location.href = r.approveUrl; })
+      .then(function (r) {
+        goPayPal(pw, r.approveUrl, function () { statusEl.textContent = 'The PayPal window closed. If you finished paying, PayPal will email your receipt; if not, press Check out to try again.'; payBtn.disabled = false; });
+      })
       .catch(function (e) {
+        if (pw) pw.close();
         statusEl.textContent = e.message;
         payBtn.disabled = false;
       });
@@ -459,8 +518,9 @@
     form.appendChild(box);
     return f;
   }
-  function regForm(id) {
+  function regForm(id, editing) {
     var p = products[id];
+    var was = editing ? editing.reg : null;
     var team = p.registration === 'team';
     if (!regDlg) { regDlg = el('dialog', { class: 'cart-doc su-dlg', 'aria-label': 'Registration' }); document.body.appendChild(regDlg); }
     regDlg.textContent = '';
@@ -476,25 +536,28 @@
     var f = {}, roster = [];
     if (team) {
       f.team = field(form, 'Team name', el('input', { type: 'text', maxlength: '60', required: '' }));
+      if (was) f.team.value = was.team || '';
       form.appendChild(el('h3', { class: 'su-h' }, 'Captain'));
-      f.captain = personFields(form, 'you');
+      f.captain = personFields(form, 'you', was && was.captain);
       form.appendChild(el('h3', { class: 'su-h' }, 'Players'));
       var list = el('div', { class: 'su-roster' }); form.appendChild(list);
-      var addRow = function () { if (roster.length >= 11) return; var n = roster.length + 2; var wrap = el('div', { class: 'su-player' }); wrap.appendChild(el('span', { class: 'su-n' }, String(n))); list.appendChild(wrap); roster.push(personFields(wrap, 'Player ' + n)); };
-      for (var i = 0; i < 6; i++) addRow();
+      var addRow = function () { if (roster.length >= 11) return; var n = roster.length + 2; var wrap = el('div', { class: 'su-player' }); wrap.appendChild(el('span', { class: 'su-n' }, String(n))); list.appendChild(wrap); roster.push(personFields(wrap, 'Player ' + n, was && was.players ? was.players[n - 2] : null)); };
+      for (var i = 0; i < Math.max(6, was && was.players ? was.players.length : 0); i++) addRow();
       var more = el('button', { type: 'button', class: 'btn btn-sm btn-ghost' }, 'Add a player');
       more.addEventListener('click', function () { addRow(); if (roster.length >= 11) more.disabled = true; });
       form.appendChild(more);
     } else {
       form.appendChild(el('h3', { class: 'su-h' }, 'Player'));
-      f.player = personFields(form, 'you');
+      f.player = personFields(form, 'you', was);
       f.team = field(form, 'Team name or Free Agent', el('input', { type: 'text', maxlength: '60' }));
+      if (was) f.team.value = was.team || '';
     }
     var tick = function (text) { var l = el('label', { class: 'su-check' }); var c = el('input', { type: 'checkbox' }); l.appendChild(c); l.appendChild(document.createTextNode(' ' + text)); form.appendChild(l); return c; };
     var comms = tick(team ? 'Everyone on this roster agrees to receive calls, texts and emails about league play (schedules, weather, results).' : 'I agree to receive calls, texts and emails about league play (schedules, weather, results).');
     var towns = tick(team ? 'Our team will play games in both Eufaula, OK and McAlester, OK.' : 'I will play games in both Eufaula, OK and McAlester, OK.');
     var msg = el('p', { class: 'su-msg', role: 'status' });
-    var go = el('button', { type: 'submit', class: 'btn' }, 'Add to cart');
+    var go = el('button', { type: 'submit', class: 'btn' }, editing ? 'Save changes' : 'Add to cart');
+    if (was) { comms.checked = !!was.comms; towns.checked = !!was.bothTowns; }
     form.appendChild(msg); form.appendChild(go);
     var val = function (o) { return { name: o.name.value.trim(), phone: o.phone.value.trim(), email: o.email.value.trim() }; };
     form.addEventListener('submit', function (e) {
@@ -510,6 +573,7 @@
       if (!reg.comms) { msg.textContent = 'Please tick that you accept communication about league play.'; return; }
       if (!reg.bothTowns) { msg.textContent = 'Please tick that you will play in both Eufaula and McAlester.'; return; }
       regDlg.close();
+      if (editing) { editing.reg = reg; save(cart); return; }
       add(id, '', reg);
     });
     regDlg.appendChild(form);
@@ -578,10 +642,15 @@
         return;
       }
       go.disabled = true;
+      var pw = payWindow();
       msg.textContent = 'Checking your address...';
       post('subscribe', { id: id, details: details })
-        .then(function (r) { msg.textContent = 'Opening PayPal...'; window.location.href = r.approveUrl; })
-        .catch(function (err) { msg.textContent = err.message; go.disabled = false; });
+        .then(function (r) {
+          msg.textContent = 'Opening PayPal in a new window...';
+          goPayPal(pw, r.approveUrl, function () { msg.textContent = 'The PayPal window closed. If you finished signing up, PayPal will email you; if not, press Continue to PayPal to try again.'; go.disabled = false; });
+          if (pw && !pw.closed) { signDlg.close(); }
+        })
+        .catch(function (err) { if (pw) pw.close(); msg.textContent = err.message; go.disabled = false; });
     });
     signDlg.appendChild(form);
     if (typeof signDlg.showModal === 'function') signDlg.showModal(); else signDlg.setAttribute('open', '');
@@ -591,28 +660,25 @@
   function subscribe(id, button) {
     if (products[id] && products[id].pickup) { signUp(id, button); return; }
     if (button) button.disabled = true;
+    var pw = payWindow();
     post('subscribe', { id: id })
-      .then(function (r) { window.location.href = r.approveUrl; })
+      .then(function (r) { goPayPal(pw, r.approveUrl, function () { if (button) button.disabled = false; }); })
       .catch(function (e) {
         say(e.message);
         if (button) button.disabled = false;
       });
   }
 
-  /** Coming back from PayPal, or from a button on another page. */
-  function handleArrival() {
-    var q = new URLSearchParams(window.location.search);
-    var clean = function () {
-      history.replaceState(null, '', window.location.pathname + window.location.hash);
-    };
+  /** The PayPal result, from our own return page or from the pop-up's message. */
+  function processReturn(q, clean) {
+    clean = clean || function () {};
     if (q.get('paypal') === 'cancel') {
       say('Checkout canceled. Nothing was charged, and your cart is still here.');
       clean();
     } else if (q.get('paypal') === 'return' && q.get('subscription_id')) {
-      say('You are signed up. PayPal will email you a confirmation.');
+      say('You are signed up! We will call or text you to confirm your pick-up day. PayPal will email you a confirmation.');
       // A pick-up sign-up: tell the owner (once) now that PayPal has it.
       post('pickups', { action: 'confirm', subscriptionId: q.get('subscription_id') })
-        .then(function (r) { if (r && r.day) say('You are signed up. Your pick-up day is ' + r.day + '; we will call or text before the first one. PayPal will email you a confirmation.'); })
         .catch(function () { /* PayPal's own email still goes */ });
       clean();
     } else if (q.get('paypal') === 'return' && q.get('token')) {
@@ -631,6 +697,17 @@
         })
         .catch(function (e) { say(e.message); })
         .then(clean);
+    }
+  }
+
+  /** Coming back from PayPal, or from a button on another page. */
+  function handleArrival() {
+    var q = new URLSearchParams(window.location.search);
+    var clean = function () {
+      history.replaceState(null, '', window.location.pathname + window.location.hash);
+    };
+    if (q.get('paypal')) {
+      processReturn(q, clean);
     } else if (q.get('add')) {
       add(q.get('add'));
       clean();

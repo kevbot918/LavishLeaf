@@ -976,6 +976,9 @@
   // no longer slides a shelf sideways (owner, 2026-10-10: it caught him when
   // he meant to scroll down the page); a trackpad's sideways swipe still works.
   var CHEV_L = 'M15 18l-6-6 6-6', CHEV_R = 'M9 18l6-6-6-6';
+  // When the page itself last scrolled (for the shelf wheel above).
+  var lastPageScroll = 0, wheelOnShelf = 0;
+  window.addEventListener('scroll', function () { if (Date.now() - wheelOnShelf > 100) lastPageScroll = Date.now(); }, { passive: true });
   function buildShelfArrows() {
     $$('#shelves .shelf-row, #view-swaps .shelf-row').forEach(function (row) {
       if (row.parentNode.classList.contains('shelf-track')) return;
@@ -999,6 +1002,22 @@
         right.hidden = row.scrollLeft >= max;
       }
       row.addEventListener('scroll', update, { passive: true });
+      // The mouse wheel slides the shelf sideways (owner, 2026-10-12: "super
+      // handy, just make it so it doesn't interfere with scrolling down"):
+      // only once the pointer has rested on the shelf, never while the page is
+      // already scrolling under it, and it lets go at either end.
+      var entered = 0;
+      row.addEventListener('pointerenter', function () { entered = Date.now(); });
+      row.addEventListener('wheel', function (e) {
+        if (e.ctrlKey || Math.abs(e.deltaX) > Math.abs(e.deltaY)) return; // pinch zoom, or a sideways trackpad swipe
+        var now = Date.now();
+        if (now - lastPageScroll < 400 || now - entered < 250) return; // the page is moving: let it
+        var max = row.scrollWidth - row.clientWidth;
+        if ((e.deltaY > 0 && row.scrollLeft >= max - 1) || (e.deltaY < 0 && row.scrollLeft <= 0)) return; // at an end
+        e.preventDefault();
+        row.scrollLeft += e.deltaY * (e.deltaMode === 1 ? 40 : 1);
+        wheelOnShelf = now;
+      }, { passive: false });
       window.addEventListener('resize', update);
       update();
       setTimeout(update, 400); // after the photos have laid out
