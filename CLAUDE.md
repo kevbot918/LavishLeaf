@@ -599,3 +599,24 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     gray, canceled). google-shopping.tsv sits beside the XML feed for a Google
     Sheet (=IMPORTDATA). The owner's current to-dos: OWNER-STEPS "THE CURRENT
     ACTION LIST".
+
+38. **2026-10-13, the owner's list** (docs/WORKLIST-2026-10-13.md).
+    **Contacts**: every order, paid pick-up, registration (every player and
+    the payer), contact and newsletter form, account (functions/
+    identity-signup.mjs) and donation is kept in the newsletter store with
+    phone and sources (lib/newsletter.mjs addContact/saveContact; somebody who
+    unsubscribed is never re-added; an unticked form box is "declined"). The
+    dashboard's Contacts card downloads them (newsletter-admin "contacts",
+    which backfilled earlier customers once, flag backfilled-v1). Receipts,
+    notices and the contact reply carry a one-click unsubscribe line
+    (notice-mail optOutHtml). **Donations**: our own donate.html pop-up and
+    functions/donate.mjs (Orders v2, category DONATION, division choice,
+    Blobs "donations", branded thank-you, owner alert); the hosted PayPal
+    donate button is gone. **Webhook** also handles disputes, chargebacks,
+    denied captures, failed subscription payments and donation refunds.
+    **Pick-ups** ask PayPal for the real status (a subscription canceled in
+    PayPal before the webhook existed read "active" and could not be removed).
+    **Tiles**: 14, two rows of 7 (APK downloads, Accounts created, Contact
+    forms submitted, Donations raised added). Notice emails no longer greet
+    twice. **Products**: margin floor may go to 10% for a FEW lines (owner);
+    target 15-30%. Technology shelf (AliExpress brand stores).

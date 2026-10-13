@@ -22,7 +22,7 @@ deploy -> Deploy site** once you have added a batch.
 
 ---
 
-## THE CURRENT ACTION LIST (updated 2026-10-12): read this first
+## THE CURRENT ACTION LIST (updated 2026-10-13): read this first
 
 The owner, 2026-10-12: "remind of this so add it to my action list for when I
 ask you to give me actions left that I need to take." When he asks for his
@@ -46,13 +46,23 @@ created.
   lavishleaf.org address as spam. Not before both Google and Amazon have
   been signing mail for a while.
 
-**New since 2026-10-12 (the full click-by-click is in the chat reply of that
+**New 2026-10-13:**
+- PayPal webhook is SET (owner, 2026-10-13). Edit it and ALSO tick: Customer
+  dispute created, Payment capture reversed, Payment capture denied, Billing
+  subscription payment failed. Save. (No redeploy needed; same Webhook ID.)
+- After the deploy, open the dashboard once: the Contacts card brings in every
+  earlier customer by itself. Then re-check the canceled compost sign-up:
+  it now shows "canceled in PayPal" and Remove works.
+- Test the new donate page once with $1 (store, Donate): the thank-you email,
+  the Donations raised tile, then refund it in PayPal.
+- Texting customers needs their separate written consent (TCPA); nothing is
+  sent by text. If wanted later: Klaviyo free (150 texts a month) or our own
+  AWS sending (about 1 cent a text plus a $2/month toll-free number).
+
+**From 2026-10-12 (the full click-by-click is in the chat reply of that
 day and below):**
-1. PayPal webhook: PayPal Developer Dashboard, Live, the app, Add Webhook,
-   URL `https://lavishleaf.org/.netlify/functions/paypal-webhook`, events:
-   Payment capture refunded, Payment sale completed, Payment sale refunded,
-   Billing subscription activated / cancelled / suspended / expired. Copy the
-   Webhook ID into Netlify as `PAYPAL_WEBHOOK_ID`, then Trigger deploy.
+1. PayPal webhook: DONE 2026-10-13 (URL
+   `https://lavishleaf.org/.netlify/functions/paypal-webhook`, PAYPAL_WEBHOOK_ID set).
 2. Cancel the test compost subscription from the dashboard (Pick-ups and
    routes, Cancel subscription): a refund does not stop the monthly charge.
 3. Search Console: on the DOMAIN property `lavishleaf.org`, submit the full

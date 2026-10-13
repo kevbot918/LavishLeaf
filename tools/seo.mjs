@@ -40,7 +40,7 @@ writeFileSync(join(ROOT, 'robots.txt'), `User-agent: *\nAllow: /\nDisallow: /das
 const goods = sold.filter((p) => p.ship === true && !p.interval);
 const GCAT = {
   'Farm & Garden': 'Home & Garden > Lawn & Garden', 'Recreation & Outdoors': 'Sporting Goods', 'Personal Care': 'Health & Beauty > Personal Care',
-  Groceries: 'Food, Beverages & Tobacco > Food Items', 'Home & Kitchen': 'Home & Garden', 'Cleaning Supplies': 'Home & Garden > Household Supplies', 'Games & Gifts': 'Toys & Games', Pets: 'Animals & Pet Supplies',
+  Groceries: 'Food, Beverages & Tobacco > Food Items', 'Home & Kitchen': 'Home & Garden', 'Cleaning Supplies': 'Home & Garden > Household Supplies', 'Games & Gifts': 'Toys & Games', Pets: 'Animals & Pet Supplies', Technology: 'Electronics',
 };
 const items = goods.map((p) => [
   '    <item>',
