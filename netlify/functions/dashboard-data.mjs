@@ -50,6 +50,41 @@ async function ordersSection(days) {
   }
 }
 
+/**
+ * The newer top tiles (owner, 2026-10-13): accounts created (every account
+ * with saved lists, plus every sign-up the identity-signup function counted)
+ * and donations raised through our own donate page (functions/donate.mjs).
+ */
+async function countsSection(days) {
+  try {
+    const since = Date.now() - days * 864e5;
+    const acc = await store('accounts');
+    const ids = new Set((await acc.list()).blobs.map((b) => b.key));
+    const su = await store('signups');
+    let recent = 0;
+    for (const b of (await su.list({ prefix: 'u-' })).blobs) {
+      ids.add(b.key.slice(2));
+      const r = await su.get(b.key, { type: 'json' }).catch(() => null);
+      if (r && Date.parse(r.at) >= since) recent++;
+    }
+    const dons = await store('donations');
+    const list = [];
+    for (const b of (await dons.list({ prefix: 'd-' })).blobs) { const r = await dons.get(b.key, { type: 'json' }).catch(() => null); if (r) list.push(r); }
+    const kept = list.filter((d) => !d.refunded);
+    const sum = (a) => Math.round(a.reduce((s, d) => s + (Number(d.amount) || 0), 0) * 100) / 100;
+    return {
+      status: 'ok',
+      data: {
+        accounts: ids.size, accountsRecent: recent,
+        donations: { total: sum(kept), count: kept.length, recentTotal: sum(kept.filter((d) => Date.parse(d.date) >= since)),
+          latest: list.sort((a, b) => String(b.date).localeCompare(String(a.date))).slice(0, 20).map((d) => ({ date: d.date, amount: d.amount, name: d.name, email: d.email, division: d.divisionName, refunded: !!d.refunded })) },
+      },
+    };
+  } catch (e) {
+    return { status: 'error', message: e.message };
+  }
+}
+
 export default async (request) => {
   if (request.method !== 'POST') return json(405, { error: 'POST only.' });
   const admin = await adminFromRequest(request);
@@ -65,7 +100,7 @@ export default async (request) => {
     if (hit && Date.now() - Date.parse(hit.generated) < KEEP_MS) return json(200, { ...hit, cached: true });
   }
 
-  const [ga, gsc, social, clarity, forms, list, orders] = await Promise.all([
+  const [ga, gsc, social, clarity, forms, list, orders, counts] = await Promise.all([
     gaSection(days).catch((e) => ({ status: 'error', message: e.message })),
     gscSection(days).catch((e) => ({ status: 'error', message: e.message })),
     socialSection().catch((e) => ({ status: 'error', message: e.message })),
@@ -73,11 +108,12 @@ export default async (request) => {
     formsSection().catch((e) => ({ status: 'error', message: e.message })),
     listSection(days),
     ordersSection(days),
+    countsSection(days),
   ]);
   if (social.status === 'ok') {
     social.data.growth = await snapshotFollowers(cache, social.data, days).catch(() => null);
   }
-  const out = { generated: new Date().toISOString(), days, ga, gsc, social, clarity, forms, list, orders };
+  const out = { generated: new Date().toISOString(), days, ga, gsc, social, clarity, forms, list, orders, counts };
   await cache.setJSON(key, out).catch(() => {});
   return json(200, out);
 };

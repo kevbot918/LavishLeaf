@@ -32,6 +32,8 @@
 
 /* ---- tiles */
 .db-tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 26px; }
+/* 14 tiles = two rows of 7 on a wide screen (owner, 2026-10-13) */
+@media (min-width: 1180px) { .db-tiles { grid-template-columns: repeat(7, minmax(0, 1fr)); } .db-tile-value { font-size: 1.6rem; } }
 .db-tile { background: var(--card); border-radius: 12px; padding: 14px 16px 12px; border-top: 3px solid var(--leaf); min-height: 118px; display: flex; flex-direction: column; }
 .db-tile-label { color: var(--gray); font-size: .84rem; font-weight: 700; display: flex; align-items: center; gap: 6px; }
 .db-tile-value { color: var(--white); font-size: 1.9rem; font-weight: 800; line-height: 1.15; margin: 6px 0 4px; font-variant-numeric: tabular-nums; }

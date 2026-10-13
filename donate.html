@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate: Lavish Leaf</title>
+  <meta name="description" content="Support Lavish Leaf's composting, recycling, community sports and free Symphonymph app with a donation through PayPal.">
+  <meta name="robots" content="noindex">
+  <link rel="canonical" href="https://lavishleaf.org/donate.html">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,400;6..12,700;6..12,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8SKVQ74TF6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-8SKVQ74TF6');
+  </script>
+  <style>
+    /* Our own donate page (2026-10-13): it opens in the donate pop-up
+       (donate.js), records each gift for the dashboard and sends our
+       thank-you email (netlify/functions/donate.mjs). */
+    body { background: var(--bg-3); margin: 0; }
+    .dn { max-width: 440px; margin: 0 auto; padding: 22px 16px 36px; color: var(--white); font-family: 'Nunito Sans', 'Segoe UI', Arial, sans-serif; }
+    .dn-logo { display: block; margin: 0 auto 10px; width: 120px; height: auto; }
+    .dn h1 { font-size: 1.5rem; text-align: center; margin: 0 0 6px; color: var(--leaf-bright); }
+    .dn p { color: var(--gray); line-height: 1.55; margin: 0 0 14px; }
+    .dn-amounts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 0 0 12px; }
+    .dn-amounts button { background: var(--card); color: var(--white); border: 2px solid var(--rule); border-radius: 10px; padding: 12px 0; font: 800 1.1rem 'Nunito Sans', sans-serif; cursor: pointer; }
+    .dn-amounts button[aria-pressed="true"] { border-color: var(--leaf-bright); background: var(--leaf-deep); }
+    .dn label { display: block; font-weight: 700; margin: 12px 0 6px; }
+    .dn input, .dn select { width: 100%; box-sizing: border-box; padding: 11px 12px; border-radius: 8px; border: 1px solid var(--rule); font: 1rem 'Nunito Sans', sans-serif; }
+    .dn-go { width: 100%; margin-top: 18px; background: var(--leaf); color: var(--ink); border: 0; border-radius: 10px; padding: 14px; font: 800 1.1rem 'Nunito Sans', sans-serif; cursor: pointer; }
+    .dn-go:disabled { opacity: .6; cursor: wait; }
+    .dn-msg { min-height: 1.4em; margin-top: 12px; text-align: center; font-weight: 700; }
+    .dn-msg.err { color: #F2B8A0; }
+    .dn-done { text-align: center; }
+    .dn-done i { font-size: 2.6rem; color: var(--leaf-bright); margin: 6px 0 12px; }
+    .dn-small { font-size: .85rem; text-align: center; }
+    .dn a { color: var(--leaf-bright); }
+  </style>
+</head>
+<body>
+<main class="dn">
+  <a href="https://lavishleaf.org" target="_blank" rel="noopener"><img class="dn-logo" src="logo-oval.png" alt="Lavish Leaf"></a>
+  <div id="dn-form">
+    <h1>Support Lavish Leaf</h1>
+    <p>Your gift keeps scraps and recyclables out of the landfill, builds community sports, and keeps Symphonymph free with no ads.</p>
+    <div class="dn-amounts" role="group" aria-label="Amount">
+      <button type="button" data-a="5">$5</button>
+      <button type="button" data-a="10">$10</button>
+      <button type="button" data-a="25" aria-pressed="true">$25</button>
+      <button type="button" data-a="50">$50</button>
+      <button type="button" data-a="100">$100</button>
+      <button type="button" data-a="">Other</button>
+    </div>
+    <label for="dn-amount">Amount (US dollars)</label>
+    <input id="dn-amount" type="number" inputmode="decimal" min="1" max="5000" step="1" value="25">
+    <label for="dn-for">Where it goes</label>
+    <select id="dn-for">
+      <option value="general">Wherever it is needed most</option>
+      <option value="symphonymph">Symphonymph</option>
+      <option value="farms">Lavish Leaf Farms (compost and recycling)</option>
+      <option value="sports">Rec Sports</option>
+      <option value="gaming">Gaming</option>
+    </select>
+    <button type="button" class="dn-go" id="dn-go"><i class="fab fa-paypal"></i> Donate with PayPal</button>
+    <div class="dn-msg" id="dn-msg" role="status"></div>
+    <p class="dn-small">Pay with PayPal or a card. Lavish Leaf Inc is a for-profit company, so donations are not tax-deductible.</p>
+  </div>
+  <div id="dn-done" class="dn-done" hidden>
+    <i class="fas fa-heart"></i>
+    <h1>Thank you!</h1>
+    <p id="dn-done-text">Your donation went through. A thank-you email is on its way.</p>
+    <p><button type="button" class="dn-go" id="dn-close">Close</button></p>
+  </div>
+</main>
+<script>
+(function () {
+  'use strict';
+  var q = new URLSearchParams(location.search);
+  var amount = document.getElementById('dn-amount');
+  var sel = document.getElementById('dn-for');
+  var go = document.getElementById('dn-go');
+  var msg = document.getElementById('dn-msg');
+  if (q.get('for') && sel.querySelector('option[value="' + q.get('for').replace(/[^a-z]/g, '') + '"]')) sel.value = q.get('for');
+  function say(t, err) { msg.textContent = t; msg.className = 'dn-msg' + (err ? ' err' : ''); }
+  document.querySelectorAll('.dn-amounts button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('.dn-amounts button').forEach(function (x) { x.setAttribute('aria-pressed', 'false'); });
+      b.setAttribute('aria-pressed', 'true');
+      if (b.dataset.a) amount.value = b.dataset.a; else { amount.value = ''; amount.focus(); }
+    });
+  });
+  function post(body) {
+    return fetch('/.netlify/functions/donate', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok) throw new Error(j.error || 'Something went wrong. Nothing was charged.'); return j; }); });
+  }
+  go.addEventListener('click', function () {
+    go.disabled = true; say('Opening PayPal...');
+    if (window.gtag) gtag('event', 'donate_start', { value: Number(amount.value) || 0, currency: 'USD', division: sel.value });
+    post({ action: 'create', amount: amount.value, division: sel.value })
+      .then(function (r) { location.href = r.approve; })
+      .catch(function (e) { go.disabled = false; say(e.message, true); });
+  });
+  document.getElementById('dn-close').addEventListener('click', function () {
+    window.close();
+    setTimeout(function () { location.href = 'index.html'; }, 300); // a phone tab cannot close itself
+  });
+  // Back from PayPal: capture once, then thank them.
+  if (q.get('paypal') === 'return' && q.get('token')) {
+    document.getElementById('dn-form').hidden = true;
+    var done = document.getElementById('dn-done');
+    var text = document.getElementById('dn-done-text');
+    done.hidden = false; text.textContent = 'Finishing your donation...';
+    document.getElementById('dn-close').hidden = true;
+    post({ action: 'capture', orderId: q.get('token') }).then(function (r) {
+      if (r.status !== 'COMPLETED') throw new Error('PayPal has not finished the payment. Nothing was charged; please try again.');
+      text.textContent = 'Your donation of $' + Number(r.amount).toFixed(2) + ' went through. A thank-you email is on its way, along with PayPal\'s receipt.';
+      document.getElementById('dn-close').hidden = false;
+      if (window.gtag) gtag('event', 'donate_complete', { value: Number(r.amount) || 0, currency: 'USD' });
+      history.replaceState(null, '', 'donate.html');
+    }).catch(function (e) {
+      document.getElementById('dn-form').hidden = false; done.hidden = true; say(e.message, true);
+    });
+  } else if (q.get('paypal') === 'cancel') {
+    say('No donation was made. You can try again any time.');
+  }
+})();
+</script>
+</body>
+</html>

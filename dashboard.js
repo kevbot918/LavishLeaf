@@ -176,6 +176,7 @@
     var social = d.social.status === 'ok' ? d.social.data : null;
     var list = d.list.status === 'ok' ? d.list.data : null;
     var orders = d.orders.status === 'ok' ? d.orders.data : null;
+    var counts = d.counts && d.counts.status === 'ok' ? d.counts.data : null;
     var gsc = d.gsc.status === 'ok' ? d.gsc.data : null;
     var clarity = d.clarity.status === 'ok' ? d.clarity.data : null;
 
@@ -229,6 +230,18 @@
         gr ? sign(gr.facebook) + ' Facebook, ' + sign(gr.instagram) + ' Instagram ' + (gr.complete ? 'in the last ' + days + ' days' : 'since ' + niceDate(gr.from) + ' (counting began then)') + '. Now ' + num(f) + ' and ' + num(ig) + '.'
            : num(f) + ' on Facebook, ' + num(ig) + ' on Instagram. Growth appears from tomorrow.');
     }
+    // Four more (owner, 2026-10-13); with these the tiles make two rows of 7.
+    if (ga && ga.downloads) {
+      var dlNow = (ga.downloads.daily || []).reduce(function (s, x) { return s + x.value; }, 0);
+      tile('Symphonymph APK downloads', 'fa-mobile-screen', num(ga.downloads.allTime), num(dlNow) + ' in the last ' + days + ' days. Counted since ' + niceDate(ga.downloads.since) + '.', false, '#sec-downloads');
+    } else tile('Symphonymph APK downloads', 'fa-mobile-screen', 'Connect Google', 'Counted by Google Analytics.', true);
+    if (counts) tile('Accounts created', 'fa-user-plus', num(counts.accounts), num(counts.accountsRecent) + ' new in the last ' + days + ' days', false, '#sec-people');
+    else tile('Accounts created', 'fa-user-plus', '-', 'Could not be counted just now.', true);
+    var contactForm = d.forms.status === 'ok' ? (d.forms.data.filter(function (r) { return r.name === 'contact'; })[0] || { value: 0 }) : null;
+    if (contactForm) tile('Contact forms submitted', 'fa-comment-dots', num(contactForm.value), 'All time. Read them in Netlify under Forms; each one got our automatic reply.', false, '#sec-people');
+    else tile('Contact forms submitted', 'fa-comment-dots', '-', 'Add NETLIFY_API_TOKEN to count them (docs/DASHBOARD.md).', true);
+    if (counts) tile('Donations raised', 'fa-hand-holding-heart', money(counts.donations.total), num(counts.donations.count) + ' donation' + (counts.donations.count === 1 ? '' : 's') + ' in all, ' + money(counts.donations.recentTotal) + ' in the last ' + days + ' days', false, '#sec-donations');
+    else tile('Donations raised', 'fa-hand-holding-heart', '-', 'Could not be counted just now.', true);
 
     // ---- sections
     var root = $('#db-sections'); root.textContent = '';
@@ -456,7 +469,7 @@
       return api('pickups', Object.assign({ action: action, id: s.id }, extra || {})).then(function (r) {
         if (r.removed) signups = signups.filter(function (x) { return x !== s; }); else Object.assign(s, r.signup);
         drawTable(); drawRoutes(); fillTiles();
-      }).catch(function (e) { if (msgEl) msgEl.textContent = e.message; else alert(e.message); });
+      }).catch(function (e) { if (msgEl) { msgEl.textContent = e.message; msgEl.style.color = '#F2B8A0'; } alert(e.message); });
     }
     function csv(rows, cols, name) {
       var q = function (v) { v = v == null ? '' : String(v); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; };
@@ -498,7 +511,7 @@
         if (s.dayMailed) td1.appendChild(el('div', 'db-hint', 'Emailed ' + niceDate(s.dayMailed) + (s.dayMailedFor && s.dayMailedFor !== routeDay(s) ? ' (' + s.dayMailedFor + ')' : '')));
         tr.appendChild(td1);
         var st = s.status === 'approved' ? 'active' : s.status;
-        var stTd = el('td', null, st + (s.lastPaid ? ' · paid ' + niceDate(s.lastPaid) : '') + ((s.refunds || []).length ? ' · refunded ' + money(s.refunds.reduce(function (a, r) { return a + r.cents; }, 0) / 100) : ''));
+        var stTd = el('td', null, st + (s.canceledIn ? ' in PayPal' : '') + (s.paymentFailed && st === 'active' ? ' · last payment FAILED ' + niceDate(s.paymentFailed) : '') + (s.lastPaid ? ' · paid ' + niceDate(s.lastPaid) : '') + ((s.refunds || []).length ? ' · refunded ' + money(s.refunds.reduce(function (a, r) { return a + r.cents; }, 0) / 100) : ''));
         tr.appendChild(stTd);
         tr.appendChild(el('td', null, s.bucket ? 'Ours ($10)' : 'Own'));
         tr.appendChild(el('td', null, s.notes || ''));
@@ -728,8 +741,45 @@
     var fm = card('Forms', 'Every submission, ever. Read them in Netlify under Forms.');
     fm.appendChild(d.forms.status === 'ok' ? bars(d.forms.data.map(function (r) { return { name: ({ contact: 'Contact', newsletter: 'Newsletter', 'app-report': 'App reports', 'artist-submission': 'Artist submissions' })[r.name] || r.name, value: r.value }; }), { unit: 'sent' }) : notice(d.forms));
     g8.appendChild(fm);
+    // Contacts (owner, 2026-10-13): everybody who ordered, signed up,
+    // registered, donated, made an account or wrote in, with their phone.
+    var ct = card('Contacts', 'Everyone who ordered, signed up for a pick-up, registered, donated, created an account or wrote in, kept for the newsletter. Every newsletter has a one-click unsubscribe, and somebody who unsubscribed is never added back by a purchase.');
+    var ctMsg = el('p', 'db-hint', 'Loading...');
+    ct.appendChild(ctMsg);
+    var ctBtn = h('<button type="button" class="db-btn-ghost"><i class="fas fa-file-csv"></i> Download contacts (CSV)</button>');
+    ct.appendChild(ctBtn);
+    var contactsAll = [];
+    api('newsletter-admin', { action: 'contacts' }).then(function (r) {
+      contactsAll = r.contacts || [];
+      var on = contactsAll.filter(function (c) { return c.status === 'active'; });
+      var by = {};
+      on.forEach(function (c) { c.sources.split(' ').forEach(function (s) { by[s] = (by[s] || 0) + 1; }); });
+      ctMsg.textContent = num(on.length) + ' on the list (' + num(on.filter(function (c) { return c.phone; }).length) + ' with a phone number), ' + num(contactsAll.length - on.length) + ' unsubscribed. From: ' + (Object.keys(by).map(function (k) { return k + ' ' + by[k]; }).join(', ') || 'nobody yet') + '.';
+    }).catch(function (e) { ctMsg.textContent = e.message; });
+    ctBtn.addEventListener('click', function () { csv(contactsAll, ['email', 'first', 'last', 'phone', 'status', 'sources', 'joined'], 'lavish-leaf-contacts'); });
+    g8.appendChild(ct);
     s8.appendChild(g8);
     root.appendChild(s8);
+
+    // 8b. Donations (owner, 2026-10-13): our own donate page records each one.
+    var sdn = section('donations', 'fa-hand-holding-heart', 'Donations', 'Every gift made on the donate page, with the division the donor chose. Each donor gets our thank-you email and PayPal\'s receipt. Gifts are not tax-deductible.');
+    var cdn = card(null); sdn.appendChild(cdn);
+    if (counts && counts.donations.latest.length) {
+      var tdn = el('table', 'db-table');
+      tdn.innerHTML = '<thead><tr><th>Date</th><th>Amount</th><th>For</th><th>From</th></tr></thead>';
+      var bdn = el('tbody');
+      counts.donations.latest.forEach(function (x) {
+        var tr = el('tr');
+        tr.appendChild(el('td', null, niceDate(x.date)));
+        tr.appendChild(el('td', null, money(x.amount) + (x.refunded ? ' (refunded)' : '')));
+        tr.appendChild(el('td', null, x.division || ''));
+        tr.appendChild(el('td', null, (x.name || '') + (x.email ? ' · ' + x.email : '')));
+        bdn.appendChild(tr);
+      });
+      tdn.appendChild(bdn);
+      var wdn = el('div', 'db-table-wrap'); wdn.appendChild(tdn); cdn.appendChild(wdn);
+    } else cdn.appendChild(el('p', 'db-empty', 'No donations yet. Each one appears here as soon as it is paid.'));
+    root.appendChild(sdn);
 
     // 9. Orders to place (owner, 2026-10-12): its own section, one card per
     // order with everything needed to place it with the supplier: the

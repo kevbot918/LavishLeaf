@@ -4,6 +4,12 @@
 //   { action: "send", issue }             -> start sending it to everyone
 //   { action: "cancel" }                  -> stop a send part-way
 //   { action: "welcome-test" }            -> the welcome email, to the owner
+//   { action: "contacts" }                -> every contact (email, name, phone,
+//                                           status, how they reached us) for the
+//                                           dashboard's spreadsheet; the first
+//                                           call also brings in every earlier
+//                                           customer (orders, pick-ups,
+//                                           registrations, donations, accounts)
 //   { action: "import" }                  -> everyone who ticked "Sign up" on the
 //                                           Netlify newsletter form before this
 //                                           list existed (no welcome email sent)
@@ -12,7 +18,7 @@
 import { adminFromRequest, json } from '../lib/admin.mjs';
 import { ISSUE, personalise, startJob, subjectOf } from '../lib/broadcast.mjs';
 import { loadTemplate, mailConfig, mailReady, sendEmail, sentToday, textOf } from '../lib/mail.mjs';
-import { allSubscribers, listStats, markWelcomed, newsletterStore, subscribe } from '../lib/newsletter.mjs';
+import { addContact, allSubscribers, listStats, markWelcomed, newsletterStore, subscribe } from '../lib/newsletter.mjs';
 import { sendWelcome } from '../lib/welcome.mjs';
 
 export default async (request) => {
@@ -32,6 +38,17 @@ export default async (request) => {
         list: listStats(await allSubscribers(store)),
         job: job ? { issue: job.issue, subject: job.subject, created: job.created, sent: job.sent.length, failed: job.failed, done: job.done } : null,
       });
+    }
+    if (body.action === 'contacts') {
+      if (!(await store.get('backfilled-v1'))) {
+        const n = await backfill(store);
+        await store.set('backfilled-v1', new Date().toISOString() + ' ' + n);
+      }
+      const rows = (await allSubscribers(store)).map((r) => ({
+        email: r.email, first: r.first || '', last: r.last || '', phone: r.phone || '', status: r.status,
+        sources: (r.sources && r.sources.length ? r.sources : [r.source || 'newsletter']).join(' '), joined: r.joined || '',
+      })).sort((a, b) => String(b.joined).localeCompare(String(a.joined)));
+      return json(200, { contacts: rows });
     }
     if (body.action === 'import') {
       const n = await importFromForms(store);
@@ -97,4 +114,34 @@ async function importFromForms(store) {
     if (subs.length < 100) break;
   }
   return added;
+}
+
+/**
+ * Everyone who reached us before contacts were kept (2026-10-13): orders,
+ * pick-up sign-ups that were paid, league registrations (every player),
+ * donations and accounts. addContact never re-adds somebody who
+ * unsubscribed. Returns how many people were seen.
+ */
+async function backfill(store) {
+  const { getStore } = await import('@netlify/blobs');
+  const all = async (name, prefix) => {
+    const s = getStore({ name, consistency: 'strong' });
+    const { blobs } = await s.list(prefix ? { prefix } : undefined);
+    const out = [];
+    for (const b of blobs.slice(0, 5000)) { const r = await s.get(b.key, { type: 'json' }).catch(() => null); if (r) out.push(r); }
+    return out;
+  };
+  const split = (n) => { const [first, ...rest] = String(n || '').trim().split(/\s+/); return { first: first || '', last: rest.join(' ') }; };
+  const people = [];
+  for (const o of await all('orders', 'o-')) people.push({ email: o.email, ...split(o.first_last || o.first), phone: o.phone, source: 'order' });
+  for (const p of await all('pickups', 's-')) if (p.status !== 'pending') people.push({ email: p.email, ...split(p.name), phone: p.phone, source: 'pickup' });
+  for (const r of await all('registrations', 'o-')) {
+    if (r.status === 'pending') continue;
+    for (const g of r.regs || []) for (const p of (g.kind === 'team' ? [g.captain, ...(g.players || [])] : [g])) if (p && p.email) people.push({ email: p.email, ...split(p.name), phone: p.phone, source: 'registration' });
+  }
+  for (const d of await all('donations', 'd-')) people.push({ email: d.email, ...split(d.name), source: 'donation' });
+  for (const a of await all('accounts')) if (a && a.email) people.push({ email: a.email, source: 'account' });
+  let n = 0;
+  for (const p of people) { if (await addContact(store, p)) n++; }
+  return n;
 }

@@ -10,7 +10,8 @@
 // Whatever happens here, the submission is already saved in Netlify, so a
 // failure is logged and never lost. Lambda-style so Netlify Blobs connects.
 import { loadTemplate, fill, mailConfig, mailReady, sendEmail, textOf, validEmail } from '../lib/mail.mjs';
-import { markWelcomed, newsletterStore, subscribe } from '../lib/newsletter.mjs';
+import { optOutHtml } from '../lib/notice-mail.mjs';
+import { addContact, markWelcomed, newsletterStore, subscribe } from '../lib/newsletter.mjs';
 import { sendWelcome } from '../lib/welcome.mjs';
 
 const ok = { statusCode: 200, body: 'ok' };
@@ -36,19 +37,25 @@ export const handler = async (event) => {
   try {
     // Lambda-style: Blobs (the list, and the mail counter) needs the event.
     (await import('@netlify/blobs')).connectLambda(event);
+    const store = await newsletterStore(event);
+    const details = { email, first, last: d['last-name'] || '', phone: d.phone || '', source: form || 'form' };
     if (form === 'newsletter') {
       // The form's "Sign up for news and updates" box is ticked by default;
-      // unticked means the person only wanted to leave their details.
-      if (String(d.subscribe || '').toLowerCase() !== 'yes') return ok;
-      const store = await newsletterStore(event);
+      // unticked means the person only wanted to leave their details, which
+      // are kept as a contact (never re-adding somebody who unsubscribed).
+      if (String(d.subscribe || '').toLowerCase() !== 'yes') { await addContact(store, { ...details, declined: true }); return ok; }
       const { record, isNew } = await subscribe(store, {
         email, first, last: d['last-name'] || '', source: pageOf(real),
       });
+      await addContact(store, details); // the phone number, kept with them
       if (isNew && !record.welcomed && mailReady() && mailConfig().postal) {
         await sendWelcome(record);
         await markWelcomed(store, email);
       }
-    } else if (form === 'contact' && mailReady()) {
+    } else if (form === 'contact') {
+      // Everyone who writes in is a contact too (owner, 2026-10-13).
+      await addContact(store, details);
+      if (!mailReady()) return ok;
       // One automatic reply per address per day, however many messages.
       const { getStore } = await import('@netlify/blobs');
       const seen = getStore('mail');
@@ -56,7 +63,7 @@ export const handler = async (event) => {
       if (await seen.get(key)) return ok;
       await seen.set(key, '1');
       const tpl = await loadTemplate('contact-reply');
-      const html = fill(tpl, { first_name: first || 'there' });
+      const html = fill(tpl, { first_name: first || 'there', optout_html: optOutHtml(email) });
       await sendEmail({ to: email, toName: first, subject: 'We have your message', html, text: textOf(html), kind: 'contact-reply' });
     }
   } catch (e) {

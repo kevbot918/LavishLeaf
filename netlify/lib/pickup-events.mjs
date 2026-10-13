@@ -5,6 +5,7 @@
 // goes once, in the receipt's look (notice-mail.mjs).
 import { esc, mailConfig, sendEmail, textOf, validEmail } from './mail.mjs';
 import { sendNotice } from './notice-mail.mjs';
+import { saveContact } from './newsletter.mjs';
 
 const money = (c) => '$' + (c / 100).toFixed(2);
 const phone = (p) => String(p).replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
@@ -32,6 +33,8 @@ export function ownerRows(rec) {
 export async function activated(rec) {
   if (rec.status !== 'canceled') rec.status = 'active';
   if (rec.alerted) return rec;
+  const [first, ...rest] = String(rec.name || '').trim().split(/s+/);
+  await saveContact({ email: rec.email, first, last: rest.join(' '), phone: rec.phone, source: 'pickup' });
   try {
     const owner = mailConfig().owner;
     const html = `<div style="font-family:Arial,sans-serif;font-size:15px;color:#222"><p><strong>New pick-up sign-up</strong></p><table>${ownerRows(rec).map(([k, v]) => `<tr><td style="padding:2px 12px 2px 0;color:#666">${esc(k)}</td><td>${esc(v)}</td></tr>`).join('')}</table><p>Every sign-up is in the dashboard under Pick-ups and routes.</p></div>`;

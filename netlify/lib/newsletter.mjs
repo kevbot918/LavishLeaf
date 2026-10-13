@@ -117,3 +117,58 @@ export function listStats(subs, now = Date.now()) {
     unsubscribedThisMonth: subs.filter((s) => s.status === 'unsubscribed' && Date.parse(s.unsubscribedAt) >= month).length,
   };
 }
+
+/**
+ * A customer's details kept as a contact (owner, 2026-10-13: "ensure we are
+ * saving these customers emails and phone numbers (on any orders, signups,
+ * forms, registrations, etc) to put into our newsletter contact info").
+ * Single opt-in like the form (CAN-SPAM: every marketing email carries the
+ * one-click unsubscribe). Somebody who unsubscribed is NEVER put back by a
+ * purchase or a form: only their own newsletter sign-up does that. Fills in
+ * a missing name or phone and records every way they reached us. Returns
+ * { record, isNew }; never throws for a bad address (returns null).
+ */
+export async function addContact(store, { email, first = '', last = '', phone = '', source = '', declined = false }, now = Date.now()) {
+  if (!validEmail(email)) return null;
+  const key = keyFor(email);
+  const old = await store.get(key, { type: 'json' }).catch(() => null);
+  const digits = String(phone || '').replace(/\D/g, '').replace(/^1(?=\d{10}$)/, '');
+  const src = clip(source, 40);
+  if (declined || (old && old.status === 'unsubscribed')) {
+    // Unticked "news and updates" on a form, or unsubscribed before: their
+    // details are kept, the list stays off.
+    if (!old || old.status !== 'unsubscribed') {
+      const rec = { ...(old || {}), email: norm(email), first: (old && old.first) || clip(first, 40), last: (old && old.last) || clip(last, 40), phone: (digits.length === 10 ? digits : '') || (old && old.phone) || '', source: (old && old.source) || src, sources: [...new Set([...((old && old.sources) || []), src].filter(Boolean))], joined: (old && old.joined) || null, status: 'unsubscribed', unsubscribedAt: new Date(now).toISOString(), declined: true };
+      await store.setJSON(key, rec);
+      return { record: rec, isNew: !old };
+    }
+    // Their details stay current for receipts and pick-ups; the list stays off.
+    const rec = { ...old, phone: (digits.length === 10 ? digits : '') || old.phone || '', sources: [...new Set([...(old.sources || []), src].filter(Boolean))] };
+    await store.setJSON(key, rec);
+    return { record: rec, isNew: false };
+  }
+  const record = {
+    ...(old || {}),
+    email: norm(email),
+    first: (old && old.first) || clip(first, 40),
+    last: (old && old.last) || clip(last, 40),
+    phone: (digits.length === 10 ? digits : '') || (old && old.phone) || '',
+    source: (old && old.source) || src,
+    sources: [...new Set([...((old && old.sources) || []), src].filter(Boolean))],
+    joined: (old && old.joined) || new Date(now).toISOString(),
+    status: 'active',
+    unsubscribedAt: null,
+  };
+  await store.setJSON(key, record);
+  return { record, isNew: !old };
+}
+
+/** addContact for the functions: its own store, never fails the caller. */
+export async function saveContact(details) {
+  try {
+    return await addContact(await newsletterStore(), details);
+  } catch (e) {
+    console.error('[contacts]', details && details.source, e.message);
+    return null;
+  }
+}

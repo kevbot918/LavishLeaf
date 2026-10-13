@@ -3,6 +3,7 @@
 // fails the payment, which has already gone through.
 import { registrationsStore } from './registrations.mjs';
 import { esc, mailConfig, sendEmail, textOf, validEmail } from './mail.mjs';
+import { saveContact } from './newsletter.mjs';
 
 const phone = (p) => String(p).replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
 
@@ -20,6 +21,17 @@ export async function registrationsPaid(orderId, payer = {}) {
     rec.status = 'paid';
     rec.paid = rec.paid || new Date().toISOString();
     rec.payerEmail = String((payer && payer.email_address) || '').toLowerCase();
+    // Every player, captain and payer becomes a contact (owner, 2026-10-13).
+    if (!rec.contactsSaved) {
+      const people = rec.regs.flatMap((r) => (r.kind === 'team' ? [r.captain, ...(r.players || [])] : [r]));
+      for (const p of people) {
+        if (!p || !p.email) continue;
+        const [first, ...rest] = String(p.name || '').trim().split(/s+/);
+        await saveContact({ email: p.email, first, last: rest.join(' '), phone: p.phone, source: 'registration' });
+      }
+      if (rec.payerEmail) await saveContact({ email: rec.payerEmail, first: (payer.name && payer.name.given_name) || '', last: (payer.name && payer.name.surname) || '', source: 'registration' });
+      rec.contactsSaved = new Date().toISOString();
+    }
     if (!rec.alerted) {
       const owner = mailConfig().owner;
       if (validEmail(owner)) {

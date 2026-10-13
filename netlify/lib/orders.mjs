@@ -8,6 +8,8 @@
 // Each is done once per order: a reload of the thank-you page captures again
 // (safely) and must not send the emails twice.
 import { esc, fill, loadTemplate, mailConfig, mailReady, sendEmail, textOf, validEmail } from './mail.mjs';
+import { saveContact } from './newsletter.mjs';
+import { optOutHtml } from './notice-mail.mjs';
 
 let testStore = null;
 export function setOrdersStoreForTests(s) { testStore = s; }
@@ -38,6 +40,7 @@ export function summarise(done, meta = {}) {
     date: new Date().toISOString(),
     email: String((done.payer && done.payer.email_address) || '').toLowerCase(),
     first: String((done.payer && done.payer.name && done.payer.name.given_name) || ''),
+    phone: String((done.payer && done.payer.phone && done.payer.phone.phone_number && done.payer.phone.phone_number.national_number) || ''),
     items,
     itemTotal: Number(b.item_total && b.item_total.value) || items.reduce((s, i) => s + i.each * i.qty, 0),
     shipping: Number(b.shipping && b.shipping.value) || 0,
@@ -76,7 +79,11 @@ export async function afterPayment(o) {
     store = await ordersStore();
     const existing = await store.get('o-' + o.id, { type: 'json' }).catch(() => null);
     const rec = existing || { ...o, mailed: null, alerted: null };
-    if (!existing) await store.setJSON('o-' + o.id, rec);
+    if (!existing) {
+      await store.setJSON('o-' + o.id, rec);
+      const [first, ...rest] = String(o.first_last || o.first || '').split(/s+/);
+      await saveContact({ email: o.email, first: o.first || first, last: rest.join(' '), phone: o.phone, source: 'order' });
+    }
     if (!mailReady()) return rec;
 
     if (!rec.mailed && validEmail(o.email)) {
@@ -87,6 +94,7 @@ export async function afterPayment(o) {
           order_id: o.id,
           items_html: itemRows(o),
           delivery_text: deliveryText(o),
+          optout_html: optOutHtml(o.email),
           waiver_text: o.waivers.length ? 'You accepted the Lavish Leaf liability waiver with this order. A copy is always at lavishleaf.org/waiver.html.' : '',
         });
         await sendEmail({ to: o.email, toName: o.first, subject: `Your Lavish Leaf order ${o.id}`, html, text: textOf(html), kind: 'order' });

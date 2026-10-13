@@ -14,7 +14,16 @@
 //   PAYMENT.SALE.REFUNDED                     a pick-up payment refunded, customer told
 //   PAYMENT.CAPTURE.REFUNDED                  a store order refunded: order marked,
 //                                             a league registration marked refunded,
-//                                             customer told
+//                                             customer told; a donation marked refunded
+// Added 2026-10-13 (owner: "analyze to see if we need to use any more"):
+//   CUSTOMER.DISPUTE.CREATED                  a buyer opened a dispute or claim: the
+//                                             owner is emailed at once (10 days to answer)
+//   PAYMENT.CAPTURE.REVERSED                  a chargeback took the money back: order
+//                                             marked "reversed", owner emailed
+//   PAYMENT.CAPTURE.DENIED                    a pending payment (eCheck) failed: order
+//                                             marked "payment failed", owner emailed
+//   BILLING.SUBSCRIPTION.PAYMENT.FAILED       a monthly pick-up payment failed: marked on
+//                                             the sign-up, owner emailed
 import { json } from '../lib/admin.mjs';
 import { call, config } from '../lib/paypal.mjs';
 import { pickupsStore } from '../lib/pickups.mjs';
@@ -22,9 +31,35 @@ import { activated, canceled, refunded as pickupRefunded } from '../lib/pickup-e
 import { ordersStore } from '../lib/orders.mjs';
 import { registrationsStore } from '../lib/registrations.mjs';
 import { sendNotice } from '../lib/notice-mail.mjs';
+import { esc, mailConfig, mailReady, sendEmail, textOf, validEmail } from '../lib/mail.mjs';
 
 let testHooks = null;
 export function setWebhookForTests(h) { testHooks = h; }
+
+async function donationsStore() {
+  if (testHooks && testHooks.donations) return testHooks.donations;
+  const { getStore } = await import('@netlify/blobs');
+  return getStore({ name: 'donations', consistency: 'strong' });
+}
+
+/** A plain alert to the owner (testHooks.alerts collects them in tests). */
+async function alertOwner(subject, lines) {
+  if (testHooks && testHooks.alerts) { testHooks.alerts.push({ subject, lines }); return; }
+  const owner = mailConfig().owner;
+  if (!mailReady() || !validEmail(owner)) return;
+  const html = `<div style="font-family:Arial,sans-serif;font-size:15px;color:#222">${lines.map((l) => `<p>${esc(l)}</p>`).join('')}</div>`;
+  try { await sendEmail({ to: owner, subject, html, text: textOf(html), kind: 'owner' }); } catch (e) { console.error('[webhook] alert', e.message); }
+}
+
+/** The store order a capture belongs to. */
+async function orderOfCapture(cfg, capId, res) {
+  let orderId = res && res.supplementary_data && res.supplementary_data.related_ids && res.supplementary_data.related_ids.order_id;
+  if (!orderId && capId) {
+    const cap = await call(cfg, `/v2/payments/captures/${capId}`, null, { method: 'GET' });
+    orderId = cap.supplementary_data && cap.supplementary_data.related_ids && cap.supplementary_data.related_ids.order_id;
+  }
+  return orderId || null;
+}
 
 async function seenStore() {
   if (testHooks && testHooks.seen) return testHooks.seen;
@@ -64,6 +99,14 @@ export async function handleEvent(event, cfg) {
     let rec = key ? await store.get(key, { type: 'json' }) : null;
     if (!rec || rec.subscriptionId !== res.id) [key, rec] = await pickupBySubscription(store, res.id);
     if (!rec) return out;
+    if (type === 'BILLING.SUBSCRIPTION.PAYMENT.FAILED') {
+      rec.paymentFailed = new Date().toISOString();
+      rec.updated = rec.paymentFailed;
+      await store.setJSON(key, rec);
+      await alertOwner(`Pick-up payment failed: ${rec.name}`, [`PayPal could not collect this month's ${rec.productName} payment from ${rec.name} (${rec.email}).`, 'PayPal retries and emails the customer itself; if it keeps failing PayPal suspends the subscription and the dashboard shows it as paused.']);
+      out.did = 'pick-up payment failed';
+      return out;
+    }
     if (type === 'BILLING.SUBSCRIPTION.ACTIVATED') await activated(rec);
     else if (type === 'BILLING.SUBSCRIPTION.CANCELLED' || type === 'BILLING.SUBSCRIPTION.EXPIRED') await canceled(rec, false);
     else if (type === 'BILLING.SUBSCRIPTION.SUSPENDED') rec.status = 'paused';
@@ -101,13 +144,18 @@ export async function handleEvent(event, cfg) {
     // The refund names its capture; the capture names its order.
     const up = (res.links || []).find((l) => l.rel === 'up');
     const capId = up ? String(up.href).split('/').pop() : null;
-    let orderId = res.supplementary_data && res.supplementary_data.related_ids && res.supplementary_data.related_ids.order_id;
-    if (!orderId && capId) {
-      const cap = await call(cfg, `/v2/payments/captures/${capId}`, null, { method: 'GET' });
-      orderId = cap.supplementary_data && cap.supplementary_data.related_ids && cap.supplementary_data.related_ids.order_id;
-    }
+    const orderId = await orderOfCapture(cfg, capId, res);
     if (!orderId) return out;
     const amount = cents(res.amount);
+    const dons = await donationsStore();
+    const don = await dons.get('d-' + orderId, { type: 'json' });
+    if (don) {
+      don.refunded = new Date().toISOString();
+      don.refundedCents = (don.refundedCents || 0) + amount;
+      await dons.setJSON('d-' + orderId, don);
+      out.did = 'donation refunded';
+      return out;
+    }
     const orders = await ordersStore();
     const o = await orders.get('o-' + orderId, { type: 'json' });
     let full = false;
@@ -136,6 +184,35 @@ export async function handleEvent(event, cfg) {
       } catch (e) { console.error('[webhook] refund email', e.message); }
     }
     out.did = 'order ' + (full ? 'refunded' : 'partly refunded');
+    return out;
+  }
+
+  if (type === 'PAYMENT.CAPTURE.REVERSED' || type === 'PAYMENT.CAPTURE.DENIED') {
+    const orderId = await orderOfCapture(cfg, res.id, res);
+    const label = type === 'PAYMENT.CAPTURE.REVERSED' ? 'reversed' : 'payment failed';
+    if (orderId) {
+      const orders = await ordersStore();
+      const o = await orders.get('o-' + orderId, { type: 'json' });
+      if (o) { o.status = label; o.statusAt = new Date().toISOString(); await orders.setJSON('o-' + orderId, o); }
+    }
+    await alertOwner(`PayPal: payment ${label}${orderId ? ' on order ' + orderId : ''}`, [
+      type === 'PAYMENT.CAPTURE.REVERSED'
+        ? `PayPal took back $${(cents(res.amount) / 100).toFixed(2)} (a chargeback or reversal)${orderId ? ' on order ' + orderId : ''}. Do not ship it if it has not gone out yet.`
+        : `A pending payment${orderId ? ' for order ' + orderId : ''} failed, so no money arrived. Do not place or ship it.`,
+      'Details are in PayPal under Activity. The dashboard marks the order.',
+    ]);
+    out.did = 'order ' + label;
+    return out;
+  }
+
+  if (type === 'CUSTOMER.DISPUTE.CREATED') {
+    const t = (res.disputed_transactions || [])[0] || {};
+    const amt = res.dispute_amount ? '$' + Number(res.dispute_amount.value).toFixed(2) : 'an amount';
+    await alertOwner(`PayPal dispute opened: ${amt}`, [
+      `A buyer opened a PayPal ${String(res.reason || 'dispute').toLowerCase().replace(/_/g, ' ')} for ${amt}${t.seller_transaction_id ? ' (transaction ' + t.seller_transaction_id + ')' : ''}.`,
+      'Answer it in PayPal (Resolution Center) within 10 days, with tracking or proof of delivery if it was shipped, or the buyer wins by default.',
+    ]);
+    out.did = 'dispute alert';
     return out;
   }
   return out;

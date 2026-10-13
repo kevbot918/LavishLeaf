@@ -39,6 +39,7 @@ test('a refunded pick-up payment is recorded on the sign-up', async () => {
 });
 
 test('a full refund marks the order and takes the registration off the roster', async () => {
+  setWebhookForTests({ donations: fakeStore(), alerts: [] });
   const orders = fakeStore({ 'o-ORDER1': { id: 'ORDER1', total: 15.9, email: 'pat@example.com', first: 'Pat', items: [] } }); setOrdersStoreForTests(orders);
   const regs = fakeStore({ 'o-ORDER1': { orderId: 'ORDER1', status: 'paid', regs: [] } }); setRegistrationsStoreForTests(regs);
   const out = await handleEvent({ id: 'WH-3', event_type: 'PAYMENT.CAPTURE.REFUNDED', resource: { amount: { value: '15.90' }, supplementary_data: { related_ids: { order_id: 'ORDER1' } } } }, cfg);
@@ -48,6 +49,7 @@ test('a full refund marks the order and takes the registration off the roster', 
 });
 
 test('a part refund marks the order partly refunded and leaves the roster alone', async () => {
+  setWebhookForTests({ donations: fakeStore(), alerts: [] });
   const orders = fakeStore({ 'o-ORDER2': { id: 'ORDER2', total: 30, email: 'pat@example.com', items: [] } }); setOrdersStoreForTests(orders);
   const regs = fakeStore({ 'o-ORDER2': { orderId: 'ORDER2', status: 'paid', regs: [] } }); setRegistrationsStoreForTests(regs);
   await handleEvent({ id: 'WH-4', event_type: 'PAYMENT.CAPTURE.REFUNDED', resource: { amount: { value: '10.00' }, supplementary_data: { related_ids: { order_id: 'ORDER2' } } } }, cfg);
@@ -73,4 +75,39 @@ test('an unverified event changes nothing, and a repeat is acted on once', async
 
 test('PayPal statuses in our words', () => {
   assert.deepEqual(['ACTIVE', 'CANCELLED', 'SUSPENDED', 'APPROVAL_PENDING', 'EXPIRED'].map(statusFromPayPal), ['active', 'canceled', 'paused', 'pending', 'canceled']);
+});
+
+// 2026-10-13: donations, disputes, chargebacks and failed payments.
+test('a refunded donation is marked refunded and the orders are left alone', async () => {
+  const donations = fakeStore({ 'd-DON1': { id: 'DON1', amount: 25 } });
+  setWebhookForTests({ donations, alerts: [] });
+  const orders = fakeStore(); setOrdersStoreForTests(orders);
+  const out = await handleEvent({ id: 'WH-6', event_type: 'PAYMENT.CAPTURE.REFUNDED', resource: { amount: { value: '25.00' }, supplementary_data: { related_ids: { order_id: 'DON1' } } } }, cfg);
+  assert.equal(out.did, 'donation refunded');
+  assert.equal(JSON.parse(donations.m.get('d-DON1')).refundedCents, 2500);
+  setWebhookForTests(null);
+});
+
+test('a chargeback marks the order reversed and alerts the owner', async () => {
+  const alerts = [];
+  setWebhookForTests({ donations: fakeStore(), alerts });
+  const orders = fakeStore({ 'o-ORDER7': { id: 'ORDER7', total: 20, items: [] } }); setOrdersStoreForTests(orders);
+  const out = await handleEvent({ id: 'WH-7', event_type: 'PAYMENT.CAPTURE.REVERSED', resource: { id: 'CAP7', amount: { value: '20.00' }, supplementary_data: { related_ids: { order_id: 'ORDER7' } } } }, cfg);
+  assert.equal(out.did, 'order reversed');
+  assert.equal(JSON.parse(orders.m.get('o-ORDER7')).status, 'reversed');
+  assert.equal(alerts.length, 1);
+  setWebhookForTests(null);
+});
+
+test('a dispute alerts the owner; a failed pick-up payment is marked', async () => {
+  const alerts = [];
+  setWebhookForTests({ donations: fakeStore(), alerts });
+  await handleEvent({ id: 'WH-8', event_type: 'CUSTOMER.DISPUTE.CREATED', resource: { reason: 'MERCHANDISE_OR_SERVICE_NOT_RECEIVED', dispute_amount: { value: '12.00' }, disputed_transactions: [{ seller_transaction_id: 'T1' }] } }, cfg);
+  assert.match(alerts[0].subject, /dispute/);
+  const pickups = fakeStore({ 's-p1': pickup }); setPickupsStoreForTests(pickups);
+  const out = await handleEvent({ id: 'WH-9', event_type: 'BILLING.SUBSCRIPTION.PAYMENT.FAILED', resource: { id: 'I-ABC123456', custom_id: 'p1' } }, cfg);
+  assert.equal(out.did, 'pick-up payment failed');
+  assert.ok(JSON.parse(pickups.m.get('s-p1')).paymentFailed);
+  assert.equal(alerts.length, 2);
+  setWebhookForTests(null);
 });

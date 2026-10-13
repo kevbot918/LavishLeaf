@@ -9,7 +9,14 @@
 //   POST { action: "cancel", id }                cancels the PayPal subscription
 //        (no more charges) and tells the customer
 //   POST { action: "emailDay", id, note? }       emails the customer their day
-//   POST { action: "remove", id }                deletes an unpaid sign-up
+//   POST { action: "remove", id }                deletes a sign-up that is not
+//        active (an "active" one is checked with PayPal first: canceled there
+//        means canceled here, and it goes)
+//
+// 2026-10-13: a subscription the customer (or the owner) canceled inside
+// PayPal before the webhook existed still read "active" here, so it showed
+// no Remove button and could not be removed. The list now asks PayPal for
+// the real status of every active or paused sign-up (canceledInPayPal).
 import { adminFromRequest, json } from '../lib/admin.mjs';
 import { CheckoutError, call, config } from '../lib/paypal.mjs';
 import { DAYS, pickupsStore } from '../lib/pickups.mjs';
@@ -18,6 +25,22 @@ import { activated, canceled, pickupDay, statusFromPayPal } from '../lib/pickup-
 export { ownerRows } from '../lib/pickup-events.mjs';
 
 const STALE_MS = 30 * 24 * 3600 * 1000;
+
+/**
+ * PayPal's own word on a sign-up we think is live. Returns the record,
+ * updated (status canceled or paused) when PayPal disagrees; never throws.
+ */
+async function syncWithPayPal(rec) {
+  if (!rec.subscriptionId || !['active', 'approved', 'paused'].includes(rec.status)) return { rec, changed: false };
+  try {
+    const sub = await call(config(), `/v1/billing/subscriptions/${rec.subscriptionId}`, null, { method: 'GET' });
+    const st = statusFromPayPal(sub.status);
+    if (st === 'canceled') { rec.status = 'canceled'; rec.canceledAt = rec.canceledAt || sub.status_update_time || new Date().toISOString(); rec.canceledIn = 'PayPal'; return { rec, changed: true }; }
+    if (st === 'paused' && rec.status !== 'paused') { rec.status = 'paused'; return { rec, changed: true }; }
+    if (st === 'active' && rec.status === 'paused') { rec.status = 'active'; return { rec, changed: true }; }
+  } catch (e) { console.error('[pickups] PayPal check', rec.subscriptionId, e.message); }
+  return { rec, changed: false };
+}
 const keyOf = (id) => 's-' + String(id || '').replace(/[^a-z0-9-]/gi, '');
 
 export default async (request) => {
@@ -56,6 +79,8 @@ export default async (request) => {
       // Never paid and a month old: gone (owner, 2026-10-12: "are those going
       // to sit there forever").
       if (r.status === 'pending' && Date.now() - Date.parse(r.created) > STALE_MS) { await store.delete(b.key); continue; }
+      const { changed } = await syncWithPayPal(r);
+      if (changed) { r.updated = new Date().toISOString(); await store.setJSON(b.key, r); }
       out.push(r);
     }
     out.sort((a, b) => String(b.created).localeCompare(String(a.created)));
@@ -102,7 +127,11 @@ export default async (request) => {
   }
 
   if (body.action === 'remove') {
-    if (rec.status === 'active') return json(400, { error: 'Cancel the subscription first; an active customer is not removed.' });
+    if (rec.status === 'active' || rec.status === 'approved') {
+      const { changed } = await syncWithPayPal(rec);
+      if (changed) await store.setJSON(key, rec);
+    }
+    if (rec.status === 'active' || rec.status === 'approved') return json(400, { error: 'PayPal says this subscription is still active. Use Cancel subscription first, then Remove.' });
     await store.delete(key);
     return json(200, { removed: true });
   }
