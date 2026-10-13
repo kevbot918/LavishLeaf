@@ -812,24 +812,24 @@
       var variant = (v && v.note) || src.variant || '';
       return { supplier: src.supplier || '', code: String(code), kind: (v && v.item) || src.item ? 'Item number' : 'SKU', variant: variant, option: opt ? p.options.label + ': ' + opt : '', name: p.name };
     }
-    function orderOpen(o) { return !/refunded/.test(o.status || '') && !(o.shipments && o.shipments.length); }
+    function orderOpen(o) { return !/refunded|reversed|failed/.test(o.status || '') && !(o.shipments && o.shipments.length); }
     function drawOrders() {
       ordersBox.textContent = '';
       var bar = el('div', 'db-links');
       [['open', 'To place and ship'], ['shipped', 'Shipped'], ['refunded', 'Refunded'], ['all', 'All']].forEach(function (x) {
-        var n = ordersAll.filter(function (o) { return x[0] === 'all' || (x[0] === 'open' ? orderOpen(o) : x[0] === 'shipped' ? (o.shipments || []).length : /refunded/.test(o.status || '')); }).length;
+        var n = ordersAll.filter(function (o) { return x[0] === 'all' || (x[0] === 'open' ? orderOpen(o) : x[0] === 'shipped' ? (o.shipments || []).length : /refunded|reversed|failed/.test(o.status || '')); }).length;
         var b = h('<button type="button" class="db-btn-ghost' + (ordersShow === x[0] ? ' db-on' : '') + '">' + esc(x[1]) + ' (' + n + ')</button>');
         b.addEventListener('click', function () { ordersShow = x[0]; drawOrders(); });
         bar.appendChild(b);
       });
       ordersBox.appendChild(bar);
-      var list = ordersAll.filter(function (o) { return ordersShow === 'all' || (ordersShow === 'open' ? orderOpen(o) : ordersShow === 'shipped' ? (o.shipments || []).length : /refunded/.test(o.status || '')); });
+      var list = ordersAll.filter(function (o) { return ordersShow === 'all' || (ordersShow === 'open' ? orderOpen(o) : ordersShow === 'shipped' ? (o.shipments || []).length : /refunded|reversed|failed/.test(o.status || '')); });
       if (!list.length) { ordersBox.appendChild(el('p', 'db-empty', ordersAll.length ? 'Nothing here.' : 'No orders yet. They appear here the moment one is paid.')); return; }
       list.forEach(function (o) {
         var c = el('div', 'db-card db-order');
         var head = el('div', 'db-order-head');
         head.appendChild(el('strong', null, niceDate(o.date) + ' · ' + money(o.total)));
-        head.appendChild(el('span', 'db-pill' + (/refunded/.test(o.status || '') ? ' db-pill-warn' : (o.shipments || []).length ? ' db-pill-ok' : ''), o.status ? o.status : (o.shipments || []).length ? 'shipped' : 'paid'));
+        head.appendChild(el('span', 'db-pill' + (/refunded|reversed|failed/.test(o.status || '') ? ' db-pill-warn' : (o.shipments || []).length ? ' db-pill-ok' : ''), o.status ? o.status : (o.shipments || []).length ? 'shipped' : 'paid'));
         head.appendChild(el('span', 'db-hint', 'PayPal order ' + o.id));
         c.appendChild(head);
         // the customer, ready to paste into the supplier's checkout
@@ -880,7 +880,7 @@
         c.appendChild(el('p', 'db-hint', 'Items ' + money(o.itemTotal) + ' · Shipping charged ' + money(o.shipping || 0) + (o.tax ? ' · Sales tax ' + money(o.tax) : '') + ' · Total paid ' + money(o.total) + ((o.refunds || []).length ? ' · Refunded ' + money(o.refunds.reduce(function (a, r) { return a + r.cents; }, 0) / 100) : '')));
         // shipped email
         (o.shipments || []).forEach(function (s) { c.appendChild(el('p', 'db-hint', 'Shipped email sent ' + niceDate(s.at) + (s.carrier ? ', ' + s.carrier : '') + (s.tracking ? ' ' + s.tracking : '') + '.')); });
-        if (o.delivery === 'ship' && !/refunded/.test(o.status || '')) {
+        if (o.delivery === 'ship' && !/refunded|reversed|failed/.test(o.status || '')) {
           var shipRow = el('div', 'db-links db-ship');
           var carrier = el('select'); ['USPS', 'UPS', 'FedEx', 'AliExpress / other'].forEach(function (x) { var op = el('option', null, x); carrier.appendChild(op); }); carrier.setAttribute('aria-label', 'Carrier');
           var track = el('input'); track.placeholder = 'Tracking number (optional)'; track.setAttribute('aria-label', 'Tracking number');
