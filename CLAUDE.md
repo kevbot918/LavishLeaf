@@ -620,3 +620,11 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     forms submitted, Donations raised added). Notice emails no longer greet
     twice. **Products**: margin floor may go to 10% for a FEW lines (owner);
     target 15-30%. Technology shelf (AliExpress brand stores).
+    **Deploys failed 2026-10-13 (06:50 to 08:15)**: Lambda-style functions
+    (`export const handler`) get every environment variable and AWS caps them
+    at 4 KB; PAYPAL_WEBHOOK_ID tipped it over and EVERY deploy failed at
+    "Deploying" (the owner's Trigger deploy too). account, submission-created
+    and identity-signup are now modern (`export default async (request)`);
+    account deletes the sign-in with globalThis.netlifyIdentityContext's
+    admin token. NEVER add a Lambda-style function again; after any push,
+    confirm the deploy is live (curl a changed file).
