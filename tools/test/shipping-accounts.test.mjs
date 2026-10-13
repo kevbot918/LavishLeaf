@@ -152,25 +152,43 @@ test('the account function: signed out is refused, a put cannot forge an order, 
   setStoreForTests(store);
   const realFetch = globalThis.fetch;
   const deleted = [];
-  globalThis.fetch = async (url, init) => { deleted.push([url, init.method]); return new Response(null, { status: 204 }); };
+  // Modern function (2026-10-13): Identity's /user answers for the good
+  // token; the admin token comes from globalThis.netlifyIdentityContext.
+  globalThis.fetch = async (url, init = {}) => {
+    if (/\/\.netlify\/identity\/user$/.test(url)) {
+      return init.headers.Authorization === 'Bearer GOOD-TOKEN-0123456789abcdef'
+        ? new Response(JSON.stringify({ id: 'abcd-0002', email: 'a@b.c', app_metadata: {} }), { status: 200 })
+        : new Response('{}', { status: 401 });
+    }
+    deleted.push([url, init.method]);
+    return new Response(null, { status: 204 });
+  };
+  globalThis.netlifyIdentityContext = { url: 'https://id.example/.netlify/identity', token: 'ADMIN' };
+  const { setSignupsStoreForTests } = await import('../../netlify/lib/account-welcome.mjs');
+  const signups = fakeStore();
+  setSignupsStoreForTests(signups);
   try {
-    const { handler } = await import('../../netlify/functions/account.mjs');
-    const ctx = { clientContext: { user: { sub: 'user-0002', email: 'a@b.c' }, identity: { url: 'https://id.example/.netlify/identity', token: 'ADMIN' } } };
-    const call = (body, c = ctx) => handler({ httpMethod: 'POST', body: JSON.stringify(body) }, c);
+    const { default: account } = await import('../../netlify/functions/account.mjs');
+    const call = (body, tok = 'GOOD-TOKEN-0123456789abcdef') => account(new Request('https://lavishleaf.org/.netlify/functions/account', {
+      method: 'POST', headers: { Authorization: 'Bearer ' + tok, 'Content-Type': 'application/json' }, body: JSON.stringify(body),
+    }));
 
-    assert.equal((await call({ action: 'get' }, {})).statusCode, 401);
+    assert.equal((await call({ action: 'get' }, 'BAD-TOKEN-0123456789abcdefg')).status, 401);
     const put = await call({ action: 'put', lists: [{ id: 'l1', name: 'Mine', items: ['demo-a'] }], orders: [{ id: 'FORGED' }] });
-    assert.equal(put.statusCode, 200);
-    const got = JSON.parse((await call({ action: 'get' })).body);
+    assert.equal(put.status, 200);
+    const got = await (await call({ action: 'get' })).json();
     assert.equal(got.lists[0].name, 'Mine');
     assert.deepEqual(got.orders, []);
+    assert.ok(signups.m.has('u-abcd-0002'), 'the first sign-in is counted once for the dashboard');
 
     const del = await call({ action: 'delete' });
-    assert.equal(del.statusCode, 200);
-    assert.equal(store.m.has('user-0002'), false);
-    assert.deepEqual(deleted, [['https://id.example/.netlify/identity/admin/users/user-0002', 'DELETE']]);
+    assert.equal(del.status, 200);
+    assert.equal(store.m.has('abcd-0002'), false);
+    assert.deepEqual(deleted, [['https://id.example/.netlify/identity/admin/users/abcd-0002', 'DELETE']]);
   } finally {
     globalThis.fetch = realFetch;
+    delete globalThis.netlifyIdentityContext;
+    setSignupsStoreForTests(null);
     setStoreForTests(null);
   }
 });

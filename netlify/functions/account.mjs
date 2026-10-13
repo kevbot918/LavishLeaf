@@ -4,32 +4,37 @@
 //   { action: "export" }                      -> everything we hold, to download
 //   { action: "delete" }                      -> the record AND the sign-in, gone
 //
-// A Lambda-style function on purpose: Netlify fills context.clientContext
-// with the verified Identity user, and with an admin token for this site's
-// Identity, which is what deleting the sign-in itself needs. The records live
-// in Netlify Blobs (netlify/lib/accounts.mjs, docs/ACCOUNTS.md).
+// A modern (Request/Response) function since 2026-10-13: the old
+// Lambda-style one made every deploy fail once the site's environment
+// variables passed AWS Lambda's 4 KB limit. Who is signed in comes from
+// Netlify Identity (lib/identity.mjs); deleting the sign-in uses the admin
+// token Netlify gives modern functions (globalThis.netlifyIdentityContext).
+// The records live in Netlify Blobs (netlify/lib/accounts.mjs, docs/ACCOUNTS.md).
+//
+// The first time an account is seen it is counted for the dashboard's
+// "Accounts created" tile (Blobs "signups"), kept as a newsletter contact,
+// and sent our welcome email (owner, 2026-10-13); identity-signup.mjs does
+// the same when Netlify calls it, and whichever runs first does it once.
 import { accountsStore, clean, read, write } from '../lib/accounts.mjs';
+import { json } from '../lib/admin.mjs';
+import { userFromRequest } from '../lib/identity.mjs';
+import { welcomeAccount } from '../lib/account-welcome.mjs';
 
-const json = (statusCode, body) => ({
-  statusCode,
-  headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' },
-  body: JSON.stringify(body),
-});
-
-export const handler = async (event, context) => {
-  if (event.httpMethod !== 'POST') return json(405, { error: 'POST only.' });
-  const user = context && context.clientContext && context.clientContext.user;
-  if (!user || typeof user.sub !== 'string') return json(401, { error: 'Please sign in again.' });
+export default async (request) => {
+  if (request.method !== 'POST') return json(405, { error: 'POST only.' });
+  const user = await userFromRequest(request);
+  if (!user) return json(401, { error: 'Please sign in again.' });
   let body;
   try {
-    body = JSON.parse(event.body || '{}');
+    body = await request.json();
   } catch {
     return json(400, { error: 'That request was not understood.' });
   }
   try {
-    const store = await accountsStore(event);
-    const id = user.sub;
+    const store = await accountsStore();
+    const id = user.id;
     if (body.action === 'get') {
+      await welcomeAccount({ id, email: user.email });
       return json(200, await read(store, id));
     }
     if (body.action === 'put') {
@@ -40,7 +45,7 @@ export const handler = async (event, context) => {
       const cartChanged = JSON.stringify(next.cart) !== JSON.stringify(rec.cart) ? new Date().toISOString() : rec.cartChanged || null;
       return json(200, await write(store, id, {
         ...rec, ...next, cartChanged,
-        email: typeof user.email === 'string' ? user.email.toLowerCase() : rec.email || '',
+        email: user.email ? user.email.toLowerCase() : rec.email || '',
       }));
     }
     if (body.action === 'export') {
@@ -48,7 +53,7 @@ export const handler = async (event, context) => {
     }
     if (body.action === 'delete') {
       await store.delete(id);
-      const identity = context.clientContext.identity;
+      const identity = globalThis.netlifyIdentityContext;
       if (identity && identity.url && identity.token) {
         const res = await fetch(`${identity.url}/admin/users/${encodeURIComponent(id)}`, {
           method: 'DELETE',
@@ -58,6 +63,9 @@ export const handler = async (event, context) => {
           console.error('[account] identity delete', res.status);
           return json(502, { error: 'Your saved lists are deleted, but the sign-in could not be removed. Please email support@lavishleaf.org.' });
         }
+      } else {
+        console.error('[account] no Identity admin token');
+        return json(502, { error: 'Your saved lists are deleted, but the sign-in could not be removed. Please email support@lavishleaf.org.' });
       }
       return json(200, { deleted: true });
     }
