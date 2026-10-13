@@ -60,6 +60,15 @@ const items = goods.map((p) => [
 ].join('\n'));
 writeFileSync(join(ROOT, 'google-shopping.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">\n  <channel>\n    <title>Lavish Leaf Online Store</title>\n    <link>${SITE}/store.html</link>\n    <description>Products from the Lavish Leaf online store</description>\n${items.join('\n')}\n  </channel>\n</rss>\n`);
 
+// The same feed as a tab-separated sheet (2026-10-12): Merchant Center offered
+// the owner Google Sheets, and a Sheet can pull this in with
+// =IMPORTDATA("https://lavishleaf.org/google-shopping.tsv"), staying current.
+const tsvCell = (v) => String(v == null ? '' : v).replace(/[\t\r\n]+/g, ' ').trim();
+const tsv = [['id', 'title', 'description', 'link', 'image_link', 'availability', 'price', 'condition', 'identifier_exists', 'google_product_category', 'product_type', 'shipping_weight']]
+  .concat(goods.map((p) => [p.id, p.name, p.blurb || p.name, productUrl(p), abs(p.image), 'in_stock', `${money(p.price)} USD`, 'new', 'no', GCAT[p.category] || '', p.category, `${p.shipOz} oz`]))
+  .map((r) => r.map(tsvCell).join('\t')).join('\n') + '\n';
+writeFileSync(join(ROOT, 'google-shopping.tsv'), tsv);
+
 // ---- JSON-LD in store.html
 const ld = {
   '@context': 'https://schema.org',

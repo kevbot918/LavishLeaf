@@ -22,6 +22,52 @@ deploy -> Deploy site** once you have added a batch.
 
 ---
 
+## THE CURRENT ACTION LIST (updated 2026-10-12): read this first
+
+The owner, 2026-10-12: "remind of this so add it to my action list for when I
+ask you to give me actions left that I need to take." When he asks for his
+actions, start here, then the older sections below for anything still open.
+
+**Done recently:** Amazon SES with production access (MAIL_DAILY_LIMIT 50000,
+SES_REGION us-east-2), PayPal live with subscriptions, Google DKIM key
+published, Search Console verified, Bing set up, Google Business Profile
+created.
+
+**Reminders the owner asked to keep:**
+- **Google DKIM:** the signing key (google._domainkey) is published. In the
+  Google Admin console, Apps, Google Workspace, Gmail, Authenticate email
+  should change from "Authentication starting" to "Authenticating email with
+  DKIM signature" within 48 hours of when you clicked Start. Nothing else to
+  do. If it still is not showing that by the next evening, click Start
+  authentication once more. (Still authenticating on 2026-10-12.)
+- **DMARC, later (optional):** after two or three weeks of normal sending
+  (about 2026-11-02), in Squarespace DNS change the _dmarc record to
+  `v=DMARC1; p=quarantine`. That tells inboxes to treat anyone faking a
+  lavishleaf.org address as spam. Not before both Google and Amazon have
+  been signing mail for a while.
+
+**New since 2026-10-12 (the full click-by-click is in the chat reply of that
+day and below):**
+1. PayPal webhook: PayPal Developer Dashboard, Live, the app, Add Webhook,
+   URL `https://lavishleaf.org/.netlify/functions/paypal-webhook`, events:
+   Payment capture refunded, Payment sale completed, Payment sale refunded,
+   Billing subscription activated / cancelled / suspended / expired. Copy the
+   Webhook ID into Netlify as `PAYPAL_WEBHOOK_ID`, then Trigger deploy.
+2. Cancel the test compost subscription from the dashboard (Pick-ups and
+   routes, Cancel subscription): a refund does not stop the monthly charge.
+3. Search Console: on the DOMAIN property `lavishleaf.org`, submit the full
+   address `https://lavishleaf.org/sitemap.xml`; remove the sitemap from the
+   `https://www.lavishleaf.org/` property (www forwards to lavishleaf.org).
+4. Google Business Profile: service areas and products (see SEO.md).
+5. Merchant Center: products from a file link
+   (`https://lavishleaf.org/google-shopping.xml`) or a Google Sheet with
+   `=IMPORTDATA("https://lavishleaf.org/google-shopping.tsv")`.
+6. Apple Business Connect, Nextdoor, directory listings, marketing posts.
+7. Supplier applications (dashboard: Affiliate programs and suppliers).
+
+---
+
+
 ## THE ORDER TO DO IT ALL IN (updated 2026-10-10)
 
 Every open step, in the order that unblocks the most. Each line points to the

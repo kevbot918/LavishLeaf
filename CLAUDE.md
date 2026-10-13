@@ -563,3 +563,39 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     (registration-mail.mjs), and listed with a CSV export in the dashboard
     (functions/registrations.mjs). privacy.html#registrations. Email: SES
     must run in the region where lavishleaf.org is verified (SES_REGION).
+
+37. **2026-10-12, the owner's 33-item list** (tracked in
+    docs/WORKLIST-2026-10-12.md). **PayPal webhook**
+    (functions/paypal-webhook.mjs): every event verified with PayPal
+    (PAYPAL_WEBHOOK_ID) and acted on once (Blobs "webhooks"); subscription
+    activated/canceled/suspended/expired, monthly payment, pick-up refund, and
+    store-order refund (order marked refunded or partly refunded, a league
+    registration marked refunded, customer emailed). **Emails**: one branded
+    template for notices (emails/notice.html, lib/notice-mail.mjs): pick-up
+    welcome WITHOUT a day, "your pick-up day" (dashboard button), shipped,
+    refund, canceled; receipts promise no turnaround and thank "us and our
+    cause at Lavish Leaf Inc"; receipts show sales tax. **Dashboard**: Orders
+    is its own section above Open the full tools (functions/orders-admin.mjs:
+    list, a "placed" tick per line, Send shipped email with carrier and
+    tracking); every line's supplier, SKU or item number and variant come
+    from the order's sku (id or id:Option), with copy buttons for each part of
+    the customer's address; top tiles Orders, Compost sign-ups, Recycling
+    sign-ups and Sports registrations link to their sections; Pick-ups and
+    routes has Pick-up day, Cancel subscription (PayPal cancel API), Email
+    pick-up day, Remove, unfinished sign-ups hidden after 2 days and deleted
+    after 30; League registrations has a league filter (products.json
+    "league") and Remove/Restore; page names merge /store and /store.html;
+    "Affiliate programs and suppliers" reads affiliates.json "suppliers".
+    Pickups, registrations and orders stores use strong reads (the default
+    eventual reads made the owner's saves look lost). **Store**: PayPal opens
+    in a pop-up window (cart.js payWindow/goPayPal, postMessage from the
+    return page, full-page fallback); waiver must be opened before it can be
+    ticked; the "player or team name" box is gone and a registration is shown
+    and editable in the cart; roster 7 to 12; "Team name or Free Agent";
+    shipping parts on separate lines; tax wording "6% sales tax added in the
+    cart" with no "Oklahoma"; Sunday pick-ups; the mouse wheel slides a shelf
+    only after the pointer rests on it and never while the page scrolls.
+    **American spelling** everywhere a person reads (color, flavor, fulfill,
+    gray, canceled). google-shopping.tsv sits beside the XML feed for a Google
+    Sheet (=IMPORTDATA). The owner's current to-dos: OWNER-STEPS "THE CURRENT
+    ACTION LIST".
