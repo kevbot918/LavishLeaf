@@ -65,3 +65,10 @@ test("the cart's CJ freight: the dearest item, plus $1.50 for each more", () => 
   assert.equal(quote([C(499), C(699)], { method: 'ship' }).cents, 849);
   assert.equal(quote([C(100, 3)], { method: 'ship' }).cents, 300, 'never more than each item alone');
 });
+
+test('US and overseas CJ parcels are charged apart, each extra unit at its own add-on', () => {
+  const C = (c, q, a, w) => ({ product: { price: 2000, ship: true, shipOz: 20, shipFrom: 'cj', shipCents: c, shipAddCents: a, shipWarehouse: w }, qty: q });
+  const q = quote([C(0, 1, null), C(604, 2, 120, 'CN')], { method: 'ship' });
+  assert.deepEqual(q.parts.map((p) => [p.desc, p.cents]), [['US warehouse items', 0], ['overseas warehouse items', 724]]);
+  assert.equal(q.cents, 724);
+});

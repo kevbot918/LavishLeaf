@@ -63,10 +63,13 @@ export const SHIPPING = {
   suppliers: {
     bangalla: { rule: 'bands', label: 'US supplier' },
     aliexpress: { rule: 'flat', freeOverCents: 999, freeOverItems: 3, cents: 299, label: 'direct-ship' },
-    // CJ Dropshipping from its US warehouse (2026-10-14): each product carries
-    // "shipCents", CJ's own cheapest US freight for one unit to Stigler, read
-    // when the product is added. One parcel: the dearest item's freight, plus
-    // addOnCents for each further item, never more than every item alone.
+    // CJ Dropshipping (2026-10-14): each product carries "shipCents", CJ's own
+    // cheapest freight for one unit to Stigler, and "shipAddCents", what CJ
+    // charges for one more unit, both read when the product is added. A US
+    // warehouse parcel and a China warehouse parcel ("shipWarehouse": "CN")
+    // are charged apart. Each parcel: the dearest item's freight, plus each
+    // further unit's own add-on (addOnCents when a product has none), never
+    // more than every unit alone.
     cj: { rule: 'cj', addOnCents: 150, label: 'US warehouse' },
   },
   // Posted orders go to the 48 contiguous states and DC only.
@@ -105,10 +108,15 @@ export function quote(lines, { method } = {}) {
       const subtotal = group.reduce((sum, { product, qty }) => sum + product.price * qty, 0);
       const items = group.reduce((n, { qty }) => n + qty, 0);
       if (rule.rule === 'cj') {
-        const each = group.flatMap(({ product, qty }) => Array(qty).fill(Number.isInteger(product.shipCents) ? product.shipCents : 599));
-        const top = Math.max(...each);
-        const cents = Math.min(each.reduce((a, b) => a + b, 0), top + rule.addOnCents * (each.length - 1));
-        parts.push({ from, label: rule.label, cents, desc: 'US warehouse items' });
+        for (const wh of ['US', 'CN']) {
+          const units = group.filter(({ product }) => (product.shipWarehouse === 'CN' ? 'CN' : 'US') === wh)
+            .flatMap(({ product, qty }) => Array(qty).fill({ one: Number.isInteger(product.shipCents) ? product.shipCents : 599, add: Number.isInteger(product.shipAddCents) ? product.shipAddCents : rule.addOnCents }));
+          if (!units.length) continue;
+          units.sort((a, b) => b.one - a.one);
+          const alone = units.reduce((n, u) => n + u.one, 0);
+          const cents = Math.min(alone, units[0].one + units.slice(1).reduce((n, u) => n + u.add, 0));
+          parts.push({ from: from + '-' + wh, label: rule.label, cents, desc: wh === 'CN' ? 'overseas warehouse items' : 'US warehouse items' });
+        }
         continue;
       }
       if (rule.rule === 'flat') {

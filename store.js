@@ -949,14 +949,17 @@
       fact('Our link', 'Lavish Leaf earns a commission on your SeedsNow order, at no extra cost to you');
     } else if (d.ship) {
       fact('Weight', weightText(d.shipOz) + ' packed');
-      fact('Delivery', 'some items ship direct from the supplier and some from our warehouse, allow 1-3 weeks');
+      // CJ items say their own warehouse's time (2026-10-14).
+      fact('Delivery', d.shipFrom === 'cj' ? (d.source && d.source.warehouse === 'CN' ? 'ships from our partner\'s overseas warehouse, allow 1-3 weeks' : 'ships from our partner\'s US warehouse, usually 2-7 days') : 'some items ship direct from the supplier and some from our warehouse, allow 1-3 weeks');
       var shipLi = el('li'); shipLi.appendChild(el('strong', null, d.shipFrom === 'aliexpress' || d.shipFrom === 'cj' ? 'Shipping: ' : 'Shipping ')); var shipTxt = document.createTextNode('...'); shipLi.appendChild(shipTxt); facts.appendChild(shipLi);
       shippingModule().then(function (m) {
         var q = m.quote([{ product: d, qty: 1 }], { method: 'ship' });
         // The owner's wording (2026-10-11): flat-rate items, and items by weight.
         var flat = m.SHIPPING.suppliers[d.shipFrom];
         shipTxt.textContent = flat && flat.rule === 'cj'
-          ? (q.cents ? '$' + (q.cents / 100).toFixed(2) + ', fast from a US warehouse; each extra item adds only $' + (flat.addOnCents / 100).toFixed(2) + '.' : 'free, fast from a US warehouse.')
+          ? (d.source && d.source.warehouse === 'CN'
+            ? (q.cents ? '$' + (q.cents / 100).toFixed(2) : 'free') + ', from our overseas warehouse (allow 1 to 3 weeks)' + (d.shipAddCents != null ? '; each extra one adds $' + (d.shipAddCents / 100).toFixed(2) : '') + '.'
+            : (q.cents ? '$' + (q.cents / 100).toFixed(2) + ', fast from a US warehouse' + (d.shipAddCents != null ? '; each extra one adds $' + (d.shipAddCents / 100).toFixed(2) : '') + '.' : 'free, fast from a US warehouse.'))
           : flat && flat.rule === 'flat'
           ? '$' + (flat.cents / 100).toFixed(2) + '. Items from the same supplier share costs.'
           : 'from this supplier is by weight, minimum of $' + (m.SHIPPING.bands[0].cents / 100).toFixed(2) + '.';

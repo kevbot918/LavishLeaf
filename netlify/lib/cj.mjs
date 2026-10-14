@@ -75,17 +75,18 @@ export function usStock(variant) {
   return inv.filter((i) => String(i.countryCode).toUpperCase() === 'US').reduce((n, i) => n + (Number(i.totalInventory) || 0), 0);
 }
 
-/** US stock from a stock/queryByVid answer (2026-10-14, measured: product/query
- * carries no inventories; this call gives each warehouse's count). */
-export function usFromStock(rows) {
-  return (Array.isArray(rows) ? rows : []).filter((r) => String(r.countryCode).toUpperCase() === 'US').reduce((n, r) => n + (Number(r.totalInventoryNum) || 0), 0);
+/** One country's stock (US, or CN for the China warehouses) from a
+ * stock/queryByVid answer (2026-10-14, measured: product/query carries no
+ * inventories; this call gives each warehouse's count). */
+export function usFromStock(rows, country = 'US') {
+  return (Array.isArray(rows) ? rows : []).filter((r) => String(r.countryCode).toUpperCase() === country).reduce((n, r) => n + (Number(r.totalInventoryNum) || 0), 0);
 }
 
 /**
  * One product: its variants with price, and the US stock of the variants
  * asked for (one call each). Null when CJ no longer has the product.
  */
-export async function productFacts(pid, vids = null) {
+export async function productFacts(pid, vids = null, country = 'US') {
   let d;
   try { d = await call('/product/query', { query: { pid, countryCode: 'US' } }); }
   catch (e) { if (/not ?exist|not ?found|offline|removed|delist/i.test(e.message)) return null; throw e; }
@@ -93,7 +94,7 @@ export async function productFacts(pid, vids = null) {
   const variants = (d.variants || []).map((v) => ({ vid: v.vid, sku: v.variantSku, key: v.variantKey || v.variantNameEn || '', price: Number(v.variantSellPrice) || null, us: usStock(v) }));
   for (const v of variants) {
     if (vids && !vids.includes(v.vid)) continue;
-    v.us = usFromStock(await call('/product/stock/queryByVid', { query: { vid: v.vid } }).catch(() => []));
+    v.us = usFromStock(await call('/product/stock/queryByVid', { query: { vid: v.vid } }).catch(() => []), country);
   }
   return { pid: d.pid, name: d.productNameEn, sku: d.productSku, sellPrice: Number(d.sellPrice) || null, variants };
 }
