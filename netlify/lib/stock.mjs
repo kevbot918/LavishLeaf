@@ -78,32 +78,50 @@ export function supplierProducts(catalog = liveCatalog) {
   return Object.values(catalog).filter((p) => p.active && p.ship && p.supplier && (p.supplier.sku || p.supplier.item || p.supplier.optionSkus));
 }
 
-/** Bangalla's lines judged from the feed. Mutates state.items. */
-export function applyBangalla(state, feed, catalog = liveCatalog, now = Date.now()) {
+/**
+ * Bangalla's lines judged from the feed. Mutates state.items. With
+ * missingIsOut false (the owner's uploaded file, 2026-10-14: Bangalla gives no
+ * feed link), a SKU that is not in the file is left as it was, because an
+ * older upload kept only some of the file's rows.
+ */
+export function applyBangalla(state, feed, catalog = liveCatalog, now = Date.now(), missingIsOut = true, label = 'feed') {
   const at = new Date(now).toISOString();
   for (const p of supplierProducts(catalog).filter((x) => /bangalla/i.test(x.supplier.name))) {
     const skus = p.supplier.optionSkus ? Object.entries(p.supplier.optionSkus) : [[null, p.supplier.sku]];
     const opts = {};
     let anyIn = false, total = 0;
+    if (!missingIsOut && skus.every(([, s]) => !feed.has(String(s).toUpperCase()))) continue;
     for (const [opt, sku] of skus) {
       const q = feed.has(String(sku).toUpperCase()) ? feed.get(String(sku).toUpperCase()) : null;
-      const out = q === null || q < MIN_STOCK;
+      const out = q === null ? missingIsOut : q < MIN_STOCK;
       if (opt) opts[opt] = { sku, qty: q, out };
       if (!out) anyIn = true;
       total += q || 0;
     }
     state.items[p.id] = {
       id: p.id, name: p.name, supplier: 'Bangalla', code: skus.map(([, s]) => s).join(', '),
-      qty: total, out: !anyIn, why: anyIn ? '' : (skus.every(([, s]) => !feed.has(String(s).toUpperCase())) ? 'not in Bangalla\'s feed' : 'under ' + MIN_STOCK + ' left'),
+      qty: total, out: !anyIn, why: anyIn ? '' : (skus.every(([, s]) => !feed.has(String(s).toUpperCase())) ? 'not in Bangalla\'s ' + label : 'under ' + MIN_STOCK + ' left'),
       options: p.supplier.optionSkus ? opts : null, at,
     };
   }
 }
 
-/** The ids, and the options, that the store must not sell now. */
-export function outOf(state) {
+/**
+ * The ids, and the options, that the store must not sell now. A paused
+ * supplier (the owner's switch in the dashboard, 2026-10-14) takes every one
+ * of its products off.
+ */
+export function outOf(state, catalog = liveCatalog) {
   const products = [], options = {};
+  const paused = (state && state.paused) || {};
+  if (Object.keys(paused).some((k) => paused[k])) {
+    for (const p of supplierProducts(catalog)) {
+      const key = /aliexpress/i.test(p.supplier.name) ? 'aliexpress' : 'bangalla';
+      if (paused[key]) products.push(p.id);
+    }
+  }
   for (const r of Object.values((state && state.items) || {})) {
+    if (products.includes(r.id)) continue;
     if (r.out) products.push(r.id);
     else if (r.options) {
       const o = Object.entries(r.options).filter(([, v]) => v.out).map(([k]) => k);
@@ -122,9 +140,15 @@ export async function readState(store) {
  * One run: the whole Bangalla feed, and the next slice of AliExpress items.
  * deps: { fetchImpl, aeCheck(id) -> { stock } | null (null = gone) | throws }
  */
-export async function runCheck(store, { env = process.env, fetchImpl = fetch, aeCheck = null, catalog = liveCatalog, now = Date.now() } = {}) {
+export async function runCheck(store, { env = process.env, fetchImpl = fetch, aeCheck = null, catalog = liveCatalog, now = Date.now(), costsFile = null } = {}) {
   const state = await readState(store);
-  if (env.BANGALLA_FEED_URL) {
+  if (!env.BANGALLA_FEED_URL && costsFile && costsFile.rows) {
+    // No feed link from Bangalla: the product data file the owner loads in
+    // the dashboard (Bangalla, Account, Data Downloads), as fresh as its upload.
+    const feed = new Map(Object.values(costsFile.rows).filter((r) => r && r.sku && r.stock != null).map((r) => [String(r.sku).toUpperCase(), Number(r.stock) || 0]));
+    applyBangalla(state, feed, catalog, now, false, 'file');
+    state.bangalla = { at: new Date(now).toISOString(), ok: true, skus: feed.size, from: 'file', fileLoaded: costsFile.loaded || null };
+  } else if (env.BANGALLA_FEED_URL) {
     try {
       const res = await fetchImpl(env.BANGALLA_FEED_URL, { headers: { Accept: 'text/csv, application/json, */*' } });
       if (!res.ok) throw new Error('Bangalla\'s feed said ' + res.status);
@@ -136,7 +160,7 @@ export async function runCheck(store, { env = process.env, fetchImpl = fetch, ae
     } catch (e) {
       state.bangalla = { at: new Date(now).toISOString(), ok: false, error: String(e.message).slice(0, 200) };
     }
-  } else state.bangalla = { at: new Date(now).toISOString(), ok: false, error: 'BANGALLA_FEED_URL is not set in Netlify yet' };
+  } else state.bangalla = { at: new Date(now).toISOString(), ok: false, error: 'no Bangalla stock yet: load the Bangalla product data file in the Store products section' };
 
   if (aeCheck) {
     const ae = supplierProducts(catalog).filter((p) => /aliexpress/i.test(p.supplier.name) && p.supplier.item);

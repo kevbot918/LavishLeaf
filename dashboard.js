@@ -841,8 +841,27 @@
     var stockRows = [], stockOnlyOut = false, stockQ = '';
     function drawStock(r) {
       cst.textContent = '';
-      var st = function (x, name) { return !x ? name + ': not checked yet.' : x.ok ? name + ': checked ' + niceDate(x.at) + (x.skus ? ' (' + num(x.skus) + ' SKUs in the feed)' : x.checked != null ? ' (' + x.checked + ' items this run)' : '') + '.' : name + ': ' + (x.error || 'failed') + '.'; };
+      var st = function (x, name) { return !x ? name + ': not checked yet.' : x.ok ? name + ': checked ' + niceDate(x.at) + (x.from === 'file' ? ' from your Bangalla file loaded ' + niceDate(x.fileLoaded) : x.skus ? ' (' + num(x.skus) + ' SKUs in the feed)' : x.checked != null ? ' (' + x.checked + ' items this run)' : '') + '.' : name + ': ' + (x.error || 'failed') + '.'; };
       cst.appendChild(el('p', 'db-hint', st(r.bangalla, 'Bangalla') + ' ' + st(r.aliexpress, 'AliExpress')));
+      // Bangalla gives no feed link (owner, 2026-10-14): its stock is the
+      // product data file loaded in Store products, so it is only as fresh
+      // as that upload.
+      if (r.bangalla && r.bangalla.from === 'file' && r.bangalla.fileLoaded && Date.now() - Date.parse(r.bangalla.fileLoaded) > 7 * 864e5) {
+        cst.appendChild(el('p', 'db-hint db-warn', 'Your Bangalla file is over a week old. Download a fresh "Bangalla Product Data csv" (Bangalla, Account, Data Downloads) and load it in Store products so stock stays right.'));
+      }
+      var pz = r.paused || {};
+      var pbar = el('div', 'db-links');
+      [['bangalla', 'Bangalla'], ['aliexpress', 'AliExpress']].forEach(function (s) {
+        var on = !!pz[s[0]];
+        var b = h('<button type="button" class="db-btn-ghost"><i class="fas ' + (on ? 'fa-play' : 'fa-pause') + '"></i> ' + (on ? 'Put every ' + s[1] + ' product back on the store' : 'Pause every ' + s[1] + ' product') + '</button>');
+        b.addEventListener('click', function () {
+          if (!on && !window.confirm('Take every ' + s[1] + ' product off the store until you put them back?')) return;
+          api('stock', { action: 'pause', supplier: s[0], on: !on }).then(function (x) { stockRows = x.rows; drawStock(x); }).catch(function (e) { alert(e.message); });
+        });
+        pbar.appendChild(b);
+        if (on) cst.appendChild(el('p', 'db-hint db-warn', 'Every ' + s[1] + ' product is PAUSED: hidden on the store and refused at checkout.'));
+      });
+      cst.appendChild(pbar);
       var bar = el('div', 'db-links');
       var q = el('input'); q.type = 'search'; q.placeholder = 'Search by name or code'; q.value = stockQ; q.className = 'db-stock-q';
       q.addEventListener('input', function () { stockQ = q.value; drawTable(); });

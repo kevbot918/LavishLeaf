@@ -61,3 +61,19 @@ test('a feed that comes back empty or broken hides nothing', async () => {
   assert.equal(st.bangalla.ok, false);
   assert.deepEqual(outOf(st).products, []);
 });
+
+// 2026-10-14: Bangalla has no feed link, so the owner's uploaded file is used;
+// a SKU missing from it is unknown (an older upload kept only some rows), and
+// a paused supplier takes every one of its products off.
+test("the uploaded Bangalla file: low is out, missing is left alone; pause takes all off", async () => {
+  const s = fakeStore();
+  const costsFile = { loaded: '2026-10-14T12:00:00Z', rows: { 'B-81741-4PK': { sku: 'B-81741-4PK', stock: 2 }, 'B-1-1PK': { sku: 'B-1-1PK', stock: 30 } } };
+  const st = await runCheck(s, { env: {}, catalog, costsFile });
+  assert.equal(st.bangalla.from, 'file');
+  assert.equal(st.items.flour.out, true);
+  assert.equal(st.items.gone, undefined, 'not in the file: not judged');
+  assert.equal(st.items.soap.out, false);
+  assert.deepEqual(outOf(st, catalog).products, ['flour']);
+  const paused = outOf({ ...st, paused: { bangalla: true } }, catalog).products.sort();
+  assert.deepEqual(paused, ['flour', 'gone', 'soap']);
+});

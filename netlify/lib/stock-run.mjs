@@ -22,5 +22,12 @@ export async function checkNow() {
       };
     }
   }
-  return runCheck(await stockStore(), { aeCheck });
+  // Bangalla gives no feed link (owner, 2026-10-14), so the product data file
+  // he loads in the dashboard (Blobs "store-costs") is the stock source.
+  let costsFile = null;
+  try {
+    const { getStore } = await import('@netlify/blobs');
+    costsFile = await getStore('store-costs').get('bangalla', { type: 'json' });
+  } catch (e) { console.error('[stock] costs file', e.message); }
+  return runCheck(await stockStore(), { aeCheck, costsFile });
 }

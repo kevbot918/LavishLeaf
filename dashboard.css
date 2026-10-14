@@ -201,3 +201,4 @@
 .db-btn { border: 0; background: var(--leaf, #4AB73C); color: var(--ink, #14261A); font: 800 .88rem/1 inherit; font-family: inherit; padding: 11px 16px; border-radius: 999px; cursor: pointer; }
 .db-btn:hover { filter: brightness(1.08); }
 .db-btn:disabled { opacity: .5; cursor: default; }
+.db-warn { color: #F2B8A0 !important; font-weight: 700; }

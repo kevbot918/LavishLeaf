@@ -201,6 +201,14 @@
     el2.textContent = 'Loaded ' + new Date(st.costs.loaded).toLocaleString('en-US', { month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' }) + ': ' + st.costs.count.toLocaleString('en-US') + ' Bangalla products' + (st.costs.file ? ' from ' + st.costs.file : '') + (st.preview ? ' (preview: not saved)' : '') + '.';
   }
 
+  // The Bangalla SKUs on the store now, options included (products.json).
+  fetch('/products.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) {
+    st.liveSkus = [];
+    (d.products || []).forEach(function (p) {
+      if (p.source && p.source.sku) st.liveSkus.push(p.source.sku);
+      ((p.options && p.options.values) || []).forEach(function (v) { if (v.sku) st.liveSkus.push(v.sku); });
+    });
+  }).catch(function () { /* the categories filter still keeps most */ });
   function upload(file) {
     var msg = root.querySelector('#db-store-loaded');
     if (!/\.csv$/i.test(file.name)) { msg.textContent = 'That is not the CSV. Choose "Bangalla Product Data csv.csv" (the file beside the Excel one).'; return; }
@@ -208,6 +216,9 @@
     var reader = new FileReader();
     reader.onload = function () {
       var want = {}; st.tiers.forEach(function (p) { if (p.sku) want[p.sku] = true; });
+      // Every SKU the store sells is kept too, so the stock check (which reads
+      // this file, Bangalla having no feed link) sees them all (2026-10-14).
+      (st.liveSkus || []).forEach(function (s) { want[s] = true; });
       var rows;
       try { rows = rowsFromBangalla(String(reader.result), want); } catch (e) { msg.textContent = e.message; return; }
       var map = {}; rows.forEach(function (r) { map[r.sku] = r; });
