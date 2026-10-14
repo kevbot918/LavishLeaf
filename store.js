@@ -937,7 +937,7 @@
         var flat = m.SHIPPING.suppliers[d.shipFrom];
         shipTxt.textContent = flat && flat.rule === 'flat'
           ? '$' + (flat.cents / 100).toFixed(2) + '. Items from the same supplier share costs.'
-          : 'from this supplier is per US Postal weight, minimum of $' + (m.SHIPPING.bands[0].cents / 100).toFixed(2) + '.';
+          : 'from this supplier is by weight, minimum of $' + (m.SHIPPING.bands[0].cents / 100).toFixed(2) + '.';
       }).catch(function () { shipTxt.textContent = 'shown in the cart.'; });
     } else if (d.interval) {
       fact('Delivery', 'a local service; we arrange the day with you');

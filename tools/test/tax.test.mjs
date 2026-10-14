@@ -34,7 +34,7 @@ test('tax is its own line on the PayPal order', () => {
   const shipping = quote(lines, { method: 'ship' });
   const unit = orderBody(lines, { returnUrl: 'r', cancelUrl: 'c', shipping, tax: taxQuote(lines) }).purchase_units[0];
   assert.equal(unit.amount.breakdown.tax_total.value, '1.20');
-  assert.equal(unit.amount.value, '30.15'); // 20.00 + 8.95 + 1.20
+  assert.equal(unit.amount.value, '28.95'); // 20.00 + 7.75 + 1.20
   assert.equal(parseCustomId(unit.custom_id).t, undefined, 'no ship-to question any more');
 });
 

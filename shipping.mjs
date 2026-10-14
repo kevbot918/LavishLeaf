@@ -4,8 +4,15 @@
 // PayPal charges; the browser only shows the same sum in advance.
 //
 // The rules are the owner's, from docs/SHIPPING.md:
-//   * flat by the order's packed weight: up to 1 lb $8.95, 1 to 3 lb $12.95,
-//     3 to 10 lb $18.95; over 10 lb cannot be posted (email for a quote).
+//   * BANGALLA'S OWN TABLE since 2026-10-13 (owner: "lets figure out
+//     Bangallas exact weight ratio for calculating shipping costs" instead of
+//     "over 10 lb ... email for a quote"): bangalla.com/shipping-returns,
+//     "Continental USA, dropship", 26 weight tiers from $5.75 under 0.5 lb to
+//     $85.79 at 55 to 59.99 lb; heavier needs Bangalla's own quote. What
+//     Bangalla bills us is what the buyer pays: no profit, no loss. The text
+//     below about Zone 5 bands is the history of the earlier flat bands.
+//   * (before 2026-10-13) flat by the order's packed weight: up to 1 lb $8.95,
+//     1 to 3 lb $12.95, 3 to 10 lb $18.95; over 10 lb could not be posted.
 //     The owner, 2026-10-07: "I don't want us to make money on shipping, I
 //     just don't want to lose money on shipping", and not to scare buyers
 //     off. So each band is what the order costs to post to the MIDDLE of the
@@ -37,12 +44,17 @@
 //     charges about $1.50 to $3.00 below it (secretali.com 2026 guide, read
 //     2026-10-11). So: free at $9.99 of our price or 3 items, else $2.99.
 
+// Bangalla's dropship table (read 2026-10-13): [under this many lb, cents].
+const BANGALLA = [
+  [0.5, 575], [0.8, 775], [1, 925], [2, 995], [3, 1145], [4, 1195], [5, 1245], [6, 1325], [7, 1420],
+  [8, 1520], [9, 1575], [10, 1615], [11, 1695], [12, 1720], [13, 1765], [15, 1845], [17, 2165],
+  [20, 2365], [25, 2795], [30, 3295], [35, 4095], [40, 4395], [45, 5095], [50, 5395], [55, 7999], [60, 8579],
+];
+
 export const SHIPPING = {
-  bands: [
-    { upToOz: 16, cents: 895 },    // Zone 5: $8.24 under 1 lb, $9.29 at 1 lb
-    { upToOz: 48, cents: 1295 },   // Zone 5: $9.29 to $12.12 (1 to 3 lb)
-    { upToOz: 160, cents: 1895 },  // Zone 5: $12.12 to $17.81 (3 to 10 lb)
-  ],
+  // A part weighing less than underOz pays cents. upToOz is the same edge,
+  // for the cart's weight meter.
+  bands: BANGALLA.map(([lb, cents], i) => ({ fromOz: i ? BANGALLA[i - 1][0] * 16 : 0, underOz: lb * 16, upToOz: lb * 16, cents })),
   // A reduced rate for big orders: null means none (the owner's call, 2026-10-07).
   reducedOverCents: null,
   reducedCents: null,
@@ -94,10 +106,11 @@ export function quote(lines, { method } = {}) {
       }
       const oz = group.reduce((sum, { product, qty }) => sum + product.shipOz * qty, 0);
       if (!Number.isFinite(oz) || oz <= 0) throw new ShippingError('Something in your cart has no shipping weight yet. Please email support@lavishleaf.org.');
-      const band = SHIPPING.bands.find((x) => oz <= x.upToOz);
-      if (!band) throw new ShippingError('This order is over 10 lb, too heavy for our flat rates. Please email support@lavishleaf.org for a shipping quote.');
+      const band = SHIPPING.bands.find((x) => oz < x.underOz);
+      if (!band) throw new ShippingError('This order weighs 60 lb or more, past our carrier\'s weight table. Please split it into two orders, or email support@lavishleaf.org for a shipping quote.');
       const i = SHIPPING.bands.indexOf(band);
-      const desc = i === 0 ? 'by weight, up to 1 lb' : 'by weight, ' + (SHIPPING.bands[i - 1].upToOz / 16) + ' to ' + (band.upToOz / 16) + ' lb';
+      const lb = (n) => String(Math.round(n * 100) / 100);
+      const desc = i === 0 ? 'by weight, under ' + lb(band.underOz / 16) + ' lb' : 'by weight, ' + lb(band.fromOz / 16) + ' to under ' + lb(band.underOz / 16) + ' lb';
       // oz and upToOz feed the cart's weight meter (owner, 2026-10-11).
       parts.push({ from, label: rule.label, cents: band.cents, desc, oz, upToOz: band.upToOz });
     }

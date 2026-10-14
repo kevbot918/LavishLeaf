@@ -349,7 +349,7 @@
           });
           shipLine.title = 'Each supplier ships its own parcel, so each part is charged on its own. See Terms of Sale.';
           // Weight meter for items shipped by weight (owner, 2026-10-11):
-          // "3.5 oz / 16 oz = $8.95", so a buyer sees the room left in the band.
+          // "3.5 oz / 8 oz = $5.75", so a buyer sees the room left in the band.
           var meter = (q.parts || []).filter(function (pt) { return pt.upToOz; }).map(function (pt) {
             var room = Math.round((pt.upToOz - pt.oz) * 10) / 10;
             return 'Shipped by weight: ' + (Math.round(pt.oz * 10) / 10) + ' oz / ' + pt.upToOz + ' oz = ' + money(pt.cents) + '.' +

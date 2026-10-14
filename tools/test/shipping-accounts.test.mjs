@@ -16,24 +16,23 @@ test('nothing posted, nothing charged and no address asked for', () => {
   assert.deepEqual([q.cents, q.method, q.needsAddress], [0, 'none', false]);
 });
 
-test('the weight bands are the Zone 5 cost, and there is no reduced rate (2026-10-07)', () => {
-  assert.equal(quote([line(P(800, 6))], { method: 'ship' }).cents, 895);      // 6 oz
-  assert.equal(quote([line(P(800, 16))], { method: 'ship' }).cents, 895);     // exactly 1 lb
-  assert.equal(quote([line(P(800, 20))], { method: 'ship' }).cents, 1295);     // 1 lb 4 oz
-  assert.equal(quote([line(P(800, 30), 2)], { method: 'ship' }).cents, 1895);  // 3 lb 12 oz
-  assert.equal(quote([line(P(5000, 10), 3)], { method: 'ship' }).cents, 1295); // $150, 1 lb 14 oz: full rate
+test("the weight bands are Bangalla's own table, and there is no reduced rate (2026-10-13)", () => {
+  assert.equal(quote([line(P(800, 6))], { method: 'ship' }).cents, 575);      // 6 oz
+  assert.equal(quote([line(P(800, 16))], { method: 'ship' }).cents, 995);     // exactly 1 lb
+  assert.equal(quote([line(P(800, 20))], { method: 'ship' }).cents, 995);     // 1 lb 4 oz
+  assert.equal(quote([line(P(800, 30), 2)], { method: 'ship' }).cents, 1195);  // 3 lb 12 oz
+  assert.equal(quote([line(P(5000, 10), 3)], { method: 'ship' }).cents, 995); // $150, 1 lb 14 oz: full rate
   assert.equal(untilReduced(7500), 0);
-  // USPS Ground Advantage commercial, Zone 5, effective 4 Oct 2026: each band
-  // covers the middle of the country at its heaviest weight, and no more
-  // than $1 over it (the owner: no money made on shipping).
-  for (const [oz, cost] of [[15.99, 824], [48, 1212], [160, 1781]]) {
-    const band = SHIPPING.bands.find((b) => oz <= b.upToOz).cents;
-    assert.ok(band >= cost && band - cost <= 115, oz + ' oz: ' + band + ' vs Zone 5 ' + cost);
+  // Bangalla's own dropship table (bangalla.com/shipping-returns, read
+  // 2026-10-13): what Bangalla bills is what the buyer pays.
+  for (const [oz, cents] of [[7.9, 575], [8, 775], [12.8, 925], [15.9, 925], [16, 995], [47.9, 1145], [160, 1695], [161, 1695], [959, 8579]]) {
+    assert.equal(quote([line(P(2000, oz))], { method: 'ship' }).cents, cents, oz + ' oz');
   }
 });
 
-test('over 10 lb is never posted at a flat rate', () => {
-  assert.throws(() => quote([line(P(2000, 161))], { method: 'ship' }), /email/);
+test('over 10 lb now has a real rate; 60 lb and over asks for a quote', () => {
+  assert.equal(quote([line(P(2000, 200))], { method: 'ship' }).cents, 1765); // 12.5 lb
+  assert.throws(() => quote([line(P(2000, 960))], { method: 'ship' }), /email/);
 });
 
 test('shipping only for now (owner, 2026-10-02): no pickup, no local delivery', () => {
@@ -59,8 +58,8 @@ test('shipping is its own line on the PayPal order, and asks PayPal for the addr
   const shipping = quote(lines, { method: 'ship' });
   const body = orderBody(lines, { returnUrl: 'r', cancelUrl: 'c', shipping, userId: '1234abcd-0000' });
   const unit = body.purchase_units[0];
-  assert.equal(unit.amount.value, '24.85'); // 15.90 + 8.95
-  assert.equal(unit.amount.breakdown.shipping.value, '8.95');
+  assert.equal(unit.amount.value, '21.65'); // 15.90 + 5.75
+  assert.equal(unit.amount.breakdown.shipping.value, '5.75');
   assert.equal(unit.items[0].category, 'PHYSICAL_GOODS');
   assert.equal(body.payment_source.paypal.experience_context.shipping_preference, 'GET_FROM_FILE');
   assert.deepEqual(parseCustomId(unit.custom_id), { m: 'ship', u: '1234abcd-0000' });
@@ -200,10 +199,10 @@ test('each supplier ships and is charged on its own (owner, 2026-10-11)', () => 
   assert.equal(q([A(549)]).cents, 299, 'one small overseas item pays the small fee');
   assert.equal(q([A(999)]).cents, 0, 'free from $9.99 of overseas items');
   assert.equal(q([A(549, 3)]).cents, 0, 'free from 3 overseas items');
-  assert.equal(q([B(649, 10), A(999)]).cents, 895, 'the Bangalla band covers only Bangalla items');
-  assert.equal(q([B(649, 10), A(549)]).cents, 895 + 299);
-  assert.equal(q([B(3299, 106), B(649, 10)]).cents, 1895, 'Bangalla items share one band by their total weight');
-  assert.equal(q([B(649, 10), A(549)]).label, 'Shipping (by weight, up to 1 lb: $8.95 + direct-ship items under $9.99: $2.99)');
+  assert.equal(q([B(649, 10), A(999)]).cents, 775, 'the Bangalla band covers only Bangalla items');
+  assert.equal(q([B(649, 10), A(549)]).cents, 775 + 299);
+  assert.equal(q([B(3299, 106), B(649, 10)]).cents, 1520, 'Bangalla items share one band by their total weight');
+  assert.equal(q([B(649, 10), A(549)]).label, 'Shipping (by weight, 0.5 to under 0.8 lb: $7.75 + direct-ship items under $9.99: $2.99)');
   assert.doesNotMatch(q([B(649, 10), A(549)]).label, /overseas|supplier/i, 'no supplier talk (owner, 2026-10-11)');
-  assert.equal(q([{ product: { price: 500, ship: true, shipOz: 5 }, qty: 1 }]).cents, 895, 'no shipFrom: the bands');
+  assert.equal(q([{ product: { price: 500, ship: true, shipOz: 5 }, qty: 1 }]).cents, 575, 'no shipFrom: the bands');
 });

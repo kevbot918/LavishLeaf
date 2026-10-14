@@ -37,5 +37,5 @@ test('a signed-in cart keeps its option', () => {
 import { quote } from '../../shipping.mjs';
 test('the cart weight meter gets the weight and the band limit', () => {
   const part = quote([{ product: { price: 599, ship: true, shipOz: 3.5, shipFrom: 'bangalla' }, qty: 1 }], { method: 'ship' }).parts[0];
-  assert.deepEqual([part.oz, part.upToOz, part.cents], [3.5, 16, 895]);
+  assert.deepEqual([part.oz, part.upToOz, part.cents], [3.5, 8, 575]);
 });

@@ -165,7 +165,7 @@
       if (c && c.restricted) flags.push('<span class="db-flag" title="Bangalla marks this brand Third Party Restricted: usually no Amazon or marketplaces. Ask whether your own site is fine.">TPR</span>');
       if (c && c.map != null) flags.push('<span class="db-flag" title="Minimum advertised price">MAP ' + esc(usd(c.map)) + '</span>');
       if (c && !(c.stock > 0)) flags.push('<span class="db-flag warn">out of stock</span>');
-      if (c && c.lb > 10) flags.push('<span class="db-flag warn">over 10 lb</span>');
+      if (c && c.lb >= 60) flags.push('<span class="db-flag warn">60 lb or more</span>');
       if (c && c.perCase > 1) flags.push('<span class="db-flag" title="Bangalla sells this by the case">case of ' + esc(c.perCase) + '</span>');
       var name = r.url ? '<a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(r.name) + '</a>' : esc(r.name);
       var sub = [r.sku, r.min && r.min !== 'none' ? 'min ' + r.min : ''].filter(Boolean).join(' &middot; ');

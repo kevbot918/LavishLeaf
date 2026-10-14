@@ -207,15 +207,16 @@
       tiles.appendChild(h('<' + tag + (href ? ' href="' + href + '"' : '') + (id ? ' id="' + id + '"' : '') + ' class="db-tile' + (off ? ' off' : '') + (href ? ' db-tile-link' : '') + '"><div class="db-tile-label"><i class="fas ' + icon + '"></i>' + esc(label) + (href ? ' <i class="fas fa-arrow-down db-tile-go"></i>' : '') + '</div><div class="db-tile-value">' + esc(value) + '</div><div class="db-tile-note">' + note + '</div></' + tag + '>'));
     }
     if (ga) {
-      tile('Visitors', 'fa-users', num(ga.totals.visitors), deltaHtml(ga.totals.visitors, ga.before.visitors, days));
-      tile('Pages viewed', 'fa-eye', num(ga.totals.pageViews), deltaHtml(ga.totals.pageViews, ga.before.pageViews, days));
+      // Linked to their sections (owner, 2026-10-13).
+      tile('Visitors', 'fa-users', num(ga.totals.visitors), deltaHtml(ga.totals.visitors, ga.before.visitors, days), false, '#sec-visitors');
+      tile('Pages viewed', 'fa-eye', num(ga.totals.pageViews), deltaHtml(ga.totals.pageViews, ga.before.pageViews, days), false, '#sec-activity');
       tile('Time on the site', 'fa-clock', dur(ga.totals.avgVisitSeconds), 'An average visit. Longer means people are reading.');
       var signups = (ga.events.filter(function (e) { return e.key === 'sign_up_click'; })[0] || { now: 0, before: 0 });
       tile('Sign-up clicks', 'fa-hand-pointer', num(signups.now), deltaHtml(signups.now, signups.before, days));
     } else {
       tile('Visitors', 'fa-users', 'Connect Google', 'See "How many people came" below.', true);
     }
-    if (list) tile('Newsletter', 'fa-envelope', num(list.active), num(list.newThisMonth) + ' joined in the last 30 days');
+    if (list) tile('Newsletter', 'fa-envelope', num(list.active), num(list.newThisMonth) + ' joined in the last 30 days', false, '#sec-people');
     // Orders and sign-ups: each tile jumps to its section (owner, 2026-10-12);
     // the counts fill in as the sections load.
     tile('Orders', 'fa-bag-shopping', '...', orders ? money(orders.revenue) + ' in the last ' + days + ' days' : 'loading', false, '#sec-orders', 'tile-orders');
@@ -228,7 +229,7 @@
       var sign = function (n) { return n == null ? '-' : (n > 0 ? '+' : '') + num(n); };
       tile('New followers', 'fa-share-nodes', gr ? sign((gr.facebook || 0) + (gr.instagram || 0)) : '-',
         gr ? sign(gr.facebook) + ' Facebook, ' + sign(gr.instagram) + ' Instagram ' + (gr.complete ? 'in the last ' + days + ' days' : 'since ' + niceDate(gr.from) + ' (counting began then)') + '. Now ' + num(f) + ' and ' + num(ig) + '.'
-           : num(f) + ' on Facebook, ' + num(ig) + ' on Instagram. Growth appears from tomorrow.');
+           : num(f) + ' on Facebook, ' + num(ig) + ' on Instagram. Growth appears from tomorrow.', false, '#sec-social');
     }
     // Four more (owner, 2026-10-13); with these the tiles make two rows of 7.
     if (ga && ga.downloads) {
