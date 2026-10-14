@@ -878,7 +878,7 @@
         t.appendChild(tb);
         var wrap = el('div', 'db-table-wrap'); wrap.appendChild(t); c.appendChild(wrap);
         // what we charged
-        c.appendChild(el('p', 'db-hint', 'Items ' + money(o.itemTotal) + ' · Shipping charged ' + money(o.shipping || 0) + (o.tax ? ' · Sales tax ' + money(o.tax) : '') + ' · Total paid ' + money(o.total) + ((o.refunds || []).length ? ' · Refunded ' + money(o.refunds.reduce(function (a, r) { return a + r.cents; }, 0) / 100) : '')));
+        c.appendChild(el('p', 'db-hint', 'Items ' + money(o.itemTotal) + ' · Shipping charged ' + money(o.shipping || 0) + (o.discount ? ' · 20% code ' + (o.discountCode || '') + ' -' + money(o.discount) : '') + (o.tax ? ' · Sales tax ' + money(o.tax) : '') + ' · Total paid ' + money(o.total) + ((o.refunds || []).length ? ' · Refunded ' + money(o.refunds.reduce(function (a, r) { return a + r.cents; }, 0) / 100) : '')));
         // shipped email
         (o.shipments || []).forEach(function (s) { c.appendChild(el('p', 'db-hint', 'Shipped email sent ' + niceDate(s.at) + (s.carrier ? ', ' + s.carrier : '') + (s.tracking ? ' ' + s.tracking : '') + '.')); });
         if (o.delivery === 'ship' && !/refunded|reversed|failed/.test(o.status || '')) {

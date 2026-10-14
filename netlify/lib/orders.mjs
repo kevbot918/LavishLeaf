@@ -45,6 +45,8 @@ export function summarise(done, meta = {}) {
     itemTotal: Number(b.item_total && b.item_total.value) || items.reduce((s, i) => s + i.each * i.qty, 0),
     shipping: Number(b.shipping && b.shipping.value) || 0,
     tax: Number(b.tax_total && b.tax_total.value) || 0,
+    discount: Number(b.discount && b.discount.value) || 0,
+    discountCode: meta.d || '',
     first_last: String((unit.shipping && unit.shipping.name && unit.shipping.name.full_name) || [done.payer && done.payer.name && done.payer.name.given_name, done.payer && done.payer.name && done.payer.name.surname].filter(Boolean).join(' ')),
     total: Number((capture && capture.amount && capture.amount.value) || (unit.amount && unit.amount.value)) || 0,
     delivery: meta.m || 'none',
@@ -58,6 +60,7 @@ function itemRows(o) {
   const row = (l, r, strong) => `<tr><td style="padding:6px 0;color:#C8CFC8;font-size:15px;${strong ? 'font-weight:700;color:#F2F4F2;' : ''}">${l}</td><td align="right" style="padding:6px 0;color:#F2F4F2;font-size:15px;${strong ? 'font-weight:700;' : ''}">${r}</td></tr>`;
   const lines = o.items.map((i) => row(`${esc(i.name)}${i.qty > 1 ? ' &times; ' + i.qty : ''}`, money(i.each * i.qty)));
   if (o.delivery !== 'none') lines.push(row('Shipping', money(o.shipping)));
+  if (o.discount) lines.push(row('First-order discount (20%)', '-' + money(o.discount)));
   if (o.tax) lines.push(row('Sales tax', money(o.tax)));
   lines.push(row('Total paid', money(o.total), true));
   return lines.join('');

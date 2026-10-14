@@ -14,6 +14,7 @@ import { CheckoutError, call, config, handle, parseCustomId } from '../lib/paypa
 import { addressOk } from '../../shipping.mjs';
 import { afterPayment, summarise } from '../lib/orders.mjs';
 import { registrationsPaid } from '../lib/registration-mail.mjs';
+import { discountsStore, markUsed } from '../lib/discounts.mjs';
 
 export default async (request) =>
   handle(request, async (body) => {
@@ -27,6 +28,15 @@ export default async (request) =>
     if (order.status !== 'COMPLETED' && meta.m) {
       const ok = addressOk(meta.m, unit.shipping?.address);
       if (!ok.ok) throw new CheckoutError(400, ok.message);
+    }
+
+    // A first-order code works only with the email it was sent to, and only
+    // once (owner, 2026-10-13). Checked BEFORE capture: nothing is charged.
+    if (order.status !== 'COMPLETED' && meta.d) {
+      const rec = await (await discountsStore()).get('c-' + meta.d, { type: 'json' }).catch(() => null);
+      const payer = String((order.payer && order.payer.email_address) || '').toLowerCase();
+      if (!rec || rec.used) throw new CheckoutError(400, 'That discount code has already been used, so this order was not charged. Remove the code from your cart and check out again.');
+      if (rec.email !== payer) throw new CheckoutError(400, 'Your 20% code was sent to ' + rec.email.replace(/^(.).*(@.*)$/, '$1***$2') + ', but this PayPal account uses a different email, so nothing was charged. Pay with the PayPal account for that email, or remove the code from your cart and check out again.');
     }
 
     const done = order.status === 'COMPLETED'
@@ -54,6 +64,9 @@ export default async (request) =>
     // Filed for the dashboard, the customer's confirmation and the owner's
     // alert (netlify/lib/orders.mjs). Each happens once; none can fail the
     // payment, which has already gone through.
+    if (done.status === 'COMPLETED' && meta.d) {
+      try { await markUsed(await discountsStore(), meta.d, done.id); } catch (e) { console.error('[capture] mark code used', e.message); }
+    }
     if (done.status === 'COMPLETED') await afterPayment(summarise(done, meta));
     // League registrations on this order: paid, and the owner gets the roster.
     if (done.status === 'COMPLETED') await registrationsPaid(done.id, done.payer);

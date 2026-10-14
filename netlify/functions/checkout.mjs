@@ -9,6 +9,8 @@ import { userFromRequest } from '../lib/identity.mjs';
 import { approveLink, call, CheckoutError, config, handle, orderBody, returnUrls, validateCart } from '../lib/paypal.mjs';
 import { quote, ShippingError } from '../../shipping.mjs';
 import { taxQuote } from '../../tax.mjs';
+import { discountQuote } from '../../discount.mjs';
+import { discountsStore, usable } from '../lib/discounts.mjs';
 import { registrationsStore } from '../lib/registrations.mjs';
 
 export default async (request) =>
@@ -34,7 +36,16 @@ export default async (request) =>
       if (e instanceof ShippingError) throw new CheckoutError(400, e.message);
       throw e;
     }
-    const tax = taxQuote(lines);
+    // The first-order code (owner, 2026-10-13): checked here, and the PayPal
+    // email is checked against it at capture, before any money moves.
+    let code = null;
+    if (body.discount) {
+      code = await usable(await discountsStore(), body.discount);
+      if (!code) throw new CheckoutError(400, 'That discount code is not valid, or it has already been used. Remove it from the cart to pay without it.');
+    }
+    const off = discountQuote(lines, !!code);
+    if (code && !off.cents) throw new CheckoutError(400, 'The 20% code works on store products, and nothing in this cart is one. Remove the code to pay.');
+    const tax = taxQuote(off.taxLines);
     const user = await userFromRequest(request);
     const order = await call(cfg, '/v2/checkout/orders', orderBody(lines, {
       ...returnUrls(request),
@@ -42,6 +53,7 @@ export default async (request) =>
       waivers: required,
       shipping,
       tax,
+      discount: code ? { cents: off.cents, code: code.code } : null,
       userId: user ? user.id : '',
     }));
     // League registrations are kept under the PayPal order id (pending until

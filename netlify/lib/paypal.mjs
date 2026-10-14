@@ -102,8 +102,9 @@ export function validateCart(cart, catalog) {
  * local ZIP (z) to check the address against, and the signed-in customer (u)
  * whose order history it belongs in. Written by the server only.
  */
-export function customId({ waivers = [], shipping = null, userId = '' } = {}) {
+export function customId({ waivers = [], shipping = null, userId = '', discountCode = '' } = {}) {
   const parts = [];
+  if (discountCode) parts.push('d=' + discountCode);
   if (waivers.length) parts.push('w=' + waivers.join(','));
   if (shipping && shipping.method && shipping.method !== 'none') parts.push('m=' + shipping.method);
   if (shipping && shipping.zip) parts.push('z=' + String(shipping.zip).slice(0, 5));
@@ -124,7 +125,7 @@ export function parseCustomId(s) {
 }
 
 /** The body of PayPal's "create order" call for a validated cart. */
-export function orderBody(lines, { returnUrl, cancelUrl, note = '', waivers = [], shipping = null, tax = null, userId = '' }) {
+export function orderBody(lines, { returnUrl, cancelUrl, note = '', waivers = [], shipping = null, tax = null, userId = '', discount = null }) {
   const items = lines.map(({ product, qty, opt, reg }) => ({
     name: (reg ? `${product.name}: ${regLabel(reg)}` : opt ? `${product.name} (${product.options.label}: ${opt})` : product.name).slice(0, 127),
     sku: (opt ? product.id + ':' + opt : product.id).slice(0, 127),
@@ -149,10 +150,13 @@ export function orderBody(lines, { returnUrl, cancelUrl, note = '', waivers = []
   // Sales tax (tax.mjs): its own line, so the receipt shows it.
   const taxCents = tax && Number.isInteger(tax.cents) ? tax.cents : 0;
   if (taxCents > 0) breakdown.tax_total = { currency_code: 'USD', value: money(taxCents) };
+  // The first-order discount (discount.mjs): its own line, off the products.
+  const offCents = discount && Number.isInteger(discount.cents) && discount.cents > 0 && discount.cents < cents ? discount.cents : 0;
+  if (offCents) breakdown.discount = { currency_code: 'USD', value: money(offCents) };
   const unit = {
     amount: {
       currency_code: 'USD',
-      value: money(cents + shipCents + taxCents),
+      value: money(cents + shipCents + taxCents - offCents),
       breakdown,
     },
     items,
@@ -162,7 +166,7 @@ export function orderBody(lines, { returnUrl, cancelUrl, note = '', waivers = []
   // What was agreed to, on the order itself. PayPal shows custom_id on the
   // transaction and returns it at capture, so an order is its own record of
   // the waiver the buyer accepted.
-  const custom = customId({ waivers, shipping, userId });
+  const custom = customId({ waivers, shipping, userId, discountCode: offCents ? discount.code : '' });
   if (custom) unit.custom_id = custom;
   return {
     intent: 'CAPTURE',

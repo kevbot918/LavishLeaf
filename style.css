@@ -1470,3 +1470,9 @@ footer {
 .impact-label { margin-top: 8px; color: var(--white); font-size: 0.95rem; line-height: 1.45; }
 .impact-updated { margin-top: 18px; font-size: 0.85rem; color: var(--gray); }
 .sale-tag { display: inline-block; background: var(--leaf); color: var(--ink); font-weight: 800; font-size: .8rem; padding: 2px 8px; border-radius: 999px; margin-right: 6px; vertical-align: middle; }
+
+/* First-order discount code in the cart (2026-10-13) */
+.cart-code-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: 10px 0 4px; }
+.cart-code-row input { flex: 1 1 140px; min-width: 0; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--rule, #565656); font: inherit; text-transform: uppercase; }
+.cart-code-row .btn-small { padding: 8px 14px; font-size: .9rem; }
+.cart-link { background: none; border: 0; color: var(--leaf-bright, #6FD65F); text-decoration: underline; cursor: pointer; font: inherit; padding: 0; }

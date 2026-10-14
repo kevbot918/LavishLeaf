@@ -38,6 +38,11 @@
   Content-Type: text/javascript; charset=utf-8
   Cache-Control: public, max-age=300
 
+# The first-order discount rule, the same way (discount.mjs, 2026-10-13).
+/discount.mjs
+  Content-Type: text/javascript; charset=utf-8
+  Cache-Control: public, max-age=300
+
 # The pick-up route planner, imported by the dashboard (routes.mjs, 2026-10-11).
 /routes.mjs
   Content-Type: text/javascript; charset=utf-8

@@ -770,3 +770,27 @@ body.ss-resizing .ss-side { transition: none; }
 .cart-line { flex-wrap: wrap; }
 .cart-waiver-hint { margin: 4px 0 0 26px; font-size: .82rem; color: var(--muted); }
 .cart-waiver-row input:disabled { opacity: .45; }
+
+/* First-order discount code in the cart (2026-10-13) */
+.cart-code-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: 10px 0 4px; }
+.cart-code-row input { flex: 1 1 140px; min-width: 0; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--rule, #565656); font: inherit; text-transform: uppercase; }
+.cart-code-row .btn-small { padding: 8px 14px; font-size: .9rem; }
+.cart-link { background: none; border: 0; color: var(--leaf-bright, #6FD65F); text-decoration: underline; cursor: pointer; font: inherit; padding: 0; }
+
+/* The 20% first-order offer pop-up (store-offer.js, 2026-10-13) */
+.offer-dlg { position: fixed; inset: 0; margin: auto; height: fit-content; max-height: calc(100vh - 32px); overflow: auto; border: 0; border-radius: 16px; padding: 0; max-width: 420px; width: calc(100% - 32px); background: #2e2e2e; color: #F2F4F2; border-top: 4px solid #4AB73C; box-shadow: 0 18px 50px rgba(0,0,0,.5); }
+.offer-dlg::backdrop { background: rgba(0,0,0,.6); }
+.offer-body { padding: 26px 24px 18px; font-family: 'Nunito Sans', 'Segoe UI', Arial, sans-serif; }
+.offer-x { position: absolute; top: 8px; right: 12px; background: none; border: 0; color: #C8CFC8; font-size: 1.8rem; line-height: 1; cursor: pointer; }
+.offer-kicker { margin: 0 0 4px; color: #6FD65F; font-weight: 800; font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; }
+.offer-dlg h2 { margin: 0 0 8px; font-size: 1.6rem; color: #F2F4F2; }
+.offer-lede { margin: 0 0 14px; color: #C8CFC8; line-height: 1.5; }
+.offer-form label { display: block; font-weight: 700; margin: 0 0 10px; font-size: .92rem; }
+.offer-form input[type=email], .offer-form input[type=tel] { display: block; width: 100%; box-sizing: border-box; margin-top: 4px; padding: 10px 12px; border-radius: 8px; border: 1px solid #565656; background: #b8b8b8; color: #14261A; font: inherit; font-weight: 600; }
+.offer-tick { display: flex !important; gap: 8px; align-items: flex-start; font-weight: 400 !important; color: #C8CFC8; font-size: .82rem !important; }
+.offer-tick input { margin-top: 3px; }
+.offer-msg { min-height: 1.2em; margin: 8px 0 0; color: #F2B8A0; font-weight: 700; text-align: center; }
+.offer-fine { margin: 8px 0 0; font-size: .75rem; color: #a9b0a9; line-height: 1.45; }
+.offer-fine a { color: #6FD65F; }
+.offer-no { display: block; margin: 10px auto 0; background: none; border: 0; color: #C8CFC8; text-decoration: underline; cursor: pointer; font: inherit; }
+.offer-code { color: #6FD65F; letter-spacing: .04em; }

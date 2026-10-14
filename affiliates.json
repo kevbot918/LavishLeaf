@@ -2,36 +2,199 @@
   "_help": "The Green Swaps affiliate programs and our suppliers (suppliers added 2026-10-12) (owner, 2026-10-10). The dashboard's Affiliate programmes section reads this file; store.html carries the links (the Green Swaps cards, the SeedsNow shelves from tools/seedsnow-shelf.mjs, and the sidebar's partner list under Green Swaps, which shows APPROVED programmes only). When a programme approves: status to Approved, add its link here, on its card, and in the sidebar list. No passwords or payout details here: this repository is public.",
   "check": "Check earnings on the first of each month; most programmes pay only above a minimum. Every network needs the W-9 with the EIN before it pays.",
   "programmes": [
-    { "name": "SeedsNow", "status": "Approved 2026-10-10", "commission": "25% of each sale", "network": "Refersion", "payout": "Weekly by PayPal", "link": "https://www.seedsnow.com/?rfsn=9367513.1d5a377&utm_source=refersion&utm_medium=affiliate&utm_campaign=9367513.1d5a377", "where": "Sign in from the link in your SeedsNow affiliate welcome email (Refersion)" },
-    { "name": "Blueland", "status": "Denied 2026-10-11", "commission": "8% new customers, 4% returning", "network": "Impact", "payout": "Impact, from $10" },
-    { "name": "Botanical Interests", "status": "Applied 2026-10-10, waiting", "commission": "15%, 45-day cookie", "network": "Awin", "payout": "Awin, from $20" },
-    { "name": "True Leaf Market", "status": "Applied 2026-10-10, waiting", "commission": "10 to 20%", "network": "Awin", "payout": "Awin, from $20" },
-    { "name": "Azure Standard", "status": "Applied 2026-10-10, waiting", "commission": "$25 credit per new customer who spends $100", "network": "Share Azure (direct)", "payout": "Credit; cash out from $100 with a W-9" },
-    { "name": "Bookshop.org", "status": "Applied 2026-10-10, waiting", "commission": "10% of each sale", "network": "Bookshop.org (direct)", "payout": "Monthly" },
-    { "name": "GrowOrganic", "status": "Applied 2026-10-10, waiting", "commission": "rate on approval", "network": "GrowOrganic (direct)", "payout": "On approval" },
-    { "name": "EarthHero", "status": "Waiting on the Awin account (reapplied 2026-10-10)", "commission": "3 to 8%", "network": "Awin", "payout": "Awin, from $20" },
-    { "name": "Who Gives A Crap", "status": "Waiting on the Awin account (reapplied 2026-10-10)", "commission": "1.6% new customers", "network": "Awin", "payout": "Awin, from $20" },
-    { "name": "ThredUp", "status": "To apply, once Awin approves", "commission": "15% new customers", "network": "Awin", "payout": "Awin, from $20" }
+    {
+      "name": "SeedsNow",
+      "status": "Approved 2026-10-10",
+      "commission": "25% of each sale",
+      "network": "Refersion",
+      "payout": "Weekly by PayPal",
+      "link": "https://www.seedsnow.com/?rfsn=9367513.1d5a377&utm_source=refersion&utm_medium=affiliate&utm_campaign=9367513.1d5a377",
+      "where": "Sign in from the link in your SeedsNow affiliate welcome email (Refersion)"
+    },
+    {
+      "name": "Blueland",
+      "status": "Denied 2026-10-11",
+      "commission": "8% new customers, 4% returning",
+      "network": "Impact",
+      "payout": "Impact, from $10"
+    },
+    {
+      "name": "Botanical Interests",
+      "status": "Awin denied the publisher account 2026-10-13: reapply to Awin later, or join this brand on another network",
+      "commission": "15%, 45-day cookie",
+      "network": "Awin",
+      "payout": "Awin, from $20"
+    },
+    {
+      "name": "True Leaf Market",
+      "status": "Awin denied the publisher account 2026-10-13: reapply to Awin later, or join this brand on another network",
+      "commission": "10 to 20%",
+      "network": "Awin",
+      "payout": "Awin, from $20"
+    },
+    {
+      "name": "Azure Standard",
+      "status": "Applied 2026-10-10, waiting",
+      "commission": "$25 credit per new customer who spends $100",
+      "network": "Share Azure (direct)",
+      "payout": "Credit; cash out from $100 with a W-9"
+    },
+    {
+      "name": "Bookshop.org",
+      "status": "Applied 2026-10-10, waiting",
+      "commission": "10% of each sale",
+      "network": "Bookshop.org (direct)",
+      "payout": "Monthly"
+    },
+    {
+      "name": "GrowOrganic",
+      "status": "Applied 2026-10-10, waiting",
+      "commission": "rate on approval",
+      "network": "GrowOrganic (direct)",
+      "payout": "On approval"
+    },
+    {
+      "name": "EarthHero",
+      "status": "Awin denied the publisher account 2026-10-13: reapply to Awin later, or join this brand on another network",
+      "commission": "3 to 8%",
+      "network": "Awin",
+      "payout": "Awin, from $20"
+    },
+    {
+      "name": "Who Gives A Crap",
+      "status": "Awin denied the publisher account 2026-10-13: reapply to Awin later, or join this brand on another network",
+      "commission": "1.6% new customers",
+      "network": "Awin",
+      "payout": "Awin, from $20"
+    },
+    {
+      "name": "ThredUp",
+      "status": "Awin denied the publisher account 2026-10-13: reapply to Awin later, or join this brand on another network",
+      "commission": "15% new customers",
+      "network": "Awin",
+      "payout": "Awin, from $20"
+    },
+    {
+      "name": "Ascend by Partnerize (network, ex Pepperjam)",
+      "status": "Approved 2026-10-13: apply to each brand inside it",
+      "commission": "set by each brand",
+      "network": "Ascend by Partnerize",
+      "payout": "Ascend, per brand terms",
+      "where": "Sign in to Ascend, open the brand marketplace and apply to brands that fit Green Swaps"
+    }
   ],
   "suppliers": [
-    { "name": "Bangalla", "status": "Approved", "what": "Dropship: natural personal care, groceries, household", "how": "Order in your Bangalla account by SKU, shipped to the customer", "url": "https://bangalla.com" },
-    { "name": "AliExpress", "status": "Approved", "what": "Dropship: garden, outdoor, home, pets, games, squishies", "how": "Order in the app or website by item number and variant, shipped to the customer; connected to the dashboard for live prices", "url": "https://www.aliexpress.us" },
-    { "name": "ARBICO Organics", "status": "Applied, waiting", "what": "Organic pest control and garden supplies (distributor and dropship)", "how": "Distributor application sent with the resale certificate and W-9", "url": "https://www.arbico-organics.com" },
-    { "name": "Hummert International", "status": "To apply", "what": "Horticulture wholesale: Espoma, pots, seed starting, tools", "how": "Open a wholesale account (resale certificate)", "url": "https://www.hummert.com" },
-    { "name": "Azure Standard", "status": "To apply", "what": "Organic bulk food and farm goods (wholesale, drop points)", "how": "Wholesale account (separate from the Share Azure referral)", "url": "https://www.azurestandard.com" },
-    { "name": "Frontier Co-op", "status": "To apply", "what": "Organic herbs, spices and teas (wholesale)", "how": "Wholesale account application", "url": "https://www.frontiercoop.com" },
-    { "name": "CJ Dropshipping", "status": "To apply", "what": "Dropship with US warehouses: home, pets, outdoor", "how": "Free account; connect a store or order by hand", "url": "https://cjdropshipping.com" },
-    { "name": "eeBoo", "status": "To apply", "what": "Games, puzzles and gifts (wholesale)", "how": "Wholesale account application", "url": "https://eeboo.com" },
-    { "name": "Faire", "status": "To apply", "what": "Wholesale marketplace: books, journals, gifts from small makers", "how": "Retailer account (first-order discount)", "url": "https://www.faire.com" },
-    { "name": "Nature's Footprint", "status": "To apply", "what": "Worm Factory composters (free dropship, no minimum)", "how": "Sales-partner form", "url": "https://naturesfootprint.com/pages/sales-partners" },
-    { "name": "Urban Worm Company", "status": "To apply", "what": "Worm bags and live worms (dropship)", "how": "Reseller form", "url": "https://shop.urbanwormcompany.com/pages/resellers" },
-    { "name": "High Mowing Organic Seeds", "status": "To apply", "what": "Organic seed packets (no minimum; needs the $25 Oklahoma seed licence first)", "how": "Sign the Resellers Agreement", "url": "https://www.highmowingseeds.com" },
-    { "name": "Hydrofarm", "status": "To apply", "what": "Seed starting, heat mats, grow lights", "how": "Become a Retailer form", "url": "https://www.hydrofarm.com/contact-us?opt=2" },
-    { "name": "Exaco Trading", "status": "To apply", "what": "Composters and kitchen compost pails", "how": "Call to open a dealer account", "url": "https://exaco.com" }
+    {
+      "name": "Bangalla",
+      "status": "Approved",
+      "what": "Dropship: natural personal care, groceries, household",
+      "how": "Order in your Bangalla account by SKU, shipped to the customer",
+      "url": "https://bangalla.com"
+    },
+    {
+      "name": "AliExpress",
+      "status": "Approved",
+      "what": "Dropship: garden, outdoor, home, pets, games, squishies",
+      "how": "Order in the app or website by item number and variant, shipped to the customer; connected to the dashboard for live prices",
+      "url": "https://www.aliexpress.us"
+    },
+    {
+      "name": "ARBICO Organics",
+      "status": "Applied, waiting",
+      "what": "Organic pest control and garden supplies (distributor and dropship)",
+      "how": "Distributor application sent with the resale certificate and W-9",
+      "url": "https://www.arbico-organics.com"
+    },
+    {
+      "name": "Hummert International",
+      "status": "To apply",
+      "what": "Horticulture wholesale: Espoma, pots, seed starting, tools",
+      "how": "Open a wholesale account (resale certificate)",
+      "url": "https://www.hummert.com"
+    },
+    {
+      "name": "Azure Standard",
+      "status": "To apply",
+      "what": "Organic bulk food and farm goods (wholesale, drop points)",
+      "how": "Wholesale account (separate from the Share Azure referral)",
+      "url": "https://www.azurestandard.com"
+    },
+    {
+      "name": "Frontier Co-op",
+      "status": "To apply",
+      "what": "Organic herbs, spices and teas (wholesale)",
+      "how": "Wholesale account application",
+      "url": "https://www.frontiercoop.com"
+    },
+    {
+      "name": "CJ Dropshipping",
+      "status": "To apply",
+      "what": "Dropship with US warehouses: home, pets, outdoor",
+      "how": "Free account; connect a store or order by hand",
+      "url": "https://cjdropshipping.com"
+    },
+    {
+      "name": "eeBoo",
+      "status": "To apply",
+      "what": "Games, puzzles and gifts (wholesale)",
+      "how": "Wholesale account application",
+      "url": "https://eeboo.com"
+    },
+    {
+      "name": "Faire",
+      "status": "To apply",
+      "what": "Wholesale marketplace: books, journals, gifts from small makers",
+      "how": "Retailer account (first-order discount)",
+      "url": "https://www.faire.com"
+    },
+    {
+      "name": "Nature's Footprint",
+      "status": "To apply",
+      "what": "Worm Factory composters (free dropship, no minimum)",
+      "how": "Sales-partner form",
+      "url": "https://naturesfootprint.com/pages/sales-partners"
+    },
+    {
+      "name": "Urban Worm Company",
+      "status": "To apply",
+      "what": "Worm bags and live worms (dropship)",
+      "how": "Reseller form",
+      "url": "https://shop.urbanwormcompany.com/pages/resellers"
+    },
+    {
+      "name": "High Mowing Organic Seeds",
+      "status": "To apply",
+      "what": "Organic seed packets (no minimum; needs the $25 Oklahoma seed licence first)",
+      "how": "Sign the Resellers Agreement",
+      "url": "https://www.highmowingseeds.com"
+    },
+    {
+      "name": "Hydrofarm",
+      "status": "To apply",
+      "what": "Seed starting, heat mats, grow lights",
+      "how": "Become a Retailer form",
+      "url": "https://www.hydrofarm.com/contact-us?opt=2"
+    },
+    {
+      "name": "Exaco Trading",
+      "status": "To apply",
+      "what": "Composters and kitchen compost pails",
+      "how": "Call to open a dealer account",
+      "url": "https://exaco.com"
+    }
   ],
   "notAvailable": [
-    { "name": "Earth Breeze", "why": "Its affiliate programme ended in 2025 (owner, 2026-10-10); it uses refunnel.com, which has no affiliate sign-up." },
-    { "name": "Baker Creek", "why": "No affiliate programme." },
-    { "name": "Arbico Organics", "why": "Affiliate programme closed to new applicants." }
+    {
+      "name": "Earth Breeze",
+      "why": "Its affiliate programme ended in 2025 (owner, 2026-10-10); it uses refunnel.com, which has no affiliate sign-up."
+    },
+    {
+      "name": "Baker Creek",
+      "why": "No affiliate programme."
+    },
+    {
+      "name": "Arbico Organics",
+      "why": "Affiliate programme closed to new applicants."
+    }
   ]
 }

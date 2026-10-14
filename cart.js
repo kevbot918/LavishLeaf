@@ -75,6 +75,20 @@
   // Sales tax: the same rules the server charges by (tax.mjs).
   var tax = null;
   import('/tax.mjs').then(function (m) { tax = m; render(); }).catch(function () { /* the server still taxes it */ });
+  // The first-order discount (owner, 2026-10-13): the same rule the server
+  // charges by (discount.mjs). The code a visitor applied (or got from the
+  // store's pop-up, store-offer.js) is kept in this browser.
+  var disc = null;
+  var CODE_KEY = 'll-discount';
+  var discCode = '';
+  try { discCode = localStorage.getItem(CODE_KEY) || ''; } catch (e) { /* fine */ }
+  import('/discount.mjs').then(function (m) { disc = m; render(); }).catch(function () { /* the server still applies it */ });
+  function setCode(c) {
+    discCode = c || '';
+    try { if (discCode) localStorage.setItem(CODE_KEY, discCode); else localStorage.removeItem(CODE_KEY); } catch (e) { /* fine */ }
+    render();
+  }
+  document.addEventListener('ll-discount', function (e) { setCode(e.detail && e.detail.code); });
 
   function money(cents) {
     return '$' + (cents / 100).toFixed(2);
@@ -166,7 +180,7 @@
 
   // ------------------------------------------------------------------ view
   var fab, panel, list, totalEl, noteEl, payBtn, statusEl, banner;
-  var shipWrap, shipLine, shipNudge, taxLine;
+  var shipWrap, shipLine, shipNudge, taxLine, discWrap, discLine;
   var waiverWrap, noteWrap, toastEl, toastTimer, docDlg;
   var readW = {}; // waiver versions opened with "Read it" in this visit
   // Ticked waivers, by version: the cart redraws often, and a redraw must
@@ -238,6 +252,10 @@
     panel.appendChild(shipNudge);
     shipLine = el('p', { class: 'cart-shipline', hidden: '' });
     panel.appendChild(shipLine);
+    discWrap = el('div', { class: 'cart-code' });
+    panel.appendChild(discWrap);
+    discLine = el('p', { class: 'cart-shipline', hidden: '' });
+    panel.appendChild(discLine);
     taxLine = el('p', { class: 'cart-shipline', hidden: '' });
     panel.appendChild(taxLine);
 
@@ -367,17 +385,51 @@
         }
       }
     }
-    // Sales tax, by the same rules the server will charge.
+    // The first-order discount: a code box, or the code that is applied.
+    var offCents = 0, taxLines = lines;
+    discWrap.textContent = '';
+    discWrap.hidden = !cart.length;
+    if (discCode) {
+      var applied = el('p', { class: 'cart-fine' }, 'Code ' + discCode + ' applied: 20% off products on your first order. Pay with the email the code was sent to. ');
+      var rm = el('button', { type: 'button', class: 'cart-link' }, 'Remove');
+      rm.addEventListener('click', function () { setCode(''); });
+      applied.appendChild(rm);
+      discWrap.appendChild(applied);
+      if (disc) {
+        var dq = disc.discountQuote(lines, true);
+        offCents = dq.cents; taxLines = dq.taxLines;
+        discLine.hidden = !cart.length;
+        discLine.textContent = dq.cents ? dq.label + ': -' + money(dq.cents) : 'The 20% code takes effect on store products; nothing in this cart is one yet.';
+      }
+    } else {
+      discLine.hidden = true;
+      var row = el('div', { class: 'cart-code-row' });
+      var ci = el('input', { type: 'text', maxlength: '13', placeholder: 'Discount code', 'aria-label': 'Discount code', autocomplete: 'off' });
+      var cb = el('button', { type: 'button', class: 'btn btn-small' }, 'Apply');
+      var cm = el('span', { class: 'cart-fine' });
+      cb.addEventListener('click', function () {
+        var v = ci.value.trim().toUpperCase();
+        if (!v) return;
+        cb.disabled = true; cm.textContent = 'Checking...';
+        post('discount', { action: 'check', code: v })
+          .then(function (r) { setCode(r.code); })
+          .catch(function (e) { cb.disabled = false; cm.textContent = e.message; });
+      });
+      row.appendChild(ci); row.appendChild(cb); row.appendChild(cm);
+      discWrap.appendChild(row);
+    }
+    // Sales tax, by the same rules the server will charge (on what the
+    // buyer pays after the discount).
     var taxCents = 0;
     taxLine.hidden = !cart.length;
     if (!tax) {
       taxLine.textContent = 'Sales tax is calculated at checkout.';
     } else if (cart.length) {
-      var t = tax.taxQuote(lines);
+      var t = tax.taxQuote(taxLines);
       taxCents = t.cents;
       taxLine.textContent = t.label + ': ' + money(t.cents);
     }
-    totalEl.textContent = cart.length ? 'Total ' + money(cents + shipCents + taxCents) : 'Your cart is empty.';
+    totalEl.textContent = cart.length ? 'Total ' + money(cents + shipCents + taxCents - offCents) : 'Your cart is empty.';
 
     // The waiver, when something in the cart needs one. Drawn fresh each
     // render so removing the last registration removes the tick with it.
@@ -492,6 +544,7 @@
       note: noteEl.value,
       waivers: waivers.map(function (w) { return w.version; }),
       shipMethod: delivery.method,
+      discount: discCode || undefined,
     })
       .then(function (r) {
         goPayPal(pw, r.approveUrl, function () { statusEl.textContent = 'The PayPal window closed. If you finished paying, PayPal will email your receipt; if not, press Check out to try again.'; payBtn.disabled = false; });
@@ -688,6 +741,7 @@
           if (r.status === 'COMPLETED') {
             cart = [];
             save(cart);
+            setCode('');
             say('Thank you! Your payment' + (r.amount ? ' of $' + r.amount : '') +
               ' went through. PayPal will email you a receipt.');
           } else {
