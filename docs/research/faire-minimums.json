@@ -1,0 +1,726 @@
+{
+ "_help": "Each Faire brand opening minimum, read from its product page (brand.minimum_order_amount) on 2026-10-14. Public facts. tools/demo-store.mjs uses it to set the tier.",
+ "read": "2026-10-14",
+ "byUrl": {
+  "https://www.faire.com/product/p_4flgx4c7pj": {
+   "brand": "Three Bluebirds Swedish Dishcloths",
+   "minCents": 9900
+  },
+  "https://www.faire.com/product/p_gk6eejgjmt": {
+   "brand": "The Farmer's Daughter",
+   "minCents": 5000
+  },
+  "https://www.faire.com/product/p_3c65xt55r2": {
+   "brand": "Bamboo Switch",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_qgaf5ksppw": {
+   "brand": "Garden Guru Lawn \\u0026 Garden Tools",
+   "minCents": 5000
+  },
+  "https://www.faire.com/product/p_5ezfshyjet": {
+   "brand": "Tuckahoe Hardwoods",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_5vjen4tk5y": {
+   "brand": "Bamboo Switch",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_szg238efdy": {
+   "brand": "Modern Sprout",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_brdack5va7": {
+   "brand": "Tuckahoe Hardwoods",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_3js2rjrr9e": {
+   "brand": "No Tox Life",
+   "minCents": 0
+  },
+  "https://www.faire.com/product/p_9ssbcv5at2": {
+   "brand": "Plank \\u0026 Steel",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_gt8ewe3tfj": {
+   "brand": "Bamboo Switch",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_dezghq5pjn": {
+   "brand": "Buzzy Seeds Grow Gifts",
+   "minCents": 0
+  },
+  "https://www.faire.com/product/p_v2a2g5t2kq": {
+   "brand": "Bentley Seed Co.",
+   "minCents": 3000
+  },
+  "https://www.faire.com/product/p_mgf4t52xhp": {
+   "brand": "Organic Turkish Towels",
+   "minCents": 0
+  },
+  "https://www.faire.com/product/p_hgyffhwx5x": {
+   "brand": "Zefiro",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_2yfa9rfq8p": {
+   "brand": "Bamboo Switch",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_fz67kbvyda": {
+   "brand": "Modern Sprout",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_80w0box3c0": {
+   "brand": "Moss Creek Wool Works | Wool Dryer Balls",
+   "minCents": 5000
+  },
+  "https://www.faire.com/product/p_ma55rybbwk": {
+   "brand": "Bamboo Switch",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_em0vzpow": {
+   "brand": "MamaSuds | Non-toxic Household Cleaners + Real Soap",
+   "minCents": 8500
+  },
+  "https://www.faire.com/product/p_5u6no3fgsj": {
+   "brand": "MagicLinen (We handle U.S. import procedures for you)",
+   "minCents": 0
+  },
+  "https://www.faire.com/product/p_9gqepxba5d": {
+   "brand": "Desesh",
+   "minCents": 0
+  },
+  "https://www.faire.com/product/p_9e4b3y697b": {
+   "brand": "Linen Spells",
+   "minCents": 0
+  },
+  "https://www.faire.com/product/p_7vugbi92w6": {
+   "brand": "Plantish",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_junjvz6zjj": {
+   "brand": "Smile Boutiques",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_zava852twt": {
+   "brand": "TBF",
+   "minCents": 5000
+  },
+  "https://www.faire.com/product/p_k7ksrnma7b": {
+   "brand": "Wild and Stone",
+   "minCents": 7500
+  },
+  "https://www.faire.com/product/p_5g98mdj67f": {
+   "brand": "Plantish",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_cca44grfy4": {
+   "brand": "Bee's Wrap",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_m9ru8rxkc8": {
+   "brand": "Simplified Soap",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_ckaptupe5e": {
+   "brand": "Plantish",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_1p425ewaqz": {
+   "brand": "Zefiro",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_329f8tff62": {
+   "brand": "U.S. Games Systems Inc.",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_exj4pphm66": {
+   "brand": "The Landmark Project",
+   "minCents": 9900
+  },
+  "https://www.faire.com/product/p_9ubjmkkrxu": {
+   "brand": "Atlas Games",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_r9uxjte7zr": {
+   "brand": "Atlas Games",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_pvabwkgwqn": {
+   "brand": "Bamboo Switch",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_stxjhgjmyp": {
+   "brand": "Totally Bamboo",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_zqmv6majz5": {
+   "brand": "Kadra Kitchenware",
+   "minCents": 9000
+  },
+  "https://www.faire.com/product/p_jwxwvfyszt": {
+   "brand": "Bamboo Switch",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_n62wkwmmdk": {
+   "brand": "Whitetail Lane Farm Goat Milk Soap",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_7vcpjn25ru": {
+   "brand": "Ipswich Bay Soap",
+   "minCents": 0
+  },
+  "https://www.faire.com/product/p_cqzze569zb": {
+   "brand": "Wild Herb Soap Co",
+   "minCents": 5000
+  },
+  "https://www.faire.com/product/p_6tbymvcarh": {
+   "brand": "Bare Natural Soap Co",
+   "minCents": 100
+  },
+  "https://www.faire.com/product/p_n2wwssq3p5": {
+   "brand": "Rebel Green",
+   "minCents": 5000
+  },
+  "https://www.faire.com/product/p_44f4nm699t": {
+   "brand": "Berkley Green",
+   "minCents": 7500
+  },
+  "https://www.faire.com/product/p_j89e3k8qh6": {
+   "brand": "Rebel Green",
+   "minCents": 5000
+  },
+  "https://www.faire.com/product/p_24ec77ja": {
+   "brand": "MamaSuds | Non-toxic Household Cleaners + Real Soap",
+   "minCents": 8500
+  },
+  "https://www.faire.com/product/p_8j4qrufytv": {
+   "brand": "Roots And Leaves",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_zh24895qen": {
+   "brand": "Sunella Co.",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_8jfj5ivplt": {
+   "brand": "Bamboo Switch",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_b8t356bqzs": {
+   "brand": "Desesh",
+   "minCents": 0
+  },
+  "https://www.faire.com/product/p_9w11hv1fmb": {
+   "brand": "Bee's Wrap",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_a723g6prkg": {
+   "brand": "Z Wraps",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_dtrk9f5siw": {
+   "brand": "Bamboo Switch",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_11bx13zetq": {
+   "brand": "DYP",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_umw387sjhg": {
+   "brand": "Microcosm Publishing \\u0026 Distribution",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_xudhnmk4uk": {
+   "brand": "Microcosm Publishing \\u0026 Distribution",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_2d8xrc45rb": {
+   "brand": "Microcosm Publishing \\u0026 Distribution",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_buxtk2kh2g": {
+   "brand": "Microcosm Publishing \\u0026 Distribution",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_qfbzhv9vtq": {
+   "brand": "Microcosm Publishing \\u0026 Distribution",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_2cst47uzh4": {
+   "brand": "Microcosm Publishing \\u0026 Distribution",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_h4v87m7exh": {
+   "brand": "Microcosm Publishing \\u0026 Distribution",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_h32m2q8qmt": {
+   "brand": "Microcosm Publishing \\u0026 Distribution",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_j3qn93h6t3": {
+   "brand": "Cedar Fort Publishing \\u0026 Media",
+   "minCents": 5000
+  },
+  "https://www.faire.com/product/p_cdfnfqrhwu": {
+   "brand": "Barebones",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_t8prj5ncxt": {
+   "brand": "Lost in the Forrest",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_xcvhqruhqc": {
+   "brand": "Koala Eco",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_ao37ksak": {
+   "brand": "MamaSuds | Non-toxic Household Cleaners + Real Soap",
+   "minCents": 8500
+  },
+  "https://www.faire.com/product/p_z3xa7fnjpv": {
+   "brand": "SuperBee - Eco Living Made Easy",
+   "minCents": 20000
+  },
+  "https://www.faire.com/product/p_pysw8f6gwf": {
+   "brand": "WS Game Company",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_hhcw2yrmyq": {
+   "brand": "Outset Games and Cobble Hill Puzzles",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_56eeqby6cg": {
+   "brand": "Outset Games and Cobble Hill Puzzles",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_pcz3the3nw": {
+   "brand": "Fireside Games",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_kn3q2gkcxd": {
+   "brand": "Outset Games and Cobble Hill Puzzles",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_ngf3575dzk": {
+   "brand": "Farmstead Naturals",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_8bpqdosxfz": {
+   "brand": "Plantish",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_c55vbwgbyz": {
+   "brand": "Dandelion Naturals",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_xm8e8esbpb": {
+   "brand": "Bare Natural Soap Co",
+   "minCents": 100
+  },
+  "https://www.faire.com/product/p_ue7c8aqtag": {
+   "brand": "BITE",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_4aw39ym5tt": {
+   "brand": "Palanan",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_4vt93z6frx": {
+   "brand": "The future is bamboo",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_3ttspcpr62": {
+   "brand": "Sunhouse Craft",
+   "minCents": 20000
+  },
+  "https://www.faire.com/product/p_erwacwcbn2": {
+   "brand": "Hachette Book Group",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_gkdseywd65": {
+   "brand": "Hachette Book Group",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_ujjghf6b24": {
+   "brand": "Hachette Book Group",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_fhcjvgx5zd": {
+   "brand": "Hachette Book Group",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_s7dtaxusvc": {
+   "brand": "Simon \\u0026 Schuster",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_3u9ek3w65j": {
+   "brand": "Simon \\u0026 Schuster",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_8c4zjswycu": {
+   "brand": "Simon \\u0026 Schuster",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_wv9umummsa": {
+   "brand": "Inkello Letterpress",
+   "minCents": 13000
+  },
+  "https://www.faire.com/product/p_vjg637gy78": {
+   "brand": "The Green Conspiracy",
+   "minCents": 5449
+  },
+  "https://www.faire.com/product/p_swbykbonkh": {
+   "brand": "Harvest House Publishers Gift \\u0026 Specialty Books",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_m3wzn7duz4": {
+   "brand": "Paige Tate \\u0026 Co.",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_kgb2mhzddq": {
+   "brand": "Bethany Stahl",
+   "minCents": 20000
+  },
+  "https://www.faire.com/product/p_4ppaqtzkt2": {
+   "brand": "Barefoot Books",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_k39w6ccpgk": {
+   "brand": "Independent Publishers Group",
+   "minCents": 12500
+  },
+  "https://www.faire.com/product/p_9aeyj97tme": {
+   "brand": "194 Craft House",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_vjx6jz4sww": {
+   "brand": "Vesper \\u0026 Vine",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_j2uzg4hvjt": {
+   "brand": "olivenholz-erleben",
+   "minCents": 13924
+  },
+  "https://www.faire.com/product/p_6r7gsypkwz": {
+   "brand": "Naturally Med Inc.",
+   "minCents": 25000
+  },
+  "https://www.faire.com/product/p_vh2ymv7x3g": {
+   "brand": "Verve Culture",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_envqqz6k7q": {
+   "brand": "CounterArt/Highland Home/Thirstystone",
+   "minCents": 20000
+  },
+  "https://www.faire.com/product/p_ax5qpw53en": {
+   "brand": "CounterArt/Highland Home/Thirstystone",
+   "minCents": 20000
+  },
+  "https://www.faire.com/product/p_daueun8ymy": {
+   "brand": "CounterArt/Highland Home/Thirstystone",
+   "minCents": 20000
+  },
+  "https://www.faire.com/product/p_pbhc4ms2cg": {
+   "brand": "Conimar Promotions",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_cwwqn4k72y": {
+   "brand": "Left Coast Original",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_axm98rrpzj": {
+   "brand": "SML | Simple Modern Living",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_6npy18rgrt": {
+   "brand": "Little Critterz",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_b4ausyy9gz": {
+   "brand": "Little Critterz",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_8av4b12xfr": {
+   "brand": "Little Critterz",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_cl1m7do5an": {
+   "brand": "Little Critterz",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_x2cf98k7ch": {
+   "brand": "European Heritage Gifts",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_6iun0u0fq3": {
+   "brand": "Golden Cockerel",
+   "minCents": 20000
+  },
+  "https://www.faire.com/product/p_naqpnf2tzs": {
+   "brand": "Enigma Supplies",
+   "minCents": 13643
+  },
+  "https://www.faire.com/product/p_k6auwqyas3": {
+   "brand": "Enigma Supplies",
+   "minCents": 13643
+  },
+  "https://www.faire.com/product/p_gfcc44deas": {
+   "brand": "Creative Gifts International Inc.",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_yzqy25a2zh": {
+   "brand": "Celtic Farm LLC",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_ru7dq9zr7n": {
+   "brand": "higarden",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_dwkq6r6zwu": {
+   "brand": "Nutscene Twines Ltd",
+   "minCents": 25000
+  },
+  "https://www.faire.com/product/p_ctwv9njvpy": {
+   "brand": "Salt \\u0026 York",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_3v6vj3cj57": {
+   "brand": "Danica Heirloom",
+   "minCents": 20000
+  },
+  "https://www.faire.com/product/p_1o7nb29m44": {
+   "brand": "Forever Green Art",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_6obtiqt9wd": {
+   "brand": "Made Market Co.",
+   "minCents": 20000
+  },
+  "https://www.faire.com/product/p_rx2avakw4r": {
+   "brand": "De-cor",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_vgzbd7k5s6": {
+   "brand": "Sobremesa",
+   "minCents": 5000
+  },
+  "https://www.faire.com/product/p_5rczu5em": {
+   "brand": "Sobremesa",
+   "minCents": 5000
+  },
+  "https://www.faire.com/product/p_84bvhp1ls0": {
+   "brand": "Enrico",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_gvbwx4vekw": {
+   "brand": "Curious Minds Toys",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_wfmfezvek9": {
+   "brand": "Cosh",
+   "minCents": 12500
+  },
+  "https://www.faire.com/product/p_cxngrqmb": {
+   "brand": "Little Seed Farm",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_h9qqkgq6mt": {
+   "brand": "Faith and Grace Soap Co.",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_mu5ymmkjuc": {
+   "brand": "Pippi Post",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_2vqyft6ten": {
+   "brand": "123 Farm",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_8tqhlknzlq": {
+   "brand": "Project Genius",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_ypmmk77sb3": {
+   "brand": "Wood Expressions",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_uavabctn5q": {
+   "brand": "Bamboozle",
+   "minCents": 12000
+  },
+  "https://www.faire.com/product/p_19yvg1564n": {
+   "brand": "Totally Bamboo",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_2kqug5emnc": {
+   "brand": "Earthcraft Home Co",
+   "minCents": 12000
+  },
+  "https://www.faire.com/product/p_ko3fzosdlh": {
+   "brand": "Cheeks Ahoy",
+   "minCents": 12000
+  },
+  "https://www.faire.com/product/p_8rargxzf3k": {
+   "brand": "Esthetic Living",
+   "minCents": 12500
+  },
+  "https://www.faire.com/product/p_ane6g9khxq": {
+   "brand": "HAZELMADE® Tea Towels + Gifts",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_4b7dnkbte4": {
+   "brand": "FoxMind",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_xgqszq6uc9": {
+   "brand": "Cottage Door Press",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_6pc2e2zgqt": {
+   "brand": "Dizzy Hill Games",
+   "minCents": 6000
+  },
+  "https://www.faire.com/product/p_rc5vz32v3s": {
+   "brand": "BRAVE Books",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_s7ze62h75a": {
+   "brand": "Twogether Studios",
+   "minCents": 4000
+  },
+  "https://www.faire.com/product/p_yu9xx4qmvw": {
+   "brand": "Kids Against Maturity",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_6e55t2dgne": {
+   "brand": "Everyday Supply Co",
+   "minCents": 5000
+  },
+  "https://www.faire.com/product/p_wks232v5e3": {
+   "brand": "Whitetail Lane Farm Goat Milk Soap",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_nthurbfqbc": {
+   "brand": "Whitetail Lane Farm Goat Milk Soap",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_vxrrdgcujp": {
+   "brand": "Harvest + Harmony",
+   "minCents": 2000
+  },
+  "https://www.faire.com/product/p_q6bykbyzv6": {
+   "brand": "Harvest + Harmony",
+   "minCents": 2000
+  },
+  "https://www.faire.com/product/p_6p2bhnnz9p": {
+   "brand": "Steele Family Farm",
+   "minCents": 5000
+  },
+  "https://www.faire.com/product/p_xfhf65jx97": {
+   "brand": "Steele Family Farm",
+   "minCents": 5000
+  },
+  "https://www.faire.com/product/p_1xr00slqi4": {
+   "brand": "Windrift Hill Goat Milk Skincare",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_qxgf6mcsww": {
+   "brand": "Grandma's Hand-Crafted Soaps",
+   "minCents": 0
+  },
+  "https://www.faire.com/product/p_ukf8m27ey7": {
+   "brand": "Rebel Green",
+   "minCents": 5000
+  },
+  "https://www.faire.com/product/p_1bhp80sqyk": {
+   "brand": "Jungle Culture",
+   "minCents": 12500
+  },
+  "https://www.faire.com/product/p_4hwkmkjjqa": {
+   "brand": "ChicoBag \\u0026 To-Go Ware",
+   "minCents": 9900
+  },
+  "https://www.faire.com/product/p_7tm4t4sk7r": {
+   "brand": "Schoepp Seeds",
+   "minCents": 4000
+  },
+  "https://www.faire.com/product/p_qbsb472chz": {
+   "brand": "Common Good",
+   "minCents": 25000
+  },
+  "https://www.faire.com/product/p_32cp7wwepe": {
+   "brand": "Common Good",
+   "minCents": 25000
+  },
+  "https://www.faire.com/product/p_wtdxdecvsa": {
+   "brand": "A Sustainable Village",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_27r9zspr6q": {
+   "brand": "EO + Everyone",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_gy49zd864e": {
+   "brand": "Butterfly\\u0026Bee",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_u8zgdxfw74": {
+   "brand": "Bentley Seed Co.",
+   "minCents": 3000
+  },
+  "https://www.faire.com/product/p_yzcu2czzav": {
+   "brand": "Sow True Seed",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_rn3w4p5frc": {
+   "brand": "Burgon \\u0026 Ball",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_g6murnw463": {
+   "brand": "Design Imports",
+   "minCents": 25000
+  },
+  "https://www.faire.com/product/p_us77vmdqek": {
+   "brand": "Modern Sprout",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_6nhywtz3bk": {
+   "brand": "R\\u0026M International",
+   "minCents": 15000
+  },
+  "https://www.faire.com/product/p_mndzv5nvzt": {
+   "brand": "Ecologie",
+   "minCents": 20000
+  },
+  "https://www.faire.com/product/p_ef4avxja5w": {
+   "brand": "Humble Suds",
+   "minCents": 7000
+  },
+  "https://www.faire.com/product/p_kjwxmk5amd": {
+   "brand": "Rustic Strength",
+   "minCents": 25000
+  },
+  "https://www.faire.com/product/p_2vp6aw25rk": {
+   "brand": "EcoQuality",
+   "minCents": 10000
+  },
+  "https://www.faire.com/product/p_wymfp22uv9": {
+   "brand": "AIRNEX",
+   "minCents": 0
+  },
+  "https://www.faire.com/product/p_yyw8szvu8x": {
+   "brand": "Homerely (We Cover All Import Duties)",
+   "minCents": 0
+  },
+  "https://www.faire.com/product/p_52vj2usdhs": {
+   "brand": "Homerely (We Cover All Import Duties)",
+   "minCents": 0
+  },
+  "https://www.faire.com/product/p_577svpzkb5": {
+   "brand": "Luna Azul Co",
+   "minCents": 15000
+  }
+ }
+}

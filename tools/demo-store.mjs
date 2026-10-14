@@ -146,7 +146,36 @@ const money = (s) => {
 };
 const kindOf = (s) => (s.match(/\b(WHOLESALE|RETAIL|MSRP|LISTED|HIDDEN|LIST)\b/) || [])[1] || '';
 const plain = (s) => s.replace(LINK, '$1').replace(/\*\*/g, '').replace(/\s+/g, ' ').trim();
-const cells = (line) => line.trim().replace(/^\||\|$/g, '').split(/\s\|\s/).map((c) => c.trim());
+// Split on every "|" (2026-10-14): splitting on " | " lost an EMPTY cell
+// ("| |"), so every column after it moved left and the dashboard showed
+// "Liquid hand soap" where the supplier belongs. No product name has a "|".
+const cells = (line) => line.trim().replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
+
+// The supplier of ONE product, from its own link (2026-10-14, the owner: "if
+// multiple suppliers carry the same product then they should be separate on
+// the list"): a row "Faire / WebstaurantStore" names each product's own.
+const HOSTS = [
+  [/faire\.com/, 'Faire'], [/webstaurantstore\.com/, 'WebstaurantStore'], [/bangalla\.com/, 'Bangalla'],
+  [/arbico-organics\.com/, 'ARBICO Organics'], [/groworganic\.com/, 'GrowOrganic'], [/botanicalinterests\.com/, 'Botanical Interests'],
+  [/azurestandard\.com/, 'Azure Standard'], [/hummert\.com/, 'Hummert International'], [/frontiercoop\.com/, 'Frontier Co-op'],
+  [/aliexpress\./, 'AliExpress'], [/cjdropshipping\.com/, 'CJ Dropshipping'], [/highmowingseeds\.com/, 'High Mowing Seeds'],
+  [/bentleyseeds?\.com/, 'Bentley Seed'], [/eeboo\.com/, 'eeBoo'], [/naturesfootprint\.com/, "Nature's Footprint"],
+  [/urbanwormcompany\.com/, 'Urban Worm Company'], [/hydrofarm\.com/, 'Hydrofarm'], [/exaco\.com/, 'Exaco'],
+  [/seedsnow\.com/, 'SeedsNow'], [/teemdrop/, 'TeemDrop'], [/amazon\.com/, 'Amazon'], [/walmart\.com/, 'Walmart'],
+];
+export const supplierOf = (url, fallback) => { const h = HOSTS.find(([re]) => re.test(url)); return h ? h[1] : fallback; };
+
+// The opening minimum in dollars: 0 for none, null when the document does
+// not say (per brand, portal, account, not stated...). The highest number in
+// a range counts ("$100 to $150" is 150).
+export function minDollars(min) {
+  const m = String(min || '').trim();
+  if (!m) return null; // a blank cell says nothing
+  if (/^(none|none shown|\$?0|\$1 \(none\))/i.test(m) || /^none \(/i.test(m) || /units?$/i.test(m) || /^\$10 membership$/i.test(m)) return 0;
+  const nums = [...m.matchAll(/\$([\d,]+)/g)].map((x) => Number(x[1].replace(/,/g, '')));
+  if (/packets/i.test(m)) return null;
+  return nums.length ? Math.max(...nums) : null;
+}
 
 function section(start, end) {
   const a = DOC.indexOf(start), b = DOC.indexOf(end, a + 1);
@@ -222,7 +251,11 @@ for (const t of TABLES) {
       if (prefix && !RENAME[name] && !Object.values(RENAME).includes(name) && !(prefix === 'Dr. Earth' && /Jobe/.test(name)) && !name.toLowerCase().startsWith(prefix.replace(/:$/, '').toLowerCase())) name = `${prefix} ${name}`;
       name = name.replace(/\s+/g, ' ').trim();
       const shelf = shelfFor(category, name);
-      const supplier = (src.split(/[,;]/)[0] || new URL(it.url).hostname.replace(/^www\./, '').split('.')[0]).trim();
+      const rowSupplier = (src.split(/[,;]/)[0] || new URL(it.url).hostname.replace(/^www\./, '').split('.')[0]).trim();
+      // A row naming several suppliers ("Faire / WebstaurantStore") gives each
+      // product its own; a one-supplier row keeps the document's wording
+      // ("Bangalla dropship").
+      const supplier = supplierOf(it.url, rowSupplier.includes('/') ? rowSupplier.split('/')[0].trim() : rowSupplier.replace(/\s*\(.*$/, '').replace(/ dropship.*$/i, '').trim());
       // No price words: demo cards carry no price (owner, 2026-10-07).
       const bits = [`Tier ${t.tier}, rank ${rank}.`, `${supplier}.`];
       if (min && !/^none$/i.test(min)) bits.push(`Minimum ${min}.`);
@@ -233,7 +266,16 @@ for (const t of TABLES) {
       let blurb = bits.join(' ');
       if (blurb.length > 200) blurb = blurb.slice(0, 197).replace(/\s+\S*$/, '') + '...';
       const why = t.cols.src == null ? '' : plain(c.slice(t.cols.src + 1).join(' | '));
-      out.push({ tier: t.tier, rank, name, url: it.url, price: it.price || 0, shelf, blurb, kind, supplier, sku: it.sku, category, min, src, why });
+      // A "/" minimum lists one per supplier in the row's supplier order
+      // ("$100 / $150 / none" for "Faire / GrowOrganic / Botanical Interests").
+      let ownMin = min;
+      if (min.includes(' / ') && rowSupplier.includes('/')) {
+        const sups = rowSupplier.split('/').map((s) => s.trim().toLowerCase());
+        const mins = min.split(' / ').map((s) => s.trim());
+        const i = sups.findIndex((s) => supplier.toLowerCase().startsWith(s.split(' ')[0]));
+        if (i >= 0 && mins[i]) ownMin = mins[i];
+      }
+      out.push({ tier: t.tier, rank, name, url: it.url, price: it.price || 0, shelf, blurb, kind, supplier, sku: it.sku, category, min: ownMin, src, why });
     }
   }
 }
@@ -241,12 +283,47 @@ for (const t of TABLES) {
 // ------------------------------------------------------------------ write
 const ids = new Set(real.map((p) => p.id));
 const slug = (s) => s.toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60).replace(/-$/, '');
+// The tiers by OPENING MINIMUM (owner, 2026-10-14: "for tier 1 only include
+// those with low minimum orders"). Tier 0 (free to start) and Tier 4 (the
+// retail store and stall) keep their own reasons; every other product is:
+//   Tier 1  the supplier's first order is $100 or less, or has no minimum
+//   Tier 2  a higher minimum
+//   Tier 3  the minimum is not published yet (ask, then it moves)
+export const LOW_MIN = 100;
+// Faire brands' own minimums, read from each product page (public facts;
+// docs/research/faire-minimums.json, refreshed by the session's script).
+const FAIRE_MIN = (() => {
+  try { return JSON.parse(readFileSync(join(ROOT, 'docs', 'research', 'faire-minimums.json'), 'utf8')).byUrl; }
+  catch { return {}; }
+})();
+for (const p of out) {
+  const fm = FAIRE_MIN[p.url.split('?')[0]];
+  if (fm && fm.minCents != null) { p.min = fm.minCents ? '$' + fm.minCents / 100 + (fm.brand ? ' (' + fm.brand + ' on Faire)' : '') : 'none'; }
+}
+// A supplier whose own terms are known fills in a product row that gives no
+// minimum (WebstaurantStore sells by the case with no account; Frontier is a
+// $10 refundable membership; Matr Boomie is 2 to 4 units; High Mowing has
+// none; Azure's member side has none). Faire stays per brand.
+const SUPPLIER_MIN = { WebstaurantStore: 0, 'Frontier Co-op': 0, 'Matr Boomie': 0, 'High Mowing Seeds': 0, 'Azure Standard': 0, 'Vermont Soap': 75 };
+// Suppliers that turned Lavish Leaf down: their rows leave Tiers 1 to 3.
+const REFUSED = { GrowOrganic: 'declined us 2026-10-07, no online stores' };
+for (const p of out) {
+  if (p.tier === 0 || p.tier === 4 || p.tier === 'Misc') continue;
+  p.docTier = p.tier;
+  if (REFUSED[p.supplier]) { p.tier = 'Misc'; p.supplier = p.supplier + ': ' + REFUSED[p.supplier]; continue; }
+  let d = minDollars(p.min);
+  if (d == null && p.supplier in SUPPLIER_MIN) d = SUPPLIER_MIN[p.supplier];
+  p.minUsd = d;
+  p.tier = d == null ? 3 : d <= LOW_MIN ? 1 : 2;
+}
 const tierOrder = (t) => (t === 'Misc' ? 9 : t);
 out.sort((a, b) => tierOrder(a.tier) - tierOrder(b.tier) || Number(a.rank) - Number(b.rank));
 // The dashboard's list: every tier, public facts only.
 const tiersOut = out.map((p) => ({
   tier: p.tier, rank: p.rank, name: p.name, url: p.url, price: p.price, kind: p.kind,
   supplier: p.supplier, shelf: p.shelf.title, category: p.category, min: p.min, source: p.src, why: p.why,
+  ...(p.minUsd !== undefined ? { minUsd: p.minUsd } : {}),
+  ...(p.docTier !== undefined && p.docTier !== p.tier ? { docTier: p.docTier } : {}),
   ...(p.sku ? { sku: p.sku } : {}),
 }));
 writeFileSync(join(ROOT, 'store-tiers.json'), JSON.stringify({
@@ -255,6 +332,13 @@ writeFileSync(join(ROOT, 'store-tiers.json'), JSON.stringify({
   products: tiersOut,
 }, null, 1) + '\n');
 
+// --tiers: only store-tiers.json (the dashboard), products.json untouched.
+// The live store has no demo cards since 2026-10-11; use this flag.
+if (process.argv.includes('--tiers')) {
+  const n = {}; for (const p of tiersOut) n[p.tier] = (n[p.tier] || 0) + 1;
+  console.log('store-tiers.json only:', JSON.stringify(n));
+  process.exit(0);
+}
 const ALL = process.argv.includes('--all');
 // Bangalla rows: only the SKUs in store-picks.json reach the Store (owner,
 // 2026-10-10: "determine which ones would be worth actually offering"), each

@@ -393,12 +393,22 @@
       if (j.check) ca.appendChild(el('p', 'db-hint', j.check));
       var sup = j.suppliers || [];
       if (sup.length) {
-        var cs = card('Suppliers', 'Approved first, then waiting, then the ones to apply to.');
-        var rank = function (x) { return /^approved/i.test(x.status) ? 0 : /appl|wait/i.test(x.status) ? 1 : 2; };
-        var srt = sup.slice().sort(function (x, y) { return rank(x) - rank(y); });
-        var stt = el('table', 'db-table'); stt.innerHTML = '<thead><tr><th>Supplier</th><th>Status</th><th>What they carry</th><th>How</th></tr></thead>';
+        // By what it takes to start (owner, 2026-10-14): no purchase, then a
+        // first order of $100 or less, then more, then not published.
+        var cs = card('Suppliers', 'In order of what it takes to start: no purchase at all (dropship), then a first order of $100 or less, then more than $100, then minimums they do not publish.');
+        var rank = function (x) { return /^(approved|open)/i.test(x.status) ? 0 : /appl|wait/i.test(x.status) ? 1 : 2; };
+        var GROUPS = ['No purchase to start (dropship, pay per order)', 'Low minimum: first order $100 or less', 'Higher minimum: more than $100', 'Minimum not published: ask'];
+        var srt = sup.slice().sort(function (x, y) { return ((x.group == null ? 3 : x.group) - (y.group == null ? 3 : y.group)) || (rank(x) - rank(y)); });
+        var stt = el('table', 'db-table'); stt.innerHTML = '<thead><tr><th>Supplier</th><th>Minimum to start</th><th>Status</th><th>What they carry</th><th>How</th></tr></thead>';
         var stb = el('tbody');
-        srt.forEach(function (x) { var tr = el('tr'); var tdN = el('td'); var a = el('a', null, x.name); a.href = x.url; a.target = '_blank'; a.rel = 'noopener'; tdN.appendChild(a); tr.appendChild(tdN); tr.appendChild(el('td', 'db-st-' + rank(x), x.status)); tr.appendChild(el('td', null, x.what)); tr.appendChild(el('td', null, x.how)); stb.appendChild(tr); });
+        var lastG = -1;
+        srt.forEach(function (x) {
+          var g = x.group == null ? 3 : x.group;
+          if (g !== lastG) { lastG = g; var gh = el('tr', 'db-group-row'); var gt = el('td', null, GROUPS[g]); gt.colSpan = 5; gh.appendChild(gt); stb.appendChild(gh); }
+          var tr = el('tr'); var tdN = el('td'); var a = el('a', null, x.name); a.href = x.url; a.target = '_blank'; a.rel = 'noopener'; tdN.appendChild(a); tr.appendChild(tdN);
+          tr.appendChild(el('td', null, x.minimum || ''));
+          tr.appendChild(el('td', 'db-st-' + rank(x), x.status)); tr.appendChild(el('td', null, x.what)); tr.appendChild(el('td', null, x.how)); stb.appendChild(tr);
+        });
         stt.appendChild(stb);
         var sw = el('div', 'db-table-wrap'); sw.appendChild(stt); cs.appendChild(sw); sa.appendChild(cs);
       }

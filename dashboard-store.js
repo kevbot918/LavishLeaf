@@ -15,9 +15,11 @@
 
   var TIERS = [
     { key: '0', label: 'Tier 0', note: 'Costs nothing to start. These are the products on the Store page now.' },
-    { key: '1', label: 'Tier 1', note: 'The first stock, when there is money: opening orders from $30 to $150 a brand.' },
-    { key: '2', label: 'Tier 2', note: 'The second round: heavier, dearer or slower, still postable.' },
-    { key: '3', label: 'Tier 3', note: 'Gifts, serving pieces, seed gifts and bundles.' },
+    // Tiers 1 to 3 by the supplier's OPENING MINIMUM (owner, 2026-10-14:
+    // "for tier 1 only include those with low minimum orders").
+    { key: '1', label: 'Tier 1', note: 'Low minimum: the supplier\'s first order is $100 or less, or has no minimum. Faire brands are each their own minimum, read from Faire.' },
+    { key: '2', label: 'Tier 2', note: 'Higher minimum: the supplier\'s first order is more than $100.' },
+    { key: '3', label: 'Tier 3', note: 'Minimum not published yet: ask the supplier (or open a free account to see it), then it moves to Tier 1 or 2.' },
     { key: '4', label: 'Tier 4', note: 'Heavy, bulk and perishable: for a shop or a stall, never posted.' },
     { key: 'Misc', label: 'Misc', note: 'Real and priced, in no tier.' },
     { key: 'more', label: 'More from Bangalla', note: 'Everything else in stock in your categories from your Bangalla file, not yet in a tier. Any of it can join Tier 0 on the same terms.' },
@@ -168,7 +170,7 @@
       if (c && c.lb >= 60) flags.push('<span class="db-flag warn">60 lb or more</span>');
       if (c && c.perCase > 1) flags.push('<span class="db-flag" title="Bangalla sells this by the case">case of ' + esc(c.perCase) + '</span>');
       var name = r.url ? '<a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(r.name) + '</a>' : esc(r.name);
-      var sub = [r.sku, r.min && r.min !== 'none' ? 'min ' + r.min : ''].filter(Boolean).join(' &middot; ');
+      var sub = [r.sku, r.minUsd === 0 ? 'no minimum' : r.minUsd ? 'minimum $' + r.minUsd : r.min && r.min !== 'none' ? 'min ' + r.min : 'minimum unknown', r.docTier != null ? 'was Tier ' + r.docTier : ''].filter(Boolean).join(' &middot; ');
       var why = r.why ? '<div class="db-store-why">' + esc(r.why) + '</div>' : '';
       tb.insertAdjacentHTML('beforeend', '<tr>' +
         '<td class="num">' + esc(r.rank) + '</td>' +

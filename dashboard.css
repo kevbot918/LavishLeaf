@@ -202,3 +202,4 @@
 .db-btn:hover { filter: brightness(1.08); }
 .db-btn:disabled { opacity: .5; cursor: default; }
 .db-warn { color: #F2B8A0 !important; font-weight: 700; }
+.db-group-row td { background: #2e2e2e; color: var(--leaf-bright, #6FD65F); font-weight: 800; font-size: .85rem; letter-spacing: .02em; }

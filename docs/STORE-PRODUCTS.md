@@ -56,6 +56,18 @@ minimum is public ("no minimum shown" means the page printed none).
 
 ## 0.5 What changed, and when
 
+**2026-10-14, tiers by opening minimum (the owner: "for tier 1 only include
+those with low minimum orders").** The tables below keep their research
+order, but the dashboard's tiers are now set by each product's own opening
+minimum (tools/demo-store.mjs): **Tier 0** free to start (dropship, as
+before); **Tier 1** the supplier's first order is $100 or less, or none;
+**Tier 2** more than $100; **Tier 3** the minimum is not published yet;
+**Tier 4** the retail room and stall, as before. Faire minimums are per
+BRAND and are read from each product page (docs/research/faire-minimums.json).
+A row that names products from several suppliers gives each product its own
+supplier and its own minimum. The supplier register by minimum is
+affiliates.json "suppliers" (group 0 to 3), shown in the dashboard.
+
 **The day pass, first edition (2026-09-28 morning):** Fun Express is a toy and
 novelty wholesaler, not the games shelf; BWI is the local heavy-goods route,
 not the only route to fertiliser and pest control; Faire is a cleaning and
