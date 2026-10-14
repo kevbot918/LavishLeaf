@@ -645,3 +645,23 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     and the dashboard show it. A 20% code on a 10-15% margin line loses money
     (owner told). Awin denied the account; Ascend by Partnerize (ex Pepperjam)
     approved: apply to brands inside it.
+
+40. **2026-10-14.** **Texting** (lib/sms.mjs, AWS End User Messaging SMS v2
+    SendTextMessage via SigV4, service "sms-voice"; env SMS_ORIGINATION_NUMBER,
+    SMS_REGION optional, SES_* keys with sms-voice permissions): consent only
+    from the "Text me offers" box (every newsletter form, name="sms"; the
+    store offer pop-up) stored as smsConsent on the contact; every text is
+    "Lavish Leaf: ... Reply STOP to opt out."; AWS's Default opt-out list is
+    read before a send (smsOptOut); sends run in batches (lib/sms-job.mjs,
+    functions/sms-drip.mjs every 10 min) only 9 am to 8 pm Central; dashboard
+    card "Text messages" (functions/sms-admin.mjs). privacy.html#sms carries
+    the carrier-required terms. **Stock check** (lib/stock.mjs, stock-run.mjs,
+    functions/stock-check.mjs every 2 h, functions/stock.mjs): Bangalla's
+    private feed BANGALLA_FEED_URL (any CSV/TSV/JSON with SKU and quantity
+    columns; under 50 SKUs = untrusted, nothing hidden) and the AliExpress DS
+    API (30 items a run, round robin); under 5 left or gone = out: store.js
+    removes the card, cart.js blocks paying, checkout refuses; catalog.mjs now
+    carries supplier codes. Dashboard "Stock at our suppliers". Offer is 15%
+    (LL15- codes; LL20- still accepted). Unsubscribe footer and page say
+    receipts and notices keep coming (they never checked the list). Tile
+    links: .db-section scroll-margin-top under the measured header.

@@ -46,6 +46,43 @@ created.
   lavishleaf.org address as spam. Not before both Google and Amazon have
   been signing mail for a while.
 
+**New 2026-10-14:**
+- PayPal webhook: the 4 extra events are ticked (owner, 2026-10-14). Done.
+- **Texting (AWS End User Messaging SMS), region US East (Ohio):**
+  1. AWS console, region US East (Ohio). Search "End User Messaging", open
+     AWS End User Messaging SMS. Phone numbers, Request originator: United
+     States, Toll-free, SMS, Promotional. About $2 a month.
+  2. Registrations, Create registration, "US toll-free number registration":
+     Lavish Leaf Inc, lavishleaf.org, the business contact; use case
+     Marketing; volume about 1,000 a month; opt-in: "Customers tick an
+     optional Text me offers box on lavishleaf.org newsletter forms and the
+     store's first-order offer pop-up, beside the disclosure (frequency,
+     rates, STOP, HELP, not a condition of purchase)"; opt-in URL
+     https://lavishleaf.org/#contact and terms https://lavishleaf.org/privacy.html#sms;
+     sample: "Lavish Leaf: Fall sale: 15% off compost buckets this week at
+     lavishleaf.org/store Reply STOP to opt out."; HELP reply: "Lavish Leaf:
+     help at support@lavishleaf.org. Msg and data rates may apply. Reply STOP
+     to opt out." Submit and attach the number. Approval takes days to weeks.
+  3. Leave the SMS sandbox: Account settings (or the banner), Request
+     production access, and ask for a monthly spend limit of $20 (the
+     default is $1).
+  4. The number's settings: keywords STOP and HELP on, Default opt-out list,
+     self-managed opt-outs OFF (AWS answers STOP itself).
+  5. IAM, Users, the SES user, Add permissions, inline policy (JSON):
+     {"Version":"2012-10-17","Statement":[{"Effect":"Allow","Action":["sms-voice:SendTextMessage","sms-voice:DescribeOptedOutNumbers"],"Resource":"*"}]}
+  6. Netlify: SMS_ORIGINATION_NUMBER = the toll-free number (+1888...),
+     then Deploys, Trigger deploy. Then dashboard, Text messages, Send a test.
+- **Stock check:** Bangalla gives dropship accounts a private inventory feed
+  link. Sign in at bangalla.com and look under My Account for Dropship,
+  Inventory feed, API or Integrations; if it is not there, email Bangalla
+  support for "the inventory feed URL for our dropship account (SKU and
+  quantity)". Netlify: BANGALLA_FEED_URL = that link, Trigger deploy, then
+  dashboard, Stock at our suppliers, Check now. AliExpress: dashboard,
+  AliExpress, Connect (if not done) so its stock is checked too.
+- B-81741-4PK (Bob's Red Mill white rice flour, 4 x 24 oz) is in the Bangalla
+  dropship file but hidden from the public site (403 to visitors): order it
+  signed in, by SKU.
+
 **New 2026-10-13:**
 - PayPal webhook is SET (owner, 2026-10-13). Edit it and ALSO tick: Customer
   dispute created, Payment capture reversed, Payment capture denied, Billing
