@@ -628,3 +628,20 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     account deletes the sign-in with globalThis.netlifyIdentityContext's
     admin token. NEVER add a Lambda-style function again; after any push,
     confirm the deploy is live (curl a changed file).
+
+39. **2026-10-13, second list.** Tiles Visitors, Pages viewed, Newsletter and
+    New followers link to their sections. **Shipping is Bangalla's own
+    dropship table** (bangalla.com/shipping-returns, 26 tiers, $5.75 under
+    0.5 lb to $85.79 at 55-59.99 lb; 60 lb+ asks for a quote) in shipping.mjs,
+    terms-of-sale and the store note; the old Zone 5 bands are history.
+    **20% first-order offer**: store-offer.js pop-up on store.html (4 s, once,
+    asks the server first), functions/discount.mjs (status/claim/check),
+    lib/discounts.mjs (Blobs "discounts": code, email, phone, HMAC of the IP;
+    one claim per IP, email and phone, none after a paid order), root
+    discount.mjs (20% off posted products only; tax on the discounted price),
+    cart code box (localStorage ll-discount), checkout puts the discount line
+    and d=CODE on the PayPal order, capture REFUSES before charging when the
+    PayPal email differs or the code was used, then marks it used; receipts
+    and the dashboard show it. A 20% code on a 10-15% margin line loses money
+    (owner told). Awin denied the account; Ascend by Partnerize (ex Pepperjam)
+    approved: apply to brands inside it.
