@@ -72,13 +72,7 @@ created.
      {"Version":"2012-10-17","Statement":[{"Effect":"Allow","Action":["sms-voice:SendTextMessage","sms-voice:DescribeOptedOutNumbers"],"Resource":"*"}]}
   6. Netlify: SMS_ORIGINATION_NUMBER = the toll-free number (+1888...),
      then Deploys, Trigger deploy. Then dashboard, Text messages, Send a test.
-- **Stock check:** Bangalla gives dropship accounts a private inventory feed
-  link. Sign in at bangalla.com and look under My Account for Dropship,
-  Inventory feed, API or Integrations; if it is not there, email Bangalla
-  support for "the inventory feed URL for our dropship account (SKU and
-  quantity)". Netlify: BANGALLA_FEED_URL = that link, Trigger deploy, then
-  dashboard, Stock at our suppliers, Check now. AliExpress: dashboard,
-  AliExpress, Connect (if not done) so its stock is checked too.
+- **Stock check (updated 2026-10-14):** Bangalla gives NO feed link and has not answered three emails in two weeks. So: once a week, Bangalla, Account, Data Downloads, download "Bangalla Product Data csv", and load it in the dashboard (Store products, Load the Bangalla file). The stock check reads it every 2 hours; the Stock section warns when it is over a week old. Call Bangalla at +1 (425) 369-9209 (Mon to Fri, 10 to 5 Pacific) about the missing activation link and wholesale pricing. Until wholesale pricing shows in your cart, consider Pause every Bangalla product (Stock section): at retail cost every Bangalla sale loses money. AliExpress: dashboard, AliExpress, Connect, so its stock is checked too.
 - B-81741-4PK (Bob's Red Mill white rice flour, 4 x 24 oz) is in the Bangalla
   dropship file but hidden from the public site (403 to visitors): order it
   signed in, by SKU.
