@@ -35,6 +35,7 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { azureCard } from './azure-card.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const CHECK = process.argv.includes('--check');
@@ -202,6 +203,27 @@ function seedsShelf() {
   ].join('\n');
 }
 
+// The Azure Standard shelf (owner, 2026-10-14: its own Home shelf below
+// Pets): four products from each Azure line in azure-home.json
+// (tools/azure-shelf.mjs); every line is on Green Swaps. Affiliate links only.
+const AZURE = (() => { try { return JSON.parse(readFileSync(join(ROOT, 'azure-home.json'), 'utf8')); } catch { return null; } })();
+function azureShelf() {
+  if (!AZURE || !AZURE.home.length) return '';
+  const all = new Map(AZURE.shelves.flatMap((s) => s.items).map((x) => [x.code, x]));
+  return [
+    '<section class="shelf" id="shelf-azure-standard" data-shelf="azure-standard" data-title="Azure Standard">',
+    '  <div class="shelf-head">',
+    '    <h2>Azure Standard</h2>',
+    '    <a class="shelf-all" href="#swaps">See all</a>',
+    '  </div>',
+    '  <p class="shelf-note">Organic pantry staples from our partner Azure Standard, delivered to a Drop near you or to your door. Lavish Leaf earns a commission on orders through these links, at no extra cost to you.</p>',
+    '  <div class="shelf-row">',
+    AZURE.home.map((c) => all.get(c)).filter(Boolean).map(azureCard).join('\n\n'),
+    '  </div>',
+    '</section>',
+  ].join('\n');
+}
+
 /** One Home shelf per category, in the order categories first appear. */
 function shelves(active) {
   const note = active.some((p) => p.demo)
@@ -222,7 +244,8 @@ function shelves(active) {
     ps.map(card).join('\n\n'),
     '  </div>',
     '</section>',
-  ].join('\n') + (name === 'Farm & Garden' && seedsShelf() ? '\n\n' + seedsShelf() : '')).join('\n\n');
+  ].join('\n') + (name === 'Farm & Garden' && seedsShelf() ? '\n\n' + seedsShelf() : '')
+    + (name === 'Pets' && azureShelf() ? '\n\n' + azureShelf() : '')).join('\n\n');
 }
 
 /** In cart mode a button on another page goes to the Store, product added. */

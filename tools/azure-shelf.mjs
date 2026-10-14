@@ -1,0 +1,228 @@
+// Azure Standard on the Store (owner, 2026-10-14: "add them into our online
+// store ... display their lines and products in an organized manner ... their
+// own home shelf category below pets ... prices can stay up to date and
+// products in stock can stay up to date and each product has our link").
+//
+//   node tools/azure-shelf.mjs
+//
+// Reads Azure's public product API (api.azurestandard.com/packaged-products,
+// the same one azurestandard.com uses) for each product below: size, retail
+// price, stock and photo. Writes:
+//   * azure-home.json: every product, by shelf, for tools/render-store.mjs
+//     (the "Azure Standard" Home shelf, after Pets);
+//   * netlify/lib/azure-codes.mjs: the package codes the live-price function
+//     (functions/azure-prices.mjs) asks Azure about;
+//   * store.html between the AZURE markers: the Azure section of Green Swaps
+//     (what Azure is, Drops and Anchor Drops, then one shelf per line);
+//   * images/azure/<code>.jpg: 360 px thumbnails (Azure's own photos are
+//     about 3 MB each), through tools/thumbs.ps1.
+// No seeds (owner: SeedsNow covers seeds). Every link carries our affiliate
+// id (a_aid). Rerun it to change the selection; prices and stock refresh by
+// themselves on the page.
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { AID, azureCard, azureLink, esc } from './azure-card.mjs';
+
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
+
+// [slug, product id, package code, name] per shelf, from Azure's most-reviewed
+// products in each category (read 2026-10-14).
+const SHELVES = [
+  ['Flour and grains', 'Organic wheat, oats, rice and flours, by the bag or in bulk.', [
+    ['all-purpose-flour-unbleached-organic', 11444, 'FL080', 'All Purpose Flour, Unbleached, Organic'],
+    ['hard-red-wheat-organic', 11656, 'GR062', 'Hard Red Wheat, Organic'],
+    ['hard-white-wheat-organic', 9635, 'GR112', 'Hard White Wheat, Organic'],
+    ['oats-rolled-organic', 9496, 'CE202', 'Rolled Oats, Organic'],
+    ['oats-steel-cut-organic', 10944, 'CE229', 'Steel Cut Oats, Organic'],
+    ['bread-flour-100-whole-white-wheat-unifine-organic', 8434, 'FL034', 'Whole White Wheat Bread Flour, Organic'],
+    ['spelt-flour-unifine-organic', 6425, 'FL084', 'Spelt Flour, Organic'],
+    ['einkorn-flour-unifine-organic', 15702, 'FL250', 'Einkorn Flour, Organic'],
+    ['rice-thai-jasmine-white-organic', 27872, 'GR361', 'Thai Jasmine White Rice, Organic'],
+    ['popcorn-yellow-organic', 10088, 'GR071', 'Yellow Popcorn, Organic'],
+    ['cornmeal-organic', 7430, 'FL013', 'Cornmeal, Organic'],
+    ['rolled-oats-gf-organic', 17886, 'CE617', 'Rolled Oats, Gluten Free, Organic'],
+  ]],
+  ['Beans and baking', 'Dry beans, lentils and the baking shelf.', [
+    ['black-beans-organic', 6625, 'BE094', 'Black Beans, Organic'],
+    ['pinto-beans-organic', 10007, 'BE086', 'Pinto Beans, Organic'],
+    ['garbanzo-beans-chick-peas-organic', 12542, 'BE246', 'Garbanzo Beans, Organic'],
+    ['lentils-red-organic', 18374, 'BE049', 'Red Lentils, Organic'],
+    ['lentils-green-organic', 8887, 'BE010', 'Green Lentils, Organic'],
+    ['peas-green-split-organic', 8361, 'BE059', 'Green Split Peas, Organic'],
+    ['cane-sugar-organic', 7883, 'SW079', 'Cane Sugar, Organic'],
+    ['baking-soda', 6490, 'BP008', 'Baking Soda'],
+    ['baking-powder', 29726, 'BP713', 'Baking Powder'],
+    ['vanilla-extract-organic', 9024, 'BP046', 'Vanilla Extract, Organic'],
+    ['cocoa-powder-organic', 7282, 'BP833', 'Cocoa Powder, Organic'],
+    ['chocolate-chips-semi-sweet-organic', 15112, 'BP323', 'Semi-Sweet Chocolate Chips, Organic'],
+  ]],
+  ['Oils, honey and condiments', 'Cooking oils, raw honey, maple syrup, vinegar and sauces.', [
+    ['olive-oil-extra-virgin-cold-pressed-organic', 18556, 'OL427', 'Extra Virgin Olive Oil, Organic'],
+    ['coconut-oil-expeller-pressed-organic', 17888, 'OL377', 'Coconut Oil, Expeller Pressed, Organic'],
+    ['avocado-oil-cold-pressed-refined-organic', 28250, 'OL429', 'Avocado Oil, Organic'],
+    ['honey-raw-berrywildflower', 8557, 'SW356', 'Raw Honey, Berry and Wildflower'],
+    ['maple-syrup-grade-a-dark-robust-organic', 9086, 'SW018', 'Maple Syrup, Grade A Dark, Organic'],
+    ['molasses-blackstrap-organic', 26862, 'SW453', 'Blackstrap Molasses, Organic'],
+    ['coconut-sugar-crystals-organic', 18554, 'SW406', 'Coconut Sugar, Organic'],
+    ['vinegar-raw-apple-cider-organic', 11564, 'CO894', 'Raw Apple Cider Vinegar, Organic'],
+    ['ketchup-organic', 30634, 'CO1048', 'Ketchup, Organic'],
+    ['dijon-mustard-organic', 30456, 'CO1025', 'Dijon Mustard, Organic'],
+    ['coconut-aminos-organic', 28464, 'CO942', 'Coconut Aminos, Organic'],
+    ['vinegar-balsamic-organic', 27356, 'CO1050', 'Balsamic Vinegar, Organic'],
+  ]],
+  ['Snacks, nuts and drinks', 'Nuts, chips, coffee and herbal tea.', [
+    ['peanuts-dry-roasted-no-salt-organic', 9829, 'NU052', 'Dry Roasted Peanuts, Organic'],
+    ['almonds-raw-organic', 6163, 'NU114', 'Raw Almonds, Organic'],
+    ['pistachios-in-shell-roasted-salted-organic', 31736, 'NU417', 'Pistachios, Roasted and Salted, Organic'],
+    ['banana-chips-organic', 9618, 'DF128', 'Banana Chips, Organic'],
+    ['pumpkin-seeds-dry-roasted-salted-organic', 26908, 'SE350', 'Pumpkin Seeds, Roasted and Salted, Organic'],
+    ['tortilla-chips-organic', 35656, 'SN2548', 'Tortilla Chips, Organic'],
+    ['coffee-whole-bean-private-reserve-medium-roast-organic', 29116, 'CS258', 'Whole Bean Coffee, Medium Roast, Organic'],
+    ['coffee-ground-cornerstone-dark-roast-organic', 29114, 'CS253', 'Ground Coffee, Dark Roast, Organic'],
+    ['chamomile-flowers-whole-organic', 7059, 'HS683', 'Chamomile Flowers, Organic'],
+    ['hibiscus-flower-cut-sifted-organic', 30598, 'HS1951', 'Hibiscus Flowers, Organic'],
+    ['coconut-milk-17-19-fat-no-guar-organic', 30660, 'GY1459', 'Coconut Milk, Organic'],
+    ['king-coconut-water-organic', 30392, 'JS796', 'King Coconut Water, Organic'],
+  ]],
+  ['Fresh and frozen, to a Drop', 'Produce, dairy and meat travel on Azure\'s refrigerated trucks to a local Drop.', [
+    ['onions-yellow-organic', 9564, 'QP018', 'Yellow Onions, Organic'],
+    ['potatoes-russet-organic', 10100, 'QP139', 'Russet Potatoes, Organic'],
+    ['carrots-1-organic', 7004, 'QP165', 'Carrots, Organic'],
+    ['garlic-organic', 8160, 'QP324', 'Garlic, Organic'],
+    ['lemons-organic', 8877, 'QP058', 'Lemons, Organic'],
+    ['avocado-medium-organic', 6382, 'QP004', 'Avocados, Organic'],
+    ['butter-salted-organic', 19624, 'DP295', 'Salted Butter, Organic'],
+    ['sour-cream-organic', 10788, 'DP006', 'Sour Cream, Organic'],
+    ['cream-cheese-organic', 7495, 'CH135', 'Cream Cheese, Organic'],
+    ['whole-milk-a2-4-organic', 28576, 'DP571', 'Whole Milk, A2, Organic'],
+    ['ground-beef-8020-grass-fed-frozen', 27768, 'MT975', 'Ground Beef 80/20, Grass-Fed, Frozen'],
+    ['chicken-breast-boneless-skinless-organic-frozen-random-weight', 20006, 'MT869', 'Chicken Breast, Organic, Frozen'],
+    ['green-beans-frozen-organic', 8341, 'FG161', 'Green Beans, Frozen, Organic'],
+  ]],
+  ['Household and canning', 'Azure Clean soaps and cleaners, canning jars, bamboo paper.', [
+    ['dish-soap-citrus', 26878, 'NF1621', 'Dish Soap, Citrus'],
+    ['dish-soap-fragrance-free', 21068, 'NF1618', 'Dish Soap, Fragrance Free'],
+    ['dishwasher-gel', 29820, 'NF1756', 'Dishwasher Gel'],
+    ['automatic-dishwasher-powder', 21088, 'NF2120', 'Dishwasher Powder'],
+    ['all-purpose-household-cleaner', 21078, 'NF997', 'All Purpose Household Cleaner'],
+    ['castile-liquid-soap-pure-unscented-aloe-mild-organic', 34402, 'HB2269', 'Castile Liquid Soap, Unscented, Organic'],
+    ['canning-jars-quart-wide-mouth-with-lids-bands', 32032, 'NF010', 'Canning Jars, Quart, Wide Mouth'],
+    ['canning-jars-pint-wide-mouth-with-lids-bands', 34376, 'NF811', 'Canning Jars, Pint, Wide Mouth'],
+    ['canning-jars-half-gallon-wide-mouth-with-lids-bands', 32034, 'NF011', 'Canning Jars, Half-Gallon, Wide Mouth'],
+    ['bamboo-toilet-paper-3-ply-365-sheets', 34598, 'NF2290', 'Bamboo Toilet Paper, 3 Ply'],
+  ]],
+  ['Health and beauty', 'Simple body care and pantry staples for the medicine cabinet.', [
+    ['hand-soap-citrus', 27144, 'NF1700', 'Hand Soap, Citrus'],
+    ['hand-soap-fragrance-free', 27142, 'NF1694', 'Hand Soap, Fragrance Free'],
+    ['castile-liquid-soap-pure-citrus-organic', 34408, 'HB2221', 'Castile Liquid Soap, Citrus, Organic'],
+    ['shampoo-bar-castile-rosemary-lavender-organic', 35798, 'HB1964', 'Shampoo Bar, Rosemary and Lavender, Organic'],
+    ['castor-oil-organic', 32820, 'HB1767', 'Castor Oil, Organic'],
+    ['epsom-salt', 7868, 'HB1121', 'Epsom Salt'],
+    ['beeswax-granules-yellow-organic', 34614, 'NF2297', 'Beeswax Granules, Organic'],
+    ['activated-charcoal-powder', 7074, 'HS386', 'Activated Charcoal Powder'],
+  ]],
+  ['Farm and animal feed', 'Organic feed grains and farm supplies (no seeds: see SeedsNow).', [
+    ['whole-oats-with-hulls-animal-feed-organic', 11712, 'GP034', 'Whole Oats, Animal Feed, Organic'],
+    ['chicken-wheat-animal-feed-organic', 7134, 'GP073', 'Chicken Wheat, Animal Feed, Organic'],
+    ['whole-barley-animal-feed-organic', 11698, 'GP168', 'Whole Barley, Animal Feed, Organic'],
+    ['alfalfa-pellets-organic', 14652, 'GP491', 'Alfalfa Pellets, Organic'],
+    ['whole-yellow-corn-animal-feed-organic', 25340, 'GP850', 'Whole Yellow Corn, Animal Feed, Organic'],
+    ['diatomaceous-earth-codex-grade', 7664, 'GP009', 'Diatomaceous Earth, Codex Grade'],
+    ['kelp-granules-asco-animal-blue-label-organic', 8729, 'GP100', 'Kelp Granules for Animals, Organic'],
+  ]],
+];
+// The Home shelf: the first few of each line, so it shows the range.
+const HOME_PER_SHELF = 4;
+
+
+async function facts(codes) {
+  const out = {};
+  for (let i = 0; i < codes.length; i += 40) {
+    const res = await fetch('https://api.azurestandard.com/packaged-products?limit=100&code=' + codes.slice(i, i + 40).join(','), { headers: { 'User-Agent': 'Mozilla/5.0 (lavishleaf.org affiliate shelf)' } });
+    if (!res.ok) throw new Error('Azure said ' + res.status);
+    for (const p of await res.json()) out[p.code] = p;
+  }
+  return out;
+}
+
+const codes = [...new Set(SHELVES.flatMap(([, , items]) => items.map((x) => x[2])))];
+const F = await facts(codes);
+const dl = [];
+const shelves = SHELVES.map(([title, note, items]) => ({
+  title, note,
+  items: items.filter((x) => F[x[2]]).map(([slug, id, code, name]) => {
+    const p = F[code];
+    const img = 'images/azure/' + code.toLowerCase() + '.jpg';
+    if (p.images && p.images[0] && !existsSync(join(ROOT, img))) dl.push([p.images[0], img]);
+    return { code, id, slug, name, size: p.size || '', price: p.price && p.price.retail ? p.price.retail.dollars : null, stock: p.stock, img };
+  }),
+}));
+mkdirSync(join(ROOT, 'images', 'azure'), { recursive: true });
+if (dl.length) {
+  const list = join(ROOT, 'tools', '.thumbs-azure.json');
+  writeFileSync(list, JSON.stringify(dl));
+  execFileSync('powershell', ['-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', join(ROOT, 'tools', 'thumbs.ps1'), list, ROOT], { stdio: 'inherit' });
+}
+for (const s of shelves) s.items = s.items.filter((x) => existsSync(join(ROOT, x.img)));
+
+const today = new Date().toISOString().slice(0, 10);
+const home = shelves.flatMap((s) => s.items.slice(0, HOME_PER_SHELF).map((x) => x.code));
+writeFileSync(join(ROOT, 'azure-home.json'), JSON.stringify({ _help: 'Written by tools/azure-shelf.mjs; drawn by tools/render-store.mjs (Home shelf "Azure Standard") and in Green Swaps. Public facts only; prices and stock refresh live from functions/azure-prices.mjs.', aid: AID, at: today, home, shelves }, null, 1) + '\n');
+writeFileSync(join(ROOT, 'netlify', 'lib', 'azure-codes.mjs'), `// GENERATED by tools/azure-shelf.mjs on ${today}. The Azure Standard package codes on the Store.\nexport const AZURE_CODES = ${JSON.stringify(shelves.flatMap((s) => s.items.map((x) => x.code)))};\n`);
+
+const DROP = azureLink('/drop-point-locator');
+const ANCHOR = azureLink('/azures-anchor-drops');
+const HOW = azureLink('/get-organic-products-delivered');
+const html = [
+  `<!-- AZURE:START (generated by tools/azure-shelf.mjs on ${today}; do not edit by hand) -->`,
+  '      <div class="gs-feature gs-feature-azure" id="azure">',
+  '        <div class="gs-feature-text">',
+  '          <p class="gs-feature-kicker">Our pantry partner</p>',
+  '          <h2>Azure Standard</h2>',
+  '          <p>Organic and natural groceries, bulk staples, household goods and farm feed from a family-owned company. Order online and pick up at a <strong>Drop</strong>, a shared delivery point where Azure\'s truck stops each month, or have it delivered to your door. Bulk sizes keep the price per pound low, and Drop delivery keeps shipping low.</p>',
+  '        </div>',
+  `        <a class="btn gs-feature-btn" href="${esc(azureLink('/'))}" target="_blank" rel="sponsored noopener" data-affiliate="Azure Standard">Shop Azure Standard</a>`,
+  '      </div>',
+  '      <div class="az-drops">',
+  '        <div class="az-drop-card">',
+  '          <h3>Find a Drop near you</h3>',
+  '          <p>Neighbors order together and Azure delivers to one place on a set day each month: dry, chilled and frozen goods arrive together, and you collect your order there.</p>',
+  `          <a class="btn btn-sm" href="${esc(DROP)}" target="_blank" rel="sponsored noopener" data-affiliate="Azure Standard">Find a Drop</a>`,
+  '        </div>',
+  '        <div class="az-drop-card">',
+  '          <h3>Anchor Drops: pick up when it suits you</h3>',
+  '          <p>An Anchor Drop is hosted by a volunteer who keeps dry, refrigerated and frozen orders safe for at least three days after the truck comes, so you are not tied to the delivery hour. They are free to use and open to everyone.</p>',
+  `          <a class="btn btn-sm" href="${esc(ANCHOR)}" target="_blank" rel="sponsored noopener" data-affiliate="Azure Standard">About Anchor Drops</a>`,
+  '        </div>',
+  '        <div class="az-drop-card">',
+  '          <h3>How Azure works</h3>',
+  '          <p>Create a free account, choose your Drop or home delivery, and order before the cutoff. New customers are welcome through our link.</p>',
+  `          <a class="btn btn-sm" href="${esc(HOW)}" target="_blank" rel="sponsored noopener" data-affiliate="Azure Standard">How it works</a>`,
+  '        </div>',
+  '      </div>',
+  ...shelves.filter((s) => s.items.length).map((s) => [
+    '<section class="shelf gs-az-shelf">',
+    `  <div class="shelf-head"><h2>${esc(s.title)}</h2><a class="shelf-all" href="${esc(azureLink('/shop/category'))}" target="_blank" rel="sponsored noopener" data-affiliate="Azure Standard">More at Azure</a></div>`,
+    `  <p class="shelf-note">${esc(s.note)}</p>`,
+    '  <div class="shelf-row">',
+    s.items.map(azureCard).join('\n'),
+    '  </div>',
+    '</section>',
+  ].join('\n')),
+  '<!-- AZURE:END -->',
+].join('\n');
+
+const file = join(ROOT, 'store.html');
+let page = readFileSync(file, 'utf8');
+const nl = page.includes('\r\n') ? '\r\n' : '\n';
+const re = /<!-- AZURE:START[\s\S]*?<!-- AZURE:END -->/;
+if (!re.test(page)) {
+  const anchor = '<!-- SEEDSNOW:END -->';
+  if (!page.includes(anchor)) throw new Error('store.html has neither AZURE markers nor the SEEDSNOW:END marker');
+  page = page.replace(anchor, anchor + nl + nl + '<!-- AZURE:START --><!-- AZURE:END -->');
+}
+page = page.replace(re, () => html.replace(/\n/g, nl));
+writeFileSync(file, page);
+console.log(`Azure: ${shelves.map((s) => `${s.title} ${s.items.length}`).join(', ')}; home ${home.length}; photos fetched ${dl.length}.`);

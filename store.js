@@ -439,10 +439,16 @@
       if (q.get('q') != null && input.value !== q.get('q')) input.value = q.get('q');
       runSearch();
       setTimeout(function () { input.focus(); }, 50);
-    } else if (path === 'swaps') {
+    } else if (path === 'swaps' || path === 'azure') {
       show('swaps'); setTitle('Green Swaps');
       // Its shelves were measured while hidden: let the arrows measure again.
       setTimeout(function () { window.dispatchEvent(new Event('resize')); }, 30);
+      // #azure: the Azure Standard part of Green Swaps (2026-10-14).
+      // Scrolled to sit just under the sticky store bar, not beneath it.
+      if (path === 'azure') setTimeout(function () {
+        var a = $('#azure'), bar = $('.ss-top');
+        if (a) window.scrollTo({ top: a.getBoundingClientRect().top + window.scrollY - (bar ? bar.getBoundingClientRect().bottom : 0) - 28, behavior: 'auto' });
+      }, 60);
     } else if (path.indexOf('list/') === 0) {
       current.arg = path.slice(5);
       if (!listById(current.arg)) { location.hash = '#home'; return; }
@@ -942,25 +948,26 @@
     function fact(k, v) { if (!v) return; var li = el('li'); li.appendChild(el('strong', null, k + ': ')); li.appendChild(document.createTextNode(v)); facts.appendChild(li); }
     fact('Shelf', p.category);
     // A SeedsNow card (the Seeds shelf): sold and shipped by our partner.
-    var partner = p.card.classList.contains('gs-sn-card');
+    // An Azure Standard card (Home shelf and Green Swaps): sold by Azure.
+    var azure = p.card.classList.contains('gs-az-card');
+    var partner = azure || p.card.classList.contains('gs-sn-card');
     $('.sp-pop-fine', pop).hidden = partner;
-    if (partner) {
+    if (azure) {
+      fact('Sold and delivered by', 'our pantry partner Azure Standard, at their prices, to a Drop near you or to your door');
+      fact('Our link', 'Lavish Leaf earns a commission on your Azure order, at no extra cost to you');
+    } else if (partner) {
       fact('Sold and shipped by', 'our seed partner SeedsNow, at their prices');
       fact('Our link', 'Lavish Leaf earns a commission on your SeedsNow order, at no extra cost to you');
     } else if (d.ship) {
       fact('Weight', weightText(d.shipOz) + ' packed');
-      // CJ items say their own warehouse's time (2026-10-14).
-      fact('Delivery', d.shipFrom === 'cj' ? (d.source && d.source.warehouse === 'CN' ? 'ships from our partner\'s overseas warehouse, allow 1-3 weeks' : 'ships from our partner\'s US warehouse, usually 2-7 days') : 'some items ship direct from the supplier and some from our warehouse, allow 1-3 weeks');
+      // One delivery sentence for every product; no location named (owner, 2026-10-14).
+      fact('Delivery', 'some items ship direct from the supplier and some from our warehouse, allow 1-3 weeks');
       var shipLi = el('li'); shipLi.appendChild(el('strong', null, d.shipFrom === 'aliexpress' || d.shipFrom === 'cj' ? 'Shipping: ' : 'Shipping ')); var shipTxt = document.createTextNode('...'); shipLi.appendChild(shipTxt); facts.appendChild(shipLi);
       shippingModule().then(function (m) {
         var q = m.quote([{ product: d, qty: 1 }], { method: 'ship' });
         // The owner's wording (2026-10-11): flat-rate items, and items by weight.
         var flat = m.SHIPPING.suppliers[d.shipFrom];
-        shipTxt.textContent = flat && flat.rule === 'cj'
-          ? (d.source && d.source.warehouse === 'CN'
-            ? (q.cents ? '$' + (q.cents / 100).toFixed(2) : 'free') + ', from our overseas warehouse (allow 1 to 3 weeks)' + (d.shipAddCents != null ? '; each extra one adds $' + (d.shipAddCents / 100).toFixed(2) : '') + '.'
-            : (q.cents ? '$' + (q.cents / 100).toFixed(2) + ', fast from a US warehouse' + (d.shipAddCents != null ? '; each extra one adds $' + (d.shipAddCents / 100).toFixed(2) : '') + '.' : 'free, fast from a US warehouse.'))
-          : flat && flat.rule === 'flat'
+        shipTxt.textContent = flat && flat.rule === 'flat'
           ? '$' + (flat.cents / 100).toFixed(2) + '. Items from the same supplier share costs.'
           : 'from this supplier is by weight, minimum of $' + (m.SHIPPING.bands[0].cents / 100).toFixed(2) + '.';
       }).catch(function () { shipTxt.textContent = 'shown in the cart.'; });
@@ -1070,10 +1077,27 @@
     }).catch(function () { /* the prices written into the page stay */ });
   }
 
+  // Azure Standard prices and stock kept current (owner, 2026-10-14), the
+  // same way: out of stock hides the card.
+  function refreshAzure() {
+    var spans = $$("[data-az-price]");
+    if (!spans.length) return;
+    fetch("/.netlify/functions/azure-prices").then(function (r) { if (!r.ok) throw new Error(); return r.json(); }).then(function (d) {
+      spans.forEach(function (sp) {
+        var c = sp.getAttribute("data-az-price");
+        if (!(c in d.prices)) return;
+        var card = sp.closest(".sp-card");
+        if (d.prices[c] === null) { if (card) card.hidden = true; return; }
+        sp.textContent = d.prices[c];
+      });
+    }).catch(function () { /* the prices written into the page stay */ });
+  }
+
   // ------------------------------------------------------------ go
   readCatalogue();
   fetchStock();
   refreshSeedsNow();
+  refreshAzure();
   fetchTags();
   buildResize();
   buildChrome();

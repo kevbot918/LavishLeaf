@@ -952,7 +952,7 @@ export const catalog = {
   "cj-coconut-shell-bird-house": {
     "id": "cj-coconut-shell-bird-house",
     "name": "Coconut Shell Bird House",
-    "price": 249,
+    "price": 1199,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -984,7 +984,7 @@ export const catalog = {
   "cj-solar-garden-lantern": {
     "id": "cj-solar-garden-lantern",
     "name": "Solar Garden Lantern",
-    "price": 599,
+    "price": 1899,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -4206,7 +4206,7 @@ export const catalog = {
   "cj-printed-round-beach-towel": {
     "id": "cj-printed-round-beach-towel",
     "name": "Printed Round Beach Towel",
-    "price": 849,
+    "price": 1549,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -4238,7 +4238,7 @@ export const catalog = {
   "cj-collapsible-silicone-water-bottle-green": {
     "id": "cj-collapsible-silicone-water-bottle-green",
     "name": "Collapsible Silicone Water Bottle, Green",
-    "price": 649,
+    "price": 1349,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -9460,7 +9460,7 @@ export const catalog = {
   "cj-silver-cat-hair-clip": {
     "id": "cj-silver-cat-hair-clip",
     "name": "Silver Cat Hair Clip",
-    "price": 99,
+    "price": 349,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -9492,7 +9492,7 @@ export const catalog = {
   "cj-acetate-butterfly-claw-clip-4-in-yellow": {
     "id": "cj-acetate-butterfly-claw-clip-4-in-yellow",
     "name": "Acetate Butterfly Claw Clip, 4 in, Yellow",
-    "price": 499,
+    "price": 999,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -9524,7 +9524,7 @@ export const catalog = {
   "cj-color-changing-acetate-claw-clip-peach": {
     "id": "cj-color-changing-acetate-claw-clip-peach",
     "name": "Color-Changing Acetate Claw Clip, Peach",
-    "price": 299,
+    "price": 799,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -9556,7 +9556,7 @@ export const catalog = {
   "cj-star-claw-clip-black": {
     "id": "cj-star-claw-clip-black",
     "name": "Star Claw Clip, Black",
-    "price": 599,
+    "price": 1099,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -9588,7 +9588,7 @@ export const catalog = {
   "cj-makeup-brush-set-12-pieces-black": {
     "id": "cj-makeup-brush-set-12-pieces-black",
     "name": "Makeup Brush Set, 12 Pieces, Black",
-    "price": 299,
+    "price": 949,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -9620,7 +9620,7 @@ export const catalog = {
   "cj-folding-makeup-mirror-white": {
     "id": "cj-folding-makeup-mirror-white",
     "name": "Folding Makeup Mirror, White",
-    "price": 549,
+    "price": 1299,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -10651,7 +10651,7 @@ export const catalog = {
   "cj-hammered-stainless-steel-spatula": {
     "id": "cj-hammered-stainless-steel-spatula",
     "name": "Hammered Stainless Steel Spatula",
-    "price": 199,
+    "price": 949,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -10683,7 +10683,7 @@ export const catalog = {
   "cj-reusable-silicone-food-storage-bag-34-oz": {
     "id": "cj-reusable-silicone-food-storage-bag-34-oz",
     "name": "Reusable Silicone Food Storage Bag, 34 oz",
-    "price": 299,
+    "price": 949,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -10715,7 +10715,7 @@ export const catalog = {
   "cj-cookie-press-with-20-discs": {
     "id": "cj-cookie-press-with-20-discs",
     "name": "Cookie Press with 20 Discs",
-    "price": 499,
+    "price": 1399,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -10747,7 +10747,7 @@ export const catalog = {
   "cj-stainless-steel-wine-stopper": {
     "id": "cj-stainless-steel-wine-stopper",
     "name": "Stainless Steel Wine Stopper",
-    "price": 199,
+    "price": 749,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -10779,7 +10779,7 @@ export const catalog = {
   "cj-silicone-sphere-ice-mold-6-balls": {
     "id": "cj-silicone-sphere-ice-mold-6-balls",
     "name": "Silicone Sphere Ice Mold, 6 Balls",
-    "price": 399,
+    "price": 1049,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -10811,7 +10811,7 @@ export const catalog = {
   "cj-black-fruit-storage-basket": {
     "id": "cj-black-fruit-storage-basket",
     "name": "Black Fruit Storage Basket",
-    "price": 449,
+    "price": 1299,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -10843,7 +10843,7 @@ export const catalog = {
   "cj-volcano-flame-aroma-diffuser-white": {
     "id": "cj-volcano-flame-aroma-diffuser-white",
     "name": "Volcano Flame Aroma Diffuser, White",
-    "price": 2049,
+    "price": 3149,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -10875,7 +10875,7 @@ export const catalog = {
   "cj-mini-usb-humidifier-gray": {
     "id": "cj-mini-usb-humidifier-gray",
     "name": "Mini USB Humidifier, Gray",
-    "price": 299,
+    "price": 949,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -10907,7 +10907,7 @@ export const catalog = {
   "cj-math-formula-wall-clock-8-in": {
     "id": "cj-math-formula-wall-clock-8-in",
     "name": "Math Formula Wall Clock, 8 in",
-    "price": 799,
+    "price": 1499,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -10939,7 +10939,7 @@ export const catalog = {
   "cj-picture-hanging-marking-tool": {
     "id": "cj-picture-hanging-marking-tool",
     "name": "Picture Hanging Marking Tool",
-    "price": 499,
+    "price": 1199,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -10971,7 +10971,7 @@ export const catalog = {
   "cj-magnetic-acrylic-photo-frames-6-pack": {
     "id": "cj-magnetic-acrylic-photo-frames-6-pack",
     "name": "Magnetic Acrylic Photo Frames, 6 Pack",
-    "price": 1299,
+    "price": 1599,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -11003,7 +11003,7 @@ export const catalog = {
   "cj-silicone-spoon-rest-orange": {
     "id": "cj-silicone-spoon-rest-orange",
     "name": "Silicone Spoon Rest, Orange",
-    "price": 149,
+    "price": 649,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -11035,7 +11035,7 @@ export const catalog = {
   "cj-hand-painted-orchid-ceramic-tea-canister": {
     "id": "cj-hand-painted-orchid-ceramic-tea-canister",
     "name": "Hand-Painted Orchid Ceramic Tea Canister",
-    "price": 849,
+    "price": 1749,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -11067,7 +11067,7 @@ export const catalog = {
   "cj-hand-painted-lotus-ceramic-tea-canister": {
     "id": "cj-hand-painted-lotus-ceramic-tea-canister",
     "name": "Hand-Painted Lotus Ceramic Tea Canister",
-    "price": 1349,
+    "price": 2149,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -11099,7 +11099,7 @@ export const catalog = {
   "cj-car-seat-back-organizer-brown": {
     "id": "cj-car-seat-back-organizer-brown",
     "name": "Car Seat Back Organizer, Brown",
-    "price": 949,
+    "price": 2199,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -11131,7 +11131,7 @@ export const catalog = {
   "cj-wooden-cartoon-wall-clock-green-crown": {
     "id": "cj-wooden-cartoon-wall-clock-green-crown",
     "name": "Wooden Cartoon Wall Clock, Green Crown",
-    "price": 1149,
+    "price": 1949,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -11835,7 +11835,7 @@ export const catalog = {
   "cj-crevice-cleaning-brush-set-8-pieces": {
     "id": "cj-crevice-cleaning-brush-set-8-pieces",
     "name": "Crevice Cleaning Brush Set, 8 Pieces",
-    "price": 199,
+    "price": 699,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -11867,7 +11867,7 @@ export const catalog = {
   "cj-flexible-drain-cleaning-tool": {
     "id": "cj-flexible-drain-cleaning-tool",
     "name": "Flexible Drain Cleaning Tool",
-    "price": 99,
+    "price": 749,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -11899,7 +11899,7 @@ export const catalog = {
   "cj-reusable-laundry-lint-ball-silver": {
     "id": "cj-reusable-laundry-lint-ball-silver",
     "name": "Reusable Laundry Lint Ball, Silver",
-    "price": 349,
+    "price": 949,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -11931,7 +11931,7 @@ export const catalog = {
   "cj-silicone-drain-hair-catcher-white": {
     "id": "cj-silicone-drain-hair-catcher-white",
     "name": "Silicone Drain Hair Catcher, White",
-    "price": 149,
+    "price": 649,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -13249,7 +13249,7 @@ export const catalog = {
   "cj-deer-jewelry-display-stand-white": {
     "id": "cj-deer-jewelry-display-stand-white",
     "name": "Deer Jewelry Display Stand, White",
-    "price": 1499,
+    "price": 1799,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -13281,7 +13281,7 @@ export const catalog = {
   "cj-reasons-i-love-you-wooden-heart-puzzle": {
     "id": "cj-reasons-i-love-you-wooden-heart-puzzle",
     "name": "Reasons I Love You Wooden Heart Puzzle",
-    "price": 649,
+    "price": 1249,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -13313,7 +13313,7 @@ export const catalog = {
   "cj-alpaca-plush-pillow-30-in-brown": {
     "id": "cj-alpaca-plush-pillow-30-in-brown",
     "name": "Alpaca Plush Pillow, 30 in, Brown",
-    "price": 949,
+    "price": 2249,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -13345,7 +13345,7 @@ export const catalog = {
   "cj-avocado-capybara-plush-14-in": {
     "id": "cj-avocado-capybara-plush-14-in",
     "name": "Avocado Capybara Plush, 14 in",
-    "price": 649,
+    "price": 1449,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -13377,7 +13377,7 @@ export const catalog = {
   "cj-white-goose-plush-20-in": {
     "id": "cj-white-goose-plush-20-in",
     "name": "White Goose Plush, 20 in",
-    "price": 299,
+    "price": 949,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -13409,7 +13409,7 @@ export const catalog = {
   "cj-ghost-plush-pillow-8-in": {
     "id": "cj-ghost-plush-pillow-8-in",
     "name": "Ghost Plush Pillow, 8 in",
-    "price": 499,
+    "price": 1099,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -13441,7 +13441,7 @@ export const catalog = {
   "cj-crochet-potted-plant-set-3-pieces": {
     "id": "cj-crochet-potted-plant-set-3-pieces",
     "name": "Crochet Potted Plant Set, 3 Pieces",
-    "price": 1199,
+    "price": 1749,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -13920,7 +13920,7 @@ export const catalog = {
   "cj-magnetic-car-air-vent-phone-mount-black": {
     "id": "cj-magnetic-car-air-vent-phone-mount-black",
     "name": "Magnetic Car Air Vent Phone Mount, Black",
-    "price": 1199,
+    "price": 1499,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -13952,7 +13952,7 @@ export const catalog = {
   "cj-magnetic-wireless-charging-car-mount-15-w": {
     "id": "cj-magnetic-wireless-charging-car-mount-15-w",
     "name": "Magnetic Wireless Charging Car Mount, 15 W",
-    "price": 1649,
+    "price": 2399,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -13984,7 +13984,7 @@ export const catalog = {
   "cj-foldable-3-in-1-wireless-charger-black": {
     "id": "cj-foldable-3-in-1-wireless-charger-black",
     "name": "Foldable 3-in-1 Wireless Charger, Black",
-    "price": 649,
+    "price": 1549,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -14016,7 +14016,7 @@ export const catalog = {
   "cj-portable-bluetooth-speaker-gray": {
     "id": "cj-portable-bluetooth-speaker-gray",
     "name": "Portable Bluetooth Speaker, Gray",
-    "price": 1349,
+    "price": 2249,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -14048,7 +14048,7 @@ export const catalog = {
   "cj-usb-c-to-usb-c-charging-cable-60-w-33-ft-blue": {
     "id": "cj-usb-c-to-usb-c-charging-cable-60-w-33-ft-blue",
     "name": "USB-C to USB-C Charging Cable, 60 W, 3.3 ft, Blue",
-    "price": 399,
+    "price": 999,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -14080,7 +14080,7 @@ export const catalog = {
   "cj-4-in-1-retractable-car-charger": {
     "id": "cj-4-in-1-retractable-car-charger",
     "name": "4-in-1 Retractable Car Charger",
-    "price": 599,
+    "price": 1349,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -14112,7 +14112,7 @@ export const catalog = {
   "cj-embroidered-laptop-sleeve-133-in-white-puppy": {
     "id": "cj-embroidered-laptop-sleeve-133-in-white-puppy",
     "name": "Embroidered Laptop Sleeve, 13.3 in, White Puppy",
-    "price": 699,
+    "price": 1349,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -14701,7 +14701,7 @@ export const catalog = {
   "cj-shrimp-tempura-squeaky-dog-toy": {
     "id": "cj-shrimp-tempura-squeaky-dog-toy",
     "name": "Shrimp Tempura Squeaky Dog Toy",
-    "price": 349,
+    "price": 899,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -14733,7 +14733,7 @@ export const catalog = {
   "cj-corduroy-squeaky-dog-toy-brown-rabbit": {
     "id": "cj-corduroy-squeaky-dog-toy-brown-rabbit",
     "name": "Corduroy Squeaky Dog Toy, Brown Rabbit",
-    "price": 399,
+    "price": 999,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -14765,7 +14765,7 @@ export const catalog = {
   "cj-suction-cup-cat-window-perch-black": {
     "id": "cj-suction-cup-cat-window-perch-black",
     "name": "Suction Cup Cat Window Perch, Black",
-    "price": 699,
+    "price": 1649,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -14797,7 +14797,7 @@ export const catalog = {
   "cj-dog-bath-brush-with-shampoo-dispenser-yellow": {
     "id": "cj-dog-bath-brush-with-shampoo-dispenser-yellow",
     "name": "Dog Bath Brush with Shampoo Dispenser, Yellow",
-    "price": 199,
+    "price": 899,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -14829,7 +14829,7 @@ export const catalog = {
   "cj-double-sided-dematting-comb-blue": {
     "id": "cj-double-sided-dematting-comb-blue",
     "name": "Double-Sided Dematting Comb, Blue",
-    "price": 349,
+    "price": 949,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -14861,7 +14861,7 @@ export const catalog = {
   "cj-silicone-finger-toothbrush-for-pets-blue": {
     "id": "cj-silicone-finger-toothbrush-for-pets-blue",
     "name": "Silicone Finger Toothbrush for Pets, Blue",
-    "price": 249,
+    "price": 749,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -14893,7 +14893,7 @@ export const catalog = {
   "cj-washable-pet-pee-pad-20-x-28-in-gray": {
     "id": "cj-washable-pet-pee-pad-20-x-28-in-gray",
     "name": "Washable Pet Pee Pad, 20 x 28 in, Gray",
-    "price": 449,
+    "price": 1149,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -14925,7 +14925,7 @@ export const catalog = {
   "cj-waterproof-plush-pet-blanket-small-gray": {
     "id": "cj-waterproof-plush-pet-blanket-small-gray",
     "name": "Waterproof Plush Pet Blanket, Small, Gray",
-    "price": 899,
+    "price": 1599,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -14957,7 +14957,7 @@ export const catalog = {
   "cj-double-sided-flannel-pet-bath-towel-24-x-28-in-gray": {
     "id": "cj-double-sided-flannel-pet-bath-towel-24-x-28-in-gray",
     "name": "Double-Sided Flannel Pet Bath Towel, 24 x 28 in, Gray",
-    "price": 249,
+    "price": 849,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -14989,7 +14989,7 @@ export const catalog = {
   "cj-cat-bathing-and-grooming-bag-gray": {
     "id": "cj-cat-bathing-and-grooming-bag-gray",
     "name": "Cat Bathing and Grooming Bag, Gray",
-    "price": 299,
+    "price": 999,
     "interval": null,
     "active": true,
     "paypalPlanId": null,

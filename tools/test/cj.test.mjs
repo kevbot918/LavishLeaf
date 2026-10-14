@@ -59,22 +59,14 @@ test('the stock check: a CJ variant under 5 in the US is out', async () => {
   assert.deepEqual(outOf(ok, catalog).products, []);
 });
 
-test("the cart's CJ freight: the dearest item, plus $1.50 for each more", () => {
-  const C = (c, q = 1) => ({ product: { price: 2000, ship: true, shipOz: 20, shipFrom: 'cj', shipCents: c }, qty: q });
-  assert.equal(quote([C(499)], { method: 'ship' }).cents, 499);
-  assert.equal(quote([C(499), C(699)], { method: 'ship' }).cents, 849);
-  assert.equal(quote([C(100, 3)], { method: 'ship' }).cents, 300, 'never more than each item alone');
-});
-
-test('US and overseas CJ parcels are charged apart, each extra unit at its own add-on', () => {
-  const C = (c, q, a, w) => ({ product: { price: 2000, ship: true, shipOz: 20, shipFrom: 'cj', shipCents: c, shipAddCents: a, shipWarehouse: w }, qty: q });
-  const q = quote([C(0, 1, null), C(604, 2, 120, 'CN')], { method: 'ship' });
-  assert.deepEqual(q.parts.map((p) => [p.desc, p.cents]), [['US warehouse items', 0], ['overseas warehouse items', 724]]);
-  assert.equal(q.cents, 724);
-});
-
-test("the cart's own product data (source.warehouse) is read as well as the catalog's", () => {
-  const bottle = { product: { price: 649, ship: true, shipOz: 8, shipFrom: 'cj', shipCents: 687, shipAddCents: 205, source: { warehouse: 'CN' } }, qty: 2 };
-  const chair = { product: { price: 4149, ship: true, shipOz: 120, shipFrom: 'cj', shipCents: 0, source: { warehouse: 'US' } }, qty: 1 };
-  assert.deepEqual(quote([bottle, chair], { method: 'ship' }).parts.map((p) => [p.desc, p.cents]), [['US warehouse items', 0], ['overseas warehouse items', 892]]);
+test('CJ items ship at the one direct-ship rate, shared with AliExpress, no location named', () => {
+  const C = (price, q = 1, w) => ({ product: { price, ship: true, shipOz: 20, shipFrom: 'cj', shipCents: 900, source: { warehouse: w } }, qty: q });
+  const A = (price, q = 1) => ({ product: { price, ship: true, shipOz: 4, shipFrom: 'aliexpress' }, qty: q });
+  assert.equal(quote([C(499)], { method: 'ship' }).cents, 299);
+  assert.equal(quote([C(1299)], { method: 'ship' }).cents, 0, 'free from $9.99');
+  assert.equal(quote([C(199, 3, 'CN')], { method: 'ship' }).cents, 0, 'free from 3 items');
+  const mixed = quote([C(300, 1, 'US'), A(300), C(200, 1, 'CN')], { method: 'ship' });
+  assert.equal(mixed.parts.length, 1, 'one direct-ship part for CJ and AliExpress together');
+  assert.equal(mixed.cents, 0);
+  assert.doesNotMatch(mixed.label + quote([C(499, 1, 'CN')], { method: 'ship' }).label, /overseas|warehouse|US /i);
 });

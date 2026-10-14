@@ -1,0 +1,949 @@
+{
+ "_help": "Written by tools/azure-shelf.mjs; drawn by tools/render-store.mjs (Home shelf \"Azure Standard\") and in Green Swaps. Public facts only; prices and stock refresh live from functions/azure-prices.mjs.",
+ "aid": "aac4bd548d",
+ "at": "2026-10-14",
+ "home": [
+  "FL080",
+  "GR062",
+  "GR112",
+  "CE202",
+  "BE094",
+  "BE086",
+  "BE246",
+  "BE049",
+  "OL427",
+  "OL377",
+  "OL429",
+  "SW356",
+  "NU052",
+  "NU114",
+  "NU417",
+  "DF128",
+  "QP018",
+  "QP139",
+  "QP165",
+  "QP324",
+  "NF1621",
+  "NF1618",
+  "NF1756",
+  "NF2120",
+  "NF1700",
+  "NF1694",
+  "HB2221",
+  "HB1964",
+  "GP034",
+  "GP073",
+  "GP168",
+  "GP491"
+ ],
+ "shelves": [
+  {
+   "title": "Flour and grains",
+   "note": "Organic wheat, oats, rice and flours, by the bag or in bulk.",
+   "items": [
+    {
+     "code": "FL080",
+     "id": 11444,
+     "slug": "all-purpose-flour-unbleached-organic",
+     "name": "All Purpose Flour, Unbleached, Organic",
+     "size": "30 oz",
+     "price": 4.64,
+     "stock": 59241,
+     "img": "images/azure/fl080.jpg"
+    },
+    {
+     "code": "GR062",
+     "id": 11656,
+     "slug": "hard-red-wheat-organic",
+     "name": "Hard Red Wheat, Organic",
+     "size": "5 lb",
+     "price": 5.7,
+     "stock": 31688,
+     "img": "images/azure/gr062.jpg"
+    },
+    {
+     "code": "GR112",
+     "id": 9635,
+     "slug": "hard-white-wheat-organic",
+     "name": "Hard White Wheat, Organic",
+     "size": "5 lb",
+     "price": 9.76,
+     "stock": 43583,
+     "img": "images/azure/gr112.jpg"
+    },
+    {
+     "code": "CE202",
+     "id": 9496,
+     "slug": "oats-rolled-organic",
+     "name": "Rolled Oats, Organic",
+     "size": "21 oz",
+     "price": 4.88,
+     "stock": 128849,
+     "img": "images/azure/ce202.jpg"
+    },
+    {
+     "code": "CE229",
+     "id": 10944,
+     "slug": "oats-steel-cut-organic",
+     "name": "Steel Cut Oats, Organic",
+     "size": "35 oz",
+     "price": 4.64,
+     "stock": 12145,
+     "img": "images/azure/ce229.jpg"
+    },
+    {
+     "code": "FL034",
+     "id": 8434,
+     "slug": "bread-flour-100-whole-white-wheat-unifine-organic",
+     "name": "Whole White Wheat Bread Flour, Organic",
+     "size": "28 oz",
+     "price": 3.15,
+     "stock": 8769,
+     "img": "images/azure/fl034.jpg"
+    },
+    {
+     "code": "FL084",
+     "id": 6425,
+     "slug": "spelt-flour-unifine-organic",
+     "name": "Spelt Flour, Organic",
+     "size": "27 oz",
+     "price": 4.26,
+     "stock": 5422,
+     "img": "images/azure/fl084.jpg"
+    },
+    {
+     "code": "FL250",
+     "id": 15702,
+     "slug": "einkorn-flour-unifine-organic",
+     "name": "Einkorn Flour, Organic",
+     "size": "24 oz",
+     "price": 8.25,
+     "stock": 9951,
+     "img": "images/azure/fl250.jpg"
+    },
+    {
+     "code": "GR361",
+     "id": 27872,
+     "slug": "rice-thai-jasmine-white-organic",
+     "name": "Thai Jasmine White Rice, Organic",
+     "size": "2 lb",
+     "price": 7.29,
+     "stock": 12190,
+     "img": "images/azure/gr361.jpg"
+    },
+    {
+     "code": "GR071",
+     "id": 10088,
+     "slug": "popcorn-yellow-organic",
+     "name": "Yellow Popcorn, Organic",
+     "size": "40 oz",
+     "price": 5.23,
+     "stock": 23669,
+     "img": "images/azure/gr071.jpg"
+    },
+    {
+     "code": "FL013",
+     "id": 7430,
+     "slug": "cornmeal-organic",
+     "name": "Cornmeal, Organic",
+     "size": "5 lb",
+     "price": 7,
+     "stock": 20902,
+     "img": "images/azure/fl013.jpg"
+    },
+    {
+     "code": "CE617",
+     "id": 17886,
+     "slug": "rolled-oats-gf-organic",
+     "name": "Rolled Oats, Gluten Free, Organic",
+     "size": "21 oz",
+     "price": 3.67,
+     "stock": 88381,
+     "img": "images/azure/ce617.jpg"
+    }
+   ]
+  },
+  {
+   "title": "Beans and baking",
+   "note": "Dry beans, lentils and the baking shelf.",
+   "items": [
+    {
+     "code": "BE094",
+     "id": 6625,
+     "slug": "black-beans-organic",
+     "name": "Black Beans, Organic",
+     "size": "40 oz",
+     "price": 5.29,
+     "stock": 16196,
+     "img": "images/azure/be094.jpg"
+    },
+    {
+     "code": "BE086",
+     "id": 10007,
+     "slug": "pinto-beans-organic",
+     "name": "Pinto Beans, Organic",
+     "size": "38 oz",
+     "price": 5.97,
+     "stock": 28044,
+     "img": "images/azure/be086.jpg"
+    },
+    {
+     "code": "BE246",
+     "id": 12542,
+     "slug": "garbanzo-beans-chick-peas-organic",
+     "name": "Garbanzo Beans, Organic",
+     "size": "36 oz",
+     "price": 6.6,
+     "stock": 9801,
+     "img": "images/azure/be246.jpg"
+    },
+    {
+     "code": "BE049",
+     "id": 18374,
+     "slug": "lentils-red-organic",
+     "name": "Red Lentils, Organic",
+     "size": "36 oz",
+     "price": 5.43,
+     "stock": 12644,
+     "img": "images/azure/be049.jpg"
+    },
+    {
+     "code": "BE010",
+     "id": 8887,
+     "slug": "lentils-green-organic",
+     "name": "Green Lentils, Organic",
+     "size": "36 oz",
+     "price": 5.3,
+     "stock": 10708,
+     "img": "images/azure/be010.jpg"
+    },
+    {
+     "code": "BE059",
+     "id": 8361,
+     "slug": "peas-green-split-organic",
+     "name": "Green Split Peas, Organic",
+     "size": "40 oz",
+     "price": 4.34,
+     "stock": 15020,
+     "img": "images/azure/be059.jpg"
+    },
+    {
+     "code": "SW079",
+     "id": 7883,
+     "slug": "cane-sugar-organic",
+     "name": "Cane Sugar, Organic",
+     "size": "5 lb",
+     "price": 10.02,
+     "stock": 45673,
+     "img": "images/azure/sw079.jpg"
+    },
+    {
+     "code": "BP008",
+     "id": 6490,
+     "slug": "baking-soda",
+     "name": "Baking Soda",
+     "size": "1 lb",
+     "price": 2.92,
+     "stock": 72724,
+     "img": "images/azure/bp008.jpg"
+    },
+    {
+     "code": "BP713",
+     "id": 29726,
+     "slug": "baking-powder",
+     "name": "Baking Powder",
+     "size": "1 lb",
+     "price": 6.47,
+     "stock": 37290,
+     "img": "images/azure/bp713.jpg"
+    },
+    {
+     "code": "BP046",
+     "id": 9024,
+     "slug": "vanilla-extract-organic",
+     "name": "Vanilla Extract, Organic",
+     "size": "4 floz glass",
+     "price": 6.71,
+     "stock": 18160,
+     "img": "images/azure/bp046.jpg"
+    },
+    {
+     "code": "BP833",
+     "id": 7282,
+     "slug": "cocoa-powder-organic",
+     "name": "Cocoa Powder, Organic",
+     "size": "1 lb",
+     "price": 12.52,
+     "stock": 18401,
+     "img": "images/azure/bp833.jpg"
+    },
+    {
+     "code": "BP323",
+     "id": 15112,
+     "slug": "chocolate-chips-semi-sweet-organic",
+     "name": "Semi-Sweet Chocolate Chips, Organic",
+     "size": "1 lb",
+     "price": 10.06,
+     "stock": 34435,
+     "img": "images/azure/bp323.jpg"
+    }
+   ]
+  },
+  {
+   "title": "Oils, honey and condiments",
+   "note": "Cooking oils, raw honey, maple syrup, vinegar and sauces.",
+   "items": [
+    {
+     "code": "OL427",
+     "id": 18556,
+     "slug": "olive-oil-extra-virgin-cold-pressed-organic",
+     "name": "Extra Virgin Olive Oil, Organic",
+     "size": "17 floz glass",
+     "price": 14.35,
+     "stock": 64727,
+     "img": "images/azure/ol427.jpg"
+    },
+    {
+     "code": "OL377",
+     "id": 17888,
+     "slug": "coconut-oil-expeller-pressed-organic",
+     "name": "Coconut Oil, Expeller Pressed, Organic",
+     "size": "32 floz glass",
+     "price": 10.72,
+     "stock": 30104,
+     "img": "images/azure/ol377.jpg"
+    },
+    {
+     "code": "OL429",
+     "id": 28250,
+     "slug": "avocado-oil-cold-pressed-refined-organic",
+     "name": "Avocado Oil, Organic",
+     "size": "17 floz glass",
+     "price": 12.33,
+     "stock": 23184,
+     "img": "images/azure/ol429.jpg"
+    },
+    {
+     "code": "SW356",
+     "id": 8557,
+     "slug": "honey-raw-berrywildflower",
+     "name": "Raw Honey, Berry and Wildflower",
+     "size": "3 lb glass",
+     "price": 10.77,
+     "stock": 15605,
+     "img": "images/azure/sw356.jpg"
+    },
+    {
+     "code": "SW018",
+     "id": 9086,
+     "slug": "maple-syrup-grade-a-dark-robust-organic",
+     "name": "Maple Syrup, Grade A Dark, Organic",
+     "size": "32 floz glass",
+     "price": 18.78,
+     "stock": 8650,
+     "img": "images/azure/sw018.jpg"
+    },
+    {
+     "code": "SW453",
+     "id": 26862,
+     "slug": "molasses-blackstrap-organic",
+     "name": "Blackstrap Molasses, Organic",
+     "size": "32 floz",
+     "price": 7.78,
+     "stock": 4473,
+     "img": "images/azure/sw453.jpg"
+    },
+    {
+     "code": "SW406",
+     "id": 18554,
+     "slug": "coconut-sugar-crystals-organic",
+     "name": "Coconut Sugar, Organic",
+     "size": "1 lb",
+     "price": 4.44,
+     "stock": 30249,
+     "img": "images/azure/sw406.jpg"
+    },
+    {
+     "code": "CO894",
+     "id": 11564,
+     "slug": "vinegar-raw-apple-cider-organic",
+     "name": "Raw Apple Cider Vinegar, Organic",
+     "size": "16 floz glass",
+     "price": 3.91,
+     "stock": 777,
+     "img": "images/azure/co894.jpg"
+    },
+    {
+     "code": "CO1048",
+     "id": 30634,
+     "slug": "ketchup-organic",
+     "name": "Ketchup, Organic",
+     "size": "38 oz",
+     "price": 4.77,
+     "stock": 56500,
+     "img": "images/azure/co1048.jpg"
+    },
+    {
+     "code": "CO1025",
+     "id": 30456,
+     "slug": "dijon-mustard-organic",
+     "name": "Dijon Mustard, Organic",
+     "size": "12 oz",
+     "price": 2.74,
+     "stock": 6735,
+     "img": "images/azure/co1025.jpg"
+    },
+    {
+     "code": "CO942",
+     "id": 28464,
+     "slug": "coconut-aminos-organic",
+     "name": "Coconut Aminos, Organic",
+     "size": "16 floz glass",
+     "price": 12.61,
+     "stock": 7643,
+     "img": "images/azure/co942.jpg"
+    },
+    {
+     "code": "CO1050",
+     "id": 27356,
+     "slug": "vinegar-balsamic-organic",
+     "name": "Balsamic Vinegar, Organic",
+     "size": "16 floz glass",
+     "price": 11.39,
+     "stock": 163,
+     "img": "images/azure/co1050.jpg"
+    }
+   ]
+  },
+  {
+   "title": "Snacks, nuts and drinks",
+   "note": "Nuts, chips, coffee and herbal tea.",
+   "items": [
+    {
+     "code": "NU052",
+     "id": 9829,
+     "slug": "peanuts-dry-roasted-no-salt-organic",
+     "name": "Dry Roasted Peanuts, Organic",
+     "size": "2 lb",
+     "price": 8.8,
+     "stock": 21786,
+     "img": "images/azure/nu052.jpg"
+    },
+    {
+     "code": "NU114",
+     "id": 6163,
+     "slug": "almonds-raw-organic",
+     "name": "Raw Almonds, Organic",
+     "size": "1 lb",
+     "price": 12.54,
+     "stock": 7612,
+     "img": "images/azure/nu114.jpg"
+    },
+    {
+     "code": "NU417",
+     "id": 31736,
+     "slug": "pistachios-in-shell-roasted-salted-organic",
+     "name": "Pistachios, Roasted and Salted, Organic",
+     "size": "2 lb",
+     "price": 20.66,
+     "stock": 4605,
+     "img": "images/azure/nu417.jpg"
+    },
+    {
+     "code": "DF128",
+     "id": 9618,
+     "slug": "banana-chips-organic",
+     "name": "Banana Chips, Organic",
+     "size": "1 lb",
+     "price": 4.79,
+     "stock": 4713,
+     "img": "images/azure/df128.jpg"
+    },
+    {
+     "code": "SE350",
+     "id": 26908,
+     "slug": "pumpkin-seeds-dry-roasted-salted-organic",
+     "name": "Pumpkin Seeds, Roasted and Salted, Organic",
+     "size": "1 lb",
+     "price": 8.77,
+     "stock": 4438,
+     "img": "images/azure/se350.jpg"
+    },
+    {
+     "code": "SN2548",
+     "id": 35656,
+     "slug": "tortilla-chips-organic",
+     "name": "Tortilla Chips, Organic",
+     "size": "2 oz",
+     "price": 1.35,
+     "stock": 2692,
+     "img": "images/azure/sn2548.jpg"
+    },
+    {
+     "code": "CS258",
+     "id": 29116,
+     "slug": "coffee-whole-bean-private-reserve-medium-roast-organic",
+     "name": "Whole Bean Coffee, Medium Roast, Organic",
+     "size": "1 lb",
+     "price": 19.58,
+     "stock": 425,
+     "img": "images/azure/cs258.jpg"
+    },
+    {
+     "code": "CS253",
+     "id": 29114,
+     "slug": "coffee-ground-cornerstone-dark-roast-organic",
+     "name": "Ground Coffee, Dark Roast, Organic",
+     "size": "1 lb",
+     "price": 19.59,
+     "stock": 277,
+     "img": "images/azure/cs253.jpg"
+    },
+    {
+     "code": "HS683",
+     "id": 7059,
+     "slug": "chamomile-flowers-whole-organic",
+     "name": "Chamomile Flowers, Organic",
+     "size": "4 oz",
+     "price": 4,
+     "stock": 11865,
+     "img": "images/azure/hs683.jpg"
+    },
+    {
+     "code": "HS1951",
+     "id": 30598,
+     "slug": "hibiscus-flower-cut-sifted-organic",
+     "name": "Hibiscus Flowers, Organic",
+     "size": "4 oz",
+     "price": 4.06,
+     "stock": 25025,
+     "img": "images/azure/hs1951.jpg"
+    },
+    {
+     "code": "GY1459",
+     "id": 30660,
+     "slug": "coconut-milk-17-19-fat-no-guar-organic",
+     "name": "Coconut Milk, Organic",
+     "size": "13.5 oz",
+     "price": 1.93,
+     "stock": 2866,
+     "img": "images/azure/gy1459.jpg"
+    },
+    {
+     "code": "JS796",
+     "id": 30392,
+     "slug": "king-coconut-water-organic",
+     "name": "King Coconut Water, Organic",
+     "size": "11.8 floz",
+     "price": 4.48,
+     "stock": 32594,
+     "img": "images/azure/js796.jpg"
+    }
+   ]
+  },
+  {
+   "title": "Fresh and frozen, to a Drop",
+   "note": "Produce, dairy and meat travel on Azure's refrigerated trucks to a local Drop.",
+   "items": [
+    {
+     "code": "QP018",
+     "id": 9564,
+     "slug": "onions-yellow-organic",
+     "name": "Yellow Onions, Organic",
+     "size": "3 lb",
+     "price": 6.95,
+     "stock": 1669,
+     "img": "images/azure/qp018.jpg"
+    },
+    {
+     "code": "QP139",
+     "id": 10100,
+     "slug": "potatoes-russet-organic",
+     "name": "Russet Potatoes, Organic",
+     "size": "5 lb",
+     "price": 5.91,
+     "stock": 7009,
+     "img": "images/azure/qp139.jpg"
+    },
+    {
+     "code": "QP165",
+     "id": 7004,
+     "slug": "carrots-1-organic",
+     "name": "Carrots, Organic",
+     "size": "5 lb",
+     "price": 8.5,
+     "stock": 460,
+     "img": "images/azure/qp165.jpg"
+    },
+    {
+     "code": "QP324",
+     "id": 8160,
+     "slug": "garlic-organic",
+     "name": "Garlic, Organic",
+     "size": "1 lb",
+     "price": 7.22,
+     "stock": 4770,
+     "img": "images/azure/qp324.jpg"
+    },
+    {
+     "code": "QP058",
+     "id": 8877,
+     "slug": "lemons-organic",
+     "name": "Lemons, Organic",
+     "size": "2 lb",
+     "price": 7.95,
+     "stock": 3688,
+     "img": "images/azure/qp058.jpg"
+    },
+    {
+     "code": "QP004",
+     "id": 6382,
+     "slug": "avocado-medium-organic",
+     "name": "Avocados, Organic",
+     "size": "3 ct",
+     "price": 5.52,
+     "stock": 911,
+     "img": "images/azure/qp004.jpg"
+    },
+    {
+     "code": "DP295",
+     "id": 19624,
+     "slug": "butter-salted-organic",
+     "name": "Salted Butter, Organic",
+     "size": "8 oz",
+     "price": 6.45,
+     "stock": 49522,
+     "img": "images/azure/dp295.jpg"
+    },
+    {
+     "code": "DP006",
+     "id": 10788,
+     "slug": "sour-cream-organic",
+     "name": "Sour Cream, Organic",
+     "size": "16 oz",
+     "price": 4.66,
+     "stock": 5732,
+     "img": "images/azure/dp006.jpg"
+    },
+    {
+     "code": "CH135",
+     "id": 7495,
+     "slug": "cream-cheese-organic",
+     "name": "Cream Cheese, Organic",
+     "size": "8 oz",
+     "price": 4.68,
+     "stock": 3654,
+     "img": "images/azure/ch135.jpg"
+    },
+    {
+     "code": "DP571",
+     "id": 28576,
+     "slug": "whole-milk-a2-4-organic",
+     "name": "Whole Milk, A2, Organic",
+     "size": "59 floz",
+     "price": 9.08,
+     "stock": 954,
+     "img": "images/azure/dp571.jpg"
+    },
+    {
+     "code": "MT975",
+     "id": 27768,
+     "slug": "ground-beef-8020-grass-fed-frozen",
+     "name": "Ground Beef 80/20, Grass-Fed, Frozen",
+     "size": "16 oz",
+     "price": 11.04,
+     "stock": 3716,
+     "img": "images/azure/mt975.jpg"
+    },
+    {
+     "code": "MT869",
+     "id": 20006,
+     "slug": "chicken-breast-boneless-skinless-organic-frozen-random-weight",
+     "name": "Chicken Breast, Organic, Frozen",
+     "size": "1 - 2 lb",
+     "price": 12.86,
+     "stock": 2235,
+     "img": "images/azure/mt869.jpg"
+    },
+    {
+     "code": "FG161",
+     "id": 8341,
+     "slug": "green-beans-frozen-organic",
+     "name": "Green Beans, Frozen, Organic",
+     "size": "5 lb",
+     "price": 13.81,
+     "stock": 1737,
+     "img": "images/azure/fg161.jpg"
+    }
+   ]
+  },
+  {
+   "title": "Household and canning",
+   "note": "Azure Clean soaps and cleaners, canning jars, bamboo paper.",
+   "items": [
+    {
+     "code": "NF1621",
+     "id": 26878,
+     "slug": "dish-soap-citrus",
+     "name": "Dish Soap, Citrus",
+     "size": "16 floz",
+     "price": 5.74,
+     "stock": 70,
+     "img": "images/azure/nf1621.jpg"
+    },
+    {
+     "code": "NF1618",
+     "id": 21068,
+     "slug": "dish-soap-fragrance-free",
+     "name": "Dish Soap, Fragrance Free",
+     "size": "16 floz",
+     "price": 5.67,
+     "stock": 591,
+     "img": "images/azure/nf1618.jpg"
+    },
+    {
+     "code": "NF1756",
+     "id": 29820,
+     "slug": "dishwasher-gel",
+     "name": "Dishwasher Gel",
+     "size": "32 floz",
+     "price": 8.04,
+     "stock": 78,
+     "img": "images/azure/nf1756.jpg"
+    },
+    {
+     "code": "NF2120",
+     "id": 21088,
+     "slug": "automatic-dishwasher-powder",
+     "name": "Dishwasher Powder",
+     "size": "8 lb pouch",
+     "price": 39.27,
+     "stock": 388,
+     "img": "images/azure/nf2120.jpg"
+    },
+    {
+     "code": "NF997",
+     "id": 21078,
+     "slug": "all-purpose-household-cleaner",
+     "name": "All Purpose Household Cleaner",
+     "size": "32 floz spray",
+     "price": 6.52,
+     "stock": 119,
+     "img": "images/azure/nf997.jpg"
+    },
+    {
+     "code": "HB2269",
+     "id": 34402,
+     "slug": "castile-liquid-soap-pure-unscented-aloe-mild-organic",
+     "name": "Castile Liquid Soap, Unscented, Organic",
+     "size": "32 floz",
+     "price": 11.15,
+     "stock": 1512,
+     "img": "images/azure/hb2269.jpg"
+    },
+    {
+     "code": "NF010",
+     "id": 32032,
+     "slug": "canning-jars-quart-wide-mouth-with-lids-bands",
+     "name": "Canning Jars, Quart, Wide Mouth",
+     "size": "12 x 32 oz. with lids and bands",
+     "price": 19.37,
+     "stock": 197,
+     "img": "images/azure/nf010.jpg"
+    },
+    {
+     "code": "NF811",
+     "id": 34376,
+     "slug": "canning-jars-pint-wide-mouth-with-lids-bands",
+     "name": "Canning Jars, Pint, Wide Mouth",
+     "size": "12 x 16 oz. with lids and bands",
+     "price": 13.08,
+     "stock": 236,
+     "img": "images/azure/nf811.jpg"
+    },
+    {
+     "code": "NF011",
+     "id": 32034,
+     "slug": "canning-jars-half-gallon-wide-mouth-with-lids-bands",
+     "name": "Canning Jars, Half-Gallon, Wide Mouth",
+     "size": "6 x 64 oz with lids and bands",
+     "price": 15.18,
+     "stock": 89,
+     "img": "images/azure/nf011.jpg"
+    },
+    {
+     "code": "NF2290",
+     "id": 34598,
+     "slug": "bamboo-toilet-paper-3-ply-365-sheets",
+     "name": "Bamboo Toilet Paper, 3 Ply",
+     "size": "8 rolls",
+     "price": 7.68,
+     "stock": 11903,
+     "img": "images/azure/nf2290.jpg"
+    }
+   ]
+  },
+  {
+   "title": "Health and beauty",
+   "note": "Simple body care and pantry staples for the medicine cabinet.",
+   "items": [
+    {
+     "code": "NF1700",
+     "id": 27144,
+     "slug": "hand-soap-citrus",
+     "name": "Hand Soap, Citrus",
+     "size": "16 floz",
+     "price": 6.8,
+     "stock": 684,
+     "img": "images/azure/nf1700.jpg"
+    },
+    {
+     "code": "NF1694",
+     "id": 27142,
+     "slug": "hand-soap-fragrance-free",
+     "name": "Hand Soap, Fragrance Free",
+     "size": "16 floz",
+     "price": 6.29,
+     "stock": 395,
+     "img": "images/azure/nf1694.jpg"
+    },
+    {
+     "code": "HB2221",
+     "id": 34408,
+     "slug": "castile-liquid-soap-pure-citrus-organic",
+     "name": "Castile Liquid Soap, Citrus, Organic",
+     "size": "32 floz",
+     "price": 15.2,
+     "stock": 362,
+     "img": "images/azure/hb2221.jpg"
+    },
+    {
+     "code": "HB1964",
+     "id": 35798,
+     "slug": "shampoo-bar-castile-rosemary-lavender-organic",
+     "name": "Shampoo Bar, Rosemary and Lavender, Organic",
+     "size": "1 Bar",
+     "price": 7.45,
+     "stock": 1,
+     "img": "images/azure/hb1964.jpg"
+    },
+    {
+     "code": "HB1767",
+     "id": 32820,
+     "slug": "castor-oil-organic",
+     "name": "Castor Oil, Organic",
+     "size": "8 oz glass",
+     "price": 5.62,
+     "stock": 2349,
+     "img": "images/azure/hb1767.jpg"
+    },
+    {
+     "code": "HB1121",
+     "id": 7868,
+     "slug": "epsom-salt",
+     "name": "Epsom Salt",
+     "size": "5 lb",
+     "price": 10.49,
+     "stock": 5093,
+     "img": "images/azure/hb1121.jpg"
+    },
+    {
+     "code": "NF2297",
+     "id": 34614,
+     "slug": "beeswax-granules-yellow-organic",
+     "name": "Beeswax Granules, Organic",
+     "size": "1 lb",
+     "price": 17.34,
+     "stock": 1454,
+     "img": "images/azure/nf2297.jpg"
+    },
+    {
+     "code": "HS386",
+     "id": 7074,
+     "slug": "activated-charcoal-powder",
+     "name": "Activated Charcoal Powder",
+     "size": "1 lb",
+     "price": 8.17,
+     "stock": 2809,
+     "img": "images/azure/hs386.jpg"
+    }
+   ]
+  },
+  {
+   "title": "Farm and animal feed",
+   "note": "Organic feed grains and farm supplies (no seeds: see SeedsNow).",
+   "items": [
+    {
+     "code": "GP034",
+     "id": 11712,
+     "slug": "whole-oats-with-hulls-animal-feed-organic",
+     "name": "Whole Oats, Animal Feed, Organic",
+     "size": "30 lb",
+     "price": 14.5,
+     "stock": 985,
+     "img": "images/azure/gp034.jpg"
+    },
+    {
+     "code": "GP073",
+     "id": 7134,
+     "slug": "chicken-wheat-animal-feed-organic",
+     "name": "Chicken Wheat, Animal Feed, Organic",
+     "size": "50 lb",
+     "price": 31.66,
+     "stock": 1748,
+     "img": "images/azure/gp073.jpg"
+    },
+    {
+     "code": "GP168",
+     "id": 11698,
+     "slug": "whole-barley-animal-feed-organic",
+     "name": "Whole Barley, Animal Feed, Organic",
+     "size": "45 lb",
+     "price": 23.53,
+     "stock": 1561,
+     "img": "images/azure/gp168.jpg"
+    },
+    {
+     "code": "GP491",
+     "id": 14652,
+     "slug": "alfalfa-pellets-organic",
+     "name": "Alfalfa Pellets, Organic",
+     "size": "40 lb",
+     "price": 31.71,
+     "stock": 1157,
+     "img": "images/azure/gp491.jpg"
+    },
+    {
+     "code": "GP850",
+     "id": 25340,
+     "slug": "whole-yellow-corn-animal-feed-organic",
+     "name": "Whole Yellow Corn, Animal Feed, Organic",
+     "size": "50 lb",
+     "price": 36.33,
+     "stock": 1152,
+     "img": "images/azure/gp850.jpg"
+    },
+    {
+     "code": "GP009",
+     "id": 7664,
+     "slug": "diatomaceous-earth-codex-grade",
+     "name": "Diatomaceous Earth, Codex Grade",
+     "size": "5 lb",
+     "price": 7.48,
+     "stock": 1449,
+     "img": "images/azure/gp009.jpg"
+    },
+    {
+     "code": "GP100",
+     "id": 8729,
+     "slug": "kelp-granules-asco-animal-blue-label-organic",
+     "name": "Kelp Granules for Animals, Organic",
+     "size": "5 lb",
+     "price": 21.41,
+     "stock": 1562,
+     "img": "images/azure/gp100.jpg"
+    }
+   ]
+  }
+ ]
+}

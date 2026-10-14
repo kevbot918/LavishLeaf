@@ -63,14 +63,12 @@ export const SHIPPING = {
   suppliers: {
     bangalla: { rule: 'bands', label: 'US supplier' },
     aliexpress: { rule: 'flat', freeOverCents: 999, freeOverItems: 3, cents: 299, label: 'direct-ship' },
-    // CJ Dropshipping (2026-10-14): each product carries "shipCents", CJ's own
-    // cheapest freight for one unit to Stigler, and "shipAddCents", what CJ
-    // charges for one more unit, both read when the product is added. A US
-    // warehouse parcel and a China warehouse parcel ("shipWarehouse": "CN")
-    // are charged apart. Each parcel: the dearest item's freight, plus each
-    // further unit's own add-on (addOnCents when a product has none), never
-    // more than every unit alone.
-    cj: { rule: 'cj', addOnCents: 150, label: 'US warehouse' },
+    // CJ Dropshipping: ONE rate, the same as AliExpress (owner, 2026-10-14:
+    // "lets keep one shipping rate for CJ dropshipping ... the same as the
+    // $2.99", and no warehouse or location named anywhere). CJ's own freight
+    // ("shipIncluded" on the product) is built into the item's price, so the
+    // flat rate never loses money. CJ items share the direct-ship part.
+    cj: { rule: 'flat', freeOverCents: 999, freeOverItems: 3, cents: 299, label: 'direct-ship', sameAs: 'aliexpress' },
   },
   // Posted orders go to the 48 contiguous states and DC only.
   notPosted: ['AK', 'HI', 'PR', 'GU', 'VI', 'AS', 'MP', 'AA', 'AE', 'AP'],
@@ -98,7 +96,8 @@ export function quote(lines, { method } = {}) {
     // One parcel per supplier, each charged by its own rule.
     const groups = new Map();
     for (const l of shipping) {
-      const from = SHIPPING.suppliers[l.product.shipFrom] ? l.product.shipFrom : 'bangalla';
+      const known = SHIPPING.suppliers[l.product.shipFrom];
+      const from = known ? (known.sameAs || l.product.shipFrom) : 'bangalla';
       if (!groups.has(from)) groups.set(from, []);
       groups.get(from).push(l);
     }
@@ -107,18 +106,6 @@ export function quote(lines, { method } = {}) {
       const rule = SHIPPING.suppliers[from];
       const subtotal = group.reduce((sum, { product, qty }) => sum + product.price * qty, 0);
       const items = group.reduce((n, { qty }) => n + qty, 0);
-      if (rule.rule === 'cj') {
-        for (const wh of ['US', 'CN']) {
-          const units = group.filter(({ product }) => (product.shipWarehouse === 'CN' || (product.source && product.source.warehouse === 'CN') ? 'CN' : 'US') === wh)
-            .flatMap(({ product, qty }) => Array(qty).fill({ one: Number.isInteger(product.shipCents) ? product.shipCents : 599, add: Number.isInteger(product.shipAddCents) ? product.shipAddCents : rule.addOnCents }));
-          if (!units.length) continue;
-          units.sort((a, b) => b.one - a.one);
-          const alone = units.reduce((n, u) => n + u.one, 0);
-          const cents = Math.min(alone, units[0].one + units.slice(1).reduce((n, u) => n + u.add, 0));
-          parts.push({ from: from + '-' + wh, label: rule.label, cents, desc: wh === 'CN' ? 'overseas warehouse items' : 'US warehouse items' });
-        }
-        continue;
-      }
       if (rule.rule === 'flat') {
         const free = subtotal >= rule.freeOverCents || items >= rule.freeOverItems;
         parts.push({ from, label: rule.label, cents: free ? 0 : rule.cents, desc: free ? 'direct-ship items' : 'direct-ship items under $9.99' });

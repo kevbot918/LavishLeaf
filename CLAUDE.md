@@ -694,3 +694,26 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     registration are in the Management Account, us-east-1, with its own
     IAM user lavishleaf-website-sms (SMS_* keys); a number without + is fixed
     in code. Twilio not used (owner: AWS is cheaper).
+
+43. **2026-10-14, night.** **One CJ rate, no location anywhere** (owner: "I
+    don't want anything that says overseas ... Nor do I want to distinguish or
+    insinuate that items come from any location"; "keep the 1-3 weeks"; "keep
+    shipping the same as the $2.99"). shipping.mjs `suppliers.cj` is the
+    AliExpress flat rule with `sameAs: 'aliexpress'`, so CJ and AliExpress
+    items share ONE direct-ship part (free from $9.99 or 3 items, else $2.99).
+    CJ's own freight is folded into each CJ price (`shipIncluded`, 54
+    products), so the flat rate never loses money; `shipCents`/`shipAddCents`
+    and source.warehouse stay for the owner's CJ ordering only. The pop-up and
+    Terms of Sale say "allow 1 to 3 weeks" for every order. Never write
+    warehouse, overseas, US or China wording where a visitor reads it.
+    **Azure Standard approved** (affiliate link a_aid=aac4bd548d):
+    tools/azure-shelf.mjs (8 lines, 86 products, no seeds, Azure's public API
+    api.azurestandard.com/packaged-products with limit=100; photos 360px via
+    tools/thumbs.ps1) writes azure-home.json, netlify/lib/azure-codes.mjs and
+    the Green Swaps Azure section (feature, Find a Drop, Anchor Drops, How it
+    works, shelves) between the AZURE markers; tools/render-store.mjs draws
+    the "Azure Standard" Home shelf after Pets (4 per line); store.js
+    refreshAzure() reads functions/azure-prices.mjs (CDN 12 h; out of stock
+    hides the card); #azure opens Green Swaps at Azure; sidebar partner link
+    and a Home feature block. Rerun azure-shelf then render-store to change
+    the selection.

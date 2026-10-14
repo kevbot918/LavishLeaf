@@ -795,3 +795,13 @@ body.ss-resizing .ss-side { transition: none; }
 .offer-no { display: block; margin: 10px auto 0; background: none; border: 0; color: #C8CFC8; text-decoration: underline; cursor: pointer; font: inherit; }
 .offer-code { color: #6FD65F; letter-spacing: .04em; }
 .cart-out { display: block; width: 100%; color: #F2B8A0; font-size: .82rem; font-weight: 700; margin-top: 2px; }
+/* Azure Standard on Green Swaps (2026-10-14): Drops and Anchor Drops. */
+.az-drops { display: flex; flex-wrap: wrap; gap: 14px; margin: 12px 32px 4px; }
+.az-drop-card { flex: 1 1 260px; display: flex; flex-direction: column; gap: 8px; padding: 14px 16px; border: 1px solid var(--line, rgba(255,255,255,.12)); border-radius: 12px; background: var(--card); }
+.az-drop-card h3 { margin: 0; font-size: 1.02rem; font-weight: 800; color: var(--text); }
+.az-drop-card p { margin: 0; flex: 1; font-size: .9rem; line-height: 1.5; color: var(--text); }
+.az-drop-card .btn { align-self: flex-start; }
+.gs-az-shelf { margin-top: 10px; }
+.gs-az-card .sp-media { display: block; }
+.gs-az-card .sp-media img { background: #fff; object-fit: contain; }
+@media (max-width: 1000px) { .az-drops { margin-left: 16px; margin-right: 16px; } }
