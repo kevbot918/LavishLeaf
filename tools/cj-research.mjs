@@ -33,6 +33,12 @@ for (const kw of KEYWORDS) {
     try {
       const q = await api('/product/query', { query: { pid: p.id, countryCode: 'US' }, token: tok });
       const vars = (q.variants || []).map((v) => ({ vid: v.vid, key: v.variantKey || v.variantNameEn || '', price: Number(v.variantSellPrice) || null, us: (v.inventories || []).filter((i) => String(i.countryCode).toUpperCase() === 'US').reduce((n, i) => n + (Number(i.totalInventory) || 0), 0), weight: v.variantWeight || null }));
+      // product/query has no stock: ask stock/queryByVid for the cheapest
+      // variants (2026-10-14, measured).
+      for (const v of vars.sort((a, b) => a.price - b.price).slice(0, 3)) {
+        const s = await api('/product/stock/queryByVid', { query: { vid: v.vid }, token: tok }).catch(() => []);
+        v.us = (s || []).filter((r) => String(r.countryCode).toUpperCase() === 'US').reduce((n, r) => n + (Number(r.totalInventoryNum) || 0), 0);
+      }
       const best = vars.filter((v) => v.us >= 20).sort((a, b) => a.price - b.price)[0];
       if (!best) continue;
       const fr = await api('/logistic/freightCalculate', { method: 'POST', body: { startCountryCode: 'US', endCountryCode: 'US', zip: '74462', products: [{ vid: best.vid, quantity: 1 }] }, token: tok }).catch(() => []);

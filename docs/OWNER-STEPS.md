@@ -46,6 +46,25 @@ created.
   lavishleaf.org address as spam. Not before both Google and Amazon have
   been signing mail for a while.
 
+**Texting, where it stands (2026-10-14, evening):** advanced features are on;
+the US toll-free registration "Lavish Leaf SMS" is submitted in the
+**Management Account (721274598888), N. Virginia (us-east-1)**, status AWS
+Reviewing. Email runs in the "Lavish Leaf Inc" account (us-east-2), so texting
+gets its own keys from the Management Account:
+  1. Management Account, N. Virginia: End User Messaging, Phone numbers: the
+     toll-free number (request it there if the registration did not; then
+     attach it on the registration's Associated resources tab).
+  2. Same account: IAM, Users, Create user "lavishleaf-website-sms" (no
+     console access), Add permissions, Create inline policy, JSON:
+     {"Version":"2012-10-17","Statement":[{"Effect":"Allow","Action":["sms-voice:SendTextMessage","sms-voice:DescribeOptedOutNumbers"],"Resource":"*"}]}
+     then Security credentials, Create access key, "Application running
+     outside AWS", copy both values.
+  3. Netlify: SMS_ACCESS_KEY_ID, SMS_SECRET_ACCESS_KEY, SMS_REGION = us-east-1,
+     SMS_ORIGINATION_NUMBER = +1888..., Trigger deploy, after the registration
+     is approved. Then dashboard, Text messages, Send a test to my phone.
+  4. Billing and Cost Management, Budgets: a $20 monthly budget with an email
+     alert (advanced features removed the project's spend limit).
+
 **New 2026-10-14 (afternoon):**
 - **AWS texting blocked ("Access to this service is not supported"):** the
   account is still on AWS's Free account PLAN (not the same as free-tier

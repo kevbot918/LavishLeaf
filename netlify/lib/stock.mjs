@@ -184,9 +184,9 @@ export async function runCheck(store, { env = process.env, fetchImpl = fetch, ae
     let errors = 0, checked = 0;
     for (const p of supplierProducts(catalog).filter((x) => supplierKey(x) === 'cj')) {
       try {
-        const f = await cjCheck(p.supplier.pid);
-        checked++;
         const vids = p.supplier.optionVids ? Object.entries(p.supplier.optionVids) : [[null, p.supplier.vid]];
+        const f = await cjCheck(p.supplier.pid, vids.map(([, v]) => v));
+        checked++;
         const opts = {}; let anyIn = false, total = 0;
         for (const [opt, vid] of vids) {
           const v = f && (f.variants || []).find((x) => x.vid === vid);

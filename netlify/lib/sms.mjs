@@ -16,9 +16,12 @@
 //   * marketing texts only between 9 am and 8 pm Central (US quiet hours).
 //
 // Environment (Netlify): SMS_ORIGINATION_NUMBER (the toll-free number in
-// +1 form, or its ARN), optional SMS_REGION (else SES_REGION); the SES_*
-// keys, whose IAM user also needs sms-voice:SendTextMessage and
-// sms-voice:DescribeOptedOutNumbers.
+// +1 form, or its ARN), SMS_REGION (else SES_REGION), and the keys of an IAM
+// user allowed sms-voice:SendTextMessage and sms-voice:DescribeOptedOutNumbers:
+// SMS_ACCESS_KEY_ID / SMS_SECRET_ACCESS_KEY, or else the SES_* keys. Own keys
+// since 2026-10-14: the owner's number and registration are in the
+// Management Account in us-east-1, while email runs in the "Lavish Leaf Inc"
+// account in us-east-2, and a text must go from the number's own account.
 import { signV4 } from './aws-sign.mjs';
 
 export const PREFIX = 'Lavish Leaf: ';
@@ -28,8 +31,8 @@ export function smsConfig(env = process.env) {
   return {
     from: String(env.SMS_ORIGINATION_NUMBER || '').trim(),
     region: String(env.SMS_REGION || env.SES_REGION || 'us-east-1').trim(),
-    accessKeyId: env.SES_ACCESS_KEY_ID || '',
-    secretAccessKey: env.SES_SECRET_ACCESS_KEY || '',
+    accessKeyId: env.SMS_ACCESS_KEY_ID || env.SES_ACCESS_KEY_ID || '',
+    secretAccessKey: env.SMS_SECRET_ACCESS_KEY || env.SES_SECRET_ACCESS_KEY || '',
   };
 }
 export const smsReady = (env = process.env) => { const c = smsConfig(env); return !!(c.from && c.accessKeyId && c.secretAccessKey); };
