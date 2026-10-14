@@ -28,7 +28,7 @@ export function cjItems(o, cat = catalog) {
     const p = cat[id];
     if (!p || !p.supplier || !/^cj/i.test(p.supplier.name)) continue;
     const vid = opt && p.supplier.optionVids ? p.supplier.optionVids[opt] : p.supplier.vid;
-    if (vid) items.push({ vid, qty: i.qty, name: i.name });
+    if (vid) items.push({ vid, qty: i.qty, name: i.name, from: p.supplier.warehouse === 'CN' ? 'CN' : 'US' });
   }
   return items;
 }
@@ -55,11 +55,18 @@ export default async (request) => {
       if (!items.length) return json(400, { error: 'Nothing on this order comes from CJ.' });
       const a = addressOf(o);
       if (!a.line1 || !a.city || !a.state || !a.zip) return json(400, { error: 'The address is incomplete; place it by hand in CJ.' });
-      const options = await freight(items, a.zip);
-      if (!options.length) return json(502, { error: 'CJ gave no US shipping option for this address; place it by hand in CJ.' });
-      const ship = options[0];
-      const r = await createOrder({ id: o.id, name: a.name || o.first_last, phone: o.phone || '', email: o.email, addr: a }, items, ship.name);
-      o.cj = { orderId: r.orderId, at: new Date().toISOString(), logistic: ship.name, days: ship.days, freight: ship.usd, amount: r.orderAmount || r.actualPayment || null, status: r.orderStatus || null };
+      // One CJ order per warehouse (US, and the overseas one), 2026-10-14.
+      const orders = [];
+      for (const from of ['US', 'CN']) {
+        const group = items.filter((i) => i.from === from);
+        if (!group.length) continue;
+        const options = await freight(group, a.zip, from);
+        if (!options.length) return json(502, { error: 'CJ gave no shipping option from its ' + from + ' warehouse for this address; place it by hand in CJ.' });
+        const ship = options[0];
+        const r = await createOrder({ id: o.id + (from === 'CN' ? '-CN' : ''), name: a.name || o.first_last, phone: o.phone || '', email: o.email, addr: a }, group, ship.name, from);
+        orders.push({ orderId: r.orderId, from, logistic: ship.name, days: ship.days, freight: ship.usd, amount: r.orderAmount || r.actualPayment || null, status: r.orderStatus || null });
+      }
+      o.cj = { ...orders[0], at: new Date().toISOString(), orders };
       o.ordered = o.ordered || {};
       for (const i of o.items || []) if (items.some((x) => i.sku && cjItems({ items: [i] }).length)) o.ordered[i.sku] = new Date().toISOString();
       await store.setJSON(key, o);

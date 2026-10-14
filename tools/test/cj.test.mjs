@@ -72,3 +72,9 @@ test('US and overseas CJ parcels are charged apart, each extra unit at its own a
   assert.deepEqual(q.parts.map((p) => [p.desc, p.cents]), [['US warehouse items', 0], ['overseas warehouse items', 724]]);
   assert.equal(q.cents, 724);
 });
+
+test("the cart's own product data (source.warehouse) is read as well as the catalog's", () => {
+  const bottle = { product: { price: 649, ship: true, shipOz: 8, shipFrom: 'cj', shipCents: 687, shipAddCents: 205, source: { warehouse: 'CN' } }, qty: 2 };
+  const chair = { product: { price: 4149, ship: true, shipOz: 120, shipFrom: 'cj', shipCents: 0, source: { warehouse: 'US' } }, qty: 1 };
+  assert.deepEqual(quote([bottle, chair], { method: 'ship' }).parts.map((p) => [p.desc, p.cents]), [['US warehouse items', 0], ['overseas warehouse items', 892]]);
+});

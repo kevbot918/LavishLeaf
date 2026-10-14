@@ -99,9 +99,9 @@ export async function productFacts(pid, vids = null, country = 'US') {
   return { pid: d.pid, name: d.productNameEn, sku: d.productSku, sellPrice: Number(d.sellPrice) || null, variants };
 }
 
-/** Freight options from the US warehouse to a ZIP, cheapest first. */
-export async function freight(items, zip) {
-  const d = await call('/logistic/freightCalculate', { method: 'POST', body: { startCountryCode: 'US', endCountryCode: 'US', zip: String(zip || '').slice(0, 5), products: items.map((i) => ({ vid: i.vid, quantity: i.qty })) } });
+/** Freight options from a warehouse (US, or CN) to a US ZIP, cheapest first. */
+export async function freight(items, zip, from = 'US') {
+  const d = await call('/logistic/freightCalculate', { method: 'POST', body: { startCountryCode: from, endCountryCode: 'US', zip: String(zip || '').slice(0, 5), products: items.map((i) => ({ vid: i.vid, quantity: i.qty })) } });
   return (d || []).map((x) => ({ name: x.logisticName, days: x.logisticAging, usd: Number(x.totalPostageFee || x.logisticPrice) || 0 })).sort((a, b) => a.usd - b.usd);
 }
 
@@ -110,7 +110,7 @@ export async function freight(items, zip) {
  * the owner pays it in his CJ account. order: { id, name, phone, email,
  * addr: { line1, line2, city, state, zip } }, items: [{ vid, qty }].
  */
-export async function createOrder(order, items, logisticName) {
+export async function createOrder(order, items, logisticName, from = 'US') {
   const a = order.addr;
   return call('/shopping/order/createOrderV2', {
     method: 'POST',
@@ -120,7 +120,7 @@ export async function createOrder(order, items, logisticName) {
       shippingProvince: a.state, shippingCity: a.city, shippingZip: a.zip,
       shippingAddress: a.line1, shippingAddress2: a.line2 || '',
       shippingCustomerName: order.name, shippingPhone: order.phone || '', email: order.email || '',
-      logisticName, fromCountryCode: 'US', payType: 3,
+      logisticName, fromCountryCode: from, payType: 3,
       products: items.map((i) => ({ vid: i.vid, quantity: i.qty })),
     },
   });

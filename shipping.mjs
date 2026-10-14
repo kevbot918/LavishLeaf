@@ -109,7 +109,7 @@ export function quote(lines, { method } = {}) {
       const items = group.reduce((n, { qty }) => n + qty, 0);
       if (rule.rule === 'cj') {
         for (const wh of ['US', 'CN']) {
-          const units = group.filter(({ product }) => (product.shipWarehouse === 'CN' ? 'CN' : 'US') === wh)
+          const units = group.filter(({ product }) => (product.shipWarehouse === 'CN' || (product.source && product.source.warehouse === 'CN') ? 'CN' : 'US') === wh)
             .flatMap(({ product, qty }) => Array(qty).fill({ one: Number.isInteger(product.shipCents) ? product.shipCents : 599, add: Number.isInteger(product.shipAddCents) ? product.shipAddCents : rule.addOnCents }));
           if (!units.length) continue;
           units.sort((a, b) => b.one - a.one);

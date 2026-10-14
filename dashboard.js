@@ -1029,7 +1029,7 @@
         if (cjLines.length && !/refunded|reversed|failed/.test(o.status || '')) {
           var cjRow = el('div', 'db-links');
           if (o.cj && o.cj.orderId) {
-            cjRow.appendChild(el('p', 'db-hint', 'Placed on CJ ' + niceDate(o.cj.at) + ': CJ order ' + o.cj.orderId + ', ' + (o.cj.logistic || '') + (o.cj.freight != null ? ' $' + Number(o.cj.freight).toFixed(2) : '') + (o.cj.amount ? ', total $' + Number(o.cj.amount).toFixed(2) : '') + '. Pay it in your CJ account (My CJ, Orders) so it ships.'));
+            cjRow.appendChild(el('p', 'db-hint', 'Placed on CJ ' + niceDate(o.cj.at) + ': ' + (o.cj.orders || [o.cj]).map(function (x) { return 'CJ order ' + x.orderId + (x.from === 'CN' ? ' (overseas)' : ' (US)') + ', ' + (x.logistic || '') + (x.freight != null ? ' $' + Number(x.freight).toFixed(2) : '') + (x.amount ? ', total $' + Number(x.amount).toFixed(2) : ''); }).join('; ') + '. Pay ' + ((o.cj.orders || []).length > 1 ? 'them' : 'it') + ' in your CJ account (My CJ, Orders) so ' + ((o.cj.orders || []).length > 1 ? 'they ship' : 'it ships') + '.'));
           } else {
             var bCj = h('<button type="button" class="db-btn-ghost"><i class="fas fa-truck-fast"></i> Place the CJ items on CJ</button>');
             var cjMsg = el('span', 'db-hint');

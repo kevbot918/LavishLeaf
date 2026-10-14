@@ -680,3 +680,17 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     **Offer**: email is enough; phone and texts optional. **Suppliers**: the
     owner's "not for us" list (demo-store DECLINED; affiliates.json group 4).
     AWS texting needs the account on the Paid plan.
+
+42. **2026-10-14, evening.** **CJ from both warehouses**: products carry
+    source.warehouse "US" | "CN", shipCents (CJ freight, one unit, to 74462)
+    and shipAddCents (what a second unit adds); shipping.mjs charges a US and
+    an overseas parcel apart (dearest item in full + each further unit's
+    add-on); the pop-up says the warehouse and delivery time; Terms of Sale
+    explains it; functions/cj.mjs places one CJ order per warehouse.
+    tools/cj-research.mjs --from CN. 75 CJ products (10 + 65, 455 in all);
+    photos checked against names on a contact sheet (a photo showing other
+    colors gets "you receive the one named"). Fillaree approved (wholesale,
+    not dropship): no products yet (owner). Texting: the number and
+    registration are in the Management Account, us-east-1, with its own
+    IAM user lavishleaf-website-sms (SMS_* keys); a number without + is fixed
+    in code. Twilio not used (owner: AWS is cheaper).
