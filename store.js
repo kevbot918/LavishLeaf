@@ -956,7 +956,7 @@
         // The owner's wording (2026-10-11): flat-rate items, and items by weight.
         var flat = m.SHIPPING.suppliers[d.shipFrom];
         shipTxt.textContent = flat && flat.rule === 'cj'
-          ? '$' + (q.cents / 100).toFixed(2) + ', fast from a US warehouse; each extra item adds only $' + (flat.addOnCents / 100).toFixed(2) + '.'
+          ? (q.cents ? '$' + (q.cents / 100).toFixed(2) + ', fast from a US warehouse; each extra item adds only $' + (flat.addOnCents / 100).toFixed(2) + '.' : 'free, fast from a US warehouse.')
           : flat && flat.rule === 'flat'
           ? '$' + (flat.cents / 100).toFixed(2) + '. Items from the same supplier share costs.'
           : 'from this supplier is by weight, minimum of $' + (m.SHIPPING.bands[0].cents / 100).toFixed(2) + '.';
