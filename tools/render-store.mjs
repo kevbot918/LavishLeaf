@@ -314,6 +314,10 @@ if (unknown.length) {
       // The server refuses an order without its waiver (checkout.mjs), so
       // the waiver has to be in the catalog the server reads.
       waiver: p.waiver ? { version: p.waiver.version } : null,
+      // The supplier's code, for the stock check (netlify/lib/stock.mjs,
+      // 2026-10-13): Bangalla SKUs (each option its own), AliExpress item id.
+      supplier: p.source ? { name: p.source.supplier || '', sku: p.source.sku || null, item: p.source.item || null,
+        optionSkus: p.options && p.options.values.some((v) => v.sku) ? Object.fromEntries(p.options.values.filter((v) => v.sku).map((v) => [v.name, v.sku])) : null } : null,
     };
   }
   const path = join(ROOT, 'netlify', 'lib', 'catalog.mjs');

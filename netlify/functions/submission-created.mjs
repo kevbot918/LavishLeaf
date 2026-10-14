@@ -38,7 +38,7 @@ export default async (request) => {
 
   try {
     const store = await newsletterStore();
-    const details = { email, first, last: d['last-name'] || '', phone: d.phone || '', source: form || 'form' };
+    const details = { email, first, last: d['last-name'] || '', phone: d.phone || '', source: form || 'form', sms: String(d.sms || '').toLowerCase() === 'yes' };
     if (form === 'newsletter') {
       // The form's "Sign up for news and updates" box is ticked by default;
       // unticked means the person only wanted to leave their details, which

@@ -1476,3 +1476,4 @@ footer {
 .cart-code-row input { flex: 1 1 140px; min-width: 0; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--rule, #565656); font: inherit; text-transform: uppercase; }
 .cart-code-row .btn-small { padding: 8px 14px; font-size: .9rem; }
 .cart-link { background: none; border: 0; color: var(--leaf-bright, #6FD65F); text-decoration: underline; cursor: pointer; font: inherit; padding: 0; }
+.cart-out { display: block; width: 100%; color: #F2B8A0; font-size: .82rem; font-weight: 700; margin-top: 2px; }

@@ -36,7 +36,7 @@ export default async (request) =>
       const rec = await (await discountsStore()).get('c-' + meta.d, { type: 'json' }).catch(() => null);
       const payer = String((order.payer && order.payer.email_address) || '').toLowerCase();
       if (!rec || rec.used) throw new CheckoutError(400, 'That discount code has already been used, so this order was not charged. Remove the code from your cart and check out again.');
-      if (rec.email !== payer) throw new CheckoutError(400, 'Your 20% code was sent to ' + rec.email.replace(/^(.).*(@.*)$/, '$1***$2') + ', but this PayPal account uses a different email, so nothing was charged. Pay with the PayPal account for that email, or remove the code from your cart and check out again.');
+      if (rec.email !== payer) throw new CheckoutError(400, 'Your 15% code was sent to ' + rec.email.replace(/^(.).*(@.*)$/, '$1***$2') + ', but this PayPal account uses a different email, so nothing was charged. Pay with the PayPal account for that email, or remove the code from your cart and check out again.');
     }
 
     const done = order.status === 'COMPLETED'

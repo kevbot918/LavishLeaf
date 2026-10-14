@@ -794,3 +794,4 @@ body.ss-resizing .ss-side { transition: none; }
 .offer-fine a { color: #6FD65F; }
 .offer-no { display: block; margin: 10px auto 0; background: none; border: 0; color: #C8CFC8; text-decoration: underline; cursor: pointer; font: inherit; }
 .offer-code { color: #6FD65F; letter-spacing: .04em; }
+.cart-out { display: block; width: 100%; color: #F2B8A0; font-size: .82rem; font-weight: 700; margin-top: 2px; }

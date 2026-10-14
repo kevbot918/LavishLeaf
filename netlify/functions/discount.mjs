@@ -1,4 +1,4 @@
-// /.netlify/functions/discount   the store's 20% first-order offer (owner,
+// /.netlify/functions/discount   the store's 15% first-order offer (owner,
 // 2026-10-13)
 //   POST { action: "claim", email, phone, sms? }  -> { code }  and the email
 //        One claim per IP address, email and phone, and none for somebody
@@ -46,15 +46,15 @@ export default async (request, context) => {
       const ordered = (await allOrders(await ordersStore())).some((o) => o.email === email && !/refunded|reversed|failed/.test(o.status || ''));
       if (ordered) return json(409, { error: 'This offer is for a first order, and this email has ordered before. Thank you for coming back!' });
       const rec = await claim(store, { email, phone, ip, sms: body.sms === true });
-      await saveContact({ email, phone, source: 'discount' });
+      await saveContact({ email, phone, source: 'discount', sms: body.sms === true });
       if (mailReady()) {
         try {
           await sendNotice({
-            to: email, subject: 'Your 20% off code for Lavish Leaf', heading: 'Your 20% off',
+            to: email, subject: 'Your 15% off code for Lavish Leaf', heading: 'Your 15% off',
             paragraphs: [
-              `Here is your code for 20% off the products in your first order: ${rec.code}`,
+              `Here is your code for 15% off the products in your first order: ${rec.code}`,
               `Important: pay with this same email address (${email}) in PayPal. The code only works when the PayPal email matches the one it was sent to; with any other email the checkout will stop before anything is charged.`,
-              'Enter the code in the cart and press Apply. It takes 20% off products; shipping, sales tax, league registrations and pick-up subscriptions are not discounted. One code per customer, for one order.',
+              'Enter the code in the cart and press Apply. It takes 15% off products; shipping, sales tax, league registrations and pick-up subscriptions are not discounted. One code per customer, for one order.',
             ],
             rows: [['Your code', rec.code], ['Use it with', email]],
             links: [['Shop the store', 'https://lavishleaf.org/store.html']],

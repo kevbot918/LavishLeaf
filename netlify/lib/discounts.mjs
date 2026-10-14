@@ -5,7 +5,7 @@
 //   i-<hash>      the code an IP address claimed (an HMAC of the address,
 //                 never the address itself)
 // One claim per IP, per email and per phone, and only for somebody with no
-// paid order yet, so a new email each visit does not get a new 20%.
+// paid order yet, so a new email each visit does not get a new 15%.
 import { createHash, createHmac, randomInt } from 'node:crypto';
 import { CODE } from '../../discount.mjs';
 
@@ -22,7 +22,7 @@ const ALPHABET = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
 export function newCode() {
   let s = '';
   for (let i = 0; i < 8; i++) s += ALPHABET[randomInt(ALPHABET.length)];
-  return 'LL20-' + s;
+  return 'LL15-' + s;
 }
 
 export const normEmail = (e) => String(e || '').trim().toLowerCase();

@@ -2,16 +2,16 @@
 // the browser (cart.js imports this file) and by the checkout function, like
 // shipping.mjs and tax.mjs. The server's answer is the one PayPal charges.
 //
-// 20% off the store's PRODUCTS on a customer's first order: not shipping,
+// 15% (owner, 2026-10-14; it was 20%) off the store's PRODUCTS on a customer's first order: not shipping,
 // not tax, not league registrations, not the pick-up subscriptions. A code
 // comes from the store's sign-up pop-up (netlify/functions/discount.mjs),
 // once per IP address, email and phone, and only works when the PayPal email
 // is the one it was sent to (checked before the payment is captured).
 
-export const DISCOUNT = { percent: 20, label: 'First-order discount (20%)' };
+export const DISCOUNT = { percent: 15, label: 'First-order discount (15%)' };
 
-/** Code shape: LL20- and eight letters or digits. */
-export const CODE = /^LL20-[A-HJ-NP-Z2-9]{8}$/;
+/** Code shape: LL15- (LL20- from the first day, 2026-10-13) and eight letters or digits. */
+export const CODE = /^LL(15|20)-[A-HJ-NP-Z2-9]{8}$/;
 
 /** Whether a line can be discounted: a posted product, not a service or registration. */
 export function eligible(product) {

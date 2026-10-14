@@ -41,7 +41,7 @@ export default async (request) => {
       console.error('[unsubscribe]', e.message);
       return page('Something went wrong', '<h1>We could not do that just now</h1><p>Please try again in a minute, or email <a href="mailto:support@lavishleaf.org?subject=Unsubscribe">support@lavishleaf.org</a> and we will do it by hand.</p>', 500);
     }
-    return page('Unsubscribed', `<h1>You are unsubscribed</h1><p>${esc(email)} will not get ${LISTS[list]} any more. Sorry to see you go, and thank you for reading.</p><p><a href="https://lavishleaf.org">Back to lavishleaf.org</a></p>`);
+    return page('Unsubscribed', `<h1>You are unsubscribed</h1><p>${esc(email)} will not get ${LISTS[list]} any more. Sorry to see you go, and thank you for reading.</p><p>Receipts, order and pick-up updates, and replies to your messages still come as usual.</p><p><a href="https://lavishleaf.org">Back to lavishleaf.org</a></p>`);
   }
 
   return page('Unsubscribe', `<h1>Unsubscribe?</h1><p>Stop sending ${LISTS[list]} to <strong>${esc(email)}</strong>.</p>

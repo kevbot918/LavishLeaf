@@ -115,6 +115,26 @@
       shelfDefs.push(def);
     });
   }
+  // Out of stock at the supplier (netlify/functions/stock, checked every two
+  // hours, 2026-10-13): those cards leave the page, and an option that ran
+  // out is marked in the pop-up. The checkout refuses them too.
+  var outOptions = {};
+  function fetchStock() {
+    fetch('/.netlify/functions/stock')
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (s) {
+        if (!s) return;
+        outOptions = s.outOptions || {};
+        (s.out || []).forEach(function (id) {
+          var p = products[id];
+          if (!p) return;
+          if (p.card && p.card.parentNode) p.card.parentNode.removeChild(p.card);
+          delete products[id];
+          shelfDefs.forEach(function (d) { d.ids = d.ids.filter(function (x) { return x !== id; }); });
+        });
+      })
+      .catch(function () { /* the checkout still refuses what is out */ });
+  }
   var pendingOpen = null;
   function fetchTags() {
     fetch('/products.json', { cache: 'no-store' })
@@ -952,7 +972,12 @@
       lab.appendChild(el('span', null, d.options.label));
       var sel = el('select', { id: 'pop-opt' });
       sel.appendChild(el('option', { value: '' }, 'Choose...'));
-      d.options.values.forEach(function (v) { sel.appendChild(el('option', { value: v.name }, v.name)); });
+      d.options.values.forEach(function (v) {
+        var gone = (outOptions[pid] || []).indexOf(v.name) >= 0;
+        var o = el('option', { value: v.name }, v.name + (gone ? ' (out of stock)' : ''));
+        if (gone) o.disabled = true;
+        sel.appendChild(o);
+      });
       lab.appendChild(sel);
       acts.appendChild(lab);
       var addB = el('button', { type: 'button', class: 'btn' }, 'Add to cart');
@@ -1042,6 +1067,7 @@
 
   // ------------------------------------------------------------ go
   readCatalogue();
+  fetchStock();
   refreshSeedsNow();
   fetchTags();
   buildResize();

@@ -7,6 +7,10 @@
 // not connected yet shows how to connect it instead of a blank.
 (function () {
   'use strict';
+  // The sticky site header's height, so a tile's link lands with the section
+  // title in view (dashboard.css .db-section scroll-margin-top).
+  function hdr() { var hd = document.querySelector('header'); if (hd) document.documentElement.style.setProperty('--db-hdr', Math.ceil(hd.getBoundingClientRect().height) + 'px'); }
+  hdr(); window.addEventListener('resize', hdr);
 
   var state = { days: 28, data: null, user: null };
   var $ = function (s, r) { return (r || document).querySelector(s); };
@@ -759,6 +763,51 @@
     }).catch(function (e) { ctMsg.textContent = e.message; });
     ctBtn.addEventListener('click', function () { csv(contactsAll, ['email', 'first', 'last', 'phone', 'status', 'sources', 'joined'], 'lavish-leaf-contacts'); });
     g8.appendChild(ct);
+    // Text messages (owner, 2026-10-14): only to people who ticked "Text me
+    // offers"; every text starts "Lavish Leaf:" and ends "Reply STOP to opt
+    // out." (netlify/lib/sms.mjs); sent 9 am to 8 pm Central.
+    var tx = card('Text messages', 'Only to people who ticked "Text me offers". Each text starts with "Lavish Leaf:" and ends with "Reply STOP to opt out."; anyone who replies STOP never gets another. Sent between 9 am and 8 pm Central, a batch every 10 minutes.');
+    var txMsg = el('p', 'db-hint', 'Loading...'); tx.appendChild(txMsg);
+    var txArea = el('textarea'); txArea.rows = 3; txArea.maxLength = 280; txArea.className = 'db-sms-text';
+    txArea.placeholder = 'e.g. Fall sale: 15% off compost buckets this week at lavishleaf.org/store';
+    var txCount = el('p', 'db-hint', '');
+    function txLen() {
+      var full = 'Lavish Leaf: ' + txArea.value.replace(/\s+/g, ' ').trim() + ' Reply STOP to opt out.';
+      var parts = full.length <= 160 ? 1 : Math.ceil(full.length / 153);
+      txCount.textContent = full.length + ' characters with the name and STOP line = ' + parts + ' text' + (parts === 1 ? '' : 's') + ' per person' + (parts > 2 ? ' (too long: 2 at most)' : '') + '.';
+    }
+    txArea.addEventListener('input', txLen); txLen();
+    tx.appendChild(txArea); tx.appendChild(txCount);
+    var txBar = el('div', 'db-links');
+    var txTest = h('<button type="button" class="db-btn-ghost"><i class="fas fa-mobile-screen"></i> Send a test to my phone</button>');
+    var txSend = h('<button type="button" class="db-btn"><i class="fas fa-paper-plane"></i> Send to everyone who said yes</button>');
+    var txCancel = h('<button type="button" class="db-btn-ghost" hidden><i class="fas fa-ban"></i> Cancel the send</button>');
+    txBar.appendChild(txTest); txBar.appendChild(txSend); txBar.appendChild(txCancel); tx.appendChild(txBar);
+    var txOut = el('p', 'db-hint', ''); tx.appendChild(txOut);
+    function txStatus() {
+      api('sms-admin', { action: 'status' }).then(function (r) {
+        txMsg.textContent = (r.ready ? '' : 'Not set up yet: finish the Amazon toll-free number steps (OWNER-STEPS, "Texting"). ') + num(r.textable) + ' can be texted (' + num(r.consented) + ' said yes, ' + num(r.optedOut) + ' replied STOP).' + (r.quietOk ? '' : ' It is outside 9 am to 8 pm Central, so a send waits until morning.');
+        var j = r.job;
+        txCancel.hidden = !(j && !j.done && !j.canceled);
+        txOut.textContent = j ? (j.canceled ? 'Last send canceled: ' : j.done ? 'Last send finished: ' : 'Sending now: ') + '"' + j.text.slice(0, 60) + (j.text.length > 60 ? '...' : '') + '", ' + num(j.sent) + ' sent, ' + num(j.left) + ' left' + (j.failed ? ', ' + j.failed + ' failed' : '') + (j.optedOut ? ', ' + j.optedOut + ' had opted out' : '') + '.' + (j.errors && j.errors.length ? ' Last error: ' + j.errors[j.errors.length - 1] : '') : '';
+      }).catch(function (e) { txMsg.textContent = e.message; });
+    }
+    txTest.addEventListener('click', function () {
+      var ph = window.prompt('Your mobile number for the test (10 digits):', '');
+      if (!ph) return;
+      txOut.textContent = 'Sending the test...';
+      api('sms-admin', { action: 'test', phone: ph, text: txArea.value }).then(function () { txOut.textContent = 'Test sent to ' + ph + '. Check your phone.'; }).catch(function (e) { txOut.textContent = e.message; });
+    });
+    txSend.addEventListener('click', function () {
+      if (!txArea.value.trim()) { txOut.textContent = 'Write the message first.'; return; }
+      if (!window.confirm('Text this to everyone who said yes?\n\nLavish Leaf: ' + txArea.value.trim() + ' Reply STOP to opt out.')) return;
+      txSend.disabled = true; txOut.textContent = 'Starting...';
+      api('sms-admin', { action: 'send', text: txArea.value }).then(function (r) { txOut.textContent = 'Started: ' + num(r.total) + ' people, ' + num(r.sent) + ' sent so far' + (r.quietOk ? '' : ' (the rest wait for 9 am Central)') + '.'; txSend.disabled = false; setTimeout(txStatus, 1500); })
+        .catch(function (e) { txOut.textContent = e.message; txSend.disabled = false; });
+    });
+    txCancel.addEventListener('click', function () { api('sms-admin', { action: 'cancel' }).then(txStatus).catch(function (e) { alert(e.message); }); });
+    txStatus();
+    g8.appendChild(tx);
     s8.appendChild(g8);
     root.appendChild(s8);
 
@@ -781,6 +830,54 @@
       var wdn = el('div', 'db-table-wrap'); wdn.appendChild(tdn); cdn.appendChild(wdn);
     } else cdn.appendChild(el('p', 'db-empty', 'No donations yet. Each one appears here as soon as it is paid.'));
     root.appendChild(sdn);
+
+    // 8c. Stock at our suppliers (owner, 2026-10-13): every Bangalla and
+    // AliExpress product we sell, with what the supplier has left. Checked
+    // every two hours (functions/stock-check.mjs); what is out is hidden on
+    // the store and refused at checkout until it is back.
+    var sst = section('stock', 'fa-boxes-stacked', 'Stock at our suppliers', 'Every product we sell from Bangalla and AliExpress, checked every two hours. Anything sold out, or with fewer than 5 left, is hidden on the store and cannot be bought until the supplier restocks it; then it comes back by itself.');
+    var cst = card(null); sst.appendChild(cst); root.appendChild(sst);
+    cst.appendChild(el('p', 'db-hint', 'Loading...'));
+    var stockRows = [], stockOnlyOut = false, stockQ = '';
+    function drawStock(r) {
+      cst.textContent = '';
+      var st = function (x, name) { return !x ? name + ': not checked yet.' : x.ok ? name + ': checked ' + niceDate(x.at) + (x.skus ? ' (' + num(x.skus) + ' SKUs in the feed)' : x.checked != null ? ' (' + x.checked + ' items this run)' : '') + '.' : name + ': ' + (x.error || 'failed') + '.'; };
+      cst.appendChild(el('p', 'db-hint', st(r.bangalla, 'Bangalla') + ' ' + st(r.aliexpress, 'AliExpress')));
+      var bar = el('div', 'db-links');
+      var q = el('input'); q.type = 'search'; q.placeholder = 'Search by name or code'; q.value = stockQ; q.className = 'db-stock-q';
+      q.addEventListener('input', function () { stockQ = q.value; drawTable(); });
+      bar.appendChild(q);
+      var outN = stockRows.filter(function (x) { return x.out; }).length;
+      var bo = h('<button type="button" class="db-btn-ghost"><i class="fas fa-filter"></i> ' + (stockOnlyOut ? 'Show all ' + stockRows.length : 'Show the ' + outN + ' out of stock') + '</button>');
+      bo.addEventListener('click', function () { stockOnlyOut = !stockOnlyOut; drawStock(r); });
+      bar.appendChild(bo);
+      var bn = h('<button type="button" class="db-btn-ghost"><i class="fas fa-rotate"></i> Check now</button>');
+      bn.addEventListener('click', function () { bn.disabled = true; bn.textContent = 'Checking...'; api('stock', { action: 'run' }).then(function (x) { stockRows = x.rows; drawStock(x); }).catch(function (e) { alert(e.message); bn.disabled = false; }); });
+      bar.appendChild(bn);
+      cst.appendChild(bar);
+      var wrap = el('div', 'db-table-wrap'); cst.appendChild(wrap);
+      function drawTable() {
+        wrap.textContent = '';
+        var t = el('table', 'db-table');
+        t.innerHTML = '<thead><tr><th>Product</th><th>Supplier</th><th>Code</th><th>Left</th><th>Status</th></tr></thead>';
+        var tb = el('tbody');
+        var ql = stockQ.trim().toLowerCase();
+        stockRows.filter(function (x) { return (!stockOnlyOut || x.out) && (!ql || (x.name + ' ' + x.code).toLowerCase().indexOf(ql) >= 0); }).forEach(function (x) {
+          var tr = el('tr');
+          tr.appendChild(el('td', null, x.name));
+          tr.appendChild(el('td', null, x.supplier));
+          tr.appendChild(el('td', null, x.code));
+          tr.appendChild(el('td', null, x.qty == null ? '-' : num(x.qty)));
+          var opts = x.options ? Object.keys(x.options).filter(function (k) { return x.options[k].out; }) : [];
+          tr.appendChild(el('td', null, x.out ? 'OUT: hidden (' + x.why + ')' : x.why === 'not checked yet' ? 'not checked yet' : 'In stock' + (opts.length ? '; out: ' + opts.join(', ') : '')));
+          if (x.out) tr.className = 'db-row-out';
+          tb.appendChild(tr);
+        });
+        t.appendChild(tb); wrap.appendChild(t);
+      }
+      drawTable();
+    }
+    api('stock', { action: 'status' }).then(function (r) { stockRows = r.rows; drawStock(r); }).catch(function (e) { cst.textContent = ''; cst.appendChild(el('p', 'db-hint', e.message)); });
 
     // 9. Orders to place (owner, 2026-10-12): its own section, one card per
     // order with everything needed to place it with the supplier: the
@@ -878,7 +975,7 @@
         t.appendChild(tb);
         var wrap = el('div', 'db-table-wrap'); wrap.appendChild(t); c.appendChild(wrap);
         // what we charged
-        c.appendChild(el('p', 'db-hint', 'Items ' + money(o.itemTotal) + ' · Shipping charged ' + money(o.shipping || 0) + (o.discount ? ' · 20% code ' + (o.discountCode || '') + ' -' + money(o.discount) : '') + (o.tax ? ' · Sales tax ' + money(o.tax) : '') + ' · Total paid ' + money(o.total) + ((o.refunds || []).length ? ' · Refunded ' + money(o.refunds.reduce(function (a, r) { return a + r.cents; }, 0) / 100) : '')));
+        c.appendChild(el('p', 'db-hint', 'Items ' + money(o.itemTotal) + ' · Shipping charged ' + money(o.shipping || 0) + (o.discount ? ' · First-order code ' + (o.discountCode || '') + ' -' + money(o.discount) : '') + (o.tax ? ' · Sales tax ' + money(o.tax) : '') + ' · Total paid ' + money(o.total) + ((o.refunds || []).length ? ' · Refunded ' + money(o.refunds.reduce(function (a, r) { return a + r.cents; }, 0) / 100) : '')));
         // shipped email
         (o.shipments || []).forEach(function (s) { c.appendChild(el('p', 'db-hint', 'Shipped email sent ' + niceDate(s.at) + (s.carrier ? ', ' + s.carrier : '') + (s.tracking ? ' ' + s.tracking : '') + '.')); });
         if (o.delivery === 'ship' && !/refunded|reversed|failed/.test(o.status || '')) {

@@ -1,4 +1,4 @@
-/* The store's 20% first-order offer (owner, 2026-10-13): a pop-up a few
+/* The store's 15% first-order offer (owner, 2026-10-13): a pop-up a few
    seconds after somebody reaches the store, asking for an email and a phone
    number. The server (netlify/functions/discount.mjs) allows one claim per IP
    address, email and phone, and none after a first order, so a new email each
@@ -30,15 +30,15 @@
       '<button type="button" class="offer-x" aria-label="Close">&times;</button>' +
       '<div class="offer-body">' +
       '<p class="offer-kicker">Welcome to the Lavish Leaf store</p>' +
-      '<h2 id="offer-title">20% off your first order</h2>' +
-      '<p class="offer-lede">Enter your email and phone and we will send you a code for 20% off the products in your first order.</p>' +
+      '<h2 id="offer-title">15% off your first order</h2>' +
+      '<p class="offer-lede">Enter your email and phone and we will send you a code for 15% off the products in your first order.</p>' +
       '<form class="offer-form" novalidate>' +
       '<label>Email<input type="email" name="email" autocomplete="email" required maxlength="120"></label>' +
       '<label>Phone<input type="tel" name="phone" autocomplete="tel" required maxlength="20" placeholder="(918) 555-0100"></label>' +
-      '<label class="offer-tick"><input type="checkbox" name="sms"> Also text me occasional offers (optional). Message and data rates may apply; reply STOP to end.</label>' +
-      '<button type="submit" class="btn btn-wide">Get my 20% code</button>' +
+      '<label class="offer-tick"><input type="checkbox" name="sms"> Also text me offers (optional). Up to 4 texts a month; message and data rates may apply. Reply STOP to cancel, HELP for help. Consent is not a condition of purchase. <a href="privacy.html#sms" target="_blank" rel="noopener">Text terms</a></label>' +
+      '<button type="submit" class="btn btn-wide">Get my 15% code</button>' +
       '<p class="offer-msg" role="status"></p>' +
-      '<p class="offer-fine">One code per customer, for one first order: 20% off store products, not shipping, tax, league registrations or pick-ups. Pay with the same email in PayPal. By claiming, you join our email newsletter; every email has a one-click unsubscribe. <a href="privacy.html" target="_blank" rel="noopener">Privacy</a></p>' +
+      '<p class="offer-fine">One code per customer, for one first order: 15% off store products, not shipping, tax, league registrations or pick-ups. Pay with the same email in PayPal. By claiming, you join our email newsletter; every email has a one-click unsubscribe. <a href="privacy.html" target="_blank" rel="noopener">Privacy</a></p>' +
       '</form>' +
       '<button type="button" class="offer-no">No thanks</button>' +
       '</div></dialog>');

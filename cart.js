@@ -89,6 +89,13 @@
     render();
   }
   document.addEventListener('ll-discount', function (e) { setCode(e.detail && e.detail.code); });
+  // Out of stock at the supplier (netlify/functions/stock, 2026-10-13): such
+  // a line says so and the cart cannot be paid until it is removed.
+  var stockOut = { out: [], outOptions: {} };
+  fetch('/.netlify/functions/stock').then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (s) { if (s) { stockOut = { out: s.out || [], outOptions: s.outOptions || {} }; render(); } })
+    .catch(function () { /* the checkout still refuses it */ });
+  function isOut(l) { return stockOut.out.indexOf(l.id) >= 0 || (l.opt && (stockOut.outOptions[l.id] || []).indexOf(l.opt) >= 0); }
 
   function money(cents) {
     return '$' + (cents / 100).toFixed(2);
@@ -307,6 +314,7 @@
     fab.hidden = count === 0;
     list.textContent = '';
     var cents = 0;
+    var anyOut = false;
     cart.forEach(function (l) {
       var p = products[l.id];
       if (!p) return;
@@ -340,6 +348,7 @@
       qty.appendChild(plus);
       li.appendChild(qty);
       li.appendChild(el('span', { class: 'cart-price' }, money(p.price * l.qty)));
+      if (isOut(l)) { anyOut = true; li.appendChild(el('span', { class: 'cart-out' }, 'Out of stock at our supplier: please remove it.')); }
       list.appendChild(li);
     });
     // Shipping, by the same rules the server will charge.
@@ -390,7 +399,7 @@
     discWrap.textContent = '';
     discWrap.hidden = !cart.length;
     if (discCode) {
-      var applied = el('p', { class: 'cart-fine' }, 'Code ' + discCode + ' applied: 20% off products on your first order. Pay with the email the code was sent to. ');
+      var applied = el('p', { class: 'cart-fine' }, 'Code ' + discCode + ' applied: 15% off products on your first order. Pay with the email the code was sent to. ');
       var rm = el('button', { type: 'button', class: 'cart-link' }, 'Remove');
       rm.addEventListener('click', function () { setCode(''); });
       applied.appendChild(rm);
@@ -399,7 +408,7 @@
         var dq = disc.discountQuote(lines, true);
         offCents = dq.cents; taxLines = dq.taxLines;
         discLine.hidden = !cart.length;
-        discLine.textContent = dq.cents ? dq.label + ': -' + money(dq.cents) : 'The 20% code takes effect on store products; nothing in this cart is one yet.';
+        discLine.textContent = dq.cents ? dq.label + ': -' + money(dq.cents) : 'The 15% code takes effect on store products; nothing in this cart is one yet.';
       }
     } else {
       discLine.hidden = true;
@@ -459,7 +468,7 @@
     // must be ticked.
     var accepted = allAccepted();
 
-    payBtn.disabled = cart.length === 0 || !accepted || !shipOk;
+    payBtn.disabled = cart.length === 0 || !accepted || !shipOk || anyOut;
     // The store shell (store.js) draws its own cart button in the top bar
     // and hides the floating one; this is how it learns the count.
     document.dispatchEvent(new CustomEvent('ll-cart', { detail: { count: count } }));

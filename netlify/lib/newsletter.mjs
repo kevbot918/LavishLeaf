@@ -128,27 +128,32 @@ export function listStats(subs, now = Date.now()) {
  * a missing name or phone and records every way they reached us. Returns
  * { record, isNew }; never throws for a bad address (returns null).
  */
-export async function addContact(store, { email, first = '', last = '', phone = '', source = '', declined = false }, now = Date.now()) {
+export async function addContact(store, { email, first = '', last = '', phone = '', source = '', declined = false, sms = false }, now = Date.now()) {
   if (!validEmail(email)) return null;
   const key = keyFor(email);
   const old = await store.get(key, { type: 'json' }).catch(() => null);
   const digits = String(phone || '').replace(/\D/g, '').replace(/^1(?=\d{10}$)/, '');
   const src = clip(source, 40);
+  // Texts are their own consent (2026-10-14): only a ticked "Text me offers"
+  // with a phone number sets it, and a new tick undoes an earlier STOP on our
+  // side (AWS still needs the person to text START to that number).
+  const smsFields = (sms && digits.length === 10) ? { smsConsent: { at: new Date(now).toISOString(), source: src, phone: digits }, smsOptOut: null } : {};
   if (declined || (old && old.status === 'unsubscribed')) {
     // Unticked "news and updates" on a form, or unsubscribed before: their
     // details are kept, the list stays off.
     if (!old || old.status !== 'unsubscribed') {
-      const rec = { ...(old || {}), email: norm(email), first: (old && old.first) || clip(first, 40), last: (old && old.last) || clip(last, 40), phone: (digits.length === 10 ? digits : '') || (old && old.phone) || '', source: (old && old.source) || src, sources: [...new Set([...((old && old.sources) || []), src].filter(Boolean))], joined: (old && old.joined) || null, status: 'unsubscribed', unsubscribedAt: new Date(now).toISOString(), declined: true };
+      const rec = { ...(old || {}), ...smsFields, email: norm(email), first: (old && old.first) || clip(first, 40), last: (old && old.last) || clip(last, 40), phone: (digits.length === 10 ? digits : '') || (old && old.phone) || '', source: (old && old.source) || src, sources: [...new Set([...((old && old.sources) || []), src].filter(Boolean))], joined: (old && old.joined) || null, status: 'unsubscribed', unsubscribedAt: new Date(now).toISOString(), declined: true };
       await store.setJSON(key, rec);
       return { record: rec, isNew: !old };
     }
     // Their details stay current for receipts and pick-ups; the list stays off.
-    const rec = { ...old, phone: (digits.length === 10 ? digits : '') || old.phone || '', sources: [...new Set([...(old.sources || []), src].filter(Boolean))] };
+    const rec = { ...old, ...smsFields, phone: (digits.length === 10 ? digits : '') || old.phone || '', sources: [...new Set([...(old.sources || []), src].filter(Boolean))] };
     await store.setJSON(key, rec);
     return { record: rec, isNew: false };
   }
   const record = {
     ...(old || {}),
+    ...smsFields,
     email: norm(email),
     first: (old && old.first) || clip(first, 40),
     last: (old && old.last) || clip(last, 40),

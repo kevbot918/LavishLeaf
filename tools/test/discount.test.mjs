@@ -1,4 +1,4 @@
-// The 20% first-order offer (2026-10-13): what it takes off, how PayPal's
+// The first-order offer (2026-10-13; 15% since 10-14): what it takes off, how PayPal's
 // totals still add up, and one claim per IP address, email and phone.
 //   npm test
 import { test } from 'node:test';
@@ -23,14 +23,14 @@ const soap = { id: 'soap', name: 'Soap', price: 1000, ship: true, shipOz: 6, shi
 const reg = { id: 'reg', name: 'Player Registration', price: 1500, ship: false, registration: 'player' };
 const pickup = { id: 'compost', name: 'Compost', price: 1500, ship: false, interval: 'month' };
 
-test('20% off store products only, and the tax is on what is paid', () => {
+test('15% off store products only, and the tax is on what is paid', () => {
   assert.equal(eligible(soap), true);
   assert.equal(eligible(reg), false);
   assert.equal(eligible(pickup), false);
   const lines = [{ product: soap, qty: 2 }, { product: reg, qty: 1 }];
   const d = discountQuote(lines);
-  assert.equal(d.cents, 400);
-  assert.equal(taxQuote(d.taxLines).cents, Math.round(1600 * 0.06) + Math.round(1500 * 0.06));
+  assert.equal(d.cents, 300);
+  assert.equal(taxQuote(d.taxLines).cents, Math.round(1700 * 0.06) + Math.round(1500 * 0.06));
   assert.equal(discountQuote(lines, false).cents, 0);
 });
 
@@ -43,7 +43,7 @@ test("PayPal's order adds up with the discount line, and carries the code", () =
   const b = unit.amount.breakdown;
   const sum = Number(b.item_total.value) + Number(b.shipping.value) + Number(b.tax_total.value) - Number(b.discount.value);
   assert.equal(unit.amount.value, sum.toFixed(2));
-  assert.equal(b.discount.value, '4.00');
+  assert.equal(b.discount.value, '3.00');
   assert.equal(parseCustomId(unit.custom_id).d, 'LL20-ABCDEFGH');
 });
 

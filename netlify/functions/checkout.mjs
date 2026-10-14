@@ -11,12 +11,20 @@ import { quote, ShippingError } from '../../shipping.mjs';
 import { taxQuote } from '../../tax.mjs';
 import { discountQuote } from '../../discount.mjs';
 import { discountsStore, usable } from '../lib/discounts.mjs';
+import { outOf, readState, stockStore } from '../lib/stock.mjs';
 import { registrationsStore } from '../lib/registrations.mjs';
 
 export default async (request) =>
   handle(request, async (body) => {
     const cfg = config();
     const lines = validateCart(body.items, catalog);
+    // What a supplier has run out of is not sold (lib/stock.mjs, 2026-10-13).
+    // A failed read of the stock list never blocks a sale.
+    try {
+      const { products, options } = outOf(await readState(await stockStore()));
+      const gone = lines.filter((l) => products.includes(l.product.id) || (l.opt && (options[l.product.id] || []).includes(l.opt)));
+      if (gone.length) throw new CheckoutError(400, 'Sorry, ' + gone.map((l) => l.product.name + (l.opt ? ' (' + l.opt + ')' : '')).join(', ') + (gone.length > 1 ? ' are' : ' is') + ' out of stock at our supplier. Please remove ' + (gone.length > 1 ? 'them' : 'it') + ' from your cart; nothing was charged.');
+    } catch (e) { if (e instanceof CheckoutError) throw e; console.error('[checkout] stock list', e.message); }
     // **A waiver is checked here, not only in the browser.** The tick in
     // the cart is a convenience; this is the part a page cannot skip. Every
     // waiver version the cart requires must be in the request, or there is
@@ -44,7 +52,7 @@ export default async (request) =>
       if (!code) throw new CheckoutError(400, 'That discount code is not valid, or it has already been used. Remove it from the cart to pay without it.');
     }
     const off = discountQuote(lines, !!code);
-    if (code && !off.cents) throw new CheckoutError(400, 'The 20% code works on store products, and nothing in this cart is one. Remove the code to pay.');
+    if (code && !off.cents) throw new CheckoutError(400, 'The 15% code works on store products, and nothing in this cart is one. Remove the code to pay.');
     const tax = taxQuote(off.taxLines);
     const user = await userFromRequest(request);
     const order = await call(cfg, '/v2/checkout/orders', orderBody(lines, {

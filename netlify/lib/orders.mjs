@@ -60,7 +60,7 @@ function itemRows(o) {
   const row = (l, r, strong) => `<tr><td style="padding:6px 0;color:#C8CFC8;font-size:15px;${strong ? 'font-weight:700;color:#F2F4F2;' : ''}">${l}</td><td align="right" style="padding:6px 0;color:#F2F4F2;font-size:15px;${strong ? 'font-weight:700;' : ''}">${r}</td></tr>`;
   const lines = o.items.map((i) => row(`${esc(i.name)}${i.qty > 1 ? ' &times; ' + i.qty : ''}`, money(i.each * i.qty)));
   if (o.delivery !== 'none') lines.push(row('Shipping', money(o.shipping)));
-  if (o.discount) lines.push(row('First-order discount (20%)', '-' + money(o.discount)));
+  if (o.discount) lines.push(row('First-order discount', '-' + money(o.discount)));
   if (o.tax) lines.push(row('Sales tax', money(o.tax)));
   lines.push(row('Total paid', money(o.total), true));
   return lines.join('');

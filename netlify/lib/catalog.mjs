@@ -18,7 +18,8 @@ export const catalog = {
     "league": null,
     "bucket": 1000,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": null
   },
   "recycle-monthly": {
     "id": "recycle-monthly",
@@ -37,7 +38,8 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": null
   },
   "ae-seed-starter-trays-with-grow-light-2-pack": {
     "id": "ae-seed-starter-trays-with-grow-light-2-pack",
@@ -56,7 +58,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256810162225391",
+      "optionSkus": null
+    }
   },
   "ae-fabric-grow-bag": {
     "id": "ae-fabric-grow-bag",
@@ -75,7 +83,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256811824629124",
+      "optionSkus": null
+    }
   },
   "ae-natural-jute-twine": {
     "id": "ae-natural-jute-twine",
@@ -94,7 +108,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256806674667884",
+      "optionSkus": null
+    }
   },
   "ae-ceramic-mini-planter": {
     "id": "ae-ceramic-mini-planter",
@@ -113,7 +133,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256808473784197",
+      "optionSkus": null
+    }
   },
   "ae-macrame-plant-hanger": {
     "id": "ae-macrame-plant-hanger",
@@ -132,7 +158,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256809073271183",
+      "optionSkus": null
+    }
   },
   "ae-mini-garden-hand-tool-set-3-pieces": {
     "id": "ae-mini-garden-hand-tool-set-3-pieces",
@@ -151,7 +183,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256811467689498",
+      "optionSkus": null
+    }
   },
   "ae-long-spout-watering-can": {
     "id": "ae-long-spout-watering-can",
@@ -170,7 +208,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256809042958449",
+      "optionSkus": null
+    }
   },
   "ae-continuous-mist-plant-sprayer-200-ml": {
     "id": "ae-continuous-mist-plant-sprayer-200-ml",
@@ -189,7 +233,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256805783765688",
+      "optionSkus": null
+    }
   },
   "ae-bamboo-plant-stakes-10-pack": {
     "id": "ae-bamboo-plant-stakes-10-pack",
@@ -208,7 +258,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256809168755877",
+      "optionSkus": null
+    }
   },
   "ae-plant-stabilizer-clip": {
     "id": "ae-plant-stabilizer-clip",
@@ -227,7 +283,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256809395944100",
+      "optionSkus": null
+    }
   },
   "ae-self-watering-plant-pot-small": {
     "id": "ae-self-watering-plant-pot-small",
@@ -246,7 +308,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256806675485517",
+      "optionSkus": null
+    }
   },
   "ae-hanging-wooden-bird-feeder": {
     "id": "ae-hanging-wooden-bird-feeder",
@@ -265,7 +333,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256810253146322",
+      "optionSkus": null
+    }
   },
   "ae-garden-kneeling-pad": {
     "id": "ae-garden-kneeling-pad",
@@ -284,7 +358,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256809850917948",
+      "optionSkus": null
+    }
   },
   "ae-felt-wall-pocket-planter-2-pockets": {
     "id": "ae-felt-wall-pocket-planter-2-pockets",
@@ -303,7 +383,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256806825478450",
+      "optionSkus": null
+    }
   },
   "ae-animal-on-a-bicycle-wind-spinner": {
     "id": "ae-animal-on-a-bicycle-wind-spinner",
@@ -322,7 +408,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256808061825608",
+      "optionSkus": null
+    }
   },
   "ae-feather-parrot-garden-decor": {
     "id": "ae-feather-parrot-garden-decor",
@@ -341,7 +433,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256806796351182",
+      "optionSkus": null
+    }
   },
   "ae-crack-and-gap-weeder": {
     "id": "ae-crack-and-gap-weeder",
@@ -360,7 +458,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256808710279891",
+      "optionSkus": null
+    }
   },
   "ae-hollow-hand-hoe": {
     "id": "ae-hollow-hand-hoe",
@@ -379,7 +483,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256809042828794",
+      "optionSkus": null
+    }
   },
   "ae-brass-hose-nozzle": {
     "id": "ae-brass-hose-nozzle",
@@ -398,7 +508,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256806677410097",
+      "optionSkus": null
+    }
   },
   "ae-bird-watering-globes-5-pack": {
     "id": "ae-bird-watering-globes-5-pack",
@@ -417,7 +533,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256807958408165",
+      "optionSkus": null
+    }
   },
   "ae-honeycomb-pot-trellis-2-pack": {
     "id": "ae-honeycomb-pot-trellis-2-pack",
@@ -436,7 +558,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256811780628276",
+      "optionSkus": null
+    }
   },
   "ae-nylon-garden-gloves-12-pairs": {
     "id": "ae-nylon-garden-gloves-12-pairs",
@@ -455,7 +583,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256808372636749",
+      "optionSkus": null
+    }
   },
   "ae-thorn-proof-gauntlet-garden-gloves": {
     "id": "ae-thorn-proof-gauntlet-garden-gloves",
@@ -480,7 +614,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256808061782665",
+      "optionSkus": null
+    }
   },
   "ae-curved-pruning-snips": {
     "id": "ae-curved-pruning-snips",
@@ -499,7 +639,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256809909879062",
+      "optionSkus": null
+    }
   },
   "ae-hanging-suet-ball-bird-feeder-black": {
     "id": "ae-hanging-suet-ball-bird-feeder-black",
@@ -518,7 +664,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256810386487605",
+      "optionSkus": null
+    }
   },
   "bg-bobs-red-mill-organic-pancake-and-waffle-mix-24-oz-pack-of-4": {
     "id": "bg-bobs-red-mill-organic-pancake-and-waffle-mix-24-oz-pack-of-4",
@@ -537,7 +689,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-78353-4PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-bobs-red-mill-organic-buckwheat-flour-22-oz-pack-of-4": {
     "id": "bg-bobs-red-mill-organic-buckwheat-flour-22-oz-pack-of-4",
@@ -556,7 +714,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-81942-4PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-bobs-red-mill-organic-white-rice-flour-24-oz-pack-of-4": {
     "id": "bg-bobs-red-mill-organic-white-rice-flour-24-oz-pack-of-4",
@@ -575,7 +739,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-81741-4PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-mikes-mighty-good-organic-spicy-beef-ramen-cup-pack-of-6": {
     "id": "bg-mikes-mighty-good-organic-spicy-beef-ramen-cup-pack-of-6",
@@ -594,7 +764,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-54333-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-dr-mcdougalls-organic-teriyaki-noodle-cup-pack-of-6": {
     "id": "bg-dr-mcdougalls-organic-teriyaki-noodle-cup-pack-of-6",
@@ -613,7 +789,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-76573-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-lotus-foods-organic-garlicky-veggie-rice-ramen-cup-pack-of-6": {
     "id": "bg-lotus-foods-organic-garlicky-veggie-rice-ramen-cup-pack-of-6",
@@ -632,7 +814,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-19997-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-oceans-halo-organic-chicken-flavor-noodle-bowl-pack-of-6": {
     "id": "bg-oceans-halo-organic-chicken-flavor-noodle-bowl-pack-of-6",
@@ -651,7 +839,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-36826-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-flavorganics-organic-almond-extract-2-oz": {
     "id": "bg-flavorganics-organic-almond-extract-2-oz",
@@ -670,7 +864,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-32030-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-lundberg-organic-thin-stackers-red-rice-and-quinoa-pack-of-6": {
     "id": "bg-lundberg-organic-thin-stackers-red-rice-and-quinoa-pack-of-6",
@@ -689,7 +889,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-55461-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-lakewood-organic-tart-cherry-juice-concentrate-125-oz": {
     "id": "bg-lakewood-organic-tart-cherry-juice-concentrate-125-oz",
@@ -708,7 +914,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-74733-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-lakewood-organic-black-cherry-juice-concentrate-125-oz": {
     "id": "bg-lakewood-organic-black-cherry-juice-concentrate-125-oz",
@@ -727,7 +939,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-31297-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-lotus-foods-organic-brown-jasmine-rice-heat-and-eat-pack-of-": {
     "id": "bg-lotus-foods-organic-brown-jasmine-rice-heat-and-eat-pack-of-",
@@ -746,7 +964,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-67516-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-lotus-foods-organic-white-jasmine-rice-heat-and-eat-pack-of-": {
     "id": "bg-lotus-foods-organic-white-jasmine-rice-heat-and-eat-pack-of-",
@@ -765,7 +989,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-67518-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-spicely-organic-whole-cloves-pack-of-6": {
     "id": "bg-spicely-organic-whole-cloves-pack-of-6",
@@ -784,7 +1014,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-14275-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-spicely-organic-zaatar-14-oz-pack-of-3": {
     "id": "bg-spicely-organic-zaatar-14-oz-pack-of-3",
@@ -803,7 +1039,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-13844-3PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-maya-kaimal-organic-everyday-chana-10-oz-pack-of-6": {
     "id": "bg-maya-kaimal-organic-everyday-chana-10-oz-pack-of-6",
@@ -822,7 +1064,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-53550-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-native-forest-organic-sliced-bamboo-shoots-14-oz-pack-of-6": {
     "id": "bg-native-forest-organic-sliced-bamboo-shoots-14-oz-pack-of-6",
@@ -841,7 +1089,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-77282-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-native-forest-organic-sliced-water-chestnuts-8-oz-pack-of-6": {
     "id": "bg-native-forest-organic-sliced-water-chestnuts-8-oz-pack-of-6",
@@ -860,7 +1114,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-33891-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-native-forest-organic-pineapple-chunks-14-oz-pack-of-6": {
     "id": "bg-native-forest-organic-pineapple-chunks-14-oz-pack-of-6",
@@ -879,7 +1139,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-20995-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-suzies-organic-tartar-sauce-8-oz-pack-of-6": {
     "id": "bg-suzies-organic-tartar-sauce-8-oz-pack-of-6",
@@ -898,7 +1164,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-72870-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-suzies-organic-yellow-mustard-8-oz-pack-of-6": {
     "id": "bg-suzies-organic-yellow-mustard-8-oz-pack-of-6",
@@ -917,7 +1189,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-81507-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-alessi-organic-italian-pasta-16-oz-pack-of-6": {
     "id": "bg-alessi-organic-italian-pasta-16-oz-pack-of-6",
@@ -943,7 +1221,17 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-75610-6PK",
+      "item": null,
+      "optionSkus": {
+        "Penne": "B-75610-6PK",
+        "Rigatoni": "B-75611-6PK",
+        "Mezzi Paccheri": "B-75612-6PK"
+      }
+    }
   },
   "bg-raos-homemade-fusilli-16-oz-pack-of-6": {
     "id": "bg-raos-homemade-fusilli-16-oz-pack-of-6",
@@ -962,7 +1250,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-79368-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-mrs-millers-wide-egg-noodles-16-oz-pack-of-6": {
     "id": "bg-mrs-millers-wide-egg-noodles-16-oz-pack-of-6",
@@ -981,7 +1275,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-18090-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-frontera-taco-seasoning-sauce-for-ground-beef-8-oz-pack-of-6": {
     "id": "bg-frontera-taco-seasoning-sauce-for-ground-beef-8-oz-pack-of-6",
@@ -1000,7 +1300,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-57425-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-uncle-lees-organic-oolong-tea-40-bags-pack-of-6": {
     "id": "bg-uncle-lees-organic-oolong-tea-40-bags-pack-of-6",
@@ -1019,7 +1325,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-47141-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-uncle-lees-organic-green-tea-40-bags-pack-of-6": {
     "id": "bg-uncle-lees-organic-green-tea-40-bags-pack-of-6",
@@ -1038,7 +1350,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-47136-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-uncle-lees-organic-black-tea-100-bags": {
     "id": "bg-uncle-lees-organic-black-tea-100-bags",
@@ -1057,7 +1375,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-34324-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-lets-do-organic-granulated-tapioca-6-oz-pack-of-6": {
     "id": "bg-lets-do-organic-granulated-tapioca-6-oz-pack-of-6",
@@ -1076,7 +1400,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-12717-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-lets-do-organic-sweetened-condensed-coconut-milk-pack-of-6": {
     "id": "bg-lets-do-organic-sweetened-condensed-coconut-milk-pack-of-6",
@@ -1095,7 +1425,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-25060-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-element-organic-dipped-rice-cakes-pack-of-6": {
     "id": "bg-element-organic-dipped-rice-cakes-pack-of-6",
@@ -1120,7 +1456,16 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-53126-6PK",
+      "item": null,
+      "optionSkus": {
+        "Strawberry 'N' Cream": "B-53126-6PK",
+        "Vanilla Orange": "B-53111-6PK"
+      }
+    }
   },
   "bg-napoleon-anchovy-paste-2-oz": {
     "id": "bg-napoleon-anchovy-paste-2-oz",
@@ -1139,7 +1484,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-13286-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-sun-luck-spicy-oyster-sauce-9-oz": {
     "id": "bg-sun-luck-spicy-oyster-sauce-9-oz",
@@ -1158,7 +1509,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-69987-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-bellino-minced-garlic-75-oz": {
     "id": "bg-bellino-minced-garlic-75-oz",
@@ -1177,7 +1534,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-69943-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-beaver-cream-style-horseradish-12-oz-pack-of-6": {
     "id": "bg-beaver-cream-style-horseradish-12-oz-pack-of-6",
@@ -1196,7 +1559,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-78386-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-vermints-organic-breath-mints-pack-of-6": {
     "id": "bg-vermints-organic-breath-mints-pack-of-6",
@@ -1221,7 +1590,16 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-29578-6PK",
+      "item": null,
+      "optionSkus": {
+        "Cinnamint": "B-29578-6PK",
+        "Gingermint": "B-29577-6PK"
+      }
+    }
   },
   "bg-spry-xylitol-gum-100-count": {
     "id": "bg-spry-xylitol-gum-100-count",
@@ -1247,7 +1625,17 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-75271-1PK",
+      "item": null,
+      "optionSkus": {
+        "Peppermint": "B-75271-1PK",
+        "Spearmint": "B-75274-1PK",
+        "Cinnamon": "B-75229-1PK"
+      }
+    }
   },
   "bg-frontier-co-op-organic-fair-trade-ceylon-cinnamon-176-oz": {
     "id": "bg-frontier-co-op-organic-fair-trade-ceylon-cinnamon-176-oz",
@@ -1266,7 +1654,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-64134-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-watkins-organic-garlic-powder-31-oz": {
     "id": "bg-watkins-organic-garlic-powder-31-oz",
@@ -1285,7 +1679,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-77324-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-frontier-co-op-organic-salt-free-italian-seasoning-064-oz": {
     "id": "bg-frontier-co-op-organic-salt-free-italian-seasoning-064-oz",
@@ -1304,7 +1704,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-28478-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-sunfood-organic-chia-seeds-1-lb": {
     "id": "bg-sunfood-organic-chia-seeds-1-lb",
@@ -1323,7 +1729,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-32415-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-flora-organic-cold-pressed-flax-oil-17-oz": {
     "id": "bg-flora-organic-cold-pressed-flax-oil-17-oz",
@@ -1342,7 +1754,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-22749-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-real-foods-organic-sesame-corn-thins-53-oz-pack-of-6": {
     "id": "bg-real-foods-organic-sesame-corn-thins-53-oz-pack-of-6",
@@ -1361,7 +1779,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-53339-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-barnana-organic-plantain-chips-himalayan-pink-salt-pack-of-6": {
     "id": "bg-barnana-organic-plantain-chips-himalayan-pink-salt-pack-of-6",
@@ -1380,7 +1804,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-64813-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-mavuno-harvest-organic-dried-pineapple-2-oz-pack-of-6": {
     "id": "bg-mavuno-harvest-organic-dried-pineapple-2-oz-pack-of-6",
@@ -1399,7 +1829,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-38353-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-mavuno-harvest-organic-dried-jackfruit-2-oz-pack-of-6": {
     "id": "bg-mavuno-harvest-organic-dried-jackfruit-2-oz-pack-of-6",
@@ -1418,7 +1854,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-38356-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-dr-mcdougalls-organic-lentil-vegetable-soup-18-oz-pack-of-6": {
     "id": "bg-dr-mcdougalls-organic-lentil-vegetable-soup-18-oz-pack-of-6",
@@ -1437,7 +1879,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-49681-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-jyoti-organic-black-beans-10-oz-pack-of-6": {
     "id": "bg-jyoti-organic-black-beans-10-oz-pack-of-6",
@@ -1456,7 +1904,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-62328-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-noka-organic-mango-coconut-smoothie-pouch-pack-of-6": {
     "id": "bg-noka-organic-mango-coconut-smoothie-pouch-pack-of-6",
@@ -1475,7 +1929,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-61415-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-cocomels-organic-coconut-milk-caramels-sea-salt-pack-of-6": {
     "id": "bg-cocomels-organic-coconut-milk-caramels-sea-salt-pack-of-6",
@@ -1494,7 +1954,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-64117-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-breton-gluten-free-crackers-original-with-flax-pack-of-6": {
     "id": "bg-breton-gluten-free-crackers-original-with-flax-pack-of-6",
@@ -1513,7 +1979,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-67448-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-breton-gluten-free-crackers-herb-and-garlic-pack-of-6": {
     "id": "bg-breton-gluten-free-crackers-herb-and-garlic-pack-of-6",
@@ -1532,7 +2004,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-67449-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-madegood-organic-crispy-squares-strawberry-pack-of-6-boxes": {
     "id": "bg-madegood-organic-crispy-squares-strawberry-pack-of-6-boxes",
@@ -1551,7 +2029,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-33566-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-lakewood-organic-cranberry-juice-concentrate-125-oz": {
     "id": "bg-lakewood-organic-cranberry-juice-concentrate-125-oz",
@@ -1570,7 +2054,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-31299-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-olyra-organic-breakfast-biscuits-cinnamon-pack-of-6": {
     "id": "bg-olyra-organic-breakfast-biscuits-cinnamon-pack-of-6",
@@ -1589,7 +2079,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-30065-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-beanvivo-three-bean-vegan-chili-10-oz-pack-of-6": {
     "id": "bg-beanvivo-three-bean-vegan-chili-10-oz-pack-of-6",
@@ -1608,7 +2104,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-34006-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-cocomels-organic-coconut-milk-caramels-original-pack-of-6": {
     "id": "bg-cocomels-organic-coconut-milk-caramels-original-pack-of-6",
@@ -1627,7 +2129,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-64114-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-banza-chickpea-pasta-shells-8-oz-pack-of-6": {
     "id": "bg-banza-chickpea-pasta-shells-8-oz-pack-of-6",
@@ -1646,7 +2154,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-45469-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-sun-luck-oyster-sauce-9-oz": {
     "id": "bg-sun-luck-oyster-sauce-9-oz",
@@ -1665,7 +2179,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-69983-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-inka-crops-chile-picante-corn-4-oz-pack-of-6": {
     "id": "bg-inka-crops-chile-picante-corn-4-oz-pack-of-6",
@@ -1684,7 +2204,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-34441-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-spry-xylitol-mints-peppermint-240-count": {
     "id": "bg-spry-xylitol-mints-peppermint-240-count",
@@ -1703,7 +2229,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-89132-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-stash-lemon-ginger-herbal-tea-20-bags-pack-of-6": {
     "id": "bg-stash-lemon-ginger-herbal-tea-20-bags-pack-of-6",
@@ -1722,7 +2254,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": true,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-29256-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "soccer-player-fall": {
     "id": "soccer-player-fall",
@@ -1743,7 +2281,8 @@ export const catalog = {
     "grocery": false,
     "waiver": {
       "version": "2026-09"
-    }
+    },
+    "supplier": null
   },
   "soccer-team-fall": {
     "id": "soccer-team-fall",
@@ -1764,7 +2303,8 @@ export const catalog = {
     "grocery": false,
     "waiver": {
       "version": "2026-09"
-    }
+    },
+    "supplier": null
   },
   "ae-cotton-crew-socks-5-pairs": {
     "id": "ae-cotton-crew-socks-5-pairs",
@@ -1790,7 +2330,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "1005009384252185",
+      "optionSkus": null
+    }
   },
   "ae-cuffed-knit-beanie-black": {
     "id": "ae-cuffed-knit-beanie-black",
@@ -1809,7 +2355,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "1005010323901024",
+      "optionSkus": null
+    }
   },
   "ae-soccer-shin-guards-neon-green": {
     "id": "ae-soccer-shin-guards-neon-green",
@@ -1835,7 +2387,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256810253080624",
+      "optionSkus": null
+    }
   },
   "ae-quick-dry-microfiber-towel-20-x-47-in": {
     "id": "ae-quick-dry-microfiber-towel-20-x-47-in",
@@ -1854,7 +2412,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256806596588868",
+      "optionSkus": null
+    }
   },
   "ae-running-ankle-socks-3-pairs": {
     "id": "ae-running-ankle-socks-3-pairs",
@@ -1873,7 +2437,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256806541366694",
+      "optionSkus": null
+    }
   },
   "ae-athletic-running-shorts-navy": {
     "id": "ae-athletic-running-shorts-navy",
@@ -1902,7 +2472,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256807158782008",
+      "optionSkus": null
+    }
   },
   "ae-cooling-uv-arm-sleeves-3-pairs": {
     "id": "ae-cooling-uv-arm-sleeves-3-pairs",
@@ -1921,7 +2497,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256808858847899",
+      "optionSkus": null
+    }
   },
   "ae-quick-dry-running-cap": {
     "id": "ae-quick-dry-running-cap",
@@ -1940,7 +2522,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256806808994678",
+      "optionSkus": null
+    }
   },
   "ae-padded-sport-knee-pads-pair": {
     "id": "ae-padded-sport-knee-pads-pair",
@@ -1966,7 +2554,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256806810360697",
+      "optionSkus": null
+    }
   },
   "ae-hiking-compass": {
     "id": "ae-hiking-compass",
@@ -1985,7 +2579,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256809968890154",
+      "optionSkus": null
+    }
   },
   "ae-knee-compression-sleeve": {
     "id": "ae-knee-compression-sleeve",
@@ -2010,7 +2610,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256806808189103",
+      "optionSkus": null
+    }
   },
   "ae-foil-camping-ground-mat-79-x-59-in": {
     "id": "ae-foil-camping-ground-mat-79-x-59-in",
@@ -2029,7 +2635,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256807120339674",
+      "optionSkus": null
+    }
   },
   "ae-waterproof-hiking-leg-gaiters": {
     "id": "ae-waterproof-hiking-leg-gaiters",
@@ -2048,7 +2660,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256807690726650",
+      "optionSkus": null
+    }
   },
   "ae-non-slip-yoga-mat-3-mm": {
     "id": "ae-non-slip-yoga-mat-3-mm",
@@ -2067,7 +2685,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256806808957451",
+      "optionSkus": null
+    }
   },
   "ae-graduated-compression-socks": {
     "id": "ae-graduated-compression-socks",
@@ -2093,7 +2717,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256807120432672",
+      "optionSkus": null
+    }
   },
   "ae-folding-foam-sit-pad-blue": {
     "id": "ae-folding-foam-sit-pad-blue",
@@ -2112,7 +2742,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256806541089598",
+      "optionSkus": null
+    }
   },
   "ae-resistance-band-with-handles": {
     "id": "ae-resistance-band-with-handles",
@@ -2140,7 +2776,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256812816369253",
+      "optionSkus": null
+    }
   },
   "ae-sports-sweatband-headband": {
     "id": "ae-sports-sweatband-headband",
@@ -2166,7 +2808,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256806084022608",
+      "optionSkus": null
+    }
   },
   "ae-spiky-massage-ball-24-in-white": {
     "id": "ae-spiky-massage-ball-24-in-white",
@@ -2185,7 +2833,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256806984910351",
+      "optionSkus": null
+    }
   },
   "bg-earth-therapeutics-far-reach-back-brush": {
     "id": "bg-earth-therapeutics-far-reach-back-brush",
@@ -2204,7 +2858,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-86791-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-earth-therapeutics-natural-bristle-body-brush": {
     "id": "bg-earth-therapeutics-natural-bristle-body-brush",
@@ -2223,7 +2883,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-86790-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-kiss-my-face-pure-olive-oil-bar-soap-8-oz": {
     "id": "bg-kiss-my-face-pure-olive-oil-bar-soap-8-oz",
@@ -2242,7 +2908,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-54937-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-kiss-my-face-olive-and-aloe-bar-soap-8-oz": {
     "id": "bg-kiss-my-face-olive-and-aloe-bar-soap-8-oz",
@@ -2261,7 +2933,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-54939-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-kiss-my-face-pure-olive-oil-bar-soap-4-oz": {
     "id": "bg-kiss-my-face-pure-olive-oil-bar-soap-4-oz",
@@ -2280,7 +2958,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-54936-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-tea-tree-therapy-eucalyptus-soap-3-5-oz": {
     "id": "bg-tea-tree-therapy-eucalyptus-soap-3-5-oz",
@@ -2299,7 +2983,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-83205-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-chandrika-sandal-soap-75-g": {
     "id": "bg-chandrika-sandal-soap-75-g",
@@ -2318,7 +3008,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-58440-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-giovanni-bamboo-oval-hairbrush": {
     "id": "bg-giovanni-bamboo-oval-hairbrush",
@@ -2337,7 +3033,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-66316-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-a-la-maison-lavender-and-rosemary-bar-soap-4-pack": {
     "id": "bg-a-la-maison-lavender-and-rosemary-bar-soap-4-pack",
@@ -2356,7 +3058,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-81970-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-aura-cacia-lavender-shower-tablets-box-of-3": {
     "id": "bg-aura-cacia-lavender-shower-tablets-box-of-3",
@@ -2375,7 +3083,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-41192-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-aura-cacia-eucalyptus-shower-tablets-box-of-3": {
     "id": "bg-aura-cacia-eucalyptus-shower-tablets-box-of-3",
@@ -2394,7 +3108,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-41191-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-aura-cacia-frankincense-in-jojoba-oil-0-5-oz": {
     "id": "bg-aura-cacia-frankincense-in-jojoba-oil-0-5-oz",
@@ -2413,7 +3133,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-85011-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-andalou-naturals-1000-roses-soothing-body-lotion-8": {
     "id": "bg-andalou-naturals-1000-roses-soothing-body-lotion-8",
@@ -2432,7 +3158,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-32345-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-andalou-naturals-resveratrol-q10-night-repair-crea": {
     "id": "bg-andalou-naturals-resveratrol-q10-night-repair-crea",
@@ -2451,7 +3183,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-49384-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-andalou-naturals-daily-defense-facial-lotion-spf-1": {
     "id": "bg-andalou-naturals-daily-defense-facial-lotion-spf-1",
@@ -2470,7 +3208,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-49385-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-crystal-mineral-deodorant-travel-stick-1-5-oz": {
     "id": "bg-crystal-mineral-deodorant-travel-stick-1-5-oz",
@@ -2489,7 +3233,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-52560-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-andalou-naturals-lavender-shea-hand-cream-3-4-oz": {
     "id": "bg-andalou-naturals-lavender-shea-hand-cream-3-4-oz",
@@ -2508,7 +3258,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-49323-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-mountain-ocean-skin-trip-coconut-soap-45-oz": {
     "id": "bg-mountain-ocean-skin-trip-coconut-soap-45-oz",
@@ -2527,7 +3283,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-57127-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-davids-natural-toothpaste-spearmint-525-oz": {
     "id": "bg-davids-natural-toothpaste-spearmint-525-oz",
@@ -2546,7 +3308,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-40200-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-desert-essence-kids-toothpaste-47-oz": {
     "id": "bg-desert-essence-kids-toothpaste-47-oz",
@@ -2571,7 +3339,16 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-79500-1PK",
+      "item": null,
+      "optionSkus": {
+        "Green Apple Watermelon": "B-79500-1PK",
+        "Tutti Frutti": "B-79501-1PK"
+      }
+    }
   },
   "bg-essential-oxygen-brushing-rinse-16-oz": {
     "id": "bg-essential-oxygen-brushing-rinse-16-oz",
@@ -2597,7 +3374,17 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-22456-1PK",
+      "item": null,
+      "optionSkus": {
+        "Peppermint": "B-22456-1PK",
+        "Wintergreen": "B-40106-1PK",
+        "Cinnamint": "B-75300-1PK"
+      }
+    }
   },
   "bg-herban-cowboy-deodorant-stick-forest-28-oz": {
     "id": "bg-herban-cowboy-deodorant-stick-forest-28-oz",
@@ -2616,7 +3403,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-53376-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-eco-dent-daily-care-toothpowder-mint-2-oz": {
     "id": "bg-eco-dent-daily-care-toothpowder-mint-2-oz",
@@ -2635,7 +3428,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-55556-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-crystal-mineral-deodorant-stick-25-oz": {
     "id": "bg-crystal-mineral-deodorant-stick-25-oz",
@@ -2661,7 +3460,17 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-56395-1PK",
+      "item": null,
+      "optionSkus": {
+        "Coconut Vanilla": "B-56395-1PK",
+        "Charcoal Tea Tree": "B-56391-1PK",
+        "Sea Salt Sage": "B-56396-1PK"
+      }
+    }
   },
   "bg-seaweed-bath-co-detox-body-wash-awaken-12-oz": {
     "id": "bg-seaweed-bath-co-detox-body-wash-awaken-12-oz",
@@ -2680,7 +3489,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-48214-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-redmond-earthpaste-wintergreen-4-oz": {
     "id": "bg-redmond-earthpaste-wintergreen-4-oz",
@@ -2699,7 +3514,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-51501-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-grandpa-soap-co-pine-tar-bar-soap-425-oz": {
     "id": "bg-grandpa-soap-co-pine-tar-bar-soap-425-oz",
@@ -2718,7 +3539,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-43932-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-grandpa-soap-co-pine-tar-body-wash-95-oz": {
     "id": "bg-grandpa-soap-co-pine-tar-body-wash-95-oz",
@@ -2737,7 +3564,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-85861-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-grandpa-soap-co-apple-cider-vinegar-body-wash-95-oz": {
     "id": "bg-grandpa-soap-co-apple-cider-vinegar-body-wash-95-oz",
@@ -2756,7 +3589,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-85862-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-oral-essentials-lumineux-whitening-mouthwash-16-oz": {
     "id": "bg-oral-essentials-lumineux-whitening-mouthwash-16-oz",
@@ -2775,7 +3614,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-46264-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-oral-essentials-lumineux-whitening-toothpaste-375-oz": {
     "id": "bg-oral-essentials-lumineux-whitening-toothpaste-375-oz",
@@ -2794,7 +3639,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-46267-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-oral-essentials-lumineux-kids-toothpaste-375-oz": {
     "id": "bg-oral-essentials-lumineux-kids-toothpaste-375-oz",
@@ -2813,7 +3664,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-46268-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-oral-essentials-lumineux-whitening-strips-14-pack": {
     "id": "bg-oral-essentials-lumineux-whitening-strips-14-pack",
@@ -2832,7 +3689,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-46269-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-auromere-ayurvedic-herbal-toothpaste-416-oz": {
     "id": "bg-auromere-ayurvedic-herbal-toothpaste-416-oz",
@@ -2858,7 +3721,17 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-57249-1PK",
+      "item": null,
+      "optionSkus": {
+        "Freshmint": "B-57249-1PK",
+        "Mint-Free": "B-57251-1PK",
+        "Cardamom Fennel": "B-57293-1PK"
+      }
+    }
   },
   "bg-alba-botanica-very-emollient-body-lotion-32-oz": {
     "id": "bg-alba-botanica-very-emollient-body-lotion-32-oz",
@@ -2884,7 +3757,17 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-44382-1PK",
+      "item": null,
+      "optionSkus": {
+        "Coconut Rescue": "B-44382-1PK",
+        "Original (Dry Skin)": "B-56295-1PK",
+        "Unscented": "B-56306-1PK"
+      }
+    }
   },
   "bg-nourish-organic-age-defense-face-serum-07-oz": {
     "id": "bg-nourish-organic-age-defense-face-serum-07-oz",
@@ -2903,7 +3786,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-42889-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-eco-dent-mint-mouth-rinse-8-oz": {
     "id": "bg-eco-dent-mint-mouth-rinse-8-oz",
@@ -2922,7 +3811,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-55321-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-south-of-france-bar-soap-6-oz": {
     "id": "bg-south-of-france-bar-soap-6-oz",
@@ -2951,7 +3846,20 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-33307-1PK",
+      "item": null,
+      "optionSkus": {
+        "Almond Gourmande": "B-33307-1PK",
+        "Climbing Wild Rose": "B-35269-1PK",
+        "Blooming Jasmine": "B-33315-1PK",
+        "Lemon Verbena": "B-35336-1PK",
+        "Orange Blossom Honey": "B-35392-1PK",
+        "Lavender Fields": "B-35310-1PK"
+      }
+    }
   },
   "bg-south-of-france-foaming-hand-soap-8-oz": {
     "id": "bg-south-of-france-foaming-hand-soap-8-oz",
@@ -2978,7 +3886,18 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-27320-1PK",
+      "item": null,
+      "optionSkus": {
+        "Almond Gourmande": "B-27320-1PK",
+        "Blooming Jasmine": "B-27323-1PK",
+        "Orange Blossom Honey": "B-27310-1PK",
+        "Lemon Verbena": "B-27312-1PK"
+      }
+    }
   },
   "bg-dr-plotkas-mouthwatchers-adult-toothbrush": {
     "id": "bg-dr-plotkas-mouthwatchers-adult-toothbrush",
@@ -3005,7 +3924,18 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-83548-1PK",
+      "item": null,
+      "optionSkus": {
+        "Blue": "B-83548-1PK",
+        "Green": "B-83547-1PK",
+        "Red": "B-83549-1PK",
+        "Orange": "B-83550-1PK"
+      }
+    }
   },
   "bg-every-man-jack-body-wash-sandalwood-338-oz": {
     "id": "bg-every-man-jack-body-wash-sandalwood-338-oz",
@@ -3024,7 +3954,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-11238-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-herban-cowboy-body-wash-dusk-18-oz": {
     "id": "bg-herban-cowboy-body-wash-dusk-18-oz",
@@ -3043,7 +3979,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-82651-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-tea-tree-therapy-mouthwash-12-oz": {
     "id": "bg-tea-tree-therapy-mouthwash-12-oz",
@@ -3062,7 +4004,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-74409-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-aura-cacia-eucalyptus-harvest-aroma-mist-4-oz": {
     "id": "bg-aura-cacia-eucalyptus-harvest-aroma-mist-4-oz",
@@ -3081,7 +4029,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-40905-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-soothing-touch-bath-salts-32-oz": {
     "id": "bg-soothing-touch-bath-salts-32-oz",
@@ -3110,7 +4064,20 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-69165-1PK",
+      "item": null,
+      "optionSkus": {
+        "Cedar Sage": "B-69165-1PK",
+        "Eucalyptus Spearmint": "B-69170-1PK",
+        "Lavender": "B-69172-1PK",
+        "Muscle Soak": "B-69182-1PK",
+        "Peppermint Rosemary": "B-69180-1PK",
+        "Balancing Soak": "B-69188-1PK"
+      }
+    }
   },
   "bg-pacha-soap-whipped-soap-scrub-vanilla-almond-8-oz": {
     "id": "bg-pacha-soap-whipped-soap-scrub-vanilla-almond-8-oz",
@@ -3129,7 +4096,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-95772-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-everyday-shea-bubble-bath-lemon-lavender-32-oz": {
     "id": "bg-everyday-shea-bubble-bath-lemon-lavender-32-oz",
@@ -3148,7 +4121,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-43670-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-fortify-facial-mist-travel-size": {
     "id": "bg-fortify-facial-mist-travel-size",
@@ -3167,7 +4146,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-36232-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-aura-cacia-relaxing-lavender-bubble-bath-13-oz": {
     "id": "bg-aura-cacia-relaxing-lavender-bubble-bath-13-oz",
@@ -3186,7 +4171,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-41155-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-cleanlogic-exfoliating-wash-cloth": {
     "id": "bg-cleanlogic-exfoliating-wash-cloth",
@@ -3205,7 +4196,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-23925-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-spectrum-essentials-body-care-coconut-oil-15-oz": {
     "id": "bg-spectrum-essentials-body-care-coconut-oil-15-oz",
@@ -3224,7 +4221,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-42522-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-alaffia-authentic-african-black-soap-tangerine-citrus-32-oz": {
     "id": "bg-alaffia-authentic-african-black-soap-tangerine-citrus-32-oz",
@@ -3243,7 +4246,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-44925-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-mychelle-ultra-hyaluronic-cleanser-42-oz": {
     "id": "bg-mychelle-ultra-hyaluronic-cleanser-42-oz",
@@ -3262,7 +4271,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-61854-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-babo-botanicals-sensitive-baby-fragrance-free-shampoo-and-wash-16-oz": {
     "id": "bg-babo-botanicals-sensitive-baby-fragrance-free-shampoo-and-wash-16-oz",
@@ -3281,7 +4296,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-49072-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-philip-adam-shampoo-verbena-sage-12-oz": {
     "id": "bg-philip-adam-shampoo-verbena-sage-12-oz",
@@ -3300,7 +4321,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-47391-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-south-of-france-liquid-hand-wash-8-oz": {
     "id": "bg-south-of-france-liquid-hand-wash-8-oz",
@@ -3327,7 +4354,18 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-35442-1PK",
+      "item": null,
+      "optionSkus": {
+        "Lemon Verbena": "B-35442-1PK",
+        "Lavender Fields": "B-35437-1PK",
+        "Climbing Wild Rose": "B-35406-1PK",
+        "Orange Blossom Honey": "B-35461-1PK"
+      }
+    }
   },
   "bg-andalou-naturals-body-lotion-8-oz": {
     "id": "bg-andalou-naturals-body-lotion-8-oz",
@@ -3353,7 +4391,17 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-44315-1PK",
+      "item": null,
+      "optionSkus": {
+        "Mandarin Vanilla": "B-44315-1PK",
+        "Lavender Thyme": "B-44311-1PK",
+        "Citrus Verbena": "B-44312-1PK"
+      }
+    }
   },
   "bg-crystal-essence-mineral-deodorant-roll-on-225-oz": {
     "id": "bg-crystal-essence-mineral-deodorant-roll-on-225-oz",
@@ -3379,7 +4427,17 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-58503-1PK",
+      "item": null,
+      "optionSkus": {
+        "Chamomile Green Tea": "B-58503-1PK",
+        "Pomegranate": "B-58508-1PK",
+        "Lavender White Tea": "B-58506-1PK"
+      }
+    }
   },
   "bg-crystal-body-deodorant-roll-on-unscented-225-oz": {
     "id": "bg-crystal-body-deodorant-roll-on-unscented-225-oz",
@@ -3398,7 +4456,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-58921-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-crystal-body-deodorant-spray-unscented-4-oz": {
     "id": "bg-crystal-body-deodorant-spray-unscented-4-oz",
@@ -3417,7 +4481,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-58915-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-crystal-essence-lavender-deodorant-spray-4-oz": {
     "id": "bg-crystal-essence-lavender-deodorant-spray-4-oz",
@@ -3436,7 +4506,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-58504-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-crystal-mineral-deodorant-stick-twist-up-425-oz": {
     "id": "bg-crystal-mineral-deodorant-stick-twist-up-425-oz",
@@ -3455,7 +4531,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-58521-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-seaweed-bath-co-body-wash-12-oz": {
     "id": "bg-seaweed-bath-co-body-wash-12-oz",
@@ -3481,7 +4563,17 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-52759-1PK",
+      "item": null,
+      "optionSkus": {
+        "Eucalyptus Peppermint": "B-52759-1PK",
+        "Sleep Calm": "B-66501-1PK",
+        "Energize Uplift": "B-66499-1PK"
+      }
+    }
   },
   "bg-seaweed-bath-co-body-cream-6-oz": {
     "id": "bg-seaweed-bath-co-body-cream-6-oz",
@@ -3506,7 +4598,16 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-56078-1PK",
+      "item": null,
+      "optionSkus": {
+        "Unscented": "B-56078-1PK",
+        "Sleep Calm": "B-66511-1PK"
+      }
+    }
   },
   "bg-seaweed-bath-co-detox-facial-bar-375-oz": {
     "id": "bg-seaweed-bath-co-detox-facial-bar-375-oz",
@@ -3525,7 +4626,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-48219-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-seaweed-bath-co-exfoliating-detox-soap-375-oz": {
     "id": "bg-seaweed-bath-co-exfoliating-detox-soap-375-oz",
@@ -3544,7 +4651,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-52396-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-seaweed-bath-co-detox-body-scrub-awaken-6-oz": {
     "id": "bg-seaweed-bath-co-detox-body-scrub-awaken-6-oz",
@@ -3563,7 +4676,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-48211-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-soothing-touch-salt-scrub-20-oz": {
     "id": "bg-soothing-touch-salt-scrub-20-oz",
@@ -3588,7 +4707,16 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-59343-1PK",
+      "item": null,
+      "optionSkus": {
+        "Lavender": "B-59343-1PK",
+        "Peppermint Rosemary": "B-59344-1PK"
+      }
+    }
   },
   "bg-soothing-touch-muscle-comfort-massage-oil-8-oz": {
     "id": "bg-soothing-touch-muscle-comfort-massage-oil-8-oz",
@@ -3607,7 +4735,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-59348-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-soothing-touch-fractionated-coconut-oil-unscented-8-oz": {
     "id": "bg-soothing-touch-fractionated-coconut-oil-unscented-8-oz",
@@ -3626,7 +4760,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-40290-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-everyday-shea-bubble-bath-lavender-32-oz": {
     "id": "bg-everyday-shea-bubble-bath-lavender-32-oz",
@@ -3645,7 +4785,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-45212-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-everyday-shea-bubble-bath-unscented-32-oz": {
     "id": "bg-everyday-shea-bubble-bath-unscented-32-oz",
@@ -3664,7 +4810,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-81657-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-everyday-coconut-body-wash-32-oz": {
     "id": "bg-everyday-coconut-body-wash-32-oz",
@@ -3683,7 +4835,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-41367-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-everyday-coconut-conditioner-32-oz": {
     "id": "bg-everyday-coconut-conditioner-32-oz",
@@ -3702,7 +4860,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-41390-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-everyday-coconut-lime-lotion-32-oz": {
     "id": "bg-everyday-coconut-lime-lotion-32-oz",
@@ -3721,7 +4885,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-45020-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-philip-adam-shampoo-12-oz": {
     "id": "bg-philip-adam-shampoo-12-oz",
@@ -3747,7 +4917,17 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-47370-1PK",
+      "item": null,
+      "optionSkus": {
+        "Apple Cider Vinegar": "B-47370-1PK",
+        "Apple Cider Vinegar Unscented": "B-47372-1PK",
+        "Orange Vanilla": "B-47395-1PK"
+      }
+    }
   },
   "bg-philip-adam-apple-cider-vinegar-conditioner-12-oz": {
     "id": "bg-philip-adam-apple-cider-vinegar-conditioner-12-oz",
@@ -3766,7 +4946,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-47371-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-herban-cowboy-body-wash-forest-18-oz": {
     "id": "bg-herban-cowboy-body-wash-forest-18-oz",
@@ -3785,7 +4971,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-82653-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-herban-cowboy-cologne-17-oz": {
     "id": "bg-herban-cowboy-cologne-17-oz",
@@ -3810,7 +5002,16 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-53369-1PK",
+      "item": null,
+      "optionSkus": {
+        "Dusk": "B-53369-1PK",
+        "Forest": "B-37890-1PK"
+      }
+    }
   },
   "bg-grandpa-soap-co-charcoal-bar-soap-425-oz": {
     "id": "bg-grandpa-soap-co-charcoal-bar-soap-425-oz",
@@ -3829,7 +5030,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-48930-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-grandpa-soap-co-epsom-salt-bar-soap-425-oz": {
     "id": "bg-grandpa-soap-co-epsom-salt-bar-soap-425-oz",
@@ -3848,7 +5055,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-85854-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-grandpa-soap-co-pine-tar-bar-soap-325-oz": {
     "id": "bg-grandpa-soap-co-pine-tar-bar-soap-325-oz",
@@ -3867,7 +5080,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-87554-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-grandpa-soap-co-charcoal-shower-cream-95-oz": {
     "id": "bg-grandpa-soap-co-charcoal-shower-cream-95-oz",
@@ -3886,7 +5105,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-85863-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-earth-therapeutics-bath-blossom-sponge-green": {
     "id": "bg-earth-therapeutics-bath-blossom-sponge-green",
@@ -3905,7 +5130,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-86797-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-earth-therapeutics-lavender-body-sponge": {
     "id": "bg-earth-therapeutics-lavender-body-sponge",
@@ -3924,7 +5155,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-51221-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-earth-therapeutics-blue-body-sponge": {
     "id": "bg-earth-therapeutics-blue-body-sponge",
@@ -3943,7 +5180,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-51220-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-earth-therapeutics-exfoliating-gloves": {
     "id": "bg-earth-therapeutics-exfoliating-gloves",
@@ -3962,7 +5205,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-86819-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-earth-therapeutics-exfoliating-hydro-towel": {
     "id": "bg-earth-therapeutics-exfoliating-hydro-towel",
@@ -3981,7 +5230,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-86874-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-earth-therapeutics-loofah-terry-pad": {
     "id": "bg-earth-therapeutics-loofah-terry-pad",
@@ -4000,7 +5255,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-86794-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-earth-therapeutics-pocket-comb": {
     "id": "bg-earth-therapeutics-pocket-comb",
@@ -4019,7 +5280,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-86644-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-earth-therapeutics-4-sided-nail-filing-block": {
     "id": "bg-earth-therapeutics-4-sided-nail-filing-block",
@@ -4038,7 +5305,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-86777-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-cleanlogic-detox-charcoal-washcloth": {
     "id": "bg-cleanlogic-detox-charcoal-washcloth",
@@ -4057,7 +5330,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-69197-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-cleanlogic-detox-charcoal-body-scrubber": {
     "id": "bg-cleanlogic-detox-charcoal-body-scrubber",
@@ -4076,7 +5355,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-69193-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-cleanlogic-detox-charcoal-bath-glove": {
     "id": "bg-cleanlogic-detox-charcoal-bath-glove",
@@ -4095,7 +5380,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-69202-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-cleanlogic-charcoal-sea-sponge-foam": {
     "id": "bg-cleanlogic-charcoal-sea-sponge-foam",
@@ -4114,7 +5405,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-23911-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-cleanlogic-exfoliating-soap-saver": {
     "id": "bg-cleanlogic-exfoliating-soap-saver",
@@ -4133,7 +5430,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-69191-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-cleanlogic-stretch-bath-cloth-for-men": {
     "id": "bg-cleanlogic-stretch-bath-cloth-for-men",
@@ -4152,7 +5455,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-23890-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-aura-cacia-lavender-aroma-mist-4-oz": {
     "id": "bg-aura-cacia-lavender-aroma-mist-4-oz",
@@ -4171,7 +5480,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-50890-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-shikai-shower-gel-12-oz": {
     "id": "bg-shikai-shower-gel-12-oz",
@@ -4196,7 +5511,16 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-87629-1PK",
+      "item": null,
+      "optionSkus": {
+        "Yuzu Fruit": "B-87629-1PK",
+        "Sandalwood Amber": "B-87634-1PK"
+      }
+    }
   },
   "bg-shikai-hand-and-body-lotion-8-oz": {
     "id": "bg-shikai-hand-and-body-lotion-8-oz",
@@ -4221,7 +5545,16 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-50184-1PK",
+      "item": null,
+      "optionSkus": {
+        "Coconut": "B-50184-1PK",
+        "Sandalwood": "B-50694-1PK"
+      }
+    }
   },
   "bg-shikai-borage-dry-skin-foot-cream-42-oz": {
     "id": "bg-shikai-borage-dry-skin-foot-cream-42-oz",
@@ -4240,7 +5573,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-55782-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-shikai-borage-dry-skin-therapy-lotion-8-oz": {
     "id": "bg-shikai-borage-dry-skin-therapy-lotion-8-oz",
@@ -4259,7 +5598,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-54548-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-andalou-naturals-apricot-probiotic-cleansing-milk-6-oz": {
     "id": "bg-andalou-naturals-apricot-probiotic-cleansing-milk-6-oz",
@@ -4278,7 +5623,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-49324-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-andalou-naturals-clementine-hand-cream-34-oz": {
     "id": "bg-andalou-naturals-clementine-hand-cream-34-oz",
@@ -4297,7 +5648,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-41998-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-andalou-naturals-kukui-cocoa-body-butter-8-oz": {
     "id": "bg-andalou-naturals-kukui-cocoa-body-butter-8-oz",
@@ -4316,7 +5673,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-49321-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-andalou-naturals-dmae-lift-and-firm-cream-17-oz": {
     "id": "bg-andalou-naturals-dmae-lift-and-firm-cream-17-oz",
@@ -4335,7 +5698,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-42443-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-alba-botanica-body-bath-32-oz": {
     "id": "bg-alba-botanica-body-bath-32-oz",
@@ -4361,7 +5730,17 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-56279-1PK",
+      "item": null,
+      "optionSkus": {
+        "Honey Mango": "B-56279-1PK",
+        "French Lavender": "B-56283-1PK",
+        "Midnight Rose": "B-56280-1PK"
+      }
+    }
   },
   "bg-fortify-reviving-face-serum-17-oz": {
     "id": "bg-fortify-reviving-face-serum-17-oz",
@@ -4380,7 +5759,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-36244-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-fortify-face-moisturizer-17-oz": {
     "id": "bg-fortify-face-moisturizer-17-oz",
@@ -4399,7 +5784,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-36238-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-fortify-protecting-face-wipes-30-count": {
     "id": "bg-fortify-protecting-face-wipes-30-count",
@@ -4418,7 +5809,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-36248-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-fortify-nourishing-face-cleanser-5-oz": {
     "id": "bg-fortify-nourishing-face-cleanser-5-oz",
@@ -4437,7 +5834,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-36237-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-fortify-firming-eye-pads-5-pairs": {
     "id": "bg-fortify-firming-eye-pads-5-pairs",
@@ -4456,7 +5859,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-36236-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-auromere-tulsi-neem-bar-soap-275-oz": {
     "id": "bg-auromere-tulsi-neem-bar-soap-275-oz",
@@ -4475,7 +5884,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-57254-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-eco-dent-daily-care-toothpowder-2-oz": {
     "id": "bg-eco-dent-daily-care-toothpowder-2-oz",
@@ -4500,7 +5915,16 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-55557-1PK",
+      "item": null,
+      "optionSkus": {
+        "Anise": "B-55557-1PK",
+        "Cinnamon": "B-55559-1PK"
+      }
+    }
   },
   "bg-eco-dent-extrabrite-toothpowder-2-oz": {
     "id": "bg-eco-dent-extrabrite-toothpowder-2-oz",
@@ -4519,7 +5943,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-54137-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-eco-dent-cinnamon-mouth-rinse-8-oz": {
     "id": "bg-eco-dent-cinnamon-mouth-rinse-8-oz",
@@ -4538,7 +5968,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-55165-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-tea-tree-therapy-whitening-toothpaste-3-oz": {
     "id": "bg-tea-tree-therapy-whitening-toothpaste-3-oz",
@@ -4557,7 +5993,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-74407-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-tea-tree-therapy-toothpaste-with-baking-soda-5-oz": {
     "id": "bg-tea-tree-therapy-toothpaste-with-baking-soda-5-oz",
@@ -4576,7 +6018,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-74406-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-essential-oxygen-brushing-rinse-peppermint-travel-size": {
     "id": "bg-essential-oxygen-brushing-rinse-peppermint-travel-size",
@@ -4595,7 +6043,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-10888-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-saltworks-ultra-epsom-salt-lavender-2-lb": {
     "id": "bg-saltworks-ultra-epsom-salt-lavender-2-lb",
@@ -4614,7 +6068,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-28515-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-redmond-clay-facial-mud-4-oz": {
     "id": "bg-redmond-clay-facial-mud-4-oz",
@@ -4633,7 +6093,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-48250-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-hand-in-hand-sugar-scrub-9-oz": {
     "id": "bg-hand-in-hand-sugar-scrub-9-oz",
@@ -4659,7 +6125,17 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-57475-1PK",
+      "item": null,
+      "optionSkus": {
+        "Sea Salt": "B-57475-1PK",
+        "Island Mimosa": "B-52306-1PK",
+        "Cactus Blossom": "B-57454-1PK"
+      }
+    }
   },
   "bg-flower-valley-ayate-fiber-washcloth": {
     "id": "bg-flower-valley-ayate-fiber-washcloth",
@@ -4678,7 +6154,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-58400-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-bass-brushes-detangler-flex-hair-brush": {
     "id": "bg-bass-brushes-detangler-flex-hair-brush",
@@ -4697,7 +6179,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-44225-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-bass-brushes-bio-flex-swirl-hair-brush": {
     "id": "bg-bass-brushes-bio-flex-swirl-hair-brush",
@@ -4716,7 +6204,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-44226-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-lafes-active-deodorant-twist-stick-25-oz": {
     "id": "bg-lafes-active-deodorant-twist-stick-25-oz",
@@ -4735,7 +6229,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-58951-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-lavilin-underarm-deodorant-125-g": {
     "id": "bg-lavilin-underarm-deodorant-125-g",
@@ -4754,7 +6254,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-84755-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-lavanila-healthy-deodorant-vanilla-grapefruit-2-oz": {
     "id": "bg-lavanila-healthy-deodorant-vanilla-grapefruit-2-oz",
@@ -4773,7 +6279,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-83308-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-babo-botanicals-sensitive-baby-daily-lotion-8-oz": {
     "id": "bg-babo-botanicals-sensitive-baby-daily-lotion-8-oz",
@@ -4792,7 +6304,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-49073-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-babo-botanicals-moisturizing-baby-shampoo-and-wash-16-oz": {
     "id": "bg-babo-botanicals-moisturizing-baby-shampoo-and-wash-16-oz",
@@ -4811,7 +6329,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-48513-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-a-la-maison-liquid-hand-soap-169-oz": {
     "id": "bg-a-la-maison-liquid-hand-soap-169-oz",
@@ -4836,7 +6360,16 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-24159-1PK",
+      "item": null,
+      "optionSkus": {
+        "Lemon": "B-24159-1PK",
+        "Plumeria": "B-81956-1PK"
+      }
+    }
   },
   "bg-alaffia-african-black-soap-32-oz": {
     "id": "bg-alaffia-african-black-soap-32-oz",
@@ -4861,7 +6394,16 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-44945-1PK",
+      "item": null,
+      "optionSkus": {
+        "Eucalyptus Tea Tree": "B-44945-1PK",
+        "Unscented": "B-44926-1PK"
+      }
+    }
   },
   "bg-dr-singhas-mustard-bath-8-oz": {
     "id": "bg-dr-singhas-mustard-bath-8-oz",
@@ -4880,7 +6422,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-85971-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-bodhi-whipped-soap-eucalyptus-spearmint-14-oz": {
     "id": "bg-bodhi-whipped-soap-eucalyptus-spearmint-14-oz",
@@ -4899,7 +6447,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-69268-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-attitude-body-cream-8-oz": {
     "id": "bg-attitude-body-cream-8-oz",
@@ -4925,7 +6479,17 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-84284-1PK",
+      "item": null,
+      "optionSkus": {
+        "Nourishing": "B-84284-1PK",
+        "Energizing": "B-84287-1PK",
+        "Soothing": "B-84285-1PK"
+      }
+    }
   },
   "bg-avalon-organics-vitamin-c-cleansing-gel-6-oz": {
     "id": "bg-avalon-organics-vitamin-c-cleansing-gel-6-oz",
@@ -4944,7 +6508,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-64412-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-avalon-organics-vitamin-c-renewal-cream-17-oz": {
     "id": "bg-avalon-organics-vitamin-c-renewal-cream-17-oz",
@@ -4963,7 +6533,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-64407-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-avalon-organics-lavender-hand-and-body-lotion-32-oz": {
     "id": "bg-avalon-organics-lavender-hand-and-body-lotion-32-oz",
@@ -4982,7 +6558,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-55888-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-yes-to-avocado-daily-eye-cream-05-oz": {
     "id": "bg-yes-to-avocado-daily-eye-cream-05-oz",
@@ -5001,7 +6583,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-76690-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-yes-to-avocado-daily-cream-cleanser-4-oz": {
     "id": "bg-yes-to-avocado-daily-cream-cleanser-4-oz",
@@ -5020,7 +6608,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-76671-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-mineral-fusion-nail-polish-remover-6-oz": {
     "id": "bg-mineral-fusion-nail-polish-remover-6-oz",
@@ -5039,7 +6633,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-39460-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-one-with-nature-dead-sea-mineral-bar-soap-7-oz": {
     "id": "bg-one-with-nature-dead-sea-mineral-bar-soap-7-oz",
@@ -5067,7 +6667,19 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-51323-1PK",
+      "item": null,
+      "optionSkus": {
+        "Lemon Sage": "B-51323-1PK",
+        "Dead Sea Salt": "B-51328-1PK",
+        "Eucalyptus": "B-51704-1PK",
+        "Rose Petal": "B-51330-1PK",
+        "Dead Sea Mud": "B-51327-1PK"
+      }
+    }
   },
   "bg-spry-xylitol-toothpaste-fluoride-free-5-oz": {
     "id": "bg-spry-xylitol-toothpaste-fluoride-free-5-oz",
@@ -5092,7 +6704,16 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-27167-1PK",
+      "item": null,
+      "optionSkus": {
+        "Peppermint": "B-27167-1PK",
+        "Spearmint": "B-31110-1PK"
+      }
+    }
   },
   "bg-spry-xylitol-oral-rinse-16-oz": {
     "id": "bg-spry-xylitol-oral-rinse-16-oz",
@@ -5117,7 +6738,16 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-87050-1PK",
+      "item": null,
+      "optionSkus": {
+        "Spearmint": "B-87050-1PK",
+        "Cool Mint": "B-87047-1PK"
+      }
+    }
   },
   "bg-spry-kids-xylitol-oral-rinse-bubble-gum-16-oz": {
     "id": "bg-spry-kids-xylitol-oral-rinse-bubble-gum-16-oz",
@@ -5136,7 +6766,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-17261-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-clearly-natural-glycerine-liquid-hand-soap-12-oz": {
     "id": "bg-clearly-natural-glycerine-liquid-hand-soap-12-oz",
@@ -5161,7 +6797,16 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-82973-1PK",
+      "item": null,
+      "optionSkus": {
+        "Aloe Vera": "B-82973-1PK",
+        "Unscented": "B-82891-1PK"
+      }
+    }
   },
   "bg-nubian-heritage-raw-shea-butter-bar-soap-5-oz": {
     "id": "bg-nubian-heritage-raw-shea-butter-bar-soap-5-oz",
@@ -5180,7 +6825,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-87533-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-kirks-lemon-eucalyptus-castile-hand-soap-12-oz": {
     "id": "bg-kirks-lemon-eucalyptus-castile-hand-soap-12-oz",
@@ -5199,7 +6850,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-14711-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-hello-activated-charcoal-toothbrush-soft": {
     "id": "bg-hello-activated-charcoal-toothbrush-soft",
@@ -5218,7 +6875,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-77612-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-herban-cowboy-dry-spray-deodorant-28-oz": {
     "id": "bg-herban-cowboy-dry-spray-deodorant-28-oz",
@@ -5243,7 +6906,16 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-41223-1PK",
+      "item": null,
+      "optionSkus": {
+        "Dusk": "B-41223-1PK",
+        "Sport": "B-41224-1PK"
+      }
+    }
   },
   "ae-natural-loofah-sponge-12-to-14-in": {
     "id": "ae-natural-loofah-sponge-12-to-14-in",
@@ -5262,7 +6934,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256805693610424",
+      "optionSkus": null
+    }
   },
   "ae-bamboo-wide-tooth-comb": {
     "id": "ae-bamboo-wide-tooth-comb",
@@ -5281,7 +6959,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256806280963993",
+      "optionSkus": null
+    }
   },
   "bg-roland-bamboo-toothpicks-case-of-12-x-300": {
     "id": "bg-roland-bamboo-toothpicks-case-of-12-x-300",
@@ -5300,7 +6984,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-60917-12PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-world-centric-compostable-plates-6-in-case-of-240": {
     "id": "bg-world-centric-compostable-plates-6-in-case-of-240",
@@ -5319,7 +7009,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-89495-12PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-full-circle-be-good-dish-brush": {
     "id": "bg-full-circle-be-good-dish-brush",
@@ -5338,7 +7034,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-61862-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "ae-cotton-cross-back-apron": {
     "id": "ae-cotton-cross-back-apron",
@@ -5364,7 +7066,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "1005007635075989",
+      "optionSkus": null
+    }
   },
   "ae-mini-artificial-bonsai": {
     "id": "ae-mini-artificial-bonsai",
@@ -5383,7 +7091,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256812980899315",
+      "optionSkus": null
+    }
   },
   "ae-bag-sealing-clips-4-pack": {
     "id": "ae-bag-sealing-clips-4-pack",
@@ -5402,7 +7116,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256813079747401",
+      "optionSkus": null
+    }
   },
   "ae-retractable-carabiner-keychain": {
     "id": "ae-retractable-carabiner-keychain",
@@ -5421,7 +7141,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256807751643159",
+      "optionSkus": null
+    }
   },
   "ae-reusable-cable-ties-5-pack": {
     "id": "ae-reusable-cable-ties-5-pack",
@@ -5440,7 +7166,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256812791612763",
+      "optionSkus": null
+    }
   },
   "ae-car-seat-gap-fillers-2-pack": {
     "id": "ae-car-seat-gap-fillers-2-pack",
@@ -5459,7 +7191,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256812816193878",
+      "optionSkus": null
+    }
   },
   "ae-unfinished-wood-candlestick": {
     "id": "ae-unfinished-wood-candlestick",
@@ -5478,7 +7216,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256808790245550",
+      "optionSkus": null
+    }
   },
   "ae-green-leaves-botanical-print-8-x-12-in": {
     "id": "ae-green-leaves-botanical-print-8-x-12-in",
@@ -5497,7 +7241,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256808284357520",
+      "optionSkus": null
+    }
   },
   "ae-line-art-plant-print-8-x-12-in": {
     "id": "ae-line-art-plant-print-8-x-12-in",
@@ -5516,7 +7266,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256810022816349",
+      "optionSkus": null
+    }
   },
   "ae-olive-tree-prints-set-of-2-12-x-16-in": {
     "id": "ae-olive-tree-prints-set-of-2-12-x-16-in",
@@ -5535,7 +7291,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256809902920374",
+      "optionSkus": null
+    }
   },
   "ae-clear-adhesive-hooks-20-pack": {
     "id": "ae-clear-adhesive-hooks-20-pack",
@@ -5554,7 +7316,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256806781058937",
+      "optionSkus": null
+    }
   },
   "ae-reusable-cable-straps-20-pack": {
     "id": "ae-reusable-cable-straps-20-pack",
@@ -5573,7 +7341,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256807159204533",
+      "optionSkus": null
+    }
   },
   "ae-honeycomb-silicone-trivet": {
     "id": "ae-honeycomb-silicone-trivet",
@@ -5592,7 +7366,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256810137385031",
+      "optionSkus": null
+    }
   },
   "ae-absorbent-kitchen-floor-mat-16-x-24-in": {
     "id": "ae-absorbent-kitchen-floor-mat-16-x-24-in",
@@ -5611,7 +7391,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256813069081223",
+      "optionSkus": null
+    }
   },
   "ae-under-door-draft-seal": {
     "id": "ae-under-door-draft-seal",
@@ -5630,7 +7416,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256810343621083",
+      "optionSkus": null
+    }
   },
   "ae-door-and-window-weather-strip-33-ft": {
     "id": "ae-door-and-window-weather-strip-33-ft",
@@ -5649,7 +7441,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256806674750362",
+      "optionSkus": null
+    }
   },
   "bg-if-you-care-recycled-aluminum-foil-50-sq-ft-case-of-12": {
     "id": "bg-if-you-care-recycled-aluminum-foil-50-sq-ft-case-of-12",
@@ -5668,7 +7466,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-62208-12PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-world-centric-compostable-spoons-24-count-case-of-12": {
     "id": "bg-world-centric-compostable-spoons-24-count-case-of-12",
@@ -5687,7 +7491,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-64765-12PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-world-centric-compostable-knives-24-count-case-of-12": {
     "id": "bg-world-centric-compostable-knives-24-count-case-of-12",
@@ -5706,7 +7516,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-64766-12PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-preserve-recycled-cutlery-24-count-case-of-12": {
     "id": "bg-preserve-recycled-cutlery-24-count-case-of-12",
@@ -5725,7 +7541,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-67595-12PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-world-centric-compostable-hot-cups-12-oz-20-count-case-of-12": {
     "id": "bg-world-centric-compostable-hot-cups-12-oz-20-count-case-of-12",
@@ -5744,7 +7566,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-89513-12PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-repurpose-compostable-bowls-16-oz-20-count-case-of-12": {
     "id": "bg-repurpose-compostable-bowls-16-oz-20-count-case-of-12",
@@ -5763,7 +7591,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-82389-12PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-natural-value-reclosable-sandwich-bags-40-count-case-of-12": {
     "id": "bg-natural-value-reclosable-sandwich-bags-40-count-case-of-12",
@@ -5782,7 +7616,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-61782-12PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-snapware-total-solution-4-cup-round-glass-container-4-pack": {
     "id": "bg-snapware-total-solution-4-cup-round-glass-container-4-pack",
@@ -5801,7 +7641,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-57931-4PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-snapware-total-solution-6-cup-rectangle-glass-container-2-pa": {
     "id": "bg-snapware-total-solution-6-cup-rectangle-glass-container-2-pa",
@@ -5820,7 +7666,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-57925-2PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "ae-countertop-compost-scrap-bin-3-l": {
     "id": "ae-countertop-compost-scrap-bin-3-l",
@@ -5839,7 +7691,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256808465129244",
+      "optionSkus": null
+    }
   },
   "ae-large-jute-tote-bag": {
     "id": "ae-large-jute-tote-bag",
@@ -5858,7 +7716,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256811524301595",
+      "optionSkus": null
+    }
   },
   "ae-stainless-steel-pour-over-coffee-filter-with-stand": {
     "id": "ae-stainless-steel-pour-over-coffee-filter-with-stand",
@@ -5877,7 +7741,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256809767050635",
+      "optionSkus": null
+    }
   },
   "bg-full-circle-wipe-out-squeegee": {
     "id": "bg-full-circle-wipe-out-squeegee",
@@ -5896,7 +7766,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-66382-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-full-circle-clean-team-dustpan-and-brush-set": {
     "id": "bg-full-circle-clean-team-dustpan-and-brush-set",
@@ -5915,7 +7791,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-66384-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-full-circle-the-ring-veggie-brush": {
     "id": "bg-full-circle-the-ring-veggie-brush",
@@ -5934,7 +7816,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-61860-1PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-casabella-kind-plant-based-scrub-sponges-case-of-8": {
     "id": "bg-casabella-kind-plant-based-scrub-sponges-case-of-8",
@@ -5953,7 +7841,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-24616-8PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-weiman-cook-top-scrubbing-pads-case-of-6-three-pac": {
     "id": "bg-weiman-cook-top-scrubbing-pads-case-of-6-three-pac",
@@ -5972,7 +7866,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-25849-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "ae-washable-lint-roller": {
     "id": "ae-washable-lint-roller",
@@ -5991,7 +7891,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256807907498713",
+      "optionSkus": null
+    }
   },
   "ae-long-handle-tub-and-tile-brush": {
     "id": "ae-long-handle-tub-and-tile-brush",
@@ -6010,7 +7916,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256807958665405",
+      "optionSkus": null
+    }
   },
   "ae-stove-and-crevice-brushes-3-pack": {
     "id": "ae-stove-and-crevice-brushes-3-pack",
@@ -6029,7 +7941,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256807045633603",
+      "optionSkus": null
+    }
   },
   "ae-lint-and-fuzz-brush": {
     "id": "ae-lint-and-fuzz-brush",
@@ -6048,7 +7966,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256803989126813",
+      "optionSkus": null
+    }
   },
   "ae-sponge-tub-scrubber-with-handle": {
     "id": "ae-sponge-tub-scrubber-with-handle",
@@ -6067,7 +7991,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256807066925161",
+      "optionSkus": null
+    }
   },
   "bg-natural-value-kitchen-scrubber-sponge-case-of-24": {
     "id": "bg-natural-value-kitchen-scrubber-sponge-case-of-24",
@@ -6086,7 +8016,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-60710-24PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-full-circle-walnut-scrubber-sponge-2-count-case-of-6": {
     "id": "bg-full-circle-walnut-scrubber-sponge-2-count-case-of-6",
@@ -6105,7 +8041,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-60214-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-full-circle-wash-and-dry-microfiber-duster-case-of-6": {
     "id": "bg-full-circle-wash-and-dry-microfiber-duster-case-of-6",
@@ -6124,7 +8066,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-61850-6PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "bg-casabella-kind-plant-based-scrub-sponges-6-count-case-of-8": {
     "id": "bg-casabella-kind-plant-based-scrub-sponges-6-count-case-of-8",
@@ -6143,7 +8091,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "Bangalla",
+      "sku": "B-24621-8PK",
+      "item": null,
+      "optionSkus": null
+    }
   },
   "ae-long-handle-scrub-brush-blue": {
     "id": "ae-long-handle-scrub-brush-blue",
@@ -6162,7 +8116,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256813079699562",
+      "optionSkus": null
+    }
   },
   "ae-stiff-bristle-scrub-brush-set": {
     "id": "ae-stiff-bristle-scrub-brush-set",
@@ -6181,7 +8141,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256812781466180",
+      "optionSkus": null
+    }
   },
   "ae-3-in-1-window-squeegee-with-sprayer": {
     "id": "ae-3-in-1-window-squeegee-with-sprayer",
@@ -6200,7 +8166,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256812970624972",
+      "optionSkus": null
+    }
   },
   "ae-long-handle-shoe-and-laundry-brush": {
     "id": "ae-long-handle-shoe-and-laundry-brush",
@@ -6219,7 +8191,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256805572566316",
+      "optionSkus": null
+    }
   },
   "ae-wool-dryer-balls-6-pack": {
     "id": "ae-wool-dryer-balls-6-pack",
@@ -6238,7 +8216,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256805428831580",
+      "optionSkus": null
+    }
   },
   "ae-wooden-handle-bottle-brush-12-in": {
     "id": "ae-wooden-handle-bottle-brush-12-in",
@@ -6257,7 +8241,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256806440275884",
+      "optionSkus": null
+    }
   },
   "ae-solar-mushroom-string-lights": {
     "id": "ae-solar-mushroom-string-lights",
@@ -6276,7 +8266,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256809109396877",
+      "optionSkus": null
+    }
   },
   "ae-jumbo-pickle-squishy": {
     "id": "ae-jumbo-pickle-squishy",
@@ -6295,7 +8291,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256812288616633",
+      "optionSkus": null
+    }
   },
   "ae-tomato-squishy": {
     "id": "ae-tomato-squishy",
@@ -6314,7 +8316,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256811638249866",
+      "optionSkus": null
+    }
   },
   "ae-jumping-frogs-set-of-12": {
     "id": "ae-jumping-frogs-set-of-12",
@@ -6333,7 +8341,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256806752931503",
+      "optionSkus": null
+    }
   },
   "ae-wind-chime-12-tubes": {
     "id": "ae-wind-chime-12-tubes",
@@ -6352,7 +8366,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256806491891376",
+      "optionSkus": null
+    }
   },
   "ae-crochet-pocket-frog": {
     "id": "ae-crochet-pocket-frog",
@@ -6371,7 +8391,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256809035538870",
+      "optionSkus": null
+    }
   },
   "ae-strawberry-mochi-squishy": {
     "id": "ae-strawberry-mochi-squishy",
@@ -6390,7 +8416,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256813079591993",
+      "optionSkus": null
+    }
   },
   "ae-jumbo-strawberry-squishy-cream-scented": {
     "id": "ae-jumbo-strawberry-squishy-cream-scented",
@@ -6409,7 +8441,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256808314411530",
+      "optionSkus": null
+    }
   },
   "ae-strawberry-taba-squishy": {
     "id": "ae-strawberry-taba-squishy",
@@ -6428,7 +8466,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256808473963692",
+      "optionSkus": null
+    }
   },
   "ae-dumpling-squishy": {
     "id": "ae-dumpling-squishy",
@@ -6447,7 +8491,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256811753864544",
+      "optionSkus": null
+    }
   },
   "ae-mini-dumpling-and-bun-squishy": {
     "id": "ae-mini-dumpling-and-bun-squishy",
@@ -6466,7 +8516,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256812184303008",
+      "optionSkus": null
+    }
   },
   "ae-toast-bread-squishy": {
     "id": "ae-toast-bread-squishy",
@@ -6485,7 +8541,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256811401036360",
+      "optionSkus": null
+    }
   },
   "ae-strawberry-bread-bun-squishy": {
     "id": "ae-strawberry-bread-bun-squishy",
@@ -6504,7 +8566,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256810466817248",
+      "optionSkus": null
+    }
   },
   "ae-butter-toast-squishy": {
     "id": "ae-butter-toast-squishy",
@@ -6523,7 +8591,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "1005012522732440",
+      "optionSkus": null
+    }
   },
   "ae-cheese-cake-squishy": {
     "id": "ae-cheese-cake-squishy",
@@ -6542,7 +8616,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256810099100965",
+      "optionSkus": null
+    }
   },
   "ae-fluffy-taba-cat-squishy-13-cm": {
     "id": "ae-fluffy-taba-cat-squishy-13-cm",
@@ -6561,7 +8641,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256808473811083",
+      "optionSkus": null
+    }
   },
   "ae-chubby-cat-squishy": {
     "id": "ae-chubby-cat-squishy",
@@ -6580,7 +8666,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256812184334860",
+      "optionSkus": null
+    }
   },
   "ae-cat-cheese-bread-squishy": {
     "id": "ae-cat-cheese-bread-squishy",
@@ -6599,7 +8691,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256807751588211",
+      "optionSkus": null
+    }
   },
   "ae-jumbo-french-fries-squishy": {
     "id": "ae-jumbo-french-fries-squishy",
@@ -6618,7 +8716,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256806675476554",
+      "optionSkus": null
+    }
   },
   "ae-slow-rise-stress-ball": {
     "id": "ae-slow-rise-stress-ball",
@@ -6637,7 +8741,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256809198010995",
+      "optionSkus": null
+    }
   },
   "ae-secret-wooden-puzzle-box": {
     "id": "ae-secret-wooden-puzzle-box",
@@ -6656,7 +8766,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256810199720744",
+      "optionSkus": null
+    }
   },
   "ae-hexagon-wooden-brain-teaser": {
     "id": "ae-hexagon-wooden-brain-teaser",
@@ -6675,7 +8791,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256806851872843",
+      "optionSkus": null
+    }
   },
   "ae-round-bird-wooden-jigsaw-puzzle": {
     "id": "ae-round-bird-wooden-jigsaw-puzzle",
@@ -6694,7 +8816,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256807278662721",
+      "optionSkus": null
+    }
   },
   "ae-peacock-wooden-jigsaw-puzzle": {
     "id": "ae-peacock-wooden-jigsaw-puzzle",
@@ -6713,7 +8841,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256806786239663",
+      "optionSkus": null
+    }
   },
   "ae-elephant-wooden-jigsaw-puzzle": {
     "id": "ae-elephant-wooden-jigsaw-puzzle",
@@ -6732,7 +8866,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256806812205715",
+      "optionSkus": null
+    }
   },
   "ae-ocean-animals-wooden-jigsaw-puzzle": {
     "id": "ae-ocean-animals-wooden-jigsaw-puzzle",
@@ -6751,7 +8891,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256808061832504",
+      "optionSkus": null
+    }
   },
   "ae-vintage-pirate-playing-cards": {
     "id": "ae-vintage-pirate-playing-cards",
@@ -6770,7 +8916,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256807958553805",
+      "optionSkus": null
+    }
   },
   "ae-bamboo-phone-stand": {
     "id": "ae-bamboo-phone-stand",
@@ -6789,7 +8941,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256809724610352",
+      "optionSkus": null
+    }
   },
   "ae-walnut-phone-stand": {
     "id": "ae-walnut-phone-stand",
@@ -6808,7 +8966,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256809645665714",
+      "optionSkus": null
+    }
   },
   "ae-wooden-business-card-holder": {
     "id": "ae-wooden-business-card-holder",
@@ -6827,7 +8991,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256808836050960",
+      "optionSkus": null
+    }
   },
   "ae-crochet-lizard-coaster": {
     "id": "ae-crochet-lizard-coaster",
@@ -6846,7 +9016,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256812731931920",
+      "optionSkus": null
+    }
   },
   "ae-crochet-positive-cat": {
     "id": "ae-crochet-positive-cat",
@@ -6865,7 +9041,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256809182249229",
+      "optionSkus": null
+    }
   },
   "ae-pressed-flower-crystal-bookmark": {
     "id": "ae-pressed-flower-crystal-bookmark",
@@ -6884,7 +9066,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256807080143639",
+      "optionSkus": null
+    }
   },
   "ae-botanical-enamel-pin": {
     "id": "ae-botanical-enamel-pin",
@@ -6903,7 +9091,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256812217761773",
+      "optionSkus": null
+    }
   },
   "ae-vintage-leather-look-a5-notebook": {
     "id": "ae-vintage-leather-look-a5-notebook",
@@ -6922,7 +9116,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256811871884730",
+      "optionSkus": null
+    }
   },
   "ae-thick-a5-notebook-256-pages": {
     "id": "ae-thick-a5-notebook-256-pages",
@@ -6941,7 +9141,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256810386453611",
+      "optionSkus": null
+    }
   },
   "ae-mini-magnetic-travel-chess": {
     "id": "ae-mini-magnetic-travel-chess",
@@ -6960,7 +9166,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256806823876168",
+      "optionSkus": null
+    }
   },
   "ae-wooden-3-in-1-chess-checkers-and-backgammon-set": {
     "id": "ae-wooden-3-in-1-chess-checkers-and-backgammon-set",
@@ -6979,7 +9191,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256807801479699",
+      "optionSkus": null
+    }
   },
   "ae-kalimba-thumb-piano-17-keys": {
     "id": "ae-kalimba-thumb-piano-17-keys",
@@ -7004,7 +9222,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256809857759332",
+      "optionSkus": null
+    }
   },
   "ae-qcy-t13-anc-wireless-earbuds": {
     "id": "ae-qcy-t13-anc-wireless-earbuds",
@@ -7029,7 +9253,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256805035815142",
+      "optionSkus": null
+    }
   },
   "ae-qcy-melobuds-pro-anc-wireless-earbuds": {
     "id": "ae-qcy-melobuds-pro-anc-wireless-earbuds",
@@ -7048,7 +9278,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256806773385684",
+      "optionSkus": null
+    }
   },
   "ae-qcy-crossky-c30-open-ear-earbuds": {
     "id": "ae-qcy-crossky-c30-open-ear-earbuds",
@@ -7067,7 +9303,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256810256787968",
+      "optionSkus": null
+    }
   },
   "ae-gamesir-x5-lite-mobile-gaming-controller": {
     "id": "ae-gamesir-x5-lite-mobile-gaming-controller",
@@ -7086,7 +9328,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256811549412660",
+      "optionSkus": null
+    }
   },
   "ae-kz-edx-pro-wired-in-ear-earphones-with-mic": {
     "id": "ae-kz-edx-pro-wired-in-ear-earphones-with-mic",
@@ -7105,7 +9353,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256805771671665",
+      "optionSkus": null
+    }
   },
   "ae-kz-castor-pro-wired-in-ear-earphones": {
     "id": "ae-kz-castor-pro-wired-in-ear-earphones",
@@ -7124,7 +9378,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256809857837749",
+      "optionSkus": null
+    }
   },
   "ae-kz-az09-bluetooth-ear-hook-adapter": {
     "id": "ae-kz-az09-bluetooth-ear-hook-adapter",
@@ -7149,7 +9409,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256802448372763",
+      "optionSkus": null
+    }
   },
   "ae-kz-zs10-pro-2-hybrid-in-ear-monitors": {
     "id": "ae-kz-zs10-pro-2-hybrid-in-ear-monitors",
@@ -7168,7 +9434,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256809374517208",
+      "optionSkus": null
+    }
   },
   "ae-kz-castor-wired-in-ear-earphones": {
     "id": "ae-kz-castor-wired-in-ear-earphones",
@@ -7193,7 +9465,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256806781205496",
+      "optionSkus": null
+    }
   },
   "ae-kz-as16-pro-balanced-armature-in-ear-monitors": {
     "id": "ae-kz-as16-pro-balanced-armature-in-ear-monitors",
@@ -7218,7 +9496,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256809064536024",
+      "optionSkus": null
+    }
   },
   "ae-joyroom-360-degree-bike-phone-holder": {
     "id": "ae-joyroom-360-degree-bike-phone-holder",
@@ -7237,7 +9521,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256806674638958",
+      "optionSkus": null
+    }
   },
   "ae-qcy-crossky-c30s-open-ear-clip-on-earbuds": {
     "id": "ae-qcy-crossky-c30s-open-ear-clip-on-earbuds",
@@ -7263,7 +9553,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256808778882478",
+      "optionSkus": null
+    }
   },
   "ae-gamesir-g8-bluetooth-mobile-controller": {
     "id": "ae-gamesir-g8-bluetooth-mobile-controller",
@@ -7282,7 +9578,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256807239594024",
+      "optionSkus": null
+    }
   },
   "ae-reflective-padded-dog-leash-5-ft": {
     "id": "ae-reflective-padded-dog-leash-5-ft",
@@ -7301,7 +9603,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256806677616320",
+      "optionSkus": null
+    }
   },
   "ae-padded-dog-collar": {
     "id": "ae-padded-dog-collar",
@@ -7326,7 +9634,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256811913331871",
+      "optionSkus": null
+    }
   },
   "ae-pet-grooming-glove": {
     "id": "ae-pet-grooming-glove",
@@ -7345,7 +9659,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256808480278416",
+      "optionSkus": null
+    }
   },
   "ae-poop-bag-dispenser": {
     "id": "ae-poop-bag-dispenser",
@@ -7364,7 +9684,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256808372007435",
+      "optionSkus": null
+    }
   },
   "ae-cotton-rope-ball-dog-toy": {
     "id": "ae-cotton-rope-ball-dog-toy",
@@ -7383,7 +9709,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256806984536806",
+      "optionSkus": null
+    }
   },
   "ae-carrot-rope-chew-toys-3-pack": {
     "id": "ae-carrot-rope-chew-toys-3-pack",
@@ -7402,7 +9734,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256809551842887",
+      "optionSkus": null
+    }
   },
   "ae-reflective-dog-car-seat-belt": {
     "id": "ae-reflective-dog-car-seat-belt",
@@ -7421,7 +9759,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256805459747163",
+      "optionSkus": null
+    }
   },
   "ae-cat-harness-and-leash-set-small": {
     "id": "ae-cat-harness-and-leash-set-small",
@@ -7440,7 +9784,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256807159507269",
+      "optionSkus": null
+    }
   },
   "ae-feather-bird-cat-wand-with-bell": {
     "id": "ae-feather-bird-cat-wand-with-bell",
@@ -7459,7 +9809,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256809198376368",
+      "optionSkus": null
+    }
   },
   "ae-cat-toy-variety-pack-14-pieces": {
     "id": "ae-cat-toy-variety-pack-14-pieces",
@@ -7478,7 +9834,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256809551690154",
+      "optionSkus": null
+    }
   },
   "ae-self-cleaning-slicker-brush": {
     "id": "ae-self-cleaning-slicker-brush",
@@ -7497,7 +9859,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256812949370751",
+      "optionSkus": null
+    }
   },
   "ae-trimmable-cat-scratch-mat-12-x-39-in": {
     "id": "ae-trimmable-cat-scratch-mat-12-x-39-in",
@@ -7523,7 +9891,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256807159225450",
+      "optionSkus": null
+    }
   },
   "ae-oval-cardboard-cat-scratcher-bed-16-in": {
     "id": "ae-oval-cardboard-cat-scratcher-bed-16-in",
@@ -7542,7 +9916,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256809620493683",
+      "optionSkus": null
+    }
   },
   "ae-dog-poop-bags-5-rolls-75-bags": {
     "id": "ae-dog-poop-bags-5-rolls-75-bags",
@@ -7561,7 +9941,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256813069125172",
+      "optionSkus": null
+    }
   },
   "ae-felt-cat-tunnel-bed-20-in-light-gray": {
     "id": "ae-felt-cat-tunnel-bed-20-in-light-gray",
@@ -7580,7 +9966,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256810386614403",
+      "optionSkus": null
+    }
   },
   "ae-dog-walking-and-treat-waist-bag-gray": {
     "id": "ae-dog-walking-and-treat-waist-bag-gray",
@@ -7599,7 +9991,13 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256811753958349",
+      "optionSkus": null
+    }
   },
   "ae-silvervine-chew-sticks-for-cats-20-pack": {
     "id": "ae-silvervine-chew-sticks-for-cats-20-pack",
@@ -7618,6 +10016,12 @@ export const catalog = {
     "league": null,
     "bucket": null,
     "grocery": false,
-    "waiver": null
+    "waiver": null,
+    "supplier": {
+      "name": "AliExpress",
+      "sku": null,
+      "item": "3256812154371284",
+      "optionSkus": null
+    }
   }
 };

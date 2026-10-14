@@ -190,3 +190,14 @@
 .db-st-0 { color: var(--leaf-bright, #6FD65F); font-weight: 700; }
 .db-st-1 { color: #e0b04a; font-weight: 700; }
 .db-pick td { vertical-align: top; }
+
+/* Stock section (2026-10-13) */
+.db-stock-q { padding: 7px 10px; border-radius: 8px; border: 1px solid var(--rule, #565656); min-width: 220px; font: inherit; }
+.db-row-out td { color: #F2B8A0; }
+
+/* Tile links land with the section title in view, below the sticky site header (owner, 2026-10-13) */
+.db-section { scroll-margin-top: calc(var(--db-hdr, 90px) + 20px); }
+.db-sms-text { width: 100%; box-sizing: border-box; margin: 8px 0 4px; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--rule, #565656); font: inherit; resize: vertical; }
+.db-btn { border: 0; background: var(--leaf, #4AB73C); color: var(--ink, #14261A); font: 800 .88rem/1 inherit; font-family: inherit; padding: 11px 16px; border-radius: 999px; cursor: pointer; }
+.db-btn:hover { filter: brightness(1.08); }
+.db-btn:disabled { opacity: .5; cursor: default; }
