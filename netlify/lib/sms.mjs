@@ -27,9 +27,17 @@ import { signV4 } from './aws-sign.mjs';
 export const PREFIX = 'Lavish Leaf: ';
 export const SUFFIX = ' Reply STOP to opt out.';
 
+export function originationId(v) {
+  const t = String(v || '').trim();
+  if (/^[+\d\s().-]+$/.test(t)) { const d = t.replace(/\D/g, ''); return d.length === 10 ? '+1' + d : d.length === 11 && d[0] === '1' ? '+' + d : t; }
+  return t;
+}
+
 export function smsConfig(env = process.env) {
   return {
-    from: String(env.SMS_ORIGINATION_NUMBER || '').trim(),
+    // A bare number (18885551234, 888-555-1234) becomes +18885551234; an ARN or
+    // id stays as given (owner, 2026-10-14: entered without the +).
+    from: originationId(env.SMS_ORIGINATION_NUMBER),
     region: String(env.SMS_REGION || env.SES_REGION || 'us-east-1').trim(),
     accessKeyId: env.SMS_ACCESS_KEY_ID || env.SES_ACCESS_KEY_ID || '',
     secretAccessKey: env.SMS_SECRET_ACCESS_KEY || env.SES_SECRET_ACCESS_KEY || '',
