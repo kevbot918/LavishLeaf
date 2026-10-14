@@ -3,6 +3,7 @@
 // "Check now" (functions/stock.mjs).
 import { accessToken, aeReady, call, productFacts } from './aliexpress.mjs';
 import { runCheck, stockStore } from './stock.mjs';
+import { cjReady, productFacts as cjFacts } from './cj.mjs';
 
 export async function checkNow() {
   let aeCheck = null;
@@ -29,5 +30,5 @@ export async function checkNow() {
     const { getStore } = await import('@netlify/blobs');
     costsFile = await getStore('store-costs').get('bangalla', { type: 'json' });
   } catch (e) { console.error('[stock] costs file', e.message); }
-  return runCheck(await stockStore(), { aeCheck, costsFile });
+  return runCheck(await stockStore(), { aeCheck, costsFile, cjCheck: cjReady() ? cjFacts : null });
 }

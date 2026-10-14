@@ -63,6 +63,11 @@ export const SHIPPING = {
   suppliers: {
     bangalla: { rule: 'bands', label: 'US supplier' },
     aliexpress: { rule: 'flat', freeOverCents: 999, freeOverItems: 3, cents: 299, label: 'direct-ship' },
+    // CJ Dropshipping from its US warehouse (2026-10-14): each product carries
+    // "shipCents", CJ's own cheapest US freight for one unit to Stigler, read
+    // when the product is added. One parcel: the dearest item's freight, plus
+    // addOnCents for each further item, never more than every item alone.
+    cj: { rule: 'cj', addOnCents: 150, label: 'US warehouse' },
   },
   // Posted orders go to the 48 contiguous states and DC only.
   notPosted: ['AK', 'HI', 'PR', 'GU', 'VI', 'AS', 'MP', 'AA', 'AE', 'AP'],
@@ -99,6 +104,13 @@ export function quote(lines, { method } = {}) {
       const rule = SHIPPING.suppliers[from];
       const subtotal = group.reduce((sum, { product, qty }) => sum + product.price * qty, 0);
       const items = group.reduce((n, { qty }) => n + qty, 0);
+      if (rule.rule === 'cj') {
+        const each = group.flatMap(({ product, qty }) => Array(qty).fill(Number.isInteger(product.shipCents) ? product.shipCents : 599));
+        const top = Math.max(...each);
+        const cents = Math.min(each.reduce((a, b) => a + b, 0), top + rule.addOnCents * (each.length - 1));
+        parts.push({ from, label: rule.label, cents, desc: 'US warehouse items' });
+        continue;
+      }
       if (rule.rule === 'flat') {
         const free = subtotal >= rule.freeOverCents || items >= rule.freeOverItems;
         parts.push({ from, label: rule.label, cents: free ? 0 : rule.cents, desc: free ? 'direct-ship items' : 'direct-ship items under $9.99' });

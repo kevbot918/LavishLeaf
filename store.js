@@ -950,12 +950,14 @@
     } else if (d.ship) {
       fact('Weight', weightText(d.shipOz) + ' packed');
       fact('Delivery', 'some items ship direct from the supplier and some from our warehouse, allow 1-3 weeks');
-      var shipLi = el('li'); shipLi.appendChild(el('strong', null, d.shipFrom === 'aliexpress' ? 'Shipping: ' : 'Shipping ')); var shipTxt = document.createTextNode('...'); shipLi.appendChild(shipTxt); facts.appendChild(shipLi);
+      var shipLi = el('li'); shipLi.appendChild(el('strong', null, d.shipFrom === 'aliexpress' || d.shipFrom === 'cj' ? 'Shipping: ' : 'Shipping ')); var shipTxt = document.createTextNode('...'); shipLi.appendChild(shipTxt); facts.appendChild(shipLi);
       shippingModule().then(function (m) {
         var q = m.quote([{ product: d, qty: 1 }], { method: 'ship' });
         // The owner's wording (2026-10-11): flat-rate items, and items by weight.
         var flat = m.SHIPPING.suppliers[d.shipFrom];
-        shipTxt.textContent = flat && flat.rule === 'flat'
+        shipTxt.textContent = flat && flat.rule === 'cj'
+          ? '$' + (q.cents / 100).toFixed(2) + ', fast from a US warehouse; each extra item adds only $' + (flat.addOnCents / 100).toFixed(2) + '.'
+          : flat && flat.rule === 'flat'
           ? '$' + (flat.cents / 100).toFixed(2) + '. Items from the same supplier share costs.'
           : 'from this supplier is by weight, minimum of $' + (m.SHIPPING.bands[0].cents / 100).toFixed(2) + '.';
       }).catch(function () { shipTxt.textContent = 'shown in the cart.'; });

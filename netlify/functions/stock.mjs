@@ -22,7 +22,7 @@ export default async (request) => {
   if (!(await adminFromRequest(request))) return json(403, { error: 'Owner only.' });
   let body = {};
   try { body = await request.json(); } catch { /* defaults */ }
-  if (body.action === 'pause' && ['bangalla', 'aliexpress'].includes(body.supplier)) {
+  if (body.action === 'pause' && ['bangalla', 'aliexpress', 'cj'].includes(body.supplier)) {
     const store = await stockStore();
     const s = await readState(store);
     s.paused = { ...(s.paused || {}), [body.supplier]: !!body.on };
@@ -31,8 +31,8 @@ export default async (request) => {
   const state = body.action === 'run' ? await checkNow() : await readState(await stockStore());
   // Every supplier product, checked or not yet.
   const rows = supplierProducts().map((p) => state.items[p.id] || {
-    id: p.id, name: p.name, supplier: /aliexpress/i.test(p.supplier.name) ? 'AliExpress' : 'Bangalla',
-    code: p.supplier.item || p.supplier.sku || Object.values(p.supplier.optionSkus || {}).join(', '), qty: null, out: false, why: 'not checked yet', options: null, at: null,
+    id: p.id, name: p.name, supplier: /aliexpress/i.test(p.supplier.name) ? 'AliExpress' : /^cj/i.test(p.supplier.name) ? 'CJ Dropshipping' : 'Bangalla',
+    code: p.supplier.item || p.supplier.sku || p.supplier.vid || Object.values(p.supplier.optionSkus || p.supplier.optionVids || {}).join(', '), qty: null, out: false, why: 'not checked yet', options: null, at: null,
   });
-  return json(200, { rows, min: MIN_STOCK, bangalla: state.bangalla, aliexpress: state.aliexpress, checked: state.checked || null, paused: state.paused || {} });
+  return json(200, { rows, min: MIN_STOCK, bangalla: state.bangalla, aliexpress: state.aliexpress, cj: state.cj || null, checked: state.checked || null, paused: state.paused || {} });
 };

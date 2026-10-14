@@ -53,6 +53,9 @@ export function summarise(done, meta = {}) {
     waivers: meta.w ? String(meta.w).split(',') : [],
     shipTo: addr ? [unit.shipping.name && unit.shipping.name.full_name, addr.address_line_1, addr.address_line_2, `${addr.admin_area_2 || ''}, ${addr.admin_area_1 || ''} ${addr.postal_code || ''}`].filter(Boolean).join(', ') : '',
     signedIn: !!meta.u,
+    // The address in parts, for placing the order with a supplier by API
+    // (CJ Dropshipping, 2026-10-14).
+    addr: addr ? { name: String((unit.shipping.name && unit.shipping.name.full_name) || ''), line1: addr.address_line_1 || '', line2: addr.address_line_2 || '', city: addr.admin_area_2 || '', state: addr.admin_area_1 || '', zip: addr.postal_code || '' } : null,
   };
 }
 

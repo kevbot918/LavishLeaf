@@ -81,6 +81,20 @@
       "network": "Ascend by Partnerize",
       "payout": "Ascend, per brand terms",
       "where": "Sign in to Ascend, open the brand marketplace and apply to brands that fit Green Swaps"
+    },
+    {
+      "name": "Rustic Strength",
+      "status": "Applied 2026-10-14",
+      "commission": "on approval",
+      "network": "Rustic Strength (direct)",
+      "payout": "On approval"
+    },
+    {
+      "name": "WebstaurantStore",
+      "status": "No affiliate program found (checked 2026-10-14)",
+      "commission": "-",
+      "network": "-",
+      "payout": "-"
     }
   ],
   "suppliers": [
@@ -112,76 +126,76 @@
       "status": "Applied, waiting"
     },
     {
-      "group": 0,
+      "group": 4,
       "name": "Nature's Footprint",
       "minimum": "None (free dropship)",
       "what": "Worm Factory composters",
       "how": "Sales-partner form",
       "url": "https://naturesfootprint.com/pages/sales-partners",
-      "status": "To apply"
+      "status": "Not for us (owner, 2026-10-14)"
     },
     {
-      "group": 0,
+      "group": 4,
       "name": "Urban Worm Company",
       "minimum": "None (dropship reseller)",
       "what": "Worm bags and live worms",
       "how": "Reseller form",
       "url": "https://shop.urbanwormcompany.com/pages/resellers",
-      "status": "To apply"
+      "status": "Not for us (owner, 2026-10-14)"
     },
     {
       "group": 0,
       "name": "CJ Dropshipping",
       "minimum": "None (free account; pay per order)",
       "what": "Dropship with US warehouses: home, pets, outdoor (few eco lines)",
-      "how": "Free account; order by hand on its site",
+      "how": "Free account; the store connects by its API (CJ_API_KEY): live price, US stock and shipping, and a Place on CJ button for each order",
       "url": "https://cjdropshipping.com",
-      "status": "To apply"
+      "status": "Chosen 2026-10-14 for Recreation & Outdoors: open the account and API key"
     },
     {
-      "group": 1,
+      "group": 4,
       "name": "WebstaurantStore",
       "minimum": "None (buy by the case, no account needed)",
       "what": "Seventh Generation and ECOS Pro by the case, paper, janitorial",
       "how": "Order on the site with the resale certificate on file",
       "url": "https://www.webstaurantstore.com",
-      "status": "Open: no account needed"
+      "status": "Not for us (owner, 2026-10-14)"
     },
     {
-      "group": 1,
+      "group": 4,
       "name": "Frontier Co-op",
       "minimum": "$10 refundable membership; no order minimum",
       "what": "Organic herbs, spices, teas, bamboo kitchen tools",
       "how": "Membership or wholesale account application",
       "url": "https://www.frontiercoop.com",
-      "status": "To apply"
+      "status": "Not for us (owner, 2026-10-14)"
     },
     {
-      "group": 1,
+      "group": 4,
       "name": "High Mowing Organic Seeds",
       "minimum": "None (needs the $25 Oklahoma seed licence first)",
       "what": "Organic seed packets and a seed rack",
       "how": "Sign the Resellers Agreement",
       "url": "https://www.highmowingseeds.com/wholesale",
-      "status": "To apply"
+      "status": "Not for us (owner, 2026-10-14)"
     },
     {
-      "group": 1,
+      "group": 4,
       "name": "Botanical Interests",
       "minimum": "No reorder minimum per variety (opening rack: ask)",
       "what": "Seed packets",
       "how": "Call 800-486-2647",
       "url": "https://www.botanicalinterests.com",
-      "status": "To apply"
+      "status": "Not for us (owner, 2026-10-14)"
     },
     {
-      "group": 1,
+      "group": 4,
       "name": "Matr Boomie",
       "minimum": "2 to 4 units per item",
       "what": "Fair-trade wooden games",
       "how": "Wholesale site application",
       "url": "https://wholesale.matrboomie.com",
-      "status": "To apply"
+      "status": "Not for us (owner, 2026-10-14)"
     },
     {
       "group": 1,
@@ -190,7 +204,7 @@
       "what": "USDA organic bar and castile soap",
       "how": "Wholesale application",
       "url": "https://shop.vermontsoap.com/wholesale/",
-      "status": "To apply"
+      "status": "Later: private label when we can afford it (owner, 2026-10-14)"
     },
     {
       "group": 1,
@@ -229,13 +243,13 @@
       "status": "To apply"
     },
     {
-      "group": 2,
+      "group": 4,
       "name": "Azure Standard",
       "minimum": "Wholesale needs $10,000 a year (member buying has none)",
       "what": "Organic bulk food and farm goods",
       "how": "Member account for now",
       "url": "https://www.azurestandard.com",
-      "status": "To apply"
+      "status": "Not for us (owner, 2026-10-14)"
     },
     {
       "group": 3,
@@ -247,13 +261,13 @@
       "status": "To apply"
     },
     {
-      "group": 3,
+      "group": 4,
       "name": "eeBoo",
       "minimum": "Not published",
       "what": "Games, puzzles and gifts",
       "how": "Wholesale portal application",
       "url": "https://wholesale.eeboo.com",
-      "status": "To apply"
+      "status": "Not for us (owner, 2026-10-14)"
     },
     {
       "group": 3,
@@ -274,22 +288,22 @@
       "status": "To apply"
     },
     {
-      "group": 3,
+      "group": 4,
       "name": "Neptune's Harvest",
       "minimum": "Not published",
       "what": "Fish and seaweed fertilizers",
       "how": "Wholesale by phone, 1-800-259-4769",
       "url": "https://www.neptunesharvest.com",
-      "status": "To apply"
+      "status": "Not for us (owner, 2026-10-14)"
     },
     {
-      "group": 3,
+      "group": 4,
       "name": "Seven Springs Farm Supply",
       "minimum": "Not published (retail partners programme)",
       "what": "Organic fertilizer by the sack, pest control",
       "how": "Retail partners page",
       "url": "https://www.7springsfarm.com/pages/retail-partners",
-      "status": "To apply"
+      "status": "Not for us (owner, 2026-10-14)"
     },
     {
       "group": 3,
@@ -298,16 +312,16 @@
       "what": "Non-toxic cleaning and laundry, refill sizes",
       "how": "Wholesale application",
       "url": "https://rusticstrength.com/pages/wholesale-information",
-      "status": "To apply"
+      "status": "Applied 2026-10-14 (wholesale and affiliate): the refill mission fits"
     },
     {
-      "group": 3,
+      "group": 4,
       "name": "Who Gives A Crap",
       "minimum": "Not published",
       "what": "Recycled and bamboo toilet paper and towels",
       "how": "Wholesale portal registration",
       "url": "https://us.wholesale.whogivesacrap.org/",
-      "status": "To apply"
+      "status": "Not for us (owner, 2026-10-14)"
     },
     {
       "group": 3,
@@ -316,16 +330,16 @@
       "what": "Refillable soap in returnable bag-in-box",
       "how": "Wholesale portal registration",
       "url": "https://wholesale.fillaree.com/",
-      "status": "To apply"
+      "status": "Account made 2026-10-14; wholesale terms unclear, looks dearer than Rustic Strength"
     },
     {
-      "group": 3,
+      "group": 4,
       "name": "Dr. Earth",
       "minimum": "Through distributors (dealer portal)",
       "what": "Organic fertilizers and potting soil",
       "how": "Dealer portal with the resale certificate",
       "url": "https://drearth.com",
-      "status": "To apply"
+      "status": "Not for us (owner, 2026-10-14)"
     }
   ],
   "notAvailable": [
@@ -342,5 +356,5 @@
       "why": "Affiliate programme closed to new applicants."
     }
   ],
-  "_suppliersHelp": "suppliers[] (2026-10-14): group 0 = no purchase to start (dropship), 1 = first order $100 or less, 2 = more than $100, 3 = minimum not published. The dashboard lists them in that order."
+  "_suppliersHelp": "suppliers[] (2026-10-14): group 0 = no purchase to start (dropship), 1 = first order $100 or less, 2 = more than $100, 3 = minimum not published, 4 = not for us (owner decided). The dashboard lists them in that order."
 }

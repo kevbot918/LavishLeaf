@@ -1,6 +1,7 @@
 // /.netlify/functions/discount   the store's 15% first-order offer (owner,
 // 2026-10-13)
-//   POST { action: "claim", email, phone, sms? }  -> { code }  and the email
+//   POST { action: "claim", email, phone?, sms? }  -> { code }  and the email
+//        (owner, 2026-10-14: the email is enough; phone and texts optional)
 //        One claim per IP address, email and phone, and none for somebody
 //        who has already ordered. The person joins the newsletter (the
 //        pop-up says so; one-click unsubscribe in every email). "sms" records
@@ -39,7 +40,8 @@ export default async (request, context) => {
       const email = normEmail(body.email);
       const phone = normPhone(body.phone);
       if (!validEmail(email)) return json(400, { error: 'Please enter your email address.' });
-      if (phone.length !== 10) return json(400, { error: 'Please enter a 10-digit phone number.' });
+      if (phone && phone.length !== 10) return json(400, { error: 'Please check the phone number (10 digits), or leave it empty.' });
+      if (body.sms === true && phone.length !== 10) return json(400, { error: 'To get texts, please add your 10-digit mobile number.' });
       const ip = (context && context.ip) || request.headers.get('x-nf-client-connection-ip') || '';
       const taken = await alreadyClaimed(store, { email, phone, ip });
       if (taken) return json(409, { error: 'This offer has already been claimed' + (taken === 'ip' ? ' from this connection' : taken === 'phone' ? ' with this phone number' : ' with this email') + '. It is one per customer, on a first order.' });

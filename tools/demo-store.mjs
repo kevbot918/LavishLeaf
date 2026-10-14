@@ -307,6 +307,13 @@ for (const p of out) {
 const SUPPLIER_MIN = { WebstaurantStore: 0, 'Frontier Co-op': 0, 'Matr Boomie': 0, 'High Mowing Seeds': 0, 'Azure Standard': 0, 'Vermont Soap': 75 };
 // Suppliers that turned Lavish Leaf down: their rows leave Tiers 1 to 3.
 const REFUSED = { GrowOrganic: 'declined us 2026-10-07, no online stores' };
+// Suppliers the owner decided against (2026-10-14: "too expensive, not good
+// enough products, and some like webstaurant, literally anyone can buy from
+// without a wholesale account"): their rows leave every tier.
+const DECLINED = /^(eeBoo|Seven Springs|WebstaurantStore|Frontier( Co-op)?|Azure( Standard)?|Botanical Interests|Matr Boomie|Urban Worm Company|Nature's Footprint|High Mowing( Seeds)?|Neptune's Harvest|Who Gives A Crap|Dr\. Earth)/;
+for (const p of out) {
+  if (p.tier !== 'Misc' && DECLINED.test(p.supplier)) { p.docTier = p.tier; p.tier = 'Misc'; p.supplier = p.supplier.replace(/ dealer portal$/, '') + ': not for us (owner, 2026-10-14)'; }
+}
 for (const p of out) {
   if (p.tier === 0 || p.tier === 4 || p.tier === 'Misc') continue;
   p.docTier = p.tier;

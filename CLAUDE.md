@@ -665,3 +665,18 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     (LL15- codes; LL20- still accepted). Unsubscribe footer and page say
     receipts and notices keep coming (they never checked the list). Tile
     links: .db-section scroll-margin-top under the measured header.
+
+41. **2026-10-14, afternoon.** **CJ Dropshipping** for Recreation & Outdoors:
+    lib/cj.mjs (API 2.0, CJ_API_KEY -> access token in Blobs "cj", 180 days,
+    refresh; QPS 1), functions/cj.mjs (status; "order": the CJ lines of a paid
+    order, cheapest US freight, createOrderV2 payType 3 = created unpaid, the
+    owner pays in CJ; o.cj recorded), the dashboard order card's "Place the CJ
+    items on CJ", the stock check (US-warehouse stock per vid), shipping.mjs
+    supplier "cj" (product "shipCents" = CJ's freight to 74462; the dearest
+    item plus $1.50 per further item), products carry source.supplier
+    "CJ Dropshipping", source.pid, source.vid (options: values[].vid).
+    tools/cj-research.mjs reads CJ_API_KEY from .env for product research
+    (output outside the repo). Orders now keep the address in parts (o.addr).
+    **Offer**: email is enough; phone and texts optional. **Suppliers**: the
+    owner's "not for us" list (demo-store DECLINED; affiliates.json group 4).
+    AWS texting needs the account on the Paid plan.

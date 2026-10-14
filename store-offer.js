@@ -1,6 +1,6 @@
 /* The store's 15% first-order offer (owner, 2026-10-13): a pop-up a few
-   seconds after somebody reaches the store, asking for an email and a phone
-   number. The server (netlify/functions/discount.mjs) allows one claim per IP
+   seconds after somebody reaches the store, asking for an email (phone and
+   texts optional, 2026-10-14). The server (netlify/functions/discount.mjs) allows one claim per IP
    address, email and phone, and none after a first order, so a new email each
    visit does not get a new code; it emails the code, which only works with
    that same email in PayPal. A claimed or dismissed offer is not shown again
@@ -31,10 +31,10 @@
       '<div class="offer-body">' +
       '<p class="offer-kicker">Welcome to the Lavish Leaf store</p>' +
       '<h2 id="offer-title">15% off your first order</h2>' +
-      '<p class="offer-lede">Enter your email and phone and we will send you a code for 15% off the products in your first order.</p>' +
+      '<p class="offer-lede">Enter your email and we will send you a code for 15% off the products in your first order.</p>' +
       '<form class="offer-form" novalidate>' +
       '<label>Email<input type="email" name="email" autocomplete="email" required maxlength="120"></label>' +
-      '<label>Phone<input type="tel" name="phone" autocomplete="tel" required maxlength="20" placeholder="(918) 555-0100"></label>' +
+      '<label>Phone (optional)<input type="tel" name="phone" autocomplete="tel" maxlength="20" placeholder="(918) 555-0100"></label>' +
       '<label class="offer-tick"><input type="checkbox" name="sms"> Also text me offers (optional). Up to 4 texts a month; message and data rates may apply. Reply STOP to cancel, HELP for help. Consent is not a condition of purchase. <a href="privacy.html#sms" target="_blank" rel="noopener">Text terms</a></label>' +
       '<button type="submit" class="btn btn-wide">Get my 15% code</button>' +
       '<p class="offer-msg" role="status"></p>' +
@@ -52,7 +52,9 @@
       e.preventDefault();
       var email = form.email.value.trim(), phone = form.phone.value.trim();
       if (!/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(email)) { msg.textContent = 'Please enter your email address.'; return; }
-      if (phone.replace(/\D/g, '').replace(/^1(?=\d{10}$)/, '').length !== 10) { msg.textContent = 'Please enter a 10-digit phone number.'; return; }
+      var digits = phone.replace(/\D/g, '').replace(/^1(?=\d{10}$)/, '');
+      if (phone && digits.length !== 10) { msg.textContent = 'Please check the phone number (10 digits), or leave it empty.'; return; }
+      if (form.sms.checked && digits.length !== 10) { msg.textContent = 'To get texts, please add your 10-digit mobile number.'; return; }
       btn.disabled = true; msg.textContent = 'Getting your code...';
       post({ action: 'claim', email: email, phone: phone, sms: form.sms.checked }).then(function (r) {
         remember('claimed');

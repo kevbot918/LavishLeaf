@@ -397,13 +397,13 @@
         // first order of $100 or less, then more, then not published.
         var cs = card('Suppliers', 'In order of what it takes to start: no purchase at all (dropship), then a first order of $100 or less, then more than $100, then minimums they do not publish.');
         var rank = function (x) { return /^(approved|open)/i.test(x.status) ? 0 : /appl|wait/i.test(x.status) ? 1 : 2; };
-        var GROUPS = ['No purchase to start (dropship, pay per order)', 'Low minimum: first order $100 or less', 'Higher minimum: more than $100', 'Minimum not published: ask'];
+        var GROUPS = ['No purchase to start (dropship, pay per order)', 'Low minimum: first order $100 or less', 'Higher minimum: more than $100', 'Minimum not published: ask', 'Not for us (decided against)'];
         var srt = sup.slice().sort(function (x, y) { return ((x.group == null ? 3 : x.group) - (y.group == null ? 3 : y.group)) || (rank(x) - rank(y)); });
         var stt = el('table', 'db-table'); stt.innerHTML = '<thead><tr><th>Supplier</th><th>Minimum to start</th><th>Status</th><th>What they carry</th><th>How</th></tr></thead>';
         var stb = el('tbody');
         var lastG = -1;
         srt.forEach(function (x) {
-          var g = x.group == null ? 3 : x.group;
+          var g = x.group == null ? 3 : Math.min(x.group, 4);
           if (g !== lastG) { lastG = g; var gh = el('tr', 'db-group-row'); var gt = el('td', null, GROUPS[g]); gt.colSpan = 5; gh.appendChild(gt); stb.appendChild(gh); }
           var tr = el('tr'); var tdN = el('td'); var a = el('a', null, x.name); a.href = x.url; a.target = '_blank'; a.rel = 'noopener'; tdN.appendChild(a); tr.appendChild(tdN);
           tr.appendChild(el('td', null, x.minimum || ''));
@@ -852,7 +852,7 @@
     function drawStock(r) {
       cst.textContent = '';
       var st = function (x, name) { return !x ? name + ': not checked yet.' : x.ok ? name + ': checked ' + niceDate(x.at) + (x.from === 'file' ? ' from your Bangalla file loaded ' + niceDate(x.fileLoaded) : x.skus ? ' (' + num(x.skus) + ' SKUs in the feed)' : x.checked != null ? ' (' + x.checked + ' items this run)' : '') + '.' : name + ': ' + (x.error || 'failed') + '.'; };
-      cst.appendChild(el('p', 'db-hint', st(r.bangalla, 'Bangalla') + ' ' + st(r.aliexpress, 'AliExpress')));
+      cst.appendChild(el('p', 'db-hint', st(r.bangalla, 'Bangalla') + ' ' + st(r.aliexpress, 'AliExpress') + ' ' + st(r.cj, 'CJ Dropshipping')));
       // Bangalla gives no feed link (owner, 2026-10-14): its stock is the
       // product data file loaded in Store products, so it is only as fresh
       // as that upload.
@@ -861,7 +861,7 @@
       }
       var pz = r.paused || {};
       var pbar = el('div', 'db-links');
-      [['bangalla', 'Bangalla'], ['aliexpress', 'AliExpress']].forEach(function (s) {
+      [['bangalla', 'Bangalla'], ['aliexpress', 'AliExpress'], ['cj', 'CJ Dropshipping']].forEach(function (s) {
         var on = !!pz[s[0]];
         var b = h('<button type="button" class="db-btn-ghost"><i class="fas ' + (on ? 'fa-play' : 'fa-pause') + '"></i> ' + (on ? 'Put every ' + s[1] + ' product back on the store' : 'Pause every ' + s[1] + ' product') + '</button>');
         b.addEventListener('click', function () {
@@ -935,7 +935,7 @@
       if (!p.ship) return { supplier: 'Our own service', code: '', note: p.registration ? 'See League registrations' : (p.interval ? 'See Pick-ups' : ''), name: p.name, own: true };
       var src = p.source || {}, v = null;
       if (opt && p.options) v = p.options.values.filter(function (x) { return x.name === opt; })[0];
-      var code = (v && (v.sku || v.item)) || src.sku || src.item || '';
+      var code = (v && (v.sku || v.item || v.vid)) || src.sku || src.item || src.vid || '';
       var variant = (v && v.note) || src.variant || '';
       return { supplier: src.supplier || '', code: String(code), kind: (v && v.item) || src.item ? 'Item number' : 'SKU', variant: variant, option: opt ? p.options.label + ': ' + opt : '', name: p.name };
     }
@@ -1022,6 +1022,26 @@
           shipRow.appendChild(carrier); shipRow.appendChild(track); shipRow.appendChild(bs); shipRow.appendChild(msg);
           c.appendChild(shipRow);
         }
+        // CJ Dropshipping lines (2026-10-14): one click creates the CJ order to
+        // the customer's address with the cheapest US freight, unpaid; pay it
+        // in CJ (My CJ, Orders).
+        var cjLines = (o.items || []).filter(function (it) { return /^cj/i.test(lineSource(it).supplier); });
+        if (cjLines.length && !/refunded|reversed|failed/.test(o.status || '')) {
+          var cjRow = el('div', 'db-links');
+          if (o.cj && o.cj.orderId) {
+            cjRow.appendChild(el('p', 'db-hint', 'Placed on CJ ' + niceDate(o.cj.at) + ': CJ order ' + o.cj.orderId + ', ' + (o.cj.logistic || '') + (o.cj.freight != null ? ' $' + Number(o.cj.freight).toFixed(2) : '') + (o.cj.amount ? ', total $' + Number(o.cj.amount).toFixed(2) : '') + '. Pay it in your CJ account (My CJ, Orders) so it ships.'));
+          } else {
+            var bCj = h('<button type="button" class="db-btn-ghost"><i class="fas fa-truck-fast"></i> Place the CJ items on CJ</button>');
+            var cjMsg = el('span', 'db-hint');
+            bCj.addEventListener('click', function () {
+              if (!window.confirm('Create a CJ order for ' + cjLines.length + ' line(s) to ' + (o.shipTo || 'the customer') + '? It is created unpaid; you pay it in CJ.')) return;
+              bCj.disabled = true; cjMsg.textContent = 'Placing...';
+              api('cj', { action: 'order', orderId: o.id }).then(function (r) { Object.assign(o, r.order); drawOrders(); }).catch(function (e) { cjMsg.textContent = e.message; bCj.disabled = false; });
+            });
+            cjRow.appendChild(bCj); cjRow.appendChild(cjMsg);
+          }
+          c.appendChild(cjRow);
+        }
         // A refund the webhook did not see (given before it was set up).
         var refRow = el('div', 'db-links');
         var refunded = /refunded/.test(o.status || '');
@@ -1034,7 +1054,7 @@
         c.appendChild(refRow);
         ordersBox.appendChild(c);
       });
-      ordersBox.appendChild(el('p', 'db-hint', 'Bangalla: in your Bangalla account, add each SKU to the cart and check out with the customer\'s name and address as the ship-to. AliExpress: open the item number, pick the variant shown, and check out with the customer\'s address. Then send the shipped email here. Refunds you give in PayPal mark the order Refunded by themselves once the webhook is set.'));
+      ordersBox.appendChild(el('p', 'db-hint', 'Bangalla: in your Bangalla account, add each SKU to the cart and check out with the customer\'s name and address as the ship-to. AliExpress: open the item number, pick the variant shown, and check out with the customer\'s address. CJ: press Place the CJ items on CJ, then pay that order in your CJ account. Then send the shipped email here. Refunds you give in PayPal mark the order Refunded by themselves once the webhook is set.'));
     }
     Promise.all([api('orders-admin', { action: 'list' }), fetch('/products.json', { cache: 'no-store' }).then(function (r) { return r.json(); })]).then(function (res) {
       ordersAll = res[0].orders || [];

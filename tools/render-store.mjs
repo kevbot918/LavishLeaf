@@ -300,6 +300,8 @@ if (unknown.length) {
       ship: p.ship === true,
       shipOz: p.ship === true ? p.shipOz : null,
       shipFrom: p.ship === true ? (p.shipFrom || 'bangalla') : null,
+      // CJ items carry their own freight (shipping.mjs "cj").
+      shipCents: p.ship === true && Number.isInteger(p.shipCents) ? p.shipCents : null,
       // Options (scent, colour, size): the names the server accepts.
       options: p.options ? { label: p.options.label, values: p.options.values.map((v) => v.name) } : null,
       // Pick-up services take the sign-up form; "bucket" is the optional
@@ -317,7 +319,10 @@ if (unknown.length) {
       // The supplier's code, for the stock check (netlify/lib/stock.mjs,
       // 2026-10-13): Bangalla SKUs (each option its own), AliExpress item id.
       supplier: p.source ? { name: p.source.supplier || '', sku: p.source.sku || null, item: p.source.item || null,
-        optionSkus: p.options && p.options.values.some((v) => v.sku) ? Object.fromEntries(p.options.values.filter((v) => v.sku).map((v) => [v.name, v.sku])) : null } : null,
+        optionSkus: p.options && p.options.values.some((v) => v.sku) ? Object.fromEntries(p.options.values.filter((v) => v.sku).map((v) => [v.name, v.sku])) : null,
+        // CJ Dropshipping (2026-10-14): the product id and the variant id(s).
+        pid: p.source.pid || null, vid: p.source.vid || null,
+        optionVids: p.options && p.options.values.some((v) => v.vid) ? Object.fromEntries(p.options.values.filter((v) => v.vid).map((v) => [v.name, v.vid])) : null } : null,
     };
   }
   const path = join(ROOT, 'netlify', 'lib', 'catalog.mjs');

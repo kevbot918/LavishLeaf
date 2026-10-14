@@ -46,6 +46,27 @@ created.
   lavishleaf.org address as spam. Not before both Google and Amazon have
   been signing mail for a while.
 
+**New 2026-10-14 (afternoon):**
+- **AWS texting blocked ("Access to this service is not supported"):** the
+  account is still on AWS's Free account PLAN (not the same as free-tier
+  credits). Billing and Cost Management (or the banner / account menu),
+  Upgrade plan, Upgrade account. Remaining credits carry over. If it is
+  already Paid and still blocked: Support Center, Create case, Account and
+  billing, "Please enable AWS End User Messaging SMS (us-east-2)".
+- **CJ Dropshipping:** in CJ (signed in already), My CJ, Authorization, API
+  (install the API app if asked), Add API, Type: API Key, copy the key.
+  1. Netlify: CJ_API_KEY = the key, Trigger deploy (stock checks and the
+     dashboard's Place the CJ items on CJ button then work).
+  2. For product research, also put it in the website folder's .env file as
+     CJ_API_KEY=... (that file is never uploaded), and tell Claude.
+  3. Add money to the CJ Wallet (or a card) to pay each order CJ creates.
+- Suppliers decided against (owner): eeBoo, Seven Springs, WebstaurantStore,
+  Frontier Co-op, Azure, Botanical Interests, Matr Boomie, Urban Worm,
+  Nature's Footprint, High Mowing, Neptune's Harvest, Who Gives A Crap, Dr.
+  Earth. Vermont Soap later (private label). Rustic Strength applied
+  (wholesale and affiliate). Fillaree account made. Ascend: several brands
+  applied. WebstaurantStore has no affiliate program.
+
 **New 2026-10-14:**
 - PayPal webhook: the 4 extra events are ticked (owner, 2026-10-14). Done.
 - **Texting (AWS End User Messaging SMS), region US East (Ohio):**

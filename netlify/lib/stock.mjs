@@ -75,8 +75,9 @@ export function parseFeed(text) {
 
 /** The products the check covers: everything sold that ships from a supplier. */
 export function supplierProducts(catalog = liveCatalog) {
-  return Object.values(catalog).filter((p) => p.active && p.ship && p.supplier && (p.supplier.sku || p.supplier.item || p.supplier.optionSkus));
+  return Object.values(catalog).filter((p) => p.active && p.ship && p.supplier && (p.supplier.sku || p.supplier.item || p.supplier.optionSkus || p.supplier.pid));
 }
+const supplierKey = (p) => (/aliexpress/i.test(p.supplier.name) ? 'aliexpress' : /^cj/i.test(p.supplier.name) ? 'cj' : 'bangalla');
 
 /**
  * Bangalla's lines judged from the feed. Mutates state.items. With
@@ -116,8 +117,7 @@ export function outOf(state, catalog = liveCatalog) {
   const paused = (state && state.paused) || {};
   if (Object.keys(paused).some((k) => paused[k])) {
     for (const p of supplierProducts(catalog)) {
-      const key = /aliexpress/i.test(p.supplier.name) ? 'aliexpress' : 'bangalla';
-      if (paused[key]) products.push(p.id);
+      if (paused[supplierKey(p)]) products.push(p.id);
     }
   }
   for (const r of Object.values((state && state.items) || {})) {
@@ -140,7 +140,7 @@ export async function readState(store) {
  * One run: the whole Bangalla feed, and the next slice of AliExpress items.
  * deps: { fetchImpl, aeCheck(id) -> { stock } | null (null = gone) | throws }
  */
-export async function runCheck(store, { env = process.env, fetchImpl = fetch, aeCheck = null, catalog = liveCatalog, now = Date.now(), costsFile = null } = {}) {
+export async function runCheck(store, { env = process.env, fetchImpl = fetch, aeCheck = null, cjCheck = null, catalog = liveCatalog, now = Date.now(), costsFile = null } = {}) {
   const state = await readState(store);
   if (!env.BANGALLA_FEED_URL && costsFile && costsFile.rows) {
     // No feed link from Bangalla: the product data file the owner loads in
@@ -177,6 +177,30 @@ export async function runCheck(store, { env = process.env, fetchImpl = fetch, ae
     }
     state.aliexpress = { at: new Date(now).toISOString(), ok: errors < slice.length, cursor: ae.length ? (cursor + slice.length) % ae.length : 0, checked: slice.length - errors, errors };
   } else state.aliexpress = { at: new Date(now).toISOString(), ok: false, error: 'AliExpress is not connected (dashboard, AliExpress, Connect)', cursor: (state.aliexpress && state.aliexpress.cursor) || 0 };
+
+  // CJ Dropshipping (2026-10-14): US-warehouse stock per variant, every run
+  // (the shelf is small), one call per product.
+  if (cjCheck) {
+    let errors = 0, checked = 0;
+    for (const p of supplierProducts(catalog).filter((x) => supplierKey(x) === 'cj')) {
+      try {
+        const f = await cjCheck(p.supplier.pid);
+        checked++;
+        const vids = p.supplier.optionVids ? Object.entries(p.supplier.optionVids) : [[null, p.supplier.vid]];
+        const opts = {}; let anyIn = false, total = 0;
+        for (const [opt, vid] of vids) {
+          const v = f && (f.variants || []).find((x) => x.vid === vid);
+          const q = v ? v.us : 0;
+          const out = !v || q < MIN_STOCK;
+          if (opt) opts[opt] = { sku: vid, qty: q, out };
+          if (!out) anyIn = true;
+          total += q;
+        }
+        state.items[p.id] = { id: p.id, name: p.name, supplier: 'CJ Dropshipping', code: vids.map(([, v]) => v).join(', '), qty: total, out: !anyIn, why: anyIn ? '' : !f ? 'no longer on CJ' : 'under ' + MIN_STOCK + ' in the US warehouse', options: p.supplier.optionVids ? opts : null, at: new Date(now).toISOString() };
+      } catch (e) { errors++; }
+    }
+    state.cj = { at: new Date(now).toISOString(), ok: errors === 0 || checked > 0, checked, errors };
+  } else state.cj = { at: new Date(now).toISOString(), ok: false, error: 'CJ is not connected (CJ_API_KEY in Netlify)' };
 
   state.checked = new Date(now).toISOString();
   await store.setJSON('state', state);
