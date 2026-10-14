@@ -841,3 +841,37 @@ test order end to end. Then the same with a **Live** app and
 
 When a step is done, tell Claude which one; the dashboard section it
 switches on gets checked against your real account.
+
+## RETURNS: what to do when a customer writes (2026-10-14)
+
+The public policy (refunds.html) names no supplier. Behind it:
+
+1. **Damaged, defective, wrong or missing** (customer sends a photo within 7
+   days). Refund or reship the customer at once (PayPal refund from the
+   order), then claim it back within 48 hours:
+   * **CJ**: open a dispute on the order in CJ (My CJ, Orders, Dispute). Attach
+     the customer's photos (a video if the photo does not show it) AND a
+     screenshot of the customer's email showing name, date and words. Choose
+     "Return to the original way" to get money back to your card, or "Back in
+     balance" for CJ credit. CJ refunds damaged, wrong, wrong color/size and
+     missing parts; it refuses "buyer does not like it". Do not send the item
+     back unless CJ's Dispute Team asks. CJ's limit: 30 days from delivery.
+   * **AliExpress**: open a "Refund only" dispute within 15 days of delivery
+     with the photos. Never forward AliExpress's own return label to the
+     customer: it shows where the item came from.
+   * **Bangalla**: report it to Bangalla within 7 days of delivery. Their
+     answer is usually credit on your Bangalla account.
+   For an item over $40 you may ask for it back first: buy the label yourself
+   (to your own address) and email it to the customer.
+2. **Change of mind** (30 days, unused). Reply with YOUR return address only
+   after you approve it. The customer pays postage. When it arrives, refund
+   the item price (not shipping) within 7 business days. No supplier takes
+   these back, so the item becomes your stock: relist it or keep it for local
+   orders.
+3. **Not arrived after 30 days.** Reship or refund, as the customer prefers.
+   CJ only refunds a stuck US parcel 45 days after it left them, so ask CJ to
+   resend at that point. "Delivered" but missing: CJ wants a post-office
+   non-delivery certificate, which you will rarely get, so expect to carry
+   that cost; file a claim with the carrier where you can.
+4. **Refunds always go to the original payment** (FTC Mail Order Rule: a
+   canceled order is refunded within 7 working days, never as store credit).
