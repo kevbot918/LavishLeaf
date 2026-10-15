@@ -13,7 +13,7 @@
 //   * netlify/lib/azure-codes.mjs: the package codes the live-price function
 //     (functions/azure-prices.mjs) asks Azure about;
 //   * store.html between the AZURE markers: the Azure section of Green Swaps
-//     (what Azure is, Drops and Anchor Drops, then one shelf per line);
+//     (what Azure is, Find a Drop and How Azure works, then one shelf per line);
 //   * images/azure/<code>.jpg: 360 px thumbnails (Azure's own photos are
 //     about 3 MB each), through tools/thumbs.ps1.
 // No seeds (owner: SeedsNow covers seeds). Every link carries our affiliate
@@ -35,6 +35,12 @@ const SHELVES = [
     ['hard-red-wheat-organic', 11656, 'GR062', 'Hard Red Wheat, Organic'],
     ['hard-white-wheat-organic', 9635, 'GR112', 'Hard White Wheat, Organic'],
     ['oats-rolled-organic', 9496, 'CE202', 'Rolled Oats, Organic'],
+    ['artisan-bakers-craft-unbleached-white-wheat-flour-organic', 11445, 'DFL076', 'Artisan Bakers Craft White Flour, Organic'],
+    ['soft-white-wheat-organic', 11650, 'GR120', 'Soft White Wheat, Organic'],
+    ['spelt-grain-organic', 10847, 'GR102', 'Spelt Grain, Organic'],
+    ['quinoa-white-organic', 10219, 'GR128', 'White Quinoa, Organic'],
+    ['rice-white-basmati-organic-gluten-free', 17148, 'GR073', 'White Basmati Rice, Organic'],
+    ['polenta-corn-grits-organic', 24936, 'CE123', 'Polenta Corn Grits, Organic'],
     ['oats-steel-cut-organic', 10944, 'CE229', 'Steel Cut Oats, Organic'],
     ['bread-flour-100-whole-white-wheat-unifine-organic', 8434, 'FL034', 'Whole White Wheat Bread Flour, Organic'],
     ['spelt-flour-unifine-organic', 6425, 'FL084', 'Spelt Flour, Organic'],
@@ -49,6 +55,12 @@ const SHELVES = [
     ['pinto-beans-organic', 10007, 'BE086', 'Pinto Beans, Organic'],
     ['garbanzo-beans-chick-peas-organic', 12542, 'BE246', 'Garbanzo Beans, Organic'],
     ['lentils-red-organic', 18374, 'BE049', 'Red Lentils, Organic'],
+    ['real-salt-fine-granular', 10302, 'BP104', 'Real Salt, Fine'],
+    ['celtic-sea-salt-fine', 7054, 'BP112', 'Celtic Sea Salt, Fine'],
+    ['yeast-dry-active', 11811, 'BP334', 'Dry Active Yeast'],
+    ['rumford-baking-powder-non-aluminum', 10538, 'BP005', 'Rumford Baking Powder'],
+    ['himalayan-pink-crystal-salt', 14168, 'HS1694', 'Himalayan Pink Salt'],
+    ['arrowroot-powder-gluten-free', 6334, 'BP794', 'Arrowroot Powder'],
     ['lentils-green-organic', 8887, 'BE010', 'Green Lentils, Organic'],
     ['peas-green-split-organic', 8361, 'BE059', 'Green Split Peas, Organic'],
     ['cane-sugar-organic', 7883, 'SW079', 'Cane Sugar, Organic'],
@@ -63,6 +75,12 @@ const SHELVES = [
     ['coconut-oil-expeller-pressed-organic', 17888, 'OL377', 'Coconut Oil, Expeller Pressed, Organic'],
     ['avocado-oil-cold-pressed-refined-organic', 28250, 'OL429', 'Avocado Oil, Organic'],
     ['honey-raw-berrywildflower', 8557, 'SW356', 'Raw Honey, Berry and Wildflower'],
+    ['honey-raw-clover', 8558, 'SW084', 'Raw Clover Honey'],
+    ['palm-fruit-shortening-organic', 14562, 'OL219', 'Palm Fruit Shortening, Organic'],
+    ['liquid-aminos', 8932, 'CO012', 'Liquid Aminos'],
+    ['sucanat-organic-fair-trade', 11037, 'SW061', 'Sucanat, Organic, Fair Trade'],
+    ['tamari-soy-sauce-gold-gluten-free-organic', 11151, 'CO107', 'Tamari Soy Sauce, Organic'],
+    ['tomato-paste-in-glass-organic', 11325, 'GY179', 'Tomato Paste in Glass, Organic'],
     ['maple-syrup-grade-a-dark-robust-organic', 9086, 'SW018', 'Maple Syrup, Grade A Dark, Organic'],
     ['molasses-blackstrap-organic', 26862, 'SW453', 'Blackstrap Molasses, Organic'],
     ['coconut-sugar-crystals-organic', 18554, 'SW406', 'Coconut Sugar, Organic'],
@@ -77,6 +95,12 @@ const SHELVES = [
     ['almonds-raw-organic', 6163, 'NU114', 'Raw Almonds, Organic'],
     ['pistachios-in-shell-roasted-salted-organic', 31736, 'NU417', 'Pistachios, Roasted and Salted, Organic'],
     ['banana-chips-organic', 9618, 'DF128', 'Banana Chips, Organic'],
+    ['raisins-thompson-select-organic', 10231, 'DF062', 'Thompson Raisins, Organic'],
+    ['cranberries-dried-apple-juice-infused-organic', 7473, 'DF175', 'Dried Cranberries, Organic'],
+    ['coconut-medium-shredded-organic', 7331, 'BP259', 'Shredded Coconut, Organic'],
+    ['walnuts-raw-organic', 9668, 'NU058', 'Raw Walnuts, Organic'],
+    ['cashews-raw-large-white-pieces-organic', 7018, 'NU018', 'Raw Cashew Pieces, Organic'],
+    ['medjool-dates-unpitted-organic', 9122, 'DF018', 'Medjool Dates, Organic'],
     ['pumpkin-seeds-dry-roasted-salted-organic', 26908, 'SE350', 'Pumpkin Seeds, Roasted and Salted, Organic'],
     ['tortilla-chips-organic', 35656, 'SN2548', 'Tortilla Chips, Organic'],
     ['coffee-whole-bean-private-reserve-medium-roast-organic', 29116, 'CS258', 'Whole Bean Coffee, Medium Roast, Organic'],
@@ -91,6 +115,12 @@ const SHELVES = [
     ['potatoes-russet-organic', 10100, 'QP139', 'Russet Potatoes, Organic'],
     ['carrots-1-organic', 7004, 'QP165', 'Carrots, Organic'],
     ['garlic-organic', 8160, 'QP324', 'Garlic, Organic'],
+    ['garden-peas-frozen-organic', 8146, 'FG164', 'Garden Peas, Frozen, Organic'],
+    ['potatoes-yellow-organic', 10101, 'QP172', 'Yellow Potatoes, Organic'],
+    ['sweet-corn-frozen-organic', 11105, 'FG163', 'Sweet Corn, Frozen, Organic'],
+    ['mozzarella-cheese-whole-milk', 9302, 'CH064', 'Whole Milk Mozzarella'],
+    ['blueberries-whole-frozen-organic', 23328, 'FG975', 'Blueberries, Frozen, Organic'],
+    ['broccoli-florets-frozen-organic', 6780, 'FG168', 'Broccoli Florets, Frozen, Organic'],
     ['lemons-organic', 8877, 'QP058', 'Lemons, Organic'],
     ['avocado-medium-organic', 6382, 'QP004', 'Avocados, Organic'],
     ['butter-salted-organic', 19624, 'DP295', 'Salted Butter, Organic'],
@@ -106,6 +136,12 @@ const SHELVES = [
     ['dish-soap-fragrance-free', 21068, 'NF1618', 'Dish Soap, Fragrance Free'],
     ['dishwasher-gel', 29820, 'NF1756', 'Dishwasher Gel'],
     ['automatic-dishwasher-powder', 21088, 'NF2120', 'Dishwasher Powder'],
+    ['wide-mouth-glass-gallon-jars-without-lids', 11737, 'PS018', 'Glass Gallon Jars, Wide Mouth'],
+    ['gamma-seal-lid-for-5-gallon-plastic-pail', 8135, 'NF094', 'Gamma Seal Lid, 5 Gallon Pail'],
+    ['empty-5-gallon-plastic-pailbucket-without-lid', 7838, 'PS092', 'Plastic Bucket, 5 Gallon'],
+    ['wide-mouth-glass-12-gallon-jars-without-lids', 11919, 'PS140', 'Glass Half-Gallon Jars, Wide Mouth'],
+    ['6-everyday-beeswax-candles-value-size', 5990, 'NF392', 'Beeswax Candles, 6 in'],
+    ['parchment-baking-paper', 12222, 'NF669', 'Parchment Baking Paper'],
     ['all-purpose-household-cleaner', 21078, 'NF997', 'All Purpose Household Cleaner'],
     ['castile-liquid-soap-pure-unscented-aloe-mild-organic', 34402, 'HB2269', 'Castile Liquid Soap, Unscented, Organic'],
     ['canning-jars-quart-wide-mouth-with-lids-bands', 32032, 'NF010', 'Canning Jars, Quart, Wide Mouth'],
@@ -118,6 +154,12 @@ const SHELVES = [
     ['hand-soap-fragrance-free', 27142, 'NF1694', 'Hand Soap, Fragrance Free'],
     ['castile-liquid-soap-pure-citrus-organic', 34408, 'HB2221', 'Castile Liquid Soap, Citrus, Organic'],
     ['shampoo-bar-castile-rosemary-lavender-organic', 35798, 'HB1964', 'Shampoo Bar, Rosemary and Lavender, Organic'],
+    ['cream-manuka-honey-intensive-skin-healing-grass-fed-tallow-paleo', 27310, 'HB1475', 'Manuka Honey Tallow Cream'],
+    ['hemp-baby-mild-pure-castile-soap-organic', 8474, 'HB019', 'Hemp Baby Mild Castile Soap, Organic'],
+    ['xylitol-gum-spearmint', 11883, 'HB408', 'Xylitol Gum, Spearmint'],
+    ['tea-tree-neem-toothpaste-wintergreen', 11179, 'HB696', 'Tea Tree Neem Toothpaste, Wintergreen'],
+    ['all-in-one-pure-castile-soap-fragrance-free', 17422, 'HB1011', 'All-In-One Castile Soap, Fragrance Free'],
+    ['shampoo-bar-handcrafted-herbal-fusion-normal-to-dry-hair-chemical-free', 12776, 'HB427', 'Shampoo Bar, Herbal, Normal to Dry Hair'],
     ['castor-oil-organic', 32820, 'HB1767', 'Castor Oil, Organic'],
     ['epsom-salt', 7868, 'HB1121', 'Epsom Salt'],
     ['beeswax-granules-yellow-organic', 34614, 'NF2297', 'Beeswax Granules, Organic'],
@@ -128,13 +170,20 @@ const SHELVES = [
     ['chicken-wheat-animal-feed-organic', 7134, 'GP073', 'Chicken Wheat, Animal Feed, Organic'],
     ['whole-barley-animal-feed-organic', 11698, 'GP168', 'Whole Barley, Animal Feed, Organic'],
     ['alfalfa-pellets-organic', 14652, 'GP491', 'Alfalfa Pellets, Organic'],
+    ['chicken-and-duck-feed-16-soy-and-corn-free-organic', 14948, 'GP493', 'Chicken and Duck Feed 16%, Organic'],
+    ['poultry-layer-mash-no-cornsoy-organic', 14658, 'GP492', 'Poultry Layer Mash, No Corn or Soy, Organic'],
+    ['whole-field-peas-animal-feed-organic', 17274, 'GP559', 'Whole Field Peas, Animal Feed, Organic'],
+    ['poultry-scratch-no-cornsoy-organic', 15962, 'GP520', 'Poultry Scratch, No Corn or Soy, Organic'],
+    ['naturally-free-poultry-grower-feed-organic', 15974, 'GP521', 'Poultry Grower Feed, Organic'],
+    ['fertilizer-granules-4-3-2-organic', 7979, 'GP272', 'Organic Fertilizer Granules 4-3-2'],
+    ['poultry-6x10-grit-calcium-carbonate', 17332, 'GP1359', 'Poultry Grit, Calcium Carbonate'],
     ['whole-yellow-corn-animal-feed-organic', 25340, 'GP850', 'Whole Yellow Corn, Animal Feed, Organic'],
     ['diatomaceous-earth-codex-grade', 7664, 'GP009', 'Diatomaceous Earth, Codex Grade'],
     ['kelp-granules-asco-animal-blue-label-organic', 8729, 'GP100', 'Kelp Granules for Animals, Organic'],
   ]],
 ];
 // The Home shelf: the first few of each line, so it shows the range.
-const HOME_PER_SHELF = 4;
+const HOME_PER_SHELF = 6;
 
 
 async function facts(codes) {
@@ -173,7 +222,6 @@ writeFileSync(join(ROOT, 'azure-home.json'), JSON.stringify({ _help: 'Written by
 writeFileSync(join(ROOT, 'netlify', 'lib', 'azure-codes.mjs'), `// GENERATED by tools/azure-shelf.mjs on ${today}. The Azure Standard package codes on the Store.\nexport const AZURE_CODES = ${JSON.stringify(shelves.flatMap((s) => s.items.map((x) => x.code)))};\n`);
 
 const DROP = azureLink('/drop-point-locator');
-const ANCHOR = azureLink('/azures-anchor-drops');
 const HOW = azureLink('/get-organic-products-delivered');
 const html = [
   `<!-- AZURE:START (generated by tools/azure-shelf.mjs on ${today}; do not edit by hand) -->`,
@@ -190,11 +238,6 @@ const html = [
   '          <h3>Find a Drop near you</h3>',
   '          <p>Neighbors order together and Azure delivers to one place on a set day each month: dry, chilled and frozen goods arrive together, and you collect your order there.</p>',
   `          <a class="btn btn-sm" href="${esc(DROP)}" target="_blank" rel="sponsored noopener" data-affiliate="Azure Standard">Find a Drop</a>`,
-  '        </div>',
-  '        <div class="az-drop-card">',
-  '          <h3>Anchor Drops: pick up when it suits you</h3>',
-  '          <p>An Anchor Drop is hosted by a volunteer who keeps dry, refrigerated and frozen orders safe for at least three days after the truck comes, so you are not tied to the delivery hour. They are free to use and open to everyone.</p>',
-  `          <a class="btn btn-sm" href="${esc(ANCHOR)}" target="_blank" rel="sponsored noopener" data-affiliate="Azure Standard">About Anchor Drops</a>`,
   '        </div>',
   '        <div class="az-drop-card">',
   '          <h3>How Azure works</h3>',

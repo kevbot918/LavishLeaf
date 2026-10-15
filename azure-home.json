@@ -1,40 +1,56 @@
 {
  "_help": "Written by tools/azure-shelf.mjs; drawn by tools/render-store.mjs (Home shelf \"Azure Standard\") and in Green Swaps. Public facts only; prices and stock refresh live from functions/azure-prices.mjs.",
  "aid": "aac4bd548d",
- "at": "2026-10-14",
+ "at": "2026-10-15",
  "home": [
   "FL080",
   "GR062",
   "GR112",
   "CE202",
+  "DFL076",
+  "GR120",
   "BE094",
   "BE086",
   "BE246",
   "BE049",
+  "BP104",
+  "BP112",
   "OL427",
   "OL377",
   "OL429",
   "SW356",
+  "SW084",
+  "OL219",
   "NU052",
   "NU114",
   "NU417",
   "DF128",
+  "DF062",
+  "DF175",
   "QP018",
   "QP139",
   "QP165",
   "QP324",
+  "FG164",
+  "QP172",
   "NF1621",
   "NF1618",
   "NF1756",
   "NF2120",
+  "PS018",
+  "NF094",
   "NF1700",
   "NF1694",
   "HB2221",
   "HB1964",
+  "HB1475",
+  "HB019",
   "GP034",
   "GP073",
   "GP168",
-  "GP491"
+  "GP491",
+  "GP493",
+  "GP492"
  ],
  "shelves": [
   {
@@ -68,7 +84,7 @@
      "name": "Hard White Wheat, Organic",
      "size": "5 lb",
      "price": 9.76,
-     "stock": 43583,
+     "stock": 42783,
      "img": "images/azure/gr112.jpg"
     },
     {
@@ -80,6 +96,66 @@
      "price": 4.88,
      "stock": 128849,
      "img": "images/azure/ce202.jpg"
+    },
+    {
+     "code": "DFL076",
+     "id": 11445,
+     "slug": "artisan-bakers-craft-unbleached-white-wheat-flour-organic",
+     "name": "Artisan Bakers Craft White Flour, Organic",
+     "size": "50 lb",
+     "price": 44.86,
+     "stock": 2325,
+     "img": "images/azure/dfl076.jpg"
+    },
+    {
+     "code": "GR120",
+     "id": 11650,
+     "slug": "soft-white-wheat-organic",
+     "name": "Soft White Wheat, Organic",
+     "size": "33 oz",
+     "price": 3.3,
+     "stock": 9608,
+     "img": "images/azure/gr120.jpg"
+    },
+    {
+     "code": "GR102",
+     "id": 10847,
+     "slug": "spelt-grain-organic",
+     "name": "Spelt Grain, Organic",
+     "size": "5 lb",
+     "price": 8.76,
+     "stock": 9619,
+     "img": "images/azure/gr102.jpg"
+    },
+    {
+     "code": "GR128",
+     "id": 10219,
+     "slug": "quinoa-white-organic",
+     "name": "White Quinoa, Organic",
+     "size": "33 oz",
+     "price": 8.38,
+     "stock": 22386,
+     "img": "images/azure/gr128.jpg"
+    },
+    {
+     "code": "GR073",
+     "id": 17148,
+     "slug": "rice-white-basmati-organic-gluten-free",
+     "name": "White Basmati Rice, Organic",
+     "size": "5 lb",
+     "price": 18.5,
+     "stock": 1600,
+     "img": "images/azure/gr073.jpg"
+    },
+    {
+     "code": "CE123",
+     "id": 24936,
+     "slug": "polenta-corn-grits-organic",
+     "name": "Polenta Corn Grits, Organic",
+     "size": "5 lb",
+     "price": 12.37,
+     "stock": 708,
+     "img": "images/azure/ce123.jpg"
     },
     {
      "code": "CE229",
@@ -98,7 +174,7 @@
      "name": "Whole White Wheat Bread Flour, Organic",
      "size": "28 oz",
      "price": 3.15,
-     "stock": 8769,
+     "stock": 9455,
      "img": "images/azure/fl034.jpg"
     },
     {
@@ -158,7 +234,7 @@
      "name": "Rolled Oats, Gluten Free, Organic",
      "size": "21 oz",
      "price": 3.67,
-     "stock": 88381,
+     "stock": 88380,
      "img": "images/azure/ce617.jpg"
     }
    ]
@@ -206,6 +282,66 @@
      "price": 5.43,
      "stock": 12644,
      "img": "images/azure/be049.jpg"
+    },
+    {
+     "code": "BP104",
+     "id": 10302,
+     "slug": "real-salt-fine-granular",
+     "name": "Real Salt, Fine",
+     "size": "26 oz",
+     "price": 11.27,
+     "stock": 2981,
+     "img": "images/azure/bp104.jpg"
+    },
+    {
+     "code": "BP112",
+     "id": 7054,
+     "slug": "celtic-sea-salt-fine",
+     "name": "Celtic Sea Salt, Fine",
+     "size": "1 lb",
+     "price": 14.03,
+     "stock": 1524,
+     "img": "images/azure/bp112.jpg"
+    },
+    {
+     "code": "BP334",
+     "id": 11811,
+     "slug": "yeast-dry-active",
+     "name": "Dry Active Yeast",
+     "size": "1 lb",
+     "price": 7.31,
+     "stock": 9157,
+     "img": "images/azure/bp334.jpg"
+    },
+    {
+     "code": "BP005",
+     "id": 10538,
+     "slug": "rumford-baking-powder-non-aluminum",
+     "name": "Rumford Baking Powder",
+     "size": "8.1 oz",
+     "price": 5.13,
+     "stock": 6480,
+     "img": "images/azure/bp005.jpg"
+    },
+    {
+     "code": "HS1694",
+     "id": 14168,
+     "slug": "himalayan-pink-crystal-salt",
+     "name": "Himalayan Pink Salt",
+     "size": "1 lb",
+     "price": 3.56,
+     "stock": 68018,
+     "img": "images/azure/hs1694.jpg"
+    },
+    {
+     "code": "BP794",
+     "id": 6334,
+     "slug": "arrowroot-powder-gluten-free",
+     "name": "Arrowroot Powder",
+     "size": "4 oz",
+     "price": 2.93,
+     "stock": 7670,
+     "img": "images/azure/bp794.jpg"
     },
     {
      "code": "BE010",
@@ -334,6 +470,66 @@
      "img": "images/azure/sw356.jpg"
     },
     {
+     "code": "SW084",
+     "id": 8558,
+     "slug": "honey-raw-clover",
+     "name": "Raw Clover Honey",
+     "size": "2 lb bear",
+     "price": 9.48,
+     "stock": 260534,
+     "img": "images/azure/sw084.jpg"
+    },
+    {
+     "code": "OL219",
+     "id": 14562,
+     "slug": "palm-fruit-shortening-organic",
+     "name": "Palm Fruit Shortening, Organic",
+     "size": "4 lb",
+     "price": 16.43,
+     "stock": 1391,
+     "img": "images/azure/ol219.jpg"
+    },
+    {
+     "code": "CO012",
+     "id": 8932,
+     "slug": "liquid-aminos",
+     "name": "Liquid Aminos",
+     "size": "16 floz",
+     "price": 5.91,
+     "stock": 277,
+     "img": "images/azure/co012.jpg"
+    },
+    {
+     "code": "SW061",
+     "id": 11037,
+     "slug": "sucanat-organic-fair-trade",
+     "name": "Sucanat, Organic, Fair Trade",
+     "size": "2 lb",
+     "price": 7.22,
+     "stock": 287,
+     "img": "images/azure/sw061.jpg"
+    },
+    {
+     "code": "CO107",
+     "id": 11151,
+     "slug": "tamari-soy-sauce-gold-gluten-free-organic",
+     "name": "Tamari Soy Sauce, Organic",
+     "size": "20 oz",
+     "price": 10.76,
+     "stock": 447,
+     "img": "images/azure/co107.jpg"
+    },
+    {
+     "code": "GY179",
+     "id": 11325,
+     "slug": "tomato-paste-in-glass-organic",
+     "name": "Tomato Paste in Glass, Organic",
+     "size": "7 oz",
+     "price": 2.96,
+     "stock": 2346,
+     "img": "images/azure/gy179.jpg"
+    },
+    {
      "code": "SW018",
      "id": 9086,
      "slug": "maple-syrup-grade-a-dark-robust-organic",
@@ -460,6 +656,66 @@
      "img": "images/azure/df128.jpg"
     },
     {
+     "code": "DF062",
+     "id": 10231,
+     "slug": "raisins-thompson-select-organic",
+     "name": "Thompson Raisins, Organic",
+     "size": "1 lb",
+     "price": 4.48,
+     "stock": 70748,
+     "img": "images/azure/df062.jpg"
+    },
+    {
+     "code": "DF175",
+     "id": 7473,
+     "slug": "cranberries-dried-apple-juice-infused-organic",
+     "name": "Dried Cranberries, Organic",
+     "size": "1 lb",
+     "price": 13.43,
+     "stock": 8967,
+     "img": "images/azure/df175.jpg"
+    },
+    {
+     "code": "BP259",
+     "id": 7331,
+     "slug": "coconut-medium-shredded-organic",
+     "name": "Shredded Coconut, Organic",
+     "size": "2.5 lb",
+     "price": 11.16,
+     "stock": 8608,
+     "img": "images/azure/bp259.jpg"
+    },
+    {
+     "code": "NU058",
+     "id": 9668,
+     "slug": "walnuts-raw-organic",
+     "name": "Raw Walnuts, Organic",
+     "size": "2 lb",
+     "price": 24.28,
+     "stock": 351,
+     "img": "images/azure/nu058.jpg"
+    },
+    {
+     "code": "NU018",
+     "id": 7018,
+     "slug": "cashews-raw-large-white-pieces-organic",
+     "name": "Raw Cashew Pieces, Organic",
+     "size": "2 lb",
+     "price": 13.61,
+     "stock": 7280,
+     "img": "images/azure/nu018.jpg"
+    },
+    {
+     "code": "DF018",
+     "id": 9122,
+     "slug": "medjool-dates-unpitted-organic",
+     "name": "Medjool Dates, Organic",
+     "size": "1 lb",
+     "price": 11.71,
+     "stock": 10771,
+     "img": "images/azure/df018.jpg"
+    },
+    {
      "code": "SE350",
      "id": 26908,
      "slug": "pumpkin-seeds-dry-roasted-salted-organic",
@@ -562,7 +818,7 @@
      "name": "Russet Potatoes, Organic",
      "size": "5 lb",
      "price": 5.91,
-     "stock": 7009,
+     "stock": 6989,
      "img": "images/azure/qp139.jpg"
     },
     {
@@ -584,6 +840,66 @@
      "price": 7.22,
      "stock": 4770,
      "img": "images/azure/qp324.jpg"
+    },
+    {
+     "code": "FG164",
+     "id": 8146,
+     "slug": "garden-peas-frozen-organic",
+     "name": "Garden Peas, Frozen, Organic",
+     "size": "5 lb",
+     "price": 19.61,
+     "stock": 1693,
+     "img": "images/azure/fg164.jpg"
+    },
+    {
+     "code": "QP172",
+     "id": 10101,
+     "slug": "potatoes-yellow-organic",
+     "name": "Yellow Potatoes, Organic",
+     "size": "5 lb",
+     "price": 7.65,
+     "stock": 3712,
+     "img": "images/azure/qp172.jpg"
+    },
+    {
+     "code": "FG163",
+     "id": 11105,
+     "slug": "sweet-corn-frozen-organic",
+     "name": "Sweet Corn, Frozen, Organic",
+     "size": "5 lb",
+     "price": 16.66,
+     "stock": 1628,
+     "img": "images/azure/fg163.jpg"
+    },
+    {
+     "code": "CH064",
+     "id": 9302,
+     "slug": "mozzarella-cheese-whole-milk",
+     "name": "Whole Milk Mozzarella",
+     "size": "6 lb",
+     "price": 23.61,
+     "stock": 2013,
+     "img": "images/azure/ch064.jpg"
+    },
+    {
+     "code": "FG975",
+     "id": 23328,
+     "slug": "blueberries-whole-frozen-organic",
+     "name": "Blueberries, Frozen, Organic",
+     "size": "5 lb",
+     "price": 21.46,
+     "stock": 2028,
+     "img": "images/azure/fg975.jpg"
+    },
+    {
+     "code": "FG168",
+     "id": 6780,
+     "slug": "broccoli-florets-frozen-organic",
+     "name": "Broccoli Florets, Frozen, Organic",
+     "size": "4 lb",
+     "price": 13.57,
+     "stock": 8274,
+     "img": "images/azure/fg168.jpg"
     },
     {
      "code": "QP058",
@@ -722,6 +1038,66 @@
      "img": "images/azure/nf2120.jpg"
     },
     {
+     "code": "PS018",
+     "id": 11737,
+     "slug": "wide-mouth-glass-gallon-jars-without-lids",
+     "name": "Glass Gallon Jars, Wide Mouth",
+     "size": "4 x 1 gal",
+     "price": 18.77,
+     "stock": 928,
+     "img": "images/azure/ps018.jpg"
+    },
+    {
+     "code": "NF094",
+     "id": 8135,
+     "slug": "gamma-seal-lid-for-5-gallon-plastic-pail",
+     "name": "Gamma Seal Lid, 5 Gallon Pail",
+     "size": "1 ct",
+     "price": 10.76,
+     "stock": 18395,
+     "img": "images/azure/nf094.jpg"
+    },
+    {
+     "code": "PS092",
+     "id": 7838,
+     "slug": "empty-5-gallon-plastic-pailbucket-without-lid",
+     "name": "Plastic Bucket, 5 Gallon",
+     "size": "5 gal bucket",
+     "price": 9.75,
+     "stock": 8234,
+     "img": "images/azure/ps092.jpg"
+    },
+    {
+     "code": "PS140",
+     "id": 11919,
+     "slug": "wide-mouth-glass-12-gallon-jars-without-lids",
+     "name": "Glass Half-Gallon Jars, Wide Mouth",
+     "size": "6 x 1/2 gal",
+     "price": 19.58,
+     "stock": 5043,
+     "img": "images/azure/ps140.jpg"
+    },
+    {
+     "code": "NF392",
+     "id": 5990,
+     "slug": "6-everyday-beeswax-candles-value-size",
+     "name": "Beeswax Candles, 6 in",
+     "size": "6 candle",
+     "price": 12.28,
+     "stock": 1659,
+     "img": "images/azure/nf392.jpg"
+    },
+    {
+     "code": "NF669",
+     "id": 12222,
+     "slug": "parchment-baking-paper",
+     "name": "Parchment Baking Paper",
+     "size": "70' roll",
+     "price": 6.77,
+     "stock": 4423,
+     "img": "images/azure/nf669.jpg"
+    },
+    {
      "code": "NF997",
      "id": 21078,
      "slug": "all-purpose-household-cleaner",
@@ -828,6 +1204,66 @@
      "img": "images/azure/hb1964.jpg"
     },
     {
+     "code": "HB1475",
+     "id": 27310,
+     "slug": "cream-manuka-honey-intensive-skin-healing-grass-fed-tallow-paleo",
+     "name": "Manuka Honey Tallow Cream",
+     "size": "4 oz",
+     "price": 16.19,
+     "stock": 670,
+     "img": "images/azure/hb1475.jpg"
+    },
+    {
+     "code": "HB019",
+     "id": 8474,
+     "slug": "hemp-baby-mild-pure-castile-soap-organic",
+     "name": "Hemp Baby Mild Castile Soap, Organic",
+     "size": "3.4 floz",
+     "price": 4.1,
+     "stock": 50,
+     "img": "images/azure/hb019.jpg"
+    },
+    {
+     "code": "HB408",
+     "id": 11883,
+     "slug": "xylitol-gum-spearmint",
+     "name": "Xylitol Gum, Spearmint",
+     "size": "100 pcs.",
+     "price": 9.37,
+     "stock": 392,
+     "img": "images/azure/hb408.jpg"
+    },
+    {
+     "code": "HB696",
+     "id": 11179,
+     "slug": "tea-tree-neem-toothpaste-wintergreen",
+     "name": "Tea Tree Neem Toothpaste, Wintergreen",
+     "size": "6.25 oz",
+     "price": 6.12,
+     "stock": 1199,
+     "img": "images/azure/hb696.jpg"
+    },
+    {
+     "code": "HB1011",
+     "id": 17422,
+     "slug": "all-in-one-pure-castile-soap-fragrance-free",
+     "name": "All-In-One Castile Soap, Fragrance Free",
+     "size": "32 floz",
+     "price": 14.99,
+     "stock": 274,
+     "img": "images/azure/hb1011.jpg"
+    },
+    {
+     "code": "HB427",
+     "id": 12776,
+     "slug": "shampoo-bar-handcrafted-herbal-fusion-normal-to-dry-hair-chemical-free",
+     "name": "Shampoo Bar, Herbal, Normal to Dry Hair",
+     "size": "4.2 oz",
+     "price": 7.26,
+     "stock": 308,
+     "img": "images/azure/hb427.jpg"
+    },
+    {
      "code": "HB1767",
      "id": 32820,
      "slug": "castor-oil-organic",
@@ -912,6 +1348,76 @@
      "price": 31.71,
      "stock": 1157,
      "img": "images/azure/gp491.jpg"
+    },
+    {
+     "code": "GP493",
+     "id": 14948,
+     "slug": "chicken-and-duck-feed-16-soy-and-corn-free-organic",
+     "name": "Chicken and Duck Feed 16%, Organic",
+     "size": "40 lb",
+     "price": 48.33,
+     "stock": 2241,
+     "img": "images/azure/gp493.jpg"
+    },
+    {
+     "code": "GP492",
+     "id": 14658,
+     "slug": "poultry-layer-mash-no-cornsoy-organic",
+     "name": "Poultry Layer Mash, No Corn or Soy, Organic",
+     "size": "50 lb",
+     "price": 41.58,
+     "stock": 1911,
+     "img": "images/azure/gp492.jpg"
+    },
+    {
+     "code": "GP559",
+     "id": 17274,
+     "slug": "whole-field-peas-animal-feed-organic",
+     "name": "Whole Field Peas, Animal Feed, Organic",
+     "size": "50 lb",
+     "price": 38.69,
+     "stock": 2121,
+     "img": "images/azure/gp559.jpg"
+    },
+    {
+     "code": "GP520",
+     "id": 15962,
+     "slug": "poultry-scratch-no-cornsoy-organic",
+     "name": "Poultry Scratch, No Corn or Soy, Organic",
+     "size": "50 lb",
+     "price": 39.62,
+     "stock": 1932,
+     "img": "images/azure/gp520.jpg"
+    },
+    {
+     "code": "GP521",
+     "id": 15974,
+     "slug": "naturally-free-poultry-grower-feed-organic",
+     "name": "Poultry Grower Feed, Organic",
+     "size": "40 lb",
+     "price": 53.66,
+     "stock": 484,
+     "img": "images/azure/gp521.jpg"
+    },
+    {
+     "code": "GP272",
+     "id": 7979,
+     "slug": "fertilizer-granules-4-3-2-organic",
+     "name": "Organic Fertilizer Granules 4-3-2",
+     "size": "40 lb",
+     "price": 22.13,
+     "stock": 421,
+     "img": "images/azure/gp272.jpg"
+    },
+    {
+     "code": "GP1359",
+     "id": 17332,
+     "slug": "poultry-6x10-grit-calcium-carbonate",
+     "name": "Poultry Grit, Calcium Carbonate",
+     "size": "25 lb",
+     "price": 10.99,
+     "stock": 356,
+     "img": "images/azure/gp1359.jpg"
     },
     {
      "code": "GP850",
