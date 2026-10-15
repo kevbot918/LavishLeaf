@@ -736,8 +736,8 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     token is account-wide, so the "Lavish Leaf" store id is looked up from
     /stores, never "Personal orders"); tools/printful-import.mjs reads the
     store's products, keeps hand-written names and blurbs on reruns, prices
-    each product at one price for every size (owner) but never under 15% on
-    the dearest size, and places them at the start of Recreation & Outdoors
+    each product at one price for every size: the OWNER'S Printful prices (item 46)
+    exactly; the tool only warns when one is under 15%. It places them at the start of Recreation & Outdoors
     (owner: on that shelf, not their own). Shipping rule "printful" =
     Printful's own rate to 74462 (dearest item + each extra unit's add-on).
     Dashboard: "Send the apparel to Printful" = a DRAFT order; the owner
