@@ -3,7 +3,7 @@
 // Keeps the Palladium Boots cards (Home shelf, Recreation & Outdoors picks and
 // Green Swaps) at Palladium's current prices; null = sold out in every size,
 // and the card hides (2026-10-15). Reads each product's public Shopify JSON,
-// 8 at a time. Netlify's CDN keeps the answer for 12 hours.
+// 4 at a time, one retry. Netlify's CDN keeps the answer for 12 hours.
 import { PALLADIUM_HANDLES } from '../lib/palladium-handles.mjs';
 
 const money = (n) => '$' + Number(n).toFixed(2);
@@ -23,9 +23,10 @@ async function one(handle) {
 export default async () => {
   const prices = {};
   try {
-    for (let i = 0; i < PALLADIUM_HANDLES.length; i += 8) {
-      const group = PALLADIUM_HANDLES.slice(i, i + 8);
-      const got = await Promise.all(group.map((h) => one(h).catch(() => undefined)));
+    for (let i = 0; i < PALLADIUM_HANDLES.length; i += 4) {
+      const group = PALLADIUM_HANDLES.slice(i, i + 4);
+      // One retry: Palladium sometimes refuses a burst (8 of 75 failed, 2026-10-15).
+      const got = await Promise.all(group.map((h) => one(h).catch(() => new Promise((ok) => setTimeout(ok, 600)).then(() => one(h)).catch(() => undefined))));
       group.forEach((h, k) => { if (got[k] !== undefined) prices[h] = got[k]; });
     }
   } catch (e) {
