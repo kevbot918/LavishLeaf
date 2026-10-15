@@ -717,3 +717,17 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     hides the card); #azure opens Green Swaps at Azure; sidebar partner link
     and a Home feature block. Rerun azure-shelf then render-store to change
     the selection.
+
+44. **2026-10-14, late.** **Azure**: the Anchor Drop card is gone (owner: it
+    is a coordinator program, and the Drop locator does not show which Drops
+    are Anchor Drops); Find a Drop and How Azure works share the row. 135
+    products in 8 lines; new ones ranked by Azure "favorites" from Azure's
+    own public Algolia search index (app J8N8I8KE2Y, the search-only key its
+    site uses; index "products"; hitsPerPage 1000, two pages), seeds and
+    supplements left out; Home shows 6 per line (HOME_PER_SHELF). **AliExpress
+    signed in** (owner's Chrome): prices without the new-shopper deal; 10
+    more Recreation & Outdoors lines including clothing (rain pants, leggings,
+    sports bra, joggers, gloves) with a "Color and size" or "Size" option;
+    clothing blurbs give the size M measurement because there is no size
+    chart on our pop-up. **Merch**: docs/MERCH-SUPPLIERS.md (Printful first,
+    Printify backup, Custom Ink for league jerseys).
