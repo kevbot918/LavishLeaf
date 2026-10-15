@@ -208,7 +208,7 @@
      "name": "Hard Red Wheat, Organic",
      "size": "5 lb",
      "price": 5.7,
-     "stock": 31103,
+     "stock": 30303,
      "img": "images/azure/gr062.jpg"
     },
     {
@@ -218,7 +218,7 @@
      "name": "Hard White Wheat, Organic",
      "size": "5 lb",
      "price": 9.76,
-     "stock": 38603,
+     "stock": 38203,
      "img": "images/azure/gr112.jpg"
     },
     {
@@ -258,7 +258,7 @@
      "name": "Spelt Grain, Organic",
      "size": "5 lb",
      "price": 8.76,
-     "stock": 9112,
+     "stock": 8987,
      "img": "images/azure/gr102.jpg"
     },
     {
@@ -348,7 +348,7 @@
      "name": "Yellow Popcorn, Organic",
      "size": "40 oz",
      "price": 5.23,
-     "stock": 23265,
+     "stock": 23255,
      "img": "images/azure/gr071.jpg"
     },
     {
@@ -368,7 +368,7 @@
      "name": "Rolled Oats, Gluten Free, Organic",
      "size": "21 oz",
      "price": 3.67,
-     "stock": 87161,
+     "stock": 87152,
      "img": "images/azure/ce617.jpg"
     },
     {
@@ -564,7 +564,7 @@
      "name": "Cane Sugar, Organic",
      "size": "5 lb",
      "price": 10.02,
-     "stock": 42022,
+     "stock": 41582,
      "img": "images/azure/sw079.jpg"
     },
     {
@@ -584,7 +584,7 @@
      "name": "Baking Powder",
      "size": "1 lb",
      "price": 6.47,
-     "stock": 37066,
+     "stock": 37089,
      "img": "images/azure/bp713.jpg"
     },
     {
@@ -604,7 +604,7 @@
      "name": "Cocoa Powder, Organic",
      "size": "1 lb",
      "price": 12.52,
-     "stock": 17998,
+     "stock": 18007,
      "img": "images/azure/bp833.jpg"
     },
     {
@@ -624,7 +624,7 @@
      "name": "Sea Salt",
      "size": "5 lb",
      "price": 5.45,
-     "stock": 8473,
+     "stock": 8532,
      "img": "images/azure/bp066.jpg"
     },
     {
@@ -664,7 +664,7 @@
      "name": "Corn Starch, Organic",
      "size": "1 lb",
      "price": 7.9,
-     "stock": 5722,
+     "stock": 5727,
      "img": "images/azure/bp431.jpg"
     },
     {
@@ -700,7 +700,7 @@
      "name": "Coconut Oil, Expeller Pressed, Organic",
      "size": "32 floz glass",
      "price": 10.72,
-     "stock": 30025,
+     "stock": 51525,
      "img": "images/azure/ol377.jpg"
     },
     {
@@ -720,7 +720,7 @@
      "name": "Raw Honey, Berry and Wildflower",
      "size": "3 lb glass",
      "price": 10.77,
-     "stock": 15279,
+     "stock": 28981,
      "img": "images/azure/sw356.jpg"
     },
     {
@@ -740,7 +740,7 @@
      "name": "Palm Fruit Shortening, Organic",
      "size": "4 lb",
      "price": 16.43,
-     "stock": 4692,
+     "stock": 4691,
      "img": "images/azure/ol219.jpg"
     },
     {
@@ -900,7 +900,7 @@
      "name": "Honey, Raw, Wildflower, Organic",
      "size": "3 lb glass",
      "price": 19.93,
-     "stock": 4597,
+     "stock": 4596,
      "img": "images/azure/sw438.jpg"
     },
     {
@@ -996,7 +996,7 @@
      "name": "Shredded Coconut, Organic",
      "size": "2.5 lb",
      "price": 11.16,
-     "stock": 8503,
+     "stock": 8481,
      "img": "images/azure/bp259.jpg"
     },
     {
@@ -1096,7 +1096,7 @@
      "name": "Coconut Milk, Organic",
      "size": "13.5 oz",
      "price": 1.93,
-     "stock": 1772,
+     "stock": 1779,
      "img": "images/azure/gy1459.jpg"
     },
     {
@@ -1116,7 +1116,7 @@
      "name": "Mango, Dried, Organic",
      "size": "1 lb",
      "price": 11.03,
-     "stock": 688,
+     "stock": 683,
      "img": "images/azure/df104.jpg"
     },
     {
@@ -1156,7 +1156,7 @@
      "name": "Chocolate Chips, Dark, Allergen Free, Organic",
      "size": "1 lb",
      "price": 12.94,
-     "stock": 18337,
+     "stock": 18351,
      "img": "images/azure/bp832.jpg"
     },
     {
@@ -1182,7 +1182,7 @@
      "name": "Yellow Onions, Organic",
      "size": "3 lb",
      "price": 6.95,
-     "stock": 1305,
+     "stock": 1302,
      "img": "images/azure/qp018.jpg"
     },
     {
@@ -1192,7 +1192,7 @@
      "name": "Russet Potatoes, Organic",
      "size": "5 lb",
      "price": 5.91,
-     "stock": 6545,
+     "stock": 6509,
      "img": "images/azure/qp139.jpg"
     },
     {
@@ -1202,7 +1202,7 @@
      "name": "Carrots, Organic",
      "size": "5 lb",
      "price": 8.5,
-     "stock": 383,
+     "stock": 372,
      "img": "images/azure/qp165.jpg"
     },
     {
@@ -1212,7 +1212,7 @@
      "name": "Garlic, Organic",
      "size": "1 lb",
      "price": 7.22,
-     "stock": 4468,
+     "stock": 4449,
      "img": "images/azure/qp324.jpg"
     },
     {
@@ -1232,7 +1232,7 @@
      "name": "Yellow Potatoes, Organic",
      "size": "5 lb",
      "price": 7.65,
-     "stock": 3390,
+     "stock": 3374,
      "img": "images/azure/qp172.jpg"
     },
     {
@@ -1282,7 +1282,7 @@
      "name": "Lemons, Organic",
      "size": "2 lb",
      "price": 7.95,
-     "stock": 3475,
+     "stock": 3437,
      "img": "images/azure/qp058.jpg"
     },
     {
@@ -1292,7 +1292,7 @@
      "name": "Avocados, Organic",
      "size": "3 ct",
      "price": 5.52,
-     "stock": 850,
+     "stock": 848,
      "img": "images/azure/qp004.jpg"
     },
     {
@@ -1352,7 +1352,7 @@
      "name": "Chicken Breast, Organic, Frozen",
      "size": "1 - 2 lb",
      "price": 12.86,
-     "stock": 1925,
+     "stock": 1940,
      "img": "images/azure/mt869.jpg"
     },
     {
@@ -1372,7 +1372,7 @@
      "name": "Celery, Organic",
      "size": "1 bunch",
      "price": 3.61,
-     "stock": 1126,
+     "stock": 1085,
      "img": "images/azure/qp063.jpg"
     },
     {
@@ -1382,7 +1382,7 @@
      "name": "Potatoes, Red, Organic",
      "size": "5 lb",
      "price": 7.65,
-     "stock": 2818,
+     "stock": 2803,
      "img": "images/azure/qp034.jpg"
     },
     {
@@ -1392,7 +1392,7 @@
      "name": "Carrots #2, Organic",
      "size": "25 lb",
      "price": 25.5,
-     "stock": 63,
+     "stock": 59,
      "img": "images/azure/qp170.jpg"
     },
     {
@@ -1412,7 +1412,7 @@
      "name": "Beets, Red, Fresh, Organic",
      "size": "5 lb",
      "price": 11.66,
-     "stock": 1061,
+     "stock": 1038,
      "img": "images/azure/qp033.jpg"
     },
     {
@@ -1498,7 +1498,7 @@
      "name": "Plastic Bucket, 5 Gallon",
      "size": "5 gal bucket",
      "price": 9.75,
-     "stock": 8030,
+     "stock": 8029,
      "img": "images/azure/ps092.jpg"
     },
     {
@@ -1578,7 +1578,7 @@
      "name": "Canning Jars, Half-Gallon, Wide Mouth",
      "size": "6 x 64 oz with lids and bands",
      "price": 15.18,
-     "stock": 25,
+     "stock": 142,
      "img": "images/azure/nf011.jpg"
     },
     {
@@ -1920,7 +1920,7 @@
      "name": "Whole Field Peas, Animal Feed, Organic",
      "size": "50 lb",
      "price": 38.69,
-     "stock": 2039,
+     "stock": 2006,
      "img": "images/azure/gp559.jpg"
     },
     {
@@ -1980,7 +1980,7 @@
      "name": "Diatomaceous Earth, Codex Grade",
      "size": "5 lb",
      "price": 7.48,
-     "stock": 1389,
+     "stock": 1349,
      "img": "images/azure/gp009.jpg"
     },
     {

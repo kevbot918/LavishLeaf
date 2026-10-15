@@ -6,7 +6,7 @@
 // Every text reads "Lavish Leaf: <text> Reply STOP to opt out." (lib/sms.mjs).
 import { adminFromRequest, json } from '../lib/admin.mjs';
 import { allSubscribers, newsletterStore } from '../lib/newsletter.mjs';
-import { fullText, quietHoursOk, segments, sendSms, smsReady } from '../lib/sms.mjs';
+import { fullText, quietHoursOk, segments, sendSms, smsReady , smsConfig } from '../lib/sms.mjs';
 import { runBatch, smsStore, startJob, syncOptOuts, textable } from '../lib/sms-job.mjs';
 
 const clean = (t) => String(t || '').replace(/[\u0000-\u001f]/g, ' ').replace(/\s+/g, ' ').trim();
@@ -23,6 +23,8 @@ export default async (request) => {
       const job = await st.get('job', { type: 'json' }).catch(() => null);
       return json(200, {
         ready: smsReady(), quietOk: quietHoursOk(),
+        // Where texts are sent from (names only): helps a ResourceNotFound (2026-10-15).
+        setup: (() => { const c = smsConfig(); return { region: c.region, regionFrom: c.regionFrom, keys: c.keys, from: c.from ? c.from.replace(/\d(?=\d{4})/g, '*') : null }; })(),
         consented: subs.filter((s) => s.smsConsent).length,
         textable: textable(subs).length,
         optedOut: subs.filter((s) => s.smsOptOut).length,

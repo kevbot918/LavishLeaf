@@ -41,6 +41,9 @@ export function smsConfig(env = process.env) {
     region: String(env.SMS_REGION || env.SES_REGION || 'us-east-1').trim(),
     accessKeyId: env.SMS_ACCESS_KEY_ID || env.SES_ACCESS_KEY_ID || '',
     secretAccessKey: env.SMS_SECRET_ACCESS_KEY || env.SES_SECRET_ACCESS_KEY || '',
+    // Which pair is in use and where the region came from (names only, never values).
+    keys: env.SMS_ACCESS_KEY_ID ? 'SMS_*' : env.SES_ACCESS_KEY_ID ? 'SES_* (email)' : 'no',
+    regionFrom: env.SMS_REGION ? 'SMS_REGION' : env.SES_REGION ? 'SES_REGION (email)' : 'default',
   };
 }
 export const smsReady = (env = process.env) => { const c = smsConfig(env); return !!(c.from && c.accessKeyId && c.secretAccessKey); };
@@ -89,7 +92,12 @@ async function api(cfg, action, payload, fetchImpl = fetch) {
     const type = String(json.__type || res.headers.get('x-amzn-errortype') || '').split('#').pop().split(':')[0];
     const reason = String(json.Reason || json.reason || '');
     const msg = String(json.message || json.Message || '').slice(0, 200);
-    throw new SmsError(`AWS said ${res.status} ${type}${reason ? ' (' + reason + ')' : ''}: ${msg}`, {
+    // The usual set-up mistake, said in words (2026-10-15): AWS looked for the
+    // number in another region or another account than the one that owns it.
+    const where = /ResourceNotFound/i.test(type) && /phone-number/i.test(msg)
+      ? ` [Asked in region ${cfg.region} with the ${cfg.keys} keys. The number must be in that region and account: set SMS_REGION to the number's region (us-east-1) and SMS_ACCESS_KEY_ID / SMS_SECRET_ACCESS_KEY to the keys of the account that owns it, then redeploy.]`
+      : '';
+    throw new SmsError(`AWS said ${res.status} ${type}${reason ? ' (' + reason + ')' : ''}: ${msg}${where}`, {
       optedOut: /OPTED_OUT/i.test(reason) || /opted.?out/i.test(msg),
       temporary: res.status >= 500 || /Throttling/i.test(type),
     });

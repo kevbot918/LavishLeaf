@@ -69,16 +69,13 @@
     }
   }
 
-  function wire() {
-    var links = document.querySelectorAll('a.donate-paypal');
-    for (var i = 0; i < links.length; i++) {
-      links[i].addEventListener('click', openDonate);
-    }
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', wire);
-  } else {
-    wire();
+  // One listener for the whole page (2026-10-15), so a link added later (the
+  // header's Donate button, nav-cart.js) opens the pop-up as well.
+  if (!window.__llDonate) {
+    window.__llDonate = true;
+    document.addEventListener('click', function (e) {
+      var a = e.target && e.target.closest ? e.target.closest('a.donate-paypal') : null;
+      if (a) openDonate.call(a, e);
+    });
   }
 })();

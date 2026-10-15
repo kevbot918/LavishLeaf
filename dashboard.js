@@ -796,7 +796,7 @@
     var txOut = el('p', 'db-hint', ''); tx.appendChild(txOut);
     function txStatus() {
       api('sms-admin', { action: 'status' }).then(function (r) {
-        txMsg.textContent = (r.ready ? '' : 'Not set up yet: finish the Amazon toll-free number steps (OWNER-STEPS, "Texting"). ') + num(r.textable) + ' can be texted (' + num(r.consented) + ' said yes, ' + num(r.optedOut) + ' replied STOP).' + (r.quietOk ? '' : ' It is outside 9 am to 8 pm Central, so a send waits until morning.');
+        txMsg.textContent = (r.ready ? '' : 'Not set up yet: finish the Amazon toll-free number steps (OWNER-STEPS, "Texting"). ') + num(r.textable) + ' can be texted (' + num(r.consented) + ' said yes, ' + num(r.optedOut) + ' replied STOP).' + (r.quietOk ? '' : ' It is outside 9 am to 8 pm Central, so a send waits until morning.') + (r.setup ? ' Sending from ' + (r.setup.from || 'no number') + ' in ' + r.setup.region + ' (' + r.setup.regionFrom + '), keys ' + r.setup.keys + '.' : '');
         var j = r.job;
         txCancel.hidden = !(j && !j.done && !j.canceled);
         txOut.textContent = j ? (j.canceled ? 'Last send canceled: ' : j.done ? 'Last send finished: ' : 'Sending now: ') + '"' + j.text.slice(0, 60) + (j.text.length > 60 ? '...' : '') + '", ' + num(j.sent) + ' sent, ' + num(j.left) + ' left' + (j.failed ? ', ' + j.failed + ' failed' : '') + (j.optedOut ? ', ' + j.optedOut + ' had opted out' : '') + '.' + (j.errors && j.errors.length ? ' Last error: ' + j.errors[j.errors.length - 1] : '') : '';

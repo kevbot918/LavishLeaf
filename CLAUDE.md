@@ -777,3 +777,21 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     links open their Green Swaps section (#seedsnow, #azure, #palladium; the
     SeedsNow block has id="seedsnow"). Sidebar, shelves and cards condensed
     (the overrides at the end of store.css).
+
+48. **2026-10-15, third list.** Home: Recycling Pick-Up is a division card
+    (out of Future); the hero line is smaller on phones. **Registration from
+    Rec Sports** (store.html?add=<registration>) opened the empty cart over the
+    form: cart.js handleArrival no longer opens the cart for a registration or
+    an options product. **Donate**: nav-cart.js adds a green Donate button
+    beside the header cart on every page (a heart on phones, where the email
+    icon leaves the header so the logo keeps its size) and loads donate.js,
+    which now listens on the whole document; Home and Company donate buttons
+    open the donate.html pop-up; every donate button is green. Founder photo is
+    a fixed 160px circle (the phone layout had stretched it). Future Roles
+    cards fill a phone's width. Store: the Your lists row is gone from Home;
+    the foot note has Green Swaps on its own line; new hero lede; **Groceries
+    ends with 20 Azure items** (first four of each food line, azureCard(x,
+    'Groceries')); phones get a green labeled Browse pill, a one-time hint
+    (localStorage ll-browse-hint) and a 280px drawer. **Texting**: AWS
+    ResourceNotFound for the phone number = wrong region or account; the
+    error and the dashboard card now name the region and key set in use.

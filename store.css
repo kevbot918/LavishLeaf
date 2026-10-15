@@ -856,3 +856,33 @@ body.ss-resizing .ss-side { transition: none; }
   box-shadow: 0 1px 3px rgba(0,0,0,.35);
 }
 .sp-sale[hidden] { display: none; }
+/* The note at the foot of Home: Green Swaps on its own line (2026-10-15). */
+.ss-home-foot-gs { display: block; margin-top: 8px; }
+
+/* The store menu on a phone (owner, 2026-10-15: "a bit tricky to notice we
+   have a sidebar", and "a bit less wide"). A labeled, filled green pill is
+   found far more often than an outlined icon; a one-time hint (store.js
+   browseHint) teaches it; the drawer is narrower. */
+@media (max-width: 1000px) {
+  .ss-side { width: min(280px, 80vw); }
+  .ss-menu { background: var(--accent-fill); border-color: var(--accent-fill); color: var(--on-accent); }
+  .ss-menu:hover { background: var(--leaf-bright, #6FD65F); }
+}
+@media (max-width: 640px) {
+  .ss-menu { padding: 6px 11px 6px 9px; gap: 5px; }
+  .ss-menu span { display: inline; font-size: .8rem; font-weight: 800; }
+  .ss-menu svg { width: 17px; height: 17px; }
+}
+.ss-hint {
+  position: fixed; z-index: 1100; max-width: 230px;
+  padding: 9px 12px; border-radius: 10px;
+  background: var(--accent-fill); color: var(--on-accent);
+  font-size: .82rem; font-weight: 700; line-height: 1.35;
+  box-shadow: 0 6px 20px rgba(0,0,0,.45); cursor: pointer;
+  animation: ss-hint-in .35s ease-out;
+}
+.ss-hint::before {
+  content: ''; position: absolute; top: -7px; left: 18px;
+  border: 7px solid transparent; border-top: 0; border-bottom-color: var(--accent-fill);
+}
+@keyframes ss-hint-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }

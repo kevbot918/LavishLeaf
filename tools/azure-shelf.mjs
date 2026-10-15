@@ -297,7 +297,7 @@ const html = [
     `  <div class="shelf-head"><h2>${esc(s.title)}</h2><a class="shelf-all" href="${esc(azureLink('/shop/category'))}" target="_blank" rel="sponsored noopener" data-affiliate="Azure Standard">More at Azure</a></div>`,
     `  <p class="shelf-note">${esc(s.note)}</p>`,
     '  <div class="shelf-row">',
-    s.items.map(azureCard).join('\n'),
+    s.items.map((x) => azureCard(x)).join('\n'),
     '  </div>',
     '</section>',
   ].join('\n')),

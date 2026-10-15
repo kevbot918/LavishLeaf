@@ -219,7 +219,7 @@ function azureShelf() {
     '  </div>',
     '  <p class="shelf-note">Organic pantry staples from our partner Azure Standard, delivered to a Drop near you or to your door. We earn commission on orders using these links, at no extra cost.</p>',
     '  <div class="shelf-row">',
-    AZURE.home.map((c) => all.get(c)).filter(Boolean).map(azureCard).join('\n\n'),
+    AZURE.home.map((c) => all.get(c)).filter(Boolean).map((x) => azureCard(x)).join('\n\n'),
     '  </div>',
     '</section>',
   ].join('\n');
@@ -245,6 +245,11 @@ function palladiumShelf() {
     '</section>',
   ].join('\n');
 }
+// Azure on the Groceries shelf (owner, 2026-10-15: "a bit of a variety ...
+// the best sellers of each category"): the first four of each food line in
+// azure-home.json (each line is in Azure's own favorites order), at the end.
+const AZURE_FOOD = ['Flour and grains', 'Beans and baking', 'Oils, honey and condiments', 'Snacks, nuts and drinks', 'Fresh and frozen, to a Drop'];
+const azureGroceries = () => (AZURE ? AZURE.shelves.filter((s) => AZURE_FOOD.includes(s.title)).flatMap((s) => s.items.slice(0, 4)).map((x) => azureCard(x, 'Groceries')).join('\n\n') : '');
 const palladiumOutdoor = () => (PALLADIUM ? PALLADIUM.outdoor.map(pdItem).filter(Boolean).map((x) => palladiumCard(x, 'Recreation & Outdoors')).join('\n\n') : '');
 
 /** One Home shelf per category, in the order categories first appear. */
@@ -267,6 +272,7 @@ function shelves(active) {
     // Palladium picks right after our own apparel (owner, 2026-10-15).
     (() => {
       const cards = ps.map(card);
+      if (name === 'Groceries' && azureGroceries()) return cards.concat(azureGroceries()).join('\n\n');
       if (name !== 'Recreation & Outdoors' || !palladiumOutdoor()) return cards.join('\n\n');
       const lastOwn = ps.map((p) => p.shipFrom === 'printful').lastIndexOf(true);
       cards.splice(lastOwn + 1, 0, palladiumOutdoor());

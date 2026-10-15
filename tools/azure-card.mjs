@@ -5,10 +5,10 @@ export const AID = 'aac4bd548d';
 export const azureLink = (path) => `https://www.azurestandard.com${path}${path.includes('?') ? '&' : '?'}a_aid=${AID}`;
 export const esc = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
 
-export function azureCard(x) {
+export function azureCard(x, category = 'Azure Standard') {
   const href = esc(azureLink(`/shop/product/${x.slug}/${x.id}?package=${x.code}`));
   return [
-    `  <article class="sp-card gs-az-card" data-id="az-${esc(x.code.toLowerCase())}" data-category="Azure Standard">`,
+    `  <article class="sp-card gs-az-card" data-id="az-${esc(x.code.toLowerCase())}" data-category="${esc(category)}">`,
     '    <div class="sp-media">',
     `      <img src="${esc(x.img)}" alt="${esc(x.name)}" loading="lazy">`,
     '      <span class="sp-badge sp-partner">Azure</span>',

@@ -772,9 +772,13 @@
     if (q.get('paypal')) {
       processReturn(q, clean);
     } else if (q.get('add')) {
+      // A registration opens its form (and a product with options its choice)
+      // instead of being added, so the empty cart must not open over it
+      // (owner, 2026-10-15: "Cart is Empty" covered the registration form).
+      var ap = products[q.get('add')];
       add(q.get('add'));
       clean();
-      open();
+      if (!(ap && (ap.registration || ap.options))) open();
     } else if (q.get('subscribe')) {
       var b = document.querySelector('[data-subscribe="' + CSS.escape(q.get('subscribe')) + '"]');
       clean();

@@ -371,7 +371,9 @@
     li.appendChild(nb); ul.appendChild(li);
   }
   function renderHomeLists() {
-    var row = $('#home-lists'); row.textContent = '';
+    // The Your lists row left Home (owner, 2026-10-15); lists live in the
+    // sidebar and behind the heart.
+    var row = $('#home-lists'); if (!row) return; row.textContent = '';
     state.lists.forEach(function (l) {
       var a = el('a', { class: 'sp-list', href: '#list/' + l.id });
       a.appendChild(svg(HEART));
@@ -1118,6 +1120,27 @@
     }).catch(function () { /* the prices written into the page stay */ });
   }
 
+  // A one-time hint on a phone that the Browse button opens the store menu
+  // (owner, 2026-10-15). Shown once per browser, gone on a tap or after 7 s.
+  function browseHint() {
+    var btn = $('#menu-open');
+    if (!btn || window.innerWidth > 1000) return;
+    try { if (localStorage.getItem('ll-browse-hint')) return; localStorage.setItem('ll-browse-hint', '1'); } catch (e) { return; }
+    setTimeout(function () {
+      var r = btn.getBoundingClientRect();
+      if (!r.width || r.top < 0 || r.top > window.innerHeight) return;
+      var tip = el('div', { class: 'ss-hint', role: 'status' }, 'Tap Browse for every shelf, your lists and our partners.');
+      tip.style.top = Math.round(r.bottom + 10) + 'px';
+      tip.style.left = Math.max(8, Math.round(r.left)) + 'px';
+      document.body.appendChild(tip);
+      function gone() { if (tip.parentNode) tip.parentNode.removeChild(tip); window.removeEventListener('scroll', gone); }
+      tip.addEventListener('click', function () { gone(); openMenu(); });
+      window.addEventListener('scroll', gone, { passive: true });
+      btn.addEventListener('click', gone);
+      setTimeout(gone, 7000);
+    }, 1500);
+  }
+
   // ------------------------------------------------------------ go
   readCatalogue();
   fetchStock();
@@ -1135,4 +1158,5 @@
   buildAccount();
   refreshHearts();
   route();
+  browseHint();
 })();

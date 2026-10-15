@@ -338,7 +338,7 @@ header {
 }
 
 .home-hero h1 {
-  font-size: clamp(1.9rem, 1.2rem + 3.4vw, 2.6rem);
+  font-size: clamp(1.3rem, 0.95rem + 2.6vw, 2.4rem);
   font-weight: 800;
   color: var(--white);
   max-width: 980px;
@@ -1119,8 +1119,9 @@ td.td-hl { background: #eecc00 !important; color: #000 !important; font-weight: 
 
 .donate-btn:hover { opacity: 0.9; text-decoration: none; }
 .donate-btn i { font-size: 1.15rem; }
-.donate-paypal { background: #009cde; color: #002b52; }
-.donate-paypal:hover { background: #35b9ee; color: #002b52; }
+/* Donate buttons are green (owner, 2026-10-15: "a green button instead of the paypal blue"). */
+.btn.donate-paypal, .donate-btn.donate-paypal { background: var(--leaf); color: var(--ink); }
+.btn.donate-paypal:hover, .donate-btn.donate-paypal:hover { background: var(--leaf-bright); color: var(--ink); }
 
 /* PayPal's own hosted button renders a fixed GIF that cannot be restyled, so
    it is given room rather than fought with. */
@@ -1477,3 +1478,51 @@ footer {
 .cart-code-row .btn-small { padding: 8px 14px; font-size: .9rem; }
 .cart-link { background: none; border: 0; color: var(--leaf-bright, #6FD65F); text-decoration: underline; cursor: pointer; font: inherit; padding: 0; }
 .cart-out { display: block; width: 100%; color: #F2B8A0; font-size: .82rem; font-weight: 700; margin-top: 2px; }
+
+/* The header Donate button (owner, 2026-10-15): green, beside the store
+   button on every page; nav-cart.js adds it, donate.js opens the pop-up. */
+.nav-right a.nav-donate {
+  width: auto; height: 36px; padding: 0 14px; margin-left: 6px; gap: 7px;
+  border-radius: 999px; background: var(--leaf); color: var(--ink);
+  font-size: 0.9rem; font-weight: 800;
+}
+.nav-right a.nav-donate:hover { background: var(--leaf-bright); color: var(--ink); }
+.nav-right a.nav-donate i { font-size: 0.85rem; }
+@media (max-width: 920px) {
+  /* On a phone: a green heart the size of the other header icons. */
+  .nav-right a.nav-donate { width: 36px; height: 36px; padding: 0; margin-left: 2px; }
+  .nav-right a.nav-donate span { display: none; }
+}
+
+/* The header Donate button (owner, 2026-10-15): green, beside the store
+   button on every page; nav-cart.js adds it, donate.js opens the pop-up. */
+.nav-right a.nav-donate {
+  width: auto; height: 36px; padding: 0 14px; margin-left: 6px; gap: 7px;
+  border-radius: 999px; background: var(--leaf); color: var(--ink);
+  font-size: 0.9rem; font-weight: 800;
+}
+.nav-right a.nav-donate:hover { background: var(--leaf-bright); color: var(--ink); }
+.nav-right a.nav-donate i { font-size: 0.85rem; }
+@media (max-width: 920px) {
+  /* On a phone: a green heart the size of the other header icons. */
+  .nav-right a.nav-donate { width: 36px; height: 36px; padding: 0; margin-left: 2px; }
+  .nav-right a.nav-donate span { display: none; }
+}
+
+/* Founder photo (owner, 2026-10-15: "my face is cutoff" on a phone). In the
+   stacked phone layout flex-basis became the HEIGHT and the frame stretched
+   wide, so the circle turned into a wide oval that cropped the face. A fixed
+   size in both directions keeps it a circle everywhere. */
+.founder-photo { flex: none; width: 160px; height: 160px; }
+.founder-photo img { object-position: 50% 35%; }
+
+/* Future Roles on a phone (owner, 2026-10-15): one card fills the width, so
+   the text has room and the cards are shorter. */
+@media (max-width: 600px) {
+  .career-col { flex: 1 1 100%; max-width: 520px; padding: 16px 16px; }
+}
+@media (max-width: 920px) {
+  /* Room for the Donate heart without squeezing the logo (2026-10-15): the
+     email icon leaves the phone header; the address is in every footer. */
+  .nav-right a.m-keep[href^="mailto:"] { display: none; }
+}
