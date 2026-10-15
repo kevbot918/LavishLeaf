@@ -29,7 +29,7 @@
   var SHELF_LENGTH = 1000;
   // The sidebar's width, px. Owner, 2026-10-10: wider (was 340); 2026-10-15:
   // "a bit less wide" now its rows are condensed (390 -> 310).
-  var SIDE_W = 300, SIDE_MIN = 240, SIDE_MAX = 560, OLD_SIDE_W = [310, 340, 390];
+  var SIDE_W = 250, SIDE_MIN = 220, SIDE_MAX = 560, OLD_SIDE_W = [300, 310, 340, 390];
   var DEFAULTS = { sort: 'relevance', sideW: SIDE_W, lists: [], shelfOrder: [] };
 
   // ------------------------------------------------------------ state

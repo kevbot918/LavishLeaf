@@ -801,10 +801,12 @@
       txOut.textContent = 'Asking AWS...';
       api('sms-admin', { action: 'check' }).then(function (r) {
         var lines = ['Keys belong to AWS account ' + (r.account || '(unknown)') + (r.user ? ' (' + r.user + ')' : '') + ', region ' + r.region + '. Sending from ' + (r.from || 'no number') + '.'];
-        if (!r.numbers.length) lines.push('That account has NO phone numbers in ' + r.region + '. Either the number is in another account or region, or AWS has not created it yet (a toll-free number appears once its registration is approved).');
+        var denied = r.errors.some(function (x) { return /AccessDenied/.test(x); });
+        if (denied) lines.push('AWS would not show the numbers or the registration: the user ' + (r.user || '') + ' needs permission to read them (IAM, add sms-voice:DescribePhoneNumbers and sms-voice:DescribeRegistrations), then press Check again.');
+        else if (!r.numbers.length) lines.push('That account has NO phone numbers in ' + r.region + '. Either the number is in another account or region, or AWS has not created it yet (a toll-free number appears once its registration is approved).');
         r.numbers.forEach(function (n) { lines.push('Number ' + n.number + ': ' + n.status + ' (' + n.type + ')' + (n.status !== 'ACTIVE' ? '. It can send only once ACTIVE.' : '') + (n.number === r.from ? '' : ' (not the number in SMS_ORIGINATION_NUMBER)')); });
         r.registrations.forEach(function (g) { lines.push('Registration ' + g.type + ': ' + g.status + '.'); });
-        if (r.errors.length) lines.push('AWS errors: ' + r.errors.join('; '));
+        if (r.errors.length && !denied) lines.push('AWS errors: ' + r.errors.join('; '));
         txOut.textContent = lines.join(' ');
       }).catch(function (e) { txOut.textContent = e.message; });
     });

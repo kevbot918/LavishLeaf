@@ -26,7 +26,7 @@
   --mark: 'Sriracha', cursive;
   --radius: 12px;
   --radius-sm: 8px;
-  --side-w: 300px;
+  --side-w: 250px;
   --top-h: 64px;
   --ease: 180ms cubic-bezier(.2,.7,.2,1);
 
@@ -928,3 +928,11 @@ body.ss-resizing .ss-side { transition: none; }
 .sp-name { margin-top: 5px; }
 .sp-blurb { margin-top: 2px; line-height: 1.3; }
 .sp-card { padding-bottom: 6px; }
+/* Narrower again (owner, 2026-10-15, with a screenshot): 250px on a computer,
+   at most 240px as the phone drawer; the brand line and actions tighten to fit. */
+@media (max-width: 1000px) { .ss-side { width: min(240px, 72vw); } }
+.ss-side-head { padding: 8px 10px 6px; }
+.ss-brand-line { font-size: .74rem; }
+.ss-side-actions { padding: 0 8px 4px; }
+.ss-action-note { margin-left: 33px; }
+.ss-nav { padding: 2px 8px 10px; }
