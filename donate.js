@@ -23,6 +23,26 @@
   var WIDTH = 500;
   var HEIGHT = 720;
 
+  var panel = null;
+  function openPanel(href) {
+    if (!panel) {
+      panel = document.createElement('dialog');
+      panel.className = 'dn-panel';
+      panel.setAttribute('aria-label', 'Donate to Lavish Leaf');
+      panel.innerHTML = '<button type="button" class="dn-panel-x" aria-label="Close">&times;</button><iframe title="Donate to Lavish Leaf"></iframe>';
+      document.body.appendChild(panel);
+      panel.querySelector('.dn-panel-x').addEventListener('click', function () { panel.close(); });
+      panel.addEventListener('click', function (e) { if (e.target === panel) panel.close(); });
+      window.addEventListener('message', function (e) {
+        if (e.origin === location.origin && e.data && e.data.llDonateClose && panel.open) panel.close();
+      });
+    }
+    var url = new URL(href, location.href);
+    url.searchParams.set('embed', '1');
+    panel.querySelector('iframe').src = url.pathname + url.search;
+    if (panel.showModal) panel.showModal(); else panel.setAttribute('open', '');
+  }
+
   function openDonate(e) {
     // A modified click is the visitor asking for a tab or a window of their
     // own; never take that away from them.
@@ -33,6 +53,16 @@
 
     var href = this.href;
     if (!href) return;
+
+    // A phone has no pop-up windows (window.open gives a whole new tab), so
+    // the donation form opens as a pop-up panel over this page instead
+    // (owner, 2026-10-15). PayPal's own step still opens in its own tab:
+    // PayPal will not run inside another site's frame.
+    if (window.matchMedia && window.matchMedia('(max-width: 760px)').matches) {
+      e.preventDefault();
+      openPanel(href);
+      return;
+    }
 
     // Centre on the screen the browser is actually on, not on screen 0,
     // otherwise a second monitor throws the pop-up onto the first one. A

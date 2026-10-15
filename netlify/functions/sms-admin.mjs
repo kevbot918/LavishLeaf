@@ -6,7 +6,7 @@
 // Every text reads "Lavish Leaf: <text> Reply STOP to opt out." (lib/sms.mjs).
 import { adminFromRequest, json } from '../lib/admin.mjs';
 import { allSubscribers, newsletterStore } from '../lib/newsletter.mjs';
-import { fullText, quietHoursOk, segments, sendSms, smsReady , smsConfig } from '../lib/sms.mjs';
+import { fullText, quietHoursOk, segments, sendSms, setupCheck, smsReady, smsConfig } from '../lib/sms.mjs';
 import { runBatch, smsStore, startJob, syncOptOuts, textable } from '../lib/sms-job.mjs';
 
 const clean = (t) => String(t || '').replace(/[\u0000-\u001f]/g, ' ').replace(/\s+/g, ' ').trim();
@@ -31,6 +31,8 @@ export default async (request) => {
         job: job ? { text: job.text, created: job.created, sent: job.sent, left: job.queue.length, failed: job.failed, optedOut: job.optedOut, done: !!job.done, canceled: !!job.canceled, errors: job.errors } : null,
       });
     }
+    // Ask AWS what the keys can see (account, numbers, registrations), 2026-10-15.
+    if (body.action === 'check') return json(200, await setupCheck());
     if (!smsReady()) return json(400, { error: 'Texting is not set up yet: the toll-free number and SMS_ORIGINATION_NUMBER in Netlify (docs/OWNER-STEPS.md, "Texting").' });
     const text = clean(body.text);
     if (body.action === 'test' || body.action === 'send') {

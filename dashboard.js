@@ -792,8 +792,22 @@
     var txTest = h('<button type="button" class="db-btn-ghost"><i class="fas fa-mobile-screen"></i> Send a test to my phone</button>');
     var txSend = h('<button type="button" class="db-btn"><i class="fas fa-paper-plane"></i> Send to everyone who said yes</button>');
     var txCancel = h('<button type="button" class="db-btn-ghost" hidden><i class="fas fa-ban"></i> Cancel the send</button>');
-    txBar.appendChild(txTest); txBar.appendChild(txSend); txBar.appendChild(txCancel); tx.appendChild(txBar);
+    // Ask AWS what our keys can see (2026-10-15): which account, which numbers
+    // and their status, and the registration, in plain words.
+    var txCheck = h('<button type="button" class="db-btn-ghost"><i class="fas fa-stethoscope"></i> Check texting setup</button>');
+    txBar.appendChild(txTest); txBar.appendChild(txSend); txBar.appendChild(txCancel); txBar.appendChild(txCheck); tx.appendChild(txBar);
     var txOut = el('p', 'db-hint', ''); tx.appendChild(txOut);
+    txCheck.addEventListener('click', function () {
+      txOut.textContent = 'Asking AWS...';
+      api('sms-admin', { action: 'check' }).then(function (r) {
+        var lines = ['Keys belong to AWS account ' + (r.account || '(unknown)') + (r.user ? ' (' + r.user + ')' : '') + ', region ' + r.region + '. Sending from ' + (r.from || 'no number') + '.'];
+        if (!r.numbers.length) lines.push('That account has NO phone numbers in ' + r.region + '. Either the number is in another account or region, or AWS has not created it yet (a toll-free number appears once its registration is approved).');
+        r.numbers.forEach(function (n) { lines.push('Number ' + n.number + ': ' + n.status + ' (' + n.type + ')' + (n.status !== 'ACTIVE' ? '. It can send only once ACTIVE.' : '') + (n.number === r.from ? '' : ' (not the number in SMS_ORIGINATION_NUMBER)')); });
+        r.registrations.forEach(function (g) { lines.push('Registration ' + g.type + ': ' + g.status + '.'); });
+        if (r.errors.length) lines.push('AWS errors: ' + r.errors.join('; '));
+        txOut.textContent = lines.join(' ');
+      }).catch(function (e) { txOut.textContent = e.message; });
+    });
     function txStatus() {
       api('sms-admin', { action: 'status' }).then(function (r) {
         txMsg.textContent = (r.ready ? '' : 'Not set up yet: finish the Amazon toll-free number steps (OWNER-STEPS, "Texting"). ') + num(r.textable) + ' can be texted (' + num(r.consented) + ' said yes, ' + num(r.optedOut) + ' replied STOP).' + (r.quietOk ? '' : ' It is outside 9 am to 8 pm Central, so a send waits until morning.') + (r.setup ? ' Sending from ' + (r.setup.from || 'no number') + ' in ' + r.setup.region + ' (' + r.setup.regionFrom + '), keys ' + r.setup.keys + '.' : '');

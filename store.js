@@ -29,7 +29,7 @@
   var SHELF_LENGTH = 1000;
   // The sidebar's width, px. Owner, 2026-10-10: wider (was 340); 2026-10-15:
   // "a bit less wide" now its rows are condensed (390 -> 310).
-  var SIDE_W = 310, SIDE_MIN = 240, SIDE_MAX = 560, OLD_SIDE_W = [340, 390];
+  var SIDE_W = 300, SIDE_MIN = 240, SIDE_MAX = 560, OLD_SIDE_W = [310, 340, 390];
   var DEFAULTS = { sort: 'relevance', sideW: SIDE_W, lists: [], shelfOrder: [] };
 
   // ------------------------------------------------------------ state
@@ -745,6 +745,9 @@
     var hasCart = document.body.getAttribute('data-checkout') === 'cart';
     $('#cart-open').addEventListener('click', function () {
       if (hasCart && window.LLCart) window.LLCart.open();
+      // A tap before cart.js has loaded its catalog (slower on a phone) waits
+      // for it, instead of the old "coming soon" note (owner, 2026-10-15).
+      else if (hasCart) document.addEventListener('ll-cart-ready', function once() { document.removeEventListener('ll-cart-ready', once); window.LLCart.open(); });
       else toast('Online checkout is coming soon. For now, each product\'s button emails us to order.');
     });
     if (hasCart) {

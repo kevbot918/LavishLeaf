@@ -98,14 +98,24 @@
     return fetch('/.netlify/functions/donate', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok) throw new Error(j.error || 'Something went wrong. Nothing was charged.'); return j; }); });
   }
+  // In the phone pop-up panel (?embed=1, donate.js, 2026-10-15) PayPal opens in
+  // its own tab, opened now while the tap still counts, so it is not blocked.
+  var EMBED = q.get('embed') === '1';
   go.addEventListener('click', function () {
+    var tab = null;
+    if (EMBED) { try { tab = window.open('', '_blank'); } catch (e) { tab = null; } }
     go.disabled = true; say('Opening PayPal...');
     if (window.gtag) gtag('event', 'donate_start', { value: Number(amount.value) || 0, currency: 'USD', division: sel.value });
     post({ action: 'create', amount: amount.value, division: sel.value })
-      .then(function (r) { location.href = r.approve; })
-      .catch(function (e) { go.disabled = false; say(e.message, true); });
+      .then(function (r) {
+        if (tab) { tab.location.href = r.approve; go.disabled = false; say('Finish in the PayPal tab; this window says thank you when you are done.'); }
+        else if (EMBED) window.top.location.href = r.approve;
+        else location.href = r.approve;
+      })
+      .catch(function (e) { if (tab) { try { tab.close(); } catch (x) { /* already gone */ } } go.disabled = false; say(e.message, true); });
   });
   document.getElementById('dn-close').addEventListener('click', function () {
+    if (EMBED) { try { window.parent.postMessage({ llDonateClose: true }, location.origin); } catch (x) { /* not in a panel */ } return; }
     window.close();
     setTimeout(function () { location.href = 'index.html'; }, 300); // a phone tab cannot close itself
   });
@@ -119,13 +129,23 @@
     post({ action: 'capture', orderId: q.get('token') }).then(function (r) {
       if (r.status !== 'COMPLETED') throw new Error('PayPal has not finished the payment. Nothing was charged; please try again.');
       text.textContent = 'Your donation of $' + Number(r.amount).toFixed(2) + ' went through. A thank-you email is on its way, along with PayPal\'s receipt.';
+      // The phone pop-up panel that opened this tab thanks them too (2026-10-15).
+      try { if (window.opener) window.opener.postMessage({ llDonated: Number(r.amount) }, location.origin); } catch (x) { /* nothing waiting */ }
       document.getElementById('dn-close').hidden = false;
       if (window.gtag) gtag('event', 'donate_complete', { value: Number(r.amount) || 0, currency: 'USD' });
       history.replaceState(null, '', 'donate.html');
     }).catch(function (e) {
       document.getElementById('dn-form').hidden = false; done.hidden = true; say(e.message, true);
     });
-  } else if (q.get('paypal') === 'cancel') {
+  }
+  // In the panel: the PayPal tab reports a finished donation.
+  window.addEventListener('message', function (e) {
+    if (e.origin !== location.origin || !e.data || !e.data.llDonated) return;
+    document.getElementById('dn-form').hidden = true;
+    document.getElementById('dn-done').hidden = false;
+    document.getElementById('dn-done-text').textContent = 'Your donation of $' + Number(e.data.llDonated).toFixed(2) + ' went through. A thank-you email is on its way, along with PayPal\'s receipt.';
+  });
+  if (q.get('paypal') === 'cancel') {
     say('No donation was made. You can try again any time.');
   }
 })();

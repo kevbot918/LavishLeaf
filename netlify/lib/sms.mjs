@@ -115,6 +115,36 @@ export async function sendSms(to, text, { env = process.env, fetchImpl = fetch, 
   return r.MessageId || null;
 }
 
+/**
+ * What AWS itself says about the set-up (2026-10-15, a ResourceNotFound on a
+ * number the owner can see in his console): the account the keys belong to,
+ * the numbers that account has in this region with their status, and the
+ * registrations. Names and statuses only; nothing secret.
+ */
+export async function setupCheck({ env = process.env, fetchImpl = fetch } = {}) {
+  const cfg = smsConfig(env);
+  const out = { region: cfg.region, regionFrom: cfg.regionFrom, keys: cfg.keys, from: cfg.from, account: null, numbers: [], registrations: [], errors: [] };
+  try {
+    const body = 'Action=GetCallerIdentity&Version=2011-06-15';
+    const headers = signV4({ method: 'POST', host: 'sts.amazonaws.com', path: '/', body, service: 'sts', region: 'us-east-1',
+      headers: { 'content-type': 'application/x-www-form-urlencoded' }, accessKeyId: cfg.accessKeyId, secretAccessKey: cfg.secretAccessKey });
+    const r = await fetchImpl('https://sts.amazonaws.com/', { method: 'POST', headers, body });
+    const t = await r.text();
+    out.account = (t.match(/<Account>(\d+)<\/Account>/) || [])[1] || null;
+    out.user = ((t.match(/<Arn>([^<]+)<\/Arn>/) || [])[1] || '').split(':').pop() || null;
+    if (!r.ok) out.errors.push('STS ' + r.status);
+  } catch (e) { out.errors.push('STS: ' + e.message); }
+  try {
+    const r = await api(cfg, 'DescribePhoneNumbers', { MaxResults: 20 }, fetchImpl);
+    out.numbers = (r.PhoneNumbers || []).map((n) => ({ number: n.PhoneNumber, status: n.Status, type: n.NumberType, id: n.PhoneNumberId, arn: n.PhoneNumberArn, registration: n.RegistrationId || null }));
+  } catch (e) { out.errors.push('Phone numbers: ' + e.message); }
+  try {
+    const r = await api(cfg, 'DescribeRegistrations', { MaxResults: 20 }, fetchImpl);
+    out.registrations = (r.Registrations || []).map((g) => ({ id: g.RegistrationId, type: g.RegistrationType, status: g.RegistrationStatus, version: g.CurrentVersionNumber }));
+  } catch (e) { out.errors.push('Registrations: ' + e.message); }
+  return out;
+}
+
 /** Every number on AWS's Default opt-out list (people who texted STOP). */
 export async function optedOutNumbers({ env = process.env, fetchImpl = fetch } = {}) {
   const cfg = smsConfig(env);

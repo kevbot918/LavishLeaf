@@ -806,3 +806,18 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     them; 3:2 photos, tighter shelves, titles nearer their cards; shorter
     partner banners; "Back to Store Home Shelves" on shelf and list pages;
     Green Swaps lede reworded.
+
+50. **2026-10-15, fifth list.** Texting: the owner's Netlify SMS_* keys and
+    us-east-1 are right, the number string is right (originationId keeps a
+    +1 number as is), yet AWS says the number does not exist: the dashboard's
+    "Check texting setup" (sms-admin "check", lib/sms setupCheck: STS
+    GetCallerIdentity, DescribePhoneNumbers, DescribeRegistrations) shows the
+    account, every number with its status and the registration status (a
+    toll-free number that is not ACTIVE cannot send). Sidebar 300px (310 moves
+    to it), phone drawer min(270px, 78vw). The store's cart button waits for
+    cart.js on a slow phone instead of saying "coming soon". **Donate on a
+    phone** (<= 760px): donate.js opens donate.html?embed=1 in an in-page
+    panel (dialog + iframe); its PayPal button pre-opens a tab (so it is not
+    blocked) and PayPal runs there (PayPal cannot be framed); the return page
+    posts llDonated to its opener, so the panel thanks them too. Cards: 8:5
+    photos.

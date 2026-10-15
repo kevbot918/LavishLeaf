@@ -26,7 +26,7 @@
   --mark: 'Sriracha', cursive;
   --radius: 12px;
   --radius-sm: 8px;
-  --side-w: 310px;
+  --side-w: 300px;
   --top-h: 64px;
   --ease: 180ms cubic-bezier(.2,.7,.2,1);
 
@@ -921,3 +921,10 @@ body.ss-resizing .ss-side { transition: none; }
 .ss-back a { color: var(--accent); text-decoration: none; }
 .ss-back a:hover { text-decoration: underline; }
 @media (max-width: 1000px) { .ss-back { padding: 0 16px; } }
+/* 10px narrower again on phones (owner, 2026-10-15). */
+@media (max-width: 1000px) { .ss-side { width: min(270px, 78vw); } }
+/* Cards a little shorter again (owner, 2026-10-15): wider photos, tighter text. */
+.sp-media { aspect-ratio: 8 / 5; }
+.sp-name { margin-top: 5px; }
+.sp-blurb { margin-top: 2px; line-height: 1.3; }
+.sp-card { padding-bottom: 6px; }
