@@ -3274,7 +3274,7 @@ export const catalog = {
   "pf-trucker-cap": {
     "id": "pf-trucker-cap",
     "name": "Lavish Leaf Trucker Cap",
-    "price": 2449,
+    "price": 2400,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -3308,7 +3308,7 @@ export const catalog = {
   "pf-women-s-organic-ribbed-neck-shirt-lavish-leaf": {
     "id": "pf-women-s-organic-ribbed-neck-shirt-lavish-leaf",
     "name": "Women's Organic Cotton Tee: Lavish Leaf",
-    "price": 2299,
+    "price": 2000,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -3357,7 +3357,7 @@ export const catalog = {
   "pf-women-s-organic-ribbed-neck-shirt-symphonymph": {
     "id": "pf-women-s-organic-ribbed-neck-shirt-symphonymph",
     "name": "Women's Organic Cotton Tee: Symphonymph",
-    "price": 2299,
+    "price": 2000,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -3406,7 +3406,7 @@ export const catalog = {
   "pf-unisex-organic-cotton-shirt-symphonymph": {
     "id": "pf-unisex-organic-cotton-shirt-symphonymph",
     "name": "Unisex Organic Cotton Tee: Symphonymph",
-    "price": 2599,
+    "price": 2100,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -3463,7 +3463,7 @@ export const catalog = {
   "pf-unisex-organic-cotton-shirt-lavish-leaf": {
     "id": "pf-unisex-organic-cotton-shirt-lavish-leaf",
     "name": "Unisex Organic Cotton Tee: Lavish Leaf",
-    "price": 2599,
+    "price": 2100,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -3520,7 +3520,7 @@ export const catalog = {
   "pf-symphonymph-stickers": {
     "id": "pf-symphonymph-stickers",
     "name": "Symphonymph Sticker, 3 x 3 in",
-    "price": 449,
+    "price": 400,
     "interval": null,
     "active": true,
     "paypalPlanId": null,
@@ -3554,7 +3554,7 @@ export const catalog = {
   "pf-unisex-hoodie-symphonymph": {
     "id": "pf-unisex-hoodie-symphonymph",
     "name": "Unisex Hoodie: Symphonymph",
-    "price": 4249,
+    "price": 3400,
     "interval": null,
     "active": true,
     "paypalPlanId": null,

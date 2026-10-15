@@ -77,11 +77,10 @@ for (const { sync_product: sp, sync_variants: svs } of items) {
     // Cost (private): the dearest variant's catalog price.
     let cost = 0;
     for (const v of vs) { const cv = await catalogVariant(v.variant_id); cost = Math.max(cost, Math.round(Number(cv.variant && cv.variant.price) * 100) || 0); }
-    // One price for every size (owner, 2026-10-14), never under the floor:
-    // the price that makes FLOOR% on the dearest size after PayPal.
+    // The owner's own Printful prices, exactly (2026-10-15: "change those back
+    // to the prices I had set on Printful"). Under the floor is only warned.
     const floorCents = nice(Math.ceil((cost + 49) / (1 - 0.0349 - FLOOR / 100)));
-    const raised = cents < floorCents;
-    if (raised) cents = floorCents; else if (!/(49|99)$/.test(String(cents))) cents = nice(cents);
+    const raised = false;
     const margin = Math.round(((cents - cost - (cents * 0.0349 + 49)) / cents) * 100);
     let minCost = Infinity;
     for (const v of vs) { const cv = await catalogVariant(v.variant_id); minCost = Math.min(minCost, Math.round(Number(cv.variant && cv.variant.price) * 100) || Infinity); }

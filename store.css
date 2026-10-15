@@ -177,19 +177,19 @@ body.ss-resizing .ss-side { transition: none; }
 
 .ss-nav { padding: 10px 12px 18px; flex: 1 1 auto; }
 .ss-heading {
-  margin: 18px 12px 6px; font-size: .72rem; font-weight: 800; letter-spacing: .14em;
+  margin: 14px 12px 4px; font-size: .72rem; font-weight: 800; letter-spacing: .14em;
   text-transform: uppercase; color: var(--muted);
 }
 .ss-item {
-  display: flex; align-items: center; gap: 14px;
-  width: 100%; padding: 11px 14px; margin: 2px 0;
+  display: flex; align-items: center; gap: 12px;
+  width: 100%; padding: 6px 12px; margin: 1px 0;
   border: 0; border-radius: 999px; background: transparent;
   color: var(--text); font-size: 1rem; font-weight: 600; text-align: left; cursor: pointer;
   transition: background var(--ease), color var(--ease);
 }
 .ss-item:hover { background: var(--surface-4); text-decoration: none; }
 .ss-item[aria-current="page"] { background: var(--accent-soft); color: var(--accent); }
-.ss-item svg { width: 22px; height: 22px; flex: 0 0 auto; fill: currentColor; opacity: .9; }
+.ss-item svg { width: 20px; height: 20px; flex: 0 0 auto; fill: currentColor; opacity: .9; }
 .ss-item-sub { font-weight: 500; color: var(--muted); font-size: .94rem; }
 .ss-item-sub:hover { color: var(--text); }
 .ss-item .ss-n { margin-left: auto; font-size: .8rem; color: var(--faint); font-weight: 600; }
@@ -805,3 +805,9 @@ body.ss-resizing .ss-side { transition: none; }
 .gs-az-card .sp-media { display: block; }
 .gs-az-card .sp-media img { background: #fff; object-fit: contain; }
 @media (max-width: 1000px) { .az-drops { margin-left: 16px; margin-right: 16px; } }
+/* Palladium Boots (2026-10-15): boot photos on white, the FALL20 and
+   free-shipping cards. */
+.gs-pd-shelf { margin-top: 10px; }
+.gs-pd-card .sp-media { display: block; }
+.gs-pd-card .sp-media img { background: #fff; object-fit: contain; }
+.pd-offer .pd-code { margin: 0; font-size: 1.6rem; font-weight: 800; letter-spacing: .06em; color: var(--accent); }

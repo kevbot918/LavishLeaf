@@ -439,14 +439,14 @@
       if (q.get('q') != null && input.value !== q.get('q')) input.value = q.get('q');
       runSearch();
       setTimeout(function () { input.focus(); }, 50);
-    } else if (path === 'swaps' || path === 'azure') {
+    } else if (path === 'swaps' || path === 'azure' || path === 'palladium') {
       show('swaps'); setTitle('Green Swaps');
       // Its shelves were measured while hidden: let the arrows measure again.
       setTimeout(function () { window.dispatchEvent(new Event('resize')); }, 30);
       // #azure: the Azure Standard part of Green Swaps (2026-10-14).
       // Scrolled to sit just under the sticky store bar, not beneath it.
-      if (path === 'azure') setTimeout(function () {
-        var a = $('#azure'), bar = $('.ss-top');
+      if (path === 'azure' || path === 'palladium') setTimeout(function () {
+        var a = $('#' + path), bar = $('.ss-top');
         if (a) window.scrollTo({ top: a.getBoundingClientRect().top + window.scrollY - (bar ? bar.getBoundingClientRect().bottom : 0) - 28, behavior: 'auto' });
       }, 60);
     } else if (path.indexOf('list/') === 0) {
@@ -950,9 +950,15 @@
     // A SeedsNow card (the Seeds shelf): sold and shipped by our partner.
     // An Azure Standard card (Home shelf and Green Swaps): sold by Azure.
     var azure = p.card.classList.contains('gs-az-card');
-    var partner = azure || p.card.classList.contains('gs-sn-card');
+    var boots = p.card.classList.contains('gs-pd-card');
+    var partner = azure || boots || p.card.classList.contains('gs-sn-card');
     $('.sp-pop-fine', pop).hidden = partner;
-    if (azure) {
+    if (boots) {
+      // Palladium Boots (2026-10-15), through our Ascend affiliate link.
+      fact('Sold and shipped by', 'our boot partner Palladium, at their prices; free shipping on orders over $90');
+      fact('Save', 'code FALL20 takes 20% off at Palladium for a limited time');
+      fact('Our link', 'Lavish Leaf earns a commission on your Palladium order, at no extra cost to you');
+    } else if (azure) {
       fact('Sold and delivered by', 'our pantry partner Azure Standard, at their prices, to a Drop near you or to your door');
       fact('Our link', 'Lavish Leaf earns a commission on your Azure order, at no extra cost to you');
     } else if (partner) {
@@ -1095,11 +1101,27 @@
     }).catch(function () { /* the prices written into the page stay */ });
   }
 
+  // Palladium Boots prices (2026-10-15): sale prices change; sold out hides.
+  function refreshPalladium() {
+    var spans = $$("[data-pd-price]");
+    if (!spans.length) return;
+    fetch("/.netlify/functions/palladium-prices").then(function (r) { if (!r.ok) throw new Error(); return r.json(); }).then(function (d) {
+      spans.forEach(function (sp) {
+        var h = sp.getAttribute("data-pd-price");
+        if (!(h in d.prices)) return;
+        var card = sp.closest(".sp-card");
+        if (d.prices[h] === null) { if (card) card.hidden = true; return; }
+        sp.textContent = d.prices[h];
+      });
+    }).catch(function () { /* the prices written into the page stay */ });
+  }
+
   // ------------------------------------------------------------ go
   readCatalogue();
   fetchStock();
   refreshSeedsNow();
   refreshAzure();
+  refreshPalladium();
   fetchTags();
   buildResize();
   buildChrome();

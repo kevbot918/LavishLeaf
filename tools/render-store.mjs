@@ -36,6 +36,7 @@ import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { azureCard } from './azure-card.mjs';
+import { palladiumCard } from './palladium-card.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const CHECK = process.argv.includes('--check');
@@ -224,6 +225,28 @@ function azureShelf() {
   ].join('\n');
 }
 
+// Palladium Boots (owner, 2026-10-15): its own Home shelf under Azure, and
+// waterproof picks at the end of Recreation & Outdoors; palladium-home.json
+// from tools/palladium-shelf.mjs. Affiliate links only (Ascend, 10%).
+const PALLADIUM = (() => { try { return JSON.parse(readFileSync(join(ROOT, 'palladium-home.json'), 'utf8')); } catch { return null; } })();
+const pdItem = (h) => PALLADIUM && PALLADIUM.items.find((x) => x.handle === h);
+function palladiumShelf() {
+  if (!PALLADIUM || !PALLADIUM.home.length) return '';
+  return [
+    '<section class="shelf" id="shelf-palladium-boots" data-shelf="palladium-boots" data-title="Palladium Boots">',
+    '  <div class="shelf-head">',
+    '    <h2>Palladium Boots</h2>',
+    '    <a class="shelf-all" href="#palladium">See all</a>',
+    '  </div>',
+    '  <p class="shelf-note">Boots from our partner Palladium. Use code FALL20 for 20% off, and orders over $90 ship free. Lavish Leaf earns a commission on orders through these links, at no extra cost to you.</p>',
+    '  <div class="shelf-row">',
+    PALLADIUM.home.map(pdItem).filter(Boolean).map((x) => palladiumCard(x)).join('\n\n'),
+    '  </div>',
+    '</section>',
+  ].join('\n');
+}
+const palladiumOutdoor = () => (PALLADIUM ? PALLADIUM.outdoor.map(pdItem).filter(Boolean).map((x) => palladiumCard(x, 'Recreation & Outdoors')).join('\n\n') : '');
+
 /** One Home shelf per category, in the order categories first appear. */
 function shelves(active) {
   const note = active.some((p) => p.demo)
@@ -241,11 +264,11 @@ function shelves(active) {
     `    <a class="shelf-all" href="#shelf/${slug(name)}">See all</a>`,
     '  </div>',
     '  <div class="shelf-row">',
-    ps.map(card).join('\n\n'),
+    ps.map(card).join('\n\n') + (name === 'Recreation & Outdoors' && palladiumOutdoor() ? '\n\n' + palladiumOutdoor() : ''),
     '  </div>',
     '</section>',
   ].join('\n') + (name === 'Farm & Garden' && seedsShelf() ? '\n\n' + seedsShelf() : '')
-    + (name === 'Pets' && azureShelf() ? '\n\n' + azureShelf() : '')).join('\n\n');
+    + (name === 'Pets' && azureShelf() ? '\n\n' + azureShelf() + (palladiumShelf() ? '\n\n' + palladiumShelf() : '') : '')).join('\n\n');
 }
 
 /** In cart mode a button on another page goes to the Store, product added. */

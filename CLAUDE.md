@@ -743,3 +743,22 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     Dashboard: "Send the apparel to Printful" = a DRAFT order; the owner
     confirms it in Printful. Azure Home shelf = every Azure product (135).
     The owner's Printful tracking-page logo (800 x 500) is in his Downloads.
+
+46. **2026-10-15.** **Palladium Boots** (Ascend/Partnerize, 10%):
+    tools/palladium-shelf.mjs reads palladiumboots.com's public Shopify
+    collections (men's and women's best sellers, waterproof, cold-weather;
+    boots and shoes only, at most two colors of a style, Palladium's
+    abbreviations spelled out only where certain; "WL" stays) and writes the
+    Green Swaps section between the PALLADIUM markers (after AZURE:END: feature,
+    a FALL20 card with its own tracking link, a free shipping over $90 card,
+    4 shelves), palladium-home.json and netlify/lib/palladium-handles.mjs.
+    render-store draws the "Palladium Boots" Home shelf right after Azure and
+    10 waterproof picks at the end of Recreation & Outdoors. Every link is
+    the tracking link with ?url=<palladium page> (deep link, measured).
+    functions/palladium-prices.mjs (each product's .js, 8 at a time, CDN 12 h)
+    keeps prices and hides sold-out cards. Remove the FALL20 card when the
+    code ends. **Printful prices are the owner's own** (he set them;
+    printful-import uses them exactly and only warns under 15%). The two
+    white-shirt photos are Printful "Flat" PNG mockups set on #d3d7d3 (the
+    women's design placed where his Printful mockup had it). Sidebar rows
+    6px padding. The owner will not press his own apparel: Printful stays.

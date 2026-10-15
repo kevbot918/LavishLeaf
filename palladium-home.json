@@ -1,0 +1,540 @@
+{
+ "_help": "Written by tools/palladium-shelf.mjs; drawn by tools/render-store.mjs (Home shelf \"Palladium Boots\", and the Recreation & Outdoors picks) and in Green Swaps. Public facts only; prices refresh live from functions/palladium-prices.mjs.",
+ "at": "2026-10-15",
+ "home": [
+  "79101-210-m",
+  "96907-008-m",
+  "72992-010-m",
+  "74977-008-m",
+  "78568-210-m",
+  "92352-060-m",
+  "74066-001-m",
+  "74977-241-m",
+  "79142-180-m",
+  "03234-001-m",
+  "94979-008-m",
+  "79142-305-m",
+  "92353-060-m",
+  "76835-008-m",
+  "94979-257-m",
+  "74497-180-m",
+  "92352-238-m",
+  "74383-008-m",
+  "99519-974-m",
+  "74482-008-m",
+  "74066-309-m",
+  "99516-219-m",
+  "74066-069-m",
+  "96907-204-m",
+  "74383-209-m",
+  "99519-978-m",
+  "74447-484-m",
+  "92353-221-m",
+  "76835-308-m",
+  "99516-175-m",
+  "74447-656-m",
+  "72992-063-m",
+  "98840-254-m",
+  "05982-010-m",
+  "74485-185-m",
+  "79101-008-m",
+  "95982-377-m",
+  "04632-008-m",
+  "74474-008-m",
+  "94380-175-m",
+  "74482-116-m",
+  "78568-008-m",
+  "74483-008-m",
+  "94349-175-m",
+  "04630-305-m",
+  "74474-116-m",
+  "04630-161-m",
+  "94349-008-m",
+  "74483-116-m",
+  "02352-060-m",
+  "02352-071-m",
+  "79568-614-m"
+ ],
+ "outdoor": [
+  "72992-010-m",
+  "74066-001-m",
+  "03234-001-m",
+  "76835-008-m",
+  "74383-008-m",
+  "74066-309-m",
+  "74383-209-m",
+  "76835-308-m",
+  "98840-254-m",
+  "74482-008-m"
+ ],
+ "items": [
+  {
+   "handle": "79101-210-m",
+   "model": "Pampa Hi Zip Organic",
+   "name": "Pampa Hi Zip Organic, Sahara",
+   "price": 64,
+   "was": 80,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/79101-210-original.png?v=1758439821&width=400",
+   "blurb": "Boot from Palladium, in sahara. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "78568-210-m",
+   "model": "Pallashock Organic 2",
+   "name": "Pallashock Organic 2, Sahara",
+   "price": 75,
+   "was": 100,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/78568-210-original.png?v=1761515120&width=400",
+   "blurb": "Shoe from Palladium, in sahara. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "79142-180-m",
+   "model": "Palla Ace Chukka Organic",
+   "name": "Palla Ace Chukka Organic, Cream White",
+   "price": 52.5,
+   "was": 75,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/79142-180-original.png?v=1759822157&width=400",
+   "blurb": "Shoe from Palladium, in cream white. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "79142-305-m",
+   "model": "Palla Ace Chukka Organic",
+   "name": "Palla Ace Chukka Organic, Vintage Green",
+   "price": 52.5,
+   "was": 75,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/79142-305-original.png?v=1758179406&width=400",
+   "blurb": "Shoe from Palladium, in vintage green. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "74497-180-m",
+   "model": "Pampa Demodog",
+   "name": "Pampa Demodog, Cream White",
+   "price": 70.2,
+   "was": 90,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/74497-180-original.jpg?v=1760337098&width=400",
+   "blurb": "Boot from Palladium, in cream white. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "74482-008-m",
+   "model": "Offbound Waterproof",
+   "name": "Offbound Waterproof, Black",
+   "price": 120,
+   "was": 150,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/74482-008-original.png?v=1763118856&width=400",
+   "blurb": "Waterproof shoe from Palladium, in black. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "74066-069-m",
+   "model": "Pampa Recycled Lite Waterproof Zip",
+   "name": "Pampa Recycled Lite Waterproof Zip, Glacier Gray",
+   "price": 128,
+   "was": 160,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/74066-069-original.png?v=1763445962&width=400",
+   "blurb": "Waterproof boot from Palladium, in glacier gray. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "74447-484-m",
+   "model": "Palla Ace Canvas Organic",
+   "name": "Palla Ace Canvas Organic, Retro Blue",
+   "price": 35,
+   "was": 70,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/74447-484-original.png?v=1759821932&width=400",
+   "blurb": "Shoe from Palladium, in retro blue. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "74447-656-m",
+   "model": "Palla Ace Canvas Organic",
+   "name": "Palla Ace Canvas Organic, Chili Pepper",
+   "price": 35,
+   "was": 70,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/74447-656-original.png?v=1758438028&width=400",
+   "blurb": "Shoe from Palladium, in chili pepper. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "74485-185-m",
+   "model": "Pallacup Flame Leather",
+   "name": "Pallacup Flame Leather, Cream White/Peaskin",
+   "price": 54.9,
+   "was": 90,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/74485-185-original_523018e8-0f18-4449-9914-aabd5faf10e0.png?v=1785489906&width=400",
+   "blurb": "Shoe from Palladium, in cream white/peaskin. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "04632-008-m",
+   "model": "Palla Ace Vines",
+   "name": "Palla Ace Vines, Black",
+   "price": 57.75,
+   "was": 75,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/04632-008-original.png?v=1763442274&width=400",
+   "blurb": "Men's shoe from Palladium, in black. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "74482-116-m",
+   "model": "Offbound Waterproof",
+   "name": "Offbound Waterproof, Star White",
+   "price": 82.5,
+   "was": 150,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/74482-116-original_0c32ffa9-f1a9-4c10-865d-bce7acb7b866.png?v=1784704351&width=400",
+   "blurb": "Waterproof shoe from Palladium, in star white. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "04630-305-m",
+   "model": "Palla Ace Tigers",
+   "name": "Palla Ace Tigers, Vintage Green",
+   "price": 53.2,
+   "was": 70,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/04630-305-original.png?v=1763442275&width=400",
+   "blurb": "Men's shoe from Palladium, in vintage green. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "04630-161-m",
+   "model": "Palla Ace Tigers",
+   "name": "Palla Ace Tigers, Cream White",
+   "price": 53.2,
+   "was": 70,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/04630-161-original.png?v=1763442269&width=400",
+   "blurb": "Men's shoe from Palladium, in cream white. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "02352-060-m",
+   "model": "Pampa Hi",
+   "name": "Pampa Hi, Black/Black",
+   "price": 70,
+   "was": null,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/02352-060-original.png?v=1763118738&width=400",
+   "blurb": "Men's boot from Palladium, in black/black. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "02352-071-m",
+   "model": "Pampa Hi",
+   "name": "Pampa Hi, Gray Flannel",
+   "price": 56,
+   "was": 70,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/02352-071-original_7c3e8b0b-6b89-43ad-a99e-a79160630a7a.png?v=1763445804&width=400",
+   "blurb": "Men's boot from Palladium, in gray flannel. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "96907-008-m",
+   "model": "Pallabase Twill",
+   "name": "Pallabase Twill, Black/Black",
+   "price": 80,
+   "was": null,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/96907-008-original.png?v=1763446187&width=400",
+   "blurb": "Women's boot from Palladium, in black/black. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "92352-060-m",
+   "model": "Pampa Hi",
+   "name": "Pampa Hi, Black/Black",
+   "price": 56,
+   "was": 70,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/92352-060-original.png?v=1759158111&width=400",
+   "blurb": "Women's boot from Palladium, in black/black. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "72992-010-m",
+   "model": "Pampa Sport Cuff Waterproof",
+   "name": "Pampa Sport Cuff Waterproof, Black/Black",
+   "price": 136,
+   "was": 170,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/72992-010-original.png?v=1763445960&width=400",
+   "blurb": "Waterproof boot from Palladium, in black/black. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "92353-060-m",
+   "model": "Baggy",
+   "name": "Baggy, Black/Black",
+   "price": 80,
+   "was": null,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/92353-060-original.png?v=1759996534&width=400",
+   "blurb": "Women's boot from Palladium, in black/black. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "92352-238-m",
+   "model": "Pampa Hi",
+   "name": "Pampa Hi, Sahara/Ecru",
+   "price": 70,
+   "was": null,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/92352-238-original.png?v=1788254304&width=400",
+   "blurb": "Women's boot from Palladium, in sahara/ecru. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "74066-001-m",
+   "model": "Pampa Recycled Lite Waterproof Zip",
+   "name": "Pampa Recycled Lite Waterproof Zip, Black/Black",
+   "price": 128,
+   "was": 160,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/74066-001-original_68863ffe-6428-4088-a075-5044fe7e0ac2.png?v=1761510026&width=400",
+   "blurb": "Waterproof boot from Palladium, in black/black. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "96907-204-m",
+   "model": "Pallabase Twill",
+   "name": "Pallabase Twill, Butternut",
+   "price": 64,
+   "was": 80,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/96907-204-original_fdba23c1-e05c-4165-bd62-6beb5adaedc7.png?v=1764696885&width=400",
+   "blurb": "Women's boot from Palladium, in butternut. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "92353-221-m",
+   "model": "Baggy",
+   "name": "Baggy, Sahara/Safari",
+   "price": 80,
+   "was": null,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/92353-221-original_76020bdd-f56a-450c-bc15-5aaa29a52087.png?v=1764696826&width=400",
+   "blurb": "Women's boot from Palladium, in sahara/safari. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "72992-063-m",
+   "model": "Pampa Sport Cuff Waterproof",
+   "name": "Pampa Sport Cuff Waterproof, Dark Shadow",
+   "price": 93.5,
+   "was": 170,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/72992-063-original.png?v=1763445955&width=400",
+   "blurb": "Waterproof boot from Palladium, in dark shadow. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "79101-008-m",
+   "model": "Pampa Hi Zip Organic",
+   "name": "Pampa Hi Zip Organic, Black",
+   "price": 68,
+   "was": 80,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/79101-008-original.png?v=1759822478&width=400",
+   "blurb": "Boot from Palladium, in black. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "78568-008-m",
+   "model": "Pallashock Organic 2",
+   "name": "Pallashock Organic 2, Black",
+   "price": 100,
+   "was": null,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/78568-008-original.png?v=1759822453&width=400",
+   "blurb": "Shoe from Palladium, in black. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "76835-008-m",
+   "model": "Pampa SP20 Cuff Waterproof",
+   "name": "Pampa SP20 Cuff Waterproof, Black/Black",
+   "price": 100,
+   "was": null,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/76835-008-original.png?v=1759996433&width=400",
+   "blurb": "Waterproof boot from Palladium, in black/black. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "94349-008-m",
+   "model": "Pallashock Hiver",
+   "name": "Pallashock Hiver, Black",
+   "price": 60,
+   "was": 120,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/94349-008-original.png?v=1759502524&width=400",
+   "blurb": "Women's boot from Palladium, in black. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "94349-175-m",
+   "model": "Pallashock Hiver",
+   "name": "Pallashock Hiver, Almond Milk",
+   "price": 69.6,
+   "was": 120,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/94349-175-original.png?v=1759503770&width=400",
+   "blurb": "Women's boot from Palladium, in almond milk. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "03234-001-m",
+   "model": "Pampa Sport Cuff Waterproof",
+   "name": "Pampa Sport Cuff Waterproof, Black",
+   "price": 120,
+   "was": null,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/03234-001-original.png?v=1763445815&width=400",
+   "blurb": "Men's waterproof boot from Palladium, in black. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "74383-008-m",
+   "model": "Pampa Lite Xplor Waterproof",
+   "name": "Pampa Lite Xplor Waterproof, Black",
+   "price": 120,
+   "was": 150,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/74383-008-original_916e4307-9c60-411c-866a-41908fdb1f73.png?v=1763119818&width=400",
+   "blurb": "Waterproof boot from Palladium, in black. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "74066-309-m",
+   "model": "Pampa Recycled Lite Waterproof Zip",
+   "name": "Pampa Recycled Lite Waterproof Zip, Olive Night",
+   "price": 128,
+   "was": 160,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/74066-309-original.jpg?v=1722328251&width=400",
+   "blurb": "Waterproof boot from Palladium, in olive night. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "74383-209-m",
+   "model": "Pampa Lite Xplor Waterproof",
+   "name": "Pampa Lite Xplor Waterproof, Woodlin",
+   "price": 120,
+   "was": 150,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/74383-209-original.png?v=1763118866&width=400",
+   "blurb": "Waterproof boot from Palladium, in woodlin. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "76835-308-m",
+   "model": "Pampa SP20 Cuff Waterproof",
+   "name": "Pampa SP20 Cuff Waterproof, Dusky Green/Black",
+   "price": 100,
+   "was": null,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/76835-308-original.png?v=1761505220&width=400",
+   "blurb": "Waterproof boot from Palladium, in dusky green/black. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "98840-254-m",
+   "model": "Pallabrousse Hiker Waterproof",
+   "name": "Pallabrousse Hiker Waterproof, Nude Brown",
+   "price": 110.25,
+   "was": 175,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/98840-254-original.png?v=1763446199&width=400",
+   "blurb": "Waterproof boot from Palladium, in nude brown. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "74474-008-m",
+   "model": "Pampa Lite Lo Xplor Waterproof",
+   "name": "Pampa Lite Lo Xplor Waterproof, Black",
+   "price": 85.4,
+   "was": 140,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/74474-008-original.png?v=1763445973&width=400",
+   "blurb": "Waterproof shoe from Palladium, in black. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "74483-008-m",
+   "model": "Offbound Waterproof Zip",
+   "name": "Offbound Waterproof Zip, Black",
+   "price": 109.5,
+   "was": 150,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/74483-008-original.png?v=1758179242&width=400",
+   "blurb": "Waterproof shoe from Palladium, in black. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "74474-116-m",
+   "model": "Pampa Lite Lo Xplor Waterproof",
+   "name": "Pampa Lite Lo Xplor Waterproof, Star White",
+   "price": 85.4,
+   "was": 140,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/74474-116-original_e71902e1-832c-4816-ab6b-26f15a5d374b.png?v=1785767578&width=400",
+   "blurb": "Waterproof shoe from Palladium, in star white. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "74483-116-m",
+   "model": "Offbound Waterproof Zip",
+   "name": "Offbound Waterproof Zip, Star White",
+   "price": 79.5,
+   "was": 150,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/74483-116-original_20bd0a22-a1e6-49b8-8b0c-8b781e5e3128.png?v=1785489941&width=400",
+   "blurb": "Waterproof shoe from Palladium, in star white. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "79568-614-m",
+   "model": "SP20 Cuff Leather Waterproof",
+   "name": "SP20 Cuff Leather Waterproof, Mahogany",
+   "price": 130,
+   "was": null,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/79568-614-M.00.png?v=1784802714&width=400",
+   "blurb": "Waterproof boot from Palladium, in mahogany. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "74977-008-m",
+   "model": "Pampa Zip WL Pilot",
+   "name": "Pampa Zip WL Pilot, Black",
+   "price": 100,
+   "was": null,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/74977-008-original.png?v=1782829622&width=400",
+   "blurb": "Boot from Palladium, in black. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "74977-241-m",
+   "model": "Pampa Zip WL Pilot",
+   "name": "Pampa Zip WL Pilot, Tuman Shitake",
+   "price": 100,
+   "was": null,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/74977-241-original.png?v=1782829538&width=400",
+   "blurb": "Boot from Palladium, in tuman shitake. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "94979-008-m",
+   "model": "Pampa Hi Zip WL Wild",
+   "name": "Pampa Hi Zip WL Wild, Black",
+   "price": 100,
+   "was": null,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/94979-008-original.png?v=1781667636&width=400",
+   "blurb": "Women's boot from Palladium, in black. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "94979-257-m",
+   "model": "Pampa Hi Zip WL Wild",
+   "name": "Pampa Hi Zip WL Wild, Warm Sand",
+   "price": 100,
+   "was": null,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/94979-257-original.png?v=1781667526&width=400",
+   "blurb": "Women's boot from Palladium, in warm sand. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "99519-974-m",
+   "model": "Pampa Hi Zip WL Leo",
+   "name": "Pampa Hi Zip WL Leo, Dear Brown / Black",
+   "price": 75,
+   "was": 100,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/99519-974-original.png?v=1763472424&width=400",
+   "blurb": "Women's boot from Palladium, in dear brown / black. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "99516-219-m",
+   "model": "Pallashock Lo Hiver",
+   "name": "Pallashock Lo Hiver, Irish Brown",
+   "price": 100,
+   "was": null,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/99516-219-original.png?v=1759822521&width=400",
+   "blurb": "Women's shoe from Palladium, in irish brown. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "99519-978-m",
+   "model": "Pampa Hi Zip WL Leo",
+   "name": "Pampa Hi Zip WL Leo, Wave Gray/Brown",
+   "price": 78,
+   "was": 100,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/99519-978-original.png?v=1759822522&width=400",
+   "blurb": "Women's boot from Palladium, in wave gray/brown. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "99516-175-m",
+   "model": "Pallashock Lo Hiver",
+   "name": "Pallashock Lo Hiver, Almond Milk",
+   "price": 78,
+   "was": 100,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/99516-175-original.png?v=1763472427&width=400",
+   "blurb": "Women's shoe from Palladium, in almond milk. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "05982-010-m",
+   "model": "Pampa Hi Zip WL",
+   "name": "Pampa Hi Zip WL, All Black",
+   "price": 78,
+   "was": 120,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/05982-010-original.png?v=1759821925&width=400",
+   "blurb": "Men's boot from Palladium, in all black. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "95982-377-m",
+   "model": "Pampa Hi Zip WL",
+   "name": "Pampa Hi Zip WL, Dusky Green",
+   "price": 80.4,
+   "was": 120,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/95982-377-original.png?v=1758438613&width=400",
+   "blurb": "Women's boot from Palladium, in dusky green. Sold and shipped by Palladium."
+  },
+  {
+   "handle": "94380-175-m",
+   "model": "Pampa Hi Snow Warm",
+   "name": "Pampa Hi Snow Warm, Almond Milk",
+   "price": 74.8,
+   "was": 110,
+   "img": "https://cdn.shopify.com/s/files/1/0007/1791/4148/files/94380-175-original_44e01b89-c69f-41ff-a38d-0475943b8c89.png?v=1784798787&width=400",
+   "blurb": "Women's boot from Palladium, in almond milk. Sold and shipped by Palladium."
+  }
+ ]
+}
