@@ -39,13 +39,16 @@ export default async (request) => {
   try {
     const store = await newsletterStore();
     const details = { email, first, last: d['last-name'] || '', phone: d.phone || '', source: form || 'form', sms: String(d.sms || '').toLowerCase() === 'yes' };
-    if (form === 'newsletter') {
+    // Volunteer event alerts (Social page, 2026-10-15): a newsletter sign-up
+    // tagged "volunteer", so the contacts list shows who wants event news.
+    if (form === 'volunteer') { d.subscribe = 'yes'; details.source = 'volunteer'; }
+    if (form === 'newsletter' || form === 'volunteer') {
       // The form's "Sign up for news and updates" box is ticked by default;
       // unticked means the person only wanted to leave their details, which
       // are kept as a contact (never re-adding somebody who unsubscribed).
       if (String(d.subscribe || '').toLowerCase() !== 'yes') { await addContact(store, { ...details, declined: true }); return ok(); }
       const { record, isNew } = await subscribe(store, {
-        email, first, last: d['last-name'] || '', source: pageOf(real),
+        email, first, last: d['last-name'] || '', source: form === 'volunteer' ? 'volunteer' : pageOf(real),
       });
       await addContact(store, details); // the phone number, kept with them
       if (isNew && !record.welcomed && mailReady() && mailConfig().postal) {

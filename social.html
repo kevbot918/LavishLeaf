@@ -115,6 +115,18 @@
   </a>
 </div>
 
+<!-- VOLUNTEER (owner, 2026-10-15): small, beside the socials where events are announced.
+     The "volunteer" form joins the newsletter tagged volunteer (submission-created.mjs). -->
+<section class="volunteer-card" id="volunteer">
+  <h2><i class="fas fa-hand-holding-heart"></i> Volunteer With Us</h2>
+  <p>Trash pick-ups, tree plantings and more around Stigler, McAlester, Checotah and Eufaula. We post every event here on our socials; get an email when the next one is set.</p>
+  <form name="volunteer" data-netlify="true" class="volunteer-form" onsubmit="handleVolunteer(event)"><input type="hidden" name="form-name" value="volunteer">
+    <label class="sr-only" for="vol-email">Email</label>
+    <input type="email" id="vol-email" name="email" placeholder="Your email" required>
+    <button type="submit" class="btn btn-sm">Get event alerts</button>
+  </form>
+</section>
+
 <hr class="divider" style="margin:20px 0;">
 
 <!-- THE FEEDS, each full width (owner, 2026-10-01): every post its own small
@@ -289,6 +301,13 @@
   }).catch(function() {
     alert("There was a problem. Please email support@lavishleaf.org");
   });
+}
+  function handleVolunteer(e) {
+  e.preventDefault();
+  var f = e.target;
+  fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams(new FormData(f)).toString() })
+    .then(function() { f.innerHTML = "<p class=\"form-success\">Thank you! We will email you when the next event is set.</p>"; })
+    .catch(function() { alert("There was a problem. Please email support@lavishleaf.org"); });
 }
   function handleNewsletter(e) {
   e.preventDefault();
