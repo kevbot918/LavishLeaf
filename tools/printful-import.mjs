@@ -20,10 +20,11 @@ import { call, storeProducts, shippingCents } from '../netlify/lib/printful.mjs'
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const WRITE = process.argv.includes('--write');
+const FLOOR = 15; // margin floor, percent (owner, 2026-10-11)
 const env = Object.fromEntries(readFileSync(join(ROOT, '.env'), 'utf8').split(/\r?\n/).filter((l) => /^[A-Z_]+=/.test(l)).map((l) => [l.slice(0, l.indexOf('=')), l.slice(l.indexOf('=') + 1).trim().replace(/^"|"$/g, '')]));
 if (!env.PRINTFUL_API_TOKEN) { console.error('Add PRINTFUL_API_TOKEN=... to .env first.'); process.exit(1); }
 const opts = { env };
-const SHELF = 'Lavish Leaf Apparel';
+const SHELF = 'Recreation & Outdoors';
 const STIGLER = { address1: '1 Main St', city: 'Stigler', state_code: 'OK', zip: '74462', country_code: 'US' };
 const slug = (s) => s.toLowerCase().replace(/['.]/g, '').replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60);
 const SIZE_ORDER = ['XXS', 'XS', 'S', 'M', 'L', 'XL', '2XL', 'XXL', '3XL', 'XXXL', '4XL', '5XL', '6XL'];
@@ -51,12 +52,14 @@ for (const { sync_product: sp, sync_variants: svs } of items) {
   const groups = new Map();
   for (const v of live) { const k = Math.round(Number(v.retail_price) * 100); if (!groups.has(k)) groups.set(k, []); groups.get(k).push(v); }
   const ordered = [...groups].sort((a, b) => a[0] - b[0]);
-  for (const [gi, [cents, vs]] of ordered.entries()) {
+  for (const [gi, [setCents, vs]] of ordered.entries()) {
+    let cents = setCents;
     vs.sort((a, b) => String(a.color).localeCompare(String(b.color)) || sizeRank(a.size) - sizeRank(b.size));
     const colors = [...new Set(vs.map((v) => v.color).filter(Boolean))];
     const sizes = [...new Set(vs.map((v) => v.size).filter(Boolean))];
     const big = ordered.length > 1 && gi > 0;
-    const name = (sp.name + (big ? ' (' + sizes.join(', ') + ')' : '')).replace(/\s*[–—]\s*/g, ': ');
+    // "Unisex Hoodie - Symphonymph" -> "Unisex Hoodie: Symphonymph"
+    const name = sp.name.replace(/\s+[-–—]\s+/g, ': ').replace(/’/g, "'") + (big ? ' (' + sizes.join(', ') + ')' : '');
     const id = 'pf-' + slug(sp.name) + (big ? '-' + slug(sizes[0]) + '-up' : '');
     let options = null;
     const valueName = (v) => colors.length > 1 && sizes.length > 1 ? v.color + ', ' + v.size : sizes.length > 1 ? v.size : colors.length > 1 ? v.color : null;
@@ -74,7 +77,15 @@ for (const { sync_product: sp, sync_variants: svs } of items) {
     // Cost (private): the dearest variant's catalog price.
     let cost = 0;
     for (const v of vs) { const cv = await catalogVariant(v.variant_id); cost = Math.max(cost, Math.round(Number(cv.variant && cv.variant.price) * 100) || 0); }
+    // One price for every size (owner, 2026-10-14), never under the floor:
+    // the price that makes FLOOR% on the dearest size after PayPal.
+    const floorCents = nice(Math.ceil((cost + 49) / (1 - 0.0349 - FLOOR / 100)));
+    const raised = cents < floorCents;
+    if (raised) cents = floorCents; else if (!/(49|99)$/.test(String(cents))) cents = nice(cents);
     const margin = Math.round(((cents - cost - (cents * 0.0349 + 49)) / cents) * 100);
+    let minCost = Infinity;
+    for (const v of vs) { const cv = await catalogVariant(v.variant_id); minCost = Math.min(minCost, Math.round(Number(cv.variant && cv.variant.price) * 100) || Infinity); }
+    const common = Math.round(((cents - minCost - (cents * 0.0349 + 49)) / cents) * 100);
     const blurb = (`Our own Lavish Leaf design on ${/^[aeiou]/i.test(productType) ? 'an' : 'a'} ${productType.toLowerCase() || 'item'}${model ? ' (' + model.split('|').pop().trim() + ')' : ''}, printed for you when you order.` +
       (colors.length > 1 ? ' In ' + colors.join(', ').toLowerCase() + '.' : '')).slice(0, 199);
     made.push({
@@ -86,14 +97,19 @@ for (const { sync_product: sp, sync_variants: svs } of items) {
       ...(options ? { options } : {}),
       source: { supplier: 'Printful', item: String(sp.id), sv: String(vs[0].id), variant: vs[0].name },
     });
-    console.log(`${name} | $${(cents / 100).toFixed(2)} | cost $${(cost / 100).toFixed(2)} | margin ${margin}% | ship $${((one ? one.cents : 0) / 100).toFixed(2)} +$${(((two && one) ? two.cents - one.cents : 0) / 100).toFixed(2)} | ${options ? options.label + ': ' + options.values.length : 'one variant'}` +
+    console.log(`${name} | $${(cents / 100).toFixed(2)}${raised ? ' (yours $' + (setCents / 100).toFixed(2) + ')' : ''} | cost $${(minCost / 100).toFixed(2)} to $${(cost / 100).toFixed(2)} | margin ${common}% common sizes, ${margin}% dearest | ship $${((one ? one.cents : 0) / 100).toFixed(2)} +$${(((two && one) ? two.cents - one.cents : 0) / 100).toFixed(2)} | ${options ? options.label + ': ' + options.values.length : 'one variant'}` +
       (margin < 15 ? '   <-- under 15%' : '') + (!/(49|99)$/.test(String(cents)) ? '   (price not .49/.99; ' + (cents / 100).toFixed(2) + ' -> ' + (nice(cents) / 100).toFixed(2) + '?)' : ''));
   }
 }
 if (!WRITE) { console.log('\nDry run. Add --write to put these on the store.'); process.exit(0); }
-// Replace earlier imports, keep everything else; the apparel shelf comes first.
+// Replace earlier imports, keep everything else; the apparel leads its shelf
+// (owner, 2026-10-14: on Recreation & Outdoors), which keeps its place on Home.
 const keep = j.products.filter((p) => !(p.source && p.source.supplier === 'Printful'));
-j.products = [...made, ...keep];
+// Names and descriptions written by hand on the store stay (2026-10-14).
+for (const m of made) { const old = j.products.find((p) => p.id === m.id); if (old) { m.name = old.name; m.imageAlt = old.imageAlt; m.emailSubject = old.emailSubject; m.blurb = old.blurb; m.tags = old.tags; } }
+let at = keep.findIndex((p) => p.category === SHELF && !p.registration);
+if (at < 0) at = keep.length;
+j.products = [...keep.slice(0, at), ...made, ...keep.slice(at)];
 writeFileSync(join(ROOT, 'products.json'), JSON.stringify(j, null, 2) + '\n');
 if (photos.length) {
   const list = join(ROOT, 'tools', '.printful-photos.json');

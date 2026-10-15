@@ -731,3 +731,15 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     clothing blurbs give the size M measurement because there is no size
     chart on our pop-up. **Merch**: docs/MERCH-SUPPLIERS.md (Printful first,
     Printify backup, Custom Ink for league jerseys).
+
+45. **2026-10-14, night. Printful is live.** netlify/lib/printful.mjs (the
+    token is account-wide, so the "Lavish Leaf" store id is looked up from
+    /stores, never "Personal orders"); tools/printful-import.mjs reads the
+    store's products, keeps hand-written names and blurbs on reruns, prices
+    each product at one price for every size (owner) but never under 15% on
+    the dearest size, and places them at the start of Recreation & Outdoors
+    (owner: on that shelf, not their own). Shipping rule "printful" =
+    Printful's own rate to 74462 (dearest item + each extra unit's add-on).
+    Dashboard: "Send the apparel to Printful" = a DRAFT order; the owner
+    confirms it in Printful. Azure Home shelf = every Azure product (135).
+    The owner's Printful tracking-page logo (800 x 500) is in his Downloads.

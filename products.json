@@ -3407,6 +3407,488 @@
       "league": "Soccer: 7v7 Adult League, Fall 2026"
     },
     {
+      "id": "pf-trucker-cap",
+      "name": "Lavish Leaf Trucker Cap",
+      "category": "Recreation & Outdoors",
+      "tags": [
+        "lavish leaf",
+        "merch",
+        "apparel",
+        "trucker",
+        "cap",
+        "hat",
+        "shirt",
+        "tee",
+        "clothing",
+        "symphonymph"
+      ],
+      "image": "images/store/pf-481781090.jpg",
+      "imageAlt": "Lavish Leaf Trucker Cap",
+      "blurb": "Heather gray trucker cap with a black mesh back, a snapback closure and our embroidered Lavish Leaf oval patch (Richardson 112). Made for you when you order.",
+      "price": 2449,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Lavish Leaf Trucker Cap",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 5,
+      "shipFrom": "printful",
+      "shipCents": 469,
+      "shipAddCents": 200,
+      "source": {
+        "supplier": "Printful",
+        "item": "481781090",
+        "sv": "5574959355",
+        "variant": "Trucker Cap"
+      }
+    },
+    {
+      "id": "pf-women-s-organic-ribbed-neck-shirt-lavish-leaf",
+      "name": "Women's Organic Cotton Tee: Lavish Leaf",
+      "category": "Recreation & Outdoors",
+      "tags": [
+        "lavish leaf",
+        "merch",
+        "apparel",
+        "womens",
+        "organic",
+        "ribbed",
+        "neck",
+        "shirt",
+        "lavish",
+        "leaf",
+        "tee",
+        "clothing",
+        "symphonymph",
+        "eco"
+      ],
+      "image": "images/store/pf-481781086.jpg",
+      "imageAlt": "Women's Organic Cotton Tee: Lavish Leaf",
+      "blurb": "White midweight organic cotton tee with a ribbed neck and our green Lavish Leaf oval (Stanley/Stella Muser). Printed for you when you order.",
+      "price": 2299,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Women's Organic Cotton Tee: Lavish Leaf",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 7,
+      "shipFrom": "printful",
+      "shipCents": 495,
+      "shipAddCents": 220,
+      "options": {
+        "label": "Size",
+        "values": [
+          {
+            "name": "S",
+            "pf": 5574959319,
+            "note": "Women’s organic ribbed neck shirt - Lavish Leaf / S"
+          },
+          {
+            "name": "M",
+            "pf": 5574959320,
+            "note": "Women’s organic ribbed neck shirt - Lavish Leaf / M"
+          },
+          {
+            "name": "L",
+            "pf": 5574959321,
+            "note": "Women’s organic ribbed neck shirt - Lavish Leaf / L"
+          },
+          {
+            "name": "XL",
+            "pf": 5574959322,
+            "note": "Women’s organic ribbed neck shirt - Lavish Leaf / XL"
+          },
+          {
+            "name": "2XL",
+            "pf": 5574959323,
+            "note": "Women’s organic ribbed neck shirt - Lavish Leaf / 2XL"
+          }
+        ]
+      },
+      "source": {
+        "supplier": "Printful",
+        "item": "481781086",
+        "sv": "5574959319",
+        "variant": "Women’s organic ribbed neck shirt - Lavish Leaf / S"
+      },
+      "eco": true
+    },
+    {
+      "id": "pf-women-s-organic-ribbed-neck-shirt-symphonymph",
+      "name": "Women's Organic Cotton Tee: Symphonymph",
+      "category": "Recreation & Outdoors",
+      "tags": [
+        "lavish leaf",
+        "merch",
+        "apparel",
+        "womens",
+        "organic",
+        "ribbed",
+        "neck",
+        "shirt",
+        "symphonymph",
+        "tee",
+        "clothing",
+        "eco"
+      ],
+      "image": "images/store/pf-481781085.jpg",
+      "imageAlt": "Women's Organic Cotton Tee: Symphonymph",
+      "blurb": "Black midweight organic cotton tee with a ribbed neck and our Symphonymph moon and treble clef art (Stanley/Stella Muser). Printed for you when you order.",
+      "price": 2299,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Women's Organic Cotton Tee: Symphonymph",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 7,
+      "shipFrom": "printful",
+      "shipCents": 495,
+      "shipAddCents": 220,
+      "options": {
+        "label": "Size",
+        "values": [
+          {
+            "name": "S",
+            "pf": 5574959314,
+            "note": "Women’s organic ribbed neck shirt - Symphonymph / S"
+          },
+          {
+            "name": "M",
+            "pf": 5574959315,
+            "note": "Women’s organic ribbed neck shirt - Symphonymph / M"
+          },
+          {
+            "name": "L",
+            "pf": 5574959316,
+            "note": "Women’s organic ribbed neck shirt - Symphonymph / L"
+          },
+          {
+            "name": "XL",
+            "pf": 5574959317,
+            "note": "Women’s organic ribbed neck shirt - Symphonymph / XL"
+          },
+          {
+            "name": "2XL",
+            "pf": 5574959318,
+            "note": "Women’s organic ribbed neck shirt - Symphonymph / 2XL"
+          }
+        ]
+      },
+      "source": {
+        "supplier": "Printful",
+        "item": "481781085",
+        "sv": "5574959314",
+        "variant": "Women’s organic ribbed neck shirt - Symphonymph / S"
+      },
+      "eco": true
+    },
+    {
+      "id": "pf-unisex-organic-cotton-shirt-symphonymph",
+      "name": "Unisex Organic Cotton Tee: Symphonymph",
+      "category": "Recreation & Outdoors",
+      "tags": [
+        "lavish leaf",
+        "merch",
+        "apparel",
+        "unisex",
+        "organic",
+        "cotton",
+        "shirt",
+        "symphonymph",
+        "tee",
+        "clothing",
+        "eco"
+      ],
+      "image": "images/store/pf-481781082.jpg",
+      "imageAlt": "Unisex Organic Cotton Tee: Symphonymph",
+      "blurb": "Black unisex organic cotton tee with our Symphonymph moon and treble clef art (Stanley/Stella Creator 2.0). Printed for you when you order.",
+      "price": 2599,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Unisex Organic Cotton Tee: Symphonymph",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 7,
+      "shipFrom": "printful",
+      "shipCents": 495,
+      "shipAddCents": 220,
+      "options": {
+        "label": "Size",
+        "values": [
+          {
+            "name": "XS",
+            "pf": 5574959258,
+            "note": "Unisex Organic Cotton Shirt - Symphonymph / XS"
+          },
+          {
+            "name": "S",
+            "pf": 5574959259,
+            "note": "Unisex Organic Cotton Shirt - Symphonymph / S"
+          },
+          {
+            "name": "M",
+            "pf": 5574959260,
+            "note": "Unisex Organic Cotton Shirt - Symphonymph / M"
+          },
+          {
+            "name": "L",
+            "pf": 5574959261,
+            "note": "Unisex Organic Cotton Shirt - Symphonymph / L"
+          },
+          {
+            "name": "XL",
+            "pf": 5574959262,
+            "note": "Unisex Organic Cotton Shirt - Symphonymph / XL"
+          },
+          {
+            "name": "2XL",
+            "pf": 5574959263,
+            "note": "Unisex Organic Cotton Shirt - Symphonymph / 2XL"
+          },
+          {
+            "name": "3XL",
+            "pf": 5574959264,
+            "note": "Unisex Organic Cotton Shirt - Symphonymph / 3XL"
+          },
+          {
+            "name": "4XL",
+            "pf": 5574959265,
+            "note": "Unisex Organic Cotton Shirt - Symphonymph / 4XL"
+          },
+          {
+            "name": "5XL",
+            "pf": 5574959266,
+            "note": "Unisex Organic Cotton Shirt - Symphonymph / 5XL"
+          }
+        ]
+      },
+      "source": {
+        "supplier": "Printful",
+        "item": "481781082",
+        "sv": "5574959258",
+        "variant": "Unisex Organic Cotton Shirt - Symphonymph / XS"
+      },
+      "eco": true
+    },
+    {
+      "id": "pf-unisex-organic-cotton-shirt-lavish-leaf",
+      "name": "Unisex Organic Cotton Tee: Lavish Leaf",
+      "category": "Recreation & Outdoors",
+      "tags": [
+        "lavish leaf",
+        "merch",
+        "apparel",
+        "unisex",
+        "organic",
+        "cotton",
+        "shirt",
+        "lavish",
+        "leaf",
+        "tee",
+        "clothing",
+        "symphonymph",
+        "eco"
+      ],
+      "image": "images/store/pf-481781081.jpg",
+      "imageAlt": "Unisex Organic Cotton Tee: Lavish Leaf",
+      "blurb": "White unisex organic cotton tee with our green Lavish Leaf oval (Stanley/Stella Creator 2.0). Printed for you when you order.",
+      "price": 2599,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Unisex Organic Cotton Tee: Lavish Leaf",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 7,
+      "shipFrom": "printful",
+      "shipCents": 495,
+      "shipAddCents": 220,
+      "options": {
+        "label": "Size",
+        "values": [
+          {
+            "name": "XS",
+            "pf": 5574959221,
+            "note": "Unisex Organic Cotton Shirt - Lavish Leaf / XS"
+          },
+          {
+            "name": "S",
+            "pf": 5574959222,
+            "note": "Unisex Organic Cotton Shirt - Lavish Leaf / S"
+          },
+          {
+            "name": "M",
+            "pf": 5574959224,
+            "note": "Unisex Organic Cotton Shirt - Lavish Leaf / M"
+          },
+          {
+            "name": "L",
+            "pf": 5574959225,
+            "note": "Unisex Organic Cotton Shirt - Lavish Leaf / L"
+          },
+          {
+            "name": "XL",
+            "pf": 5574959226,
+            "note": "Unisex Organic Cotton Shirt - Lavish Leaf / XL"
+          },
+          {
+            "name": "2XL",
+            "pf": 5574959228,
+            "note": "Unisex Organic Cotton Shirt - Lavish Leaf / 2XL"
+          },
+          {
+            "name": "3XL",
+            "pf": 5574959229,
+            "note": "Unisex Organic Cotton Shirt - Lavish Leaf / 3XL"
+          },
+          {
+            "name": "4XL",
+            "pf": 5574959231,
+            "note": "Unisex Organic Cotton Shirt - Lavish Leaf / 4XL"
+          },
+          {
+            "name": "5XL",
+            "pf": 5574959232,
+            "note": "Unisex Organic Cotton Shirt - Lavish Leaf / 5XL"
+          }
+        ]
+      },
+      "source": {
+        "supplier": "Printful",
+        "item": "481781081",
+        "sv": "5574959221",
+        "variant": "Unisex Organic Cotton Shirt - Lavish Leaf / XS"
+      },
+      "eco": true
+    },
+    {
+      "id": "pf-symphonymph-stickers",
+      "name": "Symphonymph Sticker, 3 x 3 in",
+      "category": "Recreation & Outdoors",
+      "tags": [
+        "lavish leaf",
+        "merch",
+        "apparel",
+        "symphonymph",
+        "stickers",
+        "white"
+      ],
+      "image": "images/store/pf-481781075.jpg",
+      "imageAlt": "Symphonymph Sticker, 3 x 3 in",
+      "blurb": "A 3 x 3 in kiss-cut sticker of the Symphonymph app icon, for a laptop, water bottle or notebook. Printed for you when you order.",
+      "price": 449,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Symphonymph Sticker, 3 x 3 in",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 1,
+      "shipFrom": "printful",
+      "shipCents": 449,
+      "shipAddCents": 5,
+      "source": {
+        "supplier": "Printful",
+        "item": "481781075",
+        "sv": "5574959162",
+        "variant": "Symphonymph Stickers"
+      }
+    },
+    {
+      "id": "pf-unisex-hoodie-symphonymph",
+      "name": "Unisex Hoodie: Symphonymph",
+      "category": "Recreation & Outdoors",
+      "tags": [
+        "lavish leaf",
+        "merch",
+        "apparel",
+        "unisex",
+        "hoodie",
+        "symphonymph",
+        "cotton",
+        "premi",
+        "shirt",
+        "tee",
+        "clothing"
+      ],
+      "image": "images/store/pf-481780837.jpg",
+      "imageAlt": "Unisex Hoodie: Symphonymph",
+      "blurb": "Charcoal unisex pullover hoodie with a front pocket and our Symphonymph moon and treble clef art (Cotton Heritage M2580). Printed for you when you order.",
+      "price": 4249,
+      "oldPrice": null,
+      "interval": null,
+      "button": "Add to cart",
+      "emailSubject": "Store order: Unisex Hoodie: Symphonymph",
+      "payLink": "",
+      "active": true,
+      "ship": true,
+      "shipOz": 20,
+      "shipFrom": "printful",
+      "shipCents": 879,
+      "shipAddCents": 250,
+      "options": {
+        "label": "Size",
+        "values": [
+          {
+            "name": "XS",
+            "pf": 5574956285,
+            "note": "Unisex Hoodie - Symphonymph / XS"
+          },
+          {
+            "name": "S",
+            "pf": 5574956286,
+            "note": "Unisex Hoodie - Symphonymph / S"
+          },
+          {
+            "name": "M",
+            "pf": 5574956287,
+            "note": "Unisex Hoodie - Symphonymph / M"
+          },
+          {
+            "name": "L",
+            "pf": 5574956288,
+            "note": "Unisex Hoodie - Symphonymph / L"
+          },
+          {
+            "name": "XL",
+            "pf": 5574956289,
+            "note": "Unisex Hoodie - Symphonymph / XL"
+          },
+          {
+            "name": "2XL",
+            "pf": 5574956290,
+            "note": "Unisex Hoodie - Symphonymph / 2XL"
+          },
+          {
+            "name": "3XL",
+            "pf": 5574956292,
+            "note": "Unisex Hoodie - Symphonymph / 3XL"
+          },
+          {
+            "name": "4XL",
+            "pf": 5574956297,
+            "note": "Unisex Hoodie - Symphonymph / 4XL"
+          }
+        ]
+      },
+      "source": {
+        "supplier": "Printful",
+        "item": "481780837",
+        "sv": "5574956285",
+        "variant": "Unisex Hoodie - Symphonymph / XS"
+      }
+    },
+    {
       "id": "ae-cotton-crew-socks-5-pairs",
       "name": "Cotton Crew Socks, 5 pairs",
       "category": "Recreation & Outdoors",

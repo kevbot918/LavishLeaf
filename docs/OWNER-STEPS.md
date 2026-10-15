@@ -34,6 +34,9 @@ published, Search Console verified, Bing set up, Google Business Profile
 created.
 
 **Reminders the owner asked to keep:**
+- **Printful resale certificate (asked 2026-10-14):** submit it in Printful
+  so Printful stops charging sales tax on what it bills you. Steps: the
+  PRINTFUL section near the end of this file, step 6.
 - **Google DKIM:** the signing key (google._domainkey) is published. In the
   Google Admin console, Apps, Google Workspace, Gmail, Authenticate email
   should change from "Authentication starting" to "Authenticating email with
@@ -895,7 +898,14 @@ The public policy (refunds.html) names no supplier. Behind it:
    your own return address. Leave orders on manual confirmation.
 5. **Prices** are the retail prices you set on each product in Printful; the
    import reads them. Sizes priced higher (2XL and up) become their own item.
-6. **When an apparel order comes in:** dashboard, Orders, press "Send the
+6. **Resale certificate to Printful (TO DO).** Printful charges sales tax on
+   what it bills you unless it has your resale certificate. Printful,
+   Settings, Billing (Tax exemption / "Sales tax exemption"): upload your
+   Oklahoma sales tax permit and a resale certificate (Oklahoma accepts the
+   Streamlined Sales Tax certificate, SST, or the Multistate MTC form), with
+   your permit number. Once approved, Printful stops adding tax to orders you
+   resell; you still collect our 6% from the customer.
+7. **When an apparel order comes in:** dashboard, Orders, press "Send the
    apparel to Printful" (it makes a DRAFT with the customer's address), then
    in Printful, Orders, press Confirm. Then send the shipped email from the
    dashboard when Printful emails the tracking number.

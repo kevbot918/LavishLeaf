@@ -183,7 +183,7 @@ const SHELVES = [
   ]],
 ];
 // The Home shelf: the first few of each line, so it shows the range.
-const HOME_PER_SHELF = 6;
+const HOME_PER_SHELF = Infinity; // every product (owner, 2026-10-14: side-scroll through all of them)
 
 
 async function facts(codes) {

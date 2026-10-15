@@ -13,10 +13,24 @@ export class PrintfulError extends Error {}
 
 export const printfulReady = (env = process.env) => !!env.PRINTFUL_API_TOKEN;
 
-export async function call(path, { method = 'GET', body, env = process.env, fetchImpl = fetch } = {}) {
+// An account-wide token needs the store named on every store call. Without
+// PRINTFUL_STORE_ID, the store called "Lavish Leaf" is found once and kept
+// (the account also has Printful's own "Personal orders" store).
+let storeIdCache = null;
+async function storeId(env, fetchImpl) {
+  if (env.PRINTFUL_STORE_ID) return String(env.PRINTFUL_STORE_ID);
+  if (storeIdCache) return storeIdCache;
+  const stores = await call('/stores', { env, fetchImpl, noStore: true }).catch(() => null);
+  if (!Array.isArray(stores) || !stores.length) return null;
+  const s = stores.find((x) => /lavish/i.test(x.name)) || stores.find((x) => !/personal/i.test(x.name)) || stores[0];
+  storeIdCache = String(s.id);
+  return storeIdCache;
+}
+
+export async function call(path, { method = 'GET', body, env = process.env, fetchImpl = fetch, noStore = false } = {}) {
   if (!env.PRINTFUL_API_TOKEN) throw new PrintfulError('PRINTFUL_API_TOKEN is not set.');
   const headers = { Authorization: 'Bearer ' + env.PRINTFUL_API_TOKEN, 'Content-Type': 'application/json' };
-  if (env.PRINTFUL_STORE_ID) headers['X-PF-Store-Id'] = String(env.PRINTFUL_STORE_ID);
+  if (!noStore && path !== '/stores') { const id = await storeId(env, fetchImpl); if (id) headers['X-PF-Store-Id'] = id; }
   const r = await fetchImpl(BASE + path, { method, headers, body: body ? JSON.stringify(body) : undefined });
   const j = await r.json().catch(() => ({}));
   if (!r.ok || (j.code && j.code >= 300)) {
