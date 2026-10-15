@@ -347,7 +347,10 @@ if (unknown.length) {
         optionSkus: p.options && p.options.values.some((v) => v.sku) ? Object.fromEntries(p.options.values.filter((v) => v.sku).map((v) => [v.name, v.sku])) : null,
         // CJ Dropshipping (2026-10-14): the product id and the variant id(s).
         pid: p.source.pid || null, vid: p.source.vid || null, warehouse: p.source.warehouse || (p.source.pid ? 'US' : null),
-        optionVids: p.options && p.options.values.some((v) => v.vid) ? Object.fromEntries(p.options.values.filter((v) => v.vid).map((v) => [v.name, v.vid])) : null } : null,
+        optionVids: p.options && p.options.values.some((v) => v.vid) ? Object.fromEntries(p.options.values.filter((v) => v.vid).map((v) => [v.name, v.vid])) : null,
+        // Printful (2026-10-14): the sync variant id(s) a draft order needs.
+        sv: p.source.sv || null,
+        optionSv: p.options && p.options.values.some((v) => v.pf) ? Object.fromEntries(p.options.values.filter((v) => v.pf).map((v) => [v.name, v.pf])) : null } : null,
     };
   }
   const path = join(ROOT, 'netlify', 'lib', 'catalog.mjs');

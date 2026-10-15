@@ -69,6 +69,12 @@ export const SHIPPING = {
     // ("shipIncluded" on the product) is built into the item's price, so the
     // flat rate never loses money. CJ items share the direct-ship part.
     cj: { rule: 'flat', freeOverCents: 999, freeOverItems: 3, cents: 299, label: 'direct-ship', sameAs: 'aliexpress' },
+    // Lavish Leaf apparel, printed to order (2026-10-14): Printful's own
+    // shipping, at cost. Each product carries "shipCents" (one unit to
+    // Stigler, from Printful's rates) and "shipAddCents" (what one more adds,
+    // tools/printful-import.mjs). The parcel: the dearest item in full, each
+    // further unit its own add-on.
+    printful: { rule: 'peritem', addOnCents: 250, label: 'apparel' },
   },
   // Posted orders go to the 48 contiguous states and DC only.
   notPosted: ['AK', 'HI', 'PR', 'GU', 'VI', 'AS', 'MP', 'AA', 'AE', 'AP'],
@@ -106,6 +112,13 @@ export function quote(lines, { method } = {}) {
       const rule = SHIPPING.suppliers[from];
       const subtotal = group.reduce((sum, { product, qty }) => sum + product.price * qty, 0);
       const items = group.reduce((n, { qty }) => n + qty, 0);
+      if (rule.rule === 'peritem') {
+        const units = group.flatMap(({ product, qty }) => Array(qty).fill({ one: Number.isInteger(product.shipCents) ? product.shipCents : 599, add: Number.isInteger(product.shipAddCents) ? product.shipAddCents : rule.addOnCents }));
+        units.sort((x, y) => y.one - x.one);
+        const cents = units[0].one + units.slice(1).reduce((n, u) => n + u.add, 0);
+        parts.push({ from, label: rule.label, cents, desc: 'Lavish Leaf apparel' });
+        continue;
+      }
       if (rule.rule === 'flat') {
         const free = subtotal >= rule.freeOverCents || items >= rule.freeOverItems;
         parts.push({ from, label: rule.label, cents: free ? 0 : rule.cents, desc: free ? 'direct-ship items' : 'direct-ship items under $9.99' });

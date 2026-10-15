@@ -1042,6 +1042,25 @@
           }
           c.appendChild(cjRow);
         }
+        // Lavish Leaf apparel (Printful, 2026-10-14): one click creates a DRAFT
+        // Printful order to the customer; confirm it in Printful to print.
+        var pfLines = (o.items || []).filter(function (it) { return /^printful/i.test(lineSource(it).supplier); });
+        if (pfLines.length && !/refunded|reversed|failed/.test(o.status || '')) {
+          var pfRow = el('div', 'db-links');
+          if (o.printful && o.printful.id) {
+            pfRow.appendChild(el('p', 'db-hint', 'Sent to Printful ' + niceDate(o.printful.at) + ': draft order ' + o.printful.id + (o.printful.cost ? ', cost $' + Number(o.printful.cost).toFixed(2) : '') + '. Open Printful, Orders, and press Confirm so it prints and ships.'));
+          } else {
+            var bPf = h('<button type="button" class="db-btn-ghost"><i class="fas fa-shirt"></i> Send the apparel to Printful</button>');
+            var pfMsg = el('span', 'db-hint');
+            bPf.addEventListener('click', function () {
+              if (!window.confirm('Create a draft Printful order for ' + pfLines.length + ' line(s) to ' + (o.shipTo || 'the customer') + '? Nothing is charged until you confirm it in Printful.')) return;
+              bPf.disabled = true; pfMsg.textContent = 'Sending...';
+              api('printful', { action: 'order', orderId: o.id }).then(function (r) { Object.assign(o, r.order); drawOrders(); }).catch(function (e) { pfMsg.textContent = e.message; bPf.disabled = false; });
+            });
+            pfRow.appendChild(bPf); pfRow.appendChild(pfMsg);
+          }
+          c.appendChild(pfRow);
+        }
         // A refund the webhook did not see (given before it was set up).
         var refRow = el('div', 'db-links');
         var refunded = /refunded/.test(o.status || '');

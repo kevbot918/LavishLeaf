@@ -875,3 +875,27 @@ The public policy (refunds.html) names no supplier. Behind it:
    that cost; file a claim with the carrier where you can.
 4. **Refunds always go to the original payment** (FTC Mail Order Rule: a
    canceled order is refunded within 7 working days, never as store credit).
+
+## PRINTFUL: Lavish Leaf apparel (2026-10-14)
+
+1. **The token in .env (for the import tool).** Open the lavishleaf-website
+   folder, open `.env` in Notepad, add a new line
+   `PRINTFUL_API_TOKEN=` followed by the token (no spaces, no quotes), and
+   save. Notepad may save it as `.env.txt`; it must stay `.env`.
+2. **The token in Netlify (for the dashboard button).** Netlify, the site,
+   Site configuration, Environment variables, Add a variable:
+   key `PRINTFUL_API_TOKEN`, value the token, scope Functions. If the token
+   was made for your whole account rather than this one store, add
+   `PRINTFUL_STORE_ID` too (Printful, Stores: the number in the store's link).
+3. **Token scopes** (if Printful asked): view store products, view and
+   manage orders, view shipping rates, view stores.
+4. **Printful settings:** Settings, Billing: add a payment card (Printful
+   charges you when you confirm an order). Stores, your store, Branding:
+   packing slip with the Lavish Leaf logo and support@lavishleaf.org, and
+   your own return address. Leave orders on manual confirmation.
+5. **Prices** are the retail prices you set on each product in Printful; the
+   import reads them. Sizes priced higher (2XL and up) become their own item.
+6. **When an apparel order comes in:** dashboard, Orders, press "Send the
+   apparel to Printful" (it makes a DRAFT with the customer's address), then
+   in Printful, Orders, press Confirm. Then send the shipped email from the
+   dashboard when Printful emails the tracking number.

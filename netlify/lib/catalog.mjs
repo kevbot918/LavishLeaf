@@ -76,7 +76,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-fabric-grow-bag": {
@@ -108,7 +110,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-natural-jute-twine": {
@@ -140,7 +144,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-ceramic-mini-planter": {
@@ -172,7 +178,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-macrame-plant-hanger": {
@@ -204,7 +212,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-mini-garden-hand-tool-set-3-pieces": {
@@ -236,7 +246,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-long-spout-watering-can": {
@@ -268,7 +280,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-continuous-mist-plant-sprayer-200-ml": {
@@ -300,7 +314,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-bamboo-plant-stakes-10-pack": {
@@ -332,7 +348,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-plant-stabilizer-clip": {
@@ -364,7 +382,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-self-watering-plant-pot-small": {
@@ -396,7 +416,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-hanging-wooden-bird-feeder": {
@@ -428,7 +450,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-garden-kneeling-pad": {
@@ -460,7 +484,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-felt-wall-pocket-planter-2-pockets": {
@@ -492,7 +518,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-animal-on-a-bicycle-wind-spinner": {
@@ -524,7 +552,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-feather-parrot-garden-decor": {
@@ -556,7 +586,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-crack-and-gap-weeder": {
@@ -588,7 +620,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-hollow-hand-hoe": {
@@ -620,7 +654,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-brass-hose-nozzle": {
@@ -652,7 +688,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-bird-watering-globes-5-pack": {
@@ -684,7 +722,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-honeycomb-pot-trellis-2-pack": {
@@ -716,7 +756,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-nylon-garden-gloves-12-pairs": {
@@ -748,7 +790,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-thorn-proof-gauntlet-garden-gloves": {
@@ -786,7 +830,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-curved-pruning-snips": {
@@ -818,7 +864,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-hanging-suet-ball-bird-feeder-black": {
@@ -850,7 +898,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-wooden-elevated-garden-bed-with-trellis-and-wheels": {
@@ -882,7 +932,9 @@ export const catalog = {
       "pid": "2021155824335380482",
       "vid": "2021155824620593153",
       "warehouse": "US",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-outdoor-storage-deck-box-gray": {
@@ -914,7 +966,9 @@ export const catalog = {
       "pid": "1867056468315754496",
       "vid": "1867056468512886784",
       "warehouse": "US",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-faux-stone-flexible-garden-edging-gray-20-pieces": {
@@ -946,7 +1000,9 @@ export const catalog = {
       "pid": "1898290772932272130",
       "vid": "1898290773037129730",
       "warehouse": "US",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-coconut-shell-bird-house": {
@@ -978,7 +1034,9 @@ export const catalog = {
       "pid": "1377177776347549696",
       "vid": "1377177782060191744",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-solar-garden-lantern": {
@@ -1010,7 +1068,9 @@ export const catalog = {
       "pid": "1411252619757883392",
       "vid": "1411252621200723968",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-bobs-red-mill-organic-pancake-and-waffle-mix-24-oz-pack-of-4": {
@@ -1042,7 +1102,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-bobs-red-mill-organic-buckwheat-flour-22-oz-pack-of-4": {
@@ -1074,7 +1136,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-bobs-red-mill-organic-white-rice-flour-24-oz-pack-of-4": {
@@ -1106,7 +1170,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-mikes-mighty-good-organic-spicy-beef-ramen-cup-pack-of-6": {
@@ -1138,7 +1204,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-dr-mcdougalls-organic-teriyaki-noodle-cup-pack-of-6": {
@@ -1170,7 +1238,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-lotus-foods-organic-garlicky-veggie-rice-ramen-cup-pack-of-6": {
@@ -1202,7 +1272,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-oceans-halo-organic-chicken-flavor-noodle-bowl-pack-of-6": {
@@ -1234,7 +1306,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-flavorganics-organic-almond-extract-2-oz": {
@@ -1266,7 +1340,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-lundberg-organic-thin-stackers-red-rice-and-quinoa-pack-of-6": {
@@ -1298,7 +1374,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-lakewood-organic-tart-cherry-juice-concentrate-125-oz": {
@@ -1330,7 +1408,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-lakewood-organic-black-cherry-juice-concentrate-125-oz": {
@@ -1362,7 +1442,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-lotus-foods-organic-brown-jasmine-rice-heat-and-eat-pack-of-": {
@@ -1394,7 +1476,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-lotus-foods-organic-white-jasmine-rice-heat-and-eat-pack-of-": {
@@ -1426,7 +1510,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-spicely-organic-whole-cloves-pack-of-6": {
@@ -1458,7 +1544,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-spicely-organic-zaatar-14-oz-pack-of-3": {
@@ -1490,7 +1578,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-maya-kaimal-organic-everyday-chana-10-oz-pack-of-6": {
@@ -1522,7 +1612,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-native-forest-organic-sliced-bamboo-shoots-14-oz-pack-of-6": {
@@ -1554,7 +1646,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-native-forest-organic-sliced-water-chestnuts-8-oz-pack-of-6": {
@@ -1586,7 +1680,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-native-forest-organic-pineapple-chunks-14-oz-pack-of-6": {
@@ -1618,7 +1714,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-suzies-organic-tartar-sauce-8-oz-pack-of-6": {
@@ -1650,7 +1748,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-suzies-organic-yellow-mustard-8-oz-pack-of-6": {
@@ -1682,7 +1782,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-alessi-organic-italian-pasta-16-oz-pack-of-6": {
@@ -1725,7 +1827,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-raos-homemade-fusilli-16-oz-pack-of-6": {
@@ -1757,7 +1861,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-mrs-millers-wide-egg-noodles-16-oz-pack-of-6": {
@@ -1789,7 +1895,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-frontera-taco-seasoning-sauce-for-ground-beef-8-oz-pack-of-6": {
@@ -1821,7 +1929,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-uncle-lees-organic-oolong-tea-40-bags-pack-of-6": {
@@ -1853,7 +1963,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-uncle-lees-organic-green-tea-40-bags-pack-of-6": {
@@ -1885,7 +1997,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-uncle-lees-organic-black-tea-100-bags": {
@@ -1917,7 +2031,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-lets-do-organic-granulated-tapioca-6-oz-pack-of-6": {
@@ -1949,7 +2065,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-lets-do-organic-sweetened-condensed-coconut-milk-pack-of-6": {
@@ -1981,7 +2099,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-element-organic-dipped-rice-cakes-pack-of-6": {
@@ -2022,7 +2142,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-napoleon-anchovy-paste-2-oz": {
@@ -2054,7 +2176,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-sun-luck-spicy-oyster-sauce-9-oz": {
@@ -2086,7 +2210,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-bellino-minced-garlic-75-oz": {
@@ -2118,7 +2244,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-beaver-cream-style-horseradish-12-oz-pack-of-6": {
@@ -2150,7 +2278,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-vermints-organic-breath-mints-pack-of-6": {
@@ -2191,7 +2321,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-spry-xylitol-gum-100-count": {
@@ -2234,7 +2366,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-frontier-co-op-organic-fair-trade-ceylon-cinnamon-176-oz": {
@@ -2266,7 +2400,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-watkins-organic-garlic-powder-31-oz": {
@@ -2298,7 +2434,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-frontier-co-op-organic-salt-free-italian-seasoning-064-oz": {
@@ -2330,7 +2468,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-sunfood-organic-chia-seeds-1-lb": {
@@ -2362,7 +2502,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-flora-organic-cold-pressed-flax-oil-17-oz": {
@@ -2394,7 +2536,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-real-foods-organic-sesame-corn-thins-53-oz-pack-of-6": {
@@ -2426,7 +2570,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-barnana-organic-plantain-chips-himalayan-pink-salt-pack-of-6": {
@@ -2458,7 +2604,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-mavuno-harvest-organic-dried-pineapple-2-oz-pack-of-6": {
@@ -2490,7 +2638,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-mavuno-harvest-organic-dried-jackfruit-2-oz-pack-of-6": {
@@ -2522,7 +2672,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-dr-mcdougalls-organic-lentil-vegetable-soup-18-oz-pack-of-6": {
@@ -2554,7 +2706,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-jyoti-organic-black-beans-10-oz-pack-of-6": {
@@ -2586,7 +2740,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-noka-organic-mango-coconut-smoothie-pouch-pack-of-6": {
@@ -2618,7 +2774,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-cocomels-organic-coconut-milk-caramels-sea-salt-pack-of-6": {
@@ -2650,7 +2808,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-breton-gluten-free-crackers-original-with-flax-pack-of-6": {
@@ -2682,7 +2842,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-breton-gluten-free-crackers-herb-and-garlic-pack-of-6": {
@@ -2714,7 +2876,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-madegood-organic-crispy-squares-strawberry-pack-of-6-boxes": {
@@ -2746,7 +2910,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-lakewood-organic-cranberry-juice-concentrate-125-oz": {
@@ -2778,7 +2944,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-olyra-organic-breakfast-biscuits-cinnamon-pack-of-6": {
@@ -2810,7 +2978,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-beanvivo-three-bean-vegan-chili-10-oz-pack-of-6": {
@@ -2842,7 +3012,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-cocomels-organic-coconut-milk-caramels-original-pack-of-6": {
@@ -2874,7 +3046,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-banza-chickpea-pasta-shells-8-oz-pack-of-6": {
@@ -2906,7 +3080,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-sun-luck-oyster-sauce-9-oz": {
@@ -2938,7 +3114,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-inka-crops-chile-picante-corn-4-oz-pack-of-6": {
@@ -2970,7 +3148,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-spry-xylitol-mints-peppermint-240-count": {
@@ -3002,7 +3182,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-stash-lemon-ginger-herbal-tea-20-bags-pack-of-6": {
@@ -3034,7 +3216,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "soccer-player-fall": {
@@ -3123,7 +3307,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-cuffed-knit-beanie-black": {
@@ -3155,7 +3341,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-soccer-shin-guards-neon-green": {
@@ -3194,7 +3382,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-quick-dry-microfiber-towel-20-x-47-in": {
@@ -3226,7 +3416,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-running-ankle-socks-3-pairs": {
@@ -3258,7 +3450,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-athletic-running-shorts-navy": {
@@ -3300,7 +3494,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-cooling-uv-arm-sleeves-3-pairs": {
@@ -3332,7 +3528,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-quick-dry-running-cap": {
@@ -3364,7 +3562,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-padded-sport-knee-pads-pair": {
@@ -3403,7 +3603,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-hiking-compass": {
@@ -3435,7 +3637,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-knee-compression-sleeve": {
@@ -3473,7 +3677,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-foil-camping-ground-mat-79-x-59-in": {
@@ -3505,7 +3711,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-waterproof-hiking-leg-gaiters": {
@@ -3537,7 +3745,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-non-slip-yoga-mat-3-mm": {
@@ -3569,7 +3779,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-graduated-compression-socks": {
@@ -3608,7 +3820,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-folding-foam-sit-pad-blue": {
@@ -3640,7 +3854,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-resistance-band-with-handles": {
@@ -3681,7 +3897,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-sports-sweatband-headband": {
@@ -3720,7 +3938,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-spiky-massage-ball-24-in-white": {
@@ -3752,7 +3972,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-portable-folding-charcoal-grill-17-x-11-in": {
@@ -3784,7 +4006,9 @@ export const catalog = {
       "pid": "1904819947700588546",
       "vid": "1904819948140990466",
       "warehouse": "US",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-padded-folding-camping-chair-gray-and-black": {
@@ -3816,7 +4040,9 @@ export const catalog = {
       "pid": "1889950776283938818",
       "vid": "1889950776384602114",
       "warehouse": "US",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-backyard-soccer-goal-with-net-6-x-4-ft": {
@@ -3848,7 +4074,9 @@ export const catalog = {
       "pid": "1889945349491126273",
       "vid": "1889945349591789570",
       "warehouse": "US",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-backpack-beach-chair-mint-green": {
@@ -3880,7 +4108,9 @@ export const catalog = {
       "pid": "1874629463575285762",
       "vid": "1874629463663366145",
       "warehouse": "US",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-aluminum-folding-table-6-ft-wood-grain": {
@@ -3912,7 +4142,9 @@ export const catalog = {
       "pid": "1922940069632393218",
       "vid": "1922940069829525505",
       "warehouse": "US",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-collapsible-wagon-with-canopy-purple": {
@@ -3944,7 +4176,9 @@ export const catalog = {
       "pid": "1897482670943621122",
       "vid": "1897482671077838849",
       "warehouse": "US",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-batting-cage-net-55-x-12-x-12-ft-net-only": {
@@ -3976,7 +4210,9 @@ export const catalog = {
       "pid": "2001537446588162050",
       "vid": "2001537446969843714",
       "warehouse": "US",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-insulated-beverage-dispenser-45-gallon": {
@@ -4008,7 +4244,9 @@ export const catalog = {
       "pid": "1851851439896154112",
       "vid": "1851851440001011712",
       "warehouse": "US",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-folding-mid-size-table-tennis-set-blue": {
@@ -4040,7 +4278,9 @@ export const catalog = {
       "pid": "1900088312711319553",
       "vid": "1900088312895868930",
       "warehouse": "US",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-topwater-pencil-lures-5-pack-4-in": {
@@ -4072,7 +4312,9 @@ export const catalog = {
       "pid": "1846807919200194560",
       "vid": "1846807919388938240",
       "warehouse": "US",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-360-degree-spinning-seesaw-for-kids": {
@@ -4104,7 +4346,9 @@ export const catalog = {
       "pid": "1891769151763038210",
       "vid": "1891769151821758466",
       "warehouse": "US",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-power-tower-pull-up-and-dip-station": {
@@ -4136,7 +4380,9 @@ export const catalog = {
       "pid": "1871374277110312962",
       "vid": "1871374277181616129",
       "warehouse": "US",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-bike-v-brake-pads-70-mm-5-pairs": {
@@ -4168,7 +4414,9 @@ export const catalog = {
       "pid": "1955097636363993090",
       "vid": "1955097636439490561",
       "warehouse": "US",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-outdoor-daypack-36-l-black": {
@@ -4200,7 +4448,9 @@ export const catalog = {
       "pid": "1952575130266214401",
       "vid": "1952575130433986562",
       "warehouse": "US",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-printed-round-beach-towel": {
@@ -4232,7 +4482,9 @@ export const catalog = {
       "pid": "1BF8B1FE-92AD-44B7-B881-55B63B5F9370",
       "vid": "13DDDDC0-1FF1-407B-B922-4E16B7B5D907",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-collapsible-silicone-water-bottle-green": {
@@ -4264,7 +4516,9 @@ export const catalog = {
       "pid": "5E42E763-EBF4-4BFE-BD90-03E7FBDFBE37",
       "vid": "0106D373-B700-470A-84EF-2CB8575D279D",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-instant-cooling-towel-12-x-31-in": {
@@ -4296,7 +4550,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-push-button-fishing-bobbers-1-inch-10-pack": {
@@ -4328,7 +4584,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-barbed-fishing-hooks-size-10-50-pack": {
@@ -4360,7 +4618,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-ab-roller-wheel": {
@@ -4392,7 +4652,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-pickup-truck-bed-tent-55-to-6-ft": {
@@ -4424,7 +4686,9 @@ export const catalog = {
       "pid": "1848977719850586112",
       "vid": "1848977719942860800",
       "warehouse": "US",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-led-camping-lantern-battery-powered": {
@@ -4456,7 +4720,9 @@ export const catalog = {
       "pid": "1895333198076481537",
       "vid": "1895333198131007490",
       "warehouse": "US",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-compact-folding-binoculars-40-x-22": {
@@ -4488,7 +4754,9 @@ export const catalog = {
       "pid": "1952995065488855042",
       "vid": "1952995065534992386",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-unisex-waterproof-hiking-rain-pants": {
@@ -4538,7 +4806,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-womens-high-waist-yoga-leggings-with-pockets": {
@@ -4582,7 +4852,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-womens-breathable-sports-bra-black": {
@@ -4623,7 +4895,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-windproof-winter-cycling-gloves-black": {
@@ -4662,7 +4936,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-fleece-winter-balaclava-hood-black": {
@@ -4694,7 +4970,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-womens-quick-dry-lightweight-joggers-black": {
@@ -4736,7 +5014,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-rechargeable-motion-sensor-led-headlamp": {
@@ -4768,7 +5048,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-12l-roll-top-waterproof-dry-bag-blue": {
@@ -4800,7 +5082,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-adult-anti-fog-swim-goggles-black": {
@@ -4832,7 +5116,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-outdoor-pickleball-balls-12-pack-with-mesh-bag": {
@@ -4864,7 +5150,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-earth-therapeutics-far-reach-back-brush": {
@@ -4896,7 +5184,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-earth-therapeutics-natural-bristle-body-brush": {
@@ -4928,7 +5218,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-kiss-my-face-pure-olive-oil-bar-soap-8-oz": {
@@ -4960,7 +5252,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-kiss-my-face-olive-and-aloe-bar-soap-8-oz": {
@@ -4992,7 +5286,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-kiss-my-face-pure-olive-oil-bar-soap-4-oz": {
@@ -5024,7 +5320,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-tea-tree-therapy-eucalyptus-soap-3-5-oz": {
@@ -5056,7 +5354,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-chandrika-sandal-soap-75-g": {
@@ -5088,7 +5388,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-giovanni-bamboo-oval-hairbrush": {
@@ -5120,7 +5422,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-a-la-maison-lavender-and-rosemary-bar-soap-4-pack": {
@@ -5152,7 +5456,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-aura-cacia-lavender-shower-tablets-box-of-3": {
@@ -5184,7 +5490,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-aura-cacia-eucalyptus-shower-tablets-box-of-3": {
@@ -5216,7 +5524,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-aura-cacia-frankincense-in-jojoba-oil-0-5-oz": {
@@ -5248,7 +5558,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-andalou-naturals-1000-roses-soothing-body-lotion-8": {
@@ -5280,7 +5592,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-andalou-naturals-resveratrol-q10-night-repair-crea": {
@@ -5312,7 +5626,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-andalou-naturals-daily-defense-facial-lotion-spf-1": {
@@ -5344,7 +5660,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-crystal-mineral-deodorant-travel-stick-1-5-oz": {
@@ -5376,7 +5694,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-andalou-naturals-lavender-shea-hand-cream-3-4-oz": {
@@ -5408,7 +5728,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-mountain-ocean-skin-trip-coconut-soap-45-oz": {
@@ -5440,7 +5762,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-davids-natural-toothpaste-spearmint-525-oz": {
@@ -5472,7 +5796,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-desert-essence-kids-toothpaste-47-oz": {
@@ -5513,7 +5839,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-essential-oxygen-brushing-rinse-16-oz": {
@@ -5556,7 +5884,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-herban-cowboy-deodorant-stick-forest-28-oz": {
@@ -5588,7 +5918,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-eco-dent-daily-care-toothpowder-mint-2-oz": {
@@ -5620,7 +5952,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-crystal-mineral-deodorant-stick-25-oz": {
@@ -5663,7 +5997,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-seaweed-bath-co-detox-body-wash-awaken-12-oz": {
@@ -5695,7 +6031,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-redmond-earthpaste-wintergreen-4-oz": {
@@ -5727,7 +6065,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-grandpa-soap-co-pine-tar-bar-soap-425-oz": {
@@ -5759,7 +6099,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-grandpa-soap-co-pine-tar-body-wash-95-oz": {
@@ -5791,7 +6133,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-grandpa-soap-co-apple-cider-vinegar-body-wash-95-oz": {
@@ -5823,7 +6167,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-oral-essentials-lumineux-whitening-mouthwash-16-oz": {
@@ -5855,7 +6201,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-oral-essentials-lumineux-whitening-toothpaste-375-oz": {
@@ -5887,7 +6235,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-oral-essentials-lumineux-kids-toothpaste-375-oz": {
@@ -5919,7 +6269,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-oral-essentials-lumineux-whitening-strips-14-pack": {
@@ -5951,7 +6303,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-auromere-ayurvedic-herbal-toothpaste-416-oz": {
@@ -5994,7 +6348,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-alba-botanica-very-emollient-body-lotion-32-oz": {
@@ -6037,7 +6393,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-nourish-organic-age-defense-face-serum-07-oz": {
@@ -6069,7 +6427,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-eco-dent-mint-mouth-rinse-8-oz": {
@@ -6101,7 +6461,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-south-of-france-bar-soap-6-oz": {
@@ -6150,7 +6512,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-south-of-france-foaming-hand-soap-8-oz": {
@@ -6195,7 +6559,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-dr-plotkas-mouthwatchers-adult-toothbrush": {
@@ -6240,7 +6606,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-every-man-jack-body-wash-sandalwood-338-oz": {
@@ -6272,7 +6640,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-herban-cowboy-body-wash-dusk-18-oz": {
@@ -6304,7 +6674,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-tea-tree-therapy-mouthwash-12-oz": {
@@ -6336,7 +6708,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-aura-cacia-eucalyptus-harvest-aroma-mist-4-oz": {
@@ -6368,7 +6742,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-soothing-touch-bath-salts-32-oz": {
@@ -6417,7 +6793,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-pacha-soap-whipped-soap-scrub-vanilla-almond-8-oz": {
@@ -6449,7 +6827,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-everyday-shea-bubble-bath-lemon-lavender-32-oz": {
@@ -6481,7 +6861,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-fortify-facial-mist-travel-size": {
@@ -6513,7 +6895,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-aura-cacia-relaxing-lavender-bubble-bath-13-oz": {
@@ -6545,7 +6929,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-cleanlogic-exfoliating-wash-cloth": {
@@ -6577,7 +6963,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-spectrum-essentials-body-care-coconut-oil-15-oz": {
@@ -6609,7 +6997,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-alaffia-authentic-african-black-soap-tangerine-citrus-32-oz": {
@@ -6641,7 +7031,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-mychelle-ultra-hyaluronic-cleanser-42-oz": {
@@ -6673,7 +7065,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-babo-botanicals-sensitive-baby-fragrance-free-shampoo-and-wash-16-oz": {
@@ -6705,7 +7099,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-philip-adam-shampoo-verbena-sage-12-oz": {
@@ -6737,7 +7133,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-south-of-france-liquid-hand-wash-8-oz": {
@@ -6782,7 +7180,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-andalou-naturals-body-lotion-8-oz": {
@@ -6825,7 +7225,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-crystal-essence-mineral-deodorant-roll-on-225-oz": {
@@ -6868,7 +7270,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-crystal-body-deodorant-roll-on-unscented-225-oz": {
@@ -6900,7 +7304,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-crystal-body-deodorant-spray-unscented-4-oz": {
@@ -6932,7 +7338,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-crystal-essence-lavender-deodorant-spray-4-oz": {
@@ -6964,7 +7372,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-crystal-mineral-deodorant-stick-twist-up-425-oz": {
@@ -6996,7 +7406,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-seaweed-bath-co-body-wash-12-oz": {
@@ -7039,7 +7451,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-seaweed-bath-co-body-cream-6-oz": {
@@ -7080,7 +7494,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-seaweed-bath-co-detox-facial-bar-375-oz": {
@@ -7112,7 +7528,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-seaweed-bath-co-exfoliating-detox-soap-375-oz": {
@@ -7144,7 +7562,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-seaweed-bath-co-detox-body-scrub-awaken-6-oz": {
@@ -7176,7 +7596,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-soothing-touch-salt-scrub-20-oz": {
@@ -7217,7 +7639,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-soothing-touch-muscle-comfort-massage-oil-8-oz": {
@@ -7249,7 +7673,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-soothing-touch-fractionated-coconut-oil-unscented-8-oz": {
@@ -7281,7 +7707,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-everyday-shea-bubble-bath-lavender-32-oz": {
@@ -7313,7 +7741,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-everyday-shea-bubble-bath-unscented-32-oz": {
@@ -7345,7 +7775,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-everyday-coconut-body-wash-32-oz": {
@@ -7377,7 +7809,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-everyday-coconut-conditioner-32-oz": {
@@ -7409,7 +7843,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-everyday-coconut-lime-lotion-32-oz": {
@@ -7441,7 +7877,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-philip-adam-shampoo-12-oz": {
@@ -7484,7 +7922,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-philip-adam-apple-cider-vinegar-conditioner-12-oz": {
@@ -7516,7 +7956,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-herban-cowboy-body-wash-forest-18-oz": {
@@ -7548,7 +7990,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-herban-cowboy-cologne-17-oz": {
@@ -7589,7 +8033,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-grandpa-soap-co-charcoal-bar-soap-425-oz": {
@@ -7621,7 +8067,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-grandpa-soap-co-epsom-salt-bar-soap-425-oz": {
@@ -7653,7 +8101,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-grandpa-soap-co-pine-tar-bar-soap-325-oz": {
@@ -7685,7 +8135,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-grandpa-soap-co-charcoal-shower-cream-95-oz": {
@@ -7717,7 +8169,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-earth-therapeutics-bath-blossom-sponge-green": {
@@ -7749,7 +8203,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-earth-therapeutics-lavender-body-sponge": {
@@ -7781,7 +8237,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-earth-therapeutics-blue-body-sponge": {
@@ -7813,7 +8271,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-earth-therapeutics-exfoliating-gloves": {
@@ -7845,7 +8305,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-earth-therapeutics-exfoliating-hydro-towel": {
@@ -7877,7 +8339,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-earth-therapeutics-loofah-terry-pad": {
@@ -7909,7 +8373,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-earth-therapeutics-pocket-comb": {
@@ -7941,7 +8407,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-earth-therapeutics-4-sided-nail-filing-block": {
@@ -7973,7 +8441,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-cleanlogic-detox-charcoal-washcloth": {
@@ -8005,7 +8475,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-cleanlogic-detox-charcoal-body-scrubber": {
@@ -8037,7 +8509,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-cleanlogic-detox-charcoal-bath-glove": {
@@ -8069,7 +8543,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-cleanlogic-charcoal-sea-sponge-foam": {
@@ -8101,7 +8577,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-cleanlogic-exfoliating-soap-saver": {
@@ -8133,7 +8611,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-cleanlogic-stretch-bath-cloth-for-men": {
@@ -8165,7 +8645,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-aura-cacia-lavender-aroma-mist-4-oz": {
@@ -8197,7 +8679,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-shikai-shower-gel-12-oz": {
@@ -8238,7 +8722,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-shikai-hand-and-body-lotion-8-oz": {
@@ -8279,7 +8765,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-shikai-borage-dry-skin-foot-cream-42-oz": {
@@ -8311,7 +8799,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-shikai-borage-dry-skin-therapy-lotion-8-oz": {
@@ -8343,7 +8833,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-andalou-naturals-apricot-probiotic-cleansing-milk-6-oz": {
@@ -8375,7 +8867,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-andalou-naturals-clementine-hand-cream-34-oz": {
@@ -8407,7 +8901,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-andalou-naturals-kukui-cocoa-body-butter-8-oz": {
@@ -8439,7 +8935,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-andalou-naturals-dmae-lift-and-firm-cream-17-oz": {
@@ -8471,7 +8969,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-alba-botanica-body-bath-32-oz": {
@@ -8514,7 +9014,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-fortify-reviving-face-serum-17-oz": {
@@ -8546,7 +9048,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-fortify-face-moisturizer-17-oz": {
@@ -8578,7 +9082,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-fortify-protecting-face-wipes-30-count": {
@@ -8610,7 +9116,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-fortify-nourishing-face-cleanser-5-oz": {
@@ -8642,7 +9150,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-fortify-firming-eye-pads-5-pairs": {
@@ -8674,7 +9184,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-auromere-tulsi-neem-bar-soap-275-oz": {
@@ -8706,7 +9218,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-eco-dent-daily-care-toothpowder-2-oz": {
@@ -8747,7 +9261,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-eco-dent-extrabrite-toothpowder-2-oz": {
@@ -8779,7 +9295,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-eco-dent-cinnamon-mouth-rinse-8-oz": {
@@ -8811,7 +9329,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-tea-tree-therapy-whitening-toothpaste-3-oz": {
@@ -8843,7 +9363,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-tea-tree-therapy-toothpaste-with-baking-soda-5-oz": {
@@ -8875,7 +9397,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-essential-oxygen-brushing-rinse-peppermint-travel-size": {
@@ -8907,7 +9431,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-saltworks-ultra-epsom-salt-lavender-2-lb": {
@@ -8939,7 +9465,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-redmond-clay-facial-mud-4-oz": {
@@ -8971,7 +9499,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-hand-in-hand-sugar-scrub-9-oz": {
@@ -9014,7 +9544,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-flower-valley-ayate-fiber-washcloth": {
@@ -9046,7 +9578,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-bass-brushes-detangler-flex-hair-brush": {
@@ -9078,7 +9612,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-bass-brushes-bio-flex-swirl-hair-brush": {
@@ -9110,7 +9646,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-lafes-active-deodorant-twist-stick-25-oz": {
@@ -9142,7 +9680,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-lavilin-underarm-deodorant-125-g": {
@@ -9174,7 +9714,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-lavanila-healthy-deodorant-vanilla-grapefruit-2-oz": {
@@ -9206,7 +9748,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-babo-botanicals-sensitive-baby-daily-lotion-8-oz": {
@@ -9238,7 +9782,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-babo-botanicals-moisturizing-baby-shampoo-and-wash-16-oz": {
@@ -9270,7 +9816,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-a-la-maison-liquid-hand-soap-169-oz": {
@@ -9311,7 +9859,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-alaffia-african-black-soap-32-oz": {
@@ -9352,7 +9902,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-dr-singhas-mustard-bath-8-oz": {
@@ -9384,7 +9936,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-bodhi-whipped-soap-eucalyptus-spearmint-14-oz": {
@@ -9416,7 +9970,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-attitude-body-cream-8-oz": {
@@ -9459,7 +10015,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-avalon-organics-vitamin-c-cleansing-gel-6-oz": {
@@ -9491,7 +10049,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-avalon-organics-vitamin-c-renewal-cream-17-oz": {
@@ -9523,7 +10083,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-avalon-organics-lavender-hand-and-body-lotion-32-oz": {
@@ -9555,7 +10117,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-yes-to-avocado-daily-eye-cream-05-oz": {
@@ -9587,7 +10151,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-yes-to-avocado-daily-cream-cleanser-4-oz": {
@@ -9619,7 +10185,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-mineral-fusion-nail-polish-remover-6-oz": {
@@ -9651,7 +10219,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-one-with-nature-dead-sea-mineral-bar-soap-7-oz": {
@@ -9698,7 +10268,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-spry-xylitol-toothpaste-fluoride-free-5-oz": {
@@ -9739,7 +10311,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-spry-xylitol-oral-rinse-16-oz": {
@@ -9780,7 +10354,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-spry-kids-xylitol-oral-rinse-bubble-gum-16-oz": {
@@ -9812,7 +10388,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-clearly-natural-glycerine-liquid-hand-soap-12-oz": {
@@ -9853,7 +10431,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-nubian-heritage-raw-shea-butter-bar-soap-5-oz": {
@@ -9885,7 +10465,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-kirks-lemon-eucalyptus-castile-hand-soap-12-oz": {
@@ -9917,7 +10499,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-hello-activated-charcoal-toothbrush-soft": {
@@ -9949,7 +10533,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-herban-cowboy-dry-spray-deodorant-28-oz": {
@@ -9990,7 +10576,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-natural-loofah-sponge-12-to-14-in": {
@@ -10022,7 +10610,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-bamboo-wide-tooth-comb": {
@@ -10054,7 +10644,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-silver-cat-hair-clip": {
@@ -10086,7 +10678,9 @@ export const catalog = {
       "pid": "D2497F3D-5429-466F-8408-6534E10CA996",
       "vid": "B454623D-690C-4E88-A3DD-F37ABECB13BB",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-acetate-butterfly-claw-clip-4-in-yellow": {
@@ -10118,7 +10712,9 @@ export const catalog = {
       "pid": "1781969101049573376",
       "vid": "1781969101246705664",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-color-changing-acetate-claw-clip-peach": {
@@ -10150,7 +10746,9 @@ export const catalog = {
       "pid": "2406110943541622000",
       "vid": "2406110943541623700",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-star-claw-clip-black": {
@@ -10182,7 +10780,9 @@ export const catalog = {
       "pid": "2409080856391603400",
       "vid": "2409080856391603600",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-makeup-brush-set-12-pieces-black": {
@@ -10214,7 +10814,9 @@ export const catalog = {
       "pid": "0B3CAEBF-EDEF-4A34-BBA1-73335846D77E",
       "vid": "87BECF25-A513-4047-9C9E-D1E8CB796ED4",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-folding-makeup-mirror-white": {
@@ -10246,7 +10848,9 @@ export const catalog = {
       "pid": "1380110442986344448",
       "vid": "2408190808531600800",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-roland-bamboo-toothpicks-case-of-12-x-300": {
@@ -10278,7 +10882,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-world-centric-compostable-plates-6-in-case-of-240": {
@@ -10310,7 +10916,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-full-circle-be-good-dish-brush": {
@@ -10342,7 +10950,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-cotton-cross-back-apron": {
@@ -10381,7 +10991,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-mini-artificial-bonsai": {
@@ -10413,7 +11025,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-bag-sealing-clips-4-pack": {
@@ -10445,7 +11059,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-retractable-carabiner-keychain": {
@@ -10477,7 +11093,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-reusable-cable-ties-5-pack": {
@@ -10509,7 +11127,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-car-seat-gap-fillers-2-pack": {
@@ -10541,7 +11161,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-unfinished-wood-candlestick": {
@@ -10573,7 +11195,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-green-leaves-botanical-print-8-x-12-in": {
@@ -10605,7 +11229,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-line-art-plant-print-8-x-12-in": {
@@ -10637,7 +11263,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-olive-tree-prints-set-of-2-12-x-16-in": {
@@ -10669,7 +11297,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-clear-adhesive-hooks-20-pack": {
@@ -10701,7 +11331,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-reusable-cable-straps-20-pack": {
@@ -10733,7 +11365,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-honeycomb-silicone-trivet": {
@@ -10765,7 +11399,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-absorbent-kitchen-floor-mat-16-x-24-in": {
@@ -10797,7 +11433,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-under-door-draft-seal": {
@@ -10829,7 +11467,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-door-and-window-weather-strip-33-ft": {
@@ -10861,7 +11501,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-if-you-care-recycled-aluminum-foil-50-sq-ft-case-of-12": {
@@ -10893,7 +11535,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-world-centric-compostable-spoons-24-count-case-of-12": {
@@ -10925,7 +11569,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-world-centric-compostable-knives-24-count-case-of-12": {
@@ -10957,7 +11603,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-preserve-recycled-cutlery-24-count-case-of-12": {
@@ -10989,7 +11637,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-world-centric-compostable-hot-cups-12-oz-20-count-case-of-12": {
@@ -11021,7 +11671,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-repurpose-compostable-bowls-16-oz-20-count-case-of-12": {
@@ -11053,7 +11705,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-natural-value-reclosable-sandwich-bags-40-count-case-of-12": {
@@ -11085,7 +11739,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-snapware-total-solution-4-cup-round-glass-container-4-pack": {
@@ -11117,7 +11773,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-snapware-total-solution-6-cup-rectangle-glass-container-2-pa": {
@@ -11149,7 +11807,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-countertop-compost-scrap-bin-3-l": {
@@ -11181,7 +11841,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-large-jute-tote-bag": {
@@ -11213,7 +11875,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-stainless-steel-pour-over-coffee-filter-with-stand": {
@@ -11245,7 +11909,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-hammered-stainless-steel-spatula": {
@@ -11277,7 +11943,9 @@ export const catalog = {
       "pid": "2607160717151637300",
       "vid": "2607160717151638000",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-reusable-silicone-food-storage-bag-34-oz": {
@@ -11309,7 +11977,9 @@ export const catalog = {
       "pid": "3F459E7B-ECA7-4DE5-86BB-B76413905F0C",
       "vid": "C0C05DC8-54A9-4112-AD22-A0E5E3BA6C9E",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-cookie-press-with-20-discs": {
@@ -11341,7 +12011,9 @@ export const catalog = {
       "pid": "658C7BA8-6D1B-4A37-BA28-A6410707D391",
       "vid": "2512250929201620800",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-stainless-steel-wine-stopper": {
@@ -11373,7 +12045,9 @@ export const catalog = {
       "pid": "2506210351331600400",
       "vid": "2506210351331600700",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-silicone-sphere-ice-mold-6-balls": {
@@ -11405,7 +12079,9 @@ export const catalog = {
       "pid": "A30259A1-6996-42EF-99A8-8FC5B96D833F",
       "vid": "C16E8EDE-A1E5-446E-B11E-EEEEB07F53BC",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-black-fruit-storage-basket": {
@@ -11437,7 +12113,9 @@ export const catalog = {
       "pid": "AC47D13D-CFD0-46A9-A13D-A7BC22AE3698",
       "vid": "25BE76AF-89D0-4676-8146-F29FDC90A7BE",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-volcano-flame-aroma-diffuser-white": {
@@ -11469,7 +12147,9 @@ export const catalog = {
       "pid": "1781215589801922560",
       "vid": "1781215589873225728",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-mini-usb-humidifier-gray": {
@@ -11501,7 +12181,9 @@ export const catalog = {
       "pid": "1402526907295207424",
       "vid": "1402543587664728064",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-math-formula-wall-clock-8-in": {
@@ -11533,7 +12215,9 @@ export const catalog = {
       "pid": "3A6061DD-2FDF-4633-925B-A2E1EB957B8A",
       "vid": "BB96FB6F-DEFC-4F86-B5A0-E4C7D9ACD23B",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-picture-hanging-marking-tool": {
@@ -11565,7 +12249,9 @@ export const catalog = {
       "pid": "9BDB19CA-5935-404B-9758-1D82D9726387",
       "vid": "7069967C-BC5D-4692-B321-5C7C03CB9C17",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-magnetic-acrylic-photo-frames-6-pack": {
@@ -11597,7 +12283,9 @@ export const catalog = {
       "pid": "1837461686304264192",
       "vid": "1837461686342012928",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-silicone-spoon-rest-orange": {
@@ -11629,7 +12317,9 @@ export const catalog = {
       "pid": "1633042845290475520",
       "vid": "1633042845365972992",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-hand-painted-orchid-ceramic-tea-canister": {
@@ -11661,7 +12351,9 @@ export const catalog = {
       "pid": "2501050724431622200",
       "vid": "2501050724431622500",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-hand-painted-lotus-ceramic-tea-canister": {
@@ -11693,7 +12385,9 @@ export const catalog = {
       "pid": "2501170359581619900",
       "vid": "2501170359591610100",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-car-seat-back-organizer-brown": {
@@ -11725,7 +12419,9 @@ export const catalog = {
       "pid": "1386170811295076352",
       "vid": "1714930338255876096",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-wooden-cartoon-wall-clock-green-crown": {
@@ -11757,7 +12453,9 @@ export const catalog = {
       "pid": "7DA676B9-F3BA-477B-ABCB-853D5A8A27BC",
       "vid": "0D1BFDBE-6976-4011-9C97-EDE18B56AB07",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-corner-shower-shelf-no-drilling-black": {
@@ -11789,7 +12487,9 @@ export const catalog = {
       "pid": "1880165726661005314",
       "vid": "1915696038444003329",
       "warehouse": "US",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-full-circle-wipe-out-squeegee": {
@@ -11821,7 +12521,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-full-circle-clean-team-dustpan-and-brush-set": {
@@ -11853,7 +12555,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-full-circle-the-ring-veggie-brush": {
@@ -11885,7 +12589,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-casabella-kind-plant-based-scrub-sponges-case-of-8": {
@@ -11917,7 +12623,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-weiman-cook-top-scrubbing-pads-case-of-6-three-pac": {
@@ -11949,7 +12657,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-washable-lint-roller": {
@@ -11981,7 +12691,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-long-handle-tub-and-tile-brush": {
@@ -12013,7 +12725,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-stove-and-crevice-brushes-3-pack": {
@@ -12045,7 +12759,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-lint-and-fuzz-brush": {
@@ -12077,7 +12793,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-sponge-tub-scrubber-with-handle": {
@@ -12109,7 +12827,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-natural-value-kitchen-scrubber-sponge-case-of-24": {
@@ -12141,7 +12861,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-full-circle-walnut-scrubber-sponge-2-count-case-of-6": {
@@ -12173,7 +12895,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-full-circle-wash-and-dry-microfiber-duster-case-of-6": {
@@ -12205,7 +12929,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "bg-casabella-kind-plant-based-scrub-sponges-6-count-case-of-8": {
@@ -12237,7 +12963,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-long-handle-scrub-brush-blue": {
@@ -12269,7 +12997,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-stiff-bristle-scrub-brush-set": {
@@ -12301,7 +13031,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-3-in-1-window-squeegee-with-sprayer": {
@@ -12333,7 +13065,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-long-handle-shoe-and-laundry-brush": {
@@ -12365,7 +13099,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-wool-dryer-balls-6-pack": {
@@ -12397,7 +13133,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-wooden-handle-bottle-brush-12-in": {
@@ -12429,7 +13167,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-crevice-cleaning-brush-set-8-pieces": {
@@ -12461,7 +13201,9 @@ export const catalog = {
       "pid": "2501020543161620100",
       "vid": "2501020543161621400",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-flexible-drain-cleaning-tool": {
@@ -12493,7 +13235,9 @@ export const catalog = {
       "pid": "2412210516331619700",
       "vid": "2412210516341610100",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-reusable-laundry-lint-ball-silver": {
@@ -12525,7 +13269,9 @@ export const catalog = {
       "pid": "2407091017101605500",
       "vid": "2407091017101605600",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-silicone-drain-hair-catcher-white": {
@@ -12557,7 +13303,9 @@ export const catalog = {
       "pid": "1382324639715430400",
       "vid": "1382324641095356416",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-handheld-steam-cleaner-with-12-attachments-white": {
@@ -12589,7 +13337,9 @@ export const catalog = {
       "pid": "1966066598329622529",
       "vid": "1966066598421897217",
       "warehouse": "US",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-solar-mushroom-string-lights": {
@@ -12621,7 +13371,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-jumbo-pickle-squishy": {
@@ -12653,7 +13405,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-tomato-squishy": {
@@ -12685,7 +13439,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-jumping-frogs-set-of-12": {
@@ -12717,7 +13473,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-wind-chime-12-tubes": {
@@ -12749,7 +13507,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-crochet-pocket-frog": {
@@ -12781,7 +13541,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-strawberry-mochi-squishy": {
@@ -12813,7 +13575,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-jumbo-strawberry-squishy-cream-scented": {
@@ -12845,7 +13609,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-strawberry-taba-squishy": {
@@ -12877,7 +13643,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-dumpling-squishy": {
@@ -12909,7 +13677,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-mini-dumpling-and-bun-squishy": {
@@ -12941,7 +13711,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-toast-bread-squishy": {
@@ -12973,7 +13745,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-strawberry-bread-bun-squishy": {
@@ -13005,7 +13779,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-butter-toast-squishy": {
@@ -13037,7 +13813,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-cheese-cake-squishy": {
@@ -13069,7 +13847,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-fluffy-taba-cat-squishy-13-cm": {
@@ -13101,7 +13881,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-chubby-cat-squishy": {
@@ -13133,7 +13915,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-cat-cheese-bread-squishy": {
@@ -13165,7 +13949,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-jumbo-french-fries-squishy": {
@@ -13197,7 +13983,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-slow-rise-stress-ball": {
@@ -13229,7 +14017,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-secret-wooden-puzzle-box": {
@@ -13261,7 +14051,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-hexagon-wooden-brain-teaser": {
@@ -13293,7 +14085,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-round-bird-wooden-jigsaw-puzzle": {
@@ -13325,7 +14119,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-peacock-wooden-jigsaw-puzzle": {
@@ -13357,7 +14153,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-elephant-wooden-jigsaw-puzzle": {
@@ -13389,7 +14187,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-ocean-animals-wooden-jigsaw-puzzle": {
@@ -13421,7 +14221,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-vintage-pirate-playing-cards": {
@@ -13453,7 +14255,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-bamboo-phone-stand": {
@@ -13485,7 +14289,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-walnut-phone-stand": {
@@ -13517,7 +14323,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-wooden-business-card-holder": {
@@ -13549,7 +14357,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-crochet-lizard-coaster": {
@@ -13581,7 +14391,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-crochet-positive-cat": {
@@ -13613,7 +14425,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-pressed-flower-crystal-bookmark": {
@@ -13645,7 +14459,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-botanical-enamel-pin": {
@@ -13677,7 +14493,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-vintage-leather-look-a5-notebook": {
@@ -13709,7 +14527,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-thick-a5-notebook-256-pages": {
@@ -13741,7 +14561,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-mini-magnetic-travel-chess": {
@@ -13773,7 +14595,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-wooden-3-in-1-chess-checkers-and-backgammon-set": {
@@ -13805,7 +14629,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-kalimba-thumb-piano-17-keys": {
@@ -13843,7 +14669,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-deer-jewelry-display-stand-white": {
@@ -13875,7 +14703,9 @@ export const catalog = {
       "pid": "1691277822914351104",
       "vid": "1691277822943711232",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-reasons-i-love-you-wooden-heart-puzzle": {
@@ -13907,7 +14737,9 @@ export const catalog = {
       "pid": "1730058986096959488",
       "vid": "1730058986218594304",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-alpaca-plush-pillow-30-in-brown": {
@@ -13939,7 +14771,9 @@ export const catalog = {
       "pid": "3F3CBDC4-9FE0-45D8-BDE8-F9365E92ADFB",
       "vid": "1366015238159339520",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-avocado-capybara-plush-14-in": {
@@ -13971,7 +14805,9 @@ export const catalog = {
       "pid": "1795001076496736256",
       "vid": "1795001076589010944",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-white-goose-plush-20-in": {
@@ -14003,7 +14839,9 @@ export const catalog = {
       "pid": "2406100313121600000",
       "vid": "2406100313121600200",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-ghost-plush-pillow-8-in": {
@@ -14035,7 +14873,9 @@ export const catalog = {
       "pid": "2407310849261621000",
       "vid": "2407310849261621800",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-crochet-potted-plant-set-3-pieces": {
@@ -14067,7 +14907,9 @@ export const catalog = {
       "pid": "2087003326462332930",
       "vid": "2087003326533636098",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-qcy-t13-anc-wireless-earbuds": {
@@ -14105,7 +14947,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-qcy-melobuds-pro-anc-wireless-earbuds": {
@@ -14137,7 +14981,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-qcy-crossky-c30-open-ear-earbuds": {
@@ -14169,7 +15015,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-gamesir-x5-lite-mobile-gaming-controller": {
@@ -14201,7 +15049,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-kz-edx-pro-wired-in-ear-earphones-with-mic": {
@@ -14233,7 +15083,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-kz-castor-pro-wired-in-ear-earphones": {
@@ -14265,7 +15117,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-kz-az09-bluetooth-ear-hook-adapter": {
@@ -14303,7 +15157,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-kz-zs10-pro-2-hybrid-in-ear-monitors": {
@@ -14335,7 +15191,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-kz-castor-wired-in-ear-earphones": {
@@ -14373,7 +15231,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-kz-as16-pro-balanced-armature-in-ear-monitors": {
@@ -14411,7 +15271,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-joyroom-360-degree-bike-phone-holder": {
@@ -14443,7 +15305,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-qcy-crossky-c30s-open-ear-clip-on-earbuds": {
@@ -14482,7 +15346,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-gamesir-g8-bluetooth-mobile-controller": {
@@ -14514,7 +15380,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-magnetic-car-air-vent-phone-mount-black": {
@@ -14546,7 +15414,9 @@ export const catalog = {
       "pid": "1587815807701635072",
       "vid": "1628740398745538560",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-magnetic-wireless-charging-car-mount-15-w": {
@@ -14578,7 +15448,9 @@ export const catalog = {
       "pid": "1676766755672305664",
       "vid": "1676766755747803136",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-foldable-3-in-1-wireless-charger-black": {
@@ -14610,7 +15482,9 @@ export const catalog = {
       "pid": "1586990909747638272",
       "vid": "1586990909827330048",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-portable-bluetooth-speaker-gray": {
@@ -14642,7 +15516,9 @@ export const catalog = {
       "pid": "5EA5109E-F6FB-45A3-8556-8B67D9EBA96C",
       "vid": "42C67D34-A7CF-4FC2-90D5-52480262B127",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-usb-c-to-usb-c-charging-cable-60-w-33-ft-blue": {
@@ -14674,7 +15550,9 @@ export const catalog = {
       "pid": "1620296122671575040",
       "vid": "1620296122763849729",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-4-in-1-retractable-car-charger": {
@@ -14706,7 +15584,9 @@ export const catalog = {
       "pid": "2601230246311621700",
       "vid": "2601230246311622800",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-embroidered-laptop-sleeve-133-in-white-puppy": {
@@ -14738,7 +15618,9 @@ export const catalog = {
       "pid": "2502210309191629601",
       "vid": "2502210309191629800",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-reflective-padded-dog-leash-5-ft": {
@@ -14770,7 +15652,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-padded-dog-collar": {
@@ -14808,7 +15692,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-pet-grooming-glove": {
@@ -14840,7 +15726,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-poop-bag-dispenser": {
@@ -14872,7 +15760,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-cotton-rope-ball-dog-toy": {
@@ -14904,7 +15794,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-carrot-rope-chew-toys-3-pack": {
@@ -14936,7 +15828,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-reflective-dog-car-seat-belt": {
@@ -14968,7 +15862,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-cat-harness-and-leash-set-small": {
@@ -15000,7 +15896,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-feather-bird-cat-wand-with-bell": {
@@ -15032,7 +15930,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-cat-toy-variety-pack-14-pieces": {
@@ -15064,7 +15964,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-self-cleaning-slicker-brush": {
@@ -15096,7 +15998,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-trimmable-cat-scratch-mat-12-x-39-in": {
@@ -15135,7 +16039,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-oval-cardboard-cat-scratcher-bed-16-in": {
@@ -15167,7 +16073,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-dog-poop-bags-5-rolls-75-bags": {
@@ -15199,7 +16107,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-felt-cat-tunnel-bed-20-in-light-gray": {
@@ -15231,7 +16141,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-dog-walking-and-treat-waist-bag-gray": {
@@ -15263,7 +16175,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "ae-silvervine-chew-sticks-for-cats-20-pack": {
@@ -15295,7 +16209,9 @@ export const catalog = {
       "pid": null,
       "vid": null,
       "warehouse": null,
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-shrimp-tempura-squeaky-dog-toy": {
@@ -15327,7 +16243,9 @@ export const catalog = {
       "pid": "76A973A1-2809-4650-B58E-D1468B62B4A6",
       "vid": "4AF37A75-2144-4BF2-A5FD-99467579DE3F",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-corduroy-squeaky-dog-toy-brown-rabbit": {
@@ -15359,7 +16277,9 @@ export const catalog = {
       "pid": "1390264806476484608",
       "vid": "1559359497406263296",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-suction-cup-cat-window-perch-black": {
@@ -15391,7 +16311,9 @@ export const catalog = {
       "pid": "F87ABF7C-6095-4FDD-B249-878BE812736C",
       "vid": "D7014910-549E-4407-AF94-64774CF9C32E",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-dog-bath-brush-with-shampoo-dispenser-yellow": {
@@ -15423,7 +16345,9 @@ export const catalog = {
       "pid": "1794966844831444992",
       "vid": "1794966844978245632",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-double-sided-dematting-comb-blue": {
@@ -15455,7 +16379,9 @@ export const catalog = {
       "pid": "98B00D0A-4588-4FBA-892E-BF39E6FFDBAB",
       "vid": "DCE682AB-1AEF-44E3-911D-8E1970C72D50",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-silicone-finger-toothbrush-for-pets-blue": {
@@ -15487,7 +16413,9 @@ export const catalog = {
       "pid": "2406070904511624500",
       "vid": "2406070904511625400",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-washable-pet-pee-pad-20-x-28-in-gray": {
@@ -15519,7 +16447,9 @@ export const catalog = {
       "pid": "2410280356011617100",
       "vid": "2503080536401628200",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-waterproof-plush-pet-blanket-small-gray": {
@@ -15551,7 +16481,9 @@ export const catalog = {
       "pid": "1870771834412511234",
       "vid": "1870771834555117570",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-double-sided-flannel-pet-bath-towel-24-x-28-in-gray": {
@@ -15583,7 +16515,9 @@ export const catalog = {
       "pid": "1469858019549515776",
       "vid": "1469858019587264512",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   },
   "cj-cat-bathing-and-grooming-bag-gray": {
@@ -15615,7 +16549,9 @@ export const catalog = {
       "pid": "1385416343662235648",
       "vid": "1385416345037967360",
       "warehouse": "CN",
-      "optionVids": null
+      "optionVids": null,
+      "sv": null,
+      "optionSv": null
     }
   }
 };
