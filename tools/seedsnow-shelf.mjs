@@ -20,13 +20,13 @@ const link = (path) => `https://www.seedsnow.com${path}?${AFF}`;
 
 // [shelf title, SeedsNow product types, how many]
 const SHELVES = [
-  ['Variety packs and seed banks', ['*Variety Packs', '*Seed Banks'], 12],
-  ['Vegetables', ['Tomato (Indeterminate)', 'Tomato (Determinate)', 'Pepper (Sweet)', 'Pepper (Hot)', 'Lettuce', 'Cucumber', 'Carrot', 'Bean, Bush', 'Squash (Summer)', 'Kale', 'Radish', 'Spinach', 'Watermelon', 'Okra'], 24],
-  ['Herbs', ['Basil', 'Cilantro (Coriander)', 'Parsley', 'Chamomile', 'Lavender', 'Mint', 'Oregano', 'Thyme', 'Dill', 'Rosemary', 'Chive', 'Sage'], 16],
-  ['Flowers and pollinators', ['Wildflower Mix', 'Sunflower', 'Zinnia', 'Milkweed', 'Coneflower', 'Marigold', 'Nasturtium', 'Cosmos', 'Lupine', 'Bee Balm'], 16],
-  ['Sprouts and microgreens', ['Sprouts & Microgreens'], 10],
-  ['Garlic, onions and shallots', ['Garlic', 'Onion (Sets & Transplants)', 'Shallot'], 8],
-  ['Seed starting and saving', ['Seed Starting Soil Pods', 'Supplies & More', 'Mylar Seed Saver Bags', 'Seed Storage Vault'], 8],
+  ['Variety packs and seed banks', ['*Variety Packs', '*Seed Banks'], 18],
+  ['Vegetables', ['Tomato (Indeterminate)', 'Tomato (Determinate)', 'Pepper (Sweet)', 'Pepper (Hot)', 'Lettuce', 'Cucumber', 'Carrot', 'Bean, Bush', 'Squash (Summer)', 'Kale', 'Radish', 'Spinach', 'Watermelon', 'Okra'], 36],
+  ['Herbs', ['Basil', 'Cilantro (Coriander)', 'Parsley', 'Chamomile', 'Lavender', 'Mint', 'Oregano', 'Thyme', 'Dill', 'Rosemary', 'Chive', 'Sage'], 24],
+  ['Flowers and pollinators', ['Wildflower Mix', 'Sunflower', 'Zinnia', 'Milkweed', 'Coneflower', 'Marigold', 'Nasturtium', 'Cosmos', 'Lupine', 'Bee Balm'], 24],
+  ['Sprouts and microgreens', ['Sprouts & Microgreens'], 14],
+  ['Garlic, onions and shallots', ['Garlic', 'Onion (Sets & Transplants)', 'Shallot'], 12],
+  ['Seed starting and saving', ['Seed Starting Soil Pods', 'Supplies & More', 'Mylar Seed Saver Bags', 'Seed Storage Vault'], 12],
 ];
 // Always first on the flowers shelf: the mix made for our own region.
 const PIN = ['wildflowers-texas-oklahoma-seed-mix'];

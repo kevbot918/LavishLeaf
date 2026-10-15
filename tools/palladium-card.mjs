@@ -16,7 +16,9 @@ export function palladiumCard(x, category = 'Palladium Boots') {
     `  <article class="sp-card gs-pd-card" data-id="pd-${esc(x.handle)}" data-category="${esc(category)}">`,
     '    <div class="sp-media">',
     `      <img src="${esc(x.img)}" alt="${esc(x.name)}" loading="lazy">`,
-    `      <span class="sp-badge sp-partner">${x.was && x.was > x.price ? 'Sale' : 'Palladium'}</span>`,
+    '      <span class="sp-badge sp-partner">Palladium</span>',
+    // A small "Sale" tag top right (owner, 2026-10-15); store.js keeps it current.
+    `      <span class="sp-sale"${x.was && x.was > x.price ? '' : ' hidden'}>Sale</span>`,
     '    </div>',
     `    <h3 class="sp-name">${esc(x.name)}</h3>`,
     `    <p class="sp-blurb">${esc(x.blurb)}</p>`,

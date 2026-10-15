@@ -1,13 +1,13 @@
 {
  "_help": "Written by tools/seedsnow-shelf.mjs; drawn on the Home store by tools/render-store.mjs as the Seeds shelf. Every link carries our SeedsNow affiliate code.",
  "affiliate": "rfsn=9367513.1d5a377&utm_source=refersion&utm_medium=affiliate&utm_campaign=9367513.1d5a377",
- "at": "2026-10-11",
+ "at": "2026-10-15",
  "products": [
   {
-   "handle": "garlic",
-   "name": "All-in-One Garlic Garden Variety Pack",
-   "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/garlic_variety_pack.png?v=1790129616&width=360",
-   "price": "From $14.99",
+   "handle": "cool-season",
+   "name": "Cool-Season Mystery Variety Pack (by Grow Zone)",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/cool-season-mystery-variety-pack_3794f315-92d8-450e-b914-4665cfdd2d8a.png?v=1792064296&width=360",
+   "price": "$24.99",
    "type": "*Variety Packs"
   },
   {
@@ -18,10 +18,10 @@
    "type": "*Seed Banks"
   },
   {
-   "handle": "new-vine-teepee-variety-pack",
-   "name": "All-in-One Vine Teepee Variety Pack",
-   "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/vine_teepee_variety_pack.jpg?v=1780959620&width=360",
-   "price": "$29.99",
+   "handle": "garlic",
+   "name": "All-in-One Garlic Garden Variety Pack",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/garlic_variety_pack.png?v=1790129616&width=360",
+   "price": "From $14.99",
    "type": "*Variety Packs"
   },
   {
@@ -32,10 +32,10 @@
    "type": "*Seed Banks"
   },
   {
-   "handle": "hot-peppers-variety-pack",
-   "name": "All-in-One WORLD'S Hottest Peppers Variety Pack",
-   "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/hottest_pepper_seeds_in_the_world.jpg?v=1781475696&width=360",
-   "price": "$39.99",
+   "handle": "new-vine-teepee-variety-pack",
+   "name": "All-in-One Vine Teepee Variety Pack",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/vine_teepee_variety_pack.jpg?v=1780959620&width=360",
+   "price": "$29.99",
    "type": "*Variety Packs"
   },
   {
@@ -46,9 +46,9 @@
    "type": "*Seed Banks"
   },
   {
-   "handle": "new-perennial-flowers-variety-pack",
-   "name": "All-in-One Perennial Flower Garden Variety Pack",
-   "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/perennial_flower_variety_pack_a27239cb-f775-4a56-9e39-f848dfb4a565.jpg?v=1781531393&width=360",
+   "handle": "hot-peppers-variety-pack",
+   "name": "All-in-One WORLD'S Hottest Peppers Variety Pack",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/hottest_pepper_seeds_in_the_world.jpg?v=1781475696&width=360",
    "price": "$39.99",
    "type": "*Variety Packs"
   },
@@ -60,9 +60,9 @@
    "type": "*Seed Banks"
   },
   {
-   "handle": "new-annual-flowers-variety-pack",
-   "name": "All-in-One Annual Flower Garden Variety Pack",
-   "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/annual_flower_variety_pack.jpg?v=1781486860&width=360",
+   "handle": "new-perennial-flowers-variety-pack",
+   "name": "All-in-One Perennial Flower Garden Variety Pack",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/perennial_flower_variety_pack_a27239cb-f775-4a56-9e39-f848dfb4a565.jpg?v=1781531393&width=360",
    "price": "$39.99",
    "type": "*Variety Packs"
   },
@@ -74,9 +74,9 @@
    "type": "*Seed Banks"
   },
   {
-   "handle": "new-quick-to-mature-garden-variety-pack",
-   "name": "All-in-One Quick-to-Mature (45 days or less!) Garden Variety Pack",
-   "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/quick_to_mature.jpg?v=1781531779&width=360",
+   "handle": "new-annual-flowers-variety-pack",
+   "name": "All-in-One Annual Flower Garden Variety Pack",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/annual_flower_variety_pack.jpg?v=1781486860&width=360",
    "price": "$39.99",
    "type": "*Variety Packs"
   },
@@ -86,6 +86,48 @@
    "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/sp2.jpg?v=1780958833&width=360",
    "price": "$69.99",
    "type": "*Seed Banks"
+  },
+  {
+   "handle": "new-quick-to-mature-garden-variety-pack",
+   "name": "All-in-One Quick-to-Mature (45 days or less!) Garden Variety Pack",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/quick_to_mature.jpg?v=1781531779&width=360",
+   "price": "$39.99",
+   "type": "*Variety Packs"
+  },
+  {
+   "handle": "mega-survival-kit",
+   "name": "All-in-One MEGA SEED BANK for Survival w/LARGE Seed Storage Vault",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/mega2.jpg?v=1782696725&width=360",
+   "price": "$149.99",
+   "type": "*Seed Banks"
+  },
+  {
+   "handle": "new-all-in-one-herbal-tea-garden-variety-pack",
+   "name": "All-in-One Herbal Tea Lovers Variety Pack",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/herbalteavarietypack.jpg?v=1781493425&width=360",
+   "price": "$39.99",
+   "type": "*Variety Packs"
+  },
+  {
+   "handle": "medicinal-herbal-kit",
+   "name": "All-in-One Medicinal Herb Garden Seed Bank",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/med.jpg?v=1780958672&width=360",
+   "price": "$99.99",
+   "type": "*Seed Banks"
+  },
+  {
+   "handle": "all-in-one-edible-flower-variety-pack",
+   "name": "All-in-One Edible Flowers Variety Pack",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/flowersedible2.jpg?v=1781492174&width=360",
+   "price": "$39.99",
+   "type": "*Variety Packs"
+  },
+  {
+   "handle": "all-in-one-spring-summer-variety-pack",
+   "name": "All-in-One Spring/Summer Garden Variety Pack",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/spsu.jpg?v=1682746933&width=360",
+   "price": "$39.99",
+   "type": "*Variety Packs"
   },
   {
    "handle": "tomato-sunray-indeterminate",
@@ -256,6 +298,90 @@
    "type": "Kale"
   },
   {
+   "handle": "radish-beauty-white",
+   "name": "Radish - Beauty, White",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/Radish_-_Beauty_White_seeds.jpg?v=1785287974&width=360",
+   "price": "From $2.99",
+   "type": "Radish"
+  },
+  {
+   "handle": "spinach-new-zealand",
+   "name": "Spinach - New Zealand",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/Screen_Shot_2015-09-22_at_9.01.21_AM_1100x_282eb30c-4439-4554-bc9b-1fbd55760a30.png?v=1786719458&width=360",
+   "price": "From $3.99",
+   "type": "Spinach"
+  },
+  {
+   "handle": "watermelon-tendersweet",
+   "name": "Watermelon - Tendersweet (Orange-flesh)",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/watermelon-1552501_1280-2.jpg?v=1786239966&width=360",
+   "price": "From $2.99",
+   "type": "Watermelon"
+  },
+  {
+   "handle": "okra-clemson-spineless",
+   "name": "Okra - Clemson Spineless",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/700xshutterstock_182758610_700x_3c314e24-86cd-4a16-a707-d005edc6a98b.jpg?v=1786678493&width=360",
+   "price": "From $3.99",
+   "type": "Okra"
+  },
+  {
+   "handle": "tomato-thessaloniki",
+   "name": "Tomato - Thessaloniki (Indeterminate)",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/comingsoon_d2dabebe-d83b-40f6-a4fd-e3a782a52537.jpg?v=1786316803&width=360",
+   "price": "From $2.99",
+   "type": "Tomato (Indeterminate)"
+  },
+  {
+   "handle": "tomato-manitoba",
+   "name": "Tomato - Manitoba (Determinate)",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/shutterstock_211519564.jpg?v=1786320147&width=360",
+   "price": "From $2.99",
+   "type": "Tomato (Determinate)"
+  },
+  {
+   "handle": "pepper-large-red-cherry-sweet",
+   "name": "Pepper (Sweet) - Cherry, Large Red",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/red_cherry_pepper.png?v=1787023689&width=360",
+   "price": "From $2.99",
+   "type": "Pepper (Sweet)"
+  },
+  {
+   "handle": "pepper-hot-mushroom-yellow",
+   "name": "Pepper (Hot) - Mushroom, Yellow",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/comingsoon.jpg?v=1787192451&width=360",
+   "price": "From $2.99",
+   "type": "Pepper (Hot)"
+  },
+  {
+   "handle": "lettuce-bronze-mignonette-butterhead",
+   "name": "Lettuce - Bronze Mignonette (Butterhead)",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/comingsoon.jpg?v=1787192451&width=360",
+   "price": "From $2.99",
+   "type": "Lettuce"
+  },
+  {
+   "handle": "cucumber-armenian-green",
+   "name": "Cucumber - Armenian, Long Green (Metki Serpent Melon)",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/greenarmo.jpg?v=1786067012&width=360",
+   "price": "From $3.99",
+   "type": "Cucumber"
+  },
+  {
+   "handle": "carrot-purple-haze-8-long",
+   "name": "Carrot - Purple Haze (8\" Long)",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/CarrotPurpleHazeseeds.png?v=1785895681&width=360",
+   "price": "From $2.99",
+   "type": "Carrot"
+  },
+  {
+   "handle": "bean-roma",
+   "name": "Bean, Bush - Roma II",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/Bean-ROMAII.jpg?v=1782340145&width=360",
+   "price": "From $2.99",
+   "type": "Bean, Bush"
+  },
+  {
    "handle": "basil-leaf-lettuce",
    "name": "Basil, Lettuce Leaf",
    "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/lettuce_leaf_basil_seeds.jpg?v=1782094772&width=360",
@@ -287,7 +413,7 @@
    "handle": "lavender-english-copy",
    "name": "Lavender, Vera Flower",
    "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/lavender-167789_960_720.png?v=1786589660&width=360",
-   "price": "From $1.99",
+   "price": "From $3.99",
    "type": "Lavender"
   },
   {
@@ -364,8 +490,64 @@
    "handle": "lavender",
    "name": "Lavender, English Flower",
    "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/Lavender_700x_5d565840-530f-415a-9b4b-c71bd69d233a.jpg?v=1786589807&width=360",
-   "price": "From $1.99",
+   "price": "From $3.99",
    "type": "Lavender"
+  },
+  {
+   "handle": "mint-spearmint",
+   "name": "Mint - Spearmint",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/700xshutterstock_175918712_700x_1b699a2d-dc6d-49cc-a649-69b9d7aada4a.jpg?v=1786663961&width=360",
+   "price": "From $4.99",
+   "type": "Mint"
+  },
+  {
+   "handle": "oregano-italian",
+   "name": "Oregano - Italian",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/700xshutterstock_132143360_700x_c7d28752-4a51-4e30-af3c-09f39d9f38c8.jpg?v=1786677857&width=360",
+   "price": "From $3.99",
+   "type": "Oregano"
+  },
+  {
+   "handle": "dill-mammoth",
+   "name": "Dill - Mammoth",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/mammoth_dill_seeds.jpg?v=1785555259&width=360",
+   "price": "From $3.99",
+   "type": "Dill"
+  },
+  {
+   "handle": "basil-greek",
+   "name": "Basil, Greek",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/greek_basil_seeds.jpg?v=1782092286&width=360",
+   "price": "From $3.99",
+   "type": "Basil"
+  },
+  {
+   "handle": "parsley-curly-triple-moss-curled",
+   "name": "Parsley - Triple Moss Curled",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/700xshutterstock_144727729_700x_7d4f7e3b-ab01-469f-b646-0576def8cb5d.jpg?v=1787106876&width=360",
+   "price": "From $3.99",
+   "type": "Parsley"
+  },
+  {
+   "handle": "lemon-mint",
+   "name": "Mint - Lemon",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/700xshutterstock_86560045_700x_e16b000c-b44c-43b8-8196-e5bb928af1cd.jpg?v=1786663933&width=360",
+   "price": "From $4.99",
+   "type": "Mint"
+  },
+  {
+   "handle": "dill-bouguet",
+   "name": "Dill - Bouquet",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/ScreenShot2023-04-12at12.00.55PM.png?v=1785555388&width=360",
+   "price": "From $3.99",
+   "type": "Dill"
+  },
+  {
+   "handle": "basil-genovese",
+   "name": "Basil, Genovese (Sweet Basil)",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/shutterstock_53004445_700x_9bd99908-120f-42a8-8f0a-97449fbc672c.jpg?v=1782091998&width=360",
+   "price": "From $3.99",
+   "type": "Basil"
   },
   {
    "handle": "wildflowers-texas-oklahoma-seed-mix",
@@ -406,14 +588,14 @@
    "handle": "buy-marigold-sparky-mix-flower-seeds-online-usa",
    "name": "Marigold - Sparky Mix Flower",
    "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/sparky_marigold_mix.png?v=1786581008&width=360",
-   "price": "From $1.99",
+   "price": "From $3.99",
    "type": "Marigold"
   },
   {
    "handle": "nasturtium-tall-trailing-mix",
    "name": "Nasturtium - Tall Trailing Mix Flower",
    "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/tall_trailing.png?v=1786928010&width=360",
-   "price": "From $1.99",
+   "price": "From $3.99",
    "type": "Nasturtium"
   },
   {
@@ -427,7 +609,7 @@
    "handle": "flowers-lupine-pixie-delight",
    "name": "Lupine, Pixie Delight Flower",
    "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/comingsoon.jpg?v=1787192451&width=360",
-   "price": "From $1.49",
+   "price": "From $2.99",
    "type": "Lupine"
   },
   {
@@ -462,7 +644,7 @@
    "handle": "milkweed-monarch-butterfly",
    "name": "Milkweed, Tropical (Silky Deep Red/Blood Flower) Flower",
    "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/butterfly_milkweed_seeds.jpg?v=1786582093&width=360",
-   "price": "From $1.99",
+   "price": "From $3.99",
    "type": "Milkweed"
   },
   {
@@ -476,8 +658,64 @@
    "handle": "buy-marigold-crackerjack-mix-seeds",
    "name": "Marigold - Crackerjack Mix Flower",
    "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/Marigold_Crackerjack_Mix_seeds.jpg?v=1786581139&width=360",
-   "price": "From $1.99",
+   "price": "From $3.99",
    "type": "Marigold"
+  },
+  {
+   "handle": "nasturtium-peach-melba",
+   "name": "Nasturtium - Peach Melba Flower",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/peach_melba.png?v=1786928140&width=360",
+   "price": "From $3.99",
+   "type": "Nasturtium"
+  },
+  {
+   "handle": "flowers-cosmos-yellow",
+   "name": "Cosmos, Yellow Sulphur Flower",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/Cosmos_yellow_flower_seeds_fa7426e1-fe7b-4568-a950-59e18512006a.png?v=1786057702&width=360",
+   "price": "From $3.99",
+   "type": "Cosmos"
+  },
+  {
+   "handle": "lupine-russel-mix-flowers",
+   "name": "Lupine, Russell Mix Flower",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/RUSSELLUPINEMIXseeds.jpg?v=1786664869&width=360",
+   "price": "From $1.49",
+   "type": "Lupine"
+  },
+  {
+   "handle": "wildflowers-northeast-seed-mix",
+   "name": "Wildflowers - Northeast Seed Mix",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/comingsoon.jpg?v=1787192451&width=360",
+   "price": "From $4.99",
+   "type": "Wildflower Mix"
+  },
+  {
+   "handle": "flowers-sunflower-evening-sun",
+   "name": "Sunflower, Evening Sun Flower",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/comingsoon.jpg?v=1787192451&width=360",
+   "price": "From $4.99",
+   "type": "Sunflower"
+  },
+  {
+   "handle": "flowers-zinnia-luminosa",
+   "name": "Zinnia, Luminosa Flowers",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/Zinnia_Luminosa_Flowers_seeds.png?v=1785481131&width=360",
+   "price": "From $3.99",
+   "type": "Zinnia"
+  },
+  {
+   "handle": "yellow-praireie-coneflower",
+   "name": "Coneflower, Yellow Prairie (Mexican Hat) Flower",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/yellowpraireieCONEFLOWER2.jpg?v=1786055802&width=360",
+   "price": "From $3.99",
+   "type": "Coneflower"
+  },
+  {
+   "handle": "nasturtium-glorious-gleam",
+   "name": "Nasturtium - Glorious Gleam Flower",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/nasturtium-2565381_1280.jpg?v=1786928310&width=360",
+   "price": "From $3.99",
+   "type": "Nasturtium"
   },
   {
    "handle": "sprouts-microgreens-mustard-tatsoi",
@@ -550,6 +788,34 @@
    "type": "Sprouts & Microgreens"
   },
   {
+   "handle": "microgreens-black-chia",
+   "name": "Sprouts/Microgreens - Chia, Black",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/organic_Microgreens_-_Black_Chia_seeds.jpg?v=1570293447&width=360",
+   "price": "From $4.99",
+   "type": "Sprouts & Microgreens"
+  },
+  {
+   "handle": "microgreens-carrot",
+   "name": "Sprouts/Microgreens - Carrots (Micro)",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/organic_Mic_rogreens_-_Micro_Carrots_seeds.png?v=1570293447&width=360",
+   "price": "From $4.99",
+   "type": "Sprouts & Microgreens"
+  },
+  {
+   "handle": "microgreens-cabbage",
+   "name": "Sprouts/Microgreens - Cabbage, Red",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/organic_Microgreens_-_Cabbage_Red_Acre_seeds.jpg?v=1570293448&width=360",
+   "price": "From $4.99",
+   "type": "Sprouts & Microgreens"
+  },
+  {
+   "handle": "microgreens-arugula",
+   "name": "Sprouts/Microgreens - Arugula",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/organic_Microgreens_-_Arugula_seeds.jpg?v=1570293448&width=360",
+   "price": "From $4.99",
+   "type": "Sprouts & Microgreens"
+  },
+  {
    "handle": "garlic-soft-neck-california-early-organic",
    "name": "Garlic - (Soft Neck) California Early (Organic)",
    "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/californiaearly.webp?v=1789578283&width=360",
@@ -562,13 +828,6 @@
    "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/Screen_Shot_2018-11-05_at_8.48.44_AM.png?v=1668362441&width=360",
    "price": "From $2.99",
    "type": "Onion (Sets & Transplants)"
-  },
-  {
-   "handle": "shallot-sets-french-red-organic",
-   "name": "Shallot (sets) - French, Red (Organic)",
-   "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/french_red_shallot.png?v=1789567352&width=360",
-   "price": "$2.99",
-   "type": "Shallot"
   },
   {
    "handle": "garlic-hard-neck-spanish-roja",
@@ -585,13 +844,6 @@
    "type": "Onion (Sets & Transplants)"
   },
   {
-   "handle": "shallot-organic-non-gmo-holland-red",
-   "name": "Shallot (sets) - Holland, Red (Organic)",
-   "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/Holland_red_shallots.png?v=1789567433&width=360",
-   "price": "$2.99",
-   "type": "Shallot"
-  },
-  {
    "handle": "garlic-hard-neck-chesnok-red",
    "name": "Garlic - (Hard Neck) Chesnok Red",
    "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/20250926_134751.jpg?v=1759022139&width=360",
@@ -606,10 +858,52 @@
    "type": "Onion (Sets & Transplants)"
   },
   {
+   "handle": "garlic-hard-neck-porcelian-musik",
+   "name": "Garlic - (Hard Neck) Porcelain Musik",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/20250926_140902.jpg?v=1759109122&width=360",
+   "price": "From $2.99",
+   "type": "Garlic"
+  },
+  {
+   "handle": "garlic-hard-neck-russian-red",
+   "name": "Garlic - (Hard Neck) Russian Red",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/files/20250926_133229.jpg?v=1759022243&width=360",
+   "price": "From $2.99",
+   "type": "Garlic"
+  },
+  {
+   "handle": "garlic-italian-late-softneck",
+   "name": "Garlic - (Soft Neck) Italian Late (Organic)",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/Screen_Shot_2018-10-11_at_8.54.09_AM.png?v=1788562329&width=360",
+   "price": "From $2.99",
+   "type": "Garlic"
+  },
+  {
+   "handle": "garlic-inchellum-red-soft-neck",
+   "name": "Garlic - (Soft Neck) Inchelium Red (Organic)",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/SAR_4618.jpg?v=1788562074&width=360",
+   "price": "$2.99",
+   "type": "Garlic"
+  },
+  {
+   "handle": "garlic-porcelain-german",
+   "name": "Garlic - (Hard Neck) Porcelain German",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/Garlic-_HardNeck_German_Porcelain.jpg?v=1632255834&width=360",
+   "price": "From $2.99",
+   "type": "Garlic"
+  },
+  {
+   "handle": "garlic-organic-non-gmo-early-purple-italian",
+   "name": "Garlic - (Soft Neck) Early Purple Italian (Organic)",
+   "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/Garlic_Organic_NON-GMO_-_Early_Purple_Italian.jpg?v=1788562060&width=360",
+   "price": "$2.99",
+   "type": "Garlic"
+  },
+  {
    "handle": "seed-starting-soil",
    "name": "Seed Starting Soil Pods (ORGANIC)",
    "image": "https://cdn.shopify.com/s/files/1/0089/1562/products/seed_pods.png?v=1780958729&width=360",
-   "price": "From $4.99",
+   "price": "From $2.49",
    "type": "Seed Starting Soil Pods"
   },
   {

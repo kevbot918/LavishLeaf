@@ -762,3 +762,18 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     white-shirt photos are Printful "Flat" PNG mockups set on #d3d7d3 (the
     women's design placed where his Printful mockup had it). Sidebar rows
     6px padding. The owner will not press his own apparel: Printful stays.
+
+47. **2026-10-15, second list.** Palladium cards always badge "Palladium";
+    a small `.sp-sale` tag top right shows a sale (store.js keeps it current).
+    Palladium picks sit right after the Printful apparel on Recreation &
+    Outdoors. Wording: "We earn commission on orders using these links, at no
+    extra cost." and "Check out our Green Swaps affiliates for even more
+    products!". More partner products: Palladium shelves 24/24/23/18 + Kids
+    (Palladium's KIDS/CHILDREN tags across the catalog: only 2 in stock
+    2026-10-15; its "kids" collection is mostly adult styles), 3 colors per
+    style, Home 75; SeedsNow Green Swaps shelves about +50% (136); Azure +47
+    (182, next-favorited per line). Home banners: SeedsNow, Azure, then
+    Palladium ("Our Outdoor Footwear Partner"), all shorter. Sidebar partner
+    links open their Green Swaps section (#seedsnow, #azure, #palladium; the
+    SeedsNow block has id="seedsnow"). Sidebar, shelves and cards condensed
+    (the overrides at the end of store.css).

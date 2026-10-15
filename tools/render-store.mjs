@@ -196,7 +196,7 @@ function seedsShelf() {
     '    <h2>Seeds</h2>',
     '    <a class="shelf-all" href="#shelf/seeds">See all</a>',
     '  </div>',
-    '  <p class="shelf-note">From our seed partner SeedsNow. Lavish Leaf earns a commission on orders through these links, at no extra cost to you.</p>',
+    '  <p class="shelf-note">From our seed partner SeedsNow. We earn commission on orders using these links, at no extra cost.</p>',
     '  <div class="shelf-row">',
     cards.join('\n\n'),
     '  </div>',
@@ -217,7 +217,7 @@ function azureShelf() {
     '    <h2>Azure Standard</h2>',
     '    <a class="shelf-all" href="#swaps">See all</a>',
     '  </div>',
-    '  <p class="shelf-note">Organic pantry staples from our partner Azure Standard, delivered to a Drop near you or to your door. Lavish Leaf earns a commission on orders through these links, at no extra cost to you.</p>',
+    '  <p class="shelf-note">Organic pantry staples from our partner Azure Standard, delivered to a Drop near you or to your door. We earn commission on orders using these links, at no extra cost.</p>',
     '  <div class="shelf-row">',
     AZURE.home.map((c) => all.get(c)).filter(Boolean).map(azureCard).join('\n\n'),
     '  </div>',
@@ -238,7 +238,7 @@ function palladiumShelf() {
     '    <h2>Palladium Boots</h2>',
     '    <a class="shelf-all" href="#palladium">See all</a>',
     '  </div>',
-    '  <p class="shelf-note">Boots from our partner Palladium. Use code FALL20 for 20% off, and orders over $90 ship free. Lavish Leaf earns a commission on orders through these links, at no extra cost to you.</p>',
+    '  <p class="shelf-note">Boots from our partner Palladium. Use code FALL20 for 20% off, and orders over $90 ship free. We earn commission on orders using these links, at no extra cost.</p>',
     '  <div class="shelf-row">',
     PALLADIUM.home.map(pdItem).filter(Boolean).map((x) => palladiumCard(x)).join('\n\n'),
     '  </div>',
@@ -264,7 +264,14 @@ function shelves(active) {
     `    <a class="shelf-all" href="#shelf/${slug(name)}">See all</a>`,
     '  </div>',
     '  <div class="shelf-row">',
-    ps.map(card).join('\n\n') + (name === 'Recreation & Outdoors' && palladiumOutdoor() ? '\n\n' + palladiumOutdoor() : ''),
+    // Palladium picks right after our own apparel (owner, 2026-10-15).
+    (() => {
+      const cards = ps.map(card);
+      if (name !== 'Recreation & Outdoors' || !palladiumOutdoor()) return cards.join('\n\n');
+      const lastOwn = ps.map((p) => p.shipFrom === 'printful').lastIndexOf(true);
+      cards.splice(lastOwn + 1, 0, palladiumOutdoor());
+      return cards.join('\n\n');
+    })(),
     '  </div>',
     '</section>',
   ].join('\n') + (name === 'Farm & Garden' && seedsShelf() ? '\n\n' + seedsShelf() : '')

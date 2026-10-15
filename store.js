@@ -439,13 +439,13 @@
       if (q.get('q') != null && input.value !== q.get('q')) input.value = q.get('q');
       runSearch();
       setTimeout(function () { input.focus(); }, 50);
-    } else if (path === 'swaps' || path === 'azure' || path === 'palladium') {
+    } else if (path === 'swaps' || path === 'seedsnow' || path === 'azure' || path === 'palladium') {
       show('swaps'); setTitle('Green Swaps');
       // Its shelves were measured while hidden: let the arrows measure again.
       setTimeout(function () { window.dispatchEvent(new Event('resize')); }, 30);
       // #azure: the Azure Standard part of Green Swaps (2026-10-14).
       // Scrolled to sit just under the sticky store bar, not beneath it.
-      if (path === 'azure' || path === 'palladium') setTimeout(function () {
+      if (path !== 'swaps') setTimeout(function () {
         var a = $('#' + path), bar = $('.ss-top');
         if (a) window.scrollTo({ top: a.getBoundingClientRect().top + window.scrollY - (bar ? bar.getBoundingClientRect().bottom : 0) - 28, behavior: 'auto' });
       }, 60);
@@ -1112,6 +1112,8 @@
         var card = sp.closest(".sp-card");
         if (d.prices[h] === null) { if (card) card.hidden = true; return; }
         sp.textContent = d.prices[h];
+        var tag = card && $('.sp-sale', card);
+        if (tag) tag.hidden = d.prices[h].indexOf('was') < 0;
       });
     }).catch(function () { /* the prices written into the page stay */ });
   }

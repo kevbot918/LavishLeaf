@@ -22,18 +22,35 @@ import { FALL20, esc, palladiumCard, palladiumLink } from './palladium-card.mjs'
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 // [shelf title, note, collections in order, how many]
 const SHELVES = [
-  ['Best sellers for men', 'The styles men buy most, canvas and leather.', ['mens-best-sellers'], 16],
-  ['Best sellers for women', 'The styles women buy most.', ['womens-best-sellers'], 16],
-  ['Waterproof boots', 'Waterproof styles for rain, trails and muddy yards.', ['mens-waterproof', 'womens-waterproof'], 16],
-  ['Cold-weather boots', 'Lined and insulated styles for winter.', ['cold-weather-boots'], 12],
+  ['Best sellers for men', 'The styles men buy most, canvas and leather.', ['mens-best-sellers'], 24],
+  ['Best sellers for women', 'The styles women buy most.', ['womens-best-sellers'], 24],
+  ['Waterproof boots', 'Waterproof styles for rain, trails and muddy yards.', ['mens-waterproof', 'womens-waterproof'], 24],
+  ['Cold-weather boots', 'Lined and insulated styles for winter.', ['cold-weather-boots'], 18],
+  // Kids (owner, 2026-10-15): Palladium's own KIDS / CHILDREN tags across the
+  // whole catalog (its "kids" collection is mostly adult styles).
+  ['Kids', 'Palladium boots and shoes made for kids.', ['@kids'], 16],
 ];
 // The Recreation & Outdoors picks: waterproof and trail-ready styles.
 const OUTDOOR = { from: ['mens-waterproof', 'womens-waterproof', 'cold-weather-boots'], count: 10 };
-const PER_MODEL = 2; // at most two colors of one style per shelf
+const PER_MODEL = 3; // at most three colors of one style per shelf
 
 const cache = new Map();
+const isKid = (p) => (p.tags || []).some((t) => /^(KIDS|CHILDREN|JUNIOR|TODDLER|INFANT)$/i.test(t)) || /KIDS?|JUNIOR|TODDLER/i.test(p.title);
 async function collection(handle) {
   if (cache.has(handle)) return cache.get(handle);
+  if (handle === '@kids') {
+    const all = [];
+    for (let page = 1; page <= 20; page++) {
+      const r = await fetch(`https://palladiumboots.com/products.json?limit=250&page=${page}`, { headers: { 'User-Agent': 'Mozilla/5.0 (lavishleaf.org affiliate shelf)' } });
+      if (!r.ok) throw new Error(`Palladium said ${r.status} for the catalog`);
+      const { products } = await r.json();
+      if (!products.length) break;
+      all.push(...products);
+    }
+    const kids = all.filter(isKid);
+    cache.set(handle, kids);
+    return kids;
+  }
   const res = await fetch(`https://palladiumboots.com/collections/${handle}/products.json?limit=250`, { headers: { 'User-Agent': 'Mozilla/5.0 (lavishleaf.org affiliate shelf)' } });
   if (!res.ok) throw new Error(`Palladium said ${res.status} for ${handle}`);
   const { products } = await res.json();
@@ -60,7 +77,7 @@ function item(p) {
   const parts = p.title.split('|').map((s) => s.trim());
   const model = title(parts[1] || parts[0]);
   const color = title(parts[2] || '');
-  const who = mens.has(p.handle) && !womens.has(p.handle) ? "Men's " : womens.has(p.handle) && !mens.has(p.handle) ? "Women's " : '';
+  const who = isKid(p) ? "Kids' " : mens.has(p.handle) && !womens.has(p.handle) ? "Men's " : womens.has(p.handle) && !mens.has(p.handle) ? "Women's " : '';
   const price = Math.min(...live.map((v) => +v.price));
   const was = Math.max(...p.variants.map((v) => +(v.compare_at_price || 0)));
   const tags = (p.tags || []).join(' ').toUpperCase();
