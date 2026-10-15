@@ -17,7 +17,8 @@ export function palladiumCard(x, category = 'Palladium Boots') {
     '    <div class="sp-media">',
     `      <img src="${esc(x.img)}" alt="${esc(x.name)}" loading="lazy">`,
     '      <span class="sp-badge sp-partner">Palladium</span>',
-    // A small "Sale" tag top right (owner, 2026-10-15); store.js keeps it current.
+    `      <button type="button" class="sp-wish" data-wish="pd-${esc(x.handle)}" aria-pressed="false" aria-label="Save ${esc(x.name)} to a wish list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.2C.9 8.4 2.6 4.5 6.4 4.1c2-.2 3.8.8 5.6 2.9 1.8-2.1 3.6-3.1 5.6-2.9 3.8.4 5.5 4.3 4 7.7C19.5 16.4 12 21 12 21z"/></svg></button>`,
+    // A small "Sale" tag under the Palladium tag (owner, 2026-10-15); store.js keeps it current.
     `      <span class="sp-sale"${x.was && x.was > x.price ? '' : ' hidden'}>Sale</span>`,
     '    </div>',
     `    <h3 class="sp-name">${esc(x.name)}</h3>`,

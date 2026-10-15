@@ -6,16 +6,7 @@
   'use strict';
   var link = document.querySelector('[data-nav-cart]');
   if (!link) return;
-  // A green Donate button beside the store button on every page's header
-  // (owner, 2026-10-15), opening our donate pop-up (donate.js).
-  if (!document.querySelector('.nav-donate')) {
-    var give = document.createElement('a');
-    give.className = 'nav-donate donate-paypal m-keep';
-    give.href = 'donate.html'; give.target = '_blank'; give.rel = 'noopener';
-    give.setAttribute('aria-label', 'Donate to Lavish Leaf'); give.title = 'Donate to Lavish Leaf';
-    give.innerHTML = '<i class="fas fa-heart" aria-hidden="true"></i><span>Donate</span>';
-    link.parentNode.insertBefore(give, link.nextSibling);
-  }
+  // The donate pop-up script for the page header's Donate button (2026-10-15).
   if (!document.querySelector('script[src*="donate.js"]')) {
     var s = document.createElement('script'); s.src = 'donate.js'; s.defer = true; document.head.appendChild(s);
   }

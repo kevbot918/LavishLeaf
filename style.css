@@ -1479,36 +1479,6 @@ footer {
 .cart-link { background: none; border: 0; color: var(--leaf-bright, #6FD65F); text-decoration: underline; cursor: pointer; font: inherit; padding: 0; }
 .cart-out { display: block; width: 100%; color: #F2B8A0; font-size: .82rem; font-weight: 700; margin-top: 2px; }
 
-/* The header Donate button (owner, 2026-10-15): green, beside the store
-   button on every page; nav-cart.js adds it, donate.js opens the pop-up. */
-.nav-right a.nav-donate {
-  width: auto; height: 36px; padding: 0 14px; margin-left: 6px; gap: 7px;
-  border-radius: 999px; background: var(--leaf); color: var(--ink);
-  font-size: 0.9rem; font-weight: 800;
-}
-.nav-right a.nav-donate:hover { background: var(--leaf-bright); color: var(--ink); }
-.nav-right a.nav-donate i { font-size: 0.85rem; }
-@media (max-width: 920px) {
-  /* On a phone: a green heart the size of the other header icons. */
-  .nav-right a.nav-donate { width: 36px; height: 36px; padding: 0; margin-left: 2px; }
-  .nav-right a.nav-donate span { display: none; }
-}
-
-/* The header Donate button (owner, 2026-10-15): green, beside the store
-   button on every page; nav-cart.js adds it, donate.js opens the pop-up. */
-.nav-right a.nav-donate {
-  width: auto; height: 36px; padding: 0 14px; margin-left: 6px; gap: 7px;
-  border-radius: 999px; background: var(--leaf); color: var(--ink);
-  font-size: 0.9rem; font-weight: 800;
-}
-.nav-right a.nav-donate:hover { background: var(--leaf-bright); color: var(--ink); }
-.nav-right a.nav-donate i { font-size: 0.85rem; }
-@media (max-width: 920px) {
-  /* On a phone: a green heart the size of the other header icons. */
-  .nav-right a.nav-donate { width: 36px; height: 36px; padding: 0; margin-left: 2px; }
-  .nav-right a.nav-donate span { display: none; }
-}
-
 /* Founder photo (owner, 2026-10-15: "my face is cutoff" on a phone). In the
    stacked phone layout flex-basis became the HEIGHT and the frame stretched
    wide, so the circle turned into a wide oval that cropped the face. A fixed
@@ -1521,8 +1491,14 @@ footer {
 @media (max-width: 600px) {
   .career-col { flex: 1 1 100%; max-width: 520px; padding: 16px 16px; }
 }
-@media (max-width: 920px) {
-  /* Room for the Donate heart without squeezing the logo (2026-10-15): the
-     email icon leaves the phone header; the address is in every footer. */
-  .nav-right a.m-keep[href^="mailto:"] { display: none; }
-}
+
+/* Donate beside Online Store in every page header (owner, 2026-10-15). */
+.hero-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.page-hero > .hero-btns, .sports-hero > .hero-btns, .gaming-hero > .hero-btns { margin-top: 16px; }
+.hero-btns .btn { padding: 10px 28px; }
+
+/* The black page headers, shorter again (owner, 2026-10-15: "remove some of
+   the spacing at the bottom and the top"). */
+.page-hero, .sports-hero, .gaming-hero { padding-top: 18px; padding-bottom: 18px; }
+.home-hero { padding-top: 40px; padding-bottom: 32px; }
+.page-hero > .hero-btns, .sports-hero > .hero-btns, .gaming-hero > .hero-btns { margin-top: 12px; }

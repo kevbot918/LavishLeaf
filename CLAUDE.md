@@ -795,3 +795,14 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     (localStorage ll-browse-hint) and a 280px drawer. **Texting**: AWS
     ResourceNotFound for the phone number = wrong region or account; the
     error and the dashboard card now name the region and key set in use.
+
+49. **2026-10-15, fourth list.** **Donate sits beside "Online Store" in each
+    page's black header** (.hero-btns, 12 pages; the home hero already had
+    it); the top-bar Donate pill was the WRONG place and is gone (email icon
+    back on phones); nav-cart.js only loads donate.js now. Home cards: Online
+    Store 3rd, Rec Sports 6th. Black headers 18px top and bottom. Store:
+    sidebar default 310px (340 and 390 move to it); hearts on Azure and
+    Palladium cards; partner tags smaller at the corner, the Sale tag under
+    them; 3:2 photos, tighter shelves, titles nearer their cards; shorter
+    partner banners; "Back to Store Home Shelves" on shelf and list pages;
+    Green Swaps lede reworded.

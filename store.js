@@ -27,8 +27,9 @@
   // Every product scrolls on its Home shelf (owner, 2026-10-11: "allow to scroll
   // through much more than just 30"); "See all" still lays them out in a grid.
   var SHELF_LENGTH = 1000;
-  // The sidebar's width, px. Owner, 2026-10-10: start it a bit wider (was 340).
-  var SIDE_W = 390, SIDE_MIN = 260, SIDE_MAX = 560, OLD_SIDE_W = 340;
+  // The sidebar's width, px. Owner, 2026-10-10: wider (was 340); 2026-10-15:
+  // "a bit less wide" now its rows are condensed (390 -> 310).
+  var SIDE_W = 310, SIDE_MIN = 240, SIDE_MAX = 560, OLD_SIDE_W = [340, 390];
   var DEFAULTS = { sort: 'relevance', sideW: SIDE_W, lists: [], shelfOrder: [] };
 
   // ------------------------------------------------------------ state
@@ -42,7 +43,7 @@
       .map(function (l) { return { id: String(l.id), name: l.name, items: Array.isArray(l.items) ? l.items.filter(isStr) : [] }; });
     out.sideW = clampSide(parseInt(out.sideW, 10) || SIDE_W);
     // A browser that only ever had the old default moves to the new one.
-    if (out.sideW === OLD_SIDE_W) out.sideW = SIDE_W;
+    if (OLD_SIDE_W.indexOf(out.sideW) >= 0) out.sideW = SIDE_W;
     if (!Array.isArray(out.shelfOrder)) out.shelfOrder = [];
     out.shelfOrder = out.shelfOrder.filter(isStr);
     return out;

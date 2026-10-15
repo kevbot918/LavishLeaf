@@ -218,7 +218,7 @@
      "name": "Hard White Wheat, Organic",
      "size": "5 lb",
      "price": 9.76,
-     "stock": 38203,
+     "stock": 45403,
      "img": "images/azure/gr112.jpg"
     },
     {
@@ -358,7 +358,7 @@
      "name": "Cornmeal, Organic",
      "size": "5 lb",
      "price": 7,
-     "stock": 20676,
+     "stock": 20675,
      "img": "images/azure/fl013.jpg"
     },
     {
@@ -604,7 +604,7 @@
      "name": "Cocoa Powder, Organic",
      "size": "1 lb",
      "price": 12.52,
-     "stock": 18007,
+     "stock": 17947,
      "img": "images/azure/bp833.jpg"
     },
     {
@@ -614,7 +614,7 @@
      "name": "Semi-Sweet Chocolate Chips, Organic",
      "size": "1 lb",
      "price": 9.2,
-     "stock": 31573,
+     "stock": 31568,
      "img": "images/azure/bp323.jpg"
     },
     {
@@ -976,7 +976,7 @@
      "name": "Thompson Raisins, Organic",
      "size": "1 lb",
      "price": 4.48,
-     "stock": 69459,
+     "stock": 69429,
      "img": "images/azure/df062.jpg"
     },
     {
@@ -1182,7 +1182,7 @@
      "name": "Yellow Onions, Organic",
      "size": "3 lb",
      "price": 6.95,
-     "stock": 1302,
+     "stock": 1299,
      "img": "images/azure/qp018.jpg"
     },
     {
@@ -1192,7 +1192,7 @@
      "name": "Russet Potatoes, Organic",
      "size": "5 lb",
      "price": 5.91,
-     "stock": 6509,
+     "stock": 6468,
      "img": "images/azure/qp139.jpg"
     },
     {
@@ -1212,7 +1212,7 @@
      "name": "Garlic, Organic",
      "size": "1 lb",
      "price": 7.22,
-     "stock": 4449,
+     "stock": 4441,
      "img": "images/azure/qp324.jpg"
     },
     {
@@ -1232,7 +1232,7 @@
      "name": "Yellow Potatoes, Organic",
      "size": "5 lb",
      "price": 7.65,
-     "stock": 3374,
+     "stock": 3373,
      "img": "images/azure/qp172.jpg"
     },
     {
@@ -1282,7 +1282,7 @@
      "name": "Lemons, Organic",
      "size": "2 lb",
      "price": 7.95,
-     "stock": 3437,
+     "stock": 3434,
      "img": "images/azure/qp058.jpg"
     },
     {
@@ -1292,7 +1292,7 @@
      "name": "Avocados, Organic",
      "size": "3 ct",
      "price": 5.52,
-     "stock": 848,
+     "stock": 783,
      "img": "images/azure/qp004.jpg"
     },
     {
@@ -1372,7 +1372,7 @@
      "name": "Celery, Organic",
      "size": "1 bunch",
      "price": 3.61,
-     "stock": 1085,
+     "stock": 1084,
      "img": "images/azure/qp063.jpg"
     },
     {
@@ -1392,7 +1392,7 @@
      "name": "Carrots #2, Organic",
      "size": "25 lb",
      "price": 25.5,
-     "stock": 59,
+     "stock": 58,
      "img": "images/azure/qp170.jpg"
     },
     {
@@ -1412,7 +1412,7 @@
      "name": "Beets, Red, Fresh, Organic",
      "size": "5 lb",
      "price": 11.66,
-     "stock": 1038,
+     "stock": 1030,
      "img": "images/azure/qp033.jpg"
     },
     {
