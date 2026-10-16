@@ -1,6 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <rect x="3" y="3" width="94" height="94" rx="20" fill="white"/>
-  <g transform="translate(50,50) rotate(38) translate(-50,-50)">
-    <path d="M50 11 C60 11 74 24 76 46 C78 64 68 80 58 87 C55 89 53 90 52 92 C51 94 50 97 50 97 C50 97 49 94 48 92 C47 90 45 89 42 87 C32 80 22 64 24 46 C26 24 40 11 50 11 Z" fill="#22cc00"/>
-  </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="2.7 4.9 46 46"><defs><mask id="v"><rect x="0" y="0" width="60" height="60" fill="#fff"/><path d="M33.2 30.6 C28.8 36.4 23.4 42.2 15.4 48.6" stroke="#000" stroke-width="2" stroke-linecap="round" fill="none"/></mask></defs><path d="M43.5 6.2 C45 9.5 45.6 15 45.4 22 C45.2 30 43 37 37.6 42.5 C33 46.9 26 49.6 19.6 50.3 C16 48.9 12 47.1 9.4 45 C6.9 42.6 6 38.6 6.2 34 C6.5 30 8.4 27 11 24.4 C15 20.2 20.2 16.4 26.2 12.6 C31.2 9.6 37 7.2 43.5 6.2 Z" fill="#4AB73C" mask="url(#v)"/></svg>
