@@ -19,7 +19,8 @@
       "namespace": "android_app",
       "package_name": "lavishleaf.org.symphonymph",
       "sha256_cert_fingerprints": [
-        "B6:06:CD:DA:7B:D4:EB:72:CE:B0:0A:4D:9E:AF:85:31:AE:B7:7B:87:EF:51:E4:4B:E4:73:4F:3B:74:CD:DA:D4"
+        "B6:06:CD:DA:7B:D4:EB:72:CE:B0:0A:4D:9E:AF:85:31:AE:B7:7B:87:EF:51:E4:4B:E4:73:4F:3B:74:CD:DA:D4",
+        "75:7F:22:F0:3F:38:70:FF:1D:77:B7:C9:30:E1:46:ED:94:1F:BE:BD:06:FE:81:49:86:4D:0B:37:FC:0B:13:3A"
       ]
     }
   },
