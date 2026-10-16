@@ -12,13 +12,49 @@
 import { randomUUID } from 'node:crypto';
 import { catalog } from '../lib/catalog.mjs';
 import { CheckoutError, approveLink, call, config, handle, returnUrls, subscriptionBody } from '../lib/paypal.mjs';
-import { checkArea, cleanSignup, pickupsStore, planOverride } from '../lib/pickups.mjs';
-import { RATE_BP } from '../../tax.mjs';
+import { BUCKET_CENTS, checkArea, cleanSignup, pickupsStore, planOverride } from '../lib/pickups.mjs';
+import { RATE_BP, taxOn } from '../../tax.mjs';
+
+// A ONE-TIME pick-up (owner, 2026-10-16: "for those that may not want to
+// subscribe monthly"): the same form and area check, then a one-time PayPal
+// order instead of a subscription, at the product's "oneTime" price (plus the
+// bucket and 6%). custom_id "pk=<sign-up id>" tells capture.mjs it is a
+// pick-up, so it is filed in "pickups", never as a store order.
+async function oneTime(request, cfg, p, body) {
+  if (!p.pickup || !Number.isInteger(p.oneTime) || p.oneTime <= 0) throw new CheckoutError(400, 'A one-time pick-up is not offered for that service.');
+  const s = cleanSignup(body.details, p);
+  const area = await checkArea(s);
+  const items = [{ name: `${p.name} (one time)`.slice(0, 127), sku: p.id + ':once', quantity: '1', unit_amount: { currency_code: 'USD', value: money(p.oneTime) }, category: 'DIGITAL_GOODS' }];
+  if (s.bucket) items.push({ name: '5 gallon bucket', sku: p.id + ':bucket', quantity: '1', unit_amount: { currency_code: 'USD', value: money(BUCKET_CENTS) }, category: 'PHYSICAL_GOODS' });
+  const cents = p.oneTime + (s.bucket ? BUCKET_CENTS : 0);
+  const tax = taxOn(cents);
+  const rec = { id: randomUUID(), once: true, product: p.id, productName: p.name, price: p.oneTime, ...s, area, lat: area.lat, lon: area.lon, assignedDay: null, status: 'pending', created: new Date().toISOString() };
+  const { returnUrl, cancelUrl } = returnUrls(request);
+  const order = await call(cfg, '/v2/checkout/orders', {
+    intent: 'CAPTURE',
+    purchase_units: [{
+      custom_id: 'pk=' + rec.id,
+      description: `${p.name}, one time, ${s.city}`.slice(0, 127),
+      amount: { currency_code: 'USD', value: money(cents + tax), breakdown: { item_total: { currency_code: 'USD', value: money(cents) }, tax_total: { currency_code: 'USD', value: money(tax) } } },
+      items,
+    }],
+    payment_source: { paypal: { experience_context: { brand_name: 'Lavish Leaf', shipping_preference: 'NO_SHIPPING', user_action: 'PAY_NOW', return_url: returnUrl, cancel_url: cancelUrl } } },
+  });
+  rec.orderId = String(order.id || '');
+  rec.totalCents = cents + tax;
+  const store = await pickupsStore();
+  await store.setJSON('s-' + rec.id, rec);
+  // The refund webhook finds a one-time pick-up by its PayPal order.
+  if (rec.orderId) await store.setJSON('o-' + rec.orderId, { id: rec.id });
+  return { approveUrl: approveLink(order) };
+}
+const money = (c) => (c / 100).toFixed(2);
 
 export default async (request) =>
   handle(request, async (body) => {
     const cfg = config();
     const p = catalog[typeof body.id === 'string' ? body.id : ''];
+    if (p && p.active && body.once === true) return oneTime(request, cfg, p, body);
     if (!p || !p.active || !p.interval) throw new CheckoutError(400, 'That subscription is not available.');
     // A plan exists in one PayPal environment only: sandbox and live ids differ.
     const plan = cfg.mode === 'live' ? p.paypalPlanId : p.paypalSandboxPlanId;

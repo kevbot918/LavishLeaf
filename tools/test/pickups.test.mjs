@@ -58,3 +58,52 @@ test('every accepted sign-up lands on the route map, even when only its ZIP is k
   const byZip = await checkArea(s, census(null));
   assert.ok(Number.isFinite(byZip.lat) && Number.isFinite(byZip.lon), 'ZIP centre used');
 });
+
+// A one-time pick-up (owner, 2026-10-16): the same form and area check, then a
+// one-time PayPal order at "oneTime" (plus the bucket and 6%), filed in
+// "pickups" with a pointer from the order for the refund webhook.
+test('a one-time pick-up is a one-time PayPal order, filed as a pick-up', async () => {
+  const { setPickupsStoreForTests } = await import('../../netlify/lib/pickups.mjs');
+  const saved = new Map();
+  setPickupsStoreForTests({ setJSON: async (k, v) => saved.set(k, v), get: async (k) => saved.get(k) || null });
+  process.env.PAYPAL_CLIENT_ID = 'id';
+  process.env.PAYPAL_SECRET = 'secret';
+  delete process.env.PAYPAL_ENV;
+  const calls = [];
+  const realFetch = globalThis.fetch;
+  globalThis.fetch = async (url, init) => {
+    calls.push({ url: String(url), init });
+    if (String(url).includes('geocoding.geo.census.gov')) return new Response(JSON.stringify({ result: { addressMatches: [at(35.25, -95.12, 'STIGLER')] } }));
+    if (String(url).endsWith('/v1/oauth2/token')) return new Response(JSON.stringify({ access_token: 'T' }));
+    return new Response(JSON.stringify({ id: 'ORDER9', links: [{ rel: 'payer-action', href: 'https://www.sandbox.paypal.com/checkoutnow?token=ORDER9' }] }), { status: 201 });
+  };
+  try {
+    const { default: subscribe } = await import('../../netlify/functions/subscribe.mjs');
+    const res = await subscribe(new Request('https://lavishleaf.org/x', { method: 'POST', body: JSON.stringify({ id: 'compost-monthly', once: true, details: form }) }));
+    assert.equal(res.status, 200);
+    const order = calls.find((c) => c.url.endsWith('/v2/checkout/orders'));
+    assert.ok(order, 'an order, not a subscription');
+    assert.ok(!calls.some((c) => c.url.includes('/billing/')));
+    const unit = JSON.parse(order.init.body).purchase_units[0];
+    // $10.00 one time + $10.00 bucket = $20.00, + 6% = $21.20.
+    assert.equal(unit.amount.value, '21.20');
+    assert.equal(unit.amount.breakdown.tax_total.value, '1.20');
+    assert.match(unit.custom_id, /^pk=/);
+    const rec = saved.get('s-' + unit.custom_id.slice(3));
+    assert.equal(rec.once, true);
+    assert.equal(rec.orderId, 'ORDER9');
+    assert.equal(saved.get('o-ORDER9').id, rec.id);
+    assert.match(ownerRows(rec).map((r) => r.join(' ')).join('\n'), /ONE TIME[\s\S]*PayPal order ORDER9/);
+    // Recycling has no bucket; the price alone.
+    const r2 = await subscribe(new Request('https://lavishleaf.org/x', { method: 'POST', body: JSON.stringify({ id: 'recycle-monthly', once: true, details: form }) }));
+    assert.equal(r2.status, 200);
+    const u2 = JSON.parse(calls.filter((c) => c.url.endsWith('/v2/checkout/orders')).pop().init.body).purchase_units[0];
+    assert.equal(u2.amount.value, '10.60');
+    // Not a pick-up: refused.
+    const r3 = await subscribe(new Request('https://lavishleaf.org/x', { method: 'POST', body: JSON.stringify({ id: 'soccer-player-fall', once: true, details: form }) }));
+    assert.equal(r3.status, 400);
+  } finally {
+    globalThis.fetch = realFetch;
+    setPickupsStoreForTests(null);
+  }
+});

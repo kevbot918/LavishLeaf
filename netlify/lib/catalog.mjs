@@ -20,6 +20,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": 1000,
+    "oneTime": 1000,
     "grocery": false,
     "waiver": null,
     "supplier": null
@@ -43,6 +44,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": 1000,
     "grocery": false,
     "waiver": null,
     "supplier": null
@@ -66,6 +68,7 @@ export const catalog = {
     "registration": "player",
     "league": "Soccer: 7v7 Adult League, Fall 2026",
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": {
       "version": "2026-09"
@@ -91,6 +94,7 @@ export const catalog = {
     "registration": "team",
     "league": "Soccer: 7v7 Adult League, Fall 2026",
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": {
       "version": "2026-09"
@@ -116,6 +120,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -159,6 +164,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -208,6 +214,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -261,6 +268,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -318,6 +326,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -362,6 +371,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -408,6 +418,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -451,6 +462,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -485,6 +497,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -519,6 +532,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -553,6 +567,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -587,6 +602,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -621,6 +637,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -655,6 +672,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -689,6 +707,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -723,6 +742,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -757,6 +777,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -791,6 +812,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -825,6 +847,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -859,6 +882,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -893,6 +917,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -927,6 +952,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -961,6 +987,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -995,6 +1022,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -1029,6 +1057,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -1063,6 +1092,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -1097,6 +1127,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -1131,6 +1162,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -1165,6 +1197,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -1205,6 +1238,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -1239,6 +1273,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -1273,6 +1308,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -1307,6 +1343,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -1341,6 +1378,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -1375,6 +1413,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -1409,6 +1448,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -1443,6 +1483,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -1477,6 +1518,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -1511,6 +1553,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -1545,6 +1588,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -1579,6 +1623,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -1613,6 +1658,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -1647,6 +1693,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -1681,6 +1728,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -1715,6 +1763,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -1749,6 +1798,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -1783,6 +1833,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -1817,6 +1868,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -1851,6 +1903,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -1885,6 +1938,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -1919,6 +1973,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -1953,6 +2008,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -1987,6 +2043,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -2021,6 +2078,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -2055,6 +2113,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -2089,6 +2148,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -2123,6 +2183,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -2157,6 +2218,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -2198,6 +2260,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -2236,6 +2299,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -2270,6 +2334,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -2304,6 +2369,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -2338,6 +2404,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -2372,6 +2439,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -2406,6 +2474,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -2440,6 +2509,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -2474,6 +2544,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -2514,6 +2585,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -2551,6 +2623,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -2585,6 +2658,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -2619,6 +2693,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -2653,6 +2728,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -2693,6 +2769,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -2737,6 +2814,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -2775,6 +2853,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -2809,6 +2888,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -2843,6 +2923,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -2877,6 +2958,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -2911,6 +2993,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -2945,6 +3028,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -2979,6 +3063,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -3013,6 +3098,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -3047,6 +3133,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -3081,6 +3168,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -3115,6 +3203,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -3149,6 +3238,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -3183,6 +3273,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -3217,6 +3308,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -3251,6 +3343,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -3285,6 +3378,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -3319,6 +3413,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -3353,6 +3448,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -3387,6 +3483,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -3421,6 +3518,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -3455,6 +3553,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -3489,6 +3588,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -3523,6 +3623,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -3557,6 +3658,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -3591,6 +3693,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": true,
     "waiver": null,
     "supplier": {
@@ -3632,6 +3735,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -3666,6 +3770,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -3707,6 +3812,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -3741,6 +3847,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -3775,6 +3882,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -3819,6 +3927,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -3853,6 +3962,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -3887,6 +3997,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -3928,6 +4039,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -3962,6 +4074,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -4002,6 +4115,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -4036,6 +4150,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -4070,6 +4185,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -4104,6 +4220,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -4145,6 +4262,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -4179,6 +4297,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -4222,6 +4341,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -4263,6 +4383,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -4297,6 +4418,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -4331,6 +4453,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -4365,6 +4488,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -4399,6 +4523,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -4433,6 +4558,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -4467,6 +4593,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -4501,6 +4628,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -4535,6 +4663,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -4569,6 +4698,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -4603,6 +4733,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -4637,6 +4768,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -4671,6 +4803,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -4705,6 +4838,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -4739,6 +4873,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -4773,6 +4908,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -4807,6 +4943,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -4841,6 +4978,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -4875,6 +5013,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -4909,6 +5048,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -4943,6 +5083,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -4977,6 +5118,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -5011,6 +5153,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -5045,6 +5188,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -5079,6 +5223,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -5131,6 +5276,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -5177,6 +5323,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -5220,6 +5367,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -5261,6 +5409,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -5295,6 +5444,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -5339,6 +5489,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -5373,6 +5524,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -5407,6 +5559,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -5441,6 +5594,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -5475,6 +5629,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -5509,6 +5664,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -5543,6 +5699,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -5577,6 +5734,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -5611,6 +5769,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -5645,6 +5804,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -5679,6 +5839,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -5713,6 +5874,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -5747,6 +5909,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -5781,6 +5944,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -5815,6 +5979,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -5849,6 +6014,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -5883,6 +6049,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -5917,6 +6084,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -5951,6 +6119,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -5985,6 +6154,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -6019,6 +6189,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -6053,6 +6224,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -6087,6 +6259,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -6121,6 +6294,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -6161,6 +6335,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -6205,6 +6380,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -6243,6 +6419,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -6277,6 +6454,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -6318,6 +6496,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -6356,6 +6535,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -6390,6 +6570,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -6424,6 +6605,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -6458,6 +6640,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -6492,6 +6675,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -6526,6 +6710,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -6560,6 +6745,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -6594,6 +6780,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -6628,6 +6815,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -6669,6 +6857,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -6714,6 +6903,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -6752,6 +6942,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -6786,6 +6977,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -6830,6 +7022,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -6879,6 +7072,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -6926,6 +7120,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -6965,6 +7160,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -6999,6 +7195,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -7033,6 +7230,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -7067,6 +7265,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -7111,6 +7310,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -7152,6 +7352,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -7186,6 +7387,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -7220,6 +7422,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -7254,6 +7457,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -7288,6 +7492,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -7322,6 +7527,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -7356,6 +7562,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -7390,6 +7597,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -7424,6 +7632,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -7458,6 +7667,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -7500,6 +7710,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -7546,6 +7757,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -7591,6 +7803,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -7629,6 +7842,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -7663,6 +7877,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -7697,6 +7912,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -7731,6 +7947,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -7772,6 +7989,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -7816,6 +8034,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -7853,6 +8072,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -7887,6 +8107,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -7921,6 +8142,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -7961,6 +8183,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -7998,6 +8221,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -8032,6 +8256,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -8066,6 +8291,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -8100,6 +8326,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -8134,6 +8361,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -8168,6 +8396,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -8202,6 +8431,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -8243,6 +8473,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -8281,6 +8512,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -8315,6 +8547,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -8355,6 +8588,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -8392,6 +8626,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -8426,6 +8661,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -8460,6 +8696,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -8494,6 +8731,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -8528,6 +8766,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -8562,6 +8801,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -8596,6 +8836,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -8630,6 +8871,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -8664,6 +8906,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -8698,6 +8941,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -8732,6 +8976,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -8766,6 +9011,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -8800,6 +9046,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -8834,6 +9081,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -8868,6 +9116,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -8902,6 +9151,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -8936,6 +9186,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -8970,6 +9221,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -9004,6 +9256,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -9044,6 +9297,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -9087,6 +9341,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -9124,6 +9379,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -9158,6 +9414,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -9192,6 +9449,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -9226,6 +9484,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -9260,6 +9519,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -9294,6 +9554,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -9335,6 +9596,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -9373,6 +9635,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -9407,6 +9670,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -9441,6 +9705,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -9475,6 +9740,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -9509,6 +9775,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -9543,6 +9810,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -9583,6 +9851,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -9620,6 +9889,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -9654,6 +9924,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -9688,6 +9959,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -9722,6 +9994,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -9756,6 +10029,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -9790,6 +10064,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -9824,6 +10099,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -9865,6 +10141,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -9903,6 +10180,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -9937,6 +10215,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -9971,6 +10250,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -10005,6 +10285,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -10039,6 +10320,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -10073,6 +10355,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -10107,6 +10390,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -10141,6 +10425,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -10181,6 +10466,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -10224,6 +10510,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -10261,6 +10548,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -10295,6 +10583,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -10336,6 +10625,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -10374,6 +10664,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -10408,6 +10699,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -10442,6 +10734,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -10476,6 +10769,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -10510,6 +10804,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -10544,6 +10839,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -10587,6 +10883,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -10633,6 +10930,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -10676,6 +10974,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -10713,6 +11012,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -10753,6 +11053,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -10790,6 +11091,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -10824,6 +11126,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -10858,6 +11161,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -10898,6 +11202,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -10935,6 +11240,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -10969,6 +11275,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -11003,6 +11310,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -11037,6 +11345,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -11071,6 +11380,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -11105,6 +11415,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -11139,6 +11450,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -11173,6 +11485,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -11207,6 +11520,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -11241,6 +11555,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -11275,6 +11590,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -11316,6 +11632,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -11350,6 +11667,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -11384,6 +11702,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -11418,6 +11737,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -11452,6 +11772,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -11486,6 +11807,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -11520,6 +11842,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -11554,6 +11877,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -11588,6 +11912,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -11622,6 +11947,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -11656,6 +11982,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -11690,6 +12017,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -11724,6 +12052,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -11758,6 +12087,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -11792,6 +12122,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -11826,6 +12157,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -11860,6 +12192,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -11894,6 +12227,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -11928,6 +12262,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -11962,6 +12297,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -11996,6 +12332,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -12030,6 +12367,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -12064,6 +12402,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -12098,6 +12437,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -12132,6 +12472,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -12166,6 +12507,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -12200,6 +12542,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -12234,6 +12577,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -12268,6 +12612,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -12302,6 +12647,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -12336,6 +12682,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -12370,6 +12717,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -12404,6 +12752,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -12438,6 +12787,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -12472,6 +12822,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -12506,6 +12857,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -12540,6 +12892,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -12574,6 +12927,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -12608,6 +12962,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -12642,6 +12997,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -12676,6 +13032,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -12710,6 +13067,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -12744,6 +13102,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -12778,6 +13137,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -12812,6 +13172,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -12846,6 +13207,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -12880,6 +13242,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -12914,6 +13277,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -12948,6 +13312,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -12982,6 +13347,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -13016,6 +13382,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -13050,6 +13417,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -13084,6 +13452,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -13118,6 +13487,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -13152,6 +13522,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -13186,6 +13557,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -13220,6 +13592,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -13254,6 +13627,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -13288,6 +13662,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -13322,6 +13697,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -13356,6 +13732,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -13390,6 +13767,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -13424,6 +13802,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -13458,6 +13837,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -13492,6 +13872,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -13526,6 +13907,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -13560,6 +13942,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -13594,6 +13977,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -13628,6 +14012,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -13662,6 +14047,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -13696,6 +14082,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -13730,6 +14117,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -13764,6 +14152,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -13798,6 +14187,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -13832,6 +14222,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -13866,6 +14257,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -13900,6 +14292,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -13934,6 +14327,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -13968,6 +14362,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -14002,6 +14397,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -14036,6 +14432,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -14070,6 +14467,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -14104,6 +14502,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -14138,6 +14537,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -14172,6 +14572,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -14206,6 +14607,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -14240,6 +14642,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -14274,6 +14677,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -14308,6 +14712,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -14342,6 +14747,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -14376,6 +14782,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -14410,6 +14817,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -14444,6 +14852,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -14478,6 +14887,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -14512,6 +14922,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -14546,6 +14957,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -14580,6 +14992,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -14614,6 +15027,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -14648,6 +15062,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -14682,6 +15097,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -14716,6 +15132,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -14750,6 +15167,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -14784,6 +15202,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -14818,6 +15237,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -14852,6 +15272,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -14886,6 +15307,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -14920,6 +15342,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -14954,6 +15377,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -14994,6 +15418,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -15028,6 +15453,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -15062,6 +15488,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -15096,6 +15523,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -15130,6 +15558,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -15164,6 +15593,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -15198,6 +15628,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -15232,6 +15663,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -15272,6 +15704,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -15306,6 +15739,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -15340,6 +15774,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -15374,6 +15809,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -15408,6 +15844,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -15442,6 +15879,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -15482,6 +15920,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -15516,6 +15955,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -15556,6 +15996,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -15596,6 +16037,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -15630,6 +16072,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -15671,6 +16114,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -15705,6 +16149,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -15739,6 +16184,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -15773,6 +16219,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -15807,6 +16254,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -15841,6 +16289,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -15875,6 +16324,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -15909,6 +16359,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -15943,6 +16394,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -15977,6 +16429,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -16017,6 +16470,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -16051,6 +16505,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -16085,6 +16540,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -16119,6 +16575,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -16153,6 +16610,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -16187,6 +16645,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -16221,6 +16680,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -16255,6 +16715,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -16289,6 +16750,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -16323,6 +16785,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -16364,6 +16827,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -16398,6 +16862,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -16432,6 +16897,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -16466,6 +16932,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -16500,6 +16967,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -16534,6 +17002,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -16568,6 +17037,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -16602,6 +17072,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -16636,6 +17107,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -16670,6 +17142,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -16704,6 +17177,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -16738,6 +17212,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -16772,6 +17247,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -16806,6 +17282,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -16840,6 +17317,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {
@@ -16874,6 +17352,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
+    "oneTime": null,
     "grocery": false,
     "waiver": null,
     "supplier": {

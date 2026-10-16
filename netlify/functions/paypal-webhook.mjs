@@ -156,6 +156,18 @@ export async function handleEvent(event, cfg) {
       out.did = 'donation refunded';
       return out;
     }
+    // A one-time pick-up (subscribe.mjs oneTime, 2026-10-16).
+    {
+      const ps = await pickupsStore();
+      const ptr = await ps.get('o-' + orderId, { type: 'json' });
+      const rec = ptr && await ps.get('s-' + ptr.id, { type: 'json' });
+      if (rec) {
+        await pickupRefunded(rec, amount, event.id);
+        await ps.setJSON('s-' + ptr.id, rec);
+        out.did = 'one-time pick-up refunded';
+        return out;
+      }
+    }
     const orders = await ordersStore();
     const o = await orders.get('o-' + orderId, { type: 'json' });
     let full = false;

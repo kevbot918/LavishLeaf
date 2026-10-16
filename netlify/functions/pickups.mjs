@@ -93,7 +93,7 @@ export default async (request) => {
 
   if (body.action === 'update') {
     if ('assignedDay' in body) rec.assignedDay = DAYS.includes(body.assignedDay) ? body.assignedDay : null;
-    if ('status' in body && ['pending', 'active', 'paused', 'canceled'].includes(body.status)) rec.status = body.status;
+    if ('status' in body && ['pending', 'active', 'paused', 'canceled', 'done'].includes(body.status)) rec.status = body.status;
     if ('ownerNote' in body) rec.ownerNote = String(body.ownerNote || '').replace(/[<>]/g, '').slice(0, 300);
     rec.updated = new Date().toISOString();
     await store.setJSON(key, rec);
@@ -131,7 +131,7 @@ export default async (request) => {
       const { changed } = await syncWithPayPal(rec);
       if (changed) await store.setJSON(key, rec);
     }
-    if (rec.status === 'active' || rec.status === 'approved') return json(400, { error: 'PayPal says this subscription is still active. Use Cancel subscription first, then Remove.' });
+    if (!rec.once && (rec.status === 'active' || rec.status === 'approved')) return json(400, { error: 'PayPal says this subscription is still active. Use Cancel subscription first, then Remove.' });
     await store.delete(key);
     return json(200, { removed: true });
   }

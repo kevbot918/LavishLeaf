@@ -936,3 +936,10 @@ body.ss-resizing .ss-side { transition: none; }
 .ss-side-actions { padding: 0 8px 4px; }
 .ss-action-note { margin-left: 33px; }
 .ss-nav { padding: 2px 8px 10px; }
+
+/* Pick-ups: Monthly or One time on the card (owner, 2026-10-16). */
+.ss-shell .sp-plan { display: flex; gap: 0; margin: 2px 0 6px; border: 1px solid var(--line, #555); border-radius: 999px; overflow: hidden; }
+.ss-shell .sp-plan button { flex: 1 1 50%; padding: 4px 6px; font: inherit; font-size: .76rem; font-weight: 700; border: 0; background: transparent; color: var(--muted, #C8CFC8); cursor: pointer; }
+.ss-shell .sp-plan button[aria-pressed="true"] { background: #4AB73C; color: #14261A; }
+.ss-shell .sp-plan button:hover:not([aria-pressed="true"]) { background: rgba(74, 183, 60, .15); }
+.su-plan { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0 0 8px; font-weight: 700; }

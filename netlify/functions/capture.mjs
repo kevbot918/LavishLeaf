@@ -15,6 +15,35 @@ import { addressOk } from '../../shipping.mjs';
 import { afterPayment, summarise } from '../lib/orders.mjs';
 import { registrationsPaid } from '../lib/registration-mail.mjs';
 import { discountsStore, markUsed } from '../lib/discounts.mjs';
+import { pickupsStore } from '../lib/pickups.mjs';
+import { activated } from '../lib/pickup-events.mjs';
+
+/**
+ * A one-time pick-up (subscribe.mjs oneTime, 2026-10-16): captured, then the
+ * sign-up in "pickups" is marked paid (owner alert + customer email, once).
+ * Never filed as a store order, and the buyer's cart is left alone.
+ */
+async function pickupPaid(cfg, order, pk) {
+  const done = order.status === 'COMPLETED'
+    ? order
+    : await call(cfg, `/v2/checkout/orders/${order.id}/capture`, {}, { requestId: `capture-${order.id}` });
+  const capture = done.purchase_units?.[0]?.payments?.captures?.[0];
+  if (done.status === 'COMPLETED') {
+    try {
+      const store = await pickupsStore();
+      const key = 's-' + String(pk).replace(/[^a-z0-9-]/gi, '');
+      const rec = await store.get(key, { type: 'json' });
+      if (rec && rec.orderId === done.id) {
+        rec.lastPaid = rec.lastPaid || new Date().toISOString();
+        rec.payments = 1;
+        await activated(rec);
+        rec.updated = new Date().toISOString();
+        await store.setJSON(key, rec);
+      }
+    } catch (e) { console.error('[capture] one-time pick-up', e.message); }
+  }
+  return { status: done.status, orderId: done.id, amount: capture?.amount?.value ?? null, pickup: true };
+}
 
 export default async (request) =>
   handle(request, async (body) => {
@@ -25,6 +54,7 @@ export default async (request) =>
     const order = await call(cfg, `/v2/checkout/orders/${id}`, null, { method: 'GET' });
     const unit = order.purchase_units?.[0] || {};
     const meta = parseCustomId(unit.custom_id);
+    if (meta.pk) return pickupPaid(cfg, order, meta.pk);
     if (order.status !== 'COMPLETED' && meta.m) {
       const ok = addressOk(meta.m, unit.shipping?.address);
       if (!ok.ok) throw new CheckoutError(400, ok.message);

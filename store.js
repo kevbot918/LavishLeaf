@@ -720,11 +720,28 @@
     var newTop = $('#lists-new');
     if (newTop) newTop.addEventListener('click', function () { askListName(null); });
 
+    function setPlan(pl) {
+      var card = pl.closest('.sp-card') || document;
+      var once = pl.getAttribute('data-plan') === 'once';
+      card.querySelectorAll('[data-plan-for]').forEach(function (x) { x.setAttribute('aria-pressed', String(x === pl)); });
+      var price = card.querySelector('.sp-price');
+      if (price) {
+        if (!price.hasAttribute('data-month')) price.setAttribute('data-month', price.innerHTML);
+        if (once) price.textContent = card.querySelector('[data-plan="once"][data-plan-for]').getAttribute('data-once');
+        else price.innerHTML = price.getAttribute('data-month');
+      }
+      var go = card.querySelector('[data-subscribe]');
+      if (go) go.setAttribute('data-plan', once ? 'once' : 'month');
+    }
+
     // Hearts and cloned cart buttons, wherever they are drawn.
     document.addEventListener('click', function (e) {
       var w = e.target.closest('[data-wish]');
       if (w) { heart(w.getAttribute('data-wish')); return; }
       // "Choose scent/colour/size" opens the pop-up to choose.
+      // Pick-ups: Monthly or One time on the card (owner, 2026-10-16).
+      var pl = e.target.closest('[data-plan-for]');
+      if (pl) { setPlan(pl); return; }
       var ch = e.target.closest('[data-choose]');
       if (ch) { openProduct(ch.getAttribute('data-choose')); return; }
       // A product card, anywhere but its buttons, opens the product pop-up.

@@ -500,7 +500,7 @@
       var shown = showAllPick ? signups : signups.filter(function (s) { return !unfinished(s); });
       var bar = el('div', 'db-links');
       var bx = h('<button type="button" class="db-btn-ghost"><i class="fas fa-file-csv"></i> Download as a spreadsheet (CSV)</button>');
-      bx.addEventListener('click', function () { csv(signups.map(function (s) { return Object.assign({}, s, { pickupDay: routeDay(s) }); }), ['created', 'productName', 'status', 'name', 'phone', 'email', 'street', 'city', 'zip', 'day', 'pickupDay', 'bucket', 'notes', 'subscriptionId'], 'lavish-leaf-pickups'); });
+      bx.addEventListener('click', function () { csv(signups.map(function (s) { return Object.assign({}, s, { pickupDay: routeDay(s) }); }), ['created', 'productName', 'status', 'name', 'phone', 'email', 'street', 'city', 'zip', 'day', 'pickupDay', 'bucket', 'notes', 'once', 'subscriptionId', 'orderId'], 'lavish-leaf-pickups'); });
       bar.appendChild(bx);
       if (hidden.length) {
         var bh = h('<button type="button" class="db-btn-ghost"><i class="fas fa-eye"></i> ' + (showAllPick ? 'Hide' : 'Show') + ' ' + hidden.length + ' unfinished sign-up' + (hidden.length === 1 ? '' : 's') + '</button>');
@@ -514,7 +514,7 @@
       var tb = el('tbody');
       shown.forEach(function (s) {
         var tr = el('tr');
-        tr.appendChild(el('td', null, String(s.created || '').slice(0, 10) + ' · ' + s.productName));
+        tr.appendChild(el('td', null, String(s.created || '').slice(0, 10) + ' · ' + s.productName + (s.once ? ' · ONE TIME' : '')));
         tr.appendChild(el('td', null, s.name + ' · ' + phoneFmt(s.phone) + ' · ' + s.email));
         tr.appendChild(el('td', null, s.street + ', ' + s.city + ' ' + s.zip + (s.area && s.area.miles != null ? ' (' + s.area.miles + ' mi)' : '') + (Number.isFinite(s.lat) ? '' : ' · not on the map')));
         tr.appendChild(el('td', null, s.day));
@@ -539,11 +539,19 @@
             pickAct(s, 'emailDay', { note: note }, msg);
           });
           act.appendChild(be);
-          var bc = h('<button type="button" class="db-btn-ghost db-btn-sm"><i class="fas fa-ban"></i> Cancel subscription</button>');
+          if (s.once) {
+            // A one-time pick-up (2026-10-16): done once we have been, then it leaves the routes.
+            var bd = h('<button type="button" class="db-btn-ghost db-btn-sm"><i class="fas fa-check"></i> Mark picked up</button>');
+            bd.addEventListener('click', function () { if (window.confirm('Mark ' + s.name + '\'s one-time pick-up as done? It leaves the routes.')) pickAct(s, 'update', { status: 'done' }, msg); });
+            act.appendChild(bd);
+          }
+          var bc = s.once ? null : h('<button type="button" class="db-btn-ghost db-btn-sm"><i class="fas fa-ban"></i> Cancel subscription</button>');
+          if (bc) {
           bc.addEventListener('click', function () { if (window.confirm('Cancel ' + s.name + '\'s ' + s.productName + ' in PayPal? They will not be charged again and get an email saying so.')) pickAct(s, 'cancel', {}, msg); });
           act.appendChild(bc);
+          }
         }
-        if (st === 'pending' || st === 'canceled' || st === 'paused') {
+        if (st === 'pending' || st === 'canceled' || st === 'paused' || st === 'done') {
           var br = h('<button type="button" class="db-btn-ghost db-btn-sm"><i class="fas fa-trash"></i> Remove</button>');
           br.addEventListener('click', function () { if (window.confirm('Remove ' + s.name + ' from this list for good?')) pickAct(s, 'remove', {}, msg); });
           act.appendChild(br);

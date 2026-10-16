@@ -669,7 +669,27 @@
     bar.appendChild(x);
     signDlg.appendChild(bar);
     var form = el('form', { class: 'cart-doc-body su-form', novalidate: '' });
-    form.appendChild(el('p', { class: 'su-lede' }, '$' + (p.price / 100).toFixed(2) + ' a month' + (p.oldPrice ? ' (50% off $' + (p.oldPrice / 100).toFixed(2) + ')' : '') + ', plus 6% sales tax. We pick up within 25 miles of Stigler, and anywhere in McAlester, Stigler and Checotah.'));
+    // Monthly or one time (owner, 2026-10-16), starting from the card's choice.
+    var once = !!p.oneTime && !!button && button.getAttribute('data-plan') === 'once';
+    var lede = el('p', { class: 'su-lede' });
+    function drawLede() {
+      lede.textContent = (once ? '$' + (p.oneTime / 100).toFixed(2) + ' for one pick-up' : '$' + (p.price / 100).toFixed(2) + ' a month' + (p.oldPrice ? ' (50% off $' + (p.oldPrice / 100).toFixed(2) + ')' : '')) + ', plus 6% sales tax. We pick up within 25 miles of Stigler, and anywhere in McAlester, Stigler and Checotah.';
+    }
+    if (p.oneTime) {
+      var plan = el('div', { class: 'su-plan', role: 'radiogroup', 'aria-label': 'How often' });
+      [['month', 'Monthly, $' + (p.price / 100).toFixed(2) + ' a month'], ['once', 'One time, $' + (p.oneTime / 100).toFixed(2)]].forEach(function (o) {
+        var l = el('label', { class: 'su-check' });
+        var r = el('input', { type: 'radio', name: 'su-plan', value: o[0] });
+        r.checked = (o[0] === 'once') === once;
+        r.addEventListener('change', function () { once = r.value === 'once'; drawLede(); });
+        l.appendChild(r);
+        l.appendChild(document.createTextNode(' ' + o[1]));
+        plan.appendChild(l);
+      });
+      form.appendChild(plan);
+    }
+    drawLede();
+    form.appendChild(lede);
     var f = {
       name: field(form, 'Your name', el('input', { type: 'text', autocomplete: 'name', required: '', maxlength: '80' })),
       phone: field(form, 'Phone number', el('input', { type: 'tel', autocomplete: 'tel', required: '', maxlength: '20' })),
@@ -706,7 +726,7 @@
       go.disabled = true;
       var pw = payWindow();
       msg.textContent = 'Checking your address...';
-      post('subscribe', { id: id, details: details })
+      post('subscribe', once ? { id: id, details: details, once: true } : { id: id, details: details })
         .then(function (r) {
           msg.textContent = 'Opening PayPal in a new window...';
           goPayPal(pw, r.approveUrl, function () { msg.textContent = 'The PayPal window closed. If you finished signing up, PayPal will email you; if not, press Continue to PayPal to try again.'; go.disabled = false; });
@@ -747,7 +767,10 @@
       say('Finishing your payment…');
       post('capture', { orderId: q.get('token') })
         .then(function (r) {
-          if (r.status === 'COMPLETED') {
+          // A one-time pick-up (capture.mjs pickupPaid) leaves the cart alone.
+          if (r.pickup) {
+            say(r.status === 'COMPLETED' ? 'Thank you! Your one-time pick-up is booked. We will email you the day we will come. PayPal will email you a receipt.' : 'PayPal says this payment is ' + String(r.status).toLowerCase() + '. If that looks wrong, email support@lavishleaf.org.');
+          } else if (r.status === 'COMPLETED') {
             cart = [];
             save(cart);
             setCode('');

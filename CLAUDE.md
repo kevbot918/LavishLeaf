@@ -832,3 +832,15 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     leaf replaces the heart on the store sidebar's Support link and the
     Volunteer With Us heading, and is the bullet on the Farms lists
     (style.css end). The wish-list hearts stay hearts.
+
+52. **2026-10-16, one-time pick-ups.** Compost and recycling cards carry a
+    Monthly / One time choice (`.sp-plan`, store.js setPlan; the sign-up form
+    has the same choice as radios). One time = `"oneTime": 1000` in
+    products.json ($10, my proposal; the owner can change it there): the same
+    form and area check, then a ONE-TIME PayPal order (subscribe.mjs
+    `once: true`, custom_id `pk=<sign-up id>`, plus the $10 bucket and 6%),
+    captured by capture.mjs `pickupPaid` (filed in Blobs "pickups" with
+    `once: true`, never as a store order; the cart is left alone), refunds
+    found through the `o-<orderId>` pointer in "pickups". Dashboard: "ONE
+    TIME" on the row, "Mark picked up" (status done) instead of Cancel
+    subscription, then Remove. Nothing new is needed in PayPal.

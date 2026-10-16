@@ -45,7 +45,8 @@
       "paypalPlanId": "P-6BX47736CP523372JNLFP55Y",
       "pickup": true,
       "bucket": 1000,
-      "eco": true
+      "eco": true,
+      "oneTime": 1000
     },
     {
       "id": "recycle-monthly",
@@ -76,7 +77,8 @@
       "image": "images/recycling-bins.jpg",
       "imageAlt": "Recycling carts set out at the curb for pick-up",
       "pickup": true,
-      "eco": true
+      "eco": true,
+      "oneTime": 1000
     },
     {
       "id": "soccer-player-fall",

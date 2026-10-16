@@ -133,7 +133,7 @@ function card(p) {
     ? `      <a href="${esc(p.supplierUrl)}" target="_blank" rel="noopener" class="btn btn-sm btn-ghost">${esc(p.button || 'Supplier page')}</a>`
     : CART && !(p.interval && !hasPlan(p))
     ? p.interval
-      ? `      <button type="button" class="btn btn-sm" data-subscribe="${p.id}">${esc(p.button)}</button>`
+      ? `      <button type="button" class="btn btn-sm" data-subscribe="${p.id}"${p.pickup && p.oneTime ? ' data-plan="month"' : ''}>${esc(p.button)}</button>`
       : p.options
         ? `      <button type="button" class="btn btn-sm" data-choose="${p.id}">Choose ${esc(p.options.label.toLowerCase())}</button>`
         : `      <button type="button" class="btn btn-sm" data-cart-add="${p.id}">Add to cart</button>`
@@ -158,6 +158,8 @@ function card(p) {
     '    </div>',
     `    <h3 class="sp-name">${esc(p.name)}</h3>`,
     ...blurb,
+    // Pick-ups: monthly or one time, chosen on the card (owner, 2026-10-16).
+    ...(CART && p.pickup && p.oneTime && hasPlan(p) ? [`    <div class="sp-plan" role="group" aria-label="How often"><button type="button" data-plan-for="${p.id}" data-plan="month" aria-pressed="true">Monthly</button><button type="button" data-plan-for="${p.id}" data-plan="once" data-once="${money(p.oneTime)} one time" aria-pressed="false">One time</button></div>`] : []),
     '    <div class="sp-foot">',
     // Demo products show no price (owner, 2026-10-07: only the registrations
     // and the pick-up services carry a price until products are chosen).
@@ -375,6 +377,8 @@ if (unknown.length) {
       registration: p.registration === 'player' || p.registration === 'team' ? p.registration : null,
       league: p.registration ? String(p.league || p.category || '') : null,
       bucket: p.pickup === true && Number.isInteger(p.bucket) ? p.bucket : null,
+      // A one-time pick-up price in cents (owner, 2026-10-16): subscribe.mjs once.
+      oneTime: p.pickup === true && Number.isInteger(p.oneTime) && p.oneTime > 0 ? p.oneTime : null,
       // Groceries carry the grocery tax rate (tax.mjs).
       grocery: p.grocery === true,
       // The server refuses an order without its waiver (checkout.mjs), so
