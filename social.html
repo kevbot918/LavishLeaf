@@ -123,9 +123,51 @@
   <form name="volunteer" data-netlify="true" class="volunteer-form" onsubmit="handleVolunteer(event)"><input type="hidden" name="form-name" value="volunteer">
     <label class="sr-only" for="vol-email">Email</label>
     <input type="email" id="vol-email" name="email" placeholder="Your email" required>
+    <label class="sr-only" for="vol-phone">Mobile phone (optional)</label>
+    <input type="tel" id="vol-phone" name="phone" placeholder="Mobile phone (optional)" autocomplete="tel">
+    <div class="checkbox-row volunteer-sms">
+      <input type="checkbox" id="vol-sms" name="sms" value="yes">
+      <label for="vol-sms">Text me volunteer event alerts (optional, needs the phone above). Up to 4 texts a month; message and data rates may apply. Reply STOP to cancel, HELP for help. <a href="privacy.html#sms">Text terms</a></label>
+    </div>
     <button type="submit" class="btn btn-sm">Get event alerts</button>
   </form>
 </section>
+
+<!-- UPCOMING EVENTS (owner, 2026-10-15). To change the first event, edit its date, title, time
+     and the address in data-address and the three map links; the second card is the TBD placeholder. -->
+<section class="events-section" aria-labelledby="events-title">
+  <h2 id="events-title">Upcoming Events</h2>
+  <div class="events-row">
+    <article class="event-card" data-address="Piney Creek Rd, Stigler, OK 74462">
+      <div class="event-info">
+        <p class="event-date">Saturday, October 24 &middot; 1:00 PM</p>
+        <h3>Piney Creek Cliffs Trash Pick-Up</h3>
+        <p class="event-addr"><i class="fas fa-location-dot"></i> Piney Creek Rd, Stigler, OK 74462</p>
+        <p class="event-note">Bring gloves and water; we bring the bags.</p>
+        <div class="event-actions">
+          <a class="btn btn-sm" href="https://www.google.com/maps/dir/?api=1&amp;destination=Piney%20Creek%20Rd%2C%20Stigler%2C%20OK%2074462" target="_blank" rel="noopener"><i class="fas fa-diamond-turn-right"></i> Directions</a>
+          <a class="btn btn-sm btn-ghost" href="https://maps.apple.com/?daddr=Piney%20Creek%20Rd%2C%20Stigler%2C%20OK%2074462" target="_blank" rel="noopener"><i class="fab fa-apple"></i> Apple Maps</a>
+          <button type="button" class="btn btn-sm btn-ghost event-copy"><i class="fas fa-copy"></i> Copy address</button>
+        </div>
+      </div>
+      <a class="event-map" href="https://www.google.com/maps/search/?api=1&amp;query=Piney%20Creek%20Rd%2C%20Stigler%2C%20OK%2074462" target="_blank" rel="noopener" aria-label="Open the map for Piney Creek Rd, Stigler, OK 74462">
+        <iframe src="https://maps.google.com/maps?q=Piney%20Creek%20Rd%2C%20Stigler%2C%20OK%2074462&amp;z=13&amp;output=embed" title="Map: Piney Creek Rd, Stigler, OK 74462" loading="lazy" referrerpolicy="no-referrer-when-downgrade" tabindex="-1"></iframe>
+      </a>
+    </article>
+    <article class="event-card event-tbd">
+      <div class="event-info">
+        <p class="event-date">Date to be announced</p>
+        <h3>Upcoming Event To Be Determined</h3>
+        <p class="event-note">Our next clean-up or planting day is in the works. Sign up above and we will let you know first.</p>
+      </div>
+      <div class="event-map event-map-tbd" aria-hidden="true">
+        <iframe src="https://maps.google.com/maps?q=Stigler%2C%20OK&amp;z=10&amp;output=embed" title="" loading="lazy" tabindex="-1"></iframe>
+        <span class="event-tbd-mark">TBD</span>
+      </div>
+    </article>
+  </div>
+</section>
+
 
 <hr class="divider" style="margin:20px 0;">
 
@@ -309,6 +351,14 @@
     .then(function() { f.innerHTML = "<p class=\"form-success\">Thank you! We will email you when the next event is set.</p>"; })
     .catch(function() { alert("There was a problem. Please email support@lavishleaf.org"); });
 }
+  document.querySelectorAll(".event-copy").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var a = b.closest(".event-card").getAttribute("data-address");
+      var done = function () { b.innerHTML = "<i class=\"fas fa-check\"></i> Copied"; setTimeout(function () { b.innerHTML = "<i class=\"fas fa-copy\"></i> Copy address"; }, 2000); };
+      if (navigator.clipboard) navigator.clipboard.writeText(a).then(done, function () { window.prompt("Copy this address:", a); });
+      else window.prompt("Copy this address:", a);
+    });
+  });
   function handleNewsletter(e) {
   e.preventDefault();
   var f = e.target;
