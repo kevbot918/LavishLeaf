@@ -252,6 +252,8 @@ const AZURE_FOOD = ['Flour and grains', 'Beans and baking', 'Oils, honey and con
 const azureGroceries = () => (AZURE ? AZURE.shelves.filter((s) => AZURE_FOOD.includes(s.title)).flatMap((s) => s.items.slice(0, 4)).map((x) => azureCard(x, 'Groceries')).join('\n\n') : '');
 const palladiumOutdoor = () => (PALLADIUM ? PALLADIUM.outdoor.map(pdItem).filter(Boolean).map((x) => palladiumCard(x, 'Recreation & Outdoors')).join('\n\n') : '');
 
+const SHORT = { 'Lavish Leaf Products & Services': 'Lavish Leaf' };
+
 /** One Home shelf per category, in the order categories first appear. */
 function shelves(active) {
   const note = active.some((p) => p.demo)
@@ -263,7 +265,8 @@ function shelves(active) {
     groups.get(p.category).push(p);
   }
   return note + [...groups].map(([name, ps]) => [
-    `<section class="shelf" id="shelf-${slug(name)}" data-shelf="${slug(name)}" data-title="${esc(name)}">`,
+    // The sidebar's shorter name for our own shelf (owner, 2026-10-16).
+    `<section class="shelf" id="shelf-${slug(name)}" data-shelf="${slug(name)}" data-title="${esc(name)}"${SHORT[name] ? ` data-short="${esc(SHORT[name])}"` : ''}>`,
     '  <div class="shelf-head">',
     `    <h2>${esc(name)}</h2>`,
     `    <a class="shelf-all" href="#shelf/${slug(name)}">See all</a>`,

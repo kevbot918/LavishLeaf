@@ -95,7 +95,8 @@
   var shelfDefs = []; // [{slug, title, ids}]
   function readCatalogue() {
     $$('#shelves .shelf').forEach(function (sh) {
-      var def = { slug: sh.getAttribute('data-shelf'), title: sh.getAttribute('data-title'), ids: [] };
+      // data-short: the sidebar's shorter name for a shelf ("Lavish Leaf", 2026-10-16).
+      var def = { slug: sh.getAttribute('data-shelf'), title: sh.getAttribute('data-title'), short: sh.getAttribute('data-short') || '', ids: [] };
       $$('.sp-card', sh).forEach(function (c) {
         var id = c.getAttribute('data-id');
         var priceText = ($('.sp-price', c) || {}).textContent || '';
@@ -151,6 +152,7 @@
 
   // ------------------------------------------------------------ home
   function shelfSlugs() { return shelfDefs.map(function (d) { return d.slug; }); }
+  function shelfShort(slug) { var d = shelfDefs.filter(function (x) { return x.slug === slug; })[0]; return d ? (d.short || d.title) : slug; }
   function shelfTitle(slug) {
     var d = shelfDefs.filter(function (x) { return x.slug === slug; })[0];
     return d ? d.title : slug;
@@ -164,7 +166,14 @@
     all.forEach(function (n) { if (!seen[n]) { out.push(n); seen[n] = 1; } });
     return out;
   }
-  function shelfOrderNow() { return ordered(shelfSlugs(), state.shelfOrder); }
+  // Our own shelf leads (owner, 2026-10-16), also for a visitor whose saved order
+  // predates it; once they move it themselves, their order wins.
+  var OWN_SHELF = 'lavish-leaf-products-services';
+  function shelfOrderNow() {
+    var saved = state.shelfOrder;
+    if (saved.length && saved.indexOf(OWN_SHELF) < 0) saved = [OWN_SHELF].concat(saved);
+    return ordered(shelfSlugs(), saved);
+  }
   function setShelfOrder(order) { state.shelfOrder = order; save(); layoutHome(); buildSidebar(); }
 
   function layoutHome() {
@@ -192,7 +201,7 @@
     var shop = $('#ss-shelves'); shop.textContent = '';
     var order = shelfOrderNow();
     order.forEach(function (slug, i) {
-      var title = shelfTitle(slug);
+      var title = shelfShort(slug);
       if (reordering) {
         var row = el('div', { class: 'ss-item ss-reorder-row' });
         row.appendChild(el('span', { class: 'ss-reorder-name' }, title));

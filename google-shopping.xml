@@ -5,6 +5,97 @@
     <link>https://lavishleaf.org/store.html</link>
     <description>Products from the Lavish Leaf online store</description>
     <item>
+      <g:id>pf-trucker-cap</g:id>
+      <title>Lavish Leaf Trucker Cap</title>
+      <description>Heather gray trucker cap with a black mesh back, a snapback closure and our embroidered Lavish Leaf oval patch (Richardson 112). Made for you when you order.</description>
+      <link>https://lavishleaf.org/store.html?p=pf-trucker-cap</link>
+      <g:image_link>https://lavishleaf.org/images/store/pf-481781090.jpg</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>24.00 USD</g:price>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:product_type>Lavish Leaf Products &amp; Services</g:product_type>
+      <g:shipping_weight>5 oz</g:shipping_weight>
+    </item>
+    <item>
+      <g:id>pf-women-s-organic-ribbed-neck-shirt-lavish-leaf</g:id>
+      <title>Women's Organic Cotton Tee: Lavish Leaf</title>
+      <description>White midweight organic cotton tee with a ribbed neck and our green Lavish Leaf oval (Stanley/Stella Muser). Printed for you when you order.</description>
+      <link>https://lavishleaf.org/store.html?p=pf-women-s-organic-ribbed-neck-shirt-lavish-leaf</link>
+      <g:image_link>https://lavishleaf.org/images/store/pf-481781086.jpg</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>20.00 USD</g:price>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:product_type>Lavish Leaf Products &amp; Services</g:product_type>
+      <g:shipping_weight>7 oz</g:shipping_weight>
+    </item>
+    <item>
+      <g:id>pf-women-s-organic-ribbed-neck-shirt-symphonymph</g:id>
+      <title>Women's Organic Cotton Tee: Symphonymph</title>
+      <description>Black midweight organic cotton tee with a ribbed neck and our Symphonymph moon and treble clef art (Stanley/Stella Muser). Printed for you when you order.</description>
+      <link>https://lavishleaf.org/store.html?p=pf-women-s-organic-ribbed-neck-shirt-symphonymph</link>
+      <g:image_link>https://lavishleaf.org/images/store/pf-481781085.jpg</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>20.00 USD</g:price>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:product_type>Lavish Leaf Products &amp; Services</g:product_type>
+      <g:shipping_weight>7 oz</g:shipping_weight>
+    </item>
+    <item>
+      <g:id>pf-unisex-organic-cotton-shirt-symphonymph</g:id>
+      <title>Unisex Organic Cotton Tee: Symphonymph</title>
+      <description>Black unisex organic cotton tee with our Symphonymph moon and treble clef art (Stanley/Stella Creator 2.0). Printed for you when you order.</description>
+      <link>https://lavishleaf.org/store.html?p=pf-unisex-organic-cotton-shirt-symphonymph</link>
+      <g:image_link>https://lavishleaf.org/images/store/pf-481781082.jpg</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>21.00 USD</g:price>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:product_type>Lavish Leaf Products &amp; Services</g:product_type>
+      <g:shipping_weight>7 oz</g:shipping_weight>
+    </item>
+    <item>
+      <g:id>pf-unisex-organic-cotton-shirt-lavish-leaf</g:id>
+      <title>Unisex Organic Cotton Tee: Lavish Leaf</title>
+      <description>White unisex organic cotton tee with our green Lavish Leaf oval (Stanley/Stella Creator 2.0). Printed for you when you order.</description>
+      <link>https://lavishleaf.org/store.html?p=pf-unisex-organic-cotton-shirt-lavish-leaf</link>
+      <g:image_link>https://lavishleaf.org/images/store/pf-481781081.jpg</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>21.00 USD</g:price>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:product_type>Lavish Leaf Products &amp; Services</g:product_type>
+      <g:shipping_weight>7 oz</g:shipping_weight>
+    </item>
+    <item>
+      <g:id>pf-symphonymph-stickers</g:id>
+      <title>Symphonymph Sticker, 3 x 3 in</title>
+      <description>A 3 x 3 in kiss-cut sticker of the Symphonymph app icon, for a laptop, water bottle or notebook. Printed for you when you order.</description>
+      <link>https://lavishleaf.org/store.html?p=pf-symphonymph-stickers</link>
+      <g:image_link>https://lavishleaf.org/images/store/pf-481781075.jpg</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>4.00 USD</g:price>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:product_type>Lavish Leaf Products &amp; Services</g:product_type>
+      <g:shipping_weight>1 oz</g:shipping_weight>
+    </item>
+    <item>
+      <g:id>pf-unisex-hoodie-symphonymph</g:id>
+      <title>Unisex Hoodie: Symphonymph</title>
+      <description>Charcoal unisex pullover hoodie with a front pocket and our Symphonymph moon and treble clef art (Cotton Heritage M2580). Printed for you when you order.</description>
+      <link>https://lavishleaf.org/store.html?p=pf-unisex-hoodie-symphonymph</link>
+      <g:image_link>https://lavishleaf.org/images/store/pf-481780837.jpg</g:image_link>
+      <g:availability>in_stock</g:availability>
+      <g:price>34.00 USD</g:price>
+      <g:condition>new</g:condition>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:product_type>Lavish Leaf Products &amp; Services</g:product_type>
+      <g:shipping_weight>20 oz</g:shipping_weight>
+    </item>
+    <item>
       <g:id>ae-seed-starter-trays-with-grow-light-2-pack</g:id>
       <title>Seed Starter Trays with Grow Light, 2 pack</title>
       <description>Two seed trays with humidity domes and an LED grow light, to start seeds indoors.</description>
@@ -1291,104 +1382,6 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>26 oz</g:shipping_weight>
-    </item>
-    <item>
-      <g:id>pf-trucker-cap</g:id>
-      <title>Lavish Leaf Trucker Cap</title>
-      <description>Heather gray trucker cap with a black mesh back, a snapback closure and our embroidered Lavish Leaf oval patch (Richardson 112). Made for you when you order.</description>
-      <link>https://lavishleaf.org/store.html?p=pf-trucker-cap</link>
-      <g:image_link>https://lavishleaf.org/images/store/pf-481781090.jpg</g:image_link>
-      <g:availability>in_stock</g:availability>
-      <g:price>24.00 USD</g:price>
-      <g:condition>new</g:condition>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>Sporting Goods</g:google_product_category>
-      <g:product_type>Recreation &amp; Outdoors</g:product_type>
-      <g:shipping_weight>5 oz</g:shipping_weight>
-    </item>
-    <item>
-      <g:id>pf-women-s-organic-ribbed-neck-shirt-lavish-leaf</g:id>
-      <title>Women's Organic Cotton Tee: Lavish Leaf</title>
-      <description>White midweight organic cotton tee with a ribbed neck and our green Lavish Leaf oval (Stanley/Stella Muser). Printed for you when you order.</description>
-      <link>https://lavishleaf.org/store.html?p=pf-women-s-organic-ribbed-neck-shirt-lavish-leaf</link>
-      <g:image_link>https://lavishleaf.org/images/store/pf-481781086.jpg</g:image_link>
-      <g:availability>in_stock</g:availability>
-      <g:price>20.00 USD</g:price>
-      <g:condition>new</g:condition>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>Sporting Goods</g:google_product_category>
-      <g:product_type>Recreation &amp; Outdoors</g:product_type>
-      <g:shipping_weight>7 oz</g:shipping_weight>
-    </item>
-    <item>
-      <g:id>pf-women-s-organic-ribbed-neck-shirt-symphonymph</g:id>
-      <title>Women's Organic Cotton Tee: Symphonymph</title>
-      <description>Black midweight organic cotton tee with a ribbed neck and our Symphonymph moon and treble clef art (Stanley/Stella Muser). Printed for you when you order.</description>
-      <link>https://lavishleaf.org/store.html?p=pf-women-s-organic-ribbed-neck-shirt-symphonymph</link>
-      <g:image_link>https://lavishleaf.org/images/store/pf-481781085.jpg</g:image_link>
-      <g:availability>in_stock</g:availability>
-      <g:price>20.00 USD</g:price>
-      <g:condition>new</g:condition>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>Sporting Goods</g:google_product_category>
-      <g:product_type>Recreation &amp; Outdoors</g:product_type>
-      <g:shipping_weight>7 oz</g:shipping_weight>
-    </item>
-    <item>
-      <g:id>pf-unisex-organic-cotton-shirt-symphonymph</g:id>
-      <title>Unisex Organic Cotton Tee: Symphonymph</title>
-      <description>Black unisex organic cotton tee with our Symphonymph moon and treble clef art (Stanley/Stella Creator 2.0). Printed for you when you order.</description>
-      <link>https://lavishleaf.org/store.html?p=pf-unisex-organic-cotton-shirt-symphonymph</link>
-      <g:image_link>https://lavishleaf.org/images/store/pf-481781082.jpg</g:image_link>
-      <g:availability>in_stock</g:availability>
-      <g:price>21.00 USD</g:price>
-      <g:condition>new</g:condition>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>Sporting Goods</g:google_product_category>
-      <g:product_type>Recreation &amp; Outdoors</g:product_type>
-      <g:shipping_weight>7 oz</g:shipping_weight>
-    </item>
-    <item>
-      <g:id>pf-unisex-organic-cotton-shirt-lavish-leaf</g:id>
-      <title>Unisex Organic Cotton Tee: Lavish Leaf</title>
-      <description>White unisex organic cotton tee with our green Lavish Leaf oval (Stanley/Stella Creator 2.0). Printed for you when you order.</description>
-      <link>https://lavishleaf.org/store.html?p=pf-unisex-organic-cotton-shirt-lavish-leaf</link>
-      <g:image_link>https://lavishleaf.org/images/store/pf-481781081.jpg</g:image_link>
-      <g:availability>in_stock</g:availability>
-      <g:price>21.00 USD</g:price>
-      <g:condition>new</g:condition>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>Sporting Goods</g:google_product_category>
-      <g:product_type>Recreation &amp; Outdoors</g:product_type>
-      <g:shipping_weight>7 oz</g:shipping_weight>
-    </item>
-    <item>
-      <g:id>pf-symphonymph-stickers</g:id>
-      <title>Symphonymph Sticker, 3 x 3 in</title>
-      <description>A 3 x 3 in kiss-cut sticker of the Symphonymph app icon, for a laptop, water bottle or notebook. Printed for you when you order.</description>
-      <link>https://lavishleaf.org/store.html?p=pf-symphonymph-stickers</link>
-      <g:image_link>https://lavishleaf.org/images/store/pf-481781075.jpg</g:image_link>
-      <g:availability>in_stock</g:availability>
-      <g:price>4.00 USD</g:price>
-      <g:condition>new</g:condition>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>Sporting Goods</g:google_product_category>
-      <g:product_type>Recreation &amp; Outdoors</g:product_type>
-      <g:shipping_weight>1 oz</g:shipping_weight>
-    </item>
-    <item>
-      <g:id>pf-unisex-hoodie-symphonymph</g:id>
-      <title>Unisex Hoodie: Symphonymph</title>
-      <description>Charcoal unisex pullover hoodie with a front pocket and our Symphonymph moon and treble clef art (Cotton Heritage M2580). Printed for you when you order.</description>
-      <link>https://lavishleaf.org/store.html?p=pf-unisex-hoodie-symphonymph</link>
-      <g:image_link>https://lavishleaf.org/images/store/pf-481780837.jpg</g:image_link>
-      <g:availability>in_stock</g:availability>
-      <g:price>34.00 USD</g:price>
-      <g:condition>new</g:condition>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:google_product_category>Sporting Goods</g:google_product_category>
-      <g:product_type>Recreation &amp; Outdoors</g:product_type>
-      <g:shipping_weight>20 oz</g:shipping_weight>
     </item>
     <item>
       <g:id>ae-cotton-crew-socks-5-pairs</g:id>

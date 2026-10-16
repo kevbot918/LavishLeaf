@@ -821,3 +821,14 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     blocked) and PayPal runs there (PayPal cannot be framed); the return page
     posts llDonated to its opener, so the panel thanks them too. Cards: 8:5
     photos.
+
+51. **2026-10-16.** **"Lavish Leaf Products & Services" is the FIRST shelf**
+    (sidebar label "Lavish Leaf" via `data-short`, render-store SHORT): the
+    compost and recycling pick-ups, the player and team registrations and all
+    Printful merch (category in products.json; printful-import.mjs SHELF is
+    this shelf now and puts the merch after the sign-ups). store.js pins
+    `lavish-leaf-products-services` first for visitors with a saved shelf
+    order. Recreation & Outdoors now starts with the Palladium picks. Our
+    leaf replaces the heart on the store sidebar's Support link and the
+    Volunteer With Us heading, and is the bullet on the Farms lists
+    (style.css end). The wish-list hearts stay hearts.

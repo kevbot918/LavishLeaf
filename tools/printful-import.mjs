@@ -24,7 +24,7 @@ const FLOOR = 15; // margin floor, percent (owner, 2026-10-11)
 const env = Object.fromEntries(readFileSync(join(ROOT, '.env'), 'utf8').split(/\r?\n/).filter((l) => /^[A-Z_]+=/.test(l)).map((l) => [l.slice(0, l.indexOf('=')), l.slice(l.indexOf('=') + 1).trim().replace(/^"|"$/g, '')]));
 if (!env.PRINTFUL_API_TOKEN) { console.error('Add PRINTFUL_API_TOKEN=... to .env first.'); process.exit(1); }
 const opts = { env };
-const SHELF = 'Recreation & Outdoors';
+const SHELF = 'Lavish Leaf Products & Services'; // our own shelf, first on Home (owner, 2026-10-16)
 const STIGLER = { address1: '1 Main St', city: 'Stigler', state_code: 'OK', zip: '74462', country_code: 'US' };
 const slug = (s) => s.toLowerCase().replace(/['.]/g, '').replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 60);
 const SIZE_ORDER = ['XXS', 'XS', 'S', 'M', 'L', 'XL', '2XL', 'XXL', '3XL', 'XXXL', '4XL', '5XL', '6XL'];
@@ -106,8 +106,9 @@ if (!WRITE) { console.log('\nDry run. Add --write to put these on the store.'); 
 const keep = j.products.filter((p) => !(p.source && p.source.supplier === 'Printful'));
 // Names and descriptions written by hand on the store stay (2026-10-14).
 for (const m of made) { const old = j.products.find((p) => p.id === m.id); if (old) { m.name = old.name; m.imageAlt = old.imageAlt; m.emailSubject = old.emailSubject; m.blurb = old.blurb; m.tags = old.tags; } }
-let at = keep.findIndex((p) => p.category === SHELF && !p.registration);
-if (at < 0) at = keep.length;
+// After the pick-ups and registrations on our own shelf.
+let at = keep.map((p) => p.category === SHELF).lastIndexOf(true) + 1;
+if (at <= 0) at = 0;
 j.products = [...keep.slice(0, at), ...made, ...keep.slice(at)];
 writeFileSync(join(ROOT, 'products.json'), JSON.stringify(j, null, 2) + '\n');
 if (photos.length) {
