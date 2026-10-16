@@ -138,20 +138,20 @@
 <section class="events-section" aria-labelledby="events-title">
   <h2 id="events-title">Upcoming Events</h2>
   <div class="events-row">
-    <article class="event-card" data-address="Piney Creek Rd, Eufaula, OK 74432">
+    <article class="event-card" data-address="35.2520281, -95.4827115">
       <div class="event-info">
         <p class="event-date">Saturday, October 24 &middot; 1:00 PM</p>
         <h3>Piney Cliff Trash Pick-Up</h3>
-        <p class="event-addr"><i class="fas fa-location-dot"></i> Piney Creek Rd, Eufaula, OK 74432</p>
+        <p class="event-addr"><i class="fas fa-location-dot"></i> Piney Cliff, Piney Creek Rd, Eufaula, OK 74432</p>
         <p class="event-note">Bring gloves and water; we bring the bags.</p>
         <div class="event-actions">
-          <a class="btn btn-sm" href="https://www.google.com/maps/dir/?api=1&amp;destination=Piney%20Creek%20Rd%2C%20Eufaula%2C%20OK%2074432" target="_blank" rel="noopener"><i class="fas fa-diamond-turn-right"></i> Directions</a>
-          <a class="btn btn-sm btn-ghost" href="https://maps.apple.com/?daddr=Piney%20Creek%20Rd%2C%20Eufaula%2C%20OK%2074432" target="_blank" rel="noopener"><i class="fab fa-apple"></i> Apple Maps</a>
-          <button type="button" class="btn btn-sm btn-ghost event-copy"><i class="fas fa-copy"></i> Copy address</button>
+          <a class="btn btn-sm" href="https://www.google.com/maps/dir/?api=1&amp;destination=35.2520281,-95.4827115" target="_blank" rel="noopener"><i class="fas fa-diamond-turn-right"></i> Directions</a>
+          <a class="btn btn-sm btn-ghost" href="https://maps.apple.com/?daddr=35.2520281,-95.4827115&amp;q=Piney%20Cliff" target="_blank" rel="noopener"><i class="fab fa-apple"></i> Apple Maps</a>
+          <button type="button" class="btn btn-sm btn-ghost event-copy"><i class="fas fa-copy"></i> Copy GPS location</button>
         </div>
       </div>
-      <a class="event-map" href="https://www.google.com/maps/search/?api=1&amp;query=Piney%20Creek%20Rd%2C%20Eufaula%2C%20OK%2074432" target="_blank" rel="noopener" aria-label="Open the map for Piney Creek Rd, Eufaula, OK 74432">
-        <iframe src="https://maps.google.com/maps?q=Piney%20Creek%20Rd%2C%20Eufaula%2C%20OK%2074432&amp;z=13&amp;output=embed" title="Map: Piney Creek Rd, Eufaula, OK 74432" loading="lazy" referrerpolicy="no-referrer-when-downgrade" tabindex="-1"></iframe>
+      <a class="event-map" href="https://maps.google.com/?cid=15091486180882411143" target="_blank" rel="noopener" aria-label="Open Piney Cliff in Google Maps">
+        <iframe src="https://maps.google.com/maps?q=35.2520281,-95.4827115+(Piney+Cliff)&amp;z=15&amp;output=embed" title="Map: Piney Cliff, Eufaula, OK" loading="lazy" referrerpolicy="no-referrer-when-downgrade" tabindex="-1"></iframe>
       </a>
     </article>
     <article class="event-card event-tbd">
@@ -354,9 +354,9 @@
   document.querySelectorAll(".event-copy").forEach(function (b) {
     b.addEventListener("click", function () {
       var a = b.closest(".event-card").getAttribute("data-address");
-      var done = function () { b.innerHTML = "<i class=\"fas fa-check\"></i> Copied"; setTimeout(function () { b.innerHTML = "<i class=\"fas fa-copy\"></i> Copy address"; }, 2000); };
-      if (navigator.clipboard) navigator.clipboard.writeText(a).then(done, function () { window.prompt("Copy this address:", a); });
-      else window.prompt("Copy this address:", a);
+      var done = function () { b.innerHTML = "<i class=\"fas fa-check\"></i> Copied"; setTimeout(function () { b.innerHTML = "<i class=\"fas fa-copy\"></i> Copy GPS location"; }, 2000); };
+      if (navigator.clipboard) navigator.clipboard.writeText(a).then(done, function () { window.prompt("Copy this GPS location:", a); });
+      else window.prompt("Copy this GPS location:", a);
     });
   });
   function handleNewsletter(e) {
