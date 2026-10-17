@@ -753,7 +753,7 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     a FALL20 card with its own tracking link, a free shipping over $90 card,
     4 shelves), palladium-home.json and netlify/lib/palladium-handles.mjs.
     render-store draws the "Palladium Boots" Home shelf right after Azure and
-    10 waterproof picks at the end of Recreation & Outdoors. Every link is
+    10 waterproof picks at the end of Recreation & Outdoors (back at the end since 2026-10-17). Every link is
     the tracking link with ?url=<palladium page> (deep link, measured).
     functions/palladium-prices.mjs (each product's .js, 8 at a time, CDN 12 h)
     keeps prices and hides sold-out cards. Remove the FALL20 card when the

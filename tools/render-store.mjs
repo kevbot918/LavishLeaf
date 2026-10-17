@@ -274,13 +274,12 @@ function shelves(active) {
     `    <a class="shelf-all" href="#shelf/${slug(name)}">See all</a>`,
     '  </div>',
     '  <div class="shelf-row">',
-    // Palladium picks right after our own apparel (owner, 2026-10-15).
+    // Palladium picks at the END of Recreation & Outdoors (owner, 2026-10-17:
+    // "I no longer like having them at the beginning").
     (() => {
       const cards = ps.map(card);
       if (name === 'Groceries' && azureGroceries()) return cards.concat(azureGroceries()).join('\n\n');
-      if (name !== 'Recreation & Outdoors' || !palladiumOutdoor()) return cards.join('\n\n');
-      const lastOwn = ps.map((p) => p.shipFrom === 'printful').lastIndexOf(true);
-      cards.splice(lastOwn + 1, 0, palladiumOutdoor());
+      if (name === 'Recreation & Outdoors' && palladiumOutdoor()) return cards.concat(palladiumOutdoor()).join('\n\n');
       return cards.join('\n\n');
     })(),
     '  </div>',
