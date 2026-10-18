@@ -38,7 +38,7 @@
       '<label class="offer-tick"><input type="checkbox" name="sms"> Also text me offers (optional). Up to 4 texts a month; message and data rates may apply. Reply STOP to cancel, HELP for help. Consent is not a condition of purchase. <a href="privacy.html#sms" target="_blank" rel="noopener">Text terms</a></label>' +
       '<button type="submit" class="btn btn-wide">Get my 15% code</button>' +
       '<p class="offer-msg" role="status"></p>' +
-      '<p class="offer-fine">One code per customer, for one first order: 15% off store products, not shipping, tax, league registrations or pick-ups. Pay with the same email in PayPal. By claiming, you join our email newsletter; every email has a one-click unsubscribe. <a href="privacy.html" target="_blank" rel="noopener">Privacy</a></p>' +
+      '<p class="offer-fine">One code per customer, for one first order: 15% off store products, not shipping, tax, league registrations, or pick-ups. Pay with the same email in PayPal. By claiming, you join our email newsletter; every email has a one-click unsubscribe. <a href="privacy.html" target="_blank" rel="noopener">Privacy</a></p>' +
       '</form>' +
       '<button type="button" class="offer-no">No thanks</button>' +
       '</div></dialog>');

@@ -928,7 +928,7 @@
       }).catch(function (e) { toast(e.message); });
     });
     $('#acct-delete').addEventListener('click', function () {
-      if (!window.confirm('Delete your account? Your saved lists, cart and order history are removed from our records, and you are signed out. Lists in this browser stay until you clear them.')) return;
+      if (!window.confirm('Delete your account? Your saved lists, cart, and order history are removed from our records, and you are signed out. Lists in this browser stay until you clear them.')) return;
       accountApi('delete').then(function () {
         $('#account').close();
         account.synced = false;

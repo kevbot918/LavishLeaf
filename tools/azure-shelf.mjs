@@ -30,7 +30,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 // [slug, product id, package code, name] per shelf, from Azure's most-reviewed
 // products in each category (read 2026-10-14).
 const SHELVES = [
-  ['Flour and grains', 'Organic wheat, oats, rice and flours, by the bag or in bulk.', [
+  ['Flour and grains', 'Organic wheat, oats, rice, and flours, by the bag or in bulk.', [
     ['all-purpose-flour-unbleached-organic', 11444, 'FL080', 'All Purpose Flour, Unbleached, Organic'],
     ['hard-red-wheat-organic', 11656, 'GR062', 'Hard Red Wheat, Organic'],
     ['hard-white-wheat-organic', 9635, 'GR112', 'Hard White Wheat, Organic'],
@@ -56,7 +56,7 @@ const SHELVES = [
     ['rice-sprouted-brown-calrose-organic', 10906, 'GR184', 'Rice, Sprouted, Brown, Calrose, Organic'],
     ['einkorn-grain-organic', 14760, 'GR198', 'Einkorn Grain, Organic'],
   ]],
-  ['Beans and baking', 'Dry beans, lentils and the baking shelf.', [
+  ['Beans and baking', 'Dry beans, lentils, and the baking shelf.', [
     ['black-beans-organic', 6625, 'BE094', 'Black Beans, Organic'],
     ['pinto-beans-organic', 10007, 'BE086', 'Pinto Beans, Organic'],
     ['garbanzo-beans-chick-peas-organic', 12542, 'BE246', 'Garbanzo Beans, Organic'],
@@ -82,7 +82,7 @@ const SHELVES = [
     ['corn-starch-organic', 21242, 'BP431', 'Corn Starch, Organic'],
     ['onion-powder-organic', 9556, 'HS601', 'Onion Powder, Organic'],
   ]],
-  ['Oils, honey and condiments', 'Cooking oils, raw honey, maple syrup, vinegar and sauces.', [
+  ['Oils, honey, and condiments', 'Cooking oils, raw honey, maple syrup, vinegar, and sauces.', [
     ['olive-oil-extra-virgin-cold-pressed-organic', 18556, 'OL427', 'Extra Virgin Olive Oil, Organic'],
     ['coconut-oil-expeller-pressed-organic', 17888, 'OL377', 'Coconut Oil, Expeller Pressed, Organic'],
     ['avocado-oil-cold-pressed-refined-organic', 28250, 'OL429', 'Avocado Oil, Organic'],
@@ -108,7 +108,7 @@ const SHELVES = [
     ['kosher-dill-pickles', 28260, 'CO160', 'Kosher Dill Pickles'],
     ['pumpkin-canned-organic', 10176, 'GY232', 'Pumpkin, Canned, Organic'],
   ]],
-  ['Snacks, nuts and drinks', 'Nuts, chips, coffee and herbal tea.', [
+  ['Snacks, nuts, and drinks', 'Nuts, chips, coffee, and herbal tea.', [
     ['peanuts-dry-roasted-no-salt-organic', 9829, 'NU052', 'Dry Roasted Peanuts, Organic'],
     ['almonds-raw-organic', 6163, 'NU114', 'Raw Almonds, Organic'],
     ['pistachios-in-shell-roasted-salted-organic', 31736, 'NU417', 'Pistachios, Roasted and Salted, Organic'],
@@ -134,7 +134,7 @@ const SHELVES = [
     ['chocolate-chips-dark-allergen-free-organic', 15724, 'BP832', 'Chocolate Chips, Dark, Allergen Free, Organic'],
     ['coconut-chipped-organic', 7293, 'DBP035', 'Coconut, Chipped, Organic'],
   ]],
-  ['Fresh and frozen, to a Drop', 'Produce, dairy and meat travel on Azure\'s refrigerated trucks to a local Drop.', [
+  ['Fresh and frozen, to a Drop', 'Produce, dairy, and meat travel on Azure\'s refrigerated trucks to a local Drop.', [
     ['onions-yellow-organic', 9564, 'QP018', 'Yellow Onions, Organic'],
     ['potatoes-russet-organic', 10100, 'QP139', 'Russet Potatoes, Organic'],
     ['carrots-1-organic', 7004, 'QP165', 'Carrots, Organic'],
@@ -276,14 +276,14 @@ const html = [
   '        <div class="gs-feature-text">',
   '          <p class="gs-feature-kicker">Our pantry partner</p>',
   '          <h2>Azure Standard</h2>',
-  '          <p>Organic and natural groceries, bulk staples, household goods and farm feed from a family-owned company. Order online and pick up at a <strong>Drop</strong>, a shared delivery point where Azure\'s truck stops each month, or have it delivered to your door. Bulk sizes keep the price per pound low, and Drop delivery keeps shipping low.</p>',
+  '          <p>Organic and natural groceries, bulk staples, household goods, and farm feed from a family-owned company. Order online and pick up at a <strong>Drop</strong>, a shared delivery point where Azure\'s truck stops each month, or have it delivered to your door. Bulk sizes keep the price per pound low, and Drop delivery keeps shipping low.</p>',
   '        </div>',
   `        <a class="btn gs-feature-btn" href="${esc(azureLink('/'))}" target="_blank" rel="sponsored noopener" data-affiliate="Azure Standard">Shop Azure Standard</a>`,
   '      </div>',
   '      <div class="az-drops">',
   '        <div class="az-drop-card">',
   '          <h3>Find a Drop near you</h3>',
-  '          <p>Neighbors order together and Azure delivers to one place on a set day each month: dry, chilled and frozen goods arrive together, and you collect your order there.</p>',
+  '          <p>Neighbors order together and Azure delivers to one place on a set day each month: dry, chilled, and frozen goods arrive together, and you collect your order there.</p>',
   `          <a class="btn btn-sm" href="${esc(DROP)}" target="_blank" rel="sponsored noopener" data-affiliate="Azure Standard">Find a Drop</a>`,
   '        </div>',
   '        <div class="az-drop-card">',

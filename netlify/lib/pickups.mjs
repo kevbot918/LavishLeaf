@@ -72,7 +72,7 @@ export async function checkArea(s, fetchImpl = fetch) {
     const city = String(c.city || '').toUpperCase().replace(/[^A-Z]/g, '');
     const d = miles(FARM, { lat: match.coordinates.y, lon: match.coordinates.x });
     if (TOWNS[city] || d <= RADIUS_MILES) return { ok: true, how: TOWNS[city] ? 'town' : 'radius', miles: Math.round(d * 10) / 10, matched: match.matchedAddress, lat: match.coordinates.y, lon: match.coordinates.x };
-    throw new CheckoutError(400, `That address is about ${Math.round(d)} miles from us, outside our ${RADIUS_MILES} mile pick-up area (plus McAlester, Stigler and Checotah). Email support@lavishleaf.org and we will let you know when we reach you.`);
+    throw new CheckoutError(400, `That address is about ${Math.round(d)} miles from us, outside our ${RADIUS_MILES} mile pick-up area (plus McAlester, Stigler, and Checotah). Email support@lavishleaf.org and we will let you know when we reach you.`);
   }
   const townZip = Object.entries(TOWNS).some(([t, zips]) => t === town && zips.includes(s.zip));
   if (townZip || NEAR_ZIPS.includes(s.zip) || Object.values(TOWNS).flat().includes(s.zip)) {

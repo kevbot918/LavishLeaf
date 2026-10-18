@@ -24,7 +24,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SHELVES = [
   ['Best sellers for men', 'The styles men buy most, canvas and leather.', ['mens-best-sellers'], 24],
   ['Best sellers for women', 'The styles women buy most.', ['womens-best-sellers'], 24],
-  ['Waterproof boots', 'Waterproof styles for rain, trails and muddy yards.', ['mens-waterproof', 'womens-waterproof'], 24],
+  ['Waterproof boots', 'Waterproof styles for rain, trails, and muddy yards.', ['mens-waterproof', 'womens-waterproof'], 24],
   ['Cold-weather boots', 'Lined and insulated styles for winter.', ['cold-weather-boots'], 18],
   // Kids (owner, 2026-10-15): Palladium's own KIDS / CHILDREN tags across the
   // whole catalog (its "kids" collection is mostly adult styles).

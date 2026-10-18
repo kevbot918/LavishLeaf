@@ -51,7 +51,7 @@ const CART = checkout === 'cart';
 const seen = new Set();
 for (const p of products) {
   const where = `product "${p.id ?? '?'}"`;
-  if (!/^[a-z0-9-]+$/.test(p.id ?? '')) throw new Error(`${where}: id must be lower-case letters, digits and dashes`);
+  if (!/^[a-z0-9-]+$/.test(p.id ?? '')) throw new Error(`${where}: id must be lower-case letters, digits, and dashes`);
   if (seen.has(p.id)) throw new Error(`${where}: id used twice`);
   seen.add(p.id);
   // A demo product (tools/demo-store.mjs) may show $0.00: its price is

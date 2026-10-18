@@ -15360,7 +15360,7 @@ export const catalog = {
   },
   "ae-wooden-3-in-1-chess-checkers-and-backgammon-set": {
     "id": "ae-wooden-3-in-1-chess-checkers-and-backgammon-set",
-    "name": "Wooden 3-in-1 Chess, Checkers and Backgammon Set",
+    "name": "Wooden 3-in-1 Chess, Checkers, and Backgammon Set",
     "price": 2149,
     "interval": null,
     "active": true,

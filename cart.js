@@ -593,7 +593,7 @@
     bar.appendChild(x); regDlg.appendChild(bar);
     var form = el('form', { class: 'cart-doc-body su-form', novalidate: '' });
     form.appendChild(el('p', { class: 'su-lede' }, team
-      ? 'Your team name, the captain, and every player with a phone and email (at least 7 players with the captain, up to 12). We use these for schedules, weather calls and results.'
+      ? 'Your team name, the captain, and every player with a phone and email (at least 7 players with the captain, up to 12). We use these for schedules, weather calls, and results.'
       : 'Who is playing, and how we reach them. Joining a team already? Add its name; leave it blank and we will place you on a team.'));
     var f = {}, roster = [];
     if (team) {
@@ -615,8 +615,8 @@
       if (was) f.team.value = was.team || '';
     }
     var tick = function (text) { var l = el('label', { class: 'su-check' }); var c = el('input', { type: 'checkbox' }); l.appendChild(c); l.appendChild(document.createTextNode(' ' + text)); form.appendChild(l); return c; };
-    var comms = tick(team ? 'Everyone on this roster agrees to receive calls, texts and emails about league play (schedules, weather, results).' : 'I agree to receive calls, texts and emails about league play (schedules, weather, results).');
-    var towns = tick(team ? 'Our team will play games in both Eufaula, OK and McAlester, OK.' : 'I will play games in both Eufaula, OK and McAlester, OK.');
+    var comms = tick(team ? 'Everyone on this roster agrees to receive calls, texts, and emails about league play (schedules, weather, results).' : 'I agree to receive calls, texts, and emails about league play (schedules, weather, results).');
+    var towns = tick(team ? 'Our team will play games in both Eufaula, OK, and McAlester, OK.' : 'I will play games in both Eufaula, OK, and McAlester, OK.');
     var msg = el('p', { class: 'su-msg', role: 'status' });
     var go = el('button', { type: 'submit', class: 'btn' }, editing ? 'Save changes' : 'Add to cart');
     if (was) { comms.checked = !!was.comms; towns.checked = !!was.bothTowns; }
@@ -630,7 +630,7 @@
       var people = team ? [reg.captain].concat(reg.players) : [reg];
       var bad = people.filter(function (r) { return r.name.length < 2 || r.phone.replace(/\D/g, '').replace(/^1(?=\d{10}$)/, '').length !== 10 || !/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(r.email); });
       if (team && reg.team.length < 2) { msg.textContent = 'Please enter the team name.'; return; }
-      if (bad.length) { msg.textContent = 'Please give a name, a 10-digit phone and an email for ' + (bad[0].name || 'every player') + '.'; return; }
+      if (bad.length) { msg.textContent = 'Please give a name, a 10-digit phone, and an email for ' + (bad[0].name || 'every player') + '.'; return; }
       if (team && people.length < 7) { msg.textContent = 'A team needs at least 7 players, the captain included.'; return; }
       if (!reg.comms) { msg.textContent = 'Please tick that you accept communication about league play.'; return; }
       if (!reg.bothTowns) { msg.textContent = 'Please tick that you will play in both Eufaula and McAlester.'; return; }
@@ -673,7 +673,7 @@
     var once = !!p.oneTime && !!button && button.getAttribute('data-plan') === 'once';
     var lede = el('p', { class: 'su-lede' });
     function drawLede() {
-      lede.textContent = (once ? '$' + (p.oneTime / 100).toFixed(2) + ' for one pick-up' : '$' + (p.price / 100).toFixed(2) + ' a month' + (p.oldPrice ? ' (50% off $' + (p.oldPrice / 100).toFixed(2) + ')' : '')) + ', plus 6% sales tax. We pick up within 25 miles of Stigler, and anywhere in McAlester, Stigler and Checotah.';
+      lede.textContent = (once ? '$' + (p.oneTime / 100).toFixed(2) + ' for one pick-up' : '$' + (p.price / 100).toFixed(2) + ' a month' + (p.oldPrice ? ' (50% off $' + (p.oldPrice / 100).toFixed(2) + ')' : '')) + ', plus 6% sales tax. We pick up within 25 miles of Stigler, and anywhere in McAlester, Stigler, and Checotah.';
     }
     if (p.oneTime) {
       var plan = el('div', { class: 'su-plan', role: 'radiogroup', 'aria-label': 'How often' });

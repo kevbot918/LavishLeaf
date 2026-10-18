@@ -73,7 +73,7 @@ function itemRows(o) {
 export function deliveryText(o) {
   const parts = [];
   if (o.delivery === 'ship') parts.push(`We will email you a tracking number as soon as your order ships. It is going to: ${o.shipTo}.`);
-  if (o.waivers && o.waivers.length) parts.push('Your league registration is confirmed. We will be in touch about the schedule, fields and the season.');
+  if (o.waivers && o.waivers.length) parts.push('Your league registration is confirmed. We will be in touch about the schedule, fields, and the season.');
   if (!parts.length) parts.push('Thank you! We will be in touch if we need anything else.');
   return parts.join(' ');
 }
