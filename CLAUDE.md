@@ -835,8 +835,8 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
 
 52. **2026-10-16, one-time pick-ups.** Compost and recycling cards carry a
     Monthly / One time choice (`.sp-plan`, store.js setPlan; the sign-up form
-    has the same choice as radios). One time = `"oneTime": 1000` in
-    products.json ($10, my proposal; the owner can change it there): the same
+    has the same choice as radios). One time = `"oneTime": 1500` in
+    products.json ($15, the owner 2026-10-18; was my $10 proposal): the same
     form and area check, then a ONE-TIME PayPal order (subscribe.mjs
     `once: true`, custom_id `pk=<sign-up id>`, plus the $10 bucket and 6%),
     captured by capture.mjs `pickupPaid` (filed in Blobs "pickups" with

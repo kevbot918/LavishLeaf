@@ -46,7 +46,7 @@
       "pickup": true,
       "bucket": 1000,
       "eco": true,
-      "oneTime": 1000
+      "oneTime": 1500
     },
     {
       "id": "recycle-monthly",
@@ -78,7 +78,7 @@
       "imageAlt": "Recycling carts set out at the curb for pick-up",
       "pickup": true,
       "eco": true,
-      "oneTime": 1000
+      "oneTime": 1500
     },
     {
       "id": "soccer-player-fall",

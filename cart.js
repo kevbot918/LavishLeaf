@@ -804,6 +804,14 @@
       if (!(ap && (ap.registration || ap.options))) open();
     } else if (q.get('subscribe')) {
       var b = document.querySelector('[data-subscribe="' + CSS.escape(q.get('subscribe')) + '"]');
+      // &plan=once (the flyers' "$15 one time" link, 2026-10-18): the card and
+      // the form start on One time.
+      var once = q.get('plan') === 'once';
+      if (once) {
+        var tg = document.querySelector('[data-plan-for="' + CSS.escape(q.get('subscribe')) + '"][data-plan="once"]');
+        if (tg) tg.click();
+        if (b) b.setAttribute('data-plan', 'once');
+      }
       clean();
       if (b) {
         b.scrollIntoView({ block: 'center' });

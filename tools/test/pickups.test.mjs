@@ -85,9 +85,9 @@ test('a one-time pick-up is a one-time PayPal order, filed as a pick-up', async 
     assert.ok(order, 'an order, not a subscription');
     assert.ok(!calls.some((c) => c.url.includes('/billing/')));
     const unit = JSON.parse(order.init.body).purchase_units[0];
-    // $10.00 one time + $10.00 bucket = $20.00, + 6% = $21.20.
-    assert.equal(unit.amount.value, '21.20');
-    assert.equal(unit.amount.breakdown.tax_total.value, '1.20');
+    // $15.00 one time + $10.00 bucket = $25.00, + 6% = $26.50.
+    assert.equal(unit.amount.value, '26.50');
+    assert.equal(unit.amount.breakdown.tax_total.value, '1.50');
     assert.match(unit.custom_id, /^pk=/);
     const rec = saved.get('s-' + unit.custom_id.slice(3));
     assert.equal(rec.once, true);
@@ -98,7 +98,7 @@ test('a one-time pick-up is a one-time PayPal order, filed as a pick-up', async 
     const r2 = await subscribe(new Request('https://lavishleaf.org/x', { method: 'POST', body: JSON.stringify({ id: 'recycle-monthly', once: true, details: form }) }));
     assert.equal(r2.status, 200);
     const u2 = JSON.parse(calls.filter((c) => c.url.endsWith('/v2/checkout/orders')).pop().init.body).purchase_units[0];
-    assert.equal(u2.amount.value, '10.60');
+    assert.equal(u2.amount.value, '15.90');
     // Not a pick-up: refused.
     const r3 = await subscribe(new Request('https://lavishleaf.org/x', { method: 'POST', body: JSON.stringify({ id: 'soccer-player-fall', once: true, details: form }) }));
     assert.equal(r3.status, 400);

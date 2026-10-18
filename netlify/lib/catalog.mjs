@@ -20,7 +20,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": 1000,
-    "oneTime": 1000,
+    "oneTime": 1500,
     "grocery": false,
     "waiver": null,
     "supplier": null
@@ -44,7 +44,7 @@ export const catalog = {
     "registration": null,
     "league": null,
     "bucket": null,
-    "oneTime": 1000,
+    "oneTime": 1500,
     "grocery": false,
     "waiver": null,
     "supplier": null
