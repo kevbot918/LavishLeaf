@@ -288,7 +288,7 @@ const html = [
   '        </div>',
   '        <div class="az-drop-card">',
   '          <h3>How Azure works</h3>',
-  '          <p>Create a free account, choose your Drop or home delivery, and order before the cutoff. New customers are welcome through our link.</p>',
+  '          <p>Create a free account, choose your Drop or home delivery and order before the cutoff. New customers are welcome through our link.</p>',
   `          <a class="btn btn-sm" href="${esc(HOW)}" target="_blank" rel="sponsored noopener" data-affiliate="Azure Standard">How it works</a>`,
   '        </div>',
   '      </div>',
