@@ -22,7 +22,7 @@ const P = (t) => `<p style="margin:0 0 14px;color:#F2F4F2;">${t}</p>`;
 export function optOutHtml(email) {
   try {
     const u = unsubscribeUrl(email, 'news');
-    return `<p style="margin:6px 0 0;">Prefer not to get our newsletter and offers? <a href="${esc(u)}" style="color:#6FD65F;">Unsubscribe from marketing emails</a> with one click. You will still get receipts, order and pick-up updates and replies to your messages.</p>`;
+    return `<p style="margin:6px 0 0;">Prefer not to get our newsletter and offers? <a href="${esc(u)}" style="color:#6FD65F;">Unsubscribe from marketing emails</a> with one click. You will still get receipts, order and pick-up updates, and replies to your messages.</p>`;
   } catch {
     return '';
   }
