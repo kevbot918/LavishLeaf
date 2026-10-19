@@ -56,6 +56,11 @@ is no staging; check the live site with `curl -sI` after a deploy.
    hands over the two files and the version; this session deploys.
 9. **Before deleting or overwriting anything, look at the target**, and
    report what actually happened, including a failed deploy.
+10. **The serial comma, always** (2026-10-18): a list of three or more takes
+   the comma before and/or ("compost, recycling, and the store"). I once read
+   his rule backwards and stripped 100 commas; he was rightly upset. Two words
+   that make one item stay together ("compost and recycling pick-up",
+   "sprouts and microgreens"), and a description after a comma is not a list.
 
 ## The store: what exists and what is switched off
 
