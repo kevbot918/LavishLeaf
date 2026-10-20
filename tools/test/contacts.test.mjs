@@ -71,3 +71,14 @@ test('every notice carries a working unsubscribe link when the secret is set', (
   assert.equal(optOutHtml('pat@example.com'), '');
   if (was) process.env.NEWSLETTER_SECRET = was;
 });
+
+// Pasted contacts (2026-10-19): name and email in either order, tab, comma or spaces.
+test('pasted contact lines', async () => {
+  const { parseContactLines } = await import('../../netlify/lib/newsletter.mjs');
+  const rows = parseContactLines('Joanne Dobler\tsbjdobler@gmail.com\nfreddy@example.net, Freddy Wright\n\njust a name\nno-name@example.org');
+  assert.deepEqual(rows, [
+    { email: 'sbjdobler@gmail.com', first: 'Joanne', last: 'Dobler' },
+    { email: 'freddy@example.net', first: 'Freddy', last: 'Wright' },
+    { email: 'no-name@example.org', first: '', last: '' },
+  ]);
+});

@@ -168,6 +168,23 @@ export async function addContact(store, { email, first = '', last = '', phone = 
   return { record, isNew: !old };
 }
 
+/**
+ * Pasted contact lines (owner, 2026-10-19: old Squarespace newsletter
+ * subscribers): one person a line, "First Last <tab or comma> email" in any
+ * order. Returns [{ email, first, last }] for the lines that carry an email.
+ */
+export function parseContactLines(text, max = 1000) {
+  const out = [];
+  for (const raw of String(text || '').split(/\r?\n/).slice(0, max)) {
+    const m = raw.match(/[^\s,;<>"']+@[^\s,;<>"']+\.[a-z]{2,}/i);
+    if (!m || !validEmail(m[0])) continue;
+    const name = raw.replace(m[0], ' ').replace(/[<>"',;\t]/g, ' ').replace(/\s+/g, ' ').trim();
+    const [first = '', ...rest] = name ? name.split(' ') : [];
+    out.push({ email: m[0], first, last: rest.join(' ') });
+  }
+  return out;
+}
+
 /** addContact for the functions: its own store, never fails the caller. */
 export async function saveContact(details) {
   try {

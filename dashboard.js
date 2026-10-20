@@ -780,6 +780,24 @@
       ctMsg.textContent = num(on.length) + ' on the list (' + num(on.filter(function (c) { return c.phone; }).length) + ' with a phone number), ' + num(contactsAll.length - on.length) + ' unsubscribed. From: ' + (Object.keys(by).map(function (k) { return k + ' ' + by[k]; }).join(', ') || 'nobody yet') + '.';
     }).catch(function (e) { ctMsg.textContent = e.message; });
     ctBtn.addEventListener('click', function () { csv(contactsAll, ['email', 'first', 'last', 'phone', 'status', 'sources', 'joined'], 'lavish-leaf-contacts'); });
+    // Add contacts by hand (owner, 2026-10-19: the old Squarespace newsletter
+    // list): one person a line, name and email. No welcome email is sent.
+    var ctAdd = el('details', 'db-add');
+    ctAdd.appendChild(el('summary', null, 'Add contacts'));
+    var ctText = el('textarea'); ctText.rows = 5; ctText.placeholder = 'One person a line, for example:\nJane Smith\tjane@example.com'; ctText.style.cssText = 'width:100%;margin:6px 0;font:inherit';
+    var ctSrc = el('input'); ctSrc.value = 'squarespace'; ctSrc.setAttribute('aria-label', 'Where these contacts came from'); ctSrc.style.cssText = 'margin-right:8px';
+    var ctGo = h('<button type="button" class="db-btn-ghost"><i class="fas fa-user-plus"></i> Add to the list</button>');
+    var ctAddMsg = el('p', 'db-hint', 'Only add people who agreed to hear from us (for example, past newsletter subscribers). Anyone who unsubscribed stays off.');
+    ctAdd.appendChild(ctText); ctAdd.appendChild(el('span', 'db-hint', 'Source: ')); ctAdd.appendChild(ctSrc); ctAdd.appendChild(ctGo); ctAdd.appendChild(ctAddMsg);
+    ctGo.addEventListener('click', function () {
+      if (!ctText.value.trim()) return;
+      ctGo.disabled = true; ctAddMsg.textContent = 'Adding...';
+      api('newsletter-admin', { action: 'add', text: ctText.value, source: ctSrc.value }).then(function (r) {
+        ctAddMsg.textContent = r.message; ctText.value = '';
+        return api('newsletter-admin', { action: 'contacts' }).then(function (c) { contactsAll = c.contacts || []; });
+      }).catch(function (e) { ctAddMsg.textContent = e.message; }).then(function () { ctGo.disabled = false; });
+    });
+    ct.appendChild(ctAdd);
     g8.appendChild(ct);
     // Text messages (owner, 2026-10-14): only to people who ticked "Text me
     // offers"; every text starts "Lavish Leaf:" and ends "Reply STOP to opt

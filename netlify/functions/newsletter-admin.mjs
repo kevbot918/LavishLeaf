@@ -18,7 +18,7 @@
 import { adminFromRequest, json } from '../lib/admin.mjs';
 import { ISSUE, personalise, startJob, subjectOf } from '../lib/broadcast.mjs';
 import { loadTemplate, mailConfig, mailReady, sendEmail, sentToday, textOf } from '../lib/mail.mjs';
-import { addContact, allSubscribers, listStats, markWelcomed, newsletterStore, subscribe } from '../lib/newsletter.mjs';
+import { addContact, allSubscribers, listStats, markWelcomed, newsletterStore, parseContactLines, subscribe } from '../lib/newsletter.mjs';
 import { sendWelcome } from '../lib/welcome.mjs';
 
 export default async (request) => {
@@ -49,6 +49,20 @@ export default async (request) => {
         sources: (r.sources && r.sources.length ? r.sources : [r.source || 'newsletter']).join(' '), joined: r.joined || '',
       })).sort((a, b) => String(b.joined).localeCompare(String(a.joined)));
       return json(200, { contacts: rows });
+    }
+    // Pasted contacts (owner, 2026-10-19): added to the list with no welcome
+    // email; somebody who unsubscribed stays off (addContact).
+    if (body.action === 'add') {
+      const rows = parseContactLines(body.text);
+      const source = String(body.source || 'import').replace(/[^a-z0-9 -]/gi, '').trim().toLowerCase().slice(0, 30) || 'import';
+      let added = 0, updated = 0, kept = 0;
+      for (const r of rows) {
+        const res = await addContact(store, { ...r, source });
+        if (!res) continue;
+        if (res.record.status !== 'active') kept++; else if (res.isNew) added++; else updated++;
+      }
+      const skipped = String(body.text || '').split(/\r?\n/).filter((l) => l.trim()).length - rows.length;
+      return json(200, { ok: true, added, updated, kept, skipped, message: `${added} added, ${updated} already on the list${kept ? `, ${kept} unsubscribed earlier and left off` : ''}${skipped ? `, ${skipped} line${skipped === 1 ? '' : 's'} without an email skipped` : ''}.` });
     }
     if (body.action === 'import') {
       const n = await importFromForms(store);
