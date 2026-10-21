@@ -17,6 +17,7 @@ import { registrationsPaid } from '../lib/registration-mail.mjs';
 import { discountsStore, markUsed } from '../lib/discounts.mjs';
 import { pickupsStore } from '../lib/pickups.mjs';
 import { activated } from '../lib/pickup-events.mjs';
+import { orderRows, recordSafely } from '../lib/books.mjs';
 
 /**
  * A one-time pick-up (subscribe.mjs oneTime, 2026-10-16): captured, then the
@@ -41,6 +42,7 @@ async function pickupPaid(cfg, order, pk) {
         await store.setJSON(key, rec);
       }
     } catch (e) { console.error('[capture] one-time pick-up', e.message); }
+    await recordSafely(() => orderRows(done), 'one-time pick-up');
   }
   return { status: done.status, orderId: done.id, amount: capture?.amount?.value ?? null, pickup: true };
 }
@@ -100,6 +102,8 @@ export default async (request) =>
     if (done.status === 'COMPLETED') await afterPayment(summarise(done, meta));
     // League registrations on this order: paid, and the owner gets the roster.
     if (done.status === 'COMPLETED') await registrationsPaid(done.id, done.payer);
+    // The corporation's books (netlify/lib/books.mjs): never fails the payment.
+    if (done.status === 'COMPLETED') await recordSafely(() => orderRows(done), 'order');
 
     return {
       status: done.status,

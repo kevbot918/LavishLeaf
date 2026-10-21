@@ -24,6 +24,8 @@
 //                                             marked "payment failed", owner emailed
 //   BILLING.SUBSCRIPTION.PAYMENT.FAILED       a monthly pick-up payment failed: marked on
 //                                             the sign-up, owner emailed
+// Added 2026-10-21: every money event above also goes to the corporation's
+// books (netlify/lib/books.mjs, docs/BOOKS.md), only when PayPal is live.
 import { json } from '../lib/admin.mjs';
 import { call, config } from '../lib/paypal.mjs';
 import { pickupsStore } from '../lib/pickups.mjs';
@@ -32,6 +34,7 @@ import { ordersStore } from '../lib/orders.mjs';
 import { registrationsStore } from '../lib/registrations.mjs';
 import { sendNotice } from '../lib/notice-mail.mjs';
 import { esc, mailConfig, mailReady, sendEmail, textOf, validEmail } from '../lib/mail.mjs';
+import { clawbackRows, filedParts, orderParts, recordSafely, refundRows, saleRefundRows, saleRows, salesCategory } from '../lib/books.mjs';
 
 let testHooks = null;
 export function setWebhookForTests(h) { testHooks = h; }
@@ -86,6 +89,12 @@ async function pickupBySubscription(store, sid) {
   return [null, null];
 }
 
+/** An order's parts from PayPal itself, when we have not filed it (null if unknown). */
+async function paypalParts(cfg, orderId) {
+  if (!orderId) return null;
+  try { return orderParts((await call(cfg, `/v2/checkout/orders/${orderId}`, null, { method: 'GET' })).purchase_units[0]); } catch { return null; }
+}
+
 const cents = (amount) => Math.round(Number(amount && (amount.value || amount.total) || 0) * 100);
 
 export async function handleEvent(event, cfg) {
@@ -127,6 +136,7 @@ export async function handleEvent(event, cfg) {
     const store = await pickupsStore();
     const [key, rec] = await pickupBySubscription(store, sid);
     if (!rec) return out;
+    await recordSafely(() => (type === 'PAYMENT.SALE.COMPLETED' ? saleRows(res) : saleRefundRows(res)), 'pick-up sale');
     if (type === 'PAYMENT.SALE.COMPLETED') {
       rec.lastPaid = new Date().toISOString();
       rec.payments = (rec.payments || 0) + 1;
@@ -153,6 +163,7 @@ export async function handleEvent(event, cfg) {
       don.refunded = new Date().toISOString();
       don.refundedCents = (don.refundedCents || 0) + amount;
       await dons.setJSON('d-' + orderId, don);
+      await recordSafely(() => refundRows(res, { kind: 'donation', orderId }), 'donation refund');
       out.did = 'donation refunded';
       return out;
     }
@@ -164,6 +175,7 @@ export async function handleEvent(event, cfg) {
       if (rec) {
         await pickupRefunded(rec, amount, event.id);
         await ps.setJSON('s-' + ptr.id, rec);
+        await recordSafely(() => refundRows(res, { kind: 'pickup', orderId }), 'pick-up refund');
         out.did = 'one-time pick-up refunded';
         return out;
       }
@@ -179,6 +191,7 @@ export async function handleEvent(event, cfg) {
       o.status = full ? 'refunded' : 'partly refunded';
       await orders.setJSON('o-' + orderId, o);
     }
+    await recordSafely(async () => refundRows(res, { kind: 'order', orderId, parts: o ? filedParts(o) : await paypalParts(cfg, orderId) }), 'order refund');
     const regs = await registrationsStore();
     const r = await regs.get('o-' + orderId, { type: 'json' });
     if (r && (full || !o)) { r.status = 'refunded'; r.refundedAt = new Date().toISOString(); await regs.setJSON('o-' + orderId, r); }
@@ -202,10 +215,15 @@ export async function handleEvent(event, cfg) {
   if (type === 'PAYMENT.CAPTURE.REVERSED' || type === 'PAYMENT.CAPTURE.DENIED') {
     const orderId = await orderOfCapture(cfg, res.id, res);
     const label = type === 'PAYMENT.CAPTURE.REVERSED' ? 'reversed' : 'payment failed';
+    let o = null;
     if (orderId) {
       const orders = await ordersStore();
-      const o = await orders.get('o-' + orderId, { type: 'json' });
+      o = await orders.get('o-' + orderId, { type: 'json' });
       if (o) { o.status = label; o.statusAt = new Date().toISOString(); await orders.setJSON('o-' + orderId, o); }
+    }
+    // A denied payment never arrived, so only a reversal reaches the books.
+    if (type === 'PAYMENT.CAPTURE.REVERSED') {
+      await recordSafely(async () => clawbackRows({ captureId: res.id, orderId, amountCents: cents(res.amount), when: res.update_time || res.create_time, note: 'reversal ' + res.id, category: salesCategory(o ? filedParts(o) : await paypalParts(cfg, orderId)) }), 'reversal');
     }
     await alertOwner(`PayPal: payment ${label}${orderId ? ' on order ' + orderId : ''}`, [
       type === 'PAYMENT.CAPTURE.REVERSED'
@@ -220,6 +238,15 @@ export async function handleEvent(event, cfg) {
   if (type === 'CUSTOMER.DISPUTE.CREATED') {
     const t = (res.disputed_transactions || [])[0] || {};
     const amt = res.dispute_amount ? '$' + Number(res.dispute_amount.value).toFixed(2) : 'an amount';
+    // PayPal holds the disputed money at once; the reversal that may follow
+    // shares this Source ID, so it is only taken out of the books once.
+    if (t.seller_transaction_id) {
+      await recordSafely(async () => {
+        const orderId = await orderOfCapture(cfg, t.seller_transaction_id, null).catch(() => null);
+        const o = orderId ? await (await ordersStore()).get('o-' + orderId, { type: 'json' }) : null;
+        return clawbackRows({ captureId: t.seller_transaction_id, orderId, amountCents: cents(res.dispute_amount), when: res.create_time, note: 'dispute ' + (res.dispute_id || ''), category: salesCategory(o ? filedParts(o) : await paypalParts(cfg, orderId)) });
+      }, 'dispute');
+    }
     await alertOwner(`PayPal dispute opened: ${amt}`, [
       `A buyer opened a PayPal ${String(res.reason || 'dispute').toLowerCase().replace(/_/g, ' ')} for ${amt}${t.seller_transaction_id ? ' (transaction ' + t.seller_transaction_id + ')' : ''}.`,
       'Answer it in PayPal (Resolution Center) within 10 days, with tracking or proof of delivery if it was shipped, or the buyer wins by default.',

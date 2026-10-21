@@ -16,6 +16,7 @@ import { CheckoutError, approveLink, call, config, reply } from '../lib/paypal.m
 import { esc, mailConfig, mailReady, sendEmail, textOf, validEmail } from '../lib/mail.mjs';
 import { saveContact } from '../lib/newsletter.mjs';
 import { sendNotice } from '../lib/notice-mail.mjs';
+import { donationRows, recordSafely } from '../lib/books.mjs';
 
 export const DIVISIONS = { general: 'Lavish Leaf', symphonymph: 'Symphonymph', farms: 'Lavish Leaf Farms', sports: 'Rec Sports', gaming: 'Gaming' };
 export const MIN = 1, MAX = 5000;
@@ -90,6 +91,7 @@ export default async (request) => {
       const cap = done.purchase_units && done.purchase_units[0] && done.purchase_units[0].payments && done.purchase_units[0].payments.captures && done.purchase_units[0].payments.captures[0];
       const amount = Number((cap && cap.amount && cap.amount.value) || (unit.amount && unit.amount.value)) || 0;
       if (done.status === 'COMPLETED') await afterDonation(done, unit, amount);
+      if (done.status === 'COMPLETED') await recordSafely(() => donationRows(done), 'donation');
       return reply(200, { status: done.status, amount });
     }
     return reply(400, { error: 'Unknown action.' });
