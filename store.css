@@ -943,3 +943,10 @@ body.ss-resizing .ss-side { transition: none; }
 .ss-shell .sp-plan button[aria-pressed="true"] { background: #4AB73C; color: #14261A; }
 .ss-shell .sp-plan button:hover:not([aria-pressed="true"]) { background: rgba(74, 183, 60, .15); }
 .su-plan { display: flex; flex-wrap: wrap; gap: 6px 18px; margin: 0 0 8px; font-weight: 700; }
+
+/* Earth Elements Organics (2026-10-23): product photos on white, like the
+   other partners; the FDA line under Green Swaps' herbal shelves. */
+.gs-ee-shelf { margin-top: 10px; }
+.gs-ee-card .sp-media { display: block; }
+.gs-ee-card .sp-media img { background: #fff; object-fit: contain; }
+.gs-ee-fda { margin-top: 6px; }

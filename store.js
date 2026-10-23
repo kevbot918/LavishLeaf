@@ -451,7 +451,7 @@
       if (q.get('q') != null && input.value !== q.get('q')) input.value = q.get('q');
       runSearch();
       setTimeout(function () { input.focus(); }, 50);
-    } else if (path === 'swaps' || path === 'seedsnow' || path === 'azure' || path === 'palladium') {
+    } else if (path === 'swaps' || path === 'seedsnow' || path === 'azure' || path === 'palladium' || path === 'earth-elements') {
       show('swaps'); setTitle('Green Swaps');
       // Its shelves were measured while hidden: let the arrows measure again.
       setTimeout(function () { window.dispatchEvent(new Event('resize')); }, 30);
@@ -983,9 +983,15 @@
     // An Azure Standard card (Home shelf and Green Swaps): sold by Azure.
     var azure = p.card.classList.contains('gs-az-card');
     var boots = p.card.classList.contains('gs-pd-card');
-    var partner = azure || boots || p.card.classList.contains('gs-sn-card');
+    var herbal = p.card.classList.contains('gs-ee-card');
+    var partner = azure || boots || herbal || p.card.classList.contains('gs-sn-card');
     $('.sp-pop-fine', pop).hidden = partner;
-    if (boots) {
+    if (herbal) {
+      // Earth Elements Organics (2026-10-23), through our Refersion link.
+      fact('Sold and shipped by', 'our herbal partner Earth Elements Organics, at their prices');
+      fact('Our link', 'Lavish Leaf earns a commission on your Earth Elements order, at no extra cost to you');
+      fact('Please note', 'these statements have not been evaluated by the Food and Drug Administration; these products are not intended to diagnose, treat, cure, or prevent any disease');
+    } else if (boots) {
       // Palladium Boots (2026-10-15), through our Ascend affiliate link.
       fact('Sold and shipped by', 'our boot partner Palladium, at their prices; free shipping on orders over $90');
       fact('Save', 'code FALL20 takes 20% off at Palladium for a limited time');
@@ -1150,6 +1156,21 @@
     }).catch(function () { /* the prices written into the page stay */ });
   }
 
+  // Earth Elements Organics prices (2026-10-23): sold out hides the card.
+  function refreshEarthElements() {
+    var spans = $$("[data-ee-price]");
+    if (!spans.length) return;
+    fetch("/.netlify/functions/earth-elements-prices").then(function (r) { if (!r.ok) throw new Error(); return r.json(); }).then(function (d) {
+      spans.forEach(function (sp) {
+        var h = sp.getAttribute("data-ee-price");
+        if (!(h in d.prices)) return;
+        var card = sp.closest(".sp-card");
+        if (d.prices[h] === null) { if (card) card.hidden = true; return; }
+        sp.textContent = d.prices[h];
+      });
+    }).catch(function () { /* the prices written into the page stay */ });
+  }
+
   // A one-time hint on a phone that the Browse button opens the store menu
   // (owner, 2026-10-15). Shown once per browser, gone on a tap or after 7 s.
   function browseHint() {
@@ -1177,6 +1198,7 @@
   refreshSeedsNow();
   refreshAzure();
   refreshPalladium();
+  refreshEarthElements();
   fetchTags();
   buildResize();
   buildChrome();

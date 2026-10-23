@@ -849,3 +849,18 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     found through the `o-<orderId>` pointer in "pickups". Dashboard: "ONE
     TIME" on the row, "Mark picked up" (status done) instead of Cancel
     subscription, then Remove. Nothing new is needed in PayPal.
+
+53. **2026-10-23, Earth Elements Organics** (Refersion affiliate, link code
+    `rfsn=9384641.e38de7`, in tools/earth-elements-card.mjs). Every product
+    they sell (25: 13 oils, balms and salves; 6 Craft Your Formula 32 fl oz
+    oils; 6 wholesale 101/169 fl oz oils) is on its own Home shelf
+    **"Herbal Oils & Balms"** right after Personal Care (render-store
+    herbalShelf, earth-elements-home.json) and in Green Swaps (`#earth-elements`,
+    between the EARTH-ELEMENTS markers after PALLADIUM:END, three shelves),
+    plus a sidebar partner link and a Home banner. The names and sentences
+    are ours (COPY in tools/earth-elements-shelf.mjs): ingredients and
+    traditional uses, no disease claims, and the FDA statement on both
+    shelves and in every pop-up. Prices refresh live
+    (functions/earth-elements-prices.mjs, CDN 12 h; sold out hides). Rerun
+    `node tools/earth-elements-shelf.mjs` then render-store and seo; it warns
+    about any new product that needs a COPY line.

@@ -37,6 +37,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { azureCard } from './azure-card.mjs';
 import { palladiumCard } from './palladium-card.mjs';
+import { FDA, SHELF as HERBAL, eeCard } from './earth-elements-card.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const CHECK = process.argv.includes('--check');
@@ -247,6 +248,27 @@ function palladiumShelf() {
     '</section>',
   ].join('\n');
 }
+// Earth Elements Organics (owner, 2026-10-23): its own Home shelf, "Herbal
+// Oils & Balms", right after Personal Care, with every product they sell
+// (retail, Craft Your Formula, wholesale); earth-elements-home.json from
+// tools/earth-elements-shelf.mjs. Affiliate links only (Refersion).
+const EARTH = (() => { try { return JSON.parse(readFileSync(join(ROOT, 'earth-elements-home.json'), 'utf8')); } catch { return null; } })();
+function herbalShelf() {
+  if (!EARTH || !EARTH.home.length) return '';
+  const byHandle = new Map(EARTH.items.map((x) => [x.handle, x]));
+  return [
+    '<section class="shelf" id="shelf-' + slug(HERBAL) + '" data-shelf="' + slug(HERBAL) + '" data-title="' + esc(HERBAL) + '">',
+    '  <div class="shelf-head">',
+    '    <h2>' + esc(HERBAL) + '</h2>',
+    '    <a class="shelf-all" href="#shelf/' + slug(HERBAL) + '">See all</a>',
+    '  </div>',
+    '  <p class="shelf-note">Organic herbal oils, balms, and salves from our partner Earth Elements Organics, plus their Craft Your Formula and wholesale oils. We earn commission on orders using these links, at no extra cost. ' + esc(FDA) + '</p>',
+    '  <div class="shelf-row">',
+    EARTH.home.map((h) => byHandle.get(h)).filter(Boolean).map((x) => eeCard(x)).join('\n\n'),
+    '  </div>',
+    '</section>',
+  ].join('\n');
+}
 // Azure on the Groceries shelf (owner, 2026-10-15: "a bit of a variety ...
 // the best sellers of each category"): the first four of each food line in
 // azure-home.json (each line is in Azure's own favorites order), at the end.
@@ -285,6 +307,7 @@ function shelves(active) {
     '  </div>',
     '</section>',
   ].join('\n') + (name === 'Farm & Garden' && seedsShelf() ? '\n\n' + seedsShelf() : '')
+    + (name === 'Personal Care' && herbalShelf() ? '\n\n' + herbalShelf() : '')
     + (name === 'Pets' && azureShelf() ? '\n\n' + azureShelf() + (palladiumShelf() ? '\n\n' + palladiumShelf() : '') : '')).join('\n\n');
 }
 

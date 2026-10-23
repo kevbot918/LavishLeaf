@@ -1,0 +1,258 @@
+{
+ "_help": "Written by tools/earth-elements-shelf.mjs; drawn by tools/render-store.mjs (the Home shelf \"Herbal Oils & Balms\") and in Green Swaps. Public facts only; prices refresh live from functions/earth-elements-prices.mjs.",
+ "at": "2026-10-23",
+ "home": [
+  "peppermint-balm",
+  "organic-witch-hazel-medicinal-oil",
+  "organic-patchouli-medicinal-oil",
+  "organic-chickweed-medicinal-oil",
+  "organic-calendula-medicinal-oil",
+  "arnica-oil",
+  "diaper-balm",
+  "belly-balm",
+  "comfrey-arnica-salve",
+  "apres-ski-balm",
+  "sweet-orange-balm",
+  "comfrey-oil",
+  "chamomile-oil",
+  "calendula-oil-100-organic",
+  "raspberry-leaf-oil-100-organic",
+  "witch-hazel-extract",
+  "chickweed-extract",
+  "comfrey-oil-100-organic",
+  "chamomile-oil-100-organic",
+  "witch-hazel-oil-bulk-100-organic",
+  "chickweed-oil-bulk-100-organic",
+  "raspberry-leaf-oil-bulk-100-organic",
+  "comfrey-oil-bulk-100-organic",
+  "chamomile-oil-bulk-100-organic",
+  "calendula-bulk-100-organic-coming-soon"
+ ],
+ "items": [
+  {
+   "handle": "peppermint-balm",
+   "group": "retail",
+   "name": "Peppermint Balm, 1 oz",
+   "blurb": "Organic chamomile oil and beeswax with peppermint essential oil, to rub under the nose or on the chest for a cool, clearing breath. Keep away from the eyes.",
+   "price": 11.5,
+   "from": false,
+   "img": "https://cdn.shopify.com/s/files/1/0802/4901/files/Peppermint_Balm.png?v=1785352702&width=400"
+  },
+  {
+   "handle": "organic-witch-hazel-medicinal-oil",
+   "group": "retail",
+   "name": "Witch Hazel Herbal Oil, 1 fl oz",
+   "blurb": "Organic witch hazel leaves infused in organic sunflower oil: a natural astringent and moisturizer that helps skin hold its moisture.",
+   "price": 13.5,
+   "from": false,
+   "img": "https://cdn.shopify.com/s/files/1/0802/4901/files/Witch_Hazel.png?v=1785349628&width=400"
+  },
+  {
+   "handle": "organic-patchouli-medicinal-oil",
+   "group": "retail",
+   "name": "Patchouli Herbal Oil, 1 fl oz",
+   "blurb": "Organic patchouli infused in organic sunflower oil, used to tone and tighten skin and as a warm, earthy massage oil.",
+   "price": 13.5,
+   "from": false,
+   "img": "https://cdn.shopify.com/s/files/1/0802/4901/files/Patchouli.png?v=1785342427&width=400"
+  },
+  {
+   "handle": "organic-chickweed-medicinal-oil",
+   "group": "retail",
+   "name": "Chickweed Herbal Oil, 1 fl oz",
+   "blurb": "Organic chickweed infused in organic sunflower oil, a gentle alternative to creams for soothing irritated, itchy skin.",
+   "price": 13.5,
+   "from": false,
+   "img": "https://cdn.shopify.com/s/files/1/0802/4901/files/Chickweed.png?v=1785342705&width=400"
+  },
+  {
+   "handle": "organic-calendula-medicinal-oil",
+   "group": "retail",
+   "name": "Calendula Herbal Oil, 1 fl oz",
+   "blurb": "Organic calendula flowers infused in organic sunflower oil, a soothing oil for dry, chapped, cold-weather skin.",
+   "price": 13.5,
+   "from": false,
+   "img": "https://cdn.shopify.com/s/files/1/0802/4901/files/Calendula.png?v=1785342619&width=400"
+  },
+  {
+   "handle": "arnica-oil",
+   "group": "retail",
+   "name": "Arnica Oil, 1 fl oz",
+   "blurb": "Arnica flowers infused in sunflower oil, a traditional massage oil for bumps, bruises, and tired muscles. For unbroken skin only.",
+   "price": 13.5,
+   "from": false,
+   "img": "https://cdn.shopify.com/s/files/1/0802/4901/files/Arnica.png?v=1785342366&width=400"
+  },
+  {
+   "handle": "diaper-balm",
+   "group": "retail",
+   "name": "Herbal Diaper Balm",
+   "blurb": "Chickweed, comfrey, chamomile, and calendula oils in a beeswax balm, made to soothe and protect a baby's tender skin.",
+   "price": 27.5,
+   "from": false,
+   "img": "https://cdn.shopify.com/s/files/1/0802/4901/files/Diaper_Balm.png?v=1785352623&width=400"
+  },
+  {
+   "handle": "belly-balm",
+   "group": "retail",
+   "name": "Herbal Pregnancy & Postpartum Balm",
+   "blurb": "Herbal oils with a high level of tannins in a moisturizing balm that helps stretching skin stay hydrated and supple, during pregnancy and after.",
+   "price": 29.9,
+   "from": false,
+   "img": "https://cdn.shopify.com/s/files/1/0802/4901/files/Preganncy_Balm.png?v=1785352582&width=400"
+  },
+  {
+   "handle": "comfrey-arnica-salve",
+   "group": "retail",
+   "name": "Comfrey & Arnica Salve",
+   "blurb": "Comfrey and arnica oils in a rich salve, a traditional rub for sore joints and muscles, bumps, and bruises.",
+   "price": 29.9,
+   "from": false,
+   "img": "https://cdn.shopify.com/s/files/1/0802/4901/files/Comfrey_Arnica_Salve.png?v=1785352665&width=400"
+  },
+  {
+   "handle": "apres-ski-balm",
+   "group": "retail",
+   "name": "Après Ski Balm, 1 oz",
+   "blurb": "Organic raspberry leaf oil, beeswax, and lanolin for hands, face, and lips after wind, cold, and sun. Suits fair skin especially.",
+   "price": 11.5,
+   "from": false,
+   "img": "https://cdn.shopify.com/s/files/1/0802/4901/files/Apres_Ski_Balm.png?v=1785352737&width=400"
+  },
+  {
+   "handle": "witch-hazel-oil-bulk-100-organic",
+   "group": "wholesale",
+   "name": "Witch Hazel Oil, Wholesale",
+   "blurb": "Organic witch hazel leaves infused in organic sunflower oil, in bulk: 101 or 169 fl oz, for makers, spas, and shops.",
+   "price": 327.75,
+   "from": true,
+   "img": "https://cdn.shopify.com/s/files/1/0802/4901/files/BulkOil_WitchHazel3L_101fl.oz.jpg?v=1700324435&width=400"
+  },
+  {
+   "handle": "chickweed-oil-bulk-100-organic",
+   "group": "wholesale",
+   "name": "Chickweed Oil, Wholesale",
+   "blurb": "Organic chickweed infused in organic sunflower oil, in bulk: 101 or 169 fl oz, for makers, spas, and shops.",
+   "price": 327.75,
+   "from": true,
+   "img": "https://cdn.shopify.com/s/files/1/0802/4901/files/BulkOil_Chickweed3L_101fl.oz.jpg?v=1700323658&width=400"
+  },
+  {
+   "handle": "calendula-oil-100-organic",
+   "group": "craft",
+   "name": "Calendula Oil, 32 fl oz",
+   "blurb": "Organic calendula flowers infused in organic sunflower oil, 32 fl oz, a base for your own balms, salves, lotions, and massage oils.",
+   "price": 205.85,
+   "from": false,
+   "img": "https://cdn.shopify.com/s/files/1/0802/4901/files/CalendulaOil32oz_Trademark.jpg?v=1697639329&width=400"
+  },
+  {
+   "handle": "raspberry-leaf-oil-100-organic",
+   "group": "craft",
+   "name": "Raspberry Leaf Oil, 32 fl oz",
+   "blurb": "Organic red raspberry leaves infused in organic sunflower oil, 32 fl oz, a base for your own balms, salves, lotions, and massage oils.",
+   "price": 205.85,
+   "from": false,
+   "img": "https://cdn.shopify.com/s/files/1/0802/4901/files/RaspberryOil32oz_Trademark.jpg?v=1697639248&width=400"
+  },
+  {
+   "handle": "witch-hazel-extract",
+   "group": "craft",
+   "name": "Witch Hazel Oil, 32 fl oz",
+   "blurb": "Organic witch hazel leaves infused in organic sunflower oil, 32 fl oz, a base for your own balms, salves, lotions, and massage oils.",
+   "price": 205.85,
+   "from": false,
+   "img": "https://cdn.shopify.com/s/files/1/0802/4901/files/WitchHazelOil32oz_Trademark.jpg?v=1697639037&width=400"
+  },
+  {
+   "handle": "sweet-orange-balm",
+   "group": "retail",
+   "name": "Sweet-Orange Balm, 1 oz",
+   "blurb": "Organic chamomile oil and beeswax with sweet orange essential oil, for lips, face, and hands. Safe for children.",
+   "price": 11.5,
+   "from": false,
+   "img": "https://cdn.shopify.com/s/files/1/0802/4901/files/Sweet_Orange_Balm.png?v=1785352768&width=400"
+  },
+  {
+   "handle": "raspberry-leaf-oil-bulk-100-organic",
+   "group": "wholesale",
+   "name": "Raspberry Leaf Oil, Wholesale",
+   "blurb": "Organic red raspberry leaves infused in organic sunflower oil, in bulk: 101 or 169 fl oz, for makers, spas, and shops.",
+   "price": 327.75,
+   "from": true,
+   "img": "https://cdn.shopify.com/s/files/1/0802/4901/files/BulkOil_Raspberry3L_101fl.oz.jpg?v=1700324221&width=400"
+  },
+  {
+   "handle": "comfrey-oil-bulk-100-organic",
+   "group": "wholesale",
+   "name": "Comfrey Oil, Wholesale",
+   "blurb": "Organic comfrey leaves infused in organic sunflower oil, in bulk: 101 or 169 fl oz, for makers, spas, and shops.",
+   "price": 327.75,
+   "from": true,
+   "img": "https://cdn.shopify.com/s/files/1/0802/4901/files/BulkOil_Comfrey3L_101fl.oz.jpg?v=1700323951&width=400"
+  },
+  {
+   "handle": "chickweed-extract",
+   "group": "craft",
+   "name": "Chickweed Oil, 32 fl oz",
+   "blurb": "Organic chickweed infused in organic sunflower oil, 32 fl oz, a base for your own balms, salves, lotions, and massage oils.",
+   "price": 205.85,
+   "from": false,
+   "img": "https://cdn.shopify.com/s/files/1/0802/4901/files/ChickweedOil32oz_Trademark.jpg?v=1697639717&width=400"
+  },
+  {
+   "handle": "comfrey-oil-100-organic",
+   "group": "craft",
+   "name": "Comfrey Oil, 32 fl oz",
+   "blurb": "Organic comfrey leaves infused in organic sunflower oil, 32 fl oz, a base for your own balms, salves, lotions, and massage oils.",
+   "price": 205.85,
+   "from": false,
+   "img": "https://cdn.shopify.com/s/files/1/0802/4901/files/ComfreyOil32oz_Trademark.jpg?v=1697639802&width=400"
+  },
+  {
+   "handle": "chamomile-oil-bulk-100-organic",
+   "group": "wholesale",
+   "name": "Chamomile Oil, Wholesale",
+   "blurb": "Organic chamomile flowers infused in organic sunflower oil, in bulk: 101 or 169 fl oz, for makers, spas, and shops.",
+   "price": 327.75,
+   "from": true,
+   "img": "https://cdn.shopify.com/s/files/1/0802/4901/files/BulkChamomile3L_101fl.oz.jpg?v=1700324471&width=400"
+  },
+  {
+   "handle": "chamomile-oil-100-organic",
+   "group": "craft",
+   "name": "Chamomile Oil, 32 fl oz",
+   "blurb": "Organic chamomile flowers infused in organic sunflower oil, 32 fl oz, a base for your own balms, salves, lotions, and massage oils.",
+   "price": 205.85,
+   "from": false,
+   "img": "https://cdn.shopify.com/s/files/1/0802/4901/files/ChamomileOil32oz_Trademark.jpg?v=1697639432&width=400"
+  },
+  {
+   "handle": "calendula-bulk-100-organic-coming-soon",
+   "group": "wholesale",
+   "name": "Calendula Oil, Wholesale",
+   "blurb": "Organic calendula flowers infused in organic sunflower oil, in bulk: 101 or 169 fl oz, for makers, spas, and shops.",
+   "price": 327.75,
+   "from": true,
+   "img": "https://cdn.shopify.com/s/files/1/0802/4901/files/BulkCalendula3L_101fl.oz.jpg?v=1700322983&width=400"
+  },
+  {
+   "handle": "comfrey-oil",
+   "group": "retail",
+   "name": "Comfrey Herbal Oil, 1 or 4 fl oz",
+   "blurb": "Organic comfrey leaves infused in organic sunflower oil, rich in allantoin, a moisturizing oil traditionally used to help skin renew. For external use only.",
+   "price": 13.5,
+   "from": true,
+   "img": "https://cdn.shopify.com/s/files/1/0802/4901/files/Comfrey.png?v=1785342569&width=400"
+  },
+  {
+   "handle": "chamomile-oil",
+   "group": "retail",
+   "name": "Chamomile Herbal Oil, 1 fl oz",
+   "blurb": "Organic chamomile flowers infused in organic sunflower oil, a calming oil for dry, itchy skin and a gentle carrier for essential oils.",
+   "price": 12.5,
+   "from": false,
+   "img": "https://cdn.shopify.com/s/files/1/0802/4901/files/Chamomile.png?v=1785342673&width=400"
+  }
+ ]
+}
