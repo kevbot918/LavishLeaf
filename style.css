@@ -1283,7 +1283,10 @@ footer {
 .dl-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 40px; margin-top: 10px !important; font-size: 0.7rem; }
 .dl-links a { color: var(--gray); text-decoration: none; }
 .dl-links a:hover, .dl-links a:focus-visible { color: var(--leaf-bright); text-decoration: underline; }
-.dl-note { max-width: 46ch; margin: 10px auto 0 !important; font-size: 0.65rem; line-height: 1.5; }
+/* The Alpha's name while its file is off the site (2026-10-24): same place
+   and color as the link beside it, nothing to tap. */
+.dl-links .dl-off { color: var(--gray); }
+.dl-note { max-width: 100ch; margin: 10px auto 0 !important; font-size: 0.65rem; line-height: 1.5; }
 /* The iPhone line, with real air above it so it reads as its own thing
    rather than a fourth line of the Android note. */
 .dl-ios { margin-top: 26px !important; font-size: 0.65rem; letter-spacing: 0.04em; }
