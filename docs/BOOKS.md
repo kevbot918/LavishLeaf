@@ -116,7 +116,7 @@ Source ID already in the sheet (so a payment the live feed already wrote is
 never doubled). It reads the first 60 paid records per run.
 `tools/books-backfill.mjs` does the same from a computer, if ever needed.
 
-## Mileage (built 2026-10-24, held until the owner says go)
+## Mileage (built 2026-10-24, live since the owner's go the same day)
 
 Owner request through the accounting session. Trips go to the **Mileage**
 tab of the same Books sheet: header in row 4, data from row 5.
