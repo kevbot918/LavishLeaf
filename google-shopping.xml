@@ -16,6 +16,7 @@
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Lavish Leaf Products &amp; Services</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>4.69 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>pf-women-s-organic-ribbed-neck-shirt-lavish-leaf</g:id>
@@ -29,6 +30,7 @@
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Lavish Leaf Products &amp; Services</g:product_type>
       <g:shipping_weight>7 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>4.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>pf-women-s-organic-ribbed-neck-shirt-symphonymph</g:id>
@@ -42,6 +44,7 @@
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Lavish Leaf Products &amp; Services</g:product_type>
       <g:shipping_weight>7 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>4.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>pf-unisex-organic-cotton-shirt-symphonymph</g:id>
@@ -55,6 +58,7 @@
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Lavish Leaf Products &amp; Services</g:product_type>
       <g:shipping_weight>7 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>4.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>pf-unisex-organic-cotton-shirt-lavish-leaf</g:id>
@@ -68,6 +72,7 @@
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Lavish Leaf Products &amp; Services</g:product_type>
       <g:shipping_weight>7 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>4.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>pf-symphonymph-stickers</g:id>
@@ -81,6 +86,7 @@
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Lavish Leaf Products &amp; Services</g:product_type>
       <g:shipping_weight>1 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>4.49 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>pf-unisex-hoodie-symphonymph</g:id>
@@ -94,6 +100,7 @@
       <g:identifier_exists>no</g:identifier_exists>
       <g:product_type>Lavish Leaf Products &amp; Services</g:product_type>
       <g:shipping_weight>20 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>8.79 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-seed-starter-trays-with-grow-light-2-pack</g:id>
@@ -108,6 +115,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Lawn &amp; Garden</g:google_product_category>
       <g:product_type>Farm &amp; Garden</g:product_type>
       <g:shipping_weight>40 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-fabric-grow-bag</g:id>
@@ -122,6 +130,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Lawn &amp; Garden</g:google_product_category>
       <g:product_type>Farm &amp; Garden</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-natural-jute-twine</g:id>
@@ -136,6 +145,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Lawn &amp; Garden</g:google_product_category>
       <g:product_type>Farm &amp; Garden</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-ceramic-mini-planter</g:id>
@@ -150,6 +160,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Lawn &amp; Garden</g:google_product_category>
       <g:product_type>Farm &amp; Garden</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-macrame-plant-hanger</g:id>
@@ -164,6 +175,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Lawn &amp; Garden</g:google_product_category>
       <g:product_type>Farm &amp; Garden</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-mini-garden-hand-tool-set-3-pieces</g:id>
@@ -178,6 +190,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Lawn &amp; Garden</g:google_product_category>
       <g:product_type>Farm &amp; Garden</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-long-spout-watering-can</g:id>
@@ -192,6 +205,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Lawn &amp; Garden</g:google_product_category>
       <g:product_type>Farm &amp; Garden</g:product_type>
       <g:shipping_weight>14 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-continuous-mist-plant-sprayer-200-ml</g:id>
@@ -206,6 +220,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Lawn &amp; Garden</g:google_product_category>
       <g:product_type>Farm &amp; Garden</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-bamboo-plant-stakes-10-pack</g:id>
@@ -220,6 +235,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Lawn &amp; Garden</g:google_product_category>
       <g:product_type>Farm &amp; Garden</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-plant-stabilizer-clip</g:id>
@@ -234,6 +250,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Lawn &amp; Garden</g:google_product_category>
       <g:product_type>Farm &amp; Garden</g:product_type>
       <g:shipping_weight>2 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-self-watering-plant-pot-small</g:id>
@@ -248,6 +265,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Lawn &amp; Garden</g:google_product_category>
       <g:product_type>Farm &amp; Garden</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-hanging-wooden-bird-feeder</g:id>
@@ -262,6 +280,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Lawn &amp; Garden</g:google_product_category>
       <g:product_type>Farm &amp; Garden</g:product_type>
       <g:shipping_weight>20 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-garden-kneeling-pad</g:id>
@@ -276,6 +295,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Lawn &amp; Garden</g:google_product_category>
       <g:product_type>Farm &amp; Garden</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-felt-wall-pocket-planter-2-pockets</g:id>
@@ -290,6 +310,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Lawn &amp; Garden</g:google_product_category>
       <g:product_type>Farm &amp; Garden</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-animal-on-a-bicycle-wind-spinner</g:id>
@@ -304,6 +325,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Lawn &amp; Garden</g:google_product_category>
       <g:product_type>Farm &amp; Garden</g:product_type>
       <g:shipping_weight>12 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-feather-parrot-garden-decor</g:id>
@@ -318,6 +340,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Lawn &amp; Garden</g:google_product_category>
       <g:product_type>Farm &amp; Garden</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-crack-and-gap-weeder</g:id>
@@ -332,6 +355,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Lawn &amp; Garden</g:google_product_category>
       <g:product_type>Farm &amp; Garden</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-hollow-hand-hoe</g:id>
@@ -346,6 +370,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Lawn &amp; Garden</g:google_product_category>
       <g:product_type>Farm &amp; Garden</g:product_type>
       <g:shipping_weight>14 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-brass-hose-nozzle</g:id>
@@ -360,6 +385,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Lawn &amp; Garden</g:google_product_category>
       <g:product_type>Farm &amp; Garden</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-bird-watering-globes-5-pack</g:id>
@@ -374,6 +400,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Lawn &amp; Garden</g:google_product_category>
       <g:product_type>Farm &amp; Garden</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-honeycomb-pot-trellis-2-pack</g:id>
@@ -388,6 +415,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Lawn &amp; Garden</g:google_product_category>
       <g:product_type>Farm &amp; Garden</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-nylon-garden-gloves-12-pairs</g:id>
@@ -402,6 +430,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Lawn &amp; Garden</g:google_product_category>
       <g:product_type>Farm &amp; Garden</g:product_type>
       <g:shipping_weight>12 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-thorn-proof-gauntlet-garden-gloves</g:id>
@@ -416,6 +445,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Lawn &amp; Garden</g:google_product_category>
       <g:product_type>Farm &amp; Garden</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-curved-pruning-snips</g:id>
@@ -430,6 +460,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Lawn &amp; Garden</g:google_product_category>
       <g:product_type>Farm &amp; Garden</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-hanging-suet-ball-bird-feeder-black</g:id>
@@ -444,6 +475,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Lawn &amp; Garden</g:google_product_category>
       <g:product_type>Farm &amp; Garden</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-wooden-elevated-garden-bed-with-trellis-and-wheels</g:id>
@@ -458,6 +490,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Lawn &amp; Garden</g:google_product_category>
       <g:product_type>Farm &amp; Garden</g:product_type>
       <g:shipping_weight>389 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-outdoor-storage-deck-box-gray</g:id>
@@ -472,6 +505,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Lawn &amp; Garden</g:google_product_category>
       <g:product_type>Farm &amp; Garden</g:product_type>
       <g:shipping_weight>290 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-faux-stone-flexible-garden-edging-gray-20-pieces</g:id>
@@ -486,6 +520,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Lawn &amp; Garden</g:google_product_category>
       <g:product_type>Farm &amp; Garden</g:product_type>
       <g:shipping_weight>47 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-coconut-shell-bird-house</g:id>
@@ -500,6 +535,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Lawn &amp; Garden</g:google_product_category>
       <g:product_type>Farm &amp; Garden</g:product_type>
       <g:shipping_weight>12 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-solar-garden-lantern</g:id>
@@ -514,6 +550,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Lawn &amp; Garden</g:google_product_category>
       <g:product_type>Farm &amp; Garden</g:product_type>
       <g:shipping_weight>19 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-bobs-red-mill-organic-pancake-and-waffle-mix-24-oz-pack-of-4</g:id>
@@ -528,6 +565,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>117 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>15.20 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-bobs-red-mill-organic-buckwheat-flour-22-oz-pack-of-4</g:id>
@@ -542,6 +580,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>108 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>14.20 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-bobs-red-mill-organic-white-rice-flour-24-oz-pack-of-4</g:id>
@@ -556,6 +595,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>117 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>15.20 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-mikes-mighty-good-organic-spicy-beef-ramen-cup-pack-of-6</g:id>
@@ -570,6 +610,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>25 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-dr-mcdougalls-organic-teriyaki-noodle-cup-pack-of-6</g:id>
@@ -584,6 +625,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>25 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-lotus-foods-organic-garlicky-veggie-rice-ramen-cup-pack-of-6</g:id>
@@ -598,6 +640,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>29 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-oceans-halo-organic-chicken-flavor-noodle-bowl-pack-of-6</g:id>
@@ -612,6 +655,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>46 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>11.45 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-flavorganics-organic-almond-extract-2-oz</g:id>
@@ -626,6 +670,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>7 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-lundberg-organic-thin-stackers-red-rice-and-quinoa-pack-of-6</g:id>
@@ -640,6 +685,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>56 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>11.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-lakewood-organic-tart-cherry-juice-concentrate-125-oz</g:id>
@@ -654,6 +700,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>25 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-lakewood-organic-black-cherry-juice-concentrate-125-oz</g:id>
@@ -668,6 +715,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>25 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-lotus-foods-organic-brown-jasmine-rice-heat-and-eat-pack-of-</g:id>
@@ -682,6 +730,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>64 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>12.45 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-lotus-foods-organic-white-jasmine-rice-heat-and-eat-pack-of-</g:id>
@@ -696,6 +745,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>64 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>12.45 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-spicely-organic-whole-cloves-pack-of-6</g:id>
@@ -710,6 +760,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>10 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-spicely-organic-zaatar-14-oz-pack-of-3</g:id>
@@ -724,6 +775,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>25 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-maya-kaimal-organic-everyday-chana-10-oz-pack-of-6</g:id>
@@ -738,6 +790,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>80 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>13.25 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-native-forest-organic-sliced-bamboo-shoots-14-oz-pack-of-6</g:id>
@@ -752,6 +805,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>115 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>15.20 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-native-forest-organic-sliced-water-chestnuts-8-oz-pack-of-6</g:id>
@@ -766,6 +820,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>73 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>12.45 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-native-forest-organic-pineapple-chunks-14-oz-pack-of-6</g:id>
@@ -780,6 +835,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>119 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>15.20 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-suzies-organic-tartar-sauce-8-oz-pack-of-6</g:id>
@@ -794,6 +850,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>108 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>14.20 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-suzies-organic-yellow-mustard-8-oz-pack-of-6</g:id>
@@ -808,6 +865,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>108 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>14.20 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-alessi-organic-italian-pasta-16-oz-pack-of-6</g:id>
@@ -822,6 +880,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>126 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>15.20 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-raos-homemade-fusilli-16-oz-pack-of-6</g:id>
@@ -836,6 +895,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>122 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>15.20 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-mrs-millers-wide-egg-noodles-16-oz-pack-of-6</g:id>
@@ -850,6 +910,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>108 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>14.20 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-frontera-taco-seasoning-sauce-for-ground-beef-8-oz-pack-of-6</g:id>
@@ -864,6 +925,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>60 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>11.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-uncle-lees-organic-oolong-tea-40-bags-pack-of-6</g:id>
@@ -878,6 +940,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>52 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>11.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-uncle-lees-organic-green-tea-40-bags-pack-of-6</g:id>
@@ -892,6 +955,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>52 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>11.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-uncle-lees-organic-black-tea-100-bags</g:id>
@@ -906,6 +970,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>9 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-lets-do-organic-granulated-tapioca-6-oz-pack-of-6</g:id>
@@ -920,6 +985,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>51 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>11.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-lets-do-organic-sweetened-condensed-coconut-milk-pack-of-6</g:id>
@@ -934,6 +1000,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>69 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>12.45 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-element-organic-dipped-rice-cakes-pack-of-6</g:id>
@@ -948,6 +1015,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>31 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-napoleon-anchovy-paste-2-oz</g:id>
@@ -962,6 +1030,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-sun-luck-spicy-oyster-sauce-9-oz</g:id>
@@ -976,6 +1045,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>22 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-bellino-minced-garlic-75-oz</g:id>
@@ -990,6 +1060,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>18 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-beaver-cream-style-horseradish-12-oz-pack-of-6</g:id>
@@ -1004,6 +1075,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>108 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>14.20 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-vermints-organic-breath-mints-pack-of-6</g:id>
@@ -1018,6 +1090,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>20 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-spry-xylitol-gum-100-count</g:id>
@@ -1032,6 +1105,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>16 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-frontier-co-op-organic-fair-trade-ceylon-cinnamon-176-oz</g:id>
@@ -1046,6 +1120,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>10 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-watkins-organic-garlic-powder-31-oz</g:id>
@@ -1060,6 +1135,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>13 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.25 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-frontier-co-op-organic-salt-free-italian-seasoning-064-oz</g:id>
@@ -1074,6 +1150,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-sunfood-organic-chia-seeds-1-lb</g:id>
@@ -1088,6 +1165,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>21 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-flora-organic-cold-pressed-flax-oil-17-oz</g:id>
@@ -1102,6 +1180,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>34 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>11.45 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-real-foods-organic-sesame-corn-thins-53-oz-pack-of-6</g:id>
@@ -1116,6 +1195,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>49 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>11.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-barnana-organic-plantain-chips-himalayan-pink-salt-pack-of-6</g:id>
@@ -1130,6 +1210,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>44 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>11.45 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-mavuno-harvest-organic-dried-pineapple-2-oz-pack-of-6</g:id>
@@ -1144,6 +1225,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>21 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-mavuno-harvest-organic-dried-jackfruit-2-oz-pack-of-6</g:id>
@@ -1158,6 +1240,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>21 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-dr-mcdougalls-organic-lentil-vegetable-soup-18-oz-pack-of-6</g:id>
@@ -1172,6 +1255,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>131 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>15.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-jyoti-organic-black-beans-10-oz-pack-of-6</g:id>
@@ -1186,6 +1270,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>78 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>12.45 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-noka-organic-mango-coconut-smoothie-pouch-pack-of-6</g:id>
@@ -1200,6 +1285,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>38 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>11.45 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-cocomels-organic-coconut-milk-caramels-sea-salt-pack-of-6</g:id>
@@ -1214,6 +1300,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>29 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-breton-gluten-free-crackers-original-with-flax-pack-of-6</g:id>
@@ -1228,6 +1315,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>115 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>15.20 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-breton-gluten-free-crackers-herb-and-garlic-pack-of-6</g:id>
@@ -1242,6 +1330,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>115 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>15.20 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-madegood-organic-crispy-squares-strawberry-pack-of-6-boxes</g:id>
@@ -1256,6 +1345,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>51 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>11.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-lakewood-organic-cranberry-juice-concentrate-125-oz</g:id>
@@ -1270,6 +1360,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>25 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-olyra-organic-breakfast-biscuits-cinnamon-pack-of-6</g:id>
@@ -1284,6 +1375,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>48 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>11.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-beanvivo-three-bean-vegan-chili-10-oz-pack-of-6</g:id>
@@ -1298,6 +1390,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>77 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>12.45 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-cocomels-organic-coconut-milk-caramels-original-pack-of-6</g:id>
@@ -1312,6 +1405,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>29 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-banza-chickpea-pasta-shells-8-oz-pack-of-6</g:id>
@@ -1326,6 +1420,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>64 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>12.45 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-sun-luck-oyster-sauce-9-oz</g:id>
@@ -1340,6 +1435,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>22 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-inka-crops-chile-picante-corn-4-oz-pack-of-6</g:id>
@@ -1354,6 +1450,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>34 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>11.45 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-spry-xylitol-mints-peppermint-240-count</g:id>
@@ -1368,6 +1465,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>10 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-stash-lemon-ginger-herbal-tea-20-bags-pack-of-6</g:id>
@@ -1382,6 +1480,7 @@
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items</g:google_product_category>
       <g:product_type>Groceries</g:product_type>
       <g:shipping_weight>26 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-cotton-crew-socks-5-pairs</g:id>
@@ -1396,6 +1495,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>9 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-cuffed-knit-beanie-black</g:id>
@@ -1410,6 +1510,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-soccer-shin-guards-neon-green</g:id>
@@ -1424,6 +1525,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-quick-dry-microfiber-towel-20-x-47-in</g:id>
@@ -1438,6 +1540,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-running-ankle-socks-3-pairs</g:id>
@@ -1452,6 +1555,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-athletic-running-shorts-navy</g:id>
@@ -1466,6 +1570,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-cooling-uv-arm-sleeves-3-pairs</g:id>
@@ -1480,6 +1585,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-quick-dry-running-cap</g:id>
@@ -1494,6 +1600,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-padded-sport-knee-pads-pair</g:id>
@@ -1508,6 +1615,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-hiking-compass</g:id>
@@ -1522,6 +1630,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-knee-compression-sleeve</g:id>
@@ -1536,6 +1645,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-foil-camping-ground-mat-79-x-59-in</g:id>
@@ -1550,6 +1660,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>16 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-waterproof-hiking-leg-gaiters</g:id>
@@ -1564,6 +1675,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>10 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-non-slip-yoga-mat-3-mm</g:id>
@@ -1578,6 +1690,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>32 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-graduated-compression-socks</g:id>
@@ -1592,6 +1705,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-folding-foam-sit-pad-blue</g:id>
@@ -1606,6 +1720,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-resistance-band-with-handles</g:id>
@@ -1620,6 +1735,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-sports-sweatband-headband</g:id>
@@ -1634,6 +1750,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>1 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-spiky-massage-ball-24-in-white</g:id>
@@ -1648,6 +1765,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-portable-folding-charcoal-grill-17-x-11-in</g:id>
@@ -1662,6 +1780,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>85 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-padded-folding-camping-chair-gray-and-black</g:id>
@@ -1676,6 +1795,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>120 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-backyard-soccer-goal-with-net-6-x-4-ft</g:id>
@@ -1690,6 +1810,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>195 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-backpack-beach-chair-mint-green</g:id>
@@ -1704,6 +1825,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>166 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-aluminum-folding-table-6-ft-wood-grain</g:id>
@@ -1718,6 +1840,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>254 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-collapsible-wagon-with-canopy-purple</g:id>
@@ -1732,6 +1855,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>460 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-batting-cage-net-55-x-12-x-12-ft-net-only</g:id>
@@ -1746,6 +1870,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>390 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-insulated-beverage-dispenser-45-gallon</g:id>
@@ -1760,6 +1885,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>145 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-folding-mid-size-table-tennis-set-blue</g:id>
@@ -1774,6 +1900,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>536 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-topwater-pencil-lures-5-pack-4-in</g:id>
@@ -1788,6 +1915,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-360-degree-spinning-seesaw-for-kids</g:id>
@@ -1802,6 +1930,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>297 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-power-tower-pull-up-and-dip-station</g:id>
@@ -1816,6 +1945,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>360 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-bike-v-brake-pads-70-mm-5-pairs</g:id>
@@ -1830,6 +1960,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>13 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-outdoor-daypack-36-l-black</g:id>
@@ -1844,6 +1975,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>14 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-printed-round-beach-towel</g:id>
@@ -1858,6 +1990,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-collapsible-silicone-water-bottle-green</g:id>
@@ -1872,6 +2005,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-instant-cooling-towel-12-x-31-in</g:id>
@@ -1886,6 +2020,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-push-button-fishing-bobbers-1-inch-10-pack</g:id>
@@ -1900,6 +2035,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>2 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-barbed-fishing-hooks-size-10-50-pack</g:id>
@@ -1914,6 +2050,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>1 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-ab-roller-wheel</g:id>
@@ -1928,6 +2065,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>20 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-pickup-truck-bed-tent-55-to-6-ft</g:id>
@@ -1942,6 +2080,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>200 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-led-camping-lantern-battery-powered</g:id>
@@ -1956,6 +2095,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>24 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-compact-folding-binoculars-40-x-22</g:id>
@@ -1970,6 +2110,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>9 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-unisex-waterproof-hiking-rain-pants</g:id>
@@ -1984,6 +2125,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>9 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-womens-high-waist-yoga-leggings-with-pockets</g:id>
@@ -1998,6 +2140,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-womens-breathable-sports-bra-black</g:id>
@@ -2012,6 +2155,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-windproof-winter-cycling-gloves-black</g:id>
@@ -2026,6 +2170,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-fleece-winter-balaclava-hood-black</g:id>
@@ -2040,6 +2185,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-womens-quick-dry-lightweight-joggers-black</g:id>
@@ -2054,6 +2200,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>7 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-rechargeable-motion-sensor-led-headlamp</g:id>
@@ -2068,6 +2215,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-12l-roll-top-waterproof-dry-bag-blue</g:id>
@@ -2082,6 +2230,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-adult-anti-fog-swim-goggles-black</g:id>
@@ -2096,6 +2245,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-outdoor-pickleball-balls-12-pack-with-mesh-bag</g:id>
@@ -2110,6 +2260,7 @@
       <g:google_product_category>Sporting Goods</g:google_product_category>
       <g:product_type>Recreation &amp; Outdoors</g:product_type>
       <g:shipping_weight>11 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-earth-therapeutics-far-reach-back-brush</g:id>
@@ -2124,6 +2275,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>9 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-earth-therapeutics-natural-bristle-body-brush</g:id>
@@ -2138,6 +2290,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-kiss-my-face-pure-olive-oil-bar-soap-8-oz</g:id>
@@ -2152,6 +2305,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>10 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-kiss-my-face-olive-and-aloe-bar-soap-8-oz</g:id>
@@ -2166,6 +2320,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>10 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-kiss-my-face-pure-olive-oil-bar-soap-4-oz</g:id>
@@ -2180,6 +2335,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-tea-tree-therapy-eucalyptus-soap-3-5-oz</g:id>
@@ -2194,6 +2350,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-chandrika-sandal-soap-75-g</g:id>
@@ -2208,6 +2365,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-giovanni-bamboo-oval-hairbrush</g:id>
@@ -2222,6 +2380,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-a-la-maison-lavender-and-rosemary-bar-soap-4-pack</g:id>
@@ -2236,6 +2395,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>18 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-aura-cacia-lavender-shower-tablets-box-of-3</g:id>
@@ -2250,6 +2410,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-aura-cacia-eucalyptus-shower-tablets-box-of-3</g:id>
@@ -2264,6 +2425,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-aura-cacia-frankincense-in-jojoba-oil-0-5-oz</g:id>
@@ -2278,6 +2440,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-andalou-naturals-1000-roses-soothing-body-lotion-8</g:id>
@@ -2292,6 +2455,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>11 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-andalou-naturals-resveratrol-q10-night-repair-crea</g:id>
@@ -2306,6 +2470,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-andalou-naturals-daily-defense-facial-lotion-spf-1</g:id>
@@ -2320,6 +2485,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-crystal-mineral-deodorant-travel-stick-1-5-oz</g:id>
@@ -2334,6 +2500,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-andalou-naturals-lavender-shea-hand-cream-3-4-oz</g:id>
@@ -2348,6 +2515,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-mountain-ocean-skin-trip-coconut-soap-45-oz</g:id>
@@ -2362,6 +2530,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-davids-natural-toothpaste-spearmint-525-oz</g:id>
@@ -2376,6 +2545,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>11 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-desert-essence-kids-toothpaste-47-oz</g:id>
@@ -2390,6 +2560,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>9 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-essential-oxygen-brushing-rinse-16-oz</g:id>
@@ -2404,6 +2575,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>25 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-herban-cowboy-deodorant-stick-forest-28-oz</g:id>
@@ -2418,6 +2590,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-eco-dent-daily-care-toothpowder-mint-2-oz</g:id>
@@ -2432,6 +2605,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-crystal-mineral-deodorant-stick-25-oz</g:id>
@@ -2446,6 +2620,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>7 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-seaweed-bath-co-detox-body-wash-awaken-12-oz</g:id>
@@ -2460,6 +2635,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>18 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-redmond-earthpaste-wintergreen-4-oz</g:id>
@@ -2474,6 +2650,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-grandpa-soap-co-pine-tar-bar-soap-425-oz</g:id>
@@ -2488,6 +2665,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-grandpa-soap-co-pine-tar-body-wash-95-oz</g:id>
@@ -2502,6 +2680,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>13 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.25 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-grandpa-soap-co-apple-cider-vinegar-body-wash-95-oz</g:id>
@@ -2516,6 +2695,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>13 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.25 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-oral-essentials-lumineux-whitening-mouthwash-16-oz</g:id>
@@ -2530,6 +2710,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>24 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-oral-essentials-lumineux-whitening-toothpaste-375-oz</g:id>
@@ -2544,6 +2725,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-oral-essentials-lumineux-kids-toothpaste-375-oz</g:id>
@@ -2558,6 +2740,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-oral-essentials-lumineux-whitening-strips-14-pack</g:id>
@@ -2572,6 +2755,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>10 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-auromere-ayurvedic-herbal-toothpaste-416-oz</g:id>
@@ -2586,6 +2770,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>9 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-alba-botanica-very-emollient-body-lotion-32-oz</g:id>
@@ -2600,6 +2785,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>44 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>11.45 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-nourish-organic-age-defense-face-serum-07-oz</g:id>
@@ -2614,6 +2800,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-eco-dent-mint-mouth-rinse-8-oz</g:id>
@@ -2628,6 +2815,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>13 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.25 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-south-of-france-bar-soap-6-oz</g:id>
@@ -2642,6 +2830,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>10 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-south-of-france-foaming-hand-soap-8-oz</g:id>
@@ -2656,6 +2845,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>14 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.25 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-dr-plotkas-mouthwatchers-adult-toothbrush</g:id>
@@ -2670,6 +2860,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-every-man-jack-body-wash-sandalwood-338-oz</g:id>
@@ -2684,6 +2875,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>45 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>11.45 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-herban-cowboy-body-wash-dusk-18-oz</g:id>
@@ -2698,6 +2890,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>25 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-tea-tree-therapy-mouthwash-12-oz</g:id>
@@ -2712,6 +2905,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>19 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-aura-cacia-eucalyptus-harvest-aroma-mist-4-oz</g:id>
@@ -2726,6 +2920,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>9 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-soothing-touch-bath-salts-32-oz</g:id>
@@ -2740,6 +2935,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>38 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>11.45 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-pacha-soap-whipped-soap-scrub-vanilla-almond-8-oz</g:id>
@@ -2754,6 +2950,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>14 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.25 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-everyday-shea-bubble-bath-lemon-lavender-32-oz</g:id>
@@ -2768,6 +2965,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>46 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>11.45 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-fortify-facial-mist-travel-size</g:id>
@@ -2782,6 +2980,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-aura-cacia-relaxing-lavender-bubble-bath-13-oz</g:id>
@@ -2796,6 +2995,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>20 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-cleanlogic-exfoliating-wash-cloth</g:id>
@@ -2810,6 +3010,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-spectrum-essentials-body-care-coconut-oil-15-oz</g:id>
@@ -2824,6 +3025,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>21 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-alaffia-authentic-african-black-soap-tangerine-citrus-32-oz</g:id>
@@ -2838,6 +3040,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>43 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>11.45 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-mychelle-ultra-hyaluronic-cleanser-42-oz</g:id>
@@ -2852,6 +3055,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>7 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-babo-botanicals-sensitive-baby-fragrance-free-shampoo-and-wash-16-oz</g:id>
@@ -2866,6 +3070,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>27 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-philip-adam-shampoo-verbena-sage-12-oz</g:id>
@@ -2880,6 +3085,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>20 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-south-of-france-liquid-hand-wash-8-oz</g:id>
@@ -2894,6 +3100,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>14 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.25 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-andalou-naturals-body-lotion-8-oz</g:id>
@@ -2908,6 +3115,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>12 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-crystal-essence-mineral-deodorant-roll-on-225-oz</g:id>
@@ -2922,6 +3130,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-crystal-body-deodorant-roll-on-unscented-225-oz</g:id>
@@ -2936,6 +3145,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-crystal-body-deodorant-spray-unscented-4-oz</g:id>
@@ -2950,6 +3160,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>9 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-crystal-essence-lavender-deodorant-spray-4-oz</g:id>
@@ -2964,6 +3175,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>10 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-crystal-mineral-deodorant-stick-twist-up-425-oz</g:id>
@@ -2978,6 +3190,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>10 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-seaweed-bath-co-body-wash-12-oz</g:id>
@@ -2992,6 +3205,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>18 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-seaweed-bath-co-body-cream-6-oz</g:id>
@@ -3006,6 +3220,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>10 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-seaweed-bath-co-detox-facial-bar-375-oz</g:id>
@@ -3020,6 +3235,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>7 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-seaweed-bath-co-exfoliating-detox-soap-375-oz</g:id>
@@ -3034,6 +3250,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>7 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-seaweed-bath-co-detox-body-scrub-awaken-6-oz</g:id>
@@ -3048,6 +3265,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>10 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-soothing-touch-salt-scrub-20-oz</g:id>
@@ -3062,6 +3280,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>28 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-soothing-touch-muscle-comfort-massage-oil-8-oz</g:id>
@@ -3076,6 +3295,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>13 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.25 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-soothing-touch-fractionated-coconut-oil-unscented-8-oz</g:id>
@@ -3090,6 +3310,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>13 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.25 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-everyday-shea-bubble-bath-lavender-32-oz</g:id>
@@ -3104,6 +3325,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>46 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>11.45 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-everyday-shea-bubble-bath-unscented-32-oz</g:id>
@@ -3118,6 +3340,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>46 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>11.45 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-everyday-coconut-body-wash-32-oz</g:id>
@@ -3132,6 +3355,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>46 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>11.45 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-everyday-coconut-conditioner-32-oz</g:id>
@@ -3146,6 +3370,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>43 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>11.45 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-everyday-coconut-lime-lotion-32-oz</g:id>
@@ -3160,6 +3385,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>43 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>11.45 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-philip-adam-shampoo-12-oz</g:id>
@@ -3174,6 +3400,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>20 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-philip-adam-apple-cider-vinegar-conditioner-12-oz</g:id>
@@ -3188,6 +3415,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>20 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-herban-cowboy-body-wash-forest-18-oz</g:id>
@@ -3202,6 +3430,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>25 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-herban-cowboy-cologne-17-oz</g:id>
@@ -3216,6 +3445,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>11 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-grandpa-soap-co-charcoal-bar-soap-425-oz</g:id>
@@ -3230,6 +3460,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-grandpa-soap-co-epsom-salt-bar-soap-425-oz</g:id>
@@ -3244,6 +3475,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-grandpa-soap-co-pine-tar-bar-soap-325-oz</g:id>
@@ -3258,6 +3490,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-grandpa-soap-co-charcoal-shower-cream-95-oz</g:id>
@@ -3272,6 +3505,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>13 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.25 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-earth-therapeutics-bath-blossom-sponge-green</g:id>
@@ -3286,6 +3520,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>9 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-earth-therapeutics-lavender-body-sponge</g:id>
@@ -3300,6 +3535,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-earth-therapeutics-blue-body-sponge</g:id>
@@ -3314,6 +3550,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-earth-therapeutics-exfoliating-gloves</g:id>
@@ -3328,6 +3565,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-earth-therapeutics-exfoliating-hydro-towel</g:id>
@@ -3342,6 +3580,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-earth-therapeutics-loofah-terry-pad</g:id>
@@ -3356,6 +3595,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-earth-therapeutics-pocket-comb</g:id>
@@ -3370,6 +3610,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-earth-therapeutics-4-sided-nail-filing-block</g:id>
@@ -3384,6 +3625,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-cleanlogic-detox-charcoal-washcloth</g:id>
@@ -3398,6 +3640,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-cleanlogic-detox-charcoal-body-scrubber</g:id>
@@ -3412,6 +3655,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-cleanlogic-detox-charcoal-bath-glove</g:id>
@@ -3426,6 +3670,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-cleanlogic-charcoal-sea-sponge-foam</g:id>
@@ -3440,6 +3685,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-cleanlogic-exfoliating-soap-saver</g:id>
@@ -3454,6 +3700,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-cleanlogic-stretch-bath-cloth-for-men</g:id>
@@ -3468,6 +3715,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-aura-cacia-lavender-aroma-mist-4-oz</g:id>
@@ -3482,6 +3730,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>9 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-shikai-shower-gel-12-oz</g:id>
@@ -3496,6 +3745,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>21 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-shikai-hand-and-body-lotion-8-oz</g:id>
@@ -3510,6 +3760,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>14 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.25 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-shikai-borage-dry-skin-foot-cream-42-oz</g:id>
@@ -3524,6 +3775,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>11 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-shikai-borage-dry-skin-therapy-lotion-8-oz</g:id>
@@ -3538,6 +3790,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>14 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.25 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-andalou-naturals-apricot-probiotic-cleansing-milk-6-oz</g:id>
@@ -3552,6 +3805,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>12 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-andalou-naturals-clementine-hand-cream-34-oz</g:id>
@@ -3566,6 +3820,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-andalou-naturals-kukui-cocoa-body-butter-8-oz</g:id>
@@ -3580,6 +3835,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>13 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.25 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-andalou-naturals-dmae-lift-and-firm-cream-17-oz</g:id>
@@ -3594,6 +3850,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-alba-botanica-body-bath-32-oz</g:id>
@@ -3608,6 +3865,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>46 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>11.45 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-fortify-reviving-face-serum-17-oz</g:id>
@@ -3622,6 +3880,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>10 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-fortify-face-moisturizer-17-oz</g:id>
@@ -3636,6 +3895,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>10 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-fortify-protecting-face-wipes-30-count</g:id>
@@ -3650,6 +3910,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>13 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.25 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-fortify-nourishing-face-cleanser-5-oz</g:id>
@@ -3664,6 +3925,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>13 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.25 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-fortify-firming-eye-pads-5-pairs</g:id>
@@ -3678,6 +3940,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-auromere-tulsi-neem-bar-soap-275-oz</g:id>
@@ -3692,6 +3955,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-eco-dent-daily-care-toothpowder-2-oz</g:id>
@@ -3706,6 +3970,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-eco-dent-extrabrite-toothpowder-2-oz</g:id>
@@ -3720,6 +3985,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-eco-dent-cinnamon-mouth-rinse-8-oz</g:id>
@@ -3734,6 +4000,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>13 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.25 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-tea-tree-therapy-whitening-toothpaste-3-oz</g:id>
@@ -3748,6 +4015,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-tea-tree-therapy-toothpaste-with-baking-soda-5-oz</g:id>
@@ -3762,6 +4030,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>9 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-essential-oxygen-brushing-rinse-peppermint-travel-size</g:id>
@@ -3776,6 +4045,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-saltworks-ultra-epsom-salt-lavender-2-lb</g:id>
@@ -3790,6 +4060,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>46 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>11.45 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-redmond-clay-facial-mud-4-oz</g:id>
@@ -3804,6 +4075,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-hand-in-hand-sugar-scrub-9-oz</g:id>
@@ -3818,6 +4090,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>15 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.25 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-flower-valley-ayate-fiber-washcloth</g:id>
@@ -3832,6 +4105,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-bass-brushes-detangler-flex-hair-brush</g:id>
@@ -3846,6 +4120,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>7 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-bass-brushes-bio-flex-swirl-hair-brush</g:id>
@@ -3860,6 +4135,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>7 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-lafes-active-deodorant-twist-stick-25-oz</g:id>
@@ -3874,6 +4150,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-lavilin-underarm-deodorant-125-g</g:id>
@@ -3888,6 +4165,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-lavanila-healthy-deodorant-vanilla-grapefruit-2-oz</g:id>
@@ -3902,6 +4180,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>9 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-babo-botanicals-sensitive-baby-daily-lotion-8-oz</g:id>
@@ -3916,6 +4195,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>20 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-babo-botanicals-moisturizing-baby-shampoo-and-wash-16-oz</g:id>
@@ -3930,6 +4210,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>27 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-a-la-maison-liquid-hand-soap-169-oz</g:id>
@@ -3944,6 +4225,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>26 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-alaffia-african-black-soap-32-oz</g:id>
@@ -3958,6 +4240,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>43 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>11.45 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-dr-singhas-mustard-bath-8-oz</g:id>
@@ -3972,6 +4255,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>14 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.25 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-bodhi-whipped-soap-eucalyptus-spearmint-14-oz</g:id>
@@ -3986,6 +4270,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>21 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-attitude-body-cream-8-oz</g:id>
@@ -4000,6 +4285,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>14 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.25 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-avalon-organics-vitamin-c-cleansing-gel-6-oz</g:id>
@@ -4014,6 +4300,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>12 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-avalon-organics-vitamin-c-renewal-cream-17-oz</g:id>
@@ -4028,6 +4315,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>7 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-avalon-organics-lavender-hand-and-body-lotion-32-oz</g:id>
@@ -4042,6 +4330,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>43 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>11.45 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-yes-to-avocado-daily-eye-cream-05-oz</g:id>
@@ -4056,6 +4345,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>7 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-yes-to-avocado-daily-cream-cleanser-4-oz</g:id>
@@ -4070,6 +4360,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>9 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-mineral-fusion-nail-polish-remover-6-oz</g:id>
@@ -4084,6 +4375,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>9 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-one-with-nature-dead-sea-mineral-bar-soap-7-oz</g:id>
@@ -4098,6 +4390,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>11 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-spry-xylitol-toothpaste-fluoride-free-5-oz</g:id>
@@ -4112,6 +4405,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>9 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-spry-xylitol-oral-rinse-16-oz</g:id>
@@ -4126,6 +4420,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>25 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-spry-kids-xylitol-oral-rinse-bubble-gum-16-oz</g:id>
@@ -4140,6 +4435,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>25 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-clearly-natural-glycerine-liquid-hand-soap-12-oz</g:id>
@@ -4154,6 +4450,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>21 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-nubian-heritage-raw-shea-butter-bar-soap-5-oz</g:id>
@@ -4168,6 +4465,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>9 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-kirks-lemon-eucalyptus-castile-hand-soap-12-oz</g:id>
@@ -4182,6 +4480,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>16 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-hello-activated-charcoal-toothbrush-soft</g:id>
@@ -4196,6 +4495,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>10 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-herban-cowboy-dry-spray-deodorant-28-oz</g:id>
@@ -4210,6 +4510,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-natural-loofah-sponge-12-to-14-in</g:id>
@@ -4224,6 +4525,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-bamboo-wide-tooth-comb</g:id>
@@ -4238,6 +4540,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>2 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-silver-cat-hair-clip</g:id>
@@ -4252,6 +4555,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>1 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-acetate-butterfly-claw-clip-4-in-yellow</g:id>
@@ -4266,6 +4570,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>2 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-color-changing-acetate-claw-clip-peach</g:id>
@@ -4280,6 +4585,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>2 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-star-claw-clip-black</g:id>
@@ -4294,6 +4600,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>2 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-makeup-brush-set-12-pieces-black</g:id>
@@ -4308,6 +4615,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-folding-makeup-mirror-white</g:id>
@@ -4322,6 +4630,7 @@
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
       <g:product_type>Personal Care</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-roland-bamboo-toothpicks-case-of-12-x-300</g:id>
@@ -4336,6 +4645,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>64 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>12.45 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-world-centric-compostable-plates-6-in-case-of-240</g:id>
@@ -4350,6 +4660,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>92 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>13.25 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-full-circle-be-good-dish-brush</g:id>
@@ -4364,6 +4675,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-cotton-cross-back-apron</g:id>
@@ -4378,6 +4690,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>9 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-mini-artificial-bonsai</g:id>
@@ -4392,6 +4705,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-bag-sealing-clips-4-pack</g:id>
@@ -4406,6 +4720,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-retractable-carabiner-keychain</g:id>
@@ -4420,6 +4735,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>2 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-reusable-cable-ties-5-pack</g:id>
@@ -4434,6 +4750,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>1 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-car-seat-gap-fillers-2-pack</g:id>
@@ -4448,6 +4765,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-unfinished-wood-candlestick</g:id>
@@ -4462,6 +4780,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-green-leaves-botanical-print-8-x-12-in</g:id>
@@ -4476,6 +4795,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-line-art-plant-print-8-x-12-in</g:id>
@@ -4490,6 +4810,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-olive-tree-prints-set-of-2-12-x-16-in</g:id>
@@ -4504,6 +4825,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-clear-adhesive-hooks-20-pack</g:id>
@@ -4518,6 +4840,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-reusable-cable-straps-20-pack</g:id>
@@ -4532,6 +4855,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-honeycomb-silicone-trivet</g:id>
@@ -4546,6 +4870,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-absorbent-kitchen-floor-mat-16-x-24-in</g:id>
@@ -4560,6 +4885,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>14 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-under-door-draft-seal</g:id>
@@ -4574,6 +4900,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-door-and-window-weather-strip-33-ft</g:id>
@@ -4588,6 +4915,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-if-you-care-recycled-aluminum-foil-50-sq-ft-case-of-12</g:id>
@@ -4602,6 +4930,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>105 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>14.20 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-world-centric-compostable-spoons-24-count-case-of-12</g:id>
@@ -4616,6 +4945,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>90 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>13.25 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-world-centric-compostable-knives-24-count-case-of-12</g:id>
@@ -4630,6 +4960,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>90 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>13.25 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-preserve-recycled-cutlery-24-count-case-of-12</g:id>
@@ -4644,6 +4975,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>63 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>11.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-world-centric-compostable-hot-cups-12-oz-20-count-case-of-12</g:id>
@@ -4658,6 +4990,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>126 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>15.20 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-repurpose-compostable-bowls-16-oz-20-count-case-of-12</g:id>
@@ -4672,6 +5005,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>127 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>15.20 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-natural-value-reclosable-sandwich-bags-40-count-case-of-12</g:id>
@@ -4686,6 +5020,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>71 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>12.45 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-snapware-total-solution-4-cup-round-glass-container-4-pack</g:id>
@@ -4700,6 +5035,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>105 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>14.20 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-snapware-total-solution-6-cup-rectangle-glass-container-2-pa</g:id>
@@ -4714,6 +5050,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>89 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>13.25 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-countertop-compost-scrap-bin-3-l</g:id>
@@ -4728,6 +5065,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>24 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-large-jute-tote-bag</g:id>
@@ -4742,6 +5080,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>12 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-stainless-steel-pour-over-coffee-filter-with-stand</g:id>
@@ -4756,6 +5095,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>7 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-hammered-stainless-steel-spatula</g:id>
@@ -4770,6 +5110,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-reusable-silicone-food-storage-bag-34-oz</g:id>
@@ -4784,6 +5125,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-cookie-press-with-20-discs</g:id>
@@ -4798,6 +5140,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>15 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-stainless-steel-wine-stopper</g:id>
@@ -4812,6 +5155,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-silicone-sphere-ice-mold-6-balls</g:id>
@@ -4826,6 +5170,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-black-fruit-storage-basket</g:id>
@@ -4840,6 +5185,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>13 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-volcano-flame-aroma-diffuser-white</g:id>
@@ -4854,6 +5200,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>15 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-mini-usb-humidifier-gray</g:id>
@@ -4868,6 +5215,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-math-formula-wall-clock-8-in</g:id>
@@ -4882,6 +5230,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>7 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-picture-hanging-marking-tool</g:id>
@@ -4896,6 +5245,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>7 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-magnetic-acrylic-photo-frames-6-pack</g:id>
@@ -4910,6 +5260,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-silicone-spoon-rest-orange</g:id>
@@ -4924,6 +5275,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>2 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-hand-painted-orchid-ceramic-tea-canister</g:id>
@@ -4938,6 +5290,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>14 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-hand-painted-lotus-ceramic-tea-canister</g:id>
@@ -4952,6 +5305,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>12 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-car-seat-back-organizer-brown</g:id>
@@ -4966,6 +5320,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>27 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-wooden-cartoon-wall-clock-green-crown</g:id>
@@ -4980,6 +5335,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>11 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-corner-shower-shelf-no-drilling-black</g:id>
@@ -4994,6 +5350,7 @@
       <g:google_product_category>Home &amp; Garden</g:google_product_category>
       <g:product_type>Home &amp; Kitchen</g:product_type>
       <g:shipping_weight>15 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-full-circle-wipe-out-squeegee</g:id>
@@ -5008,6 +5365,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Household Supplies</g:google_product_category>
       <g:product_type>Cleaning Supplies</g:product_type>
       <g:shipping_weight>10 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-full-circle-clean-team-dustpan-and-brush-set</g:id>
@@ -5022,6 +5380,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Household Supplies</g:google_product_category>
       <g:product_type>Cleaning Supplies</g:product_type>
       <g:shipping_weight>37 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>11.45 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-full-circle-the-ring-veggie-brush</g:id>
@@ -5036,6 +5395,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Household Supplies</g:google_product_category>
       <g:product_type>Cleaning Supplies</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>5.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-casabella-kind-plant-based-scrub-sponges-case-of-8</g:id>
@@ -5050,6 +5410,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Household Supplies</g:google_product_category>
       <g:product_type>Cleaning Supplies</g:product_type>
       <g:shipping_weight>31 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>9.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-weiman-cook-top-scrubbing-pads-case-of-6-three-pac</g:id>
@@ -5064,6 +5425,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Household Supplies</g:google_product_category>
       <g:product_type>Cleaning Supplies</g:product_type>
       <g:shipping_weight>106 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>14.20 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-washable-lint-roller</g:id>
@@ -5078,6 +5440,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Household Supplies</g:google_product_category>
       <g:product_type>Cleaning Supplies</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-long-handle-tub-and-tile-brush</g:id>
@@ -5092,6 +5455,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Household Supplies</g:google_product_category>
       <g:product_type>Cleaning Supplies</g:product_type>
       <g:shipping_weight>16 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-stove-and-crevice-brushes-3-pack</g:id>
@@ -5106,6 +5470,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Household Supplies</g:google_product_category>
       <g:product_type>Cleaning Supplies</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-lint-and-fuzz-brush</g:id>
@@ -5120,6 +5485,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Household Supplies</g:google_product_category>
       <g:product_type>Cleaning Supplies</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-sponge-tub-scrubber-with-handle</g:id>
@@ -5134,6 +5500,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Household Supplies</g:google_product_category>
       <g:product_type>Cleaning Supplies</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-natural-value-kitchen-scrubber-sponge-case-of-24</g:id>
@@ -5148,6 +5515,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Household Supplies</g:google_product_category>
       <g:product_type>Cleaning Supplies</g:product_type>
       <g:shipping_weight>32 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>11.45 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-full-circle-walnut-scrubber-sponge-2-count-case-of-6</g:id>
@@ -5162,6 +5530,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Household Supplies</g:google_product_category>
       <g:product_type>Cleaning Supplies</g:product_type>
       <g:shipping_weight>12 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>7.75 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-full-circle-wash-and-dry-microfiber-duster-case-of-6</g:id>
@@ -5176,6 +5545,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Household Supplies</g:google_product_category>
       <g:product_type>Cleaning Supplies</g:product_type>
       <g:shipping_weight>44 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>11.45 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>bg-casabella-kind-plant-based-scrub-sponges-6-count-case-of-8</g:id>
@@ -5190,6 +5560,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Household Supplies</g:google_product_category>
       <g:product_type>Cleaning Supplies</g:product_type>
       <g:shipping_weight>54 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>11.95 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-long-handle-scrub-brush-blue</g:id>
@@ -5204,6 +5575,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Household Supplies</g:google_product_category>
       <g:product_type>Cleaning Supplies</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-stiff-bristle-scrub-brush-set</g:id>
@@ -5218,6 +5590,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Household Supplies</g:google_product_category>
       <g:product_type>Cleaning Supplies</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-3-in-1-window-squeegee-with-sprayer</g:id>
@@ -5232,6 +5605,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Household Supplies</g:google_product_category>
       <g:product_type>Cleaning Supplies</g:product_type>
       <g:shipping_weight>10 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-long-handle-shoe-and-laundry-brush</g:id>
@@ -5246,6 +5620,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Household Supplies</g:google_product_category>
       <g:product_type>Cleaning Supplies</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-wool-dryer-balls-6-pack</g:id>
@@ -5260,6 +5635,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Household Supplies</g:google_product_category>
       <g:product_type>Cleaning Supplies</g:product_type>
       <g:shipping_weight>10 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-wooden-handle-bottle-brush-12-in</g:id>
@@ -5274,6 +5650,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Household Supplies</g:google_product_category>
       <g:product_type>Cleaning Supplies</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-crevice-cleaning-brush-set-8-pieces</g:id>
@@ -5288,6 +5665,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Household Supplies</g:google_product_category>
       <g:product_type>Cleaning Supplies</g:product_type>
       <g:shipping_weight>2 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-flexible-drain-cleaning-tool</g:id>
@@ -5302,6 +5680,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Household Supplies</g:google_product_category>
       <g:product_type>Cleaning Supplies</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-reusable-laundry-lint-ball-silver</g:id>
@@ -5316,6 +5695,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Household Supplies</g:google_product_category>
       <g:product_type>Cleaning Supplies</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-silicone-drain-hair-catcher-white</g:id>
@@ -5330,6 +5710,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Household Supplies</g:google_product_category>
       <g:product_type>Cleaning Supplies</g:product_type>
       <g:shipping_weight>2 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-handheld-steam-cleaner-with-12-attachments-white</g:id>
@@ -5344,6 +5725,7 @@
       <g:google_product_category>Home &amp; Garden &gt; Household Supplies</g:google_product_category>
       <g:product_type>Cleaning Supplies</g:product_type>
       <g:shipping_weight>68 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-solar-mushroom-string-lights</g:id>
@@ -5358,6 +5740,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>12 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-jumbo-pickle-squishy</g:id>
@@ -5372,6 +5755,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-tomato-squishy</g:id>
@@ -5386,6 +5770,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-jumping-frogs-set-of-12</g:id>
@@ -5400,6 +5785,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-wind-chime-12-tubes</g:id>
@@ -5414,6 +5800,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>14 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-crochet-pocket-frog</g:id>
@@ -5428,6 +5815,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>2 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-strawberry-mochi-squishy</g:id>
@@ -5442,6 +5830,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-jumbo-strawberry-squishy-cream-scented</g:id>
@@ -5456,6 +5845,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-strawberry-taba-squishy</g:id>
@@ -5470,6 +5860,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-dumpling-squishy</g:id>
@@ -5484,6 +5875,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-mini-dumpling-and-bun-squishy</g:id>
@@ -5498,6 +5890,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>2 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-toast-bread-squishy</g:id>
@@ -5512,6 +5905,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-strawberry-bread-bun-squishy</g:id>
@@ -5526,6 +5920,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-butter-toast-squishy</g:id>
@@ -5540,6 +5935,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-cheese-cake-squishy</g:id>
@@ -5554,6 +5950,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-fluffy-taba-cat-squishy-13-cm</g:id>
@@ -5568,6 +5965,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-chubby-cat-squishy</g:id>
@@ -5582,6 +5980,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-cat-cheese-bread-squishy</g:id>
@@ -5596,6 +5995,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-jumbo-french-fries-squishy</g:id>
@@ -5610,6 +6010,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-slow-rise-stress-ball</g:id>
@@ -5624,6 +6025,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-secret-wooden-puzzle-box</g:id>
@@ -5638,6 +6040,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>10 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-hexagon-wooden-brain-teaser</g:id>
@@ -5652,6 +6055,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-round-bird-wooden-jigsaw-puzzle</g:id>
@@ -5666,6 +6070,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-peacock-wooden-jigsaw-puzzle</g:id>
@@ -5680,6 +6085,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-elephant-wooden-jigsaw-puzzle</g:id>
@@ -5694,6 +6100,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-ocean-animals-wooden-jigsaw-puzzle</g:id>
@@ -5708,6 +6115,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-vintage-pirate-playing-cards</g:id>
@@ -5722,6 +6130,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-bamboo-phone-stand</g:id>
@@ -5736,6 +6145,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-walnut-phone-stand</g:id>
@@ -5750,6 +6160,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-wooden-business-card-holder</g:id>
@@ -5764,6 +6175,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-crochet-lizard-coaster</g:id>
@@ -5778,6 +6190,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-crochet-positive-cat</g:id>
@@ -5792,6 +6205,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>2 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-pressed-flower-crystal-bookmark</g:id>
@@ -5806,6 +6220,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>2 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-botanical-enamel-pin</g:id>
@@ -5820,6 +6235,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>1 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-vintage-leather-look-a5-notebook</g:id>
@@ -5834,6 +6250,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>10 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-thick-a5-notebook-256-pages</g:id>
@@ -5848,6 +6265,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>14 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-mini-magnetic-travel-chess</g:id>
@@ -5862,6 +6280,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-wooden-3-in-1-chess-checkers-and-backgammon-set</g:id>
@@ -5876,6 +6295,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>28 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-kalimba-thumb-piano-17-keys</g:id>
@@ -5890,6 +6310,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>16 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-deer-jewelry-display-stand-white</g:id>
@@ -5904,6 +6325,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-reasons-i-love-you-wooden-heart-puzzle</g:id>
@@ -5918,6 +6340,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-alpaca-plush-pillow-30-in-brown</g:id>
@@ -5932,6 +6355,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>27 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-avocado-capybara-plush-14-in</g:id>
@@ -5946,6 +6370,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>11 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-white-goose-plush-20-in</g:id>
@@ -5960,6 +6385,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-ghost-plush-pillow-8-in</g:id>
@@ -5974,6 +6400,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-crochet-potted-plant-set-3-pieces</g:id>
@@ -5988,6 +6415,7 @@
       <g:google_product_category>Toys &amp; Games</g:google_product_category>
       <g:product_type>Games &amp; Gifts</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-qcy-t13-anc-wireless-earbuds</g:id>
@@ -6002,6 +6430,7 @@
       <g:google_product_category>Electronics</g:google_product_category>
       <g:product_type>Technology</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-qcy-melobuds-pro-anc-wireless-earbuds</g:id>
@@ -6016,6 +6445,7 @@
       <g:google_product_category>Electronics</g:google_product_category>
       <g:product_type>Technology</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-qcy-crossky-c30-open-ear-earbuds</g:id>
@@ -6030,6 +6460,7 @@
       <g:google_product_category>Electronics</g:google_product_category>
       <g:product_type>Technology</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-gamesir-x5-lite-mobile-gaming-controller</g:id>
@@ -6044,6 +6475,7 @@
       <g:google_product_category>Electronics</g:google_product_category>
       <g:product_type>Technology</g:product_type>
       <g:shipping_weight>12 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-kz-edx-pro-wired-in-ear-earphones-with-mic</g:id>
@@ -6058,6 +6490,7 @@
       <g:google_product_category>Electronics</g:google_product_category>
       <g:product_type>Technology</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-kz-castor-pro-wired-in-ear-earphones</g:id>
@@ -6072,6 +6505,7 @@
       <g:google_product_category>Electronics</g:google_product_category>
       <g:product_type>Technology</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-kz-az09-bluetooth-ear-hook-adapter</g:id>
@@ -6086,6 +6520,7 @@
       <g:google_product_category>Electronics</g:google_product_category>
       <g:product_type>Technology</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-kz-zs10-pro-2-hybrid-in-ear-monitors</g:id>
@@ -6100,6 +6535,7 @@
       <g:google_product_category>Electronics</g:google_product_category>
       <g:product_type>Technology</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-kz-castor-wired-in-ear-earphones</g:id>
@@ -6114,6 +6550,7 @@
       <g:google_product_category>Electronics</g:google_product_category>
       <g:product_type>Technology</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-kz-as16-pro-balanced-armature-in-ear-monitors</g:id>
@@ -6128,6 +6565,7 @@
       <g:google_product_category>Electronics</g:google_product_category>
       <g:product_type>Technology</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-joyroom-360-degree-bike-phone-holder</g:id>
@@ -6142,6 +6580,7 @@
       <g:google_product_category>Electronics</g:google_product_category>
       <g:product_type>Technology</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-qcy-crossky-c30s-open-ear-clip-on-earbuds</g:id>
@@ -6156,6 +6595,7 @@
       <g:google_product_category>Electronics</g:google_product_category>
       <g:product_type>Technology</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-gamesir-g8-bluetooth-mobile-controller</g:id>
@@ -6170,6 +6610,7 @@
       <g:google_product_category>Electronics</g:google_product_category>
       <g:product_type>Technology</g:product_type>
       <g:shipping_weight>18 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-magnetic-car-air-vent-phone-mount-black</g:id>
@@ -6184,6 +6625,7 @@
       <g:google_product_category>Electronics</g:google_product_category>
       <g:product_type>Technology</g:product_type>
       <g:shipping_weight>2 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-magnetic-wireless-charging-car-mount-15-w</g:id>
@@ -6198,6 +6640,7 @@
       <g:google_product_category>Electronics</g:google_product_category>
       <g:product_type>Technology</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-foldable-3-in-1-wireless-charger-black</g:id>
@@ -6212,6 +6655,7 @@
       <g:google_product_category>Electronics</g:google_product_category>
       <g:product_type>Technology</g:product_type>
       <g:shipping_weight>11 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-portable-bluetooth-speaker-gray</g:id>
@@ -6226,6 +6670,7 @@
       <g:google_product_category>Electronics</g:google_product_category>
       <g:product_type>Technology</g:product_type>
       <g:shipping_weight>11 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-usb-c-to-usb-c-charging-cable-60-w-33-ft-blue</g:id>
@@ -6240,6 +6685,7 @@
       <g:google_product_category>Electronics</g:google_product_category>
       <g:product_type>Technology</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-4-in-1-retractable-car-charger</g:id>
@@ -6254,6 +6700,7 @@
       <g:google_product_category>Electronics</g:google_product_category>
       <g:product_type>Technology</g:product_type>
       <g:shipping_weight>7 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-embroidered-laptop-sleeve-133-in-white-puppy</g:id>
@@ -6268,6 +6715,7 @@
       <g:google_product_category>Electronics</g:google_product_category>
       <g:product_type>Technology</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-reflective-padded-dog-leash-5-ft</g:id>
@@ -6282,6 +6730,7 @@
       <g:google_product_category>Animals &amp; Pet Supplies</g:google_product_category>
       <g:product_type>Pets</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-padded-dog-collar</g:id>
@@ -6296,6 +6745,7 @@
       <g:google_product_category>Animals &amp; Pet Supplies</g:google_product_category>
       <g:product_type>Pets</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-pet-grooming-glove</g:id>
@@ -6310,6 +6760,7 @@
       <g:google_product_category>Animals &amp; Pet Supplies</g:google_product_category>
       <g:product_type>Pets</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-poop-bag-dispenser</g:id>
@@ -6324,6 +6775,7 @@
       <g:google_product_category>Animals &amp; Pet Supplies</g:google_product_category>
       <g:product_type>Pets</g:product_type>
       <g:shipping_weight>2 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-cotton-rope-ball-dog-toy</g:id>
@@ -6338,6 +6790,7 @@
       <g:google_product_category>Animals &amp; Pet Supplies</g:google_product_category>
       <g:product_type>Pets</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-carrot-rope-chew-toys-3-pack</g:id>
@@ -6352,6 +6805,7 @@
       <g:google_product_category>Animals &amp; Pet Supplies</g:google_product_category>
       <g:product_type>Pets</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-reflective-dog-car-seat-belt</g:id>
@@ -6366,6 +6820,7 @@
       <g:google_product_category>Animals &amp; Pet Supplies</g:google_product_category>
       <g:product_type>Pets</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-cat-harness-and-leash-set-small</g:id>
@@ -6380,6 +6835,7 @@
       <g:google_product_category>Animals &amp; Pet Supplies</g:google_product_category>
       <g:product_type>Pets</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-feather-bird-cat-wand-with-bell</g:id>
@@ -6394,6 +6850,7 @@
       <g:google_product_category>Animals &amp; Pet Supplies</g:google_product_category>
       <g:product_type>Pets</g:product_type>
       <g:shipping_weight>3 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-cat-toy-variety-pack-14-pieces</g:id>
@@ -6408,6 +6865,7 @@
       <g:google_product_category>Animals &amp; Pet Supplies</g:google_product_category>
       <g:product_type>Pets</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-self-cleaning-slicker-brush</g:id>
@@ -6422,6 +6880,7 @@
       <g:google_product_category>Animals &amp; Pet Supplies</g:google_product_category>
       <g:product_type>Pets</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-trimmable-cat-scratch-mat-12-x-39-in</g:id>
@@ -6436,6 +6895,7 @@
       <g:google_product_category>Animals &amp; Pet Supplies</g:google_product_category>
       <g:product_type>Pets</g:product_type>
       <g:shipping_weight>10 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-oval-cardboard-cat-scratcher-bed-16-in</g:id>
@@ -6450,6 +6910,7 @@
       <g:google_product_category>Animals &amp; Pet Supplies</g:google_product_category>
       <g:product_type>Pets</g:product_type>
       <g:shipping_weight>40 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-dog-poop-bags-5-rolls-75-bags</g:id>
@@ -6464,6 +6925,7 @@
       <g:google_product_category>Animals &amp; Pet Supplies</g:google_product_category>
       <g:product_type>Pets</g:product_type>
       <g:shipping_weight>6 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-felt-cat-tunnel-bed-20-in-light-gray</g:id>
@@ -6478,6 +6940,7 @@
       <g:google_product_category>Animals &amp; Pet Supplies</g:google_product_category>
       <g:product_type>Pets</g:product_type>
       <g:shipping_weight>30 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-dog-walking-and-treat-waist-bag-gray</g:id>
@@ -6492,6 +6955,7 @@
       <g:google_product_category>Animals &amp; Pet Supplies</g:google_product_category>
       <g:product_type>Pets</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>ae-silvervine-chew-sticks-for-cats-20-pack</g:id>
@@ -6506,6 +6970,7 @@
       <g:google_product_category>Animals &amp; Pet Supplies</g:google_product_category>
       <g:product_type>Pets</g:product_type>
       <g:shipping_weight>2 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-shrimp-tempura-squeaky-dog-toy</g:id>
@@ -6520,6 +6985,7 @@
       <g:google_product_category>Animals &amp; Pet Supplies</g:google_product_category>
       <g:product_type>Pets</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-corduroy-squeaky-dog-toy-brown-rabbit</g:id>
@@ -6534,6 +7000,7 @@
       <g:google_product_category>Animals &amp; Pet Supplies</g:google_product_category>
       <g:product_type>Pets</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-suction-cup-cat-window-perch-black</g:id>
@@ -6548,6 +7015,7 @@
       <g:google_product_category>Animals &amp; Pet Supplies</g:google_product_category>
       <g:product_type>Pets</g:product_type>
       <g:shipping_weight>16 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-dog-bath-brush-with-shampoo-dispenser-yellow</g:id>
@@ -6562,6 +7030,7 @@
       <g:google_product_category>Animals &amp; Pet Supplies</g:google_product_category>
       <g:product_type>Pets</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-double-sided-dematting-comb-blue</g:id>
@@ -6576,6 +7045,7 @@
       <g:google_product_category>Animals &amp; Pet Supplies</g:google_product_category>
       <g:product_type>Pets</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-silicone-finger-toothbrush-for-pets-blue</g:id>
@@ -6590,6 +7060,7 @@
       <g:google_product_category>Animals &amp; Pet Supplies</g:google_product_category>
       <g:product_type>Pets</g:product_type>
       <g:shipping_weight>2 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-washable-pet-pee-pad-20-x-28-in-gray</g:id>
@@ -6604,6 +7075,7 @@
       <g:google_product_category>Animals &amp; Pet Supplies</g:google_product_category>
       <g:product_type>Pets</g:product_type>
       <g:shipping_weight>9 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-waterproof-plush-pet-blanket-small-gray</g:id>
@@ -6618,6 +7090,7 @@
       <g:google_product_category>Animals &amp; Pet Supplies</g:google_product_category>
       <g:product_type>Pets</g:product_type>
       <g:shipping_weight>8 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-double-sided-flannel-pet-bath-towel-24-x-28-in-gray</g:id>
@@ -6632,6 +7105,7 @@
       <g:google_product_category>Animals &amp; Pet Supplies</g:google_product_category>
       <g:product_type>Pets</g:product_type>
       <g:shipping_weight>4 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>2.99 USD</g:price></g:shipping>
     </item>
     <item>
       <g:id>cj-cat-bathing-and-grooming-bag-gray</g:id>
@@ -6646,6 +7120,7 @@
       <g:google_product_category>Animals &amp; Pet Supplies</g:google_product_category>
       <g:product_type>Pets</g:product_type>
       <g:shipping_weight>5 oz</g:shipping_weight>
+      <g:shipping><g:country>US</g:country><g:price>0.00 USD</g:price></g:shipping>
     </item>
   </channel>
 </rss>

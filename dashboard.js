@@ -509,9 +509,15 @@
       }
       cp.appendChild(bar);
       cp.appendChild(el('p', 'db-hint', '"Pending" means they did not finish on PayPal; after 2 days they are hidden, after 30 days deleted. Refunding a payment in PayPal does NOT stop the monthly charge: use Cancel subscription.'));
-      var t = el('table', 'db-table db-pick');
-      t.innerHTML = '<thead><tr><th>Signed up</th><th>Customer</th><th>Address</th><th>Asked for</th><th>Pick-up day</th><th>Status</th><th>Bucket</th><th>Instructions</th><th></th></tr></thead>';
+      var HEAD = '<thead><tr><th>Signed up</th><th>Customer</th><th>Address</th><th>Asked for</th><th>Pick-up day</th><th>Status</th><th>Bucket</th><th>Instructions</th><th></th></tr></thead>';
+      var t = el('table', 'db-table db-pick'); t.innerHTML = HEAD;
       var tb = el('tbody');
+      // Past customers (owner, 2026-10-24): canceled and finished sign-ups
+      // keep their details, but sit in their own fold so nobody mistakes
+      // them for a stop on a route. They were never on the routes.
+      var t2 = el('table', 'db-table db-pick'); t2.innerHTML = HEAD;
+      var tb2 = el('tbody');
+      function isPast(s) { return s.status === 'canceled' || s.status === 'done' || s.status === 'expired'; }
       shown.forEach(function (s) {
         var tr = el('tr');
         tr.appendChild(el('td', null, String(s.created || '').slice(0, 10) + ' · ' + s.productName + (s.once ? ' · ONE TIME' : '')));
@@ -558,10 +564,18 @@
         }
         act.appendChild(msg);
         tr.appendChild(act);
-        tb.appendChild(tr);
+        (isPast(s) ? tb2 : tb).appendChild(tr);
       });
       t.appendChild(tb);
-      var wrap = el('div', 'db-table-wrap'); wrap.appendChild(t); cp.appendChild(wrap);
+      if (tb.children.length) { var wrap = el('div', 'db-table-wrap'); wrap.appendChild(t); cp.appendChild(wrap); }
+      else cp.appendChild(el('p', 'db-empty', 'No current customers right now.'));
+      if (tb2.children.length) {
+        t2.appendChild(tb2);
+        var fold = el('details', 'db-fold');
+        fold.appendChild(el('summary', null, 'Past customers: ' + tb2.children.length + ' (canceled or done; not on any route, kept for your records)'));
+        var w2 = el('div', 'db-table-wrap'); w2.appendChild(t2); fold.appendChild(w2);
+        cp.appendChild(fold);
+      }
     }
     function routeBlock(day, stops) {
       var box = el('div', 'db-route');

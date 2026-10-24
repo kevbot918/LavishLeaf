@@ -11,6 +11,7 @@
 import { readFileSync, writeFileSync, statSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { quote } from '../shipping.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SITE = 'https://lavishleaf.org';
@@ -56,6 +57,9 @@ const items = goods.map((p) => [
   ...(GCAT[p.category] ? [`      <g:google_product_category>${xml(GCAT[p.category])}</g:google_product_category>`] : []),
   `      <g:product_type>${xml(p.category)}</g:product_type>`,
   `      <g:shipping_weight>${p.shipOz} oz</g:shipping_weight>`,
+  // What one of it costs to ship, from the cart's own rules (shipping.mjs),
+  // so Merchant Center needs no shipping table of its own (2026-10-24).
+  `      <g:shipping><g:country>US</g:country><g:price>${money(quote([{ product: p, qty: 1 }], { method: 'ship' }).cents)} USD</g:price></g:shipping>`,
   '    </item>',
 ].join('\n'));
 writeFileSync(join(ROOT, 'google-shopping.xml'), `<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">\n  <channel>\n    <title>Lavish Leaf Online Store</title>\n    <link>${SITE}/store.html</link>\n    <description>Products from the Lavish Leaf online store</description>\n${items.join('\n')}\n  </channel>\n</rss>\n`);

@@ -887,3 +887,14 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     counts BEFORE any `--write`; the backfill needs NETLIFY_API_TOKEN,
     NETLIFY_SITE_ID and the live PayPal keys in .env. The Stock section's
     product list now folds away (a `<details>`; a search opens it).
+
+55. **2026-10-24, the owner's list.** **Merchant Center feed with live stock:**
+    `https://lavishleaf.org/products-feed.xml` (a 200 rewrite in `_redirects`
+    to functions/shopping-feed.mjs) serves google-shopping.xml with every
+    product the stock check hides marked out_of_stock; that is the link for
+    Merchant Center's daily scheduled fetch. google-shopping.xml now carries
+    `g:shipping` per product from shipping.mjs (one unit), so Merchant
+    Center needs no shipping table. **Pick-ups**: canceled, done and expired
+    sign-ups sit in a "Past customers" fold under the list (kept, never on a
+    route; tiles and routes already counted only active ones). Earth
+    Elements commission: 20% for the first 30 days; FALL20 has no end date.
