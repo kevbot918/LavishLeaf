@@ -854,7 +854,8 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     `rfsn=9384641.e38de7`, in tools/earth-elements-card.mjs). Every product
     they sell (25: 13 oils, balms and salves; 6 Craft Your Formula 32 fl oz
     oils; 6 wholesale 101/169 fl oz oils) is on its own Home shelf
-    **"Herbal Oils & Balms"** right after Personal Care (render-store
+    **"Natural Wellness"** (renamed from "Herbal Oils & Balms" 10-23, so
+    teas or supplements can join it) right after Personal Care (render-store
     herbalShelf, earth-elements-home.json) and in Green Swaps (`#earth-elements`,
     between the EARTH-ELEMENTS markers after PALLADIUM:END, three shelves),
     plus a sidebar partner link and a Home banner. The names and sentences
@@ -864,3 +865,16 @@ FTC thirty-day rule applies to every dropshipped order. De minimis is gone.
     (functions/earth-elements-prices.mjs, CDN 12 h; sold out hides). Rerun
     `node tools/earth-elements-shelf.mjs` then render-store and seo; it warns
     about any new product that needs a COPY line.
+
+54. **2026-10-23, the Books feed is live code** (docs/BOOKS.md;
+    netlify/lib/books.mjs, functions/books-retry.mjs, functions/books-admin.mjs,
+    wired into capture, donate and the webhook). The owner did the three
+    setup steps (Sheets API, sheet shared as Editor, BOOKS_SHEET_ID). It writes
+    only when PAYPAL_ENV is live, never into columns J and K, and skips any
+    Source ID already in column L. The dashboard's **Books (Google Sheet)**
+    section shows what is set and "Test the connection" (reads the header,
+    writes nothing, names the missing step). The accounting session asked:
+    run `node tools/books-backfill.mjs` (a dry run) and send it the row
+    counts BEFORE any `--write`; the backfill needs NETLIFY_API_TOKEN,
+    NETLIFY_SITE_ID and the live PayPal keys in .env. The Stock section's
+    product list now folds away (a `<details>`; a search opens it).

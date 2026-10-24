@@ -7,7 +7,7 @@ import assert from 'node:assert/strict';
 import { generateKeyPairSync } from 'node:crypto';
 
 import {
-  CAT, appendRows, chicagoDate, clawbackRows, donationRows, filedParts, flushQueue, isService,
+  CAT, appendRows, checkSheet, chicagoDate, clawbackRows, donationRows, filedParts, flushQueue, isService,
   orderRows, record, recordSafely, refundRows, saleRefundRows, saleRows, setBooksQueueForTests,
 } from '../../netlify/lib/books.mjs';
 import { handleEvent, setWebhookForTests } from '../../netlify/functions/paypal-webhook.mjs';
@@ -49,6 +49,11 @@ function fakeSheet({ rows = {}, failWrites = false } = {}) {
     sheet.calls.push({ url, opts });
     const ok = (j) => ({ ok: true, status: 200, json: async () => j });
     if (url.startsWith('https://oauth2.googleapis.com/token')) return ok({ access_token: 'tok', expires_in: 3600 });
+    if (url.includes(':batchGet') && decodeURIComponent(url).includes('A1:L1')) {
+      if (sheet.denied) return { ok: false, status: 403, json: async () => ({ error: { message: 'The caller does not have permission' } }) };
+      const head = Object.entries(sheet.rows[1] || {}).sort().map(([, v]) => [v]);
+      return ok({ valueRanges: [{ values: head }, { values: [col('L')] }] });
+    }
     if (url.includes(':batchGet')) {
       assert.match(decodeURIComponent(url), /Transactions!A2:A.*Transactions!L2:L/);
       return ok({ valueRanges: [{ values: [col('A')] }, { values: [col('L')] }] });
@@ -211,4 +216,17 @@ test('the webhook still works in sandbox with the books wired in', async () => {
 test('dates are Chicago calendar days', () => {
   assert.equal(chicagoDate('2026-07-01T04:59:00Z'), '2026-06-30');
   assert.equal(chicagoDate('2026-07-01T05:00:00Z'), '2026-07-01');
+});
+
+test('the connection test reads the header, counts site rows, and names the step that is missing', async () => {
+  const sheet = fakeSheet({ rows: { 1: { A: 'Date', B: 'Account', L: 'Source ID' }, 2: { A: '2026-10-01', L: 'bank:1' }, 3: { A: '2026-10-02', L: 'pp:CAP1:product' } } });
+  const ok = await checkSheet(ENV, sheet.fetch);
+  assert.equal(ok.ok, true);
+  assert.deepEqual(ok.header, ['Date', 'Account', 'Source ID']);
+  assert.equal(ok.written, 1);
+  assert.ok(!sheet.calls.some((c) => c.url.includes(':batchUpdate')), 'writes nothing');
+  sheet.denied = true;
+  assert.equal((await checkSheet(ENV, sheet.fetch)).step, 2);
+  assert.equal((await checkSheet({ ...ENV, BOOKS_SHEET_ID: '' }, sheet.fetch)).step, 3);
+  assert.equal((await checkSheet({ ...ENV, BOOKS_SHEET_ID: 'https://docs.google.com/x' }, sheet.fetch)).step, 3);
 });

@@ -1,6 +1,6 @@
 // GET /.netlify/functions/earth-elements-prices -> { at, prices: { handle: "$13.50" | "from $327.75" | null } }
 //
-// Keeps the Earth Elements Organics cards (the "Herbal Oils & Balms" Home
+// Keeps the Earth Elements Organics cards (the "Natural Wellness" Home
 // shelf and Green Swaps) at their current prices; null = sold out in every
 // size, and the card hides (2026-10-23). Reads each product's public Shopify
 // JSON, 4 at a time, one retry. Netlify's CDN keeps the answer for 12 hours.

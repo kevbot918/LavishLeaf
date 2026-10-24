@@ -248,8 +248,8 @@ function palladiumShelf() {
     '</section>',
   ].join('\n');
 }
-// Earth Elements Organics (owner, 2026-10-23): its own Home shelf, "Herbal
-// Oils & Balms", right after Personal Care, with every product they sell
+// Earth Elements Organics (owner, 2026-10-23): its own Home shelf, "Natural
+// Wellness" (SHELF), right after Personal Care, with every product they sell
 // (retail, Craft Your Formula, wholesale); earth-elements-home.json from
 // tools/earth-elements-shelf.mjs. Affiliate links only (Refersion).
 const EARTH = (() => { try { return JSON.parse(readFileSync(join(ROOT, 'earth-elements-home.json'), 'utf8')); } catch { return null; } })();

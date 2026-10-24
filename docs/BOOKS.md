@@ -2,7 +2,7 @@
 
 Built 2026-10-21 for the accounting session (owner: "plan how lavishleaf.org
 orders and PayPal feed into the Lavish Leaf Inc Books automatically").
-**Not deployed yet**: it waits for the owner's word, and writes nothing until
+**Deployed 2026-10-23** after the owner did the three steps below. It writes nothing until
 PayPal is live.
 
 ## Owner steps (you do these; nothing here does them for you)
@@ -86,6 +86,8 @@ Things to know:
 
 * `netlify/lib/books.mjs`: the rows for each event, the sheet writer, the
   queue.
+* `netlify/functions/books-admin.mjs`: the dashboard's Books section (status,
+  "Test the connection", which reads the sheet and writes nothing).
 * `netlify/functions/books-retry.mjs`: the daily retry (modern scheduled
   function).
 * Wired into `capture.mjs`, `donate.mjs` and `paypal-webhook.mjs`.
@@ -102,3 +104,14 @@ Things to know:
 The Google access uses the dashboard's service account with the extra scope
 `https://www.googleapis.com/auth/spreadsheets`, requested only by books.mjs;
 the dashboard's own calls stay read-only.
+
+## Earlier payments (backfill), from the dashboard
+
+Payments taken before the feed went live are copied from the dashboard, on
+the server with Netlify's own keys (nothing goes in `.env`): **Books (Google
+Sheet) -> Preview earlier payments** lists the counts and amounts per
+category and writes nothing. The accounting session checks those numbers
+first; then **Write these rows to the Books** writes them, skipping any
+Source ID already in the sheet (so a payment the live feed already wrote is
+never doubled). It reads the first 60 paid records per run.
+`tools/books-backfill.mjs` does the same from a computer, if ever needed.

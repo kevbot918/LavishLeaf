@@ -1,9 +1,11 @@
 // One Earth Elements Organics card and our Refersion affiliate link
 // (2026-10-23). Shared by tools/earth-elements-shelf.mjs (Green Swaps) and
-// tools/render-store.mjs (the "Herbal Oils & Balms" Home shelf). Every link,
+// tools/render-store.mjs (the "Natural Wellness" Home shelf). Every link,
 // to the shop or to a product, carries our Refersion code.
 export const AFF = 'rfsn=9384641.e38de7&utm_source=refersion&utm_medium=affiliate&utm_campaign=9384641.e38de7';
-export const SHELF = 'Herbal Oils & Balms';
+// The Home shelf's name (owner, 2026-10-23: not only oils and balms; teas or
+// supplements may join it later).
+export const SHELF = 'Natural Wellness';
 export const eeLink = (path = '/') => 'https://earthelementsorganics.net' + path + (path.includes('?') ? '&' : '?') + AFF;
 export const esc = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
 export const money = (n) => '$' + Number(n).toFixed(2);

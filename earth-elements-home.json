@@ -1,6 +1,6 @@
 {
- "_help": "Written by tools/earth-elements-shelf.mjs; drawn by tools/render-store.mjs (the Home shelf \"Herbal Oils & Balms\") and in Green Swaps. Public facts only; prices refresh live from functions/earth-elements-prices.mjs.",
- "at": "2026-10-23",
+ "_help": "Written by tools/earth-elements-shelf.mjs; drawn by tools/render-store.mjs (the Home shelf \"Natural Wellness\") and in Green Swaps. Public facts only; prices refresh live from functions/earth-elements-prices.mjs.",
+ "at": "2026-10-24",
  "home": [
   "peppermint-balm",
   "organic-witch-hazel-medicinal-oil",

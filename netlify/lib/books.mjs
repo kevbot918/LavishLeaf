@@ -268,6 +268,41 @@ export async function record(rows, { env = process.env, fetchImpl = fetch } = {}
   }
 }
 
+/** Rows waiting in the queue, for the dashboard. */
+export async function queueCount() {
+  const q = await queueStore();
+  const { blobs } = await q.list({ prefix: 'q-' });
+  let n = 0;
+  for (const b of blobs) { const item = await q.get(b.key, { type: 'json' }).catch(() => null); n += (item && item.rows && item.rows.length) || 0; }
+  return n;
+}
+
+/**
+ * The dashboard's "Test the connection": reads the Transactions header row
+ * and counts the rows written so far. Writes nothing. Each failure names the
+ * setup step that fixes it (docs/BOOKS.md).
+ */
+export async function checkSheet(env = process.env, fetchImpl = fetch) {
+  const id = String(env.BOOKS_SHEET_ID || '');
+  if (!id) return { ok: false, step: 3, error: 'BOOKS_SHEET_ID is not in Netlify yet.' };
+  if (!/^[A-Za-z0-9_-]{20,80}$/.test(id)) return { ok: false, step: 3, error: 'BOOKS_SHEET_ID does not look like a sheet id: copy only the part between /d/ and /edit.' };
+  if (!googleReady(env)) return { ok: false, step: 0, error: 'The Google service account (GOOGLE_SERVICE_ACCOUNT_EMAIL and GOOGLE_PRIVATE_KEY) is not in Netlify.' };
+  let token;
+  try { token = await accessToken(SCOPE, env, fetchImpl); } catch (e) { return { ok: false, step: 0, error: 'Google refused the service account key: ' + e.message }; }
+  const res = await fetchImpl(`https://sheets.googleapis.com/v4/spreadsheets/${id}/values:batchGet?ranges=${encodeURIComponent(TAB + '!A1:L1')}&ranges=${encodeURIComponent(TAB + '!L2:L')}&majorDimension=COLUMNS`, { headers: { Authorization: `Bearer ${token}` } });
+  const j = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    const msg = (j.error && j.error.message) || `Sheets said ${res.status}`;
+    if (/has not been used|is disabled|SERVICE_DISABLED/i.test(msg)) return { ok: false, step: 1, error: 'The Google Sheets API is not turned on for the service account\'s project yet.' };
+    if (res.status === 403) return { ok: false, step: 2, error: 'The sheet is not shared with the service account as Editor yet.' };
+    if (res.status === 404) return { ok: false, step: 3, error: 'No sheet with that id: check BOOKS_SHEET_ID.' };
+    if (/Unable to parse range/i.test(msg)) return { ok: false, step: 3, error: `The sheet has no tab named "${TAB}".` };
+    return { ok: false, error: msg };
+  }
+  const [head, srcCol] = (j.valueRanges || []).map((v) => v.values || []);
+  return { ok: true, header: (head || []).map((c) => c[0] || ''), written: ((srcCol && srcCol[0]) || []).filter((s) => String(s).startsWith('pp:')).length };
+}
+
 /** Writes everything waiting in the queue (books-retry, daily). */
 export async function flushQueue({ env = process.env, fetchImpl = fetch } = {}) {
   const q = await queueStore();

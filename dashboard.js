@@ -926,7 +926,14 @@
       bn.addEventListener('click', function () { bn.disabled = true; bn.textContent = 'Checking...'; api('stock', { action: 'run' }).then(function (x) { stockRows = x.rows; drawStock(x); }).catch(function (e) { alert(e.message); bn.disabled = false; }); });
       bar.appendChild(bn);
       cst.appendChild(bar);
-      var wrap = el('div', 'db-table-wrap'); cst.appendChild(wrap);
+      // The long product list folds away (owner, 2026-10-23: "so I don't
+      // have to keep scrolling down so far"); a search opens it.
+      var fold = el('details', 'db-fold');
+      fold.open = !!(stockQ || stockOnlyOut);
+      var outAll = stockRows.filter(function (x) { return x.out; }).length;
+      fold.appendChild(el('summary', null, 'Every product and its stock (' + num(stockRows.length) + ', ' + num(outAll) + ' out)'));
+      var wrap = el('div', 'db-table-wrap'); fold.appendChild(wrap); cst.appendChild(fold);
+      q.addEventListener('input', function () { if (stockQ) fold.open = true; });
       function drawTable() {
         wrap.textContent = '';
         var t = el('table', 'db-table');
@@ -949,6 +956,63 @@
       drawTable();
     }
     api('stock', { action: 'status' }).then(function (r) { stockRows = r.rows; drawStock(r); }).catch(function (e) { cst.textContent = ''; cst.appendChild(el('p', 'db-hint', e.message)); });
+
+    // 8d. The Books feed (2026-10-23, docs/BOOKS.md): every PayPal money
+    // event goes to the "Lavish Leaf Inc: Books" Google Sheet. This card
+    // shows what is set up and tests the connection without writing.
+    var sbk = section('books', 'fa-book', 'Books (Google Sheet)', 'Every paid order, pick-up payment, donation, refund, and dispute is written to your Lavish Leaf Inc: Books sheet by itself, once PayPal is live. Test the connection here; it reads the sheet and writes nothing.');
+    var cbk = card(null); sbk.appendChild(cbk); root.appendChild(sbk);
+    function drawBooks(r) {
+      cbk.textContent = '';
+      var ok = function (b) { return b ? '<i class="fas fa-circle-check" style="color:#6FD65F"></i> ' : '<i class="fas fa-circle-xmark" style="color:#e08b6b"></i> '; };
+      var ul = el('ul', 'db-checks');
+      ul.innerHTML = '<li>' + ok(r.serviceAccount && r.privateKey) + 'Google service account in Netlify' + (r.serviceAccount ? ': ' + esc(r.serviceAccount) : '') + '</li>'
+        + '<li>' + ok(r.sheetId) + 'BOOKS_SHEET_ID in Netlify</li>'
+        + '<li>' + ok(r.live) + (r.live ? 'PayPal is live, so real payments are written' : 'PayPal is not live, so nothing is written yet') + '</li>'
+        + '<li>' + ok(!r.queued) + (r.queued ? num(r.queued) + ' rows waiting to be written (they retry every day)' : 'Nothing waiting to be written') + '</li>';
+      cbk.appendChild(ul);
+      if (r.test) {
+        var t = r.test;
+        cbk.appendChild(el('p', 'db-hint' + (t.ok ? '' : ' db-warn'), t.ok
+          ? 'Connected. The sheet answered, tab Transactions, columns: ' + t.header.filter(Boolean).join(', ') + '. Rows written from the site so far: ' + num(t.written) + '.'
+          : 'Not connected: ' + t.error + (t.step ? ' (docs/BOOKS.md step ' + t.step + ')' : t.step === 0 ? ' (docs/DASHBOARD.md, the service account)' : '')));
+      }
+      var bar = el('div', 'db-links');
+      var bt = h('<button type="button" class="db-btn-ghost"><i class="fas fa-plug"></i> Test the connection</button>');
+      bt.addEventListener('click', function () { bt.disabled = true; bt.textContent = 'Testing...'; api('books-admin', { action: 'test' }).then(drawBooks).catch(function (e) { alert(e.message); bt.disabled = false; }); });
+      bar.appendChild(bt);
+      if (r.queued) {
+        var br = h('<button type="button" class="db-btn-ghost"><i class="fas fa-rotate"></i> Write the waiting rows now</button>');
+        br.addEventListener('click', function () { br.disabled = true; api('books-admin', { action: 'retry' }).then(drawBooks).catch(function (e) { alert(e.message); br.disabled = false; }); });
+        bar.appendChild(br);
+      }
+      // Earlier payments (before the feed went live): preview first, so the
+      // accounting session can check the counts; then write.
+      if (r.live) {
+        var bp = h('<button type="button" class="db-btn-ghost"><i class="fas fa-eye"></i> Preview earlier payments</button>');
+        bp.addEventListener('click', function () { bp.disabled = true; bp.textContent = 'Asking PayPal...'; api('books-admin', { action: 'backfill', write: false }).then(drawBooks).catch(function (e) { alert(e.message); bp.disabled = false; }); });
+        bar.appendChild(bp);
+      }
+      if (r.backfill) {
+        var b = r.backfill;
+        if (b.error) cbk.appendChild(el('p', 'db-hint db-warn', b.error));
+        else {
+          var lines = Object.keys(b.byCategory).map(function (k) { var c = b.byCategory[k]; return k + ': ' + c.rows + ' row' + (c.rows === 1 ? '' : 's') + (c.in ? ', in ' + money(c.in) : '') + (c.out ? ', out ' + money(c.out) : ''); });
+          cbk.appendChild(el('p', 'db-hint', (b.written ? 'Written: ' + b.written.written + ' new rows, ' + b.written.skipped + ' already in the sheet. ' : 'Preview, nothing written: ') + b.records + ' paid records, ' + b.rows + ' rows. ' + lines.join('; ') + '.' + (b.skipped.length ? ' Skipped: ' + b.skipped.join(', ') + '.' : '') + (b.more ? ' Only the first 60 records were read.' : '')));
+          if (!b.written && b.rows) {
+            var bw = h('<button type="button" class="db-btn-ghost"><i class="fas fa-file-pen"></i> Write these ' + b.rows + ' rows to the Books</button>');
+            bw.addEventListener('click', function () {
+              if (!window.confirm('Has the accounting session checked these counts? Rows already in the sheet are skipped.')) return;
+              bw.disabled = true; api('books-admin', { action: 'backfill', write: true }).then(drawBooks).catch(function (e) { alert(e.message); bw.disabled = false; });
+            });
+            bar.appendChild(bw);
+          }
+        }
+      }
+      cbk.appendChild(bar);
+    }
+    cbk.appendChild(el('p', 'db-hint', 'Loading...'));
+    api('books-admin', { action: 'status' }).then(drawBooks).catch(function (e) { cbk.textContent = ''; cbk.appendChild(el('p', 'db-hint', e.message)); });
 
     // 9. Orders to place (owner, 2026-10-12): its own section, one card per
     // order with everything needed to place it with the supplier: the
