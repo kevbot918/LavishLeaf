@@ -19,6 +19,15 @@ Plain HTML, CSS and JS. No framework, no build step for pages. Ten pages:
 `careers.html` and `oscilla.html` are 301s in `_redirects`, not files. `_headers` carries the
 security and download headers; do not weaken it to make a download "work".
 
+**The Symphonymph Alpha APK is OFF the site since 2026-10-24** (owner: take
+it down while the store app is in Google Play review; it now downloads
+YouTube and SoundCloud audio, which the store build does not). Bring it back
+once the full app is approved and live on Play: the link in
+`symphonymph.html` (a comment marks the spot), the file in `downloads/`,
+and the `symphonymph-alpha` lines in `_redirects`, which 302 to
+`/symphonymph` meanwhile. The app repo's `tools/site-release.js` skips
+the Alpha until then.
+
 Deploy: `git add . && git commit && git push`. Netlify deploys the push. There
 is no staging; check the live site with `curl -sI` after a deploy.
 
