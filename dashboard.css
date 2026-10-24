@@ -209,3 +209,10 @@
 .db-fold > summary { cursor: pointer; font-weight: 700; padding: 8px 0; color: #6FD65F; }
 .db-fold > summary:hover { text-decoration: underline; }
 .db-checks { list-style: none; padding: 0; margin: 0 0 10px; display: grid; gap: 6px; }
+
+/* 2026-10-24: Log mileage. */
+.db-mile-form { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: flex-end; }
+.db-mile-form label { display: flex; flex-direction: column; gap: 4px; font-size: .85rem; }
+.db-mile-form .db-mile-wide { flex: 1 1 260px; }
+.db-mile-form .db-mile-check { flex-direction: row; align-items: center; gap: 6px; }
+.db-mile-form input, .db-mile-form select { min-height: 34px; }

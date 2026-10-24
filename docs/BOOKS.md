@@ -115,3 +115,42 @@ first; then **Write these rows to the Books** writes them, skipping any
 Source ID already in the sheet (so a payment the live feed already wrote is
 never doubled). It reads the first 60 paid records per run.
 `tools/books-backfill.mjs` does the same from a computer, if ever needed.
+
+## Mileage (built 2026-10-24, held until the owner says go)
+
+Owner request through the accounting session. Trips go to the **Mileage**
+tab of the same Books sheet: header in row 4, data from row 5.
+
+| Column | What is written |
+| --- | --- |
+| A Date | YYYY-MM-DD (Chicago) |
+| B From, C To | as typed; a route says "Farm" and "Pick-up route Tuesday: 6 stops" |
+| D Business purpose | as typed; a route says "Compost and recycling pick-up route (estimated: straight line x 1.25; edit to the odometer)" |
+| E Who it is for | exactly one of Lavish Leaf Inc, Farm, DoorDash, Other |
+| F Round-trip miles | a number |
+| G Source | "Dashboard" or "Pick-up route" |
+| H Source ID | `dash:<random id>` or `route:<date>:<day>` |
+| I Rate, J Value | the sheet's own formulas: **never written** |
+| K Booked as reimbursement? | **never written** |
+
+* **Dashboard, Log mileage** (after Pick-ups and routes): date (today),
+  from, to, purpose, who it is for (Lavish Leaf Inc by default), miles, and
+  "Round trip" to double one-way miles. The last 30 days are listed newest
+  first with an **Edit miles** box (rewrites column F of the row found by
+  its Source ID), and this year's miles per "who it is for".
+* **Pick-up routes log themselves.** Each route day in Pick-ups and routes
+  has a date and **Mark this route picked up**; the one-time **Mark picked
+  up** button does the same for its own route day before the stop leaves the
+  route. ONE row per route day: every active customer that day, farm to farm
+  (routes.mjs `orderRoute`). `route:<date>:<day>` means marking the same
+  day twice never doubles it. The miles are straight-line distance times
+  `ROAD_FACTOR` 1.25 (no road-distance service is used), so column D says
+  "estimated": the IRS wants actual miles, so edit them to the odometer in
+  Log mileage. A day with no customer on the map writes nothing and says so.
+* **Not tied to PayPal**: mileage is written whether or not PayPal is live.
+* **Never lost**: a Google failure queues the rows in the Blobs store
+  `mileage-queue`; the daily `books-retry` writes them.
+* Next row = the row after the last date in column A from row 5, so the
+  spilling I and J formulas never push a row to 5001.
+* Files: `netlify/lib/mileage.mjs`, `netlify/functions/mileage.mjs`, the
+  dashboard's Log mileage section, `tools/test/mileage.test.mjs` (7 tests).

@@ -548,7 +548,11 @@
           if (s.once) {
             // A one-time pick-up (2026-10-16): done once we have been, then it leaves the routes.
             var bd = h('<button type="button" class="db-btn-ghost db-btn-sm"><i class="fas fa-check"></i> Mark picked up</button>');
-            bd.addEventListener('click', function () { if (window.confirm('Mark ' + s.name + '\'s one-time pick-up as done? It leaves the routes.')) pickAct(s, 'update', { status: 'done' }, msg); });
+            bd.addEventListener('click', function () {
+              if (!window.confirm('Mark ' + s.name + '\'s one-time pick-up as done? It leaves the routes, and today\'s ' + routeDay(s) + ' route miles are logged (once a day).')) return;
+              // The route's miles go to the Mileage tab before the stop leaves the route (2026-10-24).
+              logRoute(routeDay(s), todayChicago(), msg).then(function () { pickAct(s, 'update', { status: 'done' }, msg); });
+            });
             act.appendChild(bd);
           }
           var bc = s.once ? null : h('<button type="button" class="db-btn-ghost db-btn-sm"><i class="fas fa-ban"></i> Cancel subscription</button>');
@@ -590,6 +594,15 @@
         a.href = u; a.target = '_blank'; a.rel = 'noopener'; links.appendChild(a);
       });
       box.appendChild(links);
+      // Mark this route day picked up (2026-10-24): ONE Mileage row for the
+      // whole route, farm to farm, once per day (Source ID route:<date>:<day>).
+      var done = el('div', 'db-links');
+      var dIn = el('input'); dIn.type = 'date'; dIn.value = todayChicago(); dIn.setAttribute('aria-label', 'Date driven');
+      var bDone = h('<button type="button" class="db-btn-ghost"><i class="fas fa-truck-ramp-box"></i> Mark this route picked up</button>');
+      var dMsg = el('span', 'db-hint');
+      bDone.addEventListener('click', function () { bDone.disabled = true; logRoute(day, dIn.value, dMsg).then(function () { bDone.disabled = false; }); });
+      done.appendChild(dIn); done.appendChild(bDone); done.appendChild(dMsg);
+      box.appendChild(done);
       return { box: box, miles: r.miles };
     }
     function drawRoutes() {
@@ -641,6 +654,82 @@
       });
       cr.appendChild(sg);
     }
+    function todayChicago() {
+      var p = new Intl.DateTimeFormat('en-US', { timeZone: 'America/Chicago', year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(new Date());
+      var g = function (t) { return p.filter(function (x) { return x.type === t; })[0].value; };
+      return g('year') + '-' + g('month') + '-' + g('day');
+    }
+    function savedText(r) {
+      var sv = r.saved || {};
+      return sv.written ? 'Logged ' + r.row.miles + ' miles in the Mileage tab.' : sv.skipped === 1 ? 'Already logged for that day.' : sv.queued ? 'Google did not answer; it is saved and will be written within a day.' : '';
+    }
+    function logRoute(day, date, msgEl) {
+      if (msgEl) msgEl.textContent = 'Logging the route miles...';
+      return api('mileage', { action: 'route', day: day, date: date }).then(function (r) {
+        if (msgEl) msgEl.textContent = r.notice || (savedText(r) + (r.unmapped ? ' ' + r.unmapped + ' stop(s) were not on the map; add their miles in Log mileage.' : '') + ' Estimated: correct it to the odometer in Log mileage.');
+        loadMileage();
+      }).catch(function (e) { if (msgEl) msgEl.textContent = e.message; });
+    }
+
+    // 7b2. Log mileage (2026-10-24, the owner through the accounting
+    // session): any trip, written to the Mileage tab of the Books sheet;
+    // the last 30 days with Edit miles, and this year's miles per purpose.
+    var sm = section('mileage', 'fa-road', 'Log mileage', 'Every business trip goes to the Mileage tab of your Books sheet. Pick-up routes log themselves when you mark them picked up; correct their miles to the odometer here.');
+    var cmForm = card('Add a trip'); sm.appendChild(cmForm);
+    var cmList = card('Last 30 days'); sm.appendChild(cmList);
+    sp.parentNode ? sp.parentNode.insertBefore(sm, sp.nextSibling) : root.appendChild(sm);
+    (function () {
+      var f = el('form', 'db-mile-form');
+      f.innerHTML = '<label>Date <input type="date" name="date" required></label>'
+        + '<label>From <input type="text" name="from" maxlength="120" placeholder="Farm"></label>'
+        + '<label>To <input type="text" name="to" maxlength="120" placeholder="Hummert, McAlester"></label>'
+        + '<label class="db-mile-wide">Business purpose <input type="text" name="purpose" maxlength="160" required placeholder="Picked up compost buckets"></label>'
+        + '<label>Who it is for <select name="who"><option>Lavish Leaf Inc</option><option>Farm</option><option>DoorDash</option><option>Other</option></select></label>'
+        + '<label>Miles <input type="number" name="miles" min="0.1" max="2000" step="0.1" required></label>'
+        + '<label class="db-mile-check"><input type="checkbox" name="roundTrip"> Round trip (doubles the miles)</label>'
+        + '<button type="submit" class="db-btn-ghost"><i class="fas fa-plus"></i> Save trip</button><span class="db-hint" data-msg></span>';
+      f.elements.date.value = todayChicago();
+      f.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+        var m = f.querySelector('[data-msg]'); m.textContent = 'Saving...';
+        api('mileage', { action: 'add', date: f.elements.date.value, from: f.elements.from.value, to: f.elements.to.value, purpose: f.elements.purpose.value, who: f.elements.who.value, miles: f.elements.miles.value, roundTrip: f.elements.roundTrip.checked })
+          .then(function (r) { m.textContent = savedText(r); f.elements.miles.value = ''; f.elements.purpose.value = ''; f.elements.roundTrip.checked = false; loadMileage(); })
+          .catch(function (e) { m.textContent = e.message; });
+      });
+      cmForm.appendChild(f);
+    })();
+    function loadMileage() {
+      cmList.querySelectorAll('.db-table-wrap, .db-hint, .db-empty').forEach(function (n) { n.remove(); });
+      cmList.appendChild(el('p', 'db-hint', 'Loading...'));
+      api('mileage', { action: 'list' }).then(function (r) {
+        cmList.querySelectorAll('.db-hint').forEach(function (n) { n.remove(); });
+        cmList.appendChild(el('p', 'db-hint', r.year + ' so far: ' + Object.keys(r.totals).map(function (k) { return k + ' ' + num(r.totals[k]) + ' mi'; }).join(' · ')));
+        if (!r.recent.length) { cmList.appendChild(el('p', 'db-empty', 'No trips in the last 30 days.')); return; }
+        var t = el('table', 'db-table'); t.innerHTML = '<thead><tr><th>Date</th><th>Trip</th><th>Purpose</th><th>For</th><th>Miles</th></tr></thead>';
+        var tb = el('tbody');
+        r.recent.forEach(function (x) {
+          var tr = el('tr');
+          tr.appendChild(el('td', null, x.date));
+          tr.appendChild(el('td', null, [x.from, x.to].filter(Boolean).join(' to ')));
+          tr.appendChild(el('td', null, x.purpose));
+          tr.appendChild(el('td', null, x.who));
+          var td = el('td');
+          if (x.source) {
+            var inp = el('input'); inp.type = 'number'; inp.step = '0.1'; inp.min = '0'; inp.value = x.miles; inp.style.width = '6em'; inp.setAttribute('aria-label', 'Miles for ' + x.date);
+            var b = h('<button type="button" class="db-btn-ghost db-btn-sm">Edit miles</button>');
+            var mm = el('span', 'db-hint');
+            b.addEventListener('click', function () { mm.textContent = 'Saving...'; api('mileage', { action: 'edit', source: x.source, miles: inp.value }).then(function (q) { mm.textContent = 'Saved ' + q.miles + ' mi.'; }).catch(function (e) { mm.textContent = e.message; }); });
+            td.appendChild(inp); td.appendChild(b); td.appendChild(mm);
+          } else td.textContent = num(x.miles);
+          tr.appendChild(td);
+          tb.appendChild(tr);
+        });
+        t.appendChild(tb);
+        var w = el('div', 'db-table-wrap'); w.appendChild(t); cmList.appendChild(w);
+      }).catch(function (e) { cmList.querySelectorAll('.db-hint').forEach(function (n) { n.remove(); }); cmList.appendChild(el('p', 'db-hint', e.message)); });
+    }
+    loadMileage();
+
     Promise.all([api('pickups', { action: 'list' }), import('/routes.mjs')]).then(function (res) {
       signups = res[0].signups || []; R = res[1];
       drawTable(); drawRoutes(); fillTiles();
